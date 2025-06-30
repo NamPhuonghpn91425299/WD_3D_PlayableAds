@@ -1,0 +1,153 @@
+{
+  "BuildID": "84bd5206-f89f-48ff-b686-bc33cd5ac933",
+  "Command": "project:build",
+  "ProjectID": "1d50191528698274c8378a20ad162070",
+  "ProjectStateHash": "bde092177114b307b19520da9c0b9f1fbc41929e00e2e04674b2893235f6f789",
+  "StageCompletedAt": 3,
+  "EarliestFatalError": 0,
+  "StartTime": 1749610856377,
+  "EndTime": 1749610884472,
+  "PlaygroundUserID": 24607,
+  "OperatingSystem": "win32",
+  "UnityPackageID": null,
+  "TargetPlatform": "playground",
+  "UnityVersion": "2022.3.62f1",
+  "LunaVersion": "6.3.0",
+  "LogCount": 6,
+  "Logs": [
+    {
+      "LogID": "337ec617-d58a-448f-9c05-ec331d5152bd",
+      "Order": 5,
+      "Timestamp": 1749610884850,
+      "Stage": 3,
+      "ErrorType": 3,
+      "ErrorCode": "LP3007",
+      "Description": "You are not using any custom events",
+      "Details": [
+        "You are not using any custom events. It is recommended to use custom events to have a better understanding of the playable."
+      ],
+      "DescriptionValues": [
+        ""
+      ],
+      "DetailsValues": [
+        ""
+      ],
+      "LogCount": 1,
+      "LinePosition": null,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "32e99807-cd71-46da-b839-745bd3263181",
+      "Order": 5,
+      "Timestamp": 1749610884850,
+      "Stage": 3,
+      "ErrorType": 3,
+      "ErrorCode": "LP3011",
+      "Description": "You are not using any LunaPlaygroundFields attributes.",
+      "Details": [
+        "You are not using any LunaPlaygroundFields attributes, it allows you to configure your playable to different concepts to find the best variation, which can drastically improve playable performance on all ad networks."
+      ],
+      "DescriptionValues": null,
+      "DetailsValues": null,
+      "LogCount": 1,
+      "LinePosition": null,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "792ed78c-dd8f-4771-9845-9068f9da6db8",
+      "Order": 0,
+      "Timestamp": 1749610862146,
+      "Stage": 1,
+      "ErrorType": 2,
+      "ErrorCode": "LP1007",
+      "Description": "Extensive use of mesh colliders",
+      "Details": [
+        "Usage of mesh colliders has negative effect on performance. You can use primitive colliders instead."
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "d200ea05-1c4e-44cc-9c50-bf4b54f2d83a",
+      "Order": 1,
+      "Timestamp": 1749610862147,
+      "Stage": 1,
+      "ErrorType": 2,
+      "ErrorCode": "LP1022",
+      "Description": "Extensive use of shader variants",
+      "Details": [
+        "Extensive usage of shader variants negatively affects playable startup time. Please consider them to be less than 20 (26 found). Check Runtime analysis -> shader tab to see used shaders."
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [
+        "20",
+        "26"
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "3ee1ac4d-0b72-4786-ac87-220c4985f327",
+      "Order": 2,
+      "Timestamp": 1749610862152,
+      "Stage": 1,
+      "ErrorType": 0,
+      "ErrorCode": "LP1027",
+      "Description": "This DOTween version is not supported",
+      "Details": [
+        "The incorrect DOTween version for this Unity version is in use, please update or downgrade to the recommended version {0} in the package manager. Go to Window → Package Manager."
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [
+        ""
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "a6473ece-d915-4d50-9e7b-3964e703df08",
+      "Order": 3,
+      "Timestamp": 1749610862152,
+      "Stage": 1,
+      "ErrorType": 2,
+      "ErrorCode": "LP1010",
+      "Description": "Looks like a collider was scaled, this might affect performance.",
+      "Details": [
+        "CubeTargetGO",
+        "CubeTargetGO",
+        "CubeTargetGO (1)",
+        "CubeTargetGO (2)",
+        "CubeTargetGO (3)",
+        "Background"
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [],
+      "LogCount": 6,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    }
+  ]
+}

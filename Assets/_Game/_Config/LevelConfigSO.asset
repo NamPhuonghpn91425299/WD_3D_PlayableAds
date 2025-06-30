@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a947691cfa9a1e4f825d5c97a253cc9, type: 3}
+  m_Name: LevelConfigSO
+  m_EditorClassIdentifier: 
+  levelConfigDataList:
+  - Level: 1
+    GoldReward: 50
+    MainPrefabPath: Levels/A_Flower
+    LevelIcon: {fileID: 21300000, guid: 6d747000512455540904109ce5cb2683, type: 3}
+    LevelType: 1
+  - Level: 2
+    GoldReward: 50
+    MainPrefabPath: Levels/A_girl_tvc
+    LevelIcon: {fileID: 21300000, guid: 18a90dd56e1b3b4429277465f50cadaa, type: 3}
+    LevelType: 1

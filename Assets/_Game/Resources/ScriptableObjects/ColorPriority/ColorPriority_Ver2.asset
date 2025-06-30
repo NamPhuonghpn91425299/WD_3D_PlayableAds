@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f89ef68f8c2cb48b47d2e5a910d9cc, type: 3}
+  m_Name: ColorPriority_Ver2
+  m_EditorClassIdentifier: 
+  ColorPriorityData: {fileID: 11400000, guid: 5410bd5f38546104d88c4e4030e50114, type: 2}
+  LevelConfigSO: {fileID: 11400000, guid: ba86fba62bf944d4db47bdbd08eb6528, type: 2}
