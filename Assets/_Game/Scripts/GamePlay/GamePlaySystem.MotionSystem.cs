@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Collections;
 // Đánh dấu đây là một phần của class GamePlaySystem
 public partial class GamePlaySystem
 {
@@ -14,7 +14,7 @@ public partial class GamePlaySystem
         {EMotionType.Shy,       Animator.StringToHash("isShy")},      // Hash của trigger 'isShy'
         {EMotionType.Surpries,  Animator.StringToHash("isSurpries")}, // Hash của trigger 'isSurpries'
     };
-    
+    private bool _isEmotionPlaying = false;
     // Hash cho một parameter kiểu Float tên là "RandomValue".
     // Parameter này có thể dùng để điều khiển blend tree hoặc một giá trị ngẫu nhiên nào đó trong animation.
     public static int RandomValueParameterHash = Animator.StringToHash("RandomValue");
@@ -26,35 +26,61 @@ public partial class GamePlaySystem
     /// <param name="motionBlendValue">Giá trị blend, dùng cho parameter "RandomValue". Mặc định là 1.</param>
     public void RaiseMotion(EMotionType motionType, float motionBlendValue = 1f)
     {
-        // 1. Kiểm tra đầu vào: Nếu không có motion nào được yêu cầu thì thoát.
-        if (motionType == EMotionType.None) return;
-        
+
+        if (motionType == EMotionType.None)
+        {
+            Debug.Log("[RaiseMotion] motionType == None → Không thực hiện gì.");
+            return;
+        }
+        if (_isEmotionPlaying)
+        {
+            Debug.Log("Đang trong một motion khác, bỏ qua...");
+            return;
+        }
+        Debug.Log(motionType + " → thực hiện 0.");
         // 2. Lấy Animator từ _meshController. Đây là Animator của nhân vật/đối tượng chính.
         var mainMotionAnimator = _meshController.MainMotionAnimator;
         if (!mainMotionAnimator) return; // Nếu không có Animator thì thoát.
+        Debug.Log(motionType + " → thực hiện 1.");
 
         // 3. Kiểm tra trạng thái hiện tại: Chỉ cho phép kích hoạt motion mới khi đang ở trạng thái 'idle'.
-        var state = mainMotionAnimator.GetCurrentAnimatorStateInfo(0); // Lấy thông tin state của layer 0.
         // So sánh hash của state hiện tại với hash của state 'idle' đã lưu.
         // Điều này ngăn việc kích hoạt một motion mới khi một motion khác đang chạy (ví dụ: đang "ngạc nhiên" thì không thể "xấu hổ" ngay lập tức).
-        if (state.shortNameHash != MainMotionParameterHash[EMotionType.None]) return;
-        
+        _isEmotionPlaying = true;
+
+        //var state = mainMotionAnimator.GetCurrentAnimatorStateInfo(0); // Lấy thông tin state của layer 0.
         // 4. Lấy hash của motion cần kích hoạt từ Dictionary.
         int motionHash = MainMotionParameterHash[motionType];
+        Debug.Log(motionType + " → thực hiện 2.");
         
         // 5. Thiết lập giá trị blend.
         // Giới hạn giá trị trong khoảng [-1, 1].
         motionBlendValue = Mathf.Clamp(motionBlendValue, -1f, 1f);
-        // Đặt giá trị cho parameter "RandomValue" trên Animator.
-        mainMotionAnimator.SetFloat(RandomValueParameterHash, motionBlendValue);
+        // // Đặt giá trị cho parameter "RandomValue" trên Animator.
+        // mainMotionAnimator.SetFloat(RandomValueParameterHash, motionBlendValue);
+        //
+        // mainMotionAnimator.SetTrigger(motionHash);
+        Debug.Log("RaiseMotion end: " + motionType + ", " + motionBlendValue);
         
-        // 6. Kích hoạt Trigger.
-        // Trigger trong Animator sẽ tự động reset sau khi được sử dụng.
-        // Nó sẽ khiến Animator chuyển từ state 'idle' sang state tương ứng (ví dụ: 'Shy' hoặc 'Surpries').
-        mainMotionAnimator.SetTrigger(motionHash);
+        if (motionBlendValue > 0.5f)
+        {
+            mainMotionAnimator.Play("surpries");
+            StartCoroutine(ResetEmotionLock(8f));
+        }
+        else
+        {
+            mainMotionAnimator.Play("shy");
+            StartCoroutine(ResetEmotionLock(4f));
+        }
+    }
+    private IEnumerator ResetEmotionLock(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _isEmotionPlaying = false;
+        Debug.Log("Motion kết thúc, cho phép trigger tiếp theo.");
     }
 }
-
+    
 
 // Enum định nghĩa các loại cảm xúc có thể có.
 // Việc dùng enum giúp code dễ đọc, dễ bảo trì và tránh lỗi gõ sai chuỗi.

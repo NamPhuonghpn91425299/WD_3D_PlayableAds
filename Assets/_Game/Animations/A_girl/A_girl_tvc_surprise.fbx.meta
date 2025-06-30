@@ -60,7 +60,7 @@ ModelImporter:
       - time: 0.08455882
         functionName: RaiseVoice
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 9e94c4a7e09630f4492309dba6ba343f, type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: 93676dbabb0363c4c953f2643b5e8e1d, type: 3}
         floatParameter: 0
         intParameter: 2
         messageOptions: 0
@@ -96,7 +96,7 @@ ModelImporter:
       - time: 0.091383815
         functionName: RaiseVoice
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 9e94c4a7e09630f4492309dba6ba343f, type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: 93676dbabb0363c4c953f2643b5e8e1d, type: 3}
         floatParameter: 0
         intParameter: 2
         messageOptions: 0
@@ -167,11 +167,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 129f5aad24102304c9774c4a7a348239, type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
