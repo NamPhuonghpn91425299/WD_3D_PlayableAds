@@ -7,6 +7,7 @@ public class CubeTargetControl : MonoBehaviour
 {
     #region PROPERTIES
 
+    public GameObject group;
     [SerializeField] private int VibrationStrength = 50;
 
     public                   List<Transform> TargetChildren;
@@ -122,6 +123,7 @@ public class CubeTargetControl : MonoBehaviour
         _isReady = true;
         GamePlaySystem.Instance.UseQueueTarget(_currentColor, indexCube);
         GamePlaySystem.Instance.CheckEndGame();
+        Debug.Log("CubeReadyCount: " + GamePlaySystem.Instance.CubeReadyCount + " TotalCubeActive: " + GamePlaySystem.Instance.TotalCubeActive + " indexCube: " + indexCube);
     }
 
     public void SetDefault()

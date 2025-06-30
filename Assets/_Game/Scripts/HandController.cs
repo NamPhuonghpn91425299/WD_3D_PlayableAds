@@ -38,7 +38,7 @@ public class HandController : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
-
+        if (gameObject.activeSelf == false) return;
         _playAnimCoroutine = StartCoroutine(PlayAnim());
     }
 

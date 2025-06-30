@@ -10,7 +10,6 @@ using DG.Tweening;
 /// Đây là một Singleton, đảm bảo chỉ có một instance duy nhất trong scene.
 /// Chịu trách nhiệm xử lý tương tác người dùng, quản lý trạng thái game (thắng, thua),
 /// quản lý các đối tượng trong game như các ô chứa (CubeTarget), hàng đợi (QueueTarget),
-
 /// và điều phối các hiệu ứng animation.
 /// </summary>
 public partial class GamePlaySystem : Singleton<GamePlaySystem>
@@ -304,6 +303,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         
         // Tính toán độ ưu tiên của các màu còn lại
         _meshController.ColorPriorityCalculator();
+        _colorTargets[indexCube] = Color.black;
 
         if (_meshController.CubeCount.Count > 1)
         {
@@ -348,7 +348,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     {
         if (!active)
         {
-            CurrentCubeTargets[indexCube].gameObject.SetActive(false);
+            CurrentCubeTargets[indexCube].group.SetActive(false);
             TotalCubeActive--;
             CubeReadyCount--;
             SmoothRepositioner(); // Sắp xếp lại vị trí các ô còn lại cho đẹp
@@ -366,6 +366,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         {
             // Khi đạt đủ số lượng, kích hoạt sự kiện đặc biệt
             Luna.Unity.LifeCycle.GameEnded();
+            //CheckEndGame();
             GoToStore();
             Debug.Log(" CurrentColorCollected: " + _currentColorCollected + " End Game with cubeCountClaimed: " + cubeCountClaimed);
         }
@@ -429,12 +430,14 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// </summary>
     public void CheckEndGame()
     {
+        Debug.Log("Truong hop: " + _isPLayAnimUsingRainBow);
         if (_isPLayAnimUsingRainBow) return;
 
         // Điều kiện thắng: Đã thu thập hết tất cả các màu
         if (_currentColorCollected == _meshController.TotalColor && TotalCubeActive == CubeReadyCount)
         {
             StartCoroutine(OnEndGameAction(true));
+            Debug.Log("End Game Win");
             Luna.Unity.LifeCycle.GameEnded();
         }
         
@@ -497,7 +500,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         CubeReadyCount = 0;
         for (int i = 0; i < CurrentCubeTargets.Count; i++)
         {
-            CurrentCubeTargets[i].gameObject.SetActive(true);
+            CurrentCubeTargets[i].group.SetActive(true);
             // Kích hoạt ô nếu index của nó nhỏ hơn số lượng mới
             CurrentCubeTargets[i].SetActiveCubeTarget(i, i + 1 <= newCubeCount);
             // Hiện nút "mở khóa" cho các ô vượt quá số lượng mới
@@ -587,7 +590,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// Lấy một màu dựa trên độ ưu tiên đã được tính toán.
     /// </summary>
     private Color GetColorByPriority(float priority)
-    {
+    { 
         // ... (Logic chọn màu dựa trên một ngưỡng ưu tiên)
         if (_colorTargetList.Count == 1)
             return _meshController?._colorPriority?.FirstOrDefault()
