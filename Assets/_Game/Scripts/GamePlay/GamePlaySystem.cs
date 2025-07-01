@@ -26,8 +26,16 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private string url; // URL cuối cùng sau khi thay thế package name.
 
     [Tooltip("Số lượng khối len cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store).")]
-    [SerializeField] private int cubeCountClaimed = 15;
+    [SerializeField] private int cubeCountClaimed = 15; 
+    
+    [Tooltip("Số lượng khối len cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store).")]
+    [SerializeField] private int totalCountClaimed = 9;
 
+    public int  TotalCountClaimed
+    {
+        get => totalCountClaimed;
+        set => totalCountClaimed = value;
+    }
     [Tooltip("Panel UI hiển thị khi kết thúc game (thắng/thua).")]
     [SerializeField] private GameObject endGamePanel;
 
@@ -449,6 +457,14 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         }
     }
 
+    public void EndGameTotalCountWool()
+    {
+        if (_isPLayAnimUsingRainBow) return;
+        StartCoroutine(OnEndGameAction(true));
+        Debug.Log("End Game Total Count Wool");
+        Luna.Unity.LifeCycle.GameEnded();
+    }
+    
     /// <summary>
     /// Coroutine xử lý các hành động cuối game (hiển thị UI, phát âm thanh).
     /// </summary>

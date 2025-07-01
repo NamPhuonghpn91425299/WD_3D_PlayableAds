@@ -576,48 +576,6 @@ Transform:
   - {fileID: 4183657816260235944}
   m_Father: {fileID: 1010294268651920267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &456960082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5063796471004091999, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
-  m_PrefabInstance: {fileID: 1513283056}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &456960084
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456960082}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f223c85b9b4c0464b9b6ca3bb039dca5, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &456960085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456960082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93676dbabb0363c4c953f2643b5e8e1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainAudioSource: {fileID: 1448790048}
-  MotionAudioClips:
-  - {fileID: 8300000, guid: 3eac3aed0b5ea274099421a575fd6f49, type: 3}
-  - {fileID: 8300000, guid: f5504f63020a41d4b889c96c0886fbbf, type: 3}
 --- !u!1 &521806155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,11 +1446,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6884323644912016436, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
   m_PrefabInstance: {fileID: 1513283056}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1448790048 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8301346563033708707, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
-  m_PrefabInstance: {fileID: 1513283056}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1476888923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,14 +1589,106 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 935084528}
     m_Modifications:
-    - target: {fileID: 1855250343672271659, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
-      propertyPath: MainMotionAnimator
-      value: 
-      objectReference: {fileID: 456960084}
-    - target: {fileID: 1855250343672271659, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
-      propertyPath: LevelData.ColorList.Array.data[1].a
+    - target: {fileID: 67220303321809200, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 681465886368962734, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 951221917603561608, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187818498692173949, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322087738112709880, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367418884968171802, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991712907929892298, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775833961784079108, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013932651481721341, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3147141241183575921, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281166551579059067, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281166551579059067, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4313141561010887004, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012448142071087738, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254969260407325602, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5611398262068643345, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777721292161739841, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051339902433325055, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051339902433325055, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 699be9db3c79790438ea7b748978a063, type: 2}
+    - target: {fileID: 6214518668679167092, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417212154309991201, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634800312856858440, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830194668109716382, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852080166068138029, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852080166068138029, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 699be9db3c79790438ea7b748978a063, type: 2}
     - target: {fileID: 6884323644912016436, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
       propertyPath: m_Name
       value: A_girl_tvc
@@ -1688,25 +1733,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8625851617723856617, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
-      propertyPath: m_Avatar
-      value: 
+    - target: {fileID: 7011732468923718540, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 8625851617723856617, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
-      propertyPath: m_ApplyRootMotion
+    - target: {fileID: 7903568080195440162, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903568080195440162, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: _orderLabelColor.b
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8625851617723856617, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+    - target: {fileID: 7903568080195440162, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: _orderLabelColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903568080195440162, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: _orderLabelColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903568080195440162, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: _orderLabelOffset.y
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166336582800357549, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
+      propertyPath: WoolOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5063796471004091999, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 456960084}
-    - targetCorrespondingSourceObject: {fileID: 5063796471004091999, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 456960085}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25dc5dbc9b816c248b3c4d4108d5f907, type: 3}
 --- !u!1 &1659612413
 GameObject:
@@ -1928,6 +1986,7 @@ MonoBehaviour:
   RotationAutoSpeed: 0.5
   SmoothingTime: 0.05
   TimeAFKToAutoRotation: 3
+  _isRotateObjectInMainMenu: 0
   _cameraPosMainMenuDefault: {x: 0, y: 1.8, z: -11}
   _cameraRoteMainMenuDefault: {x: 15, y: 0, z: 0}
   _cameraPosGamePlayDefault: {x: 0, y: 1, z: -10}
@@ -2189,6 +2248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handController: {fileID: 4659284094914571615}
   cubeCountClaimed: 8
+  totalCountClaimed: 9
   endGamePanel: {fileID: 4342424297761352193}
   CameraController: {fileID: 1797259878}
   BoxChainReaction3D: {fileID: 1374435474}
@@ -2515,6 +2575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 4
     HightestColor: {r: 0.882353, g: 0.3921569, b: 0.43921572, a: 1}
@@ -12301,6 +12362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 4
     HightestColor: {r: 0.68235296, g: 0.42352945, b: 0.74509805, a: 1}
@@ -24400,6 +24462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 4
     HightestColor: {r: 0.882353, g: 0.3921569, b: 0.43921572, a: 1}
@@ -53975,6 +54038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 4
     HightestColor: {r: 0.39607847, g: 0.5137255, b: 0.8117648, a: 1}
@@ -73527,6 +73591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 4
     HightestColor: {r: 0.39607847, g: 0.5137255, b: 0.8117648, a: 1}
@@ -86568,6 +86633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67217636, b: 0.61960787, a: 1}
@@ -110422,6 +110488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.882353, g: 0.3921569, b: 0.43921572, a: 1}
@@ -117363,6 +117430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.3363404, g: 0.35861343, b: 0.3660378, a: 1}
@@ -125813,7 +125881,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 10.008003}
-  m_SizeDelta: {x: 0, y: -20.0161}
+  m_SizeDelta: {x: -20, y: -20.0161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2724387885262014351
 GameObject:
@@ -126299,6 +126367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.68235296, g: 0.42352945, b: 0.74509805, a: 1}
@@ -130314,6 +130383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 3
     HightestColor: {r: 0.882353, g: 0.3921569, b: 0.43921572, a: 1}
@@ -138832,6 +138902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67217636, b: 0.61960787, a: 1}
@@ -147656,6 +147727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.882353, g: 0.3921569, b: 0.43921572, a: 1}
@@ -155985,6 +156057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 4
     HightestColor: {r: 0.882353, g: 0.3921569, b: 0.43921572, a: 1}
@@ -166683,6 +166756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
@@ -170431,7 +170505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -170716,6 +170790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 3
     HightestColor: {r: 0.882353, g: 0.3921569, b: 0.43921572, a: 1}
@@ -185149,6 +185224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 4
     HightestColor: {r: 0.39607847, g: 0.5137255, b: 0.8117648, a: 1}
@@ -196145,6 +196221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 3
     HightestColor: {r: 0.39607847, g: 0.5137255, b: 0.8117648, a: 1}
@@ -232528,6 +232605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
   MeshObjectData:
     TotalLayer: 4
     HightestColor: {r: 0.39607847, g: 0.5137255, b: 0.8117648, a: 1}

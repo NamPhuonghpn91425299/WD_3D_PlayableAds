@@ -52,7 +52,7 @@ public class CameraController : Singleton<CameraController>
     private bool _isClicking;
     private bool _isDragging;
     private bool _isHolding;
-    private bool _isRotateObjectInMainMenu;
+    [SerializeField] private bool _isRotateObjectInMainMenu;
 
     private WoolControl _targetWool;
 
@@ -159,10 +159,10 @@ public class CameraController : Singleton<CameraController>
         
         if (_timeIdle <= 0f)
         {
-            if (DragStyle == DraggingStyle.SmoothlyYAxis)
-                SpawnPoint.Rotate(0f, RotationAutoSpeed * _acceleration * RotationSensitivity.x, 0f, Space.World);
-            else
-                SpawnPoint.Rotate(Vector3.up, RotationAutoSpeed * _acceleration * RotationSensitivity.x, Space.World);
+            // if (DragStyle == DraggingStyle.SmoothlyYAxis)
+            //     SpawnPoint.Rotate(0f, RotationAutoSpeed * _acceleration * RotationSensitivity.x, 0f, Space.World);
+            // else if (DragStyle == DraggingStyle.Smoothly)
+            //     SpawnPoint.Rotate(Vector3.up, RotationAutoSpeed * _acceleration * RotationSensitivity.x, Space.World);
         }
         else 
         {

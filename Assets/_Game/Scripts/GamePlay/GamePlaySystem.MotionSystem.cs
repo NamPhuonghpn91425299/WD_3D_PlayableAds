@@ -37,21 +37,17 @@ public partial class GamePlaySystem
             Debug.Log("Đang trong một motion khác, bỏ qua...");
             return;
         }
-        Debug.Log(motionType + " → thực hiện 0.");
         // 2. Lấy Animator từ _meshController. Đây là Animator của nhân vật/đối tượng chính.
         var mainMotionAnimator = _meshController.MainMotionAnimator;
         if (!mainMotionAnimator) return; // Nếu không có Animator thì thoát.
-        Debug.Log(motionType + " → thực hiện 1.");
 
         // 3. Kiểm tra trạng thái hiện tại: Chỉ cho phép kích hoạt motion mới khi đang ở trạng thái 'idle'.
-        // So sánh hash của state hiện tại với hash của state 'idle' đã lưu.
         // Điều này ngăn việc kích hoạt một motion mới khi một motion khác đang chạy (ví dụ: đang "ngạc nhiên" thì không thể "xấu hổ" ngay lập tức).
         _isEmotionPlaying = true;
 
         //var state = mainMotionAnimator.GetCurrentAnimatorStateInfo(0); // Lấy thông tin state của layer 0.
         // 4. Lấy hash của motion cần kích hoạt từ Dictionary.
         int motionHash = MainMotionParameterHash[motionType];
-        Debug.Log(motionType + " → thực hiện 2.");
         
         // 5. Thiết lập giá trị blend.
         // Giới hạn giá trị trong khoảng [-1, 1].
@@ -60,7 +56,6 @@ public partial class GamePlaySystem
         // mainMotionAnimator.SetFloat(RandomValueParameterHash, motionBlendValue);
         //
         // mainMotionAnimator.SetTrigger(motionHash);
-        Debug.Log("RaiseMotion end: " + motionType + ", " + motionBlendValue);
         
         if (motionBlendValue > 0.5f)
         {

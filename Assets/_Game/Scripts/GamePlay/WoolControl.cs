@@ -19,6 +19,10 @@ public class WoolControl : MonoBehaviour
 
     public bool debugUV;
 
+    [Header("Wool Settings")]
+    [Tooltip("The order number of this wool in the sequence")]
+    public int WoolOrder = 1;
+    
     [Header("Mesh Object")] public MeshObjectData    MeshObjectData;
     public                         Renderer      TopMeshRenderer;
     public                         Renderer      HideMeshRenderer;
@@ -68,7 +72,11 @@ public class WoolControl : MonoBehaviour
     }
 #endif
 
-    private void OnEnable() { DisplayColor(); }
+    private void OnEnable()
+    {
+        DisplayColor();
+        ResetWoolSequence();
+    }
 
 
     private void Update()
@@ -121,15 +129,59 @@ public class WoolControl : MonoBehaviour
         TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
     }
 
+    // Static variable to track the current expected wool number in the sequence
+    public static int CurrentWoolInSequence { get; private set; } = 1;
+
     public void WoolRotation()
     {
+        // Check if this wool is the next one in the sequence
+        if (WoolOrder != CurrentWoolInSequence)
+        {
+            Debug.Log($"Please interact with wool number {CurrentWoolInSequence} first!");
+            return;
+        }
+        else
+        {
+            Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
+        }
         if (GamePlaySystem.Instance.IsGoToStore)
         {
             GamePlaySystem.Instance.GoToStore();
             return;
         }
+        
+        // Move to the next wool in sequence
+        CurrentWoolInSequence++;
         StartCoroutine(AsyncWoolRotation());
     }
+    
+    // Call this method to reset the sequence (e.g., when restarting the level)
+        public static void ResetWoolSequence()
+    {
+        CurrentWoolInSequence = 1;
+    }
+    public void CheckForEndGame(int totalWoolsInGame)
+    {
+        if (CurrentWoolInSequence > totalWoolsInGame)
+        {
+            // Trigger your endgame event here
+            Debug.Log("All wools interacted with in sequence! Game Complete!");
+        
+            // Example: 
+            // GameManager.Instance.CompleteLevel();
+            // or
+            // OnGameComplete?.Invoke();
+        }
+    }
+    // For editor debugging
+    #if UNITY_EDITOR
+    [ContextMenu("Select This Wool")]
+    private void SelectThisWool()
+    {
+        UnityEditor.Selection.activeGameObject = gameObject;
+        UnityEditor.SceneView.FrameLastActiveSceneView();
+    }
+    #endif
 
     public void SetColor(Color color)
     {
@@ -235,8 +287,20 @@ public class WoolControl : MonoBehaviour
 
         yield return null;
         _isPlayAnim = false;
+        if (CheckWoolCountEndGame())
+        {
+            Debug.Log("Rotation Done next CurrentWoolInSequence :" + CurrentWoolInSequence);
+            yield return new WaitForSeconds(2f);
+            GamePlaySystem.Instance.EndGameTotalCountWool();
+        }
     }
-
+    private bool CheckWoolCountEndGame()
+    {
+        if (GamePlaySystem.Instance.TotalCountClaimed == CurrentWoolInSequence - 1) return true;
+        return false;
+    }
+    
+    
     public void PLayAnim(int index) { StartCoroutine(ExecuteAnim(index)); }
 
     private IEnumerator ExecuteAnim(int index)
