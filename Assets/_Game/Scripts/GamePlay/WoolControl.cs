@@ -22,7 +22,7 @@ public class WoolControl : MonoBehaviour
     [Header("Wool Settings")]
     [Tooltip("The order number of this wool in the sequence")]
     public int WoolOrder = 1;
-    
+    public Transform        woolTransform;
     [Header("Mesh Object")] public MeshObjectData    MeshObjectData;
     public                         Renderer      TopMeshRenderer;
     public                         Renderer      HideMeshRenderer;
@@ -140,10 +140,9 @@ public class WoolControl : MonoBehaviour
             Debug.Log($"Please interact with wool number {CurrentWoolInSequence} first!");
             return;
         }
-        else
-        {
-            Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
-        }
+
+        Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
+
         if (GamePlaySystem.Instance.IsGoToStore)
         {
             GamePlaySystem.Instance.GoToStore();
@@ -156,7 +155,7 @@ public class WoolControl : MonoBehaviour
     }
     
     // Call this method to reset the sequence (e.g., when restarting the level)
-        public static void ResetWoolSequence()
+    public static void ResetWoolSequence()
     {
         CurrentWoolInSequence = 1;
     }
@@ -287,12 +286,13 @@ public class WoolControl : MonoBehaviour
 
         yield return null;
         _isPlayAnim = false;
+        yield return new WaitForSeconds(3f);
         if (CheckWoolCountEndGame())
         {
             Debug.Log("Rotation Done next CurrentWoolInSequence :" + CurrentWoolInSequence);
-            yield return new WaitForSeconds(2f);
             GamePlaySystem.Instance.EndGameTotalCountWool();
         }
+
     }
     private bool CheckWoolCountEndGame()
     {

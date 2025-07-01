@@ -190,6 +190,10 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     {
         handController.SetActiveAnim(isActive);
     }
+    public void MoveHandController(int index ,bool isActive)
+    {
+        handController.MoveHandToPosition(index, isActive);
+    }
     
     /// <summary>
     /// Đếm tổng số lần người chơi đã click vào mesh len.

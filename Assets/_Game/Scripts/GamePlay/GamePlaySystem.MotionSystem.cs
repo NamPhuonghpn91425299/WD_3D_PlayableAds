@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
+using static WoolControl;
 // Đánh dấu đây là một phần của class GamePlaySystem
 public partial class GamePlaySystem
 {
@@ -60,7 +61,7 @@ public partial class GamePlaySystem
         if (motionBlendValue > 0.5f)
         {
             mainMotionAnimator.Play("surpries");
-            StartCoroutine(ResetEmotionLock(8f));
+            StartCoroutine(ResetEmotionLock(8.5f));
         }
         else
         {
@@ -71,6 +72,7 @@ public partial class GamePlaySystem
     private IEnumerator ResetEmotionLock(float delay)
     {
         yield return new WaitForSeconds(delay);
+        GamePlaySystem.Instance.MoveHandController(CurrentWoolInSequence, true);
         _isEmotionPlaying = false;
         Debug.Log("Motion kết thúc, cho phép trigger tiếp theo.");
     }
