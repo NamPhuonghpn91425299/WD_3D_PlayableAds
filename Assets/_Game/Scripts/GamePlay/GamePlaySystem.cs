@@ -145,6 +145,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     public AudioClip woolXoayClip;
     public AudioClip wool1Clip;
     public AudioClip loseSound;
+    public AudioClip winSound;
 
     private int _currentOpenCubeTargetCost;
     private static int _replayCount = 0;
@@ -444,10 +445,10 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     {
         Debug.Log("Truong hop: " + _isPLayAnimUsingRainBow);
         if (_isPLayAnimUsingRainBow) return;
-
         // Điều kiện thắng: Đã thu thập hết tất cả các màu
         if (_currentColorCollected == _meshController.TotalColor && TotalCubeActive == CubeReadyCount)
         {
+            GoToStore();
             StartCoroutine(OnEndGameAction(true));
             Debug.Log("End Game Win");
             Luna.Unity.LifeCycle.GameEnded();
@@ -485,6 +486,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             {
                 _isWinGame = true;
                 TrackingEndGame(false, true);
+                if (winSound != null) SoundManager.Instance.PlayOneShot(winSound, 1f);
                 endGamePanel.SetActive(true);
             }
         }

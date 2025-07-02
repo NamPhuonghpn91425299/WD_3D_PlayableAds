@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 617373612919896726}
+  - {fileID: 3006036453553979359}
   m_Father: {fileID: 1062164435641443749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2937203127814663888
@@ -91,6 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 2
+  woolTransform: {fileID: 3006036453553979359}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -8646,6 +8649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 15
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -14550,6 +14555,37 @@ MonoBehaviour:
   - 0.01349044
   - 0.013169512
   - 0.012848528
+--- !u!1 &100495204946347517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2565967705321676355}
+  m_Layer: 7
+  m_Name: cloth_3_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2565967705321676355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100495204946347517}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.105, y: 2.4000003, z: 0.09899983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3281166551579059067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &194686347015023021
 GameObject:
   m_ObjectHideFlags: 0
@@ -14579,10 +14615,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.5582591, y: 0.43398935, z: 0.5582591, w: 0.43398935}
   m_LocalPosition: {x: 1.7693506, y: 0.44992745, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3869654105561043593}
+  - {fileID: 2565967705321676355}
   m_Father: {fileID: 8174788497982903181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3628223477308882828
@@ -14641,6 +14678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 6
+  woolTransform: {fileID: 2565967705321676355}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
@@ -29094,6 +29133,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7838627602895957738}
+  - {fileID: 2912370992911194217}
   m_Father: {fileID: 29127084576703660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1115323385065551692
@@ -29152,6 +29192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 4
+  woolTransform: {fileID: 2912370992911194217}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
@@ -33809,6 +33851,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 507951653345949381}
+  - {fileID: 4056226402688531766}
   m_Father: {fileID: 8174788497982903181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2967387077606897097
@@ -33867,6 +33910,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 5
+  woolTransform: {fileID: 4056226402688531766}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
@@ -47906,6 +47951,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6336822338485074113}
+  - {fileID: 3453794298302615257}
   m_Father: {fileID: 2315857030498013367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7375973083512680016
@@ -47964,6 +48010,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 1
+  woolTransform: {fileID: 3453794298302615257}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -56519,6 +56567,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 14
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
@@ -64471,6 +64521,37 @@ MonoBehaviour:
   - 0.016651971
   - 0.016407922
   - 0.01616387
+--- !u!1 &2327441501316290942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3453794298302615257}
+  m_Layer: 7
+  m_Name: cloth_20_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3453794298302615257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2327441501316290942}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.129, y: -0.12, z: -2.395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6952149748342738637}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2558681087289890333
 GameObject:
   m_ObjectHideFlags: 0
@@ -64886,6 +64967,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 16
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -85775,6 +85858,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 10
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -98079,6 +98164,37 @@ MonoBehaviour:
   - 0.0090279225
   - 0.008873239
   - 0.008718556
+--- !u!1 &4633153810046356425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6917653659600655749}
+  m_Layer: 7
+  m_Name: cloth_19_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6917653659600655749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633153810046356425}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.0000000018626447, w: 1}
+  m_LocalPosition: {x: 0.96, y: -0.102, z: -2.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3595008672726734259}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4771565395050796887
 GameObject:
   m_ObjectHideFlags: 0
@@ -98177,6 +98293,37 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.51516247, y: 0.07773394, z: -0.000000007450581}
     m_Extent: {x: 0.19339953, y: 0.14998028, z: 0.1519902}
   m_DirtyAABB: 0
+--- !u!1 &4981007426591570025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8069456252002159759}
+  m_Layer: 7
+  m_Name: cloth_5_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8069456252002159759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4981007426591570025}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.393, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 951596483114215315}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5036325457071916863
 GameObject:
   m_ObjectHideFlags: 0
@@ -98929,6 +99076,37 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.5464717, y: -0.25136185, z: 0.34230652}
     m_Extent: {x: 0.14302772, y: 0.15243194, z: 0.11863172}
   m_DirtyAABB: 0
+--- !u!1 &5582379008685384237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3006036453553979359}
+  m_Layer: 7
+  m_Name: cloth_15_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3006036453553979359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582379008685384237}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000029656796, y: 0.000000027008348, z: 0.000000022351736, w: 1}
+  m_LocalPosition: {x: -1.13, y: 2.525, z: -0.003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8908780211434542969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5764174386650683964
 GameObject:
   m_ObjectHideFlags: 0
@@ -99020,6 +99198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 13
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -111324,6 +111504,37 @@ MonoBehaviour:
   - 0.008642285
   - 0.008520427
   - 0.008398568
+--- !u!1 &5944662763008038047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7411666764568362823}
+  m_Layer: 7
+  m_Name: cloth_6_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7411666764568362823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5944662763008038047}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.518, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3240404977915657574}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6025622731533158752
 GameObject:
   m_ObjectHideFlags: 0
@@ -111357,6 +111568,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8617996569957256631}
+  - {fileID: 8069456252002159759}
   m_Father: {fileID: 8174788497982903181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4284907788270800940
@@ -111415,6 +111627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 7
+  woolTransform: {fileID: 8069456252002159759}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
@@ -123496,6 +123710,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5826640668561074871}
+  - {fileID: 1744031231191818028}
   m_Father: {fileID: 8174788497982903181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3680903716862557600
@@ -123554,6 +123769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 8
+  woolTransform: {fileID: 1744031231191818028}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
@@ -132877,6 +133094,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 18
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -143422,6 +143641,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4257294385223048545}
+  - {fileID: 7411666764568362823}
   m_Father: {fileID: 8174788497982903181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6566068007160733912
@@ -143480,6 +143700,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 9
+  woolTransform: {fileID: 7411666764568362823}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -150920,6 +151142,37 @@ MonoBehaviour:
   - 0.02309454
   - 0.022842675
   - 0.02259081
+--- !u!1 &6540805627390301743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2912370992911194217}
+  m_Layer: 7
+  m_Name: cloth_14_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2912370992911194217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6540805627390301743}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.0000000018626447, w: 1}
+  m_LocalPosition: {x: -0.962, y: 2.526, z: -0.012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9096551697530839965}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6634800312856858440
 GameObject:
   m_ObjectHideFlags: 0
@@ -150953,6 +151206,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 738777605375233980}
+  - {fileID: 6917653659600655749}
   m_Father: {fileID: 7429390680743153556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7090582263560462386
@@ -151011,6 +151265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 3
+  woolTransform: {fileID: 6917653659600655749}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
@@ -155819,6 +156075,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &6927754260304083470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4056226402688531766}
+  m_Layer: 7
+  m_Name: cloth_10_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4056226402688531766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927754260304083470}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.077, y: 2.3530002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8782949355345705462}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7373364703944150904
 GameObject:
   m_ObjectHideFlags: 0
@@ -156760,6 +157047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 12
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
@@ -162963,6 +163252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 17
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
@@ -173219,6 +173510,37 @@ MonoBehaviour:
   - 0.009482732
   - 0.0092936065
   - 0.009104538
+--- !u!1 &8683106230809937535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1744031231191818028}
+  m_Layer: 7
+  m_Name: cloth_9_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1744031231191818028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683106230809937535}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 55098416139884145}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8825334423734581729
 GameObject:
   m_ObjectHideFlags: 0
@@ -173310,6 +173632,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugUV: 0
+  WoolOrder: 11
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
     HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}

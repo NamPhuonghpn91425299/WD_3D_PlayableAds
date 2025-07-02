@@ -72,7 +72,7 @@ public partial class GamePlaySystem
     private IEnumerator ResetEmotionLock(float delay)
     {
         yield return new WaitForSeconds(delay);
-        GamePlaySystem.Instance.MoveHandController(CurrentWoolInSequence, true);
+        //MoveHandController(CurrentWoolInSequence, true);
         _isEmotionPlaying = false;
         Debug.Log("Motion kết thúc, cho phép trigger tiếp theo.");
     }

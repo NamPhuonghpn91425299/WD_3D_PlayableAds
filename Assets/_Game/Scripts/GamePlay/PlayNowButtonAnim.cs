@@ -24,7 +24,7 @@ public class PlayNowButtonAnim : MonoBehaviour
 
     public void GotoStore()
     {
-        GamePlaySystem.Instance.GoToStore();
+        Luna.Unity.Playable.InstallFullGame();
     }
     
     private void StartScalingAnimation()

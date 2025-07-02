@@ -27,6 +27,14 @@ public class CameraController : Singleton<CameraController>
     [Header("Rotation")]
     
     public float TimeAFKToAutoRotation = 10f;
+// Thêm các thuộc tính này vào khu vực PROPERTIES ở đầu class
+
+    private RaycastHit[] _woolHits = new RaycastHit[10]; 
+
+    [Header("Tapping Settings")]
+    [Tooltip("Bán kính của vùng tìm kiếm lân cận khi người chơi tap trượt.")]
+    [SerializeField] private float _tapRadius = 0.2f;
+
 
     private float   _acceleration;
     private float   _timerAfterMouseUp   = 0f;
@@ -211,21 +219,32 @@ public class CameraController : Singleton<CameraController>
         Debug.Log("Block drag: " + isBlock);
     }
 
+    public LayerMask layerMask;
+
+    
     private void HandleTap(Vector2 pos)
     {
         if (BlockHandTap) return;
-        Ray ray       = _mainCamera.ScreenPointToRay(pos);
-        Ray rayFakeUI = _fakeUICamera.ScreenPointToRay(pos);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+
+        Ray ray = _mainCamera.ScreenPointToRay(pos);
+    
+        WoolControl foundWool = FindBestWoolNearRay(ray);
+
+        if (foundWool != null)
         {
-            if (hit.collider.gameObject.TryGetComponent(typeof(WoolControl), out var wool))
-            {
-                var objectTarget = (WoolControl)wool;
-                objectTarget.WoolRotation();
-                GamePlaySystem.Instance.RaiseMotion(EMotionType.Shy, Random.value);
-                Debug.Log("Tap");
-            }
+            HandleFoundWool(foundWool);
         }
+    }
+
+    /// <summary>
+    /// Tạo một phương thức phụ để xử lý WoolControl, tránh lặp code.
+    /// </summary>
+    private void HandleFoundWool(WoolControl wool)
+    {
+        // Đây là logic gốc từ HandleTap của bạn
+        wool.WoolRotation();
+        GamePlaySystem.Instance.RaiseMotion(EMotionType.Shy, Random.value);
+        Debug.Log("Tapped on Wool: " + wool.name);
     }
 
     private void HandleMouse(bool isPointerDown)
@@ -246,24 +265,93 @@ public class CameraController : Singleton<CameraController>
 
     public static int HoldClickTime = 0;
 
+    /// <summary>
+    /// Tìm kiếm WoolControl tốt nhất gần một tia Ray.
+    /// Ưu tiên tìm kiếm bằng Raycast trực tiếp, nếu thất bại sẽ dùng SphereCast.
+    /// </summary>
+    /// <param name="ray">Tia ray từ camera theo hướng con trỏ.</param>
+    /// <returns>Trả về WoolControl tốt nhất tìm được, hoặc null nếu không có.</returns>
+    private WoolControl FindBestWoolNearRay(Ray ray)
+    {
+        // Bước 1: Ưu tiên Raycast trực tiếp
+        if (Physics.Raycast(ray, out RaycastHit directHit, 100f, layerMask))
+        {
+            if (directHit.collider.gameObject.TryGetComponent<WoolControl>(out var directWool))
+            {
+                return directWool; // Tìm thấy, trả về ngay lập tức
+            }
+        }
+
+        // Bước 2: Tìm kiếm lân cận bằng SphereCast nếu Raycast trượt
+        int hitCount = Physics.SphereCastNonAlloc(ray, _tapRadius, _woolHits, 100f, layerMask);
+
+        if (hitCount > 0)
+        {
+            WoolControl bestWool = null;
+            float bestScore = float.MaxValue;
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                if (_woolHits[i].collider.gameObject.TryGetComponent<WoolControl>(out var wool))
+                {
+                    // Tính điểm dựa trên khoảng cách
+                    Vector3 pointToOrigin = _woolHits[i].point - ray.origin;
+                    float score = Vector3.Dot(pointToOrigin, ray.direction);
+
+                    if (score < bestScore)
+                    {
+                        bestScore = score;
+                        bestWool = wool;
+                    }
+                }
+            }
+            return bestWool; // Trả về đối tượng tốt nhất tìm được trong vùng lân cận
+        }
+
+        return null; // Không tìm thấy bất kỳ đối tượng nào
+    }
+    
     private void HandleHold(Vector2 pos)
     {
         if (_blockHold) return;
+
         Ray ray = _mainCamera.ScreenPointToRay(pos);
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        // Sử dụng lại logic tìm kiếm thông minh từ HandleTap
+        WoolControl foundWool = FindBestWoolNearRay(ray);
+
+        // Nếu tìm thấy một khối len phù hợp (dù là chạm trúng hay chạm gần)
+        if (foundWool != null)
         {
-            if (hit.collider.gameObject.TryGetComponent(typeof(WoolControl), out var wool))
+            // Nếu chúng ta đang giữ một khối len khác, hãy trả nó về trạng thái bình thường trước
+            if (_isHolding && _targetWool != foundWool)
             {
-                _targetWool = (WoolControl)wool;
-                _isHolding  = true;
-                _targetWool.SetTranparentWool(true);
+                _targetWool.SetTranparentWool(false);
+            }
+        
+            // Cập nhật khối len mục tiêu mới
+            _targetWool = foundWool;
+        
+            // Nếu chưa ở trạng thái "holding", hãy kích hoạt nó
+            if (!_isHolding)
+            {
+                _isHolding = true;
                 OnHandleHoldWoolAction?.Invoke();
                 HoldClickTime++;
             }
-            else
+
+            // Áp dụng hiệu ứng cho khối len đang được giữ
+            _targetWool.SetTranparentWool(true);
+        }
+        else
+        {
+            // Nếu không tìm thấy khối len nào gần đó,
+            // và chúng ta đang trong trạng thái "holding", hãy hủy trạng thái đó.
+            if (_isHolding && _targetWool != null)
             {
-                _targetWool       = null;
+                _isHolding = false;
+                _targetWool.SetTranparentWool(false);
+                _targetWool = null;
             }
         }
     }

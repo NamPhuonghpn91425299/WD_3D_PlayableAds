@@ -135,19 +135,20 @@ public class WoolControl : MonoBehaviour
     public void WoolRotation()
     {
         // Check if this wool is the next one in the sequence
-        if (WoolOrder != CurrentWoolInSequence)
-        {
-            Debug.Log($"Please interact with wool number {CurrentWoolInSequence} first!");
-            return;
-        }
+        // if (WoolOrder != CurrentWoolInSequence)
+        // {
+        //     Debug.Log($"Please interact with wool number {CurrentWoolInSequence} first!");
+        //     return;
+        // }
 
         Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
 
-        if (GamePlaySystem.Instance.IsGoToStore)
-        {
-            GamePlaySystem.Instance.GoToStore();
-            return;
-        }
+        // tự nhảy khi đạt điều kiện chơi game
+        // if (GamePlaySystem.Instance.IsGoToStore)
+        // {
+        //     GamePlaySystem.Instance.GoToStore();
+        //     return;
+        // }
         
         // Move to the next wool in sequence
         CurrentWoolInSequence++;
@@ -286,12 +287,12 @@ public class WoolControl : MonoBehaviour
 
         yield return null;
         _isPlayAnim = false;
-        yield return new WaitForSeconds(3f);
-        if (CheckWoolCountEndGame())
-        {
-            Debug.Log("Rotation Done next CurrentWoolInSequence :" + CurrentWoolInSequence);
-            GamePlaySystem.Instance.EndGameTotalCountWool();
-        }
+        // yield return new WaitForSeconds(3f);
+        // if (CheckWoolCountEndGame())
+        // {
+        //     Debug.Log("Rotation Done next CurrentWoolInSequence :" + CurrentWoolInSequence);
+        //     GamePlaySystem.Instance.EndGameTotalCountWool();
+        // }
 
     }
     private bool CheckWoolCountEndGame()
