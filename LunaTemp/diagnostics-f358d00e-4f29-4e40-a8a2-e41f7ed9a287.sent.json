@@ -1,0 +1,180 @@
+{
+    "BuildID": "f358d00e-4f29-4e40-a8a2-e41f7ed9a287",
+    "Command": "project:build",
+    "ProjectID": "1d50191528698274c8378a20ad162070",
+    "ProjectStateHash": "846c2f89153a2b74d4360d870487ee8ea7eadfc54ac715f7ef979c3b7cf61ca8",
+    "StageCompletedAt": 3,
+    "EarliestFatalError": 0,
+    "StartTime": 1751598898812,
+    "EndTime": 1751598923380,
+    "PlaygroundUserID": 23831,
+    "OperatingSystem": "win32",
+    "UnityPackageID": null,
+    "TargetPlatform": "develop",
+    "UnityVersion": "2022.3.45f1",
+    "LunaVersion": "6.3.0",
+    "LogCount": 6,
+    "Logs": [
+        {
+            "LogID": "4d6b0cbd-9f82-4e9a-bac6-946dbc414d3b",
+            "Order": 5,
+            "Timestamp": 1751598923674,
+            "Stage": 3,
+            "ErrorType": 3,
+            "ErrorCode": "LP3007",
+            "Description": "You are not using any custom events",
+            "Details": [
+                "You are not using any custom events. It is recommended to use custom events to have a better understanding of the playable."
+            ],
+            "DescriptionValues": [
+                ""
+            ],
+            "DetailsValues": [
+                ""
+            ],
+            "LogCount": 1,
+            "LinePosition": null,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "336d973b-bbdd-4acd-a390-98659720171f",
+            "Order": 5,
+            "Timestamp": 1751598923674,
+            "Stage": 3,
+            "ErrorType": 3,
+            "ErrorCode": "LP3011",
+            "Description": "You are not using any LunaPlaygroundFields attributes.",
+            "Details": [
+                "You are not using any LunaPlaygroundFields attributes, it allows you to configure your playable to different concepts to find the best variation, which can drastically improve playable performance on all ad networks."
+            ],
+            "DescriptionValues": null,
+            "DetailsValues": null,
+            "LogCount": 1,
+            "LinePosition": null,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "6e4681fe-64d9-4c04-a516-01ebe4845ff4",
+            "Order": 0,
+            "Timestamp": 1751598905609,
+            "Stage": 1,
+            "ErrorType": 2,
+            "ErrorCode": "LP1007",
+            "Description": "Extensive use of mesh colliders",
+            "Details": [
+                "Usage of mesh colliders has negative effect on performance. You can use primitive colliders instead."
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [],
+            "LogCount": 1,
+            "LinePosition": 0,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "41bbe3b5-8628-4c9d-b674-68bc66234bd5",
+            "Order": 1,
+            "Timestamp": 1751598905611,
+            "Stage": 1,
+            "ErrorType": 2,
+            "ErrorCode": "LP1022",
+            "Description": "Extensive use of shader variants",
+            "Details": [
+                "Extensive usage of shader variants negatively affects playable startup time. Please consider them to be less than 20 (28 found). Check Runtime analysis -> shader tab to see used shaders."
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [
+                "20",
+                "28"
+            ],
+            "LogCount": 1,
+            "LinePosition": 0,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "0b046a7f-401a-48fd-8f58-87ea4d7074a1",
+            "Order": 2,
+            "Timestamp": 1751598905617,
+            "Stage": 1,
+            "ErrorType": 0,
+            "ErrorCode": "LP1027",
+            "Description": "This DOTween version is not supported",
+            "Details": [
+                "The incorrect DOTween version for this Unity version is in use, please update or downgrade to the recommended version {0} in the package manager. Go to Window → Package Manager."
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [
+                ""
+            ],
+            "LogCount": 1,
+            "LinePosition": 0,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        },
+        {
+            "LogID": "6e43add8-a826-4aea-959f-bb861942c508",
+            "Order": 3,
+            "Timestamp": 1751598905617,
+            "Stage": 1,
+            "ErrorType": 2,
+            "ErrorCode": "LP1010",
+            "Description": "Looks like a collider was scaled, this might affect performance.",
+            "Details": [
+                "CubeTargetGO",
+                "CubeTargetGO (1)",
+                "CubeTargetGO (2)",
+                "CubeTargetGO (3)",
+                "cloth_15 (1)",
+                "cloth_14 (1)",
+                "cloth_13 (1)",
+                "cloth_12 (1)",
+                "cloth_11 (1)",
+                "cloth_20 (1)",
+                "cloth_19 (1)",
+                "cloth_18 (1)",
+                "cloth_17 (1)",
+                "cloth_16 (1)",
+                "cloth_3 (1)",
+                "cloth_2 (1)",
+                "cloth_5 (1)",
+                "cloth_6 (1)",
+                "cloth_7 (1)",
+                "cloth_8 (1)",
+                "cloth_9 (1)",
+                "cloth_10 (1)",
+                "Background",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "CubeTargetGO"
+            ],
+            "DescriptionValues": [],
+            "DetailsValues": [],
+            "LogCount": 33,
+            "LinePosition": 0,
+            "FilePath": "",
+            "ClassName": "",
+            "MemberName": "",
+            "Severity": 0
+        }
+    ]
+}

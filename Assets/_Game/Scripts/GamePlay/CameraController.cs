@@ -19,8 +19,8 @@ public class CameraController : Singleton<CameraController>
     public  Quaternion targetRotation;
 
     public float      Friction            = 3f;             // The speed of decay of inertia
-    public Vector2    RotationSensitivity = new (1f,   1f); // Giới hạn tốc độ xoay
-    public Vector2    AccelerationRange   = new (0.1f, 1f); // Giới hạn tốc độ xoay
+    public Vector2    RotationSensitivity = new Vector2 (1f,   1f); // Giới hạn tốc độ xoay
+    public Vector2    AccelerationRange   = new Vector2 (0.1f, 1f); // Giới hạn tốc độ xoay
     public float      RotationSpeed       = 5f;             // Tốc độ xoay
     public float      RotationAutoSpeed   = 0.5f;           // Tốc độ xoay tự động
     public float      SmoothingTime       = 0.05f;
@@ -96,7 +96,8 @@ public class CameraController : Singleton<CameraController>
     public  Action       OnHandleHoldWoolAction;
     private bool         _blockDrag;
     public  Action       OnHandleDragWoolAction;
-    private Vector3      LocalScaleBackGroundDefault = new (40f, 40f, 1);
+    private Vector3      LocalScaleBackGroundDefault = new Vector3(40f, 40f, 1);
+    public Action OnEndGameIntro;
 
     #endregion
 
@@ -105,9 +106,9 @@ public class CameraController : Singleton<CameraController>
     public override void Awake()
     {
         base.Awake();
-        _mainCamera   = CameraContainer.Instance.MainCamera;
+        _mainCamera = CameraContainer.Instance.MainCamera;
         _fakeUICamera = CameraContainer.Instance.FakeUICamera;
-        targetFOV     = ZoomCameraData.DefaultFOV;
+        targetFOV = ZoomCameraData.DefaultFOV;
     }
 
     private void OnEnable()
@@ -120,7 +121,7 @@ public class CameraController : Singleton<CameraController>
 
     private void Start()
     {
-        InputInteractable.OnTap  += HandleTap;
+        //InputInteractable.OnTap  += HandleTap;
         InputInteractable.OnHold += HandleHold;
         //InputInteractable.OnDragAction += HandleDrag;
         InputInteractable.OnDragAction += HandleDragSmoothly;
@@ -227,8 +228,10 @@ public class CameraController : Singleton<CameraController>
         if (BlockHandTap) return;
 
         Ray ray = _mainCamera.ScreenPointToRay(pos);
-    
+
+        //WoolControl foundWool = FindBestWoolNearRay(ray);
         WoolControl foundWool = FindBestWoolNearRay(ray);
+
 
         if (foundWool != null)
         {
@@ -630,6 +633,7 @@ public class CameraController : Singleton<CameraController>
         _mainCamera
            .DOFieldOfView(IntroEndFOV, IntroCameraZoomInDuration)
            .SetEase(Ease.InOutSine);
+        OnEndGameIntro?.Invoke();
         yield return Yielders.Get(IntroCameraZoomInDuration);
         _isActive = true;
     }

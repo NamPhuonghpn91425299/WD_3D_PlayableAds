@@ -26,18 +26,18 @@ public class GamePlayMeshController : MonoBehaviour
     public                    InterestCurve               InterestCurveData;
     public                    WoolAnimationData           WoolAnimationData;
 
-    private List<Color> _currentColorList      = new ();
+    private List<Color> _currentColorList      = new List<Color>();
     public int TotalColor;
 
     public Material WoolMaterial;
     public Material WoolChildMaterial;
 
-    public Dictionary<Color, float> _colorPriority = new ();
-    public Dictionary<Color, int>   CubeCount      = new ();
+    public Dictionary<Color, float> _colorPriority = new Dictionary<Color, float>();
+    public Dictionary<Color, int>   CubeCount      = new Dictionary<Color, int>();
 
     public int MaxLayerHasThreeSameColor = 2;
 
-    private Dictionary<int, List<ColorDistribution>> _colorDistribution = new ();
+    private Dictionary<int, List<ColorDistribution>> _colorDistribution = new Dictionary<int, List<ColorDistribution>> ();
 
     private int _currentLayer = 0;
 
@@ -173,7 +173,7 @@ public class GamePlayMeshController : MonoBehaviour
     public void ColorPriorityCalculator()
     {
         _colorPriority.Clear();
-        Dictionary<Color, List<int>> colorSteps = new ();
+        Dictionary<Color, List<int>> colorSteps = new Dictionary<Color, List<int>> ();
         for (int i = 0; i < _maxLayer; i++)
         {
             foreach (var wool in WoolControls)

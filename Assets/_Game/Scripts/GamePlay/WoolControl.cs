@@ -47,8 +47,8 @@ public class WoolControl : MonoBehaviour
 
     private int _indexLayer;
 
-    [SerializeField] private List<Vector3> _spiralPath    = new ();
-    [SerializeField] private List<float>   _spiralPathUVY = new ();
+    [SerializeField] private List<Vector3> _spiralPath    =  new List<Vector3>();
+    [SerializeField] private List<float>   _spiralPathUVY = new List<float>();
 
     #region custom attributes
 
@@ -66,9 +66,21 @@ public class WoolControl : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        TopMeshRenderer  ??= GetComponent<MeshRenderer>();
-        HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
-        BoxCollider      ??= GetComponent<BoxCollider>();
+        if (TopMeshRenderer == null)
+{
+    TopMeshRenderer = GetComponent<MeshRenderer>();
+}
+
+if (HideMeshRenderer == null)
+{
+    HideMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+}
+
+if (BoxCollider == null)
+{
+    BoxCollider = GetComponent<BoxCollider>();
+}
+
     }
 #endif
 
@@ -104,7 +116,12 @@ public class WoolControl : MonoBehaviour
     {
         if (MeshObjectData == null || !HideMeshRenderer || _indexLayer >= MeshObjectData.TotalLayer || _hideMaterialPropertyBlock == null) return false;
 
-        MeshObjectData.ColorStack ??= new ();
+        
+        if(MeshObjectData.ColorStack == null)
+        {
+            MeshObjectData.ColorStack = new List<Color>();
+        }
+            
         MeshObjectData.ColorStack.Add(color);
         _indexLayer++;
         if (MeshObjectData.ColorStack.Count > 1)
@@ -390,8 +407,18 @@ public class WoolControl : MonoBehaviour
     private void DisplayColor()
     {
         if (MeshObjectData             == null) return;
-        _topMaterialPropertyBlock  ??= new MaterialPropertyBlock();
-        _hideMaterialPropertyBlock ??= new MaterialPropertyBlock();
+        
+        if (_topMaterialPropertyBlock == null)
+        {
+            _topMaterialPropertyBlock = new MaterialPropertyBlock();
+        }
+
+        if(_hideMaterialPropertyBlock == null)
+        {
+            _hideMaterialPropertyBlock = new MaterialPropertyBlock();
+        }
+            
+       
         TopMeshRenderer?.GetPropertyBlock(_topMaterialPropertyBlock);
         HideMeshRenderer?.GetPropertyBlock(_hideMaterialPropertyBlock);
         _topMaterialPropertyBlock?.SetColor(T_Utilities.ShaderPropertiesLib.Color, MeshObjectData.HightestColor);

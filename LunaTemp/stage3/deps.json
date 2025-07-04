@@ -1,0 +1,89 @@
+{
+  "ignores": [
+    "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/RollWoolAnimation.cs",
+    "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/T_Utilities.cs",
+    "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleAudio.cs",
+    "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModulePhysics.cs",
+    "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModulePhysics2D.cs",
+    "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleSprite.cs",
+    "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleUI.cs",
+    "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleUnityVersion.cs"
+  ],
+  "groups": [
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/AnimEvent.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/DataSO/InterestCurve/InterestCurve_ver2.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/DataSO/Scripts/WoolAnimationData.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/RollWoolAnimation.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/GamePlaySystem.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/Effect/BoxChainReaction3D.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/GamePlaySystem.MotionSystem.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/EndGameUI.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/CameraController.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/ThanhNT/HandleTapByPointSelection.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/Interactable.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/HandController.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/WoolControl.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/T_Utilities.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/CubeTargetControl.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/TargetBoxAnimation.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/Manager/Sound/SoundManager.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/Manager/Sound/SoundUIElement.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/Manager/Sound/SoundDefine.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/Singleton.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/Manager/MathHr.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/T_Utilities.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/DecoreControl.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/YarnWoolAnimation.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/CameraContainer.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/Effect/ParticleFlyEffectUI.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/Yielders.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlayMeshController.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/DataSO/Scripts/ZoomCameraData.cs",
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/QueueTargetControl.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/OutlineController.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/_Game/Scripts/GamePlay/PlayNowButtonAnim.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleAudio.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleEPOOutline.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModulePhysics.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModulePhysics2D.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleSprite.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleUI.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleUnityVersion.cs"
+    ],
+    [
+      "E:/Playable Git/WD_3D_PlayableAds/LunaTemp/stage3/processed-scripts/Assets/Plugins/DOTween/Modules/DOTweenModuleUtils.cs"
+    ],
+    [
+      "C:/Users/myth/Downloads/6.3.0/pipeline/templates/LunaCompiler/Scripts/Properties/AssemblyInfo.cs"
+    ],
+    [
+      "C:/Users/myth/Downloads/6.3.0/pipeline/templates/LunaCompiler/Scripts/Sources/OtherDummyScript.cs"
+    ],
+    [
+      "C:/Users/myth/Downloads/6.3.0/pipeline/templates/LunaCompiler/Scripts/obj/Debug/.NETFramework,Version=v4.7.AssemblyAttributes.cs"
+    ]
+  ]
+}
