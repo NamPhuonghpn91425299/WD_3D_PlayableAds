@@ -1,8 +1,8 @@
 {
     "version": "6.3.0",
     "projectId": "1d50191528698274c8378a20ad162070",
-    "applicationID": 29703,
-    "creativeName": "WoolDom_3D_1",
+    "applicationID": 31199,
+    "creativeName": "WoolDom_3D_2",
     "pgServer": "EU",
     "window": {
         "‐″": true
@@ -136,10 +136,10 @@
             ]
         },
         "scenes": [
-            "Assets/_Game/Scenes/S_Main 1.unity"
+            "Assets/_Game/Scenes/S_Main.unity"
         ],
         "disabledScenes": [
-            "Assets/_Game/Scenes/S_Main.unity"
+            "Assets/_Game/Scenes/S_Main 1.unity"
         ],
         "startupScene": 0,
         "packages": {
@@ -5025,7 +5025,7 @@
             },
             {
                 "name": "UnityEngine.Scripting.PreserveAttribute",
-                "excluded": true
+                "excluded": false
             },
             {
                 "name": "UnityEngine.RuntimePlatform",
@@ -6373,14 +6373,6 @@
             },
             {
                 "name": "UnityEngine.UI.SetPropertyUtility",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.UI.StencilMaterial",
-                "excluded": true
-            },
-            {
-                "name": "UnityEngine.UI.StencilMaterial.MatEntry",
                 "excluded": true
             },
             {
@@ -7953,6 +7945,134 @@
             },
             {
                 "name": "DG.Tweening.Plugins.Core.ITPlugin$4",
+                "excluded": false
+            },
+            {
+                "name": "BaseColorPriorityCalculator",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenCYInstruction.WaitForCompletion",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenCYInstruction.WaitForElapsedLoops",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenCYInstruction.WaitForKill",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenCYInstruction.WaitForPosition",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenCYInstruction.WaitForRewind",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenCYInstruction.WaitForStart",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenModuleAudio",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenModulePhysics",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenModulePhysics2D",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenModuleSprite",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenModuleUI",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenModuleUI.Utils",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenModuleUnityVersion",
+                "excluded": true
+            },
+            {
+                "name": "ParticleFlyEffectUI",
+                "excluded": true
+            },
+            {
+                "name": "SupportData",
+                "excluded": true
+            },
+            {
+                "name": "T_Utilities.AnimatorHashKey",
+                "excluded": true
+            },
+            {
+                "name": "T_Utilities.DefaultValue",
+                "excluded": true
+            },
+            {
+                "name": "T_Utilities.PlayerPrefKey",
+                "excluded": true
+            },
+            {
+                "name": "WoolControl.DecorObjectSetting",
+                "excluded": true
+            },
+            {
+                "name": "ColorPriorityCalculatorData",
+                "excluded": true
+            },
+            {
+                "name": "DecoreControl.DecoreState",
+                "excluded": true
+            },
+            {
+                "name": "DG.Tweening.DOTweenCYInstruction",
+                "excluded": true
+            },
+            {
+                "name": "DraggingStyle",
+                "excluded": false
+            },
+            {
+                "name": "IAmAnEmptyScriptJustToMakeCodelessProjectsCompileProperty",
+                "excluded": true
+            },
+            {
+                "name": "InterestCurve",
+                "excluded": true
+            },
+            {
+                "name": "RollWoolAnimationExtensions.ParentType",
+                "excluded": false
+            },
+            {
+                "name": "T_Utilities.MenuType",
+                "excluded": true
+            },
+            {
+                "name": "ZoomCameraStyle",
+                "excluded": false
+            },
+            {
+                "name": "EMotionType",
+                "excluded": false
+            },
+            {
+                "name": "SoundMixerGroup",
+                "excluded": false
+            },
+            {
+                "name": "SoundType",
                 "excluded": false
             }
         ],
@@ -17477,7 +17597,7 @@
                     },
                     {
                         "name": "targetDisplay#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "targetDisplay#set",
@@ -17541,7 +17661,7 @@
                     },
                     {
                         "name": "ScreenToViewportPoint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ViewportToScreenPoint",
@@ -18401,7 +18521,7 @@
                     },
                     {
                         "name": "worldCamera#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "worldCamera#set",
@@ -18481,7 +18601,7 @@
                     },
                     {
                         "name": "OnDisable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnDestroy",
@@ -19101,7 +19221,7 @@
                     },
                     {
                         "name": "OnDisable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnCanvasChanged",
@@ -19171,7 +19291,7 @@
                     },
                     {
                         "name": "OnDisable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnTransformParentChanged",
@@ -19381,7 +19501,7 @@
                     },
                     {
                         "name": "OnDisable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ConfigureForEntity",
@@ -19653,7 +19773,7 @@
                     },
                     {
                         "name": "OnDisable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ApplyFontDataChanges",
@@ -23721,7 +23841,7 @@
                     },
                     {
                         "name": "RemoveRaycasters",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -23835,7 +23955,7 @@
                     },
                     {
                         "name": "UnRegisterCanvasElementForRebuild",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "IsRebuildingLayout",
@@ -24125,7 +24245,7 @@
                 "instanceMethods": [
                     {
                         "name": "renderOrderPriority#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "sortOrderPriority#get",
@@ -24145,7 +24265,7 @@
                     },
                     {
                         "name": "OnDisable",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "OnCanvasHierarchyChanged",
@@ -24479,7 +24599,7 @@
                     },
                     {
                         "name": "GetMainCamera",
-                        "excluded": true
+                        "excluded": false
                     }
                 ]
             },
@@ -28768,6 +28888,1436 @@
                     {
                         "name": "$clone",
                         "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "AnimEvent",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "RaiseVoice",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "BoxChainReaction3D",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CalculateDynamicSpacing",
+                        "excluded": false
+                    },
+                    {
+                        "name": "InitializeBoxes",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CreateBox",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AddBoxWithAnimationCoroutine",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CalculatePositions",
+                        "excluded": true
+                    },
+                    {
+                        "name": "RepositionAllBoxes",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartChainReactionCoroutine",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TriggerAnimation",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "CameraContainer",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Singleton$1",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "ColorDistribution",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "getDefaultValue",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "getHashCode",
+                        "excluded": true
+                    },
+                    {
+                        "name": "equals",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$clone",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "CubeTargetControl",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsReady#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AddChild",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetColor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetActiveCubeTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "WaitingAnim",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetDefault",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DisplayRainBowBoxAnimation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HideRainBowBoxAnimation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ChangeColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetDefaultColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ActiveOpenCube",
+                        "excluded": false
+                    },
+                    {
+                        "name": "BakeAnimPosition",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "DecoreControl",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "_thisTransform#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PulseOutOfParrentWool",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PulseOutOfParrentWool$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "UseGravity",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetColor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetColor$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DisablePhysicComponent",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetDecorTransformStatus",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetDecorTransformStatusAsync",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ChangeLayer",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "DG.Tweening.DOTweenModuleUtils",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Preserver",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "DG.Tweening.DOTweenModuleUtils.Physics",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "SetOrientationOnPath",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HasRigidbody2D",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HasRigidbody",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CreateDOTweenPathTween",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "EndGameUI",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GoToStore",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartScalingAnimation",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "GamePlayMeshController",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "RaiseVoice",
+                        "excluded": true
+                    },
+                    {
+                        "name": "LoadcolorForMesh",
+                        "excluded": false
+                    },
+                    {
+                        "name": "LoadLevel",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ColorPriorityCalculator",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GenRandomColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "RandomDownTopColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetNextColorToFill",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StringColor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ClearModel",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HideInnerMeshes",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetPrefabModelState",
+                        "excluded": true
+                    },
+                    {
+                        "name": "FadePrefabModelColors",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetPrefabModelInUnavailableState",
+                        "excluded": true
+                    },
+                    {
+                        "name": "BuildUpPrefabModelDisplay",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetModelShaderEffect",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "HandController",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetActiveAnim",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveHandToPosition",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayAnim",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Offset#get",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "HandleTapByPointSelection",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HandleTap",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IEWaitAndActivateNext",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateHandPosition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FindBestWoolNearRay",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ProcessWoolSelection",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "Interactable",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerDown",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnPointerUp",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDrag",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "LevelData",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "MathHr",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Remap",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "MeshObjectData",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "PlayNowButtonAnim",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GotoStore",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartScalingAnimation",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "QueueTargetControl",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AddChild",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckCurrentColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetDefault",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetColorQueue",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsAtive",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "RollWoolAnimation",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetData",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Anim",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SnapToHole",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetParentType",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "SoundDefine",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "getDefaultValue",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Dispose",
+                        "excluded": true
+                    },
+                    {
+                        "name": "getHashCode",
+                        "excluded": true
+                    },
+                    {
+                        "name": "equals",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$clone",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "SoundUIElement",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "button#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDisable",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayBGM",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnPointerClick",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnSubmit",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "T_Utilities",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "Mul_Vector3",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetActive",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Delay",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DelayCall",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Precondition",
+                        "excluded": true
+                    },
+                    {
+                        "name": "IsNullOrEmpty",
+                        "excluded": true
+                    },
+                    {
+                        "name": "NullReplace",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "T_Utilities.ShaderPropertiesLib",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "TargetBoxAnimation",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "CloseDuration#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveOutDuration#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FlyInDuration#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    },
+                    {
+                        "name": "KillAllSequences",
+                        "excluded": true
+                    },
+                    {
+                        "name": "BakePrePos",
+                        "excluded": false
+                    },
+                    {
+                        "name": "BakePreLocalScale",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Hop",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CloseAndMoveOut",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FlyIn",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "WoolAnimationData",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "WoolControl",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetWoolSequence",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PointInTriangle",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ClosestPointOnSegment",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "InitMesh",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PushColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetTranparentWool",
+                        "excluded": false
+                    },
+                    {
+                        "name": "WoolRotation",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckForEndGame",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetColor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "AsyncWoolRotation",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckWoolCountEndGame",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PLayAnim",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ExecuteAnim",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DisplayColor$1",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DisplayColor",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DisplayColorSmoothly",
+                        "excluded": true
+                    },
+                    {
+                        "name": "BuildUpModelSmoothly",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetModelShaderEffect",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ClearThisWool",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HideInnerMesh",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GetSpiralPath",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DecorObjectCheckAlongWoolRotation",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PulseAllDecorObjects",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetWoolState",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetDecorObjects",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "WoolPointData",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "getDefaultValue",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ctor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "getHashCode",
+                        "excluded": true
+                    },
+                    {
+                        "name": "equals",
+                        "excluded": true
+                    },
+                    {
+                        "name": "$clone",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "ZoomCameraData",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "CameraController",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "inherits",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetActive",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Setup",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetBlockHandTap",
+                        "excluded": true
+                    },
+                    {
+                        "name": "BlockRotate",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetBlockHold",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetBlockDrag",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HandleTap",
+                        "excluded": false
+                    },
+                    {
+                        "name": "HandleFoundWool",
+                        "excluded": false
+                    },
+                    {
+                        "name": "HandleMouse",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FindBestWoolNearRay",
+                        "excluded": false
+                    },
+                    {
+                        "name": "HandleHold",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AdjustLunaMousePosition",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HandleDrag",
+                        "excluded": true
+                    },
+                    {
+                        "name": "HandleDragSmoothly",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ReCenterModel",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnZoomCamera",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnZoomCameraSmoothly",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ZoomCamera",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ZoomCameraAdditional",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ResetCamearState",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StartIntro",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IntroExecuteAsync",
+                        "excluded": false
+                    },
+                    {
+                        "name": "IsVectorInRangeUpward",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "GamePlaySystem",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "inherits",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TotalCountClaimed#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TotalCountClaimed#set",
+                        "excluded": true
+                    },
+                    {
+                        "name": "TotalColor#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "QueueCount#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "HasCube#get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Reset",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ActiveHandController",
+                        "excluded": false
+                    },
+                    {
+                        "name": "MoveHandController",
+                        "excluded": true
+                    },
+                    {
+                        "name": "GoToStore",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnClickMesh",
+                        "excluded": false
+                    },
+                    {
+                        "name": "TrackingEndGame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GenNewCube",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckTurnOffCube",
+                        "excluded": false
+                    },
+                    {
+                        "name": "FinishedCollectingCube",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UseQueueTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckEndGame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "EndGameTotalCountWool",
+                        "excluded": true
+                    },
+                    {
+                        "name": "WinGame",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEndGameAction",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CheckLockRainBowBooster",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UnLockCubeTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "LockOpenCube",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChoseYarnWool",
+                        "excluded": false
+                    },
+                    {
+                        "name": "RemoveColorInList",
+                        "excluded": false
+                    },
+                    {
+                        "name": "GetColorByPriority",
+                        "excluded": false
+                    },
+                    {
+                        "name": "LoadLevel",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetCubeTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetQueueTarget",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SmoothRepositioner",
+                        "excluded": false
+                    },
+                    {
+                        "name": "CacheActiveObjects",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Reposition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "RaiseMotion",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetEmotionLock",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "SoundManager",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "inherits",
+                        "excluded": false
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlaySound",
+                        "excluded": false
+                    },
+                    {
+                        "name": "StopSound",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayRandomBGM",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnSoundFxChange",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnSoundChange",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ChangeVolumeSpecialBgmSound",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnMainSoundChange",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnEnableShowFxInGame",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetSpeedAudioGroup",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayOneShotFx",
+                        "excluded": true
+                    },
+                    {
+                        "name": "PlayOneShot",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayOneShotDelayed",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayDelayed",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlaySpecialSoundLoop",
+                        "excluded": true
+                    },
+                    {
+                        "name": "LoopSpecialSound",
+                        "excluded": true
+                    },
+                    {
+                        "name": "StopSpecialSoundLoop",
+                        "excluded": true
+                    },
+                    {
+                        "name": "SetBoolEndGameUI",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "Yielders",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "EndOfFrame#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "FixedUpdate#get",
+                        "excluded": true
+                    },
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Get",
+                        "excluded": false
+                    },
+                    {
+                        "name": "DelayEndOfFrame",
+                        "excluded": true
+                    },
+                    {
+                        "name": "DelayFrames",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.UI.StencilMaterial",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Add",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Add$1",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Add$2",
+                        "excluded": true
+                    },
+                    {
+                        "name": "Remove",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ClearAll",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "UnityEngine.UI.StencilMaterial.MatEntry",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "RollWoolAnimationExtensions",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "SetColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetParent",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ResetMesh",
+                        "excluded": false
+                    },
+                    {
+                        "name": "PlayAnim",
+                        "excluded": false
+                    }
+                ]
+            },
+            {
+                "className": "YarnWoolAnimation",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnEnable",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetParent",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetColor",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetPoints",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Reset",
+                        "excluded": false
+                    },
+                    {
+                        "name": "AsyncWoolRotation",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateHeadPosition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateTailPosition",
+                        "excluded": false
+                    },
+                    {
+                        "name": "SetDisplay",
+                        "excluded": false
+                    },
+                    {
+                        "name": "InitPropertyBlock",
+                        "excluded": false
                     }
                 ]
             }
