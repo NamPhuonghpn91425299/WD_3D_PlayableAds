@@ -380,7 +380,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             // Khi đạt đủ số lượng, kích hoạt sự kiện đặc biệt
             Luna.Unity.LifeCycle.GameEnded();
             //CheckEndGame();
-            GoToStore();
+            //GoToStore();
             Debug.Log(" CurrentColorCollected: " + _currentColorCollected + " End Game with cubeCountClaimed: " + cubeCountClaimed);
         }
     }
@@ -448,9 +448,10 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         // Điều kiện thắng: Đã thu thập hết tất cả các màu
         if (_currentColorCollected == _meshController.TotalColor && TotalCubeActive == CubeReadyCount)
         {
-            GoToStore();
+            //GoToStore();
             StartCoroutine(OnEndGameAction(true));
             Debug.Log("End Game Win");
+              Luna.Unity.Playable.InstallFullGame();
             Luna.Unity.LifeCycle.GameEnded();
         }
         
@@ -458,6 +459,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         if (_queueCount >= CurrentQueueTargets.Count && TotalCubeActive == CubeReadyCount)
         {
             StartCoroutine(OnEndGameAction(false));
+              Luna.Unity.Playable.InstallFullGame();
             Luna.Unity.LifeCycle.GameEnded();
         }
     }
@@ -473,6 +475,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         StartCoroutine(OnEndGameAction(true));
         Debug.Log("End Game Total Count Wool");
         Luna.Unity.LifeCycle.GameEnded();
+         Luna.Unity.Playable.InstallFullGame();
     }
 
 
@@ -485,6 +488,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         if (_isUseBroomBooster) yield break;
         if (!isWin)
             yield return new WaitForSeconds(1.2f); // Chờ một chút trước khi hiện panel thua
+            
         
         if (isWin)
         {
@@ -492,14 +496,15 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             {
                 _isWinGame = true;
                 TrackingEndGame(false, true);
-                if (winSound != null) SoundManager.Instance.PlayOneShot(winSound, 1f);
+                //if (winSound != null) SoundManager.Instance.PlayOneShot(winSound, 1f);
                 endGamePanel.SetActive(true);
+                //Luna.Unity.Playable.InstallFullGame();
             }
         }
         else
         {
             if (loseSound != null) SoundManager.Instance.PlayOneShot(loseSound, 1f);
-            //endGamePanel.SetActive(true);
+            endGamePanel.SetActive(true);
         }
     }
 
@@ -533,7 +538,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             CurrentCubeTargets[i].SetActiveCubeTarget(i, i + 1 <= newCubeCount);
             // Hiện nút "mở khóa" cho các ô vượt quá số lượng mới
             CurrentCubeTargets[i].ActiveOpenCube(i + 1 > newCubeCount);
-            Debug.Log("UnLockCubeTarget" + i );
+            //Debug.Log("UnLockCubeTarget" + i );
 
         }
         _cubeTargetCountDefault = newCubeCount;
@@ -549,7 +554,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         {
             if (cube.IsActive) continue;
             cube.ActiveOpenCube(false);
-            Debug.Log("LockOpenCube" );
+            //Debug.Log("LockOpenCube" );
         }
     }
 

@@ -20,6 +20,9 @@ public class HandController : MonoBehaviour
     private Coroutine _playAnimCoroutine;
     private int _lastIndex = -1;
     private bool _lastIsActive = false;
+    public bool foundTarget = false;
+    public Vector3 Offset => offset;
+
 
     private void Start()
     {
@@ -62,7 +65,7 @@ public class HandController : MonoBehaviour
         if (_playAnimCoroutine != null)
             StopCoroutine(_playAnimCoroutine);
         
-        bool foundTarget = false;
+         foundTarget = false;
 
         foreach (var wools in WoolControls)
         {
@@ -70,7 +73,7 @@ public class HandController : MonoBehaviour
             if (wools.WoolOrder != index || wools.woolTransform == null)
                 continue;
 
-            Debug.Log($"[HandController] Found match: WoolOrder = {wools.WoolOrder}, isActive = {isActive}", gameObject);
+            //Debug.Log($"[HandController] Found match: WoolOrder = {wools.WoolOrder}, isActive = {isActive}", gameObject);
 
             // Nếu isActive = true → Di chuyển tới vị trí đó
             if (isActive)

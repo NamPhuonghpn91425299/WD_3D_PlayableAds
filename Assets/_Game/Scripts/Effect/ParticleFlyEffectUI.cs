@@ -1,5 +1,5 @@
 using System;
-using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 
 public class ParticleFlyEffectUI : MonoBehaviour
@@ -112,13 +112,15 @@ public class ParticleFlyEffectUI : MonoBehaviour
                 return position;
 
             case RenderMode.ScreenSpaceCamera:
+                Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(_uiCamera, rectTransform.position);
+                Vector2 localPoint;
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvasRect,
-                    RectTransformUtility.WorldToScreenPoint(_uiCamera, rectTransform.position),
-                    _uiCamera, out var screenPoint);
+                    screenPos,
+                    _uiCamera, out localPoint);
 
                 Vector3 worldPos = _uiCamera.ScreenToWorldPoint(new Vector3(
-                    screenPoint.x + _canvasRect.rect.width  / 2,
-                    screenPoint.y + _canvasRect.rect.height / 2,
+                    localPoint.x + _canvasRect.rect.width  / 2,
+                    localPoint.y + _canvasRect.rect.height / 2,
                     _canvas.planeDistance));
 
                 return worldPos;
@@ -142,9 +144,31 @@ public class ParticleFlyEffectUI : MonoBehaviour
         _rectTransform.position = _startPos;
         _particleSystem.Play(true);
 
-        transform.DOMove(_endPos, _duration)
-                 .SetEase(Ease.Linear)
-                 .OnComplete(_particleSystem.Stop);
+        // Start coroutine for movement animation
+        StartCoroutine(MoveToTarget());
+    }
+
+    private IEnumerator MoveToTarget()
+    {
+        float elapsedTime = 0f;
+        Vector3 startPosition = _rectTransform.position;
+        
+        while (elapsedTime < _duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / _duration;
+            
+            // Linear interpolation (equivalent to DOTween's Ease.Linear)
+            _rectTransform.position = Vector3.Lerp(startPosition, _endPos, t);
+            
+            yield return null;
+        }
+        
+        // Ensure final position is exact
+        _rectTransform.position = _endPos;
+        
+        // Stop particle system when animation completes
+        _particleSystem.Stop();
     }
 
     public float FlyDuration => _duration;

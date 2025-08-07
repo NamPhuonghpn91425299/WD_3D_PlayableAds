@@ -11,23 +11,19 @@ public class HandleTapByPointSelection : MonoBehaviour
     public LayerMask layerMask;
 
     private Camera _mainCamera;
+    private RaycastHit[] _woolHits = new RaycastHit[10]; // Sử dụng mảng để SphereCast
 
     public WoolPointData[] woolPoints;
 
     public HandController handScript;
-    public Vector3 offset = new Vector3(0.3f, -0.3f, -1.4f);
+  
+    [SerializeField] private float _tapRadius = 0.2f;
+    public GameObject UIWIn;
 
     private void Start()
     {
         _mainCamera = CameraContainer.Instance.MainCamera;
         InputInteractable.OnTap += HandleTap;
-        CameraController.Instance.OnEndGameIntro += () =>
-        {
-            if (handScript != null)
-            {
-                woolPoints[0].targetTransform.gameObject.SetActive(true);
-            }
-        };
     }
 
     private void Update()
@@ -57,7 +53,7 @@ public class HandleTapByPointSelection : MonoBehaviour
         Ray ray = _mainCamera.ScreenPointToRay(screenPos);
         Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
 
-        WoolControl wool = TrySelectWool(ray);
+        WoolControl wool = FindBestWoolNearRay(ray);
         if (wool != null)
         {
             wool.WoolRotation();
@@ -65,77 +61,106 @@ public class HandleTapByPointSelection : MonoBehaviour
         }
     }
 
-    private WoolControl TrySelectWool(Ray ray)
+
+    private WoolControl FindBestWoolNearRay(Ray ray)
     {
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f, layerMask))
+        // Bước 1: Ưu tiên Raycast trực tiếp
+        if (Physics.Raycast(ray, out RaycastHit directHit, 100f, layerMask))
         {
-            Debug.Log($"Hit: {hit.collider.gameObject.name}");
-            currrentIndex = selectedIndex;
-
-            if (hit.collider.gameObject.name == currrentIndex.ToString())
+            if (directHit.collider.gameObject.TryGetComponent<WoolControl>(out var directWool))
             {
-                selectedIndex++;
-                woolPoints[currrentIndex].targetTransform.gameObject.SetActive(false);
-
-                if (handScript.transform.childCount > 0)
-                    handScript.transform.GetChild(0).gameObject.SetActive(false);
-
-                StartCoroutine(IEWaitAndActivateNext());
-                Debug.Log($"Selected Index: {selectedIndex}");
-
-                return woolPoints[currrentIndex].woolControl;
+                if (directWool.WoolOrder == selectedIndex)
+                {
+                    ProcessWoolSelection(directWool);
+                     return directWool; // Tìm thấy, trả về ngay lập tức
+                }
+               
             }
         }
 
-        return null;
+        // Bước 2: Tìm kiếm lân cận bằng SphereCast nếu Raycast trượt
+        int hitCount = Physics.SphereCastNonAlloc(ray, _tapRadius, _woolHits, 100f, layerMask);
+
+        if (hitCount > 0)
+        {
+            for (int i = 0; i < hitCount; i++)
+            {
+                if (_woolHits[i].collider.gameObject.TryGetComponent<WoolControl>(out var wool))
+                {
+                    if (wool.WoolOrder == selectedIndex)
+                    {
+                        ProcessWoolSelection(wool);
+                        return wool; // Trả về đối tượng tìm thấy
+                    }
+                }
+            }
+        }
+
+        return null; // Không tìm thấy bất kỳ đối tượng nào
     }
+
+    private void ProcessWoolSelection(WoolControl wool)
+    {
+        currrentIndex = selectedIndex;
+        selectedIndex++;
+        
+        hasArrivedAtTarget = false;
+        StartCoroutine(IEWaitAndActivateNext());
+    }
+
+
 
     private IEnumerator IEWaitAndActivateNext()
     {
-        if (selectedIndex >= woolPoints.Length -1)
+        if (selectedIndex >= woolPoints.Length )
         {
             yield return new WaitForSeconds(2f);
             GamePlaySystem.Instance.WinGame();
+            UIWIn.SetActive(true);
             yield break;
         }
-        yield return new WaitForSeconds(0.15f);
-        ActivateNextWool();
     }
 
-    public void ActivateNextWool()
-    {
-        if (!handScript.gameObject.activeSelf && selectedIndex < woolPoints.Length)
-        {
-            var point = woolPoints[selectedIndex];
 
-            point.targetTransform.gameObject.SetActive(true);
-            handScript.gameObject.SetActive(true);
 
-            if (handScript.transform.childCount > 0)
-                handScript.transform.GetChild(0).gameObject.SetActive(true);
-
-            handScript.StopAllCoroutines();
-            handScript.StartCoroutine(handScript.PlayAnim());
-
-            handScript.transform.position = point.targetTransform.position + offset;
-        }
-    }
+    [SerializeField] private float handMoveSpeed = 5f; // Tốc độ di chuyển của hand
+    [SerializeField] private float arrivalThreshold = 0.1f; // Khoảng cách để coi như đã đến
+    private bool hasArrivedAtTarget = false;
 
     private void UpdateHandPosition()
     {
         if (selectedIndex < 0 || selectedIndex >= woolPoints.Length) return;
 
         var point = woolPoints[selectedIndex];
-        Vector3 newPos = point.targetTransform.position;
+        if (point.referenceTransform == null) return;
 
-        if (point.referenceTransform != null)
+        Vector3 targetPos = point.referenceTransform.position + handScript.Offset;
+        Vector3 currentPos = handScript.transform.position;
+        
+        // Giữ nguyên trục Z của hand hiện tại
+        targetPos.z = currentPos.z;
+        
+        // Tính khoảng cách đến mục tiêu (chỉ tính trên trục X và Y)
+        float distanceToTarget = Vector2.Distance(new Vector2(currentPos.x, currentPos.y), new Vector2(targetPos.x, targetPos.y));
+        
+        // Nếu chưa đến mục tiêu
+        if (distanceToTarget > arrivalThreshold)
         {
-            newPos.x = point.referenceTransform.position.x;
-            newPos.y = point.referenceTransform.position.y;
+            // Di chuyển hand về phía mục tiêu (chỉ trên trục X và Y)
+            handScript.transform.position = Vector3.MoveTowards(currentPos, targetPos, handMoveSpeed * Time.deltaTime);
+            hasArrivedAtTarget = false;
         }
-
-        point.targetTransform.position = newPos;
-        handScript.transform.position = newPos + offset;
+        // Nếu đã đến mục tiêu và chưa play animation
+        else if (!hasArrivedAtTarget)
+        {
+            // Đặt vị trí chính xác (giữ nguyên Z)
+            handScript.transform.position = targetPos;
+            hasArrivedAtTarget = true;
+            
+            // Play animation khi đến nơi
+            handScript.StopAllCoroutines();
+            handScript.StartCoroutine(handScript.PlayAnim());
+        }
     }
 }
 [Serializable]
