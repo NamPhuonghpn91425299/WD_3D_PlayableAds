@@ -140,10 +140,10 @@ public class WoolControl : MonoBehaviour
         //     Debug.Log($"Please interact with wool number {CurrentWoolInSequence} first!");
         //     return;
         // }
-
-        Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
-
-        // tự nhảy khi đạt điều kiện chơi game
+        //
+        // Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
+        //
+        // // tự nhảy khi đạt điều kiện chơi game
         // if (GamePlaySystem.Instance.IsGoToStore)
         // {
         //     GamePlaySystem.Instance.GoToStore();

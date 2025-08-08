@@ -38,6 +38,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     }
     [Tooltip("Panel UI hiển thị khi kết thúc game (thắng/thua).")]
     [SerializeField] private GameObject endGamePanel;
+    [SerializeField] private GameObject btnPlay;
 
     /// <summary>
     /// Tham chiếu đến CameraController để điều khiển các hành vi của camera.
@@ -78,6 +79,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                                     {
                                         Color.black,
                                         Color.black,
+                                        Color.black,
                                     };
 
     // Danh sách các màu mục tiêu có thể được chọn để sinh ra trong CubeTarget mới.
@@ -115,7 +117,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private bool _isPLayAnimUsingRainBow;
 
     // Hằng số giới hạn số ô chứa tối đa.
-    private readonly int maxCubeTarget = 2;
+    private readonly int maxCubeTarget = 3;
     private Vector3 _scaleDefaultRollWool;
 
 
@@ -210,7 +212,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         Luna.Unity.Playable.InstallFullGame();
         IsGoToStore = true;
     }
-
+    
     /// <summary>
     /// Cờ đánh dấu người chơi đã được chuyển đến store hay chưa.
     /// </summary>
@@ -380,7 +382,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             // Khi đạt đủ số lượng, kích hoạt sự kiện đặc biệt
             Luna.Unity.LifeCycle.GameEnded();
             //CheckEndGame();
-            GoToStore();
+            //GoToStore();
             Debug.Log(" CurrentColorCollected: " + _currentColorCollected + " End Game with cubeCountClaimed: " + cubeCountClaimed);
         }
     }
@@ -479,6 +481,8 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         if (_isUseBroomBooster) yield break;
         if (!isWin)
             yield return new WaitForSeconds(1.2f); // Chờ một chút trước khi hiện panel thua
+        else
+            yield return new WaitForSeconds(.1f); // Chờ một chút trước khi hiện panel thua
         
         if (isWin)
         {
@@ -495,6 +499,8 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             if (loseSound != null) SoundManager.Instance.PlayOneShot(loseSound, 1f);
             //endGamePanel.SetActive(true);
         }
+        btnPlay.SetActive(false);
+        print("Trạng thài game thắng = true: "+ isWin);
     }
 
     /// <summary>
