@@ -188,6 +188,8 @@ public class GamePlayMeshController : MonoBehaviour
         foreach (var color in colorSteps)
         {
             int sum = 0;
+            if(color.Value.Count < 3)
+                continue;
             for (int i = 0; i < color.Value.Count; i++)
             {
                 if (i > 2) break;
