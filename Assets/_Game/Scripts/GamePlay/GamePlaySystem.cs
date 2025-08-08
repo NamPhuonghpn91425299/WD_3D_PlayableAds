@@ -80,6 +80,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                                         Color.black,
                                         Color.black,
                                         Color.black,
+                                        Color.black,
                                     };
 
     // Danh sách các màu mục tiêu có thể được chọn để sinh ra trong CubeTarget mới.
@@ -324,7 +325,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         {
             // Lấy danh sách màu có thể chọn, loại trừ các màu đã có trên các CubeTarget khác
             _colorTargetList = RemoveColorInList(_meshController._colorPriority, _colorTargets);
-            _nextColor = GetColorByPriority(0); // Chọn màu có độ ưu tiên cao nhất
+            _nextColor = _colorTargetList[0]; // Chọn màu có độ ưu tiên cao nhất
         }
         else
         {
@@ -336,7 +337,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         if (_hasCube)
         {
             // Giảm số lượng màu đó trong kho
-            _meshController.CubeCount[_nextColor]--;
+            _meshController.CubeCount[_nextColor] = cubeCount - 1;
             if (_meshController.CubeCount[_nextColor] == 0)
             {
                 _meshController.CubeCount.Remove(_nextColor);
@@ -346,7 +347,6 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         // Gán màu mới cho CubeTarget
         CurrentCubeTargets[indexCube].SetColor(_nextColor);
         _colorTargets[indexCube] = _nextColor;
-        CheckLockRainBowBooster(); // Kiểm tra xem có nên khóa booster Rainbow không
 
         // Nếu hết sạch màu trong kho, khóa chức năng mở thêm ô chứa
         if (_meshController.CubeCount.Count == 0)
@@ -500,7 +500,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             //endGamePanel.SetActive(true);
         }
         btnPlay.SetActive(false);
-        print("Trạng thài game thắng = true: "+ isWin);
+        print(isWin?"Trạng thài game: Win":"Trạng thài game: Lose");
     }
 
     /// <summary>
@@ -613,34 +613,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
         return result;
     }
-
-    /// <summary>
-    /// Lấy một màu dựa trên độ ưu tiên đã được tính toán.
-    /// </summary>
-    private Color GetColorByPriority(float priority)
-    { 
-        // ... (Logic chọn màu dựa trên một ngưỡng ưu tiên)
-        if (_colorTargetList.Count == 1)
-            return _meshController?._colorPriority?.FirstOrDefault()
-               .Key ?? Color.black;
-        Color result = Color.black;
-
-        try
-        {
-            foreach (var colorPriority in _meshController._colorPriority)
-            {
-                result = colorPriority.Key;
-                if (priority <= colorPriority.Value) break;
-            }
-        } catch (Exception e)
-        {
-            Debug.LogError($"Error in GetColorByPriority: {e}");
-        }
-
-        return result;
-    }
-
-
+    
     /// <summary>
     /// Tải và thiết lập một level mới. Đây là điểm khởi đầu của một màn chơi.
     /// </summary>
