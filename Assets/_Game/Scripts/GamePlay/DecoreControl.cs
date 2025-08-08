@@ -32,6 +32,13 @@ public class DecoreControl : MonoBehaviour
     #endregion
 
     #region UNITY_METHODS
+
+    // private void OnValidate()
+    // {
+    //     if (Rigid == null) { Rigid = GetComponent<Rigidbody>(); }
+    //     if (MeshRenderer == null) { MeshRenderer = GetComponent<MeshRenderer>(); }
+    // }
+
     private void Awake()
     {
         _parent = _thisTransform.parent;

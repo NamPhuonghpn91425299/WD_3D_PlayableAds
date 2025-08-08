@@ -26,7 +26,7 @@ public class WoolControl : MonoBehaviour
     [Header("Mesh Object")] public MeshObjectData    MeshObjectData;
     public                         Renderer      TopMeshRenderer;
     public                         Renderer      HideMeshRenderer;
-    public                         Collider          BoxCollider;
+    public                         MeshCollider          BoxCollider;
     public                         Material          MainMaterial;
     public                         Material          TranparentMaterial;
     public                         WoolAnimationData WoolAnimationData;
@@ -68,7 +68,7 @@ public class WoolControl : MonoBehaviour
     {
         TopMeshRenderer  ??= GetComponent<MeshRenderer>();
         HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
-        BoxCollider      ??= GetComponent<BoxCollider>();
+        BoxCollider      ??= GetComponent<MeshCollider>();
     }
 #endif
 

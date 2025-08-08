@@ -17,7 +17,7 @@ public class PlayNowButtonAnim : MonoBehaviour
         StartScalingAnimation();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         playerNowButton.onClick.RemoveListener(GotoStore);
     }
@@ -25,6 +25,7 @@ public class PlayNowButtonAnim : MonoBehaviour
     public void GotoStore()
     {
         Luna.Unity.Playable.InstallFullGame();
+        Luna.Unity.LifeCycle.GameEnded();
     }
     
     private void StartScalingAnimation()

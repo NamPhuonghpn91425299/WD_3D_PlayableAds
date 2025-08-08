@@ -78,6 +78,8 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                                     {
                                         Color.black,
                                         Color.black,
+                                        Color.black,
+                                        Color.black,
                                     };
 
     // Danh sách các màu mục tiêu có thể được chọn để sinh ra trong CubeTarget mới.
@@ -362,6 +364,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         if (!active)
         {
             CurrentCubeTargets[indexCube].group.SetActive(false);
+            //CurrentCubeTargets[indexCube].gameObject.SetActive(false);
             TotalCubeActive--;
             CubeReadyCount--;
             SmoothRepositioner(); // Sắp xếp lại vị trí các ô còn lại cho đẹp
@@ -478,7 +481,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     {
         if (_isUseBroomBooster) yield break;
         if (!isWin)
-            yield return new WaitForSeconds(1.2f); // Chờ một chút trước khi hiện panel thua
+            yield return new WaitForSeconds(0.5f); // Chờ một chút trước khi hiện panel thua
         
         if (isWin)
         {
@@ -493,6 +496,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         else
         {
             if (loseSound != null) SoundManager.Instance.PlayOneShot(loseSound, 1f);
+            GoToStore();
             //endGamePanel.SetActive(true);
         }
     }
@@ -523,11 +527,12 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         for (int i = 0; i < CurrentCubeTargets.Count; i++)
         {
             CurrentCubeTargets[i].group.SetActive(true);
+            //CurrentCubeTargets[i].gameObject.SetActive(true);
             // Kích hoạt ô nếu index của nó nhỏ hơn số lượng mới
             CurrentCubeTargets[i].SetActiveCubeTarget(i, i + 1 <= newCubeCount);
             // Hiện nút "mở khóa" cho các ô vượt quá số lượng mới
             CurrentCubeTargets[i].ActiveOpenCube(i + 1 > newCubeCount);
-            Debug.Log("UnLockCubeTarget" + i );
+            //Debug.Log("UnLockCubeTarget" + i );
 
         }
         _cubeTargetCountDefault = newCubeCount;
@@ -721,7 +726,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         _activeObjects.Clear();
         foreach (var obj in CurrentCubeTargets)
         {
-            if (obj != null && obj.gameObject.activeSelf)
+            if (obj != null && obj.group.gameObject.activeSelf)
                 _activeObjects.Add(obj);
         }
     }

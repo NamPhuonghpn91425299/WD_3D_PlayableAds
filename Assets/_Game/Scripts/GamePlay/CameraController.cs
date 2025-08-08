@@ -155,7 +155,7 @@ public class CameraController : Singleton<CameraController>
             else
             {
                 currentFOV = _mainCamera.fieldOfView;
-                if (MathF.Abs(currentFOV - targetFOV) > 0.15f)
+                if (Mathf.Abs(currentFOV - targetFOV) > 0.15f)
                 {
                     currentFOV              = Mathf.Lerp(currentFOV, targetFOV, Time.deltaTime * zoomLerpSpeed);
                     _mainCamera.fieldOfView = currentFOV;
@@ -243,8 +243,8 @@ public class CameraController : Singleton<CameraController>
     {
         // Đây là logic gốc từ HandleTap của bạn
         wool.WoolRotation();
-        GamePlaySystem.Instance.RaiseMotion(EMotionType.Shy, Random.value);
-        Debug.Log("Tapped on Wool: " + wool.name);
+        //GamePlaySystem.Instance.RaiseMotion(EMotionType.Shy, Random.value);
+        //Debug.Log("Tapped on Wool: " + wool.name);
     }
 
     private void HandleMouse(bool isPointerDown)
