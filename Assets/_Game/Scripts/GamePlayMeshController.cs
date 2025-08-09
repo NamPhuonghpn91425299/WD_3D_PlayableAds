@@ -187,15 +187,16 @@ public class GamePlayMeshController : MonoBehaviour
 
         foreach (var color in colorSteps)
         {
-            int sum = 0;
-            if(color.Value.Count < 3)
-                continue;
-            for (int i = 0; i < color.Value.Count; i++)
+            var currentColorCount = color.Value.Count;
+            int sum               = 0;
+            float index             = 0;
+            for (int i = 0; i < currentColorCount; i++)
             {
-                if (i > 2) break;
-                sum += color.Value[i];
+                index = i;
+                if (i > 2 && color.Value[i] > 1f) break;
+                sum += (int)color.Value[i];
             }
-            _colorPriority.Add(color.Key, sum);
+            _colorPriority.Add(color.Key, 3 * sum / index + 1 - index / currentColorCount);
         }
     }
     

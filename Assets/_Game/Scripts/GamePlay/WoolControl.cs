@@ -141,7 +141,7 @@ public class WoolControl : MonoBehaviour
         //     return;
         // }
 
-        Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
+        //Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
 
         // tự nhảy khi đạt điều kiện chơi game
         // if (GamePlaySystem.Instance.IsGoToStore)
@@ -151,7 +151,7 @@ public class WoolControl : MonoBehaviour
         // }
         
         // Move to the next wool in sequence
-        CurrentWoolInSequence++;
+        //CurrentWoolInSequence++;
         StartCoroutine(AsyncWoolRotation());
     }
     
