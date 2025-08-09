@@ -555,6 +555,7 @@ public class WoolControlColorSetter : EditorWindow
         gameObjectSequence.Clear();
         
         WoolControl[] targetWoolControls = GetWoolControlsForImport();
+        HashSet<WoolControl> usedWoolControls = new HashSet<WoolControl>();
         
         foreach (string line in lines)
         {
@@ -567,7 +568,10 @@ public class WoolControlColorSetter : EditorWindow
                 string objectName = parts[0].Trim();
                 string colorHex = parts[1].Trim();
                 
-                WoolControl targetWoolControl = targetWoolControls.FirstOrDefault(w => w.name == objectName);
+                // Tìm WoolControl chưa được sử dụng với tên phù hợp
+                WoolControl targetWoolControl = targetWoolControls
+                    .Where(w => w.name == objectName && !usedWoolControls.Contains(w))
+                    .FirstOrDefault();
                 
                 if (targetWoolControl != null && ColorUtility.TryParseHtmlString(colorHex, out Color color))
                 {
@@ -576,6 +580,9 @@ public class WoolControlColorSetter : EditorWindow
                         gameObject = targetWoolControl.gameObject,
                         assignedColor = color
                     });
+                    
+                    // Đánh dấu đã sử dụng
+                    usedWoolControls.Add(targetWoolControl);
                 }
             }
         }
@@ -615,6 +622,8 @@ public class WoolControlColorSetter : EditorWindow
         WoolControl[] targetWoolControls = GetWoolControlsForImport();
         string[] lines = importData.Split('\n');
         int matchCount = 0;
+        int duplicateCount = 0;
+        HashSet<WoolControl> previewProcessed = new HashSet<WoolControl>();
         
         foreach (string line in lines)
         {
@@ -627,7 +636,10 @@ public class WoolControlColorSetter : EditorWindow
                 string objectName = parts[0].Trim();
                 string colorHex = parts[1].Trim();
                 
-                WoolControl targetWoolControl = targetWoolControls.FirstOrDefault(w => w.name == objectName);
+                // Tìm object chưa được xử lý trong preview
+                WoolControl targetWoolControl = targetWoolControls
+                    .Where(w => w.name == objectName && !previewProcessed.Contains(w))
+                    .FirstOrDefault();
                 
                 EditorGUILayout.BeginHorizontal();
                 if (targetWoolControl != null && ColorUtility.TryParseHtmlString(colorHex, out Color color))
@@ -635,7 +647,16 @@ public class WoolControlColorSetter : EditorWindow
                     EditorGUILayout.LabelField("✓", GUILayout.Width(20));
                     EditorGUI.DrawRect(GUILayoutUtility.GetRect(15, 15), color);
                     EditorGUILayout.LabelField($"{objectName} -> {colorHex}");
+                    
+                    // Đánh dấu đã xử lý trong preview
+                    previewProcessed.Add(targetWoolControl);
                     matchCount++;
+                }
+                else if (targetWoolControls.Any(w => w.name == objectName && previewProcessed.Contains(w)))
+                {
+                    EditorGUILayout.LabelField("⚠", GUILayout.Width(20));
+                    EditorGUILayout.LabelField($"{objectName} -> {colorHex} (Duplicate, will be skipped)", EditorStyles.miniLabel);
+                    duplicateCount++;
                 }
                 else
                 {
@@ -647,7 +668,15 @@ public class WoolControlColorSetter : EditorWindow
         }
         
         EditorGUILayout.EndVertical();
-        EditorGUILayout.LabelField($"Match: {matchCount}/{lines.Length - CountCommentLines(lines)} objects");
+        
+        int totalDataLines = lines.Length - CountCommentLines(lines);
+        string previewSummary = $"Will apply: {matchCount}/{totalDataLines} objects";
+        if (duplicateCount > 0)
+        {
+            previewSummary += $", {duplicateCount} duplicates will be skipped";
+        }
+        
+        EditorGUILayout.LabelField(previewSummary);
     }
     
     private int CountCommentLines(string[] lines)
@@ -703,9 +732,11 @@ public class WoolControlColorSetter : EditorWindow
         string[] lines = importData.Split('\n');
         int applied = 0;
         int notFound = 0;
+        int duplicateSkipped = 0;
         
         // Lấy WoolControls từ target GameObject hoặc toàn scene
         WoolControl[] targetWoolControls = GetWoolControlsForImport();
+        HashSet<WoolControl> processedWoolControls = new HashSet<WoolControl>();
         
         string searchScope = importTargetGameObject != null ? 
             $"within '{importTargetGameObject.name}' and its children" : "in entire scene";
@@ -721,8 +752,10 @@ public class WoolControlColorSetter : EditorWindow
                 string objectName = parts[0].Trim();
                 string colorHex = parts[1].Trim();
                 
-                // Tìm object trong target WoolControls
-                WoolControl targetWoolControl = targetWoolControls.FirstOrDefault(w => w.name == objectName);
+                // Tìm object chưa được xử lý trong target WoolControls
+                WoolControl targetWoolControl = targetWoolControls
+                    .Where(w => w.name == objectName && !processedWoolControls.Contains(w))
+                    .FirstOrDefault();
                 
                 if (targetWoolControl != null && ColorUtility.TryParseHtmlString(colorHex, out Color color))
                 {
@@ -731,8 +764,17 @@ public class WoolControlColorSetter : EditorWindow
                         Undo.RecordObject(targetWoolControl, "Import Color Data");
                         targetWoolControl.MeshObjectData.HightestColor = color;
                         EditorUtility.SetDirty(targetWoolControl);
+                        
+                        // Đánh dấu đã xử lý
+                        processedWoolControls.Add(targetWoolControl);
                         applied++;
                     }
+                }
+                else if (targetWoolControls.Any(w => w.name == objectName && processedWoolControls.Contains(w)))
+                {
+                    // Object cùng tên đã được xử lý
+                    duplicateSkipped++;
+                    Debug.LogWarning($"Object '{objectName}' skipped - already processed an object with this name");
                 }
                 else
                 {
@@ -746,6 +788,10 @@ public class WoolControlColorSetter : EditorWindow
         if (notFound > 0)
         {
             message += $"\n{notFound} objects not found.";
+        }
+        if (duplicateSkipped > 0)
+        {
+            message += $"\n{duplicateSkipped} duplicate objects skipped.";
         }
         
         EditorUtility.DisplayDialog("Import Complete", message, "OK");
@@ -803,23 +849,37 @@ public class WoolControlColorSetter : EditorWindow
     {
         int applied = 0;
         int notFound = 0;
+        int duplicateSkipped = 0;
         
         // Lấy WoolControls từ target GameObject hoặc toàn scene
         WoolControl[] targetWoolControls = GetWoolControlsForImport();
+        HashSet<WoolControl> processedWoolControls = new HashSet<WoolControl>();
         
         string searchScope = importTargetGameObject != null ? 
             $"within '{importTargetGameObject.name}' and its children" : "in entire scene";
         
         foreach (var colorData in database.colorDataList)
         {
-            WoolControl targetWoolControl = targetWoolControls.FirstOrDefault(w => w.name == colorData.objectName);
+            // Tìm object chưa được xử lý
+            WoolControl targetWoolControl = targetWoolControls
+                .Where(w => w.name == colorData.objectName && !processedWoolControls.Contains(w))
+                .FirstOrDefault();
             
             if (targetWoolControl != null && targetWoolControl.MeshObjectData != null)
             {
                 Undo.RecordObject(targetWoolControl, "Import JSON Color Data");
                 targetWoolControl.MeshObjectData.HightestColor = colorData.color;
                 EditorUtility.SetDirty(targetWoolControl);
+                
+                // Đánh dấu đã xử lý
+                processedWoolControls.Add(targetWoolControl);
                 applied++;
+            }
+            else if (targetWoolControls.Any(w => w.name == colorData.objectName && processedWoolControls.Contains(w)))
+            {
+                // Object cùng tên đã được xử lý
+                duplicateSkipped++;
+                Debug.LogWarning($"Object '{colorData.objectName}' skipped - already processed an object with this name");
             }
             else
             {
@@ -832,6 +892,10 @@ public class WoolControlColorSetter : EditorWindow
         if (notFound > 0)
         {
             message += $"\n{notFound} objects not found.";
+        }
+        if (duplicateSkipped > 0)
+        {
+            message += $"\n{duplicateSkipped} duplicate objects skipped.";
         }
         
         EditorUtility.DisplayDialog("JSON Import Complete", message, "OK");
