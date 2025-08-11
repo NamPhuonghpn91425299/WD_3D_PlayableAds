@@ -316,16 +316,15 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     public void GenNewCube(int indexCube)
     {
         if (indexCube == -1) return;
-        
-        // Tính toán độ ưu tiên của các màu còn lại
+
+// Tính toán độ ưu tiên của các màu còn lại
         _meshController.ColorPriorityCalculator();
         _colorTargets[indexCube] = Color.black;
 
         if (_meshController.CubeCount.Count > 1)
         {
-            // Lấy danh sách màu có thể chọn, loại trừ các màu đã có trên các CubeTarget khác
+// Lấy danh sách màu có thể chọn, loại trừ các màu đã có trên các CubeTarget khác
             _colorTargetList = RemoveColorInList(_meshController._colorPriority, _colorTargets);
-            //_nextColor = GetColorByPriority(0); // Chọn màu có độ ưu tiên cao nhất
             _nextColor = _colorTargetList[0]; // Chọn màu có độ ưu tiên cao nhất
         }
         else
@@ -333,28 +332,44 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             _nextColor = _meshController.CubeCount.FirstOrDefault().Key;
         }
 
+        Debug.Log("Existing Cube Count: " + _meshController.CubeCount.Count + " Next Color: " + _nextColor);
+
+// Kiểm tra màu đầu tiên
         _hasCube = _meshController.CubeCount.TryGetValue(_nextColor, out var cubeCount);
+
+// Nếu màu đầu tiên không có, kiểm tra các màu tiếp theo
+        if (!_hasCube && _meshController.CubeCount.Count > 1)
+        {
+            for (int i = 1; i < _colorTargetList.Count; i++)
+            {
+                Color nextAvailableColor = _colorTargetList[i];
+                if (_meshController.CubeCount.TryGetValue(nextAvailableColor, out cubeCount))
+                {
+                    _nextColor = nextAvailableColor; // Cập nhật màu được chọn
+                    _hasCube = true;
+                    break; // Tìm thấy màu có sẵn, thoát khỏi vòng lặp
+                }
+            }
+        }
 
         if (_hasCube)
         {
-            // Giảm số lượng màu đó trong kho
+// Giảm số lượng màu đó trong kho
             _meshController.CubeCount[_nextColor] = cubeCount - 1;
             if (_meshController.CubeCount[_nextColor] == 0)
             {
                 _meshController.CubeCount.Remove(_nextColor);
             }
-        }
-        
-        // Gán màu mới cho CubeTarget
-        CurrentCubeTargets[indexCube].SetColor(_nextColor);
-        _colorTargets[indexCube] = _nextColor;
-        //CheckLockRainBowBooster(); // Kiểm tra xem có nên khóa booster Rainbow không
 
-        // Nếu hết sạch màu trong kho, khóa chức năng mở thêm ô chứa
+// Gán màu mới cho CubeTarget
+            CurrentCubeTargets[indexCube].SetColor(_nextColor);
+            _colorTargets[indexCube] = _nextColor;
+        }
+
+// Nếu hết sạch màu trong kho, khóa chức năng mở thêm ô chứa
         if (_meshController.CubeCount.Count == 0)
             LockOpenCube();
     }
-
 
     /// <summary>
     /// Xử lý khi một CubeTarget bị tắt (ví dụ: bị khóa).

@@ -68,14 +68,26 @@ public class WoolControl : MonoBehaviour
     {
         TopMeshRenderer  ??= GetComponent<MeshRenderer>();
         HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
+        HideMeshRenderer.gameObject.SetActive(true);
         BoxCollider      ??= GetComponent<MeshCollider>();
     }
 #endif
+
+    private void Awake()
+    {
+        InitPropertyBlock();
+    }
 
     private void OnEnable()
     {
         DisplayColor();
         ResetWoolSequence();
+    }
+
+    private void InitPropertyBlock()
+    {
+        _topMaterialPropertyBlock = new MaterialPropertyBlock();
+        _hideMaterialPropertyBlock = new MaterialPropertyBlock();
     }
 
 
