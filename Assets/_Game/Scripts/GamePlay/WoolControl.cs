@@ -68,8 +68,9 @@ public class WoolControl : MonoBehaviour
     {
         TopMeshRenderer  ??= GetComponent<MeshRenderer>();
         HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
-        BoxCollider      ??= GetComponent<BoxCollider>();
-        BoxCollider      ??= GetComponent<Collider>();
+        // BoxCollider      ??= GetComponent<BoxCollider>();
+        //BoxCollider      ??= GetComponent<Collider>();
+        BoxCollider      = GetComponent<MeshCollider>();
     }
 #endif
 
