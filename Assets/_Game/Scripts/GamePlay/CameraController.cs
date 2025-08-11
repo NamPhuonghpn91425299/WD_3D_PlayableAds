@@ -11,6 +11,8 @@ public class CameraController : Singleton<CameraController>
 
     public Interactable InputInteractable;
 
+    public Button btnReCenterModel;
+    private bool canResset;
     public Slider ZoomSlider;
     public float maxZoom;
     public float minZoom;
@@ -29,7 +31,7 @@ public class CameraController : Singleton<CameraController>
     public float RotationAutoSpeed = 0.5f; // Tốc độ xoay tự động
     public float SmoothingTime = 0.05f;
     [Header("Rotation")] public float TimeAFKToAutoRotation = 10f;
-// Thêm các thuộc tính này vào khu vực PROPERTIES ở đầu class
+    // Thêm các thuộc tính này vào khu vực PROPERTIES ở đầu class
 
     private RaycastHit[] _woolHits = new RaycastHit[10];
 
@@ -38,6 +40,22 @@ public class CameraController : Singleton<CameraController>
     [SerializeField]
     private float _tapRadius = 0.2f;
 
+    // ===== BỔ SUNG: CÁC THUỘC TÍNH CHO ZOOM 2 NGÓN TAY =====
+    [Header("TOUCH ZOOM SETTINGS")]
+    [SerializeField]
+    [Tooltip("Độ nhạy khi zoom bằng 2 ngón tay (1.0f = bình thường, 2.0f = nhạy gấp đôi)")]
+    private float touchZoomSensitivity = 2f;
+
+    [SerializeField] [Tooltip("Bật/tắt tính năng zoom bằng 2 ngón tay")]
+    private bool enableTouchZoom = true;
+
+    [SerializeField] [Tooltip("Thời gian smooth khi zoom bằng touch (không sử dụng hiện tại)")]
+    private float touchZoomSmoothTime = 0.1f;
+
+    // Biến để theo dõi trạng thái zoom - BỔ SUNG để tránh xung đột giữa touch zoom và slider
+    private bool isTouchZooming = false;
+    private bool isSliderUpdating = false; // Tránh vòng lặp khi cập nhật slider từ code
+    // ===== KẾT THÚC BỔ SUNG =====
 
     private float _acceleration;
     private float _timerAfterMouseUp = 0f;
@@ -50,7 +68,6 @@ public class CameraController : Singleton<CameraController>
     private Camera _mainCamera;
     private Camera _fakeUICamera;
     private GameObject _targetObject;
-
 
     private bool _isIdling = false;
     private float _timeIdle = 0f;
@@ -105,8 +122,7 @@ public class CameraController : Singleton<CameraController>
     private Quaternion initialRotation;
     private bool hasStoredInitialRotation = false;
 
-    [Header("Reset Settings")]
-    public float ResetRotationDuration = 1f;
+    [Header("Reset Settings")] public float ResetRotationDuration = 1f;
     public Ease ResetRotationEase = Ease.InOutCubic;
 
     #endregion
@@ -175,6 +191,14 @@ public class CameraController : Singleton<CameraController>
                 {
                     currentFOV = Mathf.Lerp(currentFOV, targetFOV, Time.deltaTime * zoomLerpSpeed);
                     _mainCamera.fieldOfView = currentFOV;
+
+                    // ===== BỔ SUNG: Cập nhật slider trong chế độ smooth =====
+                    // Khi camera zoom smooth, slider cũng cần được cập nhật để đồng bộ
+                    if (ZoomStyle == ZoomCameraStyle.Smoothly && !isTouchZooming)
+                    {
+                        UpdateSliderFromFOV(currentFOV);
+                    }
+                    // ===== KẾT THÚC BỔ SUNG =====
                 }
             }
         }
@@ -210,18 +234,29 @@ public class CameraController : Singleton<CameraController>
         ModelPrefab = levelObjectPrefab;
         modelTransfrom = ModelPrefab.transform;
         targetRotation = modelTransfrom.rotation;
+        btnReCenterModel.onClick.AddListener(() => ResetToInitialRotation());
+        canResset = true;
         StoreInitialRotation();
         // Thiết lập giá trị slider
         if (ZoomSlider != null)
         {
             ZoomSlider.minValue = 0f;
             ZoomSlider.maxValue = 1f;
-            
-            // Thiết lập giá trị mặc định (đảo ngược)
+
+            // ===== SỬA ĐỔI: Thay thế cách khởi tạo slider =====
+            // CODE CŨ (đã comment): Không khởi tạo giá trị mặc định cho slider
             // float currentFOV = _mainCamera.fieldOfView;
             // float normalizedValue = (currentFOV - minZoom) / (maxZoom - minZoom);
             // ZoomSlider.value = normalizedValue;
-            
+
+            // CODE MỚI: Khởi tạo slider dựa trên FOV hiện tại để đồng bộ
+            float currentFOV = _mainCamera != null ? _mainCamera.fieldOfView : ZoomCameraData.DefaultFOV;
+            UpdateSliderFromFOV(currentFOV);
+
+            // SỬA ĐỔI: Dọn dẹp listener cũ trước khi thêm mới để tránh duplicate
+            //ZoomSlider.onValueChanged.RemoveAllListeners();
+            // ===== KẾT THÚC SỬA ĐỔI =====
+
             // Thêm listener cho sự kiện thay đổi slider
             ZoomSlider.onValueChanged.AddListener(OnZoomSliderChanged);
         }
@@ -231,18 +266,117 @@ public class CameraController : Singleton<CameraController>
 
     #region SLIDER_ZOOM_METHODS
 
+    // ===== SỬA ĐỔI: Cải tiến phương thức OnZoomSliderChanged =====
     // Phương thức được gọi khi slider thay đổi giá trị
     public void OnZoomSliderChanged(float value)
     {
-        if (_mainCamera != null)
+        // THÊM: Kiểm tra isSliderUpdating để tránh vòng lặp khi cập nhật từ code
+        if(!canResset) return;
+
+        float newFOV = Mathf.Lerp(minZoom, maxZoom, value);
+
+        // Cập nhật targetFOV để touch zoom tiếp tục hoạt động
+        targetFOV = newFOV;
+
+        if (ZoomStyle == ZoomCameraStyle.Smoothly)
         {
-            // Đảo ngược chiều: value = 0 -> minZoom (60), value = 1 -> maxZoom (35)
-            float targetFOV = Mathf.Lerp(minZoom, maxZoom, value);
-            _mainCamera.fieldOfView = targetFOV;
+            // Smooth: chỉ update targetFOV, phần Update() sẽ Lerp tới giá trị này
+        }
+        else
+        {
+            _mainCamera.fieldOfView = newFOV;
+        }
+
+        ZoomCamera(newFOV); // Giữ đồng bộ background + slider
+    }
+    // ===== KẾT THÚC SỬA ĐỔI =====
+
+    // ===== BỔ SUNG: Phương thức mới để cập nhật slider từ FOV =====
+    /// <summary>
+    /// Cập nhật giá trị slider dựa trên FOV hiện tại của camera
+    /// Được gọi khi zoom bằng 2 ngón tay để đồng bộ slider
+    /// </summary>
+    private void UpdateSliderFromFOV(float currentFOV)
+    {
+        if (ZoomSlider != null && !isSliderUpdating)
+        {
+            isSliderUpdating = true;
+
+            // Chuyển đổi FOV thành giá trị slider (0-1)
+            float normalizedValue = (currentFOV - minZoom) / (maxZoom - minZoom);
+            normalizedValue = Mathf.Clamp01(normalizedValue);
+
+            // Mượt hơn khi thay đổi
+            ZoomSlider.value = Mathf.Lerp(ZoomSlider.value, normalizedValue, Time.deltaTime * 10f);
+
+            isSliderUpdating = false;
         }
     }
+    // ===== KẾT THÚC BỔ SUNG =====
 
-    // // Phương thức zoom bằng code (tùy chọn)
+    // // ===== BỔ SUNG: Các phương thức tiện ích cho zoom =====
+    // /// <summary>
+    // /// Đặt mức zoom theo giá trị từ 0-1 và cập nhật slider
+    // /// </summary>
+    // public void SetZoomLevel(float zoomLevel)
+    // {
+    //     // zoomLevel từ 0 (zoom max) đến 1 (zoom min)
+    //     zoomLevel = Mathf.Clamp01(zoomLevel);
+    //
+    //     float newFOV = Mathf.Lerp(minZoom, maxZoom, zoomLevel);
+    //
+    //     if (ZoomStyle == ZoomCameraStyle.Smoothly)
+    //     {
+    //         targetFOV = newFOV;
+    //     }
+    //     else
+    //     {
+    //         ZoomCamera(newFOV);
+    //     }
+    //
+    //     // Cập nhật slider
+    //     UpdateSliderFromFOV(newFOV);
+    // }
+    //
+    // /// <summary>
+    // /// Zoom in một lượng nhất định
+    // /// </summary>
+    // public void ZoomIn(float amount = 0.1f)
+    // {
+    //     float currentValue = ZoomSlider != null ? ZoomSlider.value : 0.5f;
+    //     SetZoomLevel(currentValue + amount); // + vì slider đảo ngược
+    // }
+    //
+    // /// <summary>
+    // /// Zoom out một lượng nhất định
+    // /// </summary>
+    // public void ZoomOut(float amount = 0.1f)
+    // {
+    //     float currentValue = ZoomSlider != null ? ZoomSlider.value : 0.5f;
+    //     SetZoomLevel(currentValue - amount); // - vì slider đảo ngược
+    // }
+    //
+    // /// <summary>
+    // /// Reset zoom về giá trị mặc định
+    // /// </summary>
+    // public void ResetZoomToDefault()
+    // {
+    //     float defaultFOV = ZoomCameraData.DefaultFOV;
+    //
+    //     if (ZoomStyle == ZoomCameraStyle.Smoothly)
+    //     {
+    //         targetFOV = defaultFOV;
+    //     }
+    //     else
+    //     {
+    //         ZoomCamera(defaultFOV);
+    //     }
+    //
+    //     UpdateSliderFromFOV(defaultFOV);
+    // }
+    // ===== KẾT THÚC BỔ SUNG =====
+
+    // // Phương thức zoom bằng code (tùy chọn) - GIỮ NGUYÊN CODE CŨ (COMMENTED)
     // public void SetZoomLevel(float zoomLevel)
     // {
     //     // zoomLevel từ 0 (zoom max) đến 1 (zoom min)
@@ -297,12 +431,13 @@ public class CameraController : Singleton<CameraController>
     /// </summary>
     public void ResetToInitialRotation()
     {
-        if (!hasStoredInitialRotation || modelTransfrom == null)
+        if (!hasStoredInitialRotation || modelTransfrom == null || !canResset)
         {
             Debug.LogWarning("Initial rotation not stored or model not found!");
             return;
         }
 
+        canResset = false;
         // Block rotation during reset
         BlockRotation = true;
 
@@ -312,11 +447,33 @@ public class CameraController : Singleton<CameraController>
             .OnComplete(() =>
             {
                 BlockRotation = false;
+                canResset = true;
                 targetRotation = initialRotation;
                 Debug.Log("Model reset to initial rotation");
             });
     }
+
     #endregion
+
+    // ===== BỔ SUNG: Các phương thức điều khiển tính năng zoom =====
+    /// <summary>
+    /// Bật/tắt tính năng zoom bằng 2 ngón tay
+    /// </summary>
+    public void SetTouchZoomEnabled(bool enabled)
+    {
+        enableTouchZoom = enabled;
+        Debug.Log("Touch zoom enabled: " + enabled);
+    }
+
+    /// <summary>
+    /// Điều chỉnh độ nhạy zoom bằng 2 ngón tay
+    /// </summary>
+    public void SetTouchZoomSensitivity(float sensitivity)
+    {
+        touchZoomSensitivity = Mathf.Clamp(sensitivity, 0.1f, 10f);
+        Debug.Log("Touch zoom sensitivity set to: " + touchZoomSensitivity);
+    }
+    // ===== KẾT THÚC BỔ SUNG =====
 
     public void SetBlockHandTap(bool isBlock)
     {
@@ -343,7 +500,6 @@ public class CameraController : Singleton<CameraController>
     }
 
     public LayerMask layerMask;
-
 
     private void HandleTap(Vector2 pos)
     {
@@ -588,9 +744,11 @@ public class CameraController : Singleton<CameraController>
 
     #region _zoom camera
 
+    // ===== SỬA ĐỔI: Cải tiến phương thức OnZoomCamera cho zoom 2 ngón tay =====
     private bool OnZoomCamera()
     {
-        if (!ZoomCameraData || !_mainCamera) return false;
+        // THÊM: Kiểm tra enableTouchZoom để có thể tắt tính năng
+        if (!enableTouchZoom || !ZoomCameraData || !_mainCamera) return false;
 
         if (Input.touchCount >= 2)
         {
@@ -602,29 +760,50 @@ public class CameraController : Singleton<CameraController>
             if (touch0.phase == TouchPhase.Began || touch1.phase == TouchPhase.Began)
             {
                 previousDistance = currentDistance;
+                // THÊM: Đánh dấu đang zoom bằng touch để tránh cập nhật slider không cần thiết
+                isTouchZooming = true;
             }
-            else if (touch0.phase == TouchPhase.Moved || touch1.phase == TouchPhase.Moved)
+            else if ((touch0.phase == TouchPhase.Moved || touch1.phase == TouchPhase.Moved) && isTouchZooming)
             {
                 float deltaDistance = currentDistance - previousDistance;
                 previousDistance = currentDistance;
 
-                float fov = _mainCamera.fieldOfView;
-                fov -= deltaDistance * ZoomCameraData.ZoomSpeed;
+                // SỬA ĐỔI: Tính toán zoom dựa trên kích thước màn hình để có trải nghiệm nhất quán
+                // CODE CŨ: float fov = _mainCamera.fieldOfView; fov -= deltaDistance * ZoomCameraData.ZoomSpeed;
+                // CODE MỚI: Tính toán dựa trên đường chéo màn hình
+                float screenDiagonal = Mathf.Sqrt(Screen.width * Screen.width + Screen.height * Screen.height);
+                float normalizedDelta = (deltaDistance / screenDiagonal) * touchZoomSensitivity;
 
+                float fov = _mainCamera.fieldOfView - (normalizedDelta * 100f);
                 fov = Mathf.Clamp(fov, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
 
                 ZoomCamera(fov);
+
+                // THÊM: Cập nhật slider để đồng bộ với zoom touch
+                UpdateSliderFromFOV(fov);
+            }
+
+            // THÊM: Reset trạng thái khi không còn touch
+            if (touch0.phase == TouchPhase.Ended || touch1.phase == TouchPhase.Ended ||
+                touch0.phase == TouchPhase.Canceled || touch1.phase == TouchPhase.Canceled)
+            {
+                isTouchZooming = false;
             }
 
             return true;
         }
 
+        // THÊM: Reset trạng thái khi không còn đủ 2 ngón tay
+        isTouchZooming = false;
         return false;
     }
+    // ===== KẾT THÚC SỬA ĐỔI =====
 
+    // ===== SỬA ĐỔI: Cải tiến phương thức OnZoomCameraSmoothly =====
     private bool OnZoomCameraSmoothly()
     {
-        if (ZoomCameraData == null || _mainCamera == null) return false;
+        // THÊM: Kiểm tra enableTouchZoom
+        if (!enableTouchZoom || ZoomCameraData == null || _mainCamera == null) return false;
 
         if (Input.touchCount >= 2)
         {
@@ -637,29 +816,39 @@ public class CameraController : Singleton<CameraController>
             {
                 previousDistance = currentDistance;
                 isZooming = true;
+                // THÊM: Đánh dấu đang zoom bằng touch
+                isTouchZooming = true;
             }
-            else
+            else if (isTouchZooming) // THÊM: Chỉ xử lý khi đang touch zoom
             {
                 float deltaDistance = currentDistance - previousDistance;
                 previousDistance = currentDistance;
 
+                // SỬA ĐỔI: Cải tiến tính toán zoom với touchZoomSensitivity
                 float screenScale = Mathf.Min(Screen.width, Screen.height);
                 float normalizedDelta = deltaDistance / screenScale;
 
-                targetFOV -= normalizedDelta * ZoomCameraData.ZoomSpeed * 500f;
-                targetFOV = Mathf.Clamp(targetFOV, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
+                // THÊM: Sử dụng touchZoomSensitivity để điều chỉnh độ nhạy
+                float zoomFactor = normalizedDelta * ZoomCameraData.ZoomSpeed * touchZoomSensitivity;
+                float newTargetFOV = targetFOV - (zoomFactor * 500f);
 
-                //targetFOV -= deltaDistance * ZoomCameraData.ZoomSpeed;
-                //targetFOV = Mathf.Clamp(targetFOV, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
+                targetFOV = Mathf.Clamp(newTargetFOV, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
+
+                // THÊM: Cập nhật slider để đồng bộ
+                UpdateSliderFromFOV(targetFOV);
             }
 
             return true;
         }
 
         isZooming = false;
+        // THÊM: Reset trạng thái touch zoom
+        isTouchZooming = false;
         return false;
     }
+    // ===== KẾT THÚC SỬA ĐỔI =====
 
+    // ===== SỬA ĐỔI: Cải tiến phương thức ZoomCamera để cập nhật slider =====
     public void ZoomCamera(float fovCam)
     {
         fovCam = Mathf.Clamp(fovCam, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
@@ -669,9 +858,20 @@ public class CameraController : Singleton<CameraController>
         BackGround.localScale = LocalScaleBackGroundDefault * scaleRatio;
         BackGround.transform.position = _mainCamera.transform.position + _mainCamera.transform.forward * 25;
         BackGround.transform.rotation = Quaternion.LookRotation(_mainCamera.transform.forward);
-        if (ZoomStyle == ZoomCameraStyle.Smoothly) targetFOV = fovCam;
+
+        if (ZoomStyle == ZoomCameraStyle.Smoothly)
+            targetFOV = fovCam;
+
         _mainCamera.fieldOfView = fovCam;
+
+        // THÊM: Cập nhật slider để phản ánh FOV mới (chỉ khi không phải từ touch zoom)
+        // Tránh cập nhật slider khi đang zoom bằng touch để không gây lag
+        if (!isTouchZooming)
+        {
+            UpdateSliderFromFOV(fovCam);
+        }
     }
+    // ===== KẾT THÚC SỬA ĐỔI =====
 
     public void ZoomCameraAdditional(float additionalFOV)
     {
@@ -735,7 +935,6 @@ public class CameraController : Singleton<CameraController>
         targetFOV = IntroEndFOV;
         _mainCamera.fieldOfView = IntroStartFOV;
 
-
         while (!introEnded)
         {
             introTimer += Time.deltaTime;
@@ -778,8 +977,23 @@ public class CameraController : Singleton<CameraController>
     #endregion
 
     #endregion
-}
 
+    // ===== BỔ SUNG: Override OnDestroy để dọn dẹp =====
+    /// <summary>
+    /// Dọn dẹp khi object bị destroy để tránh memory leak
+    /// </summary>
+    void OnDestroy()
+    {
+        // Dọn dẹp listener khi object bị destroy
+        if (ZoomSlider != null)
+            ZoomSlider.onValueChanged.RemoveAllListeners();
+
+        // Dọn dẹp button listener
+        if (btnReCenterModel != null)
+            btnReCenterModel.onClick.RemoveAllListeners();
+    }
+    // ===== KẾT THÚC BỔ SUNG =====
+}
 
 public enum DraggingStyle
 {
