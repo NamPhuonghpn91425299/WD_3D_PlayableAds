@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ef930eea0235d4c8a4a6cf8defe20e, type: 3}
   m_Name: ZoomCameraData
   m_EditorClassIdentifier: 
-  ZoomSpeed: 0.01
-  MinFOV: 60
-  MaxFOV: 35
-  DefaultFOV: 52
+  ZoomSpeed: 1
+  MinFOV: 35
+  MaxFOV: 60
+  DefaultFOV: 60

@@ -16,29 +16,36 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 {
     #region <====================| Properties |====================>
 
-    [Tooltip("Tham chiếu đến HandController để hiển thị/ẩn hoạt ảnh hướng dẫn.")]
-    [SerializeField] private HandController handController;
+    [Tooltip("Tham chiếu đến HandController để hiển thị/ẩn hoạt ảnh hướng dẫn.")] [SerializeField]
+    private HandController handController;
 
     /// <summary>
     /// Template URL để mở trang đánh giá ứng dụng trên Google Play Store.
     /// </summary>
     private const string AndroidRatingURI = "http://play.google.com/store/apps/details?id={0}";
+
     private string url; // URL cuối cùng sau khi thay thế package name.
 
-    [Tooltip("Số lượng khối len cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store).")]
-    [SerializeField] private int cubeCountClaimed = 15; 
-    
-    [Tooltip("Số lượng khối len cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store).")]
-    [SerializeField] private int totalCountClaimed = 9;
+    [Tooltip("Số lượng hộp cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store).")] [SerializeField]
+    private int cubeCountClaimed = 15;
 
-    public int  TotalCountClaimed
+    [Tooltip("Số lượng khối len cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store). chưa dùng")]
+    [SerializeField]
+    private int totalCountClaimed = 9;
+
+    private Coroutine _coroutineEndGame;
+
+    public int TotalCountClaimed
     {
         get => totalCountClaimed;
         set => totalCountClaimed = value;
     }
-    [Tooltip("Panel UI hiển thị khi kết thúc game (thắng/thua).")]
-    [SerializeField] private GameObject endGamePanelWin;
-    [SerializeField] private GameObject endGamePanelLose;
+
+    [Tooltip("Panel UI hiển thị khi kết thúc game (thắng/thua).")] [SerializeField]
+    private CanvasGroup winGamePanel;
+
+    [SerializeField] private CanvasGroup loseGamePanel;
+    [SerializeField] private CanvasGroup btnPlay;
 
     /// <summary>
     /// Tham chiếu đến CameraController để điều khiển các hành vi của camera.
@@ -64,7 +71,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// Prefab cho đối tượng sợi len (kết nối từ cuộn len đến ô chứa).
     /// </summary>
     public GameObject YarnWoolPrefab;
-    
+
     /// <summary>
     /// Prefab cho đối tượng cuộn len (được đặt vào trong các ô).
     /// </summary>
@@ -76,12 +83,12 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
     // Mảng lưu trữ màu sắc của các ô chứa (CubeTarget) hiện tại.
     private Color[] _colorTargets = new Color[]
-                                    {
-                                        Color.black,
-                                        Color.black,
-                                        Color.black,
-                                        Color.black,
-                                    };
+    {
+        Color.black,
+        Color.black,
+        Color.black,
+        Color.black,
+    };
 
     // Danh sách các màu mục tiêu có thể được chọn để sinh ra trong CubeTarget mới.
     private List<Color> _colorTargetList = new List<Color>();
@@ -99,16 +106,17 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// </summary>
     private int _currentColorCollected;
 
-    [Tooltip("Số lượng ô chứa (CubeTarget) mặc định khi bắt đầu level.")]
-    [SerializeField] private int _cubeTargetCountDefault = 4;
+    [Tooltip("Số lượng ô chứa (CubeTarget) mặc định khi bắt đầu level.")] [SerializeField]
+    private int _cubeTargetCountDefault = 4;
 
     /// <summary>
     /// Đếm số lượng cuộn len hiện có trong hàng đợi (Queue).
     /// </summary>
     private int _queueCount;
 
-    [Tooltip("Prefab của level hiện tại, chứa GamePlayMeshController và các mesh len.")]
-    [SerializeField] private GameObject _levelPrefab;
+    [Tooltip("Prefab của level hiện tại, chứa GamePlayMeshController và các mesh len.")] [SerializeField]
+    private GameObject _levelPrefab;
+
     /// <summary>
     /// Lấy tổng số màu sắc có trong level từ MeshController.
     /// </summary>
@@ -118,7 +126,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private bool _isPLayAnimUsingRainBow;
 
     // Hằng số giới hạn số ô chứa tối đa.
-    private readonly int maxCubeTarget = 2;
+    private readonly int maxCubeTarget = 3;
     private Vector3 _scaleDefaultRollWool;
 
 
@@ -126,13 +134,13 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// Tổng số ô chứa (CubeTarget) đang được kích hoạt và hiển thị trên màn hình.
     /// </summary>
     [HideInInspector] public int TotalCubeActive;
-    
+
     /// <summary>
     /// Đếm số ô chứa (CubeTarget) đã sẵn sàng nhận len (không bị khóa).
     /// </summary>
     [HideInInspector] public int CubeReadyCount;
 
-    
+
     /// <summary>
     /// Lấy số lượng cuộn len hiện tại trong hàng đợi.
     /// </summary>
@@ -194,11 +202,12 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     {
         handController.SetActiveAnim(isActive);
     }
-    public void MoveHandController(int index ,bool isActive)
+
+    public void MoveHandController(int index, bool isActive)
     {
         handController.MoveHandToPosition(index, isActive);
     }
-    
+
     /// <summary>
     /// Đếm tổng số lần người chơi đã click vào mesh len.
     /// </summary>
@@ -234,22 +243,23 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         // 1. Ưu tiên kiểm tra các ô chứa chính (CubeTarget)
         for (int i = 0; i < CurrentCubeTargets.Count; i++)
         {
-            if (!CurrentCubeTargets[i].IsActive && !CurrentCubeTargets[i].gameObject.activeSelf) continue; // Bỏ qua nếu ô không hoạt động
+            if (!CurrentCubeTargets[i].IsActive && !CurrentCubeTargets[i].gameObject.activeSelf)
+                continue; // Bỏ qua nếu ô không hoạt động
             if (CurrentCubeTargets[i].CheckColor(colorClick))
             {
                 if (!CurrentCubeTargets[i].IsReady) continue; // Bỏ qua nếu ô chưa sẵn sàng
-                
+
                 // Thêm một cuộn len vào ô
                 CurrentCubeTargets[i].AddChild(i, out var headtrans);
                 if (headtrans == null) break;
-                
+
                 // Tạo và thiết lập animation cho cuộn len (RollWool) và sợi len (YarnWool)
                 var rollWool = Instantiate(RollWoolPrefab);
                 rollWool.GetComponent<RollWoolAnimation>()
-                   .ResetMesh()
-                   .SetParent(headtrans)
-                   .SetColor(colorClick)
-                   .PlayAnim(RollWoolAnimationExtensions.ParentType.CubeTarget);
+                    .ResetMesh()
+                    .SetParent(headtrans)
+                    .SetColor(colorClick)
+                    .PlayAnim(RollWoolAnimationExtensions.ParentType.CubeTarget);
 
                 ChoseYarnWool(rollWool.transform, startPoint, spiralPath, colorClick);
                 _currentColorClickedCount++;
@@ -265,10 +275,10 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                 // Tạo và thiết lập animation tương tự cho hàng đợi
                 var rollWool = Instantiate(RollWoolPrefab);
                 rollWool.GetComponent<RollWoolAnimation>()
-                   .ResetMesh()
-                   .SetParent(CurrentQueueTargets[i].transform)
-                   .SetColor(colorClick)
-                   .PlayAnim(RollWoolAnimationExtensions.ParentType.CubeQueue);
+                    .ResetMesh()
+                    .SetParent(CurrentQueueTargets[i].transform)
+                    .SetColor(colorClick)
+                    .PlayAnim(RollWoolAnimationExtensions.ParentType.CubeQueue);
 
                 ChoseYarnWool(rollWool.transform, startPoint, spiralPath, colorClick);
                 _currentColorClickedCount++;
@@ -277,15 +287,17 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                 // Kiểm tra điều kiện thua game
                 if (_queueCount >= CurrentQueueTargets.Count && CubeReadyCount == TotalCubeActive)
                 {
-                    StartCoroutine(OnEndGameAction(false)); // Thua
-                    Luna.Unity.LifeCycle.GameEnded();
+                    if (_coroutineEndGame == null)
+                        _coroutineEndGame = StartCoroutine(OnEndGameAction(false)); // Thua
                 }
+
                 return true; // Click thành công
             }
         }
+
         return false; // Click không hợp lệ (không có chỗ chứa)
     }
-    
+
     /// <summary>
     /// Gửi dữ liệu tracking khi kết thúc game.
     /// </summary>
@@ -303,7 +315,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private bool _isUseBroomBooster;
     private Color _nextColor;
     private bool _hasCube;
-    
+
     /// <summary>
     /// Kiểm tra xem có còn khối len nào có thể được tạo ra từ mesh không.
     /// </summary>
@@ -317,13 +329,13 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     {
         if (indexCube == -1) return;
 
-// Tính toán độ ưu tiên của các màu còn lại
+        // Tính toán độ ưu tiên của các màu còn lại
         _meshController.ColorPriorityCalculator();
         _colorTargets[indexCube] = Color.black;
 
         if (_meshController.CubeCount.Count > 1)
         {
-// Lấy danh sách màu có thể chọn, loại trừ các màu đã có trên các CubeTarget khác
+            // Lấy danh sách màu có thể chọn, loại trừ các màu đã có trên các CubeTarget khác
             _colorTargetList = RemoveColorInList(_meshController._colorPriority, _colorTargets);
             _nextColor = _colorTargetList[0]; // Chọn màu có độ ưu tiên cao nhất
         }
@@ -332,12 +344,12 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             _nextColor = _meshController.CubeCount.FirstOrDefault().Key;
         }
 
-        Debug.Log("Existing Cube Count: " + _meshController.CubeCount.Count + " Next Color: " + _nextColor);
+        //Debug.LogError("Existing Cube Count: " + _meshController.CubeCount.Count + " Next Color: " + _nextColor);
 
-// Kiểm tra màu đầu tiên
+        // Kiểm tra màu đầu tiên
         _hasCube = _meshController.CubeCount.TryGetValue(_nextColor, out var cubeCount);
 
-// Nếu màu đầu tiên không có, kiểm tra các màu tiếp theo
+        // Nếu màu đầu tiên không có, kiểm tra các màu tiếp theo
         if (!_hasCube && _meshController.CubeCount.Count > 1)
         {
             for (int i = 1; i < _colorTargetList.Count; i++)
@@ -354,22 +366,23 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
         if (_hasCube)
         {
-// Giảm số lượng màu đó trong kho
+            // Giảm số lượng màu đó trong kho
             _meshController.CubeCount[_nextColor] = cubeCount - 1;
             if (_meshController.CubeCount[_nextColor] == 0)
             {
                 _meshController.CubeCount.Remove(_nextColor);
             }
 
-// Gán màu mới cho CubeTarget
+            // Gán màu mới cho CubeTarget
             CurrentCubeTargets[indexCube].SetColor(_nextColor);
             _colorTargets[indexCube] = _nextColor;
         }
 
-// Nếu hết sạch màu trong kho, khóa chức năng mở thêm ô chứa
+        // Nếu hết sạch màu trong kho, khóa chức năng mở thêm ô chứa
         if (_meshController.CubeCount.Count == 0)
             LockOpenCube();
     }
+
 
     /// <summary>
     /// Xử lý khi một CubeTarget bị tắt (ví dụ: bị khóa).
@@ -380,29 +393,33 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     {
         if (!active)
         {
-            CurrentCubeTargets[indexCube].group.SetActive(false);
-            //CurrentCubeTargets[indexCube].gameObject.SetActive(false);
+            CurrentCubeTargets[indexCube]?.group.SetActive(false);
             TotalCubeActive--;
             CubeReadyCount--;
+            // CurrentCubeTargets.Remove(CurrentCubeTargets[indexCube]);
             SmoothRepositioner(); // Sắp xếp lại vị trí các ô còn lại cho đẹp
             Debug.Log("CubeReadyCount: " + CubeReadyCount + " TotalCubeActive: " + TotalCubeActive);
         }
     }
-    
+
     /// <summary>
     /// Được gọi khi một CubeTarget được lấp đầy.
     /// </summary>
     public void FinishedCollectingCube()
     {
         _currentColorCollected += 3;
-        Debug.Log("CurrentColorCollected: " + _currentColorCollected);
-        if (_currentColorCollected / 3 == cubeCountClaimed)
+        //Debug.LogWarning(_currentColorCollected + "-----------------" + cubeCountClaimed);
+        if (_currentColorCollected/3 == cubeCountClaimed)
         {
             // Khi đạt đủ số lượng, kích hoạt sự kiện đặc biệt
-            Luna.Unity.LifeCycle.GameEnded();
-            EndGameTotalCountWool();
+            if (_coroutineEndGame == null)
+            {
+                _coroutineEndGame = StartCoroutine(OnEndGameAction(true));
+                Luna.Unity.LifeCycle.GameEnded();
+            }
+            //CheckEndGame();
             //GoToStore();
-            Debug.Log(" CurrentColorCollected: " + _currentColorCollected + " End Game with cubeCountClaimed: " + cubeCountClaimed);
+           // Debug.Log(" CurrentColorCollected: " + _currentColorCollected + " End Game with cubeCountClaimed: " +cubeCountClaimed);
         }
     }
 
@@ -431,20 +448,20 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                         Vector3 start = t.transform.position;
                         CurrentCubeTargets[indexCube].AddChild(indexCube, out var headTrans);
                         if (headTrans == null) return;
-                        
+
                         // Thực hiện animation di chuyển cuộn len từ Queue lên CubeTarget
                         rollWoolChild.SetParent(headTrans);
                         Vector3 mid = (start + headTrans.position) * 0.5f + Vector3.up * 0.5f;
                         rollWoolChild.DOKill();
                         rollWoolChild.DOPath(new[] { start, mid, headTrans.position }, 0.6f, PathType.CatmullRom)
-                           .SetEase(Ease.InOutCubic)
-                           .OnComplete(() =>
-                           {
-                               anim.SnapToHole();
-                               if (wool1Clip != null) SoundManager.Instance.PlayOneShot(wool1Clip, 1);
-                           });
+                            .SetEase(Ease.InOutCubic)
+                            .OnComplete(() =>
+                            {
+                                anim.SnapToHole();
+                                if (wool1Clip != null) SoundManager.Instance.PlayOneShot(wool1Clip, 1);
+                            });
                     }
-                    
+
                     // Reset lại ô trong Queue và giảm số lượng
                     t.ResetDefault();
                     _queueCount--;
@@ -457,7 +474,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         }
     }
 
-    private bool _isWinGame;
+    private bool _isEndGame;
 
     /// <summary>
     /// Kiểm tra các điều kiện thắng/thua của game.
@@ -469,55 +486,115 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         // Điều kiện thắng: Đã thu thập hết tất cả các màu
         if (_currentColorCollected == _meshController.TotalColor && TotalCubeActive == CubeReadyCount)
         {
-            //GoToStore();
-            StartCoroutine(OnEndGameAction(true));
-            Debug.Log("End Game Win");
-            Luna.Unity.LifeCycle.GameEnded();
+            if (_coroutineEndGame == null)
+            {
+                _coroutineEndGame = StartCoroutine(OnEndGameAction(true));
+            }
         }
-        
+
         // Điều kiện thua: Hàng đợi bị đầy
         if (_queueCount >= CurrentQueueTargets.Count && TotalCubeActive == CubeReadyCount)
         {
-            StartCoroutine(OnEndGameAction(false));
-            Luna.Unity.LifeCycle.GameEnded();
+            if (_coroutineEndGame == null)
+            {
+                _coroutineEndGame = StartCoroutine(OnEndGameAction(false));
+                Luna.Unity.LifeCycle.GameEnded();
+            }
         }
     }
 
     public void EndGameTotalCountWool()
     {
         if (_isPLayAnimUsingRainBow) return;
-        StartCoroutine(OnEndGameAction(true));
-        Debug.Log("End Game Total Count Wool");
-        Luna.Unity.LifeCycle.GameEnded();
+        if (_coroutineEndGame == null)
+        {
+            _coroutineEndGame = StartCoroutine(OnEndGameAction(true));
+            Debug.Log("End Game Total Count Wool");
+            Luna.Unity.LifeCycle.GameEnded();
+        }
     }
-    
+
     /// <summary>
     /// Coroutine xử lý các hành động cuối game (hiển thị UI, phát âm thanh).
     /// </summary>
     /// <param name="isWin">`true` nếu thắng, `false` nếu thua.</param>
     private IEnumerator OnEndGameAction(bool isWin)
     {
-        if (_isUseBroomBooster) yield break;
+        CameraController.Instance?.SetBlockHold(false);
+        CameraController.Instance?.SetBlockHandTap(false);
         if (!isWin)
-            yield return new WaitForSeconds(1.5f); // Chờ một chút trước khi hiện panel thua
-        
+            yield return new WaitForSeconds(2f); // Chờ một chút trước khi hiện panel thua
+        // else
+        //     yield return new WaitForSeconds(.1f); // Chờ một chút trước khi hiện panel thua
+        Luna.Unity.LifeCycle.GameEnded();
+        if (_isUseBroomBooster)
+            yield break;
+
+        print(isWin ? "Trạng thài game: Win" : "Trạng thài game: Lose");
         if (isWin)
         {
-            if (!_isWinGame)
+            if (!_isEndGame)
             {
-                _isWinGame = true;
+                _isEndGame = true;
                 TrackingEndGame(false, true);
-                if (winSound != null) SoundManager.Instance.PlayOneShot(winSound, 1f);
-                endGamePanelWin.SetActive(true);
+                if (winSound != null)
+                    SoundManager.Instance.PlayOneShot(winSound, 1f);
+                yield return StartCoroutine(FadeBetweenCanvasGroups(winGamePanel, btnPlay, 1f, .6f));
             }
         }
         else
         {
-            if (loseSound != null) SoundManager.Instance.PlayOneShot(loseSound, 1f);
-            endGamePanelLose.SetActive(true);
-            //GoToStore();
-            //endGamePanel.SetActive(true);
+            if (!_isEndGame)
+            {
+                _isEndGame = true;
+                if (loseSound != null)
+                    SoundManager.Instance.PlayOneShot(loseSound, 1f);
+                yield return StartCoroutine(FadeBetweenCanvasGroups(loseGamePanel, btnPlay, 1f, .6f));
+            }
         }
+    }
+
+    private IEnumerator FadeBetweenCanvasGroups(CanvasGroup fadeIn, CanvasGroup fadeOut, float fadeInDuration,
+        float fadeOutDuration)
+    {
+        // Chuẩn bị fade-in
+        fadeIn.gameObject.SetActive(true);
+        fadeIn.alpha = 0f;
+        fadeIn.interactable = true;
+        fadeIn.blocksRaycasts = true;
+
+        // Chuẩn bị fade-out
+        fadeOut.alpha = 1f;
+        fadeOut.interactable = false;
+        fadeOut.blocksRaycasts = false;
+
+        float elapsed = 0f;
+        float maxDuration = Mathf.Max(fadeInDuration, fadeOutDuration);
+
+        while (elapsed < maxDuration)
+        {
+            // Tính alpha fade-in
+            if (elapsed < fadeInDuration)
+            {
+                float tIn = elapsed / fadeInDuration;
+                fadeIn.alpha = Mathf.Lerp(0f, 1f, tIn);
+            }
+
+            // Tính alpha fade-out
+            if (elapsed < fadeOutDuration)
+            {
+                float tOut = elapsed / fadeOutDuration;
+                fadeOut.alpha = Mathf.Lerp(1f, 0f, tOut);
+            }
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Kết thúc chính xác
+        fadeIn.alpha = 1f;
+        fadeOut.alpha = 0f;
+        fadeOut.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -531,10 +608,10 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         {
             if (cube.Value > 1) onLockRainBowBooster = false;
         }
+
         LockRainBowBooster?.Invoke(onLockRainBowBooster);
-        
     }
-    
+
     /// <summary>
     /// Mở khóa các ô chứa (CubeTarget) dựa trên số lượng mới.
     /// </summary>
@@ -546,14 +623,13 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         for (int i = 0; i < CurrentCubeTargets.Count; i++)
         {
             CurrentCubeTargets[i].group.SetActive(true);
-            //CurrentCubeTargets[i].gameObject.SetActive(true);
             // Kích hoạt ô nếu index của nó nhỏ hơn số lượng mới
             CurrentCubeTargets[i].SetActiveCubeTarget(i, i + 1 <= newCubeCount);
             // Hiện nút "mở khóa" cho các ô vượt quá số lượng mới
             CurrentCubeTargets[i].ActiveOpenCube(i + 1 > newCubeCount);
-            //Debug.Log("UnLockCubeTarget" + i );
-
+            Debug.Log("UnLockCubeTarget" + i);
         }
+
         _cubeTargetCountDefault = newCubeCount;
         SmoothRepositioner(); // Sắp xếp lại vị trí các ô
     }
@@ -567,7 +643,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         {
             if (cube.IsActive) continue;
             cube.ActiveOpenCube(false);
-            Debug.Log("LockOpenCube" );
+            Debug.Log("LockOpenCube");
         }
     }
 
@@ -590,7 +666,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     #endregion
 
     #region HELPER_METHODS
-    
+
     /// <summary>
     /// Lọc và trả về danh sách các màu có thể được sinh ra.
     /// </summary>
@@ -598,11 +674,12 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// <param name="listReference">Mảng các màu hiện đang có trên các CubeTarget.</param>
     /// <param name="alowSameColor">Có cho phép sinh ra màu đã có trên CubeTarget khác không.</param>
     /// <returns>Danh sách các màu hợp lệ.</returns>
-    private List<Color> RemoveColorInList(Dictionary<Color, float> listRemove, Color[] listReference, bool alowSameColor = false)
+    private List<Color> RemoveColorInList(Dictionary<Color, float> listRemove, Color[] listReference,
+        bool alowSameColor = false)
     {
         // ... (Logic phức tạp để chọn màu, đảm bảo không trùng lặp nếu cần)
-        List<Color> result       = new List<Color>();
-        var         copyListMove = listRemove;
+        List<Color> result = new List<Color>();
+        var copyListMove = listRemove;
         if (!alowSameColor)
         {
             for (int i = 0; i < listReference.Length && i < CurrentCubeTargets.Count; i++)
@@ -611,8 +688,9 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                 copyListMove.Remove(listReference[i]);
             }
         }
+
         if (copyListMove.Count == 0 && _meshController.CubeCount.Count >= 1 && _meshController.CubeCount.First()
-           .Value >= 1)
+                .Value >= 1)
         {
             foreach (var color in listRemove)
             {
@@ -632,33 +710,6 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         return result;
     }
 
-    // /// <summary>
-    // /// Lấy một màu dựa trên độ ưu tiên đã được tính toán.
-    // /// </summary>
-    // private Color GetColorByPriority(float priority)
-    // { 
-    //     // ... (Logic chọn màu dựa trên một ngưỡng ưu tiên)
-    //     if (_colorTargetList.Count == 1)
-    //         return _meshController?._colorPriority?.FirstOrDefault()
-    //            .Key ?? Color.black;
-    //     Color result = Color.black;
-    //
-    //     try
-    //     {
-    //         foreach (var colorPriority in _meshController._colorPriority)
-    //         {
-    //             result = colorPriority.Key;
-    //             if (priority <= colorPriority.Value) break;
-    //         }
-    //     } catch (Exception e)
-    //     {
-    //         Debug.LogError($"Error in GetColorByPriority: {e}");
-    //     }
-    //
-    //     return result;
-    // }
-
-
     /// <summary>
     /// Tải và thiết lập một level mới. Đây là điểm khởi đầu của một màn chơi.
     /// </summary>
@@ -671,11 +722,11 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         ResetCubeTarget();
         ResetQueueTarget();
         CameraController.SpawnPoint.rotation = Quaternion.identity;
-        _isWinGame = false;
+        _isEndGame = false;
         _meshController?.LoadcolorForMesh(); // Tải màu cho các mesh len
         CameraController.Setup(_levelPrefab);
         CameraController.Instance?.BlockRotate(false);
-        
+
         // Reset các biến đếm
         _currentColorClickedCount = 0;
         _currentColorCollected = 0;
@@ -688,6 +739,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             GenNewCube(i);
             CurrentCubeTargets[i].ChangeColor();
         }
+
         CameraController.HoldClickTime = 0;
         CameraController.StartIntro(); // Bắt đầu animation intro của camera
     }
@@ -705,6 +757,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         {
             cube.SetDefault();
         }
+
         _isPLayAnimUsingRainBow = false;
     }
 
@@ -719,6 +772,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             BoxChainReaction3D.InitializeBoxes();
             return;
         }
+
         foreach (var queue in CurrentQueueTargets)
         {
             queue.ResetDefault();
@@ -727,7 +781,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
     private List<CubeTargetControl> _activeObjects = new();
     private Vector3 offset = new(1.2f, 0, 0);
-    
+
     /// <summary>
     /// Chạy animation sắp xếp lại vị trí các CubeTarget để chúng luôn ở giữa màn hình.
     /// </summary>
@@ -736,7 +790,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         CacheActiveObjects();
         Reposition();
     }
-    
+
     /// <summary>
     /// Lưu lại danh sách các CubeTarget đang hoạt động vào cache.
     /// </summary>
@@ -745,7 +799,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         _activeObjects.Clear();
         foreach (var obj in CurrentCubeTargets)
         {
-            if (obj != null && obj.group.gameObject.activeSelf)
+            if (obj != null && obj.group.gameObject.activeSelf) // fix chưa xắp xếp hộp đúng
                 _activeObjects.Add(obj);
         }
     }
@@ -768,15 +822,15 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             var obj = _activeObjects[i];
             Vector3 currentPos = obj.transform.position;
             Vector3 targetPos = new Vector3(startX + i * spacingCubeTarget, currentPos.y, currentPos.z);
-            
+
             // Dùng DOTween để di chuyển mượt mà
             obj.transform
-               .DOMoveX(targetPos.x, 0.3f)
-               .SetEase(Ease.OutQuad)
-               .OnComplete(() =>
-               {
-                   obj.BakeAnimPosition(); // Lưu lại vị trí mới sau khi animation kết thúc
-               });
+                .DOMoveX(targetPos.x, 0.3f)
+                .SetEase(Ease.OutQuad)
+                .OnComplete(() =>
+                {
+                    obj.BakeAnimPosition(); // Lưu lại vị trí mới sau khi animation kết thúc
+                });
         }
     }
 

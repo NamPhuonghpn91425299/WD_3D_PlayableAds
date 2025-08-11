@@ -97,6 +97,7 @@ public class CubeTargetControl : MonoBehaviour
     private IEnumerator WaitingAnim(int indexCube)
     {
         GamePlaySystem.Instance.GenNewCube(indexCube);
+        GamePlaySystem.Instance.FinishedCollectingCube();
         
         _isActiveGenNew = GamePlaySystem.Instance.HasCube;
         GamePlaySystem.Instance.CubeReadyCount--;
@@ -113,7 +114,7 @@ public class CubeTargetControl : MonoBehaviour
 
         SetDefault();
         GamePlaySystem.Instance.CheckTurnOffCube(indexCube, _isActiveGenNew);
-        GamePlaySystem.Instance.FinishedCollectingCube();
+        // GamePlaySystem.Instance.FinishedCollectingCube();
         ChangeColor();
         if(indexCube != -1) _boxAnimation.FlyIn();
         
