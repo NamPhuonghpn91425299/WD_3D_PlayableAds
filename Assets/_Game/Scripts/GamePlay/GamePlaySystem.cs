@@ -60,12 +60,12 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// <summary>
     /// Danh sách các ô chứa len chính đang hoạt động trên màn hình.
     /// </summary>
-    public List<CubeTargetControl> CurrentCubeTargets = new();
+    public List<CubeTargetControl> CurrentCubeTargets = new List<CubeTargetControl>();
 
     /// <summary>
     /// Danh sách các ô trong hàng đợi (overflow) đang hoạt động.
     /// </summary>
-    public List<QueueTargetControl> CurrentQueueTargets = new();
+    public List<QueueTargetControl> CurrentQueueTargets = new List<QueueTargetControl>();
 
     /// <summary>
     /// Prefab cho đối tượng sợi len (kết nối từ cuộn len đến ô chứa).
@@ -779,8 +779,8 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         }
     }
 
-    private List<CubeTargetControl> _activeObjects = new();
-    private Vector3 offset = new(1.2f, 0, 0);
+    private List<CubeTargetControl> _activeObjects = new List<CubeTargetControl>();
+    private Vector3 offset = new Vector3(1.2f, 0, 0);
 
     /// <summary>
     /// Chạy animation sắp xếp lại vị trí các CubeTarget để chúng luôn ở giữa màn hình.

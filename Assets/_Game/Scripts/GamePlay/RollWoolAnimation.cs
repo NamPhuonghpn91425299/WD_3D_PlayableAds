@@ -61,9 +61,9 @@ public class RollWoolAnimation : MonoBehaviour
     internal Color _currentColor = Color.black;
 
     private readonly Quaternion DefaultRotation = Quaternion.Euler(30, 0, 0);
-    private readonly Vector3 DefaultLocalPositionInTarget = new(0, -0.3f, 0.4f);
-    private readonly Vector3 DefaultLocalPositionInQueue = new(0, -0.23f, 0.2f);
-    private readonly Vector3 DefaultLocalPositionAtDisplay = new(0, 0, -0.5f);
+    private readonly Vector3 DefaultLocalPositionInTarget = new Vector3(0, -0.3f, 0.4f);
+    private readonly Vector3 DefaultLocalPositionInQueue = new Vector3(0, -0.23f, 0.2f);
+    private readonly Vector3 DefaultLocalPositionAtDisplay = new Vector3(0, 0, -0.5f);
 
     private Vector3 DefaultLocalPosition;
     

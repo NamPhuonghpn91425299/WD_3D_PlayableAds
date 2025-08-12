@@ -25,8 +25,8 @@ public class CameraController : Singleton<CameraController>
     public Quaternion targetRotation;
 
     public float Friction = 3f; // The speed of decay of inertia
-    public Vector2 RotationSensitivity = new(1f, 1f); // Giới hạn tốc độ xoay
-    public Vector2 AccelerationRange = new(0.1f, 1f); // Giới hạn tốc độ xoay
+    public Vector2 RotationSensitivity = new Vector2(1f, 1f); // Giới hạn tốc độ xoay
+    public Vector2 AccelerationRange = new Vector2(0.1f, 1f); // Giới hạn tốc độ xoay
     public float RotationSpeed = 5f; // Tốc độ xoay
     public float RotationAutoSpeed = 0.5f; // Tốc độ xoay tự động
     public float SmoothingTime = 0.05f;
@@ -116,7 +116,7 @@ public class CameraController : Singleton<CameraController>
     public Action OnHandleHoldWoolAction;
     private bool _blockDrag;
     public Action OnHandleDragWoolAction;
-    private Vector3 LocalScaleBackGroundDefault = new(40f, 40f, 1);
+    private Vector3 LocalScaleBackGroundDefault = new Vector3(40f, 40f, 1);
 
     // Lưu rotation ban đầu để reset
     private Quaternion initialRotation;

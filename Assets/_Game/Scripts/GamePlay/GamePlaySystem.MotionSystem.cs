@@ -6,7 +6,7 @@ using static WoolControl;
 public partial class GamePlaySystem
 {
     // Một Dictionary tĩnh và chỉ đọc để ánh xạ loại cảm xúc (enum) với "Hash" của parameter trong Animator.
-    public static readonly Dictionary<EMotionType, int> MainMotionParameterHash = new ()
+    public static readonly Dictionary<EMotionType, int> MainMotionParameterHash = new Dictionary<EMotionType, int>()
     {
         // Sử dụng Animator.StringToHash("...") để chuyển đổi tên parameter thành một số nguyên (integer).
         // Việc này hiệu quả hơn rất nhiều so với việc dùng chuỗi ("idle") mỗi lần gọi Animator,

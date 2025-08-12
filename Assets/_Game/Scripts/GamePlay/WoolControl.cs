@@ -47,8 +47,8 @@ public class WoolControl : MonoBehaviour
 
     private int _indexLayer;
 
-    [SerializeField] private List<Vector3> _spiralPath    = new ();
-    [SerializeField] private List<float>   _spiralPathUVY = new ();
+    [SerializeField] private List<Vector3> _spiralPath    = new List<Vector3>();
+    [SerializeField] private List<float>   _spiralPathUVY = new List<float>();
 
     #region custom attributes
 
@@ -106,7 +106,7 @@ public class WoolControl : MonoBehaviour
     {
         if (MeshObjectData == null || !HideMeshRenderer || _indexLayer >= MeshObjectData.TotalLayer || _hideMaterialPropertyBlock == null) return false;
 
-        MeshObjectData.ColorStack ??= new ();
+        MeshObjectData.ColorStack ??= new List<Color>();
         MeshObjectData.ColorStack.Add(color);
         _indexLayer++;
         if (MeshObjectData.ColorStack.Count > 1)

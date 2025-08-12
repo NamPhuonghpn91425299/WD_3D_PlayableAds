@@ -89,7 +89,7 @@ public class YarnWoolAnimation : MonoBehaviour
         }
 
         // Đảm bảo kết thúc ở điểm cuối
-        var tailEnd = _tailParent.TransformPoint(_pointList[^1]);
+        var tailEnd = _tailParent.TransformPoint(_pointList[_pointList.Count - 1]);
         LineRenderer.SetPosition(1, tailEnd);
 
         // Fade out animation

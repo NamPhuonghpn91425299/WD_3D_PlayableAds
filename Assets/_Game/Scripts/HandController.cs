@@ -9,7 +9,7 @@ using UnityEditor;
 #endif
 public class HandController : MonoBehaviour
 {
-    [SerializeField] private List<Sprite>   handSprites = new ();
+    [SerializeField] private List<Sprite>   handSprites = new List<Sprite>();
     [SerializeField] private SpriteRenderer handSpriteRenderer;
     [SerializeField] private Vector3        positionShow = new Vector3(0.2f, -0.2f, -1.5f);
     [SerializeField] private Vector3        positionHide = new Vector3(0.2f, 10, 0);

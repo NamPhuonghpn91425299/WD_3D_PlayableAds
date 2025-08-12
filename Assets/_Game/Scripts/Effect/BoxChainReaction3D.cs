@@ -133,7 +133,7 @@ public class BoxChainReaction3D : MonoBehaviour
 
         // Step 1: Fly in animation
         Sequence flyInSequence = DOTween.Sequence();
-        flyInSequence.Append(newBox.DOMove(oldPositions[^1], flyInDuration)
+        flyInSequence.Append(newBox.DOMove(oldPositions[oldPositions.Count - 1], flyInDuration)
                              .SetEase(Ease.OutQuint));
 
         // Squash on landing
