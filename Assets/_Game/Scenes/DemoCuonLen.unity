@@ -6019,6 +6019,10 @@ PrefabInstance:
       value: BarTargetNewGO
       objectReference: {fileID: 0}
     - target: {fileID: 5811582875356020080, guid: 51cf37405109cd34e8cfec1c1f30e453, type: 3}
+      propertyPath: nameColor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811582875356020080, guid: 51cf37405109cd34e8cfec1c1f30e453, type: 3}
       propertyPath: colorPalleteData
       value: 
       objectReference: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
@@ -6923,6 +6927,10 @@ PrefabInstance:
       value: 0.11372549
       objectReference: {fileID: 0}
     - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
       propertyPath: LevelData.NameColorList.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -7045,6 +7053,98 @@ PrefabInstance:
     - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
       propertyPath: LevelData.NameColorList.Array.data[5]
       value: Green2
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[0].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[0].b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[0].g
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[0].r
+      value: 0.85882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[1].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[1].b
+      value: 0.9882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[1].g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[1].r
+      value: 0.9098039
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[2].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[2].b
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[2].g
+      value: 0.2627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[2].r
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[3].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[3].g
+      value: 0.76862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[3].r
+      value: 0.9490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[4].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[4].b
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[4].g
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[4].r
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[5].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[5].b
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[5].g
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 518543868551725914, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
+      propertyPath: LevelData.ColorListData.Array.data[5].r
+      value: 0.11372549
       objectReference: {fileID: 0}
     - target: {fileID: 608890984519713599, guid: 4371dd1c2516feb409229baccb19ce17, type: 3}
       propertyPath: MeshObjectData.HightestColor.a

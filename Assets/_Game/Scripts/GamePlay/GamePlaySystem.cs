@@ -384,7 +384,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             }
 
             // Gán màu mới cho CubeTarget
-            CurrentCubeTargets[indexCube].SetColor(_nextColor);
+            CurrentCubeTargets[indexCube].SetColor(_nextColor, _meshController.LevelData.FindKeyByColor(_nextColor));
             _colorTargets[indexCube] = _nextColor;
         }
 

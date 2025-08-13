@@ -37,6 +37,7 @@ public class CubeTargetControl : MonoBehaviour
     private int   _indexCube;
     private int   _indexChild   = 0;
     public Color _currentColor = Color.black;
+    public string nameColor;
 
     private const int TotalChild = 3;
 
@@ -98,9 +99,10 @@ public class CubeTargetControl : MonoBehaviour
         _indexChild++;
     }
 
-    public void SetColor(Color color)
+    public void SetColor(Color color,string _name)
     {
         _currentColor = color;
+        nameColor = _name;
     }
 
 
@@ -125,8 +127,7 @@ public class CubeTargetControl : MonoBehaviour
 
     private IEnumerator WaitingAnim(int indexCube)
     {
-        PaintingController.PaintPartByColor(colorPalleteData.FindKeyByColor(_currentColor));
-        print(colorPalleteData.FindKeyByColor(_currentColor));
+        PaintingController.PaintPartByColor(nameColor);
         GamePlaySystem.Instance.GenNewCube(indexCube);
         //GamePlaySystem.Instance.FinishedCollectingCube();
         

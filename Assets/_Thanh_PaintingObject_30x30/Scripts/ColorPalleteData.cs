@@ -24,9 +24,12 @@ public class ColorPalleteData : ScriptableObject
     
     public string FindKeyByColor(Color colorToFind)
     {
+        Debug.Log(colorsValues.Count);
         for (int i = 0; i < colorsValues.Count; i++)
         {
-            if(colorsValues[i].Equals(colorToFind))
+            
+            Debug.Log($"Comparing: {colorsValues[i]} vs {colorToFind}");
+            if(colorsValues[i] == colorToFind)
                 return colorKeys[i];
         }
 

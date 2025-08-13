@@ -39,15 +39,23 @@ public class LevelData
     public int         CurrentcyLevel;
     public float       DynamicDif;
     public List<Color> ColorList      = new List<Color>();
-    public List<string> NameColorList      = new List<string>();
     public List<int>   ColorCountList = new List<int>();
-    public Dictionary<string, Color>   _colorPaletThisObject      = new Dictionary<string, Color>();
+    [Header("SETUP COLOR PALETTE")]
+    public Dictionary<Color, string>   _colorPaletThisObject      = new Dictionary<Color, string>();
+    public List<Color> ColorListData      = new List<Color>();
+    public List<string> NameColorList      = new List<string>();
 
     public void SetUpColorPalet()
     {
         
         for (int i = 0; i < NameColorList.Count; i++)
-            _colorPaletThisObject.Add(NameColorList[i], ColorList[i]);
+            _colorPaletThisObject.Add(ColorListData[i], NameColorList[i]);
+    }
+    
+
+    public string FindKeyByColor(Color colorToFind)
+    {
+        return _colorPaletThisObject[colorToFind];
     }
 }
 

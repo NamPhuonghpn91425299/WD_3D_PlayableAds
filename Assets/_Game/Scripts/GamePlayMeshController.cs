@@ -170,8 +170,6 @@ public class GamePlayMeshController : MonoBehaviour
         //Load mesh object
     }
 
-
-
     public void ColorPriorityCalculator()
     {
         _colorPriority.Clear();
