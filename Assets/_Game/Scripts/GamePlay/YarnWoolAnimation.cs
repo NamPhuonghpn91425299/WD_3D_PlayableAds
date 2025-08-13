@@ -10,9 +10,9 @@ public class YarnWoolAnimation : MonoBehaviour
     public WoolAnimationData WoolAnimationData;
     public LineRenderer      LineRenderer;
     
-    private Transform             _headParent;
-    private Transform             _tailParent;
-    private List<Vector3>         _pointList;
+    public Transform             _headParent;
+    public Transform             _tailParent;
+    public List<Vector3>         _pointList;
     private MaterialPropertyBlock _propertyBlock;
     private const float           HeadOffset = 0.2f;
 

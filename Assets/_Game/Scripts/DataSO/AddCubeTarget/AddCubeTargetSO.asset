@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bea26ff8de1c1749b2ca57933890420, type: 3}
-  m_Name: ScriptableObjects_WoolAnimation
+  m_Script: {fileID: 11500000, guid: c0f5f62356810414e845accef0324825, type: 3}
+  m_Name: AddCubeTargetSO
   m_EditorClassIdentifier: 
-  Duration: 1
-  DurationHideWool: 0.2
-  OffSet: 0.1
-  ForceValue: 5.5
-  RandomDirrectionFactor: 1
-  RollInDuration: 0.3
+  FirstCubeTargetCost: 200
+  SecondCubeTargetCost: 250
+  LevelOpen: 3
+  AddCubeTargetIcon: {fileID: -1037084813, guid: e6f61f34b59e49c48bbbf73a304f9735, type: 3}

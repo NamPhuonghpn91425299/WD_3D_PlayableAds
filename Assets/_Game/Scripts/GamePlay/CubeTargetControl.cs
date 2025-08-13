@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CubeTargetControl : MonoBehaviour
 {
     #region PROPERTIES
 
+    [Header("CONTROLLER(s)")]
+    public PaintingLineRendererHandler WoolLineHandler;
+    public TargetBarAnimator ThisBarAnimatorController;
+    
     public GameObject group;
     [SerializeField] private int VibrationStrength = 50;
 
-    public                   List<Transform> TargetChildren;
+    public                   List<Transform> TargetChildrens;
     [SerializeField] private Sprite          AddCubeIcon;
-    public                   MeshRenderer[]  MeshRenderer;
+    [FormerlySerializedAs("MeshRenderer")] public                   MeshRenderer[]  meshRenderers;
     public                   bool            IsActive;
     
 
@@ -28,7 +34,7 @@ public class CubeTargetControl : MonoBehaviour
     private bool  _alowSameColor;
     private int   _indexCube;
     private int   _indexChild   = 0;
-    private Color _currentColor = Color.black;
+    public Color _currentColor = Color.black;
 
     private const int TotalChild = 3;
 
@@ -39,6 +45,17 @@ public class CubeTargetControl : MonoBehaviour
 
     private readonly Color _defaultColor = new Color(0, 0.759f, 0.6667294f, 1f);
 
+    
+    [Header("LINE RENDERER")]
+    public List<PaintingLineRendererHandler> WoolLineRenderers = new List<PaintingLineRendererHandler>();
+    
+    private readonly Queue<PaintingLineRendererHandler> linePool = new Queue<PaintingLineRendererHandler>();
+    
+    [Header("SPIRAL ANIMATION")]
+    public float RollInDuration = .25f;
+    
+    [Header("WOOL SPIRAL ITEMS")]
+    public List<GameObject> SpiralItems = new List<GameObject>();
     #endregion
 
     #region MAIN_METHODS
@@ -59,8 +76,18 @@ public class CubeTargetControl : MonoBehaviour
             child = null;
             return;
         }
-
-        child = TargetChildren[_indexChild];
+        GameObject availableSpiralItem = SpiralItems.FirstOrDefault(x => !x.activeSelf);
+        if (availableSpiralItem != null)
+        {
+            ThisBarAnimatorController.StartScrollInSpiralItem(SpiralItems.IndexOf(availableSpiralItem));
+            availableSpiralItem.SetActive(true);
+            child = availableSpiralItem.transform;
+        }
+        else
+        {
+            child = null;
+        }
+        //child = TargetChildrens[_indexChild];
         if (_indexChild + 1 == TotalChild)
         {
             StartCoroutine(WaitingAnim(indexCube));
@@ -97,7 +124,7 @@ public class CubeTargetControl : MonoBehaviour
     private IEnumerator WaitingAnim(int indexCube)
     {
         GamePlaySystem.Instance.GenNewCube(indexCube);
-        GamePlaySystem.Instance.FinishedCollectingCube();
+        //GamePlaySystem.Instance.FinishedCollectingCube();
         
         _isActiveGenNew = GamePlaySystem.Instance.HasCube;
         GamePlaySystem.Instance.CubeReadyCount--;
@@ -114,7 +141,7 @@ public class CubeTargetControl : MonoBehaviour
 
         SetDefault();
         GamePlaySystem.Instance.CheckTurnOffCube(indexCube, _isActiveGenNew);
-        // GamePlaySystem.Instance.FinishedCollectingCube();
+        GamePlaySystem.Instance.FinishedCollectingCube();
         ChangeColor();
         if(indexCube != -1) _boxAnimation.FlyIn();
         
@@ -129,11 +156,21 @@ public class CubeTargetControl : MonoBehaviour
 
     public void SetDefault()
     {
+        for (int i = 2; i < meshRenderers.Length; i++)
+            meshRenderers[i].gameObject.SetActive(false);
+        
+        foreach (GameObject VARIABLE in SpiralItems)
+            VARIABLE.SetActive(false);
         _isReady    = true;
         _indexChild = 0;
         gameObject.SetActive(true);
-        foreach (var child in TargetChildren)
+        foreach (var child in TargetChildrens)
         {
+            if (child == null)
+            {
+                print("Null child in CubeTargetControl");
+                return;
+            }
             if (child.childCount < 1) continue;
             var rollWool = child.GetChild(0);
             rollWool.parent = null;
@@ -206,8 +243,11 @@ public class CubeTargetControl : MonoBehaviour
     public void ChangeColor()
     {
         if (_currentColor == Color.black) return;
-
-        foreach (var meshRenderer in MeshRenderer)
+        foreach (var line in WoolLineRenderers)
+        {
+            if (line.Available()) linePool.Enqueue(line);
+        }
+        foreach (var meshRenderer in meshRenderers)
         {
             var propertyBlock = new MaterialPropertyBlock();
             meshRenderer.GetPropertyBlock(propertyBlock);
@@ -218,7 +258,8 @@ public class CubeTargetControl : MonoBehaviour
 
     public void ResetDefaultColor()
     {
-        foreach (var meshRenderer in MeshRenderer)
+        foreach (var line in WoolLineRenderers) line.ClearLine();
+        foreach (var meshRenderer in meshRenderers)
         {
             var propertyBlock = new MaterialPropertyBlock();
             meshRenderer.GetPropertyBlock(propertyBlock);
@@ -236,4 +277,20 @@ public class CubeTargetControl : MonoBehaviour
     
 
     #endregion
+    
+    public void ConnectWoolLine(Vector3 origin, Vector3 target, Color color, bool firstCell = false)
+    {
+        if (linePool.Count == 0) return;
+
+        var availableLine = linePool.Dequeue();
+        StartCoroutine(LiningCoroutine(availableLine, origin, target, color, firstCell));
+    }
+    private IEnumerator LiningCoroutine(PaintingLineRendererHandler lineRendererHandler, Vector3 origin, Vector3 target, Color color, bool firstCell = false)
+    {
+        lineRendererHandler.ConnectLine(origin, target, color, firstCell);
+        yield return new WaitForSeconds(RollInDuration);
+        lineRendererHandler.ClearLineLinearFollowUp();
+
+        linePool.Enqueue(lineRendererHandler);
+    }
 }

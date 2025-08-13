@@ -249,20 +249,30 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             {
                 if (!CurrentCubeTargets[i].IsReady) continue; // Bỏ qua nếu ô chưa sẵn sàng
 
-                // Thêm một cuộn len vào ô
-                CurrentCubeTargets[i].AddChild(i, out var headtrans);
+                // // Thêm một cuộn len vào ô
+                // CurrentCubeTargets[i].AddChild(i, out var headtrans);
+                // if (headtrans == null) break;
+                //
+                // // Tạo và thiết lập animation cho cuộn len (RollWool) và sợi len (YarnWool)
+                // var rollWool = Instantiate(RollWoolPrefab);
+                // rollWool.GetComponent<RollWoolAnimation>()
+                //     .ResetMesh()
+                //     .SetParent(headtrans)
+                //     .SetColor(colorClick)
+                //     .PlayAnim(RollWoolAnimationExtensions.ParentType.CubeTarget);
+                //
+                // ChoseYarnWool(rollWool.transform, startPoint, spiralPath, colorClick);
+                // _currentColorClickedCount++;
+                
+                if (!CurrentCubeTargets[i].IsActive || !CurrentCubeTargets[i].IsReady) continue;
+
+                if (!CurrentCubeTargets[i].CheckColor(colorClick)) continue;
+
+                CurrentCubeTargets[i].AddChild(i, out Transform headtrans);
+
                 if (headtrans == null) break;
 
-                // Tạo và thiết lập animation cho cuộn len (RollWool) và sợi len (YarnWool)
-                var rollWool = Instantiate(RollWoolPrefab);
-                rollWool.GetComponent<RollWoolAnimation>()
-                    .ResetMesh()
-                    .SetParent(headtrans)
-                    .SetColor(colorClick)
-                    .PlayAnim(RollWoolAnimationExtensions.ParentType.CubeTarget);
-
-                ChoseYarnWool(rollWool.transform, startPoint, spiralPath, colorClick);
-                _currentColorClickedCount++;
+                ChoseYarnWool(headtrans, startPoint, spiralPath, colorClick);
                 return true; // Click thành công
             }
         }
@@ -443,25 +453,19 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                     {
                         var anim = rollWoolChild.GetComponent<RollWoolAnimation>();
                         anim.SetColor(nextColor);
-
-                        // Lấy vị trí bắt đầu và kết thúc cho animation
-                        Vector3 start = t.transform.position;
+                    
+                        // // Lấy vị trí bắt đầu và kết thúc cho animation
                         CurrentCubeTargets[indexCube].AddChild(indexCube, out var headTrans);
                         if (headTrans == null) return;
+                        Transform startPoint = headTrans;
+                        Transform targetPoint = t.transform;
 
-                        // Thực hiện animation di chuyển cuộn len từ Queue lên CubeTarget
-                        rollWoolChild.SetParent(headTrans);
-                        Vector3 mid = (start + headTrans.position) * 0.5f + Vector3.up * 0.5f;
-                        rollWoolChild.DOKill();
-                        rollWoolChild.DOPath(new[] { start, mid, headTrans.position }, 0.6f, PathType.CatmullRom)
-                            .SetEase(Ease.InOutCubic)
-                            .OnComplete(() =>
-                            {
-                                anim.SnapToHole();
-                                if (wool1Clip != null) SoundManager.Instance.PlayOneShot(wool1Clip, 1);
-                            });
+                        Color rollColor = nextColor;
+                        // anim.PlayAnimRedo();
+
+                        CurrentCubeTargets[indexCube].ConnectWoolLine(targetPoint.position, startPoint.position, rollColor, true);
                     }
-
+                    
                     // Reset lại ô trong Queue và giảm số lượng
                     t.ResetDefault();
                     _queueCount--;
