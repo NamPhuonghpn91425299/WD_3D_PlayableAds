@@ -15,7 +15,7 @@ public static class PaintingSharedAttributes
     public const string MainTexKey = "_MainTex";
     public const string CellColorKey = "_Color";
     public const string BrightnessKey = "_Brightness";
-
+    
     [System.Serializable]
     public class PaintingPartBasedOnColor
     {

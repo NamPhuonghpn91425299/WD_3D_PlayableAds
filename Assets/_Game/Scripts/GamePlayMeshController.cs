@@ -34,7 +34,6 @@ public class GamePlayMeshController : MonoBehaviour
 
     public Dictionary<Color, float> _colorPriority = new Dictionary<Color, float>();
     public Dictionary<Color, int>   CubeCount      = new Dictionary<Color, int>();
-
     public int MaxLayerHasThreeSameColor = 2;
 
     private Dictionary<int, List<ColorDistribution>> _colorDistribution = new Dictionary<int, List<ColorDistribution>>();
@@ -105,6 +104,9 @@ public class GamePlayMeshController : MonoBehaviour
 // #endif
 //             return;
 //         }
+
+        LevelData.SetUpColorPalet();
+
         try
         {
             CubeCount.Clear();

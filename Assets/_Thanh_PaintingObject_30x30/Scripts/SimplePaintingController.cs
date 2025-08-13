@@ -52,6 +52,8 @@ public class SimplePaintingController : MonoBehaviour
     #region UNITY CORE
     private void Awake()
     {
+        if(ColorPalette.colorPallete.Count<=0)
+            ColorPalette.SetupColor();
         InitializeCellsMap();
     }
 
@@ -212,6 +214,7 @@ public class SimplePaintingController : MonoBehaviour
 
     public void PaintPartByColor(string colorKey)
     {
+        print("Tô màu "+ colorKey);
         // Default to animated path painting
         PaintPartByColor(colorKey, animated: true, cellDelay: 0.02f);
     }

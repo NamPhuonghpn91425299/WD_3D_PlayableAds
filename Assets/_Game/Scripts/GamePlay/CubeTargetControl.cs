@@ -9,7 +9,9 @@ public class CubeTargetControl : MonoBehaviour
 {
     #region PROPERTIES
 
-    [Header("CONTROLLER(s)")]
+    [Header("CONTROLLER(s)")] 
+    public ColorPalleteData colorPalleteData;
+    public SimplePaintingController PaintingController;
     public PaintingLineRendererHandler WoolLineHandler;
     public TargetBarAnimator ThisBarAnimatorController;
     
@@ -123,6 +125,8 @@ public class CubeTargetControl : MonoBehaviour
 
     private IEnumerator WaitingAnim(int indexCube)
     {
+        PaintingController.PaintPartByColor(colorPalleteData.FindKeyByColor(_currentColor));
+        print(colorPalleteData.FindKeyByColor(_currentColor));
         GamePlaySystem.Instance.GenNewCube(indexCube);
         //GamePlaySystem.Instance.FinishedCollectingCube();
         

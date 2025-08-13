@@ -39,7 +39,16 @@ public class LevelData
     public int         CurrentcyLevel;
     public float       DynamicDif;
     public List<Color> ColorList      = new List<Color>();
+    public List<string> NameColorList      = new List<string>();
     public List<int>   ColorCountList = new List<int>();
+    public Dictionary<string, Color>   _colorPaletThisObject      = new Dictionary<string, Color>();
+
+    public void SetUpColorPalet()
+    {
+        
+        for (int i = 0; i < NameColorList.Count; i++)
+            _colorPaletThisObject.Add(NameColorList[i], ColorList[i]);
+    }
 }
 
 public abstract class BaseColorPriorityCalculator : ScriptableObject
