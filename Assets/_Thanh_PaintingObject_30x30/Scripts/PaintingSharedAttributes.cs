@@ -26,12 +26,44 @@ public static class PaintingSharedAttributes
 
         public void ValidateColor(ColorPalleteData colorPalette)
         {
-            if (colorPalette == null) return;
-            try { 
-                var color = colorPalette.colorPallete[ColorKey];
-                foreach (var cell in PaintingCells) cell.CellColor = color;
+            if (colorPalette == null)
+            {
+                Debug.LogError("ValidateColor: ColorPalette is null.");
+                return;
             }
-            catch { Debug.LogError("Check ColorBalette for key - " + ColorKey); }
+
+            if (string.IsNullOrEmpty(ColorKey))
+            {
+                Debug.LogError("ValidateColor: ColorKey is null or empty.");
+                return;
+            }
+
+            var dict = colorPalette.colorPallete;
+            if (dict == null)
+            {
+                Debug.LogError("ValidateColor: colorPallete dictionary is null.");
+                return;
+            }
+
+            // 1) Try exact key
+            if (dict.TryGetValue(ColorKey, out var color))
+            {
+                foreach (var cell in PaintingCells) cell.CellColor = color;
+                return;
+            }
+
+            // 2) Try case-insensitive match
+            foreach (var kv in dict)
+            {
+                if (string.Equals(kv.Key, ColorKey, StringComparison.OrdinalIgnoreCase))
+                {
+                    foreach (var cell in PaintingCells) cell.CellColor = kv.Value;
+                    return;
+                }
+            }
+
+            // 3) Not found: log all available keys
+            Debug.LogError($"ValidateColor: Missing color key '{ColorKey}'. Available keys: {string.Join(", ", dict.Keys)}");
         }
     }
 

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-
+using System.Collections; // for IEnumerator
 using UnityEngine;
 
 public class PaintingPumpAnimationManager : MonoBehaviour
 {
     #region PROPERTIES
     public int PrewarmCount = 50;
-    private readonly Queue<PaintingCellPumpUpAnimation> availableAnimationItem = new();
+    private readonly Queue<PaintingCellPumpUpAnimation> availableAnimationItem = new Queue<PaintingCellPumpUpAnimation>();
     public PaintingCellPumpUpAnimation EffectPrefab;
     public Transform EffectContainer;
     #endregion
@@ -14,7 +14,8 @@ public class PaintingPumpAnimationManager : MonoBehaviour
     #region UNITY CORE
     private void Awake()
     {
-        //PreSpawn().Forget();
+        // Prewarm the pool over a few frames without UniTask
+        StartCoroutine(PreSpawn());
     }
     #endregion
 
@@ -36,16 +37,19 @@ public class PaintingPumpAnimationManager : MonoBehaviour
         return obj;
     }
 
-    // private async UniTaskVoid PreSpawn()
-    // {
-    //     for (int i = 0; i < PrewarmCount; i++)
-    //     {
-    //         var obj = CreateNew();
-    //         obj.gameObject.SetActive(false);
-    //         availableAnimationItem.Enqueue(obj);
+    // Coroutine-based pre-spawn (no UniTask/UniTaskVoid)
+    private IEnumerator PreSpawn()
+    {
+        for (int i = 0; i < PrewarmCount; i++)
+        {
+            var obj = CreateNew();
+            obj.gameObject.SetActive(false);
+            availableAnimationItem.Enqueue(obj);
 
-    //         await UniTask.DelayFrame(2);
-    //     }
-    // }
+            // Wait ~2 frames similar to UniTask.DelayFrame(2)
+            yield return null;
+            yield return null;
+        }
+    }
     #endregion
 }
