@@ -18,3 +18,5 @@ MonoBehaviour:
   ForceValue: 5.5
   RandomDirrectionFactor: 1
   RollInDuration: 0.3
+  DefaultRollOutDuration: 0.3
+  MaxDurationPerPaintingCell: 0.5

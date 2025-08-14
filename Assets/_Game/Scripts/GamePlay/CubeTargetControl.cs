@@ -10,8 +10,6 @@ public class CubeTargetControl : MonoBehaviour
     #region PROPERTIES
 
     [Header("CONTROLLER(s)")] 
-    public ColorPalleteData colorPalleteData;
-    public SimplePaintingController PaintingController;
     public PaintingLineRendererHandler WoolLineHandler;
     public TargetBarAnimator ThisBarAnimatorController;
     
@@ -127,28 +125,37 @@ public class CubeTargetControl : MonoBehaviour
 
     private IEnumerator WaitingAnim(int indexCube)
     {
-        PaintingController.PaintPartByColor(nameColor);
+        FishScalesPaintingController fishScalesPaintingController = FishScalesPaintingController.Instance;
+        yield return new WaitForSeconds(1f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
+        fishScalesPaintingController.WoolLinePaintingStart(this);
+
+        while (!fishScalesPaintingController.CanStartOuttro)
+        {
+            yield return null;
+        }
+        
+        yield return new WaitForSeconds(.25f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
+        ThisBarAnimatorController.StartOutro();
+        //PaintingController.PaintPartByColor(nameColor);
+        yield return new WaitForSeconds(.5f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
         GamePlaySystem.Instance.GenNewCube(indexCube);
         //GamePlaySystem.Instance.FinishedCollectingCube();
         
         _isActiveGenNew = GamePlaySystem.Instance.HasCube;
         GamePlaySystem.Instance.CubeReadyCount--;
         _isReady = false;
-        yield return new WaitForSeconds(RollWoolTime + DelayTime);
-        
-        
-        _boxAnimation.CloseAndMoveOut();
-        
-        
-        yield return new WaitForSeconds(_boxAnimation.CloseDuration);
-
-        yield return new WaitForSeconds(_boxAnimation.MoveOutDuration);
+        // yield return new WaitForSeconds(RollWoolTime + DelayTime);
+        //_boxAnimation.CloseAndMoveOut();
+        // yield return new WaitForSeconds(_boxAnimation.CloseDuration);
+        // yield return new WaitForSeconds(_boxAnimation.MoveOutDuration);
 
         SetDefault();
+        //yield return new WaitForSeconds(.5f); // Thời gian chowf 1 lucs mis check end game
         GamePlaySystem.Instance.CheckTurnOffCube(indexCube, _isActiveGenNew);
         GamePlaySystem.Instance.FinishedCollectingCube();
         ChangeColor();
-        if(indexCube != -1) _boxAnimation.FlyIn();
+        if(indexCube != -1)//_boxAnimation.FlyIn();
+            ThisBarAnimatorController.StartIntro();
         
         yield return new WaitForSeconds(_boxAnimation.FlyInDuration);
         
@@ -297,5 +304,10 @@ public class CubeTargetControl : MonoBehaviour
         lineRendererHandler.ClearLineLinearFollowUp();
 
         linePool.Enqueue(lineRendererHandler);
+    }
+
+    public string GetPreviousColor()
+    {
+        return nameColor;
     }
 }

@@ -15,4 +15,15 @@ public class WoolAnimationData : ScriptableObject
     
     [Header("WOOL BAR ANIMATION")]
     public float RollInDuration = 0.3f;
+    public float DefaultRollOutDuration = 0.3f;
+    public float MaxDurationPerPaintingCell = 0.5f;
+    
+    #region _painting methods
+    public void GetRollOutAnimationDuration(int paintingCellCount, out float fullDuration, out float durationEachCell)
+    {
+        durationEachCell = DefaultRollOutDuration / (float)paintingCellCount;
+        durationEachCell = Mathf.Clamp(durationEachCell, 0, MaxDurationPerPaintingCell);
+        fullDuration = durationEachCell * paintingCellCount;
+    }
+    #endregion
 }

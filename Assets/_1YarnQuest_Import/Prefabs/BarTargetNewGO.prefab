@@ -497,12 +497,12 @@ MonoBehaviour:
   - {fileID: 6080229869832917061}
   Side: 0
   BarTransform: {fileID: 7793180559281586218}
-  BarOriginalScale: {x: 1, y: 1, z: 1}
-  BarOutroScale: {x: 1, y: 1, z: 1}
-  IntroDuration: 1
-  OutroDuration: 1
+  BarOriginalScale: {x: 0.2, y: 0.2, z: 0.2}
+  BarOutroScale: {x: 0.2, y: 0.2, z: 0.5}
+  IntroDuration: 0.3
+  OutroDuration: 0.3
   IntroEaseType: 28
-  OutroEaseType: 0
+  OutroEaseType: 28
   WoolLineRenderers:
   - {fileID: 9074309510316372917}
   - {fileID: 3619228490868977594}
@@ -514,11 +514,11 @@ MonoBehaviour:
   RollOutDuration: 0.25
   UnRolledScale: {x: 1, y: 1, z: 0}
   RolledScale: {x: 1, y: 1, z: 1.4}
-  HiddenScale: {x: 0, y: 1, z: 0}
+  HiddenScale: {x: 0, y: 0, z: 0}
   SpinningDuration: 0.25
   OriginalSpinRotation: {x: 8, y: 0, z: 0}
   TargetSpinRotation: {x: 8, y: 0, z: -150}
-  OutSpinRotation: {x: 0, y: 0, z: 0}
+  OutSpinRotation: {x: 0, y: 0, z: -330}
 --- !u!65 &2307984005888696254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -581,6 +581,7 @@ MonoBehaviour:
   RollWoolTime: 0.5
   DelayTime: 0.3
   _currentColor: {r: 0, g: 0, b: 0, a: 1}
+  nameColor: 
   WoolLineRenderers:
   - {fileID: 9074309510316372917}
   - {fileID: 3619228490868977594}

@@ -9,7 +9,7 @@ public class TargetBarAnimator : MonoBehaviour
     public WoolAnimationData AnimationData;
     public Transform[] SpiralRingItems;
 
-    [Header("BAR IN/OUTTRO: OBJECT(s)")]
+    [Header("BAR IN/OUTTRO: OBJECT(s)")] public float distance = 10;
     public BarPivotSide Side = BarPivotSide.Right;
     public Transform BarTransform;
 
@@ -125,6 +125,18 @@ public class TargetBarAnimator : MonoBehaviour
         ScrollInPartByPart(index);
     }
 
+    public void StartEndLen()
+    {
+        StartCoroutine(ScrollOutSpiralsFrom5To0());
+    }
+    private IEnumerator ScrollOutSpiralsFrom5To0()
+    {
+        for (int i = 5; i >= 0; i--)
+        {
+            StartScrollOutSpiralItem(i);
+            yield return new WaitForSeconds(0.2f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
+        }
+    }
     public void StartScrollOutSpiralItem(int index)
     {
         if (index > (SpiralRingItems.Length - 1)) return;
@@ -188,7 +200,7 @@ public class TargetBarAnimator : MonoBehaviour
             });
 
         Vector3 backPos = originalLocalPos + new Vector3(0, 0, 1);
-        Vector3 sidePos = backPos + new Vector3(Side == BarPivotSide.Left ? -10 : 10, 0, 0);
+        Vector3 sidePos = backPos + new Vector3(Side == BarPivotSide.Left ? -distance : distance, 0, 0);
         outroSequence = DOTween.Sequence()
             .Append(BarTransform.DOLocalMove(sidePos, OutroDuration).SetEase(OutroEaseType))
             .Join(BarTransform.DOScaleZ(BarOutroScale.z, OutroDuration / 2f).SetEase(OutroEaseType))
@@ -213,7 +225,7 @@ public class TargetBarAnimator : MonoBehaviour
     [ContextMenu("ANIM: INTRO")]
     public void StartIntro()
     {
-        Vector3 sidePos = originalLocalPos + new Vector3(Side == BarPivotSide.Left ? -10 : 10, 0, 1);
+        Vector3 sidePos = originalLocalPos + new Vector3(Side == BarPivotSide.Left ? -distance : distance, 0, 1);
         BarTransform.localPosition = sidePos;
         BarTransform.localScale = BarOutroScale;
 
