@@ -2,7 +2,9 @@ using static PaintingSharedAttributes;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class SimplePaintingController : MonoBehaviour
 {
@@ -24,7 +26,43 @@ public class SimplePaintingController : MonoBehaviour
     
     [Header("TEST INPUTS")]
     public string DebugColorKey = "Blue3";
+
+    #region Test Painting
+    #if UNITY_EDITOR
+    [CustomEditor(typeof(SimplePaintingController))]
+    public class SimplePaintingControllerEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+            if (GUILayout.Button("Clear Painting"))
+            {
+                (target as SimplePaintingController).ClearAllCells();
+            }
+            if (GUILayout.Button("Load Config"))
+            {
+                (target as SimplePaintingController).LoadFromConfig();
+            }
+            if (GUILayout.Button("Paint Random Part"))
+            {
+                (target as SimplePaintingController).PaintNextAvailablePart();
+            }
+            if (GUILayout.Button("Paint All Instantly"))
+            {
+                (target as SimplePaintingController).PaintAllCells();
+            }
+            if (GUILayout.Button("Paint All With Animation"))
+            {
+                (target as SimplePaintingController).StartCoroutine((target as SimplePaintingController).PaintAllCellsAnimated());
+            }
+            if (GUILayout.Button("Paint Path By Color (DebugColorKey)"))
+            {
+                (target as SimplePaintingController).PaintSeparatePartPath((target as SimplePaintingController).DebugColorKey);
+            }
+        }
+    }
     
+    #endif
     [ContextMenu("Clear Painting")]
     public void ClearPainting() => ClearAllCells();
 
@@ -47,6 +85,7 @@ public class SimplePaintingController : MonoBehaviour
     private int currentPartIndex = 0;
     // Prevent concurrent animations of the same part
     private HashSet<int> partsPaintingInProgress = new HashSet<int>();
+    #endregion
     #endregion
 
     #region UNITY CORE
