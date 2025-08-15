@@ -10420,7 +10420,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 128
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: db75ec84cf3ee8340ae4af253e31e04d, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -16186,8 +16186,9 @@ MonoBehaviour:
   OverviewAnimationManager: {fileID: 1929061859}
   PlayIntroAnimation: 0
   PlayOutroAnimation: 0
-  PaintingAudioSource: {fileID: 0}
-  PaintingCellClips: []
+  PaintingAudioSource: {fileID: 1929061860}
+  PaintingCellClips:
+  - {fileID: 8300000, guid: 3edf3e2721c26aa4da04a485071f1a25, type: 3}
   SoundFxPlayRate: 0.1
   IgnoreColorPalette: 0
   ColorPalette: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
@@ -17132,6 +17133,11 @@ MonoBehaviour:
   OverviewWaveScale: {x: 0.02, y: 0.02, z: 0.02}
   CellBumpAnimationDuration: 0.1
   OverviewAnimationDuration: 0.0065
+--- !u!82 &1929061860 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8513773137222710407, guid: e7b8b0b5c42cc404185d4faa1c391dba, type: 3}
+  m_PrefabInstance: {fileID: 947709752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1930796510 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8200944565787880362, guid: e7b8b0b5c42cc404185d4faa1c391dba, type: 3}
@@ -18035,83 +18041,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141536264885816866, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000017108805
+      value: -0.0000000017108803
       objectReference: {fileID: 0}
     - target: {fileID: 141536264885816866, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000669855
+      value: 0.000000066985514
       objectReference: {fileID: 0}
     - target: {fileID: 297011641837461272, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00013209473
+      value: -0.00013209478
       objectReference: {fileID: 0}
     - target: {fileID: 297011641837461272, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.060101047
+      value: -0.060101055
       objectReference: {fileID: 0}
     - target: {fileID: 1639827543010984487, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000077651704
+      value: -0.0000776517
       objectReference: {fileID: 0}
     - target: {fileID: 1756135389339833331, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00013209473
+      value: -0.00013209478
       objectReference: {fileID: 0}
     - target: {fileID: 1756135389339833331, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.060101047
+      value: -0.060101055
       objectReference: {fileID: 0}
     - target: {fileID: 2506308230186346912, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000017108805
+      value: -0.0000000017108803
       objectReference: {fileID: 0}
     - target: {fileID: 2506308230186346912, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000669855
+      value: 0.000000066985514
       objectReference: {fileID: 0}
     - target: {fileID: 3446969303248657211, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000017108805
+      value: -0.0000000017108803
       objectReference: {fileID: 0}
     - target: {fileID: 3446969303248657211, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000669855
+      value: 0.000000066985514
       objectReference: {fileID: 0}
     - target: {fileID: 3736016719497671125, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_Name
       value: A_DairyCow
       objectReference: {fileID: 0}
+    - target: {fileID: 3736016719497671125, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4271605522688733942, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00019225488
+      value: -0.00019225487
       objectReference: {fileID: 0}
     - target: {fileID: 4939508848038001723, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000039173356
+      value: -0.000039173352
       objectReference: {fileID: 0}
     - target: {fileID: 5707719300765024171, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000017108805
+      value: -0.0000000017108803
       objectReference: {fileID: 0}
     - target: {fileID: 5707719300765024171, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000669855
+      value: 0.000000066985514
       objectReference: {fileID: 0}
     - target: {fileID: 6688339157538439130, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000039173356
+      value: -0.000039173352
       objectReference: {fileID: 0}
     - target: {fileID: 7065154592993123387, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000109803346
+      value: -0.00010980335
       objectReference: {fileID: 0}
     - target: {fileID: 7653541112272508608, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000077651704
+      value: -0.0000776517
       objectReference: {fileID: 0}
     - target: {fileID: 7733931875290445715, guid: 0dd9373df92473a4b9fe6aac28175f40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00019225488
+      value: -0.00019225487
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
