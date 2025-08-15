@@ -130,7 +130,7 @@ public class PaintingOverviewAnimation : MonoBehaviour
     [ContextMenu("PREVIEW: OUTTRO")]
     public void StartOutroAnimation()
     {
-        if (!PaintingObject.PlayOutroAnimation) return;
+        //if (!PaintingObject.PlayOutroAnimation) return;
         SetUpPreOutro();
 
         Vector3 endPosition = paintingDefaultPosition;

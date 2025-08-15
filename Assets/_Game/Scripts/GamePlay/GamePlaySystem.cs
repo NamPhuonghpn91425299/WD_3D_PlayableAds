@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 /// <summary>
 /// Quản lý toàn bộ logic và luồng chơi game chính.
 /// Đây là một Singleton, đảm bảo chỉ có một instance duy nhất trong scene.
@@ -41,11 +43,6 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         set => totalCountClaimed = value;
     }
 
-    [Tooltip("Panel UI hiển thị khi kết thúc game (thắng/thua).")] [SerializeField]
-    private CanvasGroup winGamePanel;
-
-    [SerializeField] private CanvasGroup loseGamePanel;
-    [SerializeField] private CanvasGroup btnPlay;
 
     /// <summary>
     /// Tham chiếu đến CameraController để điều khiển các hành vi của camera.
@@ -155,11 +152,13 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     // Tham chiếu đến các file âm thanh.
     public AudioClip woolXoayClip;
     public AudioClip wool1Clip;
-    public AudioClip loseSound;
-    public AudioClip winSound;
+
 
     private int _currentOpenCubeTargetCost;
     private static int _replayCount = 0;
+
+    private bool _isEndGame;
+    public bool IsEndGame => _isEndGame;
 
     #endregion <=============================================>
 
@@ -478,8 +477,6 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         }
     }
 
-    private bool _isEndGame;
-
     /// <summary>
     /// Kiểm tra các điều kiện thắng/thua của game.
     /// </summary>
@@ -541,9 +538,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             {
                 _isEndGame = true;
                 TrackingEndGame(false, true);
-                if (winSound != null)
-                    SoundManager.Instance.PlayOneShot(winSound, 1f);
-                yield return StartCoroutine(FadeBetweenCanvasGroups(winGamePanel, btnPlay, 1f, .6f));
+                EndGameUI.Instance?.ShowWinGamePanel();
             }
         }
         else
@@ -551,55 +546,12 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             if (!_isEndGame)
             {
                 _isEndGame = true;
-                if (loseSound != null)
-                    SoundManager.Instance.PlayOneShot(loseSound, 1f);
-                yield return StartCoroutine(FadeBetweenCanvasGroups(loseGamePanel, btnPlay, 1f, .6f));
+                EndGameUI.Instance?.ShowLoseGamePanel();
             }
         }
     }
 
-    private IEnumerator FadeBetweenCanvasGroups(CanvasGroup fadeIn, CanvasGroup fadeOut, float fadeInDuration,
-        float fadeOutDuration)
-    {
-        // Chuẩn bị fade-in
-        fadeIn.gameObject.SetActive(true);
-        fadeIn.alpha = 0f;
-        fadeIn.interactable = true;
-        fadeIn.blocksRaycasts = true;
 
-        // Chuẩn bị fade-out
-        fadeOut.alpha = 1f;
-        fadeOut.interactable = false;
-        fadeOut.blocksRaycasts = false;
-
-        float elapsed = 0f;
-        float maxDuration = Mathf.Max(fadeInDuration, fadeOutDuration);
-
-        while (elapsed < maxDuration)
-        {
-            // Tính alpha fade-in
-            if (elapsed < fadeInDuration)
-            {
-                float tIn = elapsed / fadeInDuration;
-                fadeIn.alpha = Mathf.Lerp(0f, 1f, tIn);
-            }
-
-            // Tính alpha fade-out
-            if (elapsed < fadeOutDuration)
-            {
-                float tOut = elapsed / fadeOutDuration;
-                fadeOut.alpha = Mathf.Lerp(1f, 0f, tOut);
-            }
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        // Kết thúc chính xác
-        fadeIn.alpha = 1f;
-        fadeOut.alpha = 0f;
-        fadeOut.gameObject.SetActive(false);
-    }
 
     /// <summary>
     /// Kiểm tra và quyết định có nên khóa booster Rainbow hay không.
@@ -838,5 +790,35 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         }
     }
 
+    #endregion
+
+    #region Custom_Editor
+        public void OnEndGame(bool value)
+        {
+            if (_coroutineEndGame == null)
+            { 
+                _coroutineEndGame = StartCoroutine(OnEndGameAction(value));
+            }
+        }
+        #if UNITY_EDITOR
+        [CustomEditor(typeof(GamePlaySystem))]
+        public class GamePlaySystemEditor : Editor
+        {
+            public override void OnInspectorGUI()
+            {
+                DrawDefaultInspector();
+                if (GUILayout.Button("End Game Win"))
+                {
+                    (target as GamePlaySystem).OnEndGame(true);
+                }
+                if (GUILayout.Button("End Game Lose"))
+                {
+                    (target as GamePlaySystem).OnEndGame(false);
+                }
+            }
+        }
+        #endif
+
+    
     #endregion
 }
