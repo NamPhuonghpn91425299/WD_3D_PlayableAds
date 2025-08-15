@@ -140,7 +140,7 @@ public class PaintingOverviewAnimation : MonoBehaviour
         paintingIntroSequence.Append(PaintingTransform.DOLocalMoveY(YPositionShowPainting, OutroAnimationDuration).SetEase(IntroEaseType));
         paintingIntroSequence.OnComplete(() =>
         {
-            StartOverviewAnimation(isIntro: true);
+            StartOverviewAnimation(isIntro: false);
             PaintingTransform.localPosition = endPosition;
         });
     }
