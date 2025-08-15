@@ -1,0 +1,3765 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ffe6b058c510a4eb1606daa1f379b9, type: 3}
+  m_Name: A_DairyCow_PaintingConfig
+  m_EditorClassIdentifier: 
+  ColorPalette: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
+  PaintingParts:
+  - PartID: 0
+    ColorKey: Yellow4
+    PaintingCells:
+    - Row: 3
+      Column: 5
+    - Row: 3
+      Column: 6
+    - Row: 3
+      Column: 9
+    - Row: 3
+      Column: 10
+    - Row: 3
+      Column: 11
+    - Row: 3
+      Column: 12
+    - Row: 3
+      Column: 15
+    - Row: 3
+      Column: 16
+    - Row: 3
+      Column: 17
+    - Row: 3
+      Column: 18
+    - Row: 3
+      Column: 21
+    - Row: 3
+      Column: 22
+    - Row: 4
+      Column: 4
+    - Row: 4
+      Column: 7
+    - Row: 4
+      Column: 20
+    - Row: 4
+      Column: 23
+    - Row: 4
+      Column: 25
+    - Row: 5
+      Column: 4
+    - Row: 5
+      Column: 7
+    - Row: 5
+      Column: 20
+    - Row: 5
+      Column: 23
+    - Row: 6
+      Column: 5
+    - Row: 6
+      Column: 6
+    - Row: 6
+      Column: 11
+    - Row: 6
+      Column: 21
+    - Row: 6
+      Column: 22
+    - Row: 7
+      Column: 16
+    - Row: 7
+      Column: 26
+    - Row: 9
+      Column: 13
+    - Row: 9
+      Column: 17
+    - Row: 9
+      Column: 18
+    - Row: 9
+      Column: 19
+    - Row: 9
+      Column: 21
+    - Row: 9
+      Column: 23
+    - Row: 10
+      Column: 12
+    - Row: 10
+      Column: 16
+    - Row: 10
+      Column: 17
+    - Row: 10
+      Column: 20
+    - Row: 10
+      Column: 22
+    - Row: 11
+      Column: 9
+    - Row: 11
+      Column: 14
+    - Row: 11
+      Column: 18
+    - Row: 11
+      Column: 19
+    - Row: 11
+      Column: 20
+    - Row: 11
+      Column: 21
+    - Row: 11
+      Column: 22
+    - Row: 11
+      Column: 23
+    - Row: 12
+      Column: 8
+    - Row: 12
+      Column: 10
+    - Row: 12
+      Column: 11
+    - Row: 12
+      Column: 12
+    - Row: 12
+      Column: 13
+    - Row: 12
+      Column: 14
+    - Row: 12
+      Column: 15
+    - Row: 12
+      Column: 16
+    - Row: 12
+      Column: 17
+    - Row: 12
+      Column: 18
+    - Row: 12
+      Column: 19
+    - Row: 12
+      Column: 20
+    - Row: 12
+      Column: 21
+    - Row: 12
+      Column: 22
+    - Row: 12
+      Column: 23
+    - Row: 13
+      Column: 7
+    - Row: 13
+      Column: 9
+    - Row: 13
+      Column: 10
+    - Row: 13
+      Column: 11
+    - Row: 13
+      Column: 12
+    - Row: 13
+      Column: 13
+    - Row: 13
+      Column: 14
+    - Row: 13
+      Column: 15
+    - Row: 13
+      Column: 16
+    - Row: 13
+      Column: 17
+    - Row: 13
+      Column: 18
+    - Row: 13
+      Column: 19
+    - Row: 13
+      Column: 20
+    - Row: 13
+      Column: 21
+    - Row: 13
+      Column: 22
+    - Row: 13
+      Column: 23
+    - Row: 14
+      Column: 6
+    - Row: 14
+      Column: 8
+    - Row: 14
+      Column: 9
+    - Row: 14
+      Column: 10
+    - Row: 14
+      Column: 11
+    - Row: 14
+      Column: 12
+    - Row: 14
+      Column: 16
+    - Row: 14
+      Column: 17
+    - Row: 14
+      Column: 18
+    - Row: 14
+      Column: 19
+    - Row: 14
+      Column: 20
+    - Row: 14
+      Column: 21
+    - Row: 14
+      Column: 22
+    - Row: 15
+      Column: 5
+    - Row: 15
+      Column: 7
+    - Row: 15
+      Column: 8
+    - Row: 15
+      Column: 9
+    - Row: 15
+      Column: 10
+    - Row: 15
+      Column: 11
+    - Row: 15
+      Column: 17
+    - Row: 15
+      Column: 18
+    - Row: 15
+      Column: 19
+    - Row: 15
+      Column: 20
+    - Row: 15
+      Column: 21
+    - Row: 15
+      Column: 22
+    - Row: 16
+      Column: 6
+    - Row: 16
+      Column: 7
+    - Row: 16
+      Column: 8
+    - Row: 16
+      Column: 11
+    - Row: 16
+      Column: 17
+    - Row: 16
+      Column: 20
+    - Row: 16
+      Column: 21
+    - Row: 16
+      Column: 22
+    - Row: 17
+      Column: 5
+    - Row: 17
+      Column: 6
+    - Row: 17
+      Column: 7
+    - Row: 17
+      Column: 8
+    - Row: 17
+      Column: 11
+    - Row: 17
+      Column: 12
+    - Row: 17
+      Column: 16
+    - Row: 17
+      Column: 17
+    - Row: 17
+      Column: 20
+    - Row: 17
+      Column: 21
+    - Row: 18
+      Column: 6
+    - Row: 18
+      Column: 7
+    - Row: 18
+      Column: 8
+    - Row: 18
+      Column: 9
+    - Row: 18
+      Column: 10
+    - Row: 18
+      Column: 11
+    - Row: 18
+      Column: 12
+    - Row: 18
+      Column: 13
+    - Row: 18
+      Column: 14
+    - Row: 18
+      Column: 15
+    - Row: 18
+      Column: 16
+    - Row: 18
+      Column: 17
+    - Row: 18
+      Column: 18
+    - Row: 18
+      Column: 19
+    - Row: 18
+      Column: 20
+    - Row: 19
+      Column: 6
+    - Row: 19
+      Column: 7
+    - Row: 19
+      Column: 8
+    - Row: 19
+      Column: 9
+    - Row: 19
+      Column: 12
+    - Row: 19
+      Column: 13
+    - Row: 19
+      Column: 14
+    - Row: 19
+      Column: 15
+    - Row: 19
+      Column: 16
+    - Row: 19
+      Column: 19
+    - Row: 20
+      Column: 7
+    - Row: 20
+      Column: 8
+    - Row: 20
+      Column: 9
+    - Row: 20
+      Column: 10
+    - Row: 20
+      Column: 11
+    - Row: 20
+      Column: 12
+    - Row: 20
+      Column: 13
+    - Row: 20
+      Column: 14
+    - Row: 20
+      Column: 15
+    - Row: 20
+      Column: 16
+    - Row: 21
+      Column: 8
+    - Row: 21
+      Column: 9
+    - Row: 21
+      Column: 10
+    - Row: 21
+      Column: 11
+    - Row: 21
+      Column: 12
+    - Row: 21
+      Column: 13
+    - Row: 21
+      Column: 14
+    - Row: 21
+      Column: 15
+    - Row: 22
+      Column: 8
+    - Row: 22
+      Column: 9
+    - Row: 22
+      Column: 10
+    - Row: 22
+      Column: 11
+    - Row: 22
+      Column: 12
+    - Row: 22
+      Column: 13
+    - Row: 22
+      Column: 14
+    - Row: 23
+      Column: 9
+    - Row: 23
+      Column: 10
+    - Row: 23
+      Column: 27
+    - Row: 23
+      Column: 29
+    - Row: 24
+      Column: 26
+    - Row: 24
+      Column: 28
+    - Row: 24
+      Column: 29
+    - Row: 25
+      Column: 25
+    - Row: 25
+      Column: 27
+    - Row: 26
+      Column: 24
+    - Row: 26
+      Column: 26
+    - Row: 27
+      Column: 23
+    - Row: 27
+      Column: 25
+    - Row: 28
+      Column: 24
+    - Row: 29
+      Column: 23
+    - Row: 29
+      Column: 24
+    Painted: 0
+  - PartID: 1
+    ColorKey: Green2
+    PaintingCells:
+    - Row: 0
+      Column: 0
+    - Row: 0
+      Column: 1
+    - Row: 0
+      Column: 2
+    - Row: 0
+      Column: 3
+    - Row: 0
+      Column: 4
+    - Row: 0
+      Column: 5
+    - Row: 0
+      Column: 6
+    - Row: 0
+      Column: 7
+    - Row: 0
+      Column: 8
+    - Row: 0
+      Column: 9
+    - Row: 0
+      Column: 10
+    - Row: 0
+      Column: 11
+    - Row: 0
+      Column: 12
+    - Row: 0
+      Column: 13
+    - Row: 0
+      Column: 14
+    - Row: 0
+      Column: 15
+    - Row: 0
+      Column: 16
+    - Row: 0
+      Column: 17
+    - Row: 0
+      Column: 18
+    - Row: 0
+      Column: 19
+    - Row: 0
+      Column: 20
+    - Row: 0
+      Column: 21
+    - Row: 0
+      Column: 22
+    - Row: 0
+      Column: 23
+    - Row: 0
+      Column: 24
+    - Row: 0
+      Column: 25
+    - Row: 0
+      Column: 26
+    - Row: 0
+      Column: 27
+    - Row: 0
+      Column: 28
+    - Row: 0
+      Column: 29
+    - Row: 1
+      Column: 0
+    - Row: 1
+      Column: 1
+    - Row: 1
+      Column: 2
+    - Row: 1
+      Column: 24
+    - Row: 1
+      Column: 25
+    - Row: 1
+      Column: 26
+    - Row: 1
+      Column: 27
+    - Row: 1
+      Column: 28
+    - Row: 1
+      Column: 29
+    - Row: 2
+      Column: 0
+    - Row: 2
+      Column: 27
+    - Row: 2
+      Column: 28
+    - Row: 2
+      Column: 29
+    - Row: 3
+      Column: 0
+    - Row: 3
+      Column: 28
+    - Row: 3
+      Column: 29
+    - Row: 4
+      Column: 0
+    - Row: 4
+      Column: 28
+    - Row: 4
+      Column: 29
+    - Row: 5
+      Column: 0
+    - Row: 5
+      Column: 1
+    - Row: 5
+      Column: 29
+    - Row: 6
+      Column: 0
+    - Row: 6
+      Column: 1
+    - Row: 7
+      Column: 0
+    - Row: 7
+      Column: 1
+    - Row: 8
+      Column: 0
+    - Row: 8
+      Column: 1
+    - Row: 8
+      Column: 29
+    - Row: 9
+      Column: 0
+    - Row: 9
+      Column: 1
+    - Row: 9
+      Column: 28
+    - Row: 9
+      Column: 29
+    - Row: 10
+      Column: 0
+    - Row: 10
+      Column: 1
+    - Row: 10
+      Column: 2
+    - Row: 10
+      Column: 26
+    - Row: 10
+      Column: 27
+    - Row: 10
+      Column: 28
+    - Row: 10
+      Column: 29
+    - Row: 11
+      Column: 0
+    - Row: 11
+      Column: 1
+    - Row: 11
+      Column: 2
+    - Row: 11
+      Column: 26
+    - Row: 11
+      Column: 27
+    - Row: 11
+      Column: 28
+    - Row: 11
+      Column: 29
+    - Row: 12
+      Column: 1
+    - Row: 12
+      Column: 26
+    - Row: 12
+      Column: 27
+    - Row: 12
+      Column: 28
+    - Row: 12
+      Column: 29
+    - Row: 13
+      Column: 0
+    - Row: 13
+      Column: 2
+    - Row: 13
+      Column: 27
+    - Row: 13
+      Column: 29
+    - Row: 14
+      Column: 1
+    - Row: 14
+      Column: 26
+    - Row: 14
+      Column: 28
+    - Row: 21
+      Column: 17
+    - Row: 21
+      Column: 18
+    - Row: 21
+      Column: 19
+    - Row: 21
+      Column: 20
+    - Row: 21
+      Column: 21
+    - Row: 22
+      Column: 16
+    - Row: 22
+      Column: 17
+    - Row: 22
+      Column: 18
+    - Row: 23
+      Column: 16
+    - Row: 26
+      Column: 21
+    Painted: 0
+  - PartID: 2
+    ColorKey: White
+    PaintingCells:
+    - Row: 7
+      Column: 27
+    - Row: 7
+      Column: 28
+    - Row: 8
+      Column: 24
+    - Row: 8
+      Column: 26
+    - Row: 8
+      Column: 27
+    - Row: 9
+      Column: 14
+    - Row: 9
+      Column: 24
+    - Row: 10
+      Column: 10
+    - Row: 10
+      Column: 13
+    - Row: 10
+      Column: 14
+    - Row: 10
+      Column: 15
+    - Row: 10
+      Column: 18
+    - Row: 10
+      Column: 24
+    - Row: 11
+      Column: 11
+    - Row: 11
+      Column: 12
+    - Row: 11
+      Column: 13
+    - Row: 11
+      Column: 15
+    - Row: 11
+      Column: 16
+    - Row: 11
+      Column: 17
+    - Row: 11
+      Column: 24
+    - Row: 12
+      Column: 24
+    - Row: 13
+      Column: 24
+    - Row: 14
+      Column: 23
+    - Row: 15
+      Column: 13
+    - Row: 15
+      Column: 14
+    - Row: 15
+      Column: 15
+    - Row: 15
+      Column: 23
+    - Row: 16
+      Column: 13
+    - Row: 16
+      Column: 15
+    - Row: 16
+      Column: 23
+    - Row: 17
+      Column: 22
+    - Row: 18
+      Column: 21
+    - Row: 19
+      Column: 10
+    - Row: 19
+      Column: 11
+    - Row: 19
+      Column: 17
+    - Row: 19
+      Column: 18
+    - Row: 19
+      Column: 20
+    - Row: 19
+      Column: 21
+    - Row: 21
+      Column: 28
+    - Row: 21
+      Column: 29
+    - Row: 22
+      Column: 19
+    - Row: 22
+      Column: 20
+    - Row: 22
+      Column: 21
+    - Row: 22
+      Column: 26
+    - Row: 22
+      Column: 27
+    - Row: 22
+      Column: 28
+    - Row: 22
+      Column: 29
+    - Row: 23
+      Column: 11
+    - Row: 23
+      Column: 15
+    - Row: 23
+      Column: 17
+    - Row: 23
+      Column: 18
+    - Row: 23
+      Column: 19
+    - Row: 23
+      Column: 20
+    - Row: 23
+      Column: 21
+    - Row: 23
+      Column: 25
+    - Row: 23
+      Column: 26
+    - Row: 24
+      Column: 10
+    - Row: 24
+      Column: 16
+    - Row: 24
+      Column: 17
+    - Row: 24
+      Column: 18
+    - Row: 24
+      Column: 19
+    - Row: 24
+      Column: 20
+    - Row: 24
+      Column: 24
+    - Row: 24
+      Column: 25
+    - Row: 25
+      Column: 23
+    - Row: 25
+      Column: 24
+    - Row: 26
+      Column: 23
+    - Row: 27
+      Column: 22
+    - Row: 28
+      Column: 21
+    - Row: 28
+      Column: 22
+    - Row: 29
+      Column: 21
+    - Row: 29
+      Column: 22
+    Painted: 0
+  - PartID: 3
+    ColorKey: Orange4
+    PaintingCells:
+    - Row: 4
+      Column: 9
+    - Row: 4
+      Column: 10
+    - Row: 4
+      Column: 11
+    - Row: 4
+      Column: 12
+    - Row: 4
+      Column: 16
+    - Row: 4
+      Column: 17
+    - Row: 4
+      Column: 18
+    - Row: 4
+      Column: 26
+    - Row: 5
+      Column: 9
+    - Row: 5
+      Column: 10
+    - Row: 5
+      Column: 11
+    - Row: 5
+      Column: 12
+    - Row: 5
+      Column: 15
+    - Row: 5
+      Column: 16
+    - Row: 5
+      Column: 17
+    - Row: 5
+      Column: 18
+    - Row: 5
+      Column: 26
+    - Row: 5
+      Column: 27
+    - Row: 6
+      Column: 8
+    - Row: 6
+      Column: 9
+    - Row: 6
+      Column: 10
+    - Row: 6
+      Column: 12
+    - Row: 6
+      Column: 13
+    - Row: 6
+      Column: 14
+    - Row: 6
+      Column: 15
+    - Row: 6
+      Column: 16
+    - Row: 6
+      Column: 17
+    - Row: 6
+      Column: 18
+    - Row: 6
+      Column: 23
+    - Row: 6
+      Column: 24
+    - Row: 6
+      Column: 27
+    - Row: 6
+      Column: 28
+    - Row: 7
+      Column: 7
+    - Row: 7
+      Column: 8
+    - Row: 7
+      Column: 9
+    - Row: 7
+      Column: 10
+    - Row: 7
+      Column: 11
+    - Row: 7
+      Column: 12
+    - Row: 7
+      Column: 13
+    - Row: 7
+      Column: 14
+    - Row: 7
+      Column: 15
+    - Row: 7
+      Column: 17
+    - Row: 7
+      Column: 18
+    - Row: 7
+      Column: 19
+    - Row: 7
+      Column: 21
+    - Row: 7
+      Column: 22
+    - Row: 7
+      Column: 23
+    - Row: 7
+      Column: 24
+    - Row: 8
+      Column: 4
+    - Row: 8
+      Column: 5
+    - Row: 8
+      Column: 6
+    - Row: 8
+      Column: 7
+    - Row: 8
+      Column: 8
+    - Row: 8
+      Column: 9
+    - Row: 8
+      Column: 10
+    - Row: 8
+      Column: 11
+    - Row: 8
+      Column: 12
+    - Row: 8
+      Column: 13
+    - Row: 8
+      Column: 14
+    - Row: 8
+      Column: 15
+    - Row: 8
+      Column: 16
+    - Row: 8
+      Column: 17
+    - Row: 8
+      Column: 18
+    - Row: 8
+      Column: 19
+    - Row: 8
+      Column: 20
+    - Row: 8
+      Column: 21
+    - Row: 8
+      Column: 22
+    - Row: 8
+      Column: 23
+    - Row: 9
+      Column: 4
+    - Row: 9
+      Column: 5
+    - Row: 9
+      Column: 6
+    - Row: 9
+      Column: 7
+    - Row: 9
+      Column: 8
+    - Row: 9
+      Column: 9
+    - Row: 9
+      Column: 10
+    - Row: 9
+      Column: 11
+    - Row: 9
+      Column: 12
+    - Row: 9
+      Column: 15
+    - Row: 9
+      Column: 16
+    - Row: 9
+      Column: 20
+    - Row: 9
+      Column: 22
+    - Row: 10
+      Column: 4
+    - Row: 10
+      Column: 5
+    - Row: 10
+      Column: 6
+    - Row: 10
+      Column: 7
+    - Row: 10
+      Column: 8
+    - Row: 10
+      Column: 9
+    - Row: 10
+      Column: 11
+    - Row: 10
+      Column: 19
+    - Row: 10
+      Column: 21
+    - Row: 10
+      Column: 23
+    - Row: 11
+      Column: 4
+    - Row: 11
+      Column: 5
+    - Row: 11
+      Column: 6
+    - Row: 11
+      Column: 7
+    - Row: 11
+      Column: 8
+    - Row: 11
+      Column: 10
+    - Row: 12
+      Column: 4
+    - Row: 12
+      Column: 5
+    - Row: 12
+      Column: 6
+    - Row: 12
+      Column: 7
+    - Row: 12
+      Column: 9
+    - Row: 13
+      Column: 4
+    - Row: 13
+      Column: 5
+    - Row: 13
+      Column: 6
+    - Row: 13
+      Column: 8
+    - Row: 14
+      Column: 5
+    - Row: 14
+      Column: 7
+    - Row: 15
+      Column: 6
+    - Row: 16
+      Column: 5
+    - Row: 23
+      Column: 28
+    - Row: 24
+      Column: 27
+    - Row: 25
+      Column: 26
+    - Row: 25
+      Column: 28
+    - Row: 25
+      Column: 29
+    - Row: 26
+      Column: 25
+    - Row: 26
+      Column: 27
+    - Row: 26
+      Column: 28
+    - Row: 26
+      Column: 29
+    - Row: 27
+      Column: 24
+    - Row: 27
+      Column: 26
+    - Row: 27
+      Column: 27
+    - Row: 27
+      Column: 28
+    - Row: 27
+      Column: 29
+    - Row: 28
+      Column: 23
+    - Row: 28
+      Column: 25
+    - Row: 28
+      Column: 26
+    - Row: 28
+      Column: 27
+    - Row: 28
+      Column: 28
+    - Row: 28
+      Column: 29
+    - Row: 29
+      Column: 25
+    - Row: 29
+      Column: 26
+    - Row: 29
+      Column: 27
+    - Row: 29
+      Column: 28
+    - Row: 29
+      Column: 29
+    Painted: 0
+  - PartID: 4
+    ColorKey: Black
+    PaintingCells:
+    - Row: 1
+      Column: 3
+    - Row: 1
+      Column: 4
+    - Row: 1
+      Column: 5
+    - Row: 1
+      Column: 6
+    - Row: 1
+      Column: 7
+    - Row: 1
+      Column: 8
+    - Row: 1
+      Column: 9
+    - Row: 1
+      Column: 10
+    - Row: 1
+      Column: 11
+    - Row: 1
+      Column: 12
+    - Row: 1
+      Column: 13
+    - Row: 1
+      Column: 14
+    - Row: 1
+      Column: 15
+    - Row: 1
+      Column: 16
+    - Row: 1
+      Column: 17
+    - Row: 1
+      Column: 18
+    - Row: 1
+      Column: 19
+    - Row: 1
+      Column: 20
+    - Row: 1
+      Column: 21
+    - Row: 1
+      Column: 22
+    - Row: 1
+      Column: 23
+    - Row: 2
+      Column: 1
+    - Row: 2
+      Column: 2
+    - Row: 2
+      Column: 3
+    - Row: 2
+      Column: 4
+    - Row: 2
+      Column: 5
+    - Row: 2
+      Column: 6
+    - Row: 2
+      Column: 7
+    - Row: 2
+      Column: 8
+    - Row: 2
+      Column: 9
+    - Row: 2
+      Column: 10
+    - Row: 2
+      Column: 11
+    - Row: 2
+      Column: 12
+    - Row: 2
+      Column: 13
+    - Row: 2
+      Column: 14
+    - Row: 2
+      Column: 15
+    - Row: 2
+      Column: 16
+    - Row: 2
+      Column: 17
+    - Row: 2
+      Column: 18
+    - Row: 2
+      Column: 19
+    - Row: 2
+      Column: 20
+    - Row: 2
+      Column: 21
+    - Row: 2
+      Column: 22
+    - Row: 2
+      Column: 23
+    - Row: 2
+      Column: 24
+    - Row: 2
+      Column: 25
+    - Row: 2
+      Column: 26
+    - Row: 3
+      Column: 1
+    - Row: 3
+      Column: 2
+    - Row: 3
+      Column: 3
+    - Row: 3
+      Column: 4
+    - Row: 3
+      Column: 7
+    - Row: 3
+      Column: 8
+    - Row: 3
+      Column: 13
+    - Row: 3
+      Column: 14
+    - Row: 3
+      Column: 19
+    - Row: 3
+      Column: 20
+    - Row: 3
+      Column: 23
+    - Row: 3
+      Column: 24
+    - Row: 3
+      Column: 25
+    - Row: 3
+      Column: 26
+    - Row: 3
+      Column: 27
+    - Row: 4
+      Column: 1
+    - Row: 4
+      Column: 2
+    - Row: 4
+      Column: 3
+    - Row: 4
+      Column: 5
+    - Row: 4
+      Column: 6
+    - Row: 4
+      Column: 8
+    - Row: 4
+      Column: 13
+    - Row: 4
+      Column: 14
+    - Row: 4
+      Column: 15
+    - Row: 4
+      Column: 19
+    - Row: 4
+      Column: 21
+    - Row: 4
+      Column: 22
+    - Row: 4
+      Column: 24
+    - Row: 4
+      Column: 27
+    - Row: 5
+      Column: 2
+    - Row: 5
+      Column: 3
+    - Row: 5
+      Column: 5
+    - Row: 5
+      Column: 6
+    - Row: 5
+      Column: 8
+    - Row: 5
+      Column: 13
+    - Row: 5
+      Column: 14
+    - Row: 5
+      Column: 19
+    - Row: 5
+      Column: 21
+    - Row: 5
+      Column: 22
+    - Row: 5
+      Column: 24
+    - Row: 5
+      Column: 25
+    - Row: 5
+      Column: 28
+    - Row: 6
+      Column: 2
+    - Row: 6
+      Column: 3
+    - Row: 6
+      Column: 4
+    - Row: 6
+      Column: 7
+    - Row: 6
+      Column: 19
+    - Row: 6
+      Column: 20
+    - Row: 6
+      Column: 25
+    - Row: 6
+      Column: 26
+    - Row: 6
+      Column: 29
+    - Row: 7
+      Column: 2
+    - Row: 7
+      Column: 3
+    - Row: 7
+      Column: 4
+    - Row: 7
+      Column: 5
+    - Row: 7
+      Column: 6
+    - Row: 7
+      Column: 20
+    - Row: 7
+      Column: 25
+    - Row: 7
+      Column: 29
+    - Row: 8
+      Column: 2
+    - Row: 8
+      Column: 3
+    - Row: 8
+      Column: 25
+    - Row: 8
+      Column: 28
+    - Row: 9
+      Column: 2
+    - Row: 9
+      Column: 3
+    - Row: 9
+      Column: 25
+    - Row: 9
+      Column: 26
+    - Row: 9
+      Column: 27
+    - Row: 10
+      Column: 3
+    - Row: 10
+      Column: 25
+    - Row: 11
+      Column: 3
+    - Row: 11
+      Column: 25
+    - Row: 12
+      Column: 3
+    - Row: 12
+      Column: 25
+    - Row: 13
+      Column: 3
+    - Row: 13
+      Column: 25
+    - Row: 14
+      Column: 4
+    - Row: 14
+      Column: 13
+    - Row: 14
+      Column: 14
+    - Row: 14
+      Column: 15
+    - Row: 14
+      Column: 24
+    - Row: 15
+      Column: 4
+    - Row: 15
+      Column: 12
+    - Row: 15
+      Column: 16
+    - Row: 15
+      Column: 24
+    - Row: 16
+      Column: 4
+    - Row: 16
+      Column: 9
+    - Row: 16
+      Column: 10
+    - Row: 16
+      Column: 12
+    - Row: 16
+      Column: 14
+    - Row: 16
+      Column: 16
+    - Row: 16
+      Column: 18
+    - Row: 16
+      Column: 19
+    - Row: 16
+      Column: 24
+    - Row: 17
+      Column: 4
+    - Row: 17
+      Column: 9
+    - Row: 17
+      Column: 10
+    - Row: 17
+      Column: 13
+    - Row: 17
+      Column: 14
+    - Row: 17
+      Column: 15
+    - Row: 17
+      Column: 18
+    - Row: 17
+      Column: 19
+    - Row: 17
+      Column: 23
+    - Row: 18
+      Column: 5
+    - Row: 18
+      Column: 22
+    - Row: 19
+      Column: 5
+    - Row: 19
+      Column: 22
+    - Row: 20
+      Column: 6
+    - Row: 20
+      Column: 17
+    - Row: 20
+      Column: 18
+    - Row: 20
+      Column: 19
+    - Row: 20
+      Column: 20
+    - Row: 20
+      Column: 21
+    - Row: 21
+      Column: 7
+    - Row: 21
+      Column: 16
+    - Row: 21
+      Column: 22
+    - Row: 22
+      Column: 7
+    - Row: 22
+      Column: 15
+    - Row: 22
+      Column: 22
+    - Row: 23
+      Column: 8
+    - Row: 23
+      Column: 12
+    - Row: 23
+      Column: 13
+    - Row: 23
+      Column: 14
+    - Row: 23
+      Column: 22
+    - Row: 24
+      Column: 9
+    - Row: 24
+      Column: 11
+    - Row: 24
+      Column: 15
+    - Row: 24
+      Column: 21
+    - Row: 25
+      Column: 10
+    - Row: 25
+      Column: 16
+    - Row: 25
+      Column: 17
+    - Row: 25
+      Column: 18
+    - Row: 25
+      Column: 19
+    - Row: 25
+      Column: 20
+    - Row: 25
+      Column: 21
+    - Row: 26
+      Column: 20
+    - Row: 26
+      Column: 22
+    - Row: 27
+      Column: 21
+    Painted: 0
+  - PartID: 5
+    ColorKey: Brown5
+    PaintingCells:
+    - Row: 12
+      Column: 0
+    - Row: 12
+      Column: 2
+    - Row: 13
+      Column: 1
+    - Row: 13
+      Column: 26
+    - Row: 13
+      Column: 28
+    - Row: 14
+      Column: 0
+    - Row: 14
+      Column: 2
+    - Row: 14
+      Column: 3
+    - Row: 14
+      Column: 25
+    - Row: 14
+      Column: 27
+    - Row: 14
+      Column: 29
+    - Row: 15
+      Column: 0
+    - Row: 15
+      Column: 1
+    - Row: 15
+      Column: 2
+    - Row: 15
+      Column: 3
+    - Row: 15
+      Column: 25
+    - Row: 15
+      Column: 26
+    - Row: 15
+      Column: 27
+    - Row: 15
+      Column: 28
+    - Row: 15
+      Column: 29
+    - Row: 16
+      Column: 0
+    - Row: 16
+      Column: 1
+    - Row: 16
+      Column: 2
+    - Row: 16
+      Column: 3
+    - Row: 16
+      Column: 25
+    - Row: 16
+      Column: 26
+    - Row: 16
+      Column: 27
+    - Row: 16
+      Column: 28
+    - Row: 16
+      Column: 29
+    - Row: 17
+      Column: 0
+    - Row: 17
+      Column: 1
+    - Row: 17
+      Column: 2
+    - Row: 17
+      Column: 3
+    - Row: 17
+      Column: 24
+    - Row: 17
+      Column: 25
+    - Row: 17
+      Column: 26
+    - Row: 17
+      Column: 27
+    - Row: 17
+      Column: 28
+    - Row: 17
+      Column: 29
+    - Row: 18
+      Column: 0
+    - Row: 18
+      Column: 1
+    - Row: 18
+      Column: 2
+    - Row: 18
+      Column: 3
+    - Row: 18
+      Column: 4
+    - Row: 18
+      Column: 23
+    - Row: 18
+      Column: 24
+    - Row: 18
+      Column: 25
+    - Row: 18
+      Column: 26
+    - Row: 18
+      Column: 27
+    - Row: 18
+      Column: 28
+    - Row: 18
+      Column: 29
+    - Row: 19
+      Column: 0
+    - Row: 19
+      Column: 1
+    - Row: 19
+      Column: 2
+    - Row: 19
+      Column: 3
+    - Row: 19
+      Column: 4
+    - Row: 19
+      Column: 23
+    - Row: 19
+      Column: 24
+    - Row: 19
+      Column: 25
+    - Row: 19
+      Column: 26
+    - Row: 19
+      Column: 27
+    - Row: 19
+      Column: 28
+    - Row: 19
+      Column: 29
+    - Row: 20
+      Column: 0
+    - Row: 20
+      Column: 1
+    - Row: 20
+      Column: 2
+    - Row: 20
+      Column: 3
+    - Row: 20
+      Column: 4
+    - Row: 20
+      Column: 5
+    - Row: 20
+      Column: 22
+    - Row: 20
+      Column: 23
+    - Row: 20
+      Column: 24
+    - Row: 20
+      Column: 25
+    - Row: 20
+      Column: 26
+    - Row: 20
+      Column: 27
+    - Row: 20
+      Column: 28
+    - Row: 20
+      Column: 29
+    - Row: 21
+      Column: 0
+    - Row: 21
+      Column: 1
+    - Row: 21
+      Column: 2
+    - Row: 21
+      Column: 3
+    - Row: 21
+      Column: 4
+    - Row: 21
+      Column: 5
+    - Row: 21
+      Column: 6
+    - Row: 21
+      Column: 23
+    - Row: 21
+      Column: 24
+    - Row: 21
+      Column: 25
+    - Row: 21
+      Column: 26
+    - Row: 21
+      Column: 27
+    - Row: 22
+      Column: 0
+    - Row: 22
+      Column: 1
+    - Row: 22
+      Column: 2
+    - Row: 22
+      Column: 3
+    - Row: 22
+      Column: 4
+    - Row: 22
+      Column: 5
+    - Row: 22
+      Column: 6
+    - Row: 22
+      Column: 23
+    - Row: 22
+      Column: 24
+    - Row: 22
+      Column: 25
+    - Row: 23
+      Column: 0
+    - Row: 23
+      Column: 1
+    - Row: 23
+      Column: 2
+    - Row: 23
+      Column: 3
+    - Row: 23
+      Column: 4
+    - Row: 23
+      Column: 5
+    - Row: 23
+      Column: 6
+    - Row: 23
+      Column: 7
+    - Row: 23
+      Column: 23
+    - Row: 23
+      Column: 24
+    - Row: 24
+      Column: 0
+    - Row: 24
+      Column: 1
+    - Row: 24
+      Column: 2
+    - Row: 24
+      Column: 3
+    - Row: 24
+      Column: 4
+    - Row: 24
+      Column: 5
+    - Row: 24
+      Column: 6
+    - Row: 24
+      Column: 7
+    - Row: 24
+      Column: 8
+    - Row: 24
+      Column: 12
+    - Row: 24
+      Column: 13
+    - Row: 24
+      Column: 14
+    - Row: 24
+      Column: 22
+    - Row: 24
+      Column: 23
+    - Row: 25
+      Column: 0
+    - Row: 25
+      Column: 1
+    - Row: 25
+      Column: 2
+    - Row: 25
+      Column: 3
+    - Row: 25
+      Column: 4
+    - Row: 25
+      Column: 5
+    - Row: 25
+      Column: 6
+    - Row: 25
+      Column: 7
+    - Row: 25
+      Column: 8
+    - Row: 25
+      Column: 9
+    - Row: 25
+      Column: 11
+    - Row: 25
+      Column: 12
+    - Row: 25
+      Column: 13
+    - Row: 25
+      Column: 14
+    - Row: 25
+      Column: 15
+    - Row: 25
+      Column: 22
+    - Row: 26
+      Column: 0
+    - Row: 26
+      Column: 1
+    - Row: 26
+      Column: 2
+    - Row: 26
+      Column: 3
+    - Row: 26
+      Column: 4
+    - Row: 26
+      Column: 5
+    - Row: 26
+      Column: 6
+    - Row: 26
+      Column: 7
+    - Row: 26
+      Column: 8
+    - Row: 26
+      Column: 9
+    - Row: 26
+      Column: 10
+    - Row: 26
+      Column: 11
+    - Row: 26
+      Column: 12
+    - Row: 26
+      Column: 13
+    - Row: 26
+      Column: 14
+    - Row: 26
+      Column: 15
+    - Row: 26
+      Column: 16
+    - Row: 26
+      Column: 17
+    - Row: 26
+      Column: 18
+    - Row: 26
+      Column: 19
+    - Row: 27
+      Column: 0
+    - Row: 27
+      Column: 1
+    - Row: 27
+      Column: 2
+    - Row: 27
+      Column: 3
+    - Row: 27
+      Column: 4
+    - Row: 27
+      Column: 5
+    - Row: 27
+      Column: 6
+    - Row: 27
+      Column: 7
+    - Row: 27
+      Column: 8
+    - Row: 27
+      Column: 9
+    - Row: 27
+      Column: 10
+    - Row: 27
+      Column: 11
+    - Row: 27
+      Column: 12
+    - Row: 27
+      Column: 13
+    - Row: 27
+      Column: 14
+    - Row: 27
+      Column: 15
+    - Row: 27
+      Column: 16
+    - Row: 27
+      Column: 17
+    - Row: 27
+      Column: 18
+    - Row: 27
+      Column: 19
+    - Row: 27
+      Column: 20
+    - Row: 28
+      Column: 0
+    - Row: 28
+      Column: 1
+    - Row: 28
+      Column: 2
+    - Row: 28
+      Column: 3
+    - Row: 28
+      Column: 4
+    - Row: 28
+      Column: 5
+    - Row: 28
+      Column: 6
+    - Row: 28
+      Column: 7
+    - Row: 28
+      Column: 8
+    - Row: 28
+      Column: 9
+    - Row: 28
+      Column: 10
+    - Row: 28
+      Column: 11
+    - Row: 28
+      Column: 12
+    - Row: 28
+      Column: 13
+    - Row: 28
+      Column: 14
+    - Row: 28
+      Column: 15
+    - Row: 28
+      Column: 16
+    - Row: 28
+      Column: 17
+    - Row: 28
+      Column: 18
+    - Row: 28
+      Column: 19
+    - Row: 28
+      Column: 20
+    - Row: 29
+      Column: 0
+    - Row: 29
+      Column: 1
+    - Row: 29
+      Column: 2
+    - Row: 29
+      Column: 3
+    - Row: 29
+      Column: 4
+    - Row: 29
+      Column: 5
+    - Row: 29
+      Column: 6
+    - Row: 29
+      Column: 7
+    - Row: 29
+      Column: 8
+    - Row: 29
+      Column: 9
+    - Row: 29
+      Column: 10
+    - Row: 29
+      Column: 11
+    - Row: 29
+      Column: 12
+    - Row: 29
+      Column: 13
+    - Row: 29
+      Column: 14
+    - Row: 29
+      Column: 15
+    - Row: 29
+      Column: 16
+    - Row: 29
+      Column: 17
+    - Row: 29
+      Column: 18
+    - Row: 29
+      Column: 19
+    - Row: 29
+      Column: 20
+    Painted: 0
+  PaintingSeparateParts:
+  - PartID: 0
+    ColorKey: Yellow4
+    PaintingCells:
+    - Row: 3
+      Column: 9
+    - Row: 3
+      Column: 10
+    - Row: 3
+      Column: 11
+    - Row: 3
+      Column: 12
+    - Row: 3
+      Column: 15
+    - Row: 3
+      Column: 16
+    - Row: 3
+      Column: 17
+    - Row: 3
+      Column: 18
+    - Row: 3
+      Column: 21
+    - Row: 3
+      Column: 22
+    - Row: 4
+      Column: 20
+    - Row: 4
+      Column: 23
+    - Row: 4
+      Column: 25
+    Painted: 0
+  - PartID: 1
+    ColorKey: Yellow4
+    PaintingCells:
+    - Row: 19
+      Column: 14
+    - Row: 19
+      Column: 15
+    - Row: 19
+      Column: 16
+    - Row: 20
+      Column: 10
+    - Row: 20
+      Column: 11
+    - Row: 20
+      Column: 12
+    - Row: 20
+      Column: 13
+    - Row: 20
+      Column: 14
+    - Row: 20
+      Column: 15
+    - Row: 20
+      Column: 16
+    - Row: 21
+      Column: 8
+    - Row: 21
+      Column: 9
+    - Row: 21
+      Column: 10
+    - Row: 21
+      Column: 11
+    - Row: 21
+      Column: 12
+    - Row: 21
+      Column: 13
+    - Row: 21
+      Column: 14
+    - Row: 21
+      Column: 15
+    - Row: 22
+      Column: 8
+    - Row: 22
+      Column: 9
+    - Row: 22
+      Column: 10
+    - Row: 22
+      Column: 11
+    - Row: 22
+      Column: 12
+    - Row: 22
+      Column: 13
+    - Row: 22
+      Column: 14
+    - Row: 23
+      Column: 9
+    - Row: 23
+      Column: 10
+    - Row: 26
+      Column: 24
+    - Row: 27
+      Column: 23
+    - Row: 27
+      Column: 25
+    - Row: 28
+      Column: 24
+    - Row: 29
+      Column: 23
+    - Row: 29
+      Column: 24
+    Painted: 0
+  - PartID: 2
+    ColorKey: Yellow4
+    PaintingCells:
+    - Row: 5
+      Column: 20
+    - Row: 5
+      Column: 23
+    - Row: 6
+      Column: 11
+    - Row: 6
+      Column: 21
+    - Row: 6
+      Column: 22
+    - Row: 7
+      Column: 16
+    - Row: 7
+      Column: 26
+    - Row: 9
+      Column: 13
+    Painted: 0
+  - PartID: 3
+    ColorKey: Yellow4
+    PaintingCells:
+    - Row: 13
+      Column: 14
+    - Row: 14
+      Column: 12
+    - Row: 15
+      Column: 11
+    - Row: 16
+      Column: 11
+    - Row: 17
+      Column: 8
+    - Row: 17
+      Column: 11
+    - Row: 17
+      Column: 12
+    - Row: 17
+      Column: 16
+    - Row: 18
+      Column: 6
+    - Row: 18
+      Column: 7
+    - Row: 18
+      Column: 8
+    - Row: 18
+      Column: 9
+    - Row: 18
+      Column: 10
+    - Row: 18
+      Column: 11
+    - Row: 18
+      Column: 12
+    - Row: 18
+      Column: 13
+    - Row: 18
+      Column: 14
+    - Row: 18
+      Column: 15
+    - Row: 18
+      Column: 16
+    - Row: 18
+      Column: 17
+    - Row: 19
+      Column: 6
+    - Row: 19
+      Column: 7
+    - Row: 19
+      Column: 8
+    - Row: 19
+      Column: 9
+    - Row: 19
+      Column: 12
+    - Row: 19
+      Column: 13
+    - Row: 20
+      Column: 7
+    - Row: 20
+      Column: 8
+    - Row: 20
+      Column: 9
+    Painted: 0
+  - PartID: 4
+    ColorKey: Yellow4
+    PaintingCells:
+    - Row: 3
+      Column: 5
+    - Row: 3
+      Column: 6
+    - Row: 4
+      Column: 4
+    - Row: 4
+      Column: 7
+    - Row: 5
+      Column: 4
+    - Row: 5
+      Column: 7
+    - Row: 6
+      Column: 5
+    - Row: 6
+      Column: 6
+    - Row: 10
+      Column: 12
+    - Row: 11
+      Column: 9
+    - Row: 12
+      Column: 8
+    - Row: 12
+      Column: 10
+    - Row: 12
+      Column: 11
+    - Row: 12
+      Column: 12
+    - Row: 12
+      Column: 13
+    - Row: 13
+      Column: 7
+    - Row: 13
+      Column: 9
+    - Row: 13
+      Column: 10
+    - Row: 13
+      Column: 11
+    - Row: 13
+      Column: 12
+    - Row: 13
+      Column: 13
+    - Row: 14
+      Column: 6
+    - Row: 14
+      Column: 8
+    - Row: 14
+      Column: 9
+    - Row: 14
+      Column: 10
+    - Row: 14
+      Column: 11
+    - Row: 15
+      Column: 5
+    - Row: 15
+      Column: 7
+    - Row: 15
+      Column: 8
+    - Row: 15
+      Column: 9
+    - Row: 15
+      Column: 10
+    - Row: 16
+      Column: 6
+    - Row: 16
+      Column: 7
+    - Row: 16
+      Column: 8
+    - Row: 17
+      Column: 5
+    - Row: 17
+      Column: 6
+    - Row: 17
+      Column: 7
+    Painted: 0
+  - PartID: 5
+    ColorKey: Yellow4
+    PaintingCells:
+    - Row: 9
+      Column: 17
+    - Row: 9
+      Column: 18
+    - Row: 9
+      Column: 19
+    - Row: 9
+      Column: 21
+    - Row: 9
+      Column: 23
+    - Row: 10
+      Column: 16
+    - Row: 10
+      Column: 17
+    - Row: 10
+      Column: 20
+    - Row: 10
+      Column: 22
+    - Row: 11
+      Column: 14
+    - Row: 11
+      Column: 18
+    - Row: 11
+      Column: 19
+    - Row: 11
+      Column: 20
+    - Row: 11
+      Column: 21
+    - Row: 11
+      Column: 22
+    - Row: 11
+      Column: 23
+    - Row: 12
+      Column: 14
+    - Row: 12
+      Column: 15
+    - Row: 12
+      Column: 16
+    - Row: 12
+      Column: 17
+    - Row: 12
+      Column: 18
+    - Row: 12
+      Column: 19
+    - Row: 12
+      Column: 20
+    - Row: 12
+      Column: 21
+    - Row: 12
+      Column: 22
+    - Row: 12
+      Column: 23
+    - Row: 13
+      Column: 15
+    - Row: 13
+      Column: 16
+    - Row: 13
+      Column: 17
+    - Row: 13
+      Column: 18
+    - Row: 13
+      Column: 19
+    - Row: 13
+      Column: 20
+    - Row: 13
+      Column: 21
+    - Row: 13
+      Column: 22
+    - Row: 13
+      Column: 23
+    - Row: 14
+      Column: 16
+    - Row: 14
+      Column: 17
+    - Row: 14
+      Column: 18
+    - Row: 14
+      Column: 19
+    - Row: 14
+      Column: 20
+    - Row: 14
+      Column: 21
+    - Row: 14
+      Column: 22
+    - Row: 15
+      Column: 17
+    - Row: 15
+      Column: 18
+    - Row: 15
+      Column: 19
+    - Row: 15
+      Column: 20
+    - Row: 15
+      Column: 21
+    - Row: 15
+      Column: 22
+    - Row: 16
+      Column: 17
+    - Row: 16
+      Column: 20
+    - Row: 16
+      Column: 21
+    - Row: 16
+      Column: 22
+    - Row: 17
+      Column: 17
+    - Row: 17
+      Column: 20
+    - Row: 17
+      Column: 21
+    - Row: 18
+      Column: 18
+    - Row: 18
+      Column: 19
+    - Row: 18
+      Column: 20
+    - Row: 19
+      Column: 19
+    - Row: 23
+      Column: 27
+    - Row: 23
+      Column: 29
+    - Row: 24
+      Column: 26
+    - Row: 24
+      Column: 28
+    - Row: 24
+      Column: 29
+    - Row: 25
+      Column: 25
+    - Row: 25
+      Column: 27
+    - Row: 26
+      Column: 26
+    Painted: 0
+  - PartID: 6
+    ColorKey: Green2
+    PaintingCells:
+    - Row: 0
+      Column: 18
+    - Row: 0
+      Column: 19
+    - Row: 0
+      Column: 20
+    - Row: 0
+      Column: 21
+    - Row: 0
+      Column: 22
+    - Row: 0
+      Column: 23
+    - Row: 0
+      Column: 24
+    - Row: 0
+      Column: 25
+    - Row: 0
+      Column: 26
+    - Row: 0
+      Column: 27
+    - Row: 0
+      Column: 28
+    - Row: 0
+      Column: 29
+    - Row: 1
+      Column: 24
+    - Row: 1
+      Column: 25
+    - Row: 1
+      Column: 26
+    - Row: 1
+      Column: 27
+    - Row: 1
+      Column: 28
+    - Row: 1
+      Column: 29
+    - Row: 2
+      Column: 27
+    - Row: 2
+      Column: 28
+    - Row: 2
+      Column: 29
+    - Row: 3
+      Column: 28
+    - Row: 3
+      Column: 29
+    - Row: 4
+      Column: 28
+    - Row: 4
+      Column: 29
+    Painted: 0
+  - PartID: 7
+    ColorKey: Green2
+    PaintingCells:
+    - Row: 21
+      Column: 17
+    - Row: 21
+      Column: 18
+    - Row: 21
+      Column: 19
+    - Row: 21
+      Column: 20
+    - Row: 21
+      Column: 21
+    - Row: 22
+      Column: 16
+    - Row: 22
+      Column: 17
+    - Row: 22
+      Column: 18
+    - Row: 23
+      Column: 16
+    - Row: 26
+      Column: 21
+    Painted: 0
+  - PartID: 8
+    ColorKey: Green2
+    PaintingCells:
+    - Row: 0
+      Column: 0
+    - Row: 0
+      Column: 1
+    - Row: 0
+      Column: 2
+    - Row: 0
+      Column: 3
+    - Row: 0
+      Column: 4
+    - Row: 0
+      Column: 5
+    - Row: 0
+      Column: 6
+    - Row: 0
+      Column: 7
+    - Row: 0
+      Column: 8
+    - Row: 0
+      Column: 9
+    - Row: 0
+      Column: 10
+    - Row: 0
+      Column: 11
+    - Row: 1
+      Column: 0
+    - Row: 1
+      Column: 1
+    - Row: 1
+      Column: 2
+    - Row: 2
+      Column: 0
+    - Row: 3
+      Column: 0
+    - Row: 4
+      Column: 0
+    - Row: 5
+      Column: 0
+    - Row: 5
+      Column: 1
+    - Row: 6
+      Column: 0
+    - Row: 6
+      Column: 1
+    - Row: 7
+      Column: 0
+    - Row: 7
+      Column: 1
+    - Row: 8
+      Column: 0
+    - Row: 8
+      Column: 1
+    - Row: 9
+      Column: 0
+    - Row: 9
+      Column: 1
+    - Row: 10
+      Column: 0
+    - Row: 10
+      Column: 1
+    - Row: 10
+      Column: 2
+    - Row: 11
+      Column: 0
+    - Row: 11
+      Column: 1
+    - Row: 11
+      Column: 2
+    - Row: 12
+      Column: 1
+    - Row: 13
+      Column: 0
+    - Row: 13
+      Column: 2
+    - Row: 14
+      Column: 1
+    Painted: 0
+  - PartID: 9
+    ColorKey: Green2
+    PaintingCells:
+    - Row: 5
+      Column: 29
+    - Row: 8
+      Column: 29
+    - Row: 9
+      Column: 28
+    - Row: 9
+      Column: 29
+    - Row: 10
+      Column: 26
+    - Row: 10
+      Column: 27
+    - Row: 10
+      Column: 28
+    - Row: 10
+      Column: 29
+    - Row: 11
+      Column: 26
+    - Row: 11
+      Column: 27
+    - Row: 11
+      Column: 28
+    - Row: 11
+      Column: 29
+    - Row: 12
+      Column: 26
+    - Row: 12
+      Column: 27
+    - Row: 12
+      Column: 28
+    - Row: 12
+      Column: 29
+    - Row: 13
+      Column: 27
+    - Row: 13
+      Column: 29
+    - Row: 14
+      Column: 26
+    - Row: 14
+      Column: 28
+    Painted: 0
+  - PartID: 10
+    ColorKey: Green2
+    PaintingCells:
+    - Row: 0
+      Column: 12
+    - Row: 0
+      Column: 13
+    - Row: 0
+      Column: 14
+    - Row: 0
+      Column: 15
+    - Row: 0
+      Column: 16
+    - Row: 0
+      Column: 17
+    Painted: 0
+  - PartID: 11
+    ColorKey: White
+    PaintingCells:
+    - Row: 9
+      Column: 14
+    - Row: 10
+      Column: 10
+    - Row: 10
+      Column: 13
+    - Row: 10
+      Column: 14
+    - Row: 10
+      Column: 15
+    - Row: 10
+      Column: 18
+    - Row: 11
+      Column: 11
+    - Row: 11
+      Column: 12
+    - Row: 11
+      Column: 13
+    - Row: 11
+      Column: 15
+    - Row: 11
+      Column: 16
+    - Row: 11
+      Column: 17
+    - Row: 15
+      Column: 13
+    - Row: 15
+      Column: 14
+    - Row: 15
+      Column: 15
+    - Row: 16
+      Column: 13
+    - Row: 16
+      Column: 15
+    Painted: 0
+  - PartID: 12
+    ColorKey: White
+    PaintingCells:
+    - Row: 16
+      Column: 23
+    - Row: 17
+      Column: 22
+    - Row: 18
+      Column: 21
+    - Row: 19
+      Column: 20
+    - Row: 19
+      Column: 21
+    - Row: 22
+      Column: 19
+    - Row: 22
+      Column: 20
+    - Row: 22
+      Column: 21
+    - Row: 23
+      Column: 18
+    - Row: 23
+      Column: 19
+    - Row: 23
+      Column: 20
+    - Row: 23
+      Column: 21
+    - Row: 24
+      Column: 18
+    - Row: 24
+      Column: 19
+    - Row: 24
+      Column: 20
+    - Row: 28
+      Column: 21
+    Painted: 0
+  - PartID: 13
+    ColorKey: White
+    PaintingCells:
+    - Row: 21
+      Column: 28
+    - Row: 21
+      Column: 29
+    - Row: 22
+      Column: 26
+    - Row: 22
+      Column: 27
+    - Row: 22
+      Column: 28
+    - Row: 22
+      Column: 29
+    - Row: 23
+      Column: 25
+    - Row: 23
+      Column: 26
+    - Row: 24
+      Column: 24
+    - Row: 24
+      Column: 25
+    - Row: 25
+      Column: 23
+    - Row: 25
+      Column: 24
+    - Row: 26
+      Column: 23
+    - Row: 27
+      Column: 22
+    - Row: 28
+      Column: 22
+    - Row: 29
+      Column: 21
+    - Row: 29
+      Column: 22
+    Painted: 0
+  - PartID: 14
+    ColorKey: White
+    PaintingCells:
+    - Row: 19
+      Column: 10
+    - Row: 19
+      Column: 11
+    - Row: 19
+      Column: 17
+    - Row: 19
+      Column: 18
+    - Row: 23
+      Column: 11
+    - Row: 23
+      Column: 15
+    - Row: 23
+      Column: 17
+    - Row: 24
+      Column: 10
+    - Row: 24
+      Column: 16
+    - Row: 24
+      Column: 17
+    Painted: 0
+  - PartID: 15
+    ColorKey: White
+    PaintingCells:
+    - Row: 7
+      Column: 27
+    - Row: 7
+      Column: 28
+    - Row: 8
+      Column: 24
+    - Row: 8
+      Column: 26
+    - Row: 8
+      Column: 27
+    - Row: 9
+      Column: 24
+    - Row: 10
+      Column: 24
+    - Row: 11
+      Column: 24
+    - Row: 12
+      Column: 24
+    - Row: 13
+      Column: 24
+    - Row: 14
+      Column: 23
+    - Row: 15
+      Column: 23
+    Painted: 0
+  - PartID: 16
+    ColorKey: Orange4
+    PaintingCells:
+    - Row: 4
+      Column: 9
+    - Row: 5
+      Column: 9
+    - Row: 6
+      Column: 8
+    - Row: 6
+      Column: 9
+    - Row: 7
+      Column: 7
+    - Row: 7
+      Column: 8
+    - Row: 8
+      Column: 4
+    - Row: 8
+      Column: 5
+    - Row: 8
+      Column: 6
+    - Row: 8
+      Column: 7
+    - Row: 8
+      Column: 8
+    - Row: 9
+      Column: 4
+    - Row: 9
+      Column: 5
+    - Row: 9
+      Column: 6
+    - Row: 9
+      Column: 7
+    - Row: 9
+      Column: 8
+    - Row: 10
+      Column: 4
+    - Row: 10
+      Column: 5
+    - Row: 10
+      Column: 6
+    - Row: 10
+      Column: 7
+    - Row: 10
+      Column: 8
+    - Row: 11
+      Column: 5
+    - Row: 11
+      Column: 6
+    - Row: 11
+      Column: 7
+    - Row: 12
+      Column: 6
+    - Row: 12
+      Column: 7
+    Painted: 0
+  - PartID: 17
+    ColorKey: Orange4
+    PaintingCells:
+    - Row: 4
+      Column: 11
+    - Row: 4
+      Column: 12
+    - Row: 4
+      Column: 16
+    - Row: 4
+      Column: 17
+    - Row: 4
+      Column: 18
+    - Row: 4
+      Column: 26
+    - Row: 5
+      Column: 11
+    - Row: 5
+      Column: 12
+    - Row: 5
+      Column: 15
+    - Row: 5
+      Column: 16
+    - Row: 5
+      Column: 17
+    - Row: 5
+      Column: 18
+    - Row: 5
+      Column: 26
+    - Row: 5
+      Column: 27
+    - Row: 6
+      Column: 12
+    - Row: 6
+      Column: 13
+    - Row: 6
+      Column: 14
+    - Row: 6
+      Column: 15
+    - Row: 6
+      Column: 16
+    - Row: 6
+      Column: 17
+    - Row: 6
+      Column: 18
+    - Row: 6
+      Column: 23
+    - Row: 6
+      Column: 24
+    - Row: 6
+      Column: 27
+    - Row: 6
+      Column: 28
+    - Row: 7
+      Column: 13
+    - Row: 7
+      Column: 14
+    - Row: 7
+      Column: 15
+    - Row: 7
+      Column: 17
+    - Row: 7
+      Column: 18
+    - Row: 7
+      Column: 19
+    - Row: 7
+      Column: 21
+    - Row: 7
+      Column: 22
+    - Row: 7
+      Column: 23
+    - Row: 7
+      Column: 24
+    - Row: 8
+      Column: 14
+    - Row: 8
+      Column: 15
+    - Row: 8
+      Column: 16
+    - Row: 8
+      Column: 17
+    - Row: 8
+      Column: 18
+    - Row: 8
+      Column: 19
+    - Row: 8
+      Column: 20
+    - Row: 8
+      Column: 21
+    - Row: 8
+      Column: 22
+    - Row: 8
+      Column: 23
+    - Row: 9
+      Column: 15
+    - Row: 9
+      Column: 16
+    - Row: 9
+      Column: 20
+    - Row: 9
+      Column: 22
+    - Row: 10
+      Column: 19
+    - Row: 10
+      Column: 21
+    - Row: 10
+      Column: 23
+    Painted: 0
+  - PartID: 18
+    ColorKey: Orange4
+    PaintingCells:
+    - Row: 23
+      Column: 28
+    - Row: 24
+      Column: 27
+    - Row: 25
+      Column: 26
+    - Row: 25
+      Column: 28
+    - Row: 25
+      Column: 29
+    - Row: 26
+      Column: 25
+    - Row: 26
+      Column: 27
+    - Row: 26
+      Column: 28
+    - Row: 26
+      Column: 29
+    - Row: 27
+      Column: 24
+    - Row: 27
+      Column: 26
+    - Row: 27
+      Column: 27
+    - Row: 27
+      Column: 28
+    - Row: 27
+      Column: 29
+    - Row: 28
+      Column: 23
+    - Row: 28
+      Column: 25
+    - Row: 28
+      Column: 26
+    - Row: 28
+      Column: 27
+    - Row: 28
+      Column: 28
+    - Row: 28
+      Column: 29
+    - Row: 29
+      Column: 25
+    - Row: 29
+      Column: 26
+    - Row: 29
+      Column: 27
+    - Row: 29
+      Column: 28
+    - Row: 29
+      Column: 29
+    Painted: 0
+  - PartID: 19
+    ColorKey: Orange4
+    PaintingCells:
+    - Row: 4
+      Column: 10
+    - Row: 5
+      Column: 10
+    - Row: 6
+      Column: 10
+    - Row: 7
+      Column: 9
+    - Row: 7
+      Column: 10
+    - Row: 7
+      Column: 11
+    - Row: 7
+      Column: 12
+    - Row: 8
+      Column: 9
+    - Row: 8
+      Column: 10
+    - Row: 8
+      Column: 11
+    - Row: 8
+      Column: 12
+    - Row: 8
+      Column: 13
+    - Row: 9
+      Column: 9
+    - Row: 9
+      Column: 10
+    - Row: 9
+      Column: 11
+    - Row: 9
+      Column: 12
+    - Row: 10
+      Column: 9
+    - Row: 10
+      Column: 11
+    - Row: 11
+      Column: 8
+    - Row: 11
+      Column: 10
+    - Row: 12
+      Column: 9
+    - Row: 13
+      Column: 8
+    Painted: 0
+  - PartID: 20
+    ColorKey: Orange4
+    PaintingCells:
+    - Row: 11
+      Column: 4
+    - Row: 12
+      Column: 4
+    - Row: 12
+      Column: 5
+    - Row: 13
+      Column: 4
+    - Row: 13
+      Column: 5
+    - Row: 13
+      Column: 6
+    - Row: 14
+      Column: 5
+    - Row: 14
+      Column: 7
+    - Row: 15
+      Column: 6
+    - Row: 16
+      Column: 5
+    Painted: 0
+  - PartID: 21
+    ColorKey: Black
+    PaintingCells:
+    - Row: 8
+      Column: 2
+    - Row: 8
+      Column: 3
+    - Row: 9
+      Column: 2
+    - Row: 9
+      Column: 3
+    - Row: 10
+      Column: 3
+    - Row: 11
+      Column: 3
+    - Row: 12
+      Column: 3
+    - Row: 13
+      Column: 3
+    - Row: 14
+      Column: 4
+    - Row: 14
+      Column: 13
+    - Row: 14
+      Column: 14
+    - Row: 14
+      Column: 15
+    - Row: 15
+      Column: 4
+    - Row: 15
+      Column: 12
+    - Row: 16
+      Column: 4
+    - Row: 16
+      Column: 9
+    - Row: 16
+      Column: 10
+    - Row: 16
+      Column: 12
+    - Row: 16
+      Column: 14
+    - Row: 17
+      Column: 4
+    - Row: 17
+      Column: 9
+    - Row: 17
+      Column: 10
+    - Row: 17
+      Column: 13
+    - Row: 17
+      Column: 14
+    - Row: 18
+      Column: 5
+    - Row: 19
+      Column: 5
+    - Row: 20
+      Column: 6
+    - Row: 21
+      Column: 7
+    - Row: 22
+      Column: 7
+    - Row: 23
+      Column: 8
+    - Row: 24
+      Column: 9
+    Painted: 0
+  - PartID: 22
+    ColorKey: Black
+    PaintingCells:
+    - Row: 1
+      Column: 18
+    - Row: 1
+      Column: 19
+    - Row: 1
+      Column: 20
+    - Row: 1
+      Column: 21
+    - Row: 1
+      Column: 22
+    - Row: 1
+      Column: 23
+    - Row: 2
+      Column: 18
+    - Row: 2
+      Column: 19
+    - Row: 2
+      Column: 20
+    - Row: 2
+      Column: 21
+    - Row: 2
+      Column: 22
+    - Row: 2
+      Column: 23
+    - Row: 2
+      Column: 24
+    - Row: 2
+      Column: 25
+    - Row: 2
+      Column: 26
+    - Row: 3
+      Column: 19
+    - Row: 3
+      Column: 20
+    - Row: 3
+      Column: 23
+    - Row: 3
+      Column: 24
+    - Row: 3
+      Column: 25
+    - Row: 3
+      Column: 26
+    - Row: 3
+      Column: 27
+    - Row: 4
+      Column: 19
+    - Row: 4
+      Column: 21
+    - Row: 4
+      Column: 22
+    - Row: 4
+      Column: 24
+    - Row: 4
+      Column: 27
+    - Row: 5
+      Column: 19
+    - Row: 5
+      Column: 21
+    - Row: 5
+      Column: 22
+    - Row: 5
+      Column: 24
+    - Row: 5
+      Column: 25
+    - Row: 5
+      Column: 28
+    - Row: 6
+      Column: 19
+    - Row: 6
+      Column: 20
+    - Row: 6
+      Column: 25
+    - Row: 6
+      Column: 26
+    - Row: 6
+      Column: 29
+    - Row: 7
+      Column: 20
+    - Row: 7
+      Column: 25
+    - Row: 7
+      Column: 29
+    - Row: 8
+      Column: 25
+    - Row: 8
+      Column: 28
+    - Row: 9
+      Column: 25
+    - Row: 9
+      Column: 26
+    - Row: 9
+      Column: 27
+    - Row: 10
+      Column: 25
+    - Row: 11
+      Column: 25
+    - Row: 12
+      Column: 25
+    - Row: 13
+      Column: 25
+    Painted: 0
+  - PartID: 23
+    ColorKey: Black
+    PaintingCells:
+    - Row: 1
+      Column: 10
+    - Row: 1
+      Column: 11
+    - Row: 1
+      Column: 12
+    - Row: 1
+      Column: 13
+    - Row: 1
+      Column: 14
+    - Row: 1
+      Column: 15
+    - Row: 1
+      Column: 16
+    - Row: 1
+      Column: 17
+    - Row: 2
+      Column: 11
+    - Row: 2
+      Column: 12
+    - Row: 2
+      Column: 13
+    - Row: 2
+      Column: 14
+    - Row: 2
+      Column: 15
+    - Row: 2
+      Column: 16
+    - Row: 2
+      Column: 17
+    - Row: 3
+      Column: 13
+    - Row: 3
+      Column: 14
+    - Row: 4
+      Column: 13
+    - Row: 4
+      Column: 14
+    - Row: 4
+      Column: 15
+    - Row: 5
+      Column: 13
+    - Row: 5
+      Column: 14
+    Painted: 0
+  - PartID: 24
+    ColorKey: Black
+    PaintingCells:
+    - Row: 14
+      Column: 24
+    - Row: 15
+      Column: 16
+    - Row: 15
+      Column: 24
+    - Row: 16
+      Column: 16
+    - Row: 16
+      Column: 18
+    - Row: 16
+      Column: 19
+    - Row: 16
+      Column: 24
+    - Row: 17
+      Column: 15
+    - Row: 17
+      Column: 18
+    - Row: 17
+      Column: 19
+    - Row: 17
+      Column: 23
+    - Row: 18
+      Column: 22
+    - Row: 19
+      Column: 22
+    - Row: 20
+      Column: 17
+    - Row: 20
+      Column: 18
+    - Row: 20
+      Column: 19
+    - Row: 20
+      Column: 20
+    - Row: 20
+      Column: 21
+    - Row: 21
+      Column: 16
+    - Row: 21
+      Column: 22
+    - Row: 22
+      Column: 15
+    - Row: 22
+      Column: 22
+    - Row: 23
+      Column: 12
+    - Row: 23
+      Column: 13
+    - Row: 23
+      Column: 14
+    - Row: 23
+      Column: 22
+    - Row: 24
+      Column: 11
+    - Row: 24
+      Column: 15
+    - Row: 24
+      Column: 21
+    - Row: 25
+      Column: 10
+    - Row: 25
+      Column: 16
+    - Row: 25
+      Column: 17
+    - Row: 25
+      Column: 18
+    - Row: 25
+      Column: 19
+    - Row: 25
+      Column: 20
+    - Row: 25
+      Column: 21
+    - Row: 26
+      Column: 20
+    - Row: 26
+      Column: 22
+    - Row: 27
+      Column: 21
+    Painted: 0
+  - PartID: 25
+    ColorKey: Black
+    PaintingCells:
+    - Row: 1
+      Column: 3
+    - Row: 1
+      Column: 4
+    - Row: 1
+      Column: 5
+    - Row: 1
+      Column: 6
+    - Row: 1
+      Column: 7
+    - Row: 1
+      Column: 8
+    - Row: 1
+      Column: 9
+    - Row: 2
+      Column: 1
+    - Row: 2
+      Column: 2
+    - Row: 2
+      Column: 3
+    - Row: 2
+      Column: 4
+    - Row: 2
+      Column: 5
+    - Row: 2
+      Column: 6
+    - Row: 2
+      Column: 7
+    - Row: 3
+      Column: 1
+    - Row: 3
+      Column: 2
+    - Row: 3
+      Column: 3
+    - Row: 3
+      Column: 4
+    - Row: 4
+      Column: 1
+    - Row: 4
+      Column: 2
+    - Row: 4
+      Column: 3
+    - Row: 5
+      Column: 2
+    - Row: 5
+      Column: 3
+    Painted: 0
+  - PartID: 26
+    ColorKey: Black
+    PaintingCells:
+    - Row: 2
+      Column: 8
+    - Row: 2
+      Column: 9
+    - Row: 2
+      Column: 10
+    - Row: 3
+      Column: 7
+    - Row: 3
+      Column: 8
+    - Row: 4
+      Column: 5
+    - Row: 4
+      Column: 6
+    - Row: 4
+      Column: 8
+    - Row: 5
+      Column: 5
+    - Row: 5
+      Column: 6
+    - Row: 5
+      Column: 8
+    - Row: 6
+      Column: 2
+    - Row: 6
+      Column: 3
+    - Row: 6
+      Column: 4
+    - Row: 6
+      Column: 7
+    - Row: 7
+      Column: 2
+    - Row: 7
+      Column: 3
+    - Row: 7
+      Column: 4
+    - Row: 7
+      Column: 5
+    - Row: 7
+      Column: 6
+    Painted: 0
+  - PartID: 27
+    ColorKey: Brown5
+    PaintingCells:
+    - Row: 12
+      Column: 0
+    - Row: 12
+      Column: 2
+    - Row: 13
+      Column: 1
+    - Row: 14
+      Column: 0
+    - Row: 14
+      Column: 2
+    - Row: 14
+      Column: 3
+    - Row: 15
+      Column: 0
+    - Row: 15
+      Column: 1
+    - Row: 15
+      Column: 2
+    - Row: 15
+      Column: 3
+    - Row: 16
+      Column: 0
+    - Row: 16
+      Column: 1
+    - Row: 16
+      Column: 2
+    - Row: 16
+      Column: 3
+    - Row: 17
+      Column: 0
+    - Row: 17
+      Column: 1
+    - Row: 17
+      Column: 2
+    - Row: 17
+      Column: 3
+    - Row: 18
+      Column: 0
+    - Row: 18
+      Column: 1
+    - Row: 18
+      Column: 2
+    - Row: 18
+      Column: 3
+    - Row: 18
+      Column: 4
+    - Row: 19
+      Column: 0
+    - Row: 19
+      Column: 1
+    - Row: 19
+      Column: 2
+    - Row: 19
+      Column: 3
+    - Row: 19
+      Column: 4
+    - Row: 20
+      Column: 0
+    - Row: 20
+      Column: 1
+    - Row: 20
+      Column: 2
+    - Row: 20
+      Column: 3
+    - Row: 20
+      Column: 4
+    - Row: 20
+      Column: 5
+    Painted: 0
+  - PartID: 28
+    ColorKey: Brown5
+    PaintingCells:
+    - Row: 21
+      Column: 0
+    - Row: 21
+      Column: 1
+    - Row: 21
+      Column: 2
+    - Row: 21
+      Column: 3
+    - Row: 21
+      Column: 4
+    - Row: 21
+      Column: 5
+    - Row: 21
+      Column: 6
+    - Row: 22
+      Column: 0
+    - Row: 22
+      Column: 1
+    - Row: 22
+      Column: 2
+    - Row: 22
+      Column: 3
+    - Row: 22
+      Column: 4
+    - Row: 22
+      Column: 5
+    - Row: 22
+      Column: 6
+    - Row: 23
+      Column: 0
+    - Row: 23
+      Column: 1
+    - Row: 23
+      Column: 2
+    - Row: 23
+      Column: 3
+    - Row: 23
+      Column: 4
+    - Row: 23
+      Column: 5
+    - Row: 23
+      Column: 6
+    - Row: 23
+      Column: 7
+    - Row: 24
+      Column: 0
+    - Row: 24
+      Column: 1
+    - Row: 24
+      Column: 2
+    - Row: 24
+      Column: 3
+    - Row: 24
+      Column: 4
+    - Row: 24
+      Column: 5
+    - Row: 24
+      Column: 6
+    - Row: 25
+      Column: 0
+    - Row: 25
+      Column: 1
+    - Row: 25
+      Column: 2
+    - Row: 25
+      Column: 3
+    - Row: 25
+      Column: 4
+    - Row: 25
+      Column: 5
+    - Row: 25
+      Column: 6
+    - Row: 26
+      Column: 0
+    - Row: 26
+      Column: 1
+    - Row: 26
+      Column: 2
+    - Row: 26
+      Column: 3
+    - Row: 26
+      Column: 4
+    - Row: 26
+      Column: 5
+    - Row: 27
+      Column: 0
+    - Row: 27
+      Column: 1
+    - Row: 27
+      Column: 2
+    - Row: 27
+      Column: 3
+    - Row: 27
+      Column: 4
+    - Row: 27
+      Column: 5
+    - Row: 28
+      Column: 0
+    - Row: 28
+      Column: 1
+    - Row: 28
+      Column: 2
+    - Row: 28
+      Column: 3
+    - Row: 28
+      Column: 4
+    - Row: 29
+      Column: 0
+    - Row: 29
+      Column: 1
+    - Row: 29
+      Column: 2
+    - Row: 29
+      Column: 3
+    - Row: 29
+      Column: 4
+    Painted: 0
+  - PartID: 29
+    ColorKey: Brown5
+    PaintingCells:
+    - Row: 24
+      Column: 7
+    - Row: 24
+      Column: 8
+    - Row: 24
+      Column: 12
+    - Row: 24
+      Column: 13
+    - Row: 24
+      Column: 14
+    - Row: 25
+      Column: 7
+    - Row: 25
+      Column: 8
+    - Row: 25
+      Column: 9
+    - Row: 25
+      Column: 11
+    - Row: 25
+      Column: 12
+    - Row: 25
+      Column: 13
+    - Row: 25
+      Column: 14
+    - Row: 25
+      Column: 15
+    - Row: 26
+      Column: 6
+    - Row: 26
+      Column: 7
+    - Row: 26
+      Column: 8
+    - Row: 26
+      Column: 9
+    - Row: 26
+      Column: 10
+    - Row: 26
+      Column: 11
+    - Row: 26
+      Column: 12
+    - Row: 26
+      Column: 13
+    - Row: 26
+      Column: 14
+    - Row: 26
+      Column: 15
+    - Row: 26
+      Column: 16
+    - Row: 26
+      Column: 17
+    - Row: 26
+      Column: 18
+    - Row: 26
+      Column: 19
+    - Row: 27
+      Column: 6
+    - Row: 27
+      Column: 7
+    - Row: 27
+      Column: 8
+    - Row: 27
+      Column: 9
+    - Row: 27
+      Column: 10
+    - Row: 27
+      Column: 11
+    - Row: 27
+      Column: 12
+    - Row: 27
+      Column: 13
+    - Row: 27
+      Column: 14
+    - Row: 27
+      Column: 15
+    - Row: 27
+      Column: 16
+    - Row: 27
+      Column: 17
+    - Row: 27
+      Column: 18
+    - Row: 27
+      Column: 19
+    - Row: 27
+      Column: 20
+    - Row: 28
+      Column: 5
+    - Row: 28
+      Column: 6
+    - Row: 28
+      Column: 7
+    - Row: 28
+      Column: 8
+    - Row: 28
+      Column: 9
+    - Row: 28
+      Column: 10
+    - Row: 28
+      Column: 11
+    - Row: 28
+      Column: 12
+    - Row: 28
+      Column: 13
+    - Row: 28
+      Column: 14
+    - Row: 28
+      Column: 15
+    - Row: 28
+      Column: 16
+    - Row: 28
+      Column: 17
+    - Row: 28
+      Column: 18
+    - Row: 28
+      Column: 19
+    - Row: 28
+      Column: 20
+    - Row: 29
+      Column: 5
+    - Row: 29
+      Column: 6
+    - Row: 29
+      Column: 7
+    - Row: 29
+      Column: 8
+    - Row: 29
+      Column: 9
+    - Row: 29
+      Column: 10
+    - Row: 29
+      Column: 11
+    - Row: 29
+      Column: 12
+    - Row: 29
+      Column: 13
+    - Row: 29
+      Column: 14
+    - Row: 29
+      Column: 15
+    - Row: 29
+      Column: 16
+    - Row: 29
+      Column: 17
+    - Row: 29
+      Column: 18
+    - Row: 29
+      Column: 19
+    - Row: 29
+      Column: 20
+    Painted: 0
+  - PartID: 30
+    ColorKey: Brown5
+    PaintingCells:
+    - Row: 13
+      Column: 26
+    - Row: 13
+      Column: 28
+    - Row: 14
+      Column: 25
+    - Row: 14
+      Column: 27
+    - Row: 14
+      Column: 29
+    - Row: 15
+      Column: 25
+    - Row: 15
+      Column: 26
+    - Row: 15
+      Column: 27
+    - Row: 15
+      Column: 28
+    - Row: 15
+      Column: 29
+    - Row: 16
+      Column: 25
+    - Row: 16
+      Column: 26
+    - Row: 16
+      Column: 27
+    - Row: 16
+      Column: 28
+    - Row: 16
+      Column: 29
+    - Row: 17
+      Column: 24
+    - Row: 17
+      Column: 25
+    - Row: 17
+      Column: 26
+    - Row: 17
+      Column: 27
+    - Row: 17
+      Column: 28
+    - Row: 17
+      Column: 29
+    - Row: 18
+      Column: 23
+    - Row: 18
+      Column: 24
+    - Row: 18
+      Column: 25
+    - Row: 18
+      Column: 26
+    - Row: 18
+      Column: 27
+    - Row: 18
+      Column: 28
+    - Row: 18
+      Column: 29
+    - Row: 19
+      Column: 23
+    - Row: 19
+      Column: 24
+    - Row: 19
+      Column: 25
+    - Row: 19
+      Column: 26
+    - Row: 19
+      Column: 27
+    - Row: 19
+      Column: 28
+    - Row: 19
+      Column: 29
+    - Row: 20
+      Column: 22
+    - Row: 20
+      Column: 23
+    - Row: 20
+      Column: 24
+    - Row: 20
+      Column: 25
+    - Row: 20
+      Column: 26
+    - Row: 20
+      Column: 27
+    - Row: 20
+      Column: 28
+    - Row: 20
+      Column: 29
+    - Row: 21
+      Column: 23
+    - Row: 21
+      Column: 24
+    - Row: 21
+      Column: 25
+    - Row: 21
+      Column: 26
+    - Row: 21
+      Column: 27
+    - Row: 22
+      Column: 23
+    - Row: 22
+      Column: 24
+    - Row: 22
+      Column: 25
+    - Row: 23
+      Column: 23
+    - Row: 23
+      Column: 24
+    - Row: 24
+      Column: 22
+    - Row: 24
+      Column: 23
+    - Row: 25
+      Column: 22
+    Painted: 0
