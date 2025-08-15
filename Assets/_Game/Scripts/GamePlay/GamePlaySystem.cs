@@ -237,6 +237,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     public bool OnClickMesh(Transform startPoint, List<Vector3> spiralPath, Color colorClick)
     {
         MeshCountClick++;
+        Debug.Log($"=== CLICK LEN === Lần click thứ {MeshCountClick}, màu: {colorClick}");
         if (woolXoayClip != null) SoundManager.Instance.PlayOneShot(woolXoayClip, 1);
 
         // 1. Ưu tiên kiểm tra các ô chứa chính (CubeTarget)
@@ -404,7 +405,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         {
             CurrentCubeTargets[indexCube]?.group.SetActive(false);
             TotalCubeActive--;
-            CubeReadyCount--;
+            //CubeReadyCount--;
             // CurrentCubeTargets.Remove(CurrentCubeTargets[indexCube]);
             SmoothRepositioner(); // Sắp xếp lại vị trí các ô còn lại cho đẹp
             Debug.Log("CubeReadyCount: " + CubeReadyCount + " TotalCubeActive: " + TotalCubeActive);
@@ -417,18 +418,24 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     public void FinishedCollectingCube()
     {
         _currentColorCollected += 3;
-        //Debug.LogWarning(_currentColorCollected + "-----------------" + cubeCountClaimed);
+        int cubesCompleted = _currentColorCollected / 3;
+        
+        Debug.Log($"=== HộP ĐẦY === Hoàn thành hộp thứ {cubesCompleted}! Tổng len: {_currentColorCollected}/{_meshController.TotalColor}");
+        
         if (_currentColorCollected/3 == cubeCountClaimed)
         {
-            // Khi đạt đủ số lượng, kích hoạt sự kiện đặc biệt
+            // Khi đạt đủ số lượng hộp theo cài đặt cũ
+            Debug.Log($"=== WIN by CUBE COUNT === Đã hoàn thành {cubesCompleted} hộp (cài đặt: {cubeCountClaimed})");
             if (_coroutineEndGame == null)
             {
                 _coroutineEndGame = StartCoroutine(OnEndGameAction(true));
                 Luna.Unity.LifeCycle.GameEnded();
             }
-            //CheckEndGame();
-            //GoToStore();
-           // Debug.Log(" CurrentColorCollected: " + _currentColorCollected + " End Game with cubeCountClaimed: " +cubeCountClaimed);
+        }
+        else
+        {
+            // Tiếp tục kiểm tra điều kiện thắng chính
+            CheckEndGame();
         }
     }
 
@@ -482,20 +489,24 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// </summary>
     public void CheckEndGame()
     {
-        Debug.Log("Truong hop: " + _isPLayAnimUsingRainBow);
+        Debug.Log("CheckEndGame - ColorCollected: " + _currentColorCollected + "/" + _meshController.TotalColor + " | CubeReady: " + CubeReadyCount + "/" + TotalCubeActive + " | Rainbow: " + _isPLayAnimUsingRainBow);
         if (_isPLayAnimUsingRainBow) return;
+        
         // Điều kiện thắng: Đã thu thập hết tất cả các màu
-        if (_currentColorCollected == _meshController.TotalColor && TotalCubeActive == CubeReadyCount)
+        if (_currentColorCollected >= _meshController.TotalColor)
         {
+            Debug.Log("=== WIN CONDITION MET === All colors collected!");
             if (_coroutineEndGame == null)
             {
                 _coroutineEndGame = StartCoroutine(OnEndGameAction(true));
             }
+            return; // Thoát sớm để không check điều kiện thua
         }
 
-        // Điều kiện thua: Hàng đợi bị đầy
-        if (_queueCount >= CurrentQueueTargets.Count && TotalCubeActive == CubeReadyCount)
+        // Điều kiện thua: Hàng đợi bị đầy VÀ vẫn còn cube hoạt động
+        if (_queueCount >= CurrentQueueTargets.Count && TotalCubeActive > 0 && TotalCubeActive == CubeReadyCount)
         {
+            Debug.Log("=== LOSE CONDITION === Queue full!");
             if (_coroutineEndGame == null)
             {
                 _coroutineEndGame = StartCoroutine(OnEndGameAction(false));

@@ -91,7 +91,15 @@ public class CubeTargetControl : MonoBehaviour
         //child = TargetChildrens[_indexChild];
         if (_indexChild + 1 == TotalChild)
         {
-            StartCoroutine(WaitingAnim(indexCube));
+            // Check if the game object is active before starting the coroutine
+            if (gameObject.activeInHierarchy)
+            {
+                StartCoroutine(WaitingAnim(indexCube));
+            }
+            else
+            {
+                Debug.LogWarning($"Cannot start coroutine on inactive game object {gameObject.name}");
+            }
         }
 
         _indexChild++;
@@ -131,6 +139,7 @@ public class CubeTargetControl : MonoBehaviour
 
         while (!fishScalesPaintingController.CanStartOuttro)
         {
+            Debug.Log("Waiting Anim");
             yield return null;
         }
         
@@ -155,7 +164,14 @@ public class CubeTargetControl : MonoBehaviour
         GamePlaySystem.Instance.FinishedCollectingCube();
         ChangeColor();
         if(indexCube != -1)//_boxAnimation.FlyIn();
+        {
+            // Bake position before starting intro animation to ensure correct positioning
+            if (_boxAnimation != null)
+            {
+                _boxAnimation.BakePrePos();
+            }
             ThisBarAnimatorController.StartIntro();
+        }
         
         yield return new WaitForSeconds(_boxAnimation.FlyInDuration);
         
@@ -175,7 +191,18 @@ public class CubeTargetControl : MonoBehaviour
             VARIABLE.SetActive(false);
         _isReady    = true;
         _indexChild = 0;
-        gameObject.SetActive(true);
+        
+        // Only set active if not already active to avoid position reset
+        if (!gameObject.activeInHierarchy)
+        {
+            // Bake the current position before reactivating to preserve animation state
+            if (_boxAnimation != null)
+            {
+                _boxAnimation.BakePrePos();
+            }
+            gameObject.SetActive(true);
+        }
+        
         foreach (var child in TargetChildrens)
         {
             if (child == null)
@@ -295,7 +322,18 @@ public class CubeTargetControl : MonoBehaviour
         if (linePool.Count == 0) return;
 
         var availableLine = linePool.Dequeue();
-        StartCoroutine(LiningCoroutine(availableLine, origin, target, color, firstCell));
+        
+        // Check if the game object is active before starting the coroutine
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(LiningCoroutine(availableLine, origin, target, color, firstCell));
+        }
+        else
+        {
+            Debug.LogWarning($"Cannot start LiningCoroutine on inactive game object {gameObject.name}");
+            // Return the line back to the pool if we can't start the coroutine
+            linePool.Enqueue(availableLine);
+        }
     }
     private IEnumerator LiningCoroutine(PaintingLineRendererHandler lineRendererHandler, Vector3 origin, Vector3 target, Color color, bool firstCell = false)
     {

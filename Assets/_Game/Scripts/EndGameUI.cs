@@ -26,12 +26,13 @@ public class EndGameUI : MonoBehaviour
         Instance = this;
         
         _material = new Material(renderer.material);
-        renderer.material = _material;
         _material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
         _material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
         _material.SetInt("_ZWrite", 0);
         _material.EnableKeyword("_ALPHABLEND_ON");
         _material.renderQueue = 3000;
+        renderer.material = _material;
+        renderer.enabled = false;
     }
     
     public void ShowWinGamePanel()
@@ -59,11 +60,13 @@ public class EndGameUI : MonoBehaviour
             paintingOverviewAnimation.StartOutroAnimation();
         yield return new WaitForSeconds(1.6f);
         FadeTo(1f, 1f);
+        renderer.enabled = true;
         yield return StartCoroutine(FadeBetweenCanvasGroups(winGamePanel, btnPlay, 1f, .6f));
     }
     
     private IEnumerator LoseGame()
     {
+        
         if (loseSound != null)
             SoundManager.Instance.PlayOneShot(loseSound, 1f);
         yield return StartCoroutine(FadeBetweenCanvasGroups(loseGamePanel, btnPlay, 1f, .6f));

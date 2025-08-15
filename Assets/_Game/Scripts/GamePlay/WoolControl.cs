@@ -289,12 +289,15 @@ public class WoolControl : MonoBehaviour
 
         yield return null;
         _isPlayAnim = false;
-        // yield return new WaitForSeconds(3f);
-        // if (CheckWoolCountEndGame())
-        // {
-        //     Debug.Log("Rotation Done next CurrentWoolInSequence :" + CurrentWoolInSequence);
-        //     GamePlaySystem.Instance.EndGameTotalCountWool();
-        // }
+        
+        Debug.Log($"=== LEN RÚT === Len thứ {CurrentWoolInSequence - 1} đã rút xong! Còn lại: {totalColor} lớp len trên mesh này");
+        
+        // Kiểm tra xem đã rút hết len chưa để kết thúc game
+        if (CheckWoolCountEndGame())
+        {
+            Debug.Log($"=== WIN: RÚt hết len === Đã rút {CurrentWoolInSequence - 1} len / Cần rút: {GamePlaySystem.Instance.TotalCountClaimed} len");
+            GamePlaySystem.Instance.EndGameTotalCountWool();
+        }
 
     }
     private bool CheckWoolCountEndGame()

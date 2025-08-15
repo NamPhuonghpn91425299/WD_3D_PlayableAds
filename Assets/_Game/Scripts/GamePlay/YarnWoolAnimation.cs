@@ -15,6 +15,10 @@ public class YarnWoolAnimation : MonoBehaviour
     public List<Vector3>         _pointList;
     private MaterialPropertyBlock _propertyBlock;
     private const float           HeadOffset = 0.2f;
+    
+    [Header("Debug Settings")]
+    [Tooltip("If true, uses direct world position instead of camera conversion")]
+    public bool UseDirectWorldPosition = false;
 
     #endregion
 
@@ -111,19 +115,62 @@ public class YarnWoolAnimation : MonoBehaviour
     {
         Vector3 headPos;
         
-        if (CameraContainer.Instance != null)
+        // Check if we should use direct world position (debug mode)
+        if (UseDirectWorldPosition)
+        {
+            // Use direct world position without camera conversion
+            headPos = _headParent.position - _headParent.forward * HeadOffset * percent;
+        }
+        // Try camera conversion first, but with better error handling
+        else if (CameraContainer.Instance != null && 
+            CameraContainer.Instance.FakeUICamera != null && 
+            CameraContainer.Instance.MainCamera != null)
         {
             // Get head position in world space with offset
             Vector3 origHeadPos = _headParent.position - _headParent.forward * HeadOffset * percent;
             
-            // Convert between cameras
-            Vector3 screenPos = CameraContainer.Instance.FakeUICamera.WorldToScreenPoint(origHeadPos);
-            headPos = CameraContainer.Instance.MainCamera.ScreenToWorldPoint(screenPos);
+            try
+            {
+                // Convert between cameras with validation
+                Vector3 screenPos = CameraContainer.Instance.FakeUICamera.WorldToScreenPoint(origHeadPos);
+                
+                // Validate screen position is within bounds and reasonable
+                if (screenPos.z > 0 && 
+                    screenPos.x >= 0 && screenPos.x <= Screen.width &&
+                    screenPos.y >= 0 && screenPos.y <= Screen.height)
+                {
+                    Vector3 convertedPos = CameraContainer.Instance.MainCamera.ScreenToWorldPoint(screenPos);
+                    
+                    // Additional validation - make sure converted position is reasonable
+                    float distance = Vector3.Distance(convertedPos, origHeadPos);
+                    if (distance < 50f) // Reasonable distance threshold
+                    {
+                        headPos = convertedPos;
+                    }
+                    else
+                    {
+                        // If conversion result is too far, use direct position
+                        headPos = origHeadPos;
+                        Debug.LogWarning($"Camera conversion resulted in unreasonable distance: {distance}. Using direct position.");
+                    }
+                }
+                else
+                {
+                    // Screen position is invalid, use direct world position
+                    headPos = origHeadPos;
+                }
+            }
+            catch (System.Exception e)
+            {
+                // If camera conversion fails, fallback to direct position
+                headPos = _headParent.position - _headParent.forward * HeadOffset * percent;
+                Debug.LogWarning($"Camera conversion failed: {e.Message}. Using fallback position.");
+            }
         }
         else
         {
-            // Fallback to original calculation
-            headPos = _headParent.position - _headParent.forward * HeadOffset;
+            // No camera container or cameras, use direct calculation
+            headPos = _headParent.position - _headParent.forward * HeadOffset * percent;
         }
         
         LineRenderer.SetPosition(0, headPos);
