@@ -28,6 +28,7 @@ public class CubeTargetControl : MonoBehaviour
 
     public float RollWoolTime = 0.5f;
     public float DelayTime    = 0.3f;
+    public ParticleSystem vfxExplosonStar;
 
 
     private bool  _isActiveGenNew;
@@ -57,6 +58,10 @@ public class CubeTargetControl : MonoBehaviour
     
     [Header("WOOL SPIRAL ITEMS")]
     public List<GameObject> SpiralItems = new List<GameObject>();
+
+    [Header("WOOL AUDIO")]
+    public AudioClip InTro;
+    public AudioClip OutTro;
     #endregion
 
     #region MAIN_METHODS
@@ -134,6 +139,7 @@ public class CubeTargetControl : MonoBehaviour
     private IEnumerator WaitingAnim(int indexCube)
     {
         FishScalesPaintingController fishScalesPaintingController = FishScalesPaintingController.Instance;
+        GamePlaySystem.Instance.CubeReadyCount--;
         yield return new WaitForSeconds(1f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
         fishScalesPaintingController.WoolLinePaintingStart(this);
 
@@ -144,32 +150,26 @@ public class CubeTargetControl : MonoBehaviour
         }
         
         yield return new WaitForSeconds(.25f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
+        SoundManager.Instance.PlayOneShot(OutTro);
+        vfxExplosonStar.Play();
         ThisBarAnimatorController.StartOutro();
-        //PaintingController.PaintPartByColor(nameColor);
         yield return new WaitForSeconds(.5f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
         GamePlaySystem.Instance.GenNewCube(indexCube);
-        //GamePlaySystem.Instance.FinishedCollectingCube();
         
         _isActiveGenNew = GamePlaySystem.Instance.HasCube;
-        GamePlaySystem.Instance.CubeReadyCount--;
         _isReady = false;
-        // yield return new WaitForSeconds(RollWoolTime + DelayTime);
-        //_boxAnimation.CloseAndMoveOut();
-        // yield return new WaitForSeconds(_boxAnimation.CloseDuration);
-        // yield return new WaitForSeconds(_boxAnimation.MoveOutDuration);
 
         SetDefault();
-        //yield return new WaitForSeconds(.5f); // Thời gian chowf 1 lucs mis check end game
         GamePlaySystem.Instance.CheckTurnOffCube(indexCube, _isActiveGenNew);
-        GamePlaySystem.Instance.FinishedCollectingCube();
+        GamePlaySystem.Instance.FinishedCollectingCube();//sử lí kiểm tra end game qua số lượng hộp, số lượng cuộn len
         ChangeColor();
-        if(indexCube != -1)//_boxAnimation.FlyIn();
+        if(indexCube != -1)
         {
             // Bake position before starting intro animation to ensure correct positioning
+            SoundManager.Instance.PlayOneShot(InTro);
             if (_boxAnimation != null)
-            {
                 _boxAnimation.BakePrePos();
-            }
+            
             ThisBarAnimatorController.StartIntro();
         }
         
@@ -178,8 +178,10 @@ public class CubeTargetControl : MonoBehaviour
         GamePlaySystem.Instance.CubeReadyCount++;
         _isReady = true;
         GamePlaySystem.Instance.UseQueueTarget(_currentColor, indexCube);
+        
+        // yield return new WaitForSeconds(1.5f); // Thời gian chowf 1 lucs mis check end game
         GamePlaySystem.Instance.CheckEndGame();
-        Debug.Log("CubeReadyCount: " + GamePlaySystem.Instance.CubeReadyCount + " TotalCubeActive: " + GamePlaySystem.Instance.TotalCubeActive + " indexCube: " + indexCube);
+        // Debug.Log("CubeReadyCount: " + GamePlaySystem.Instance.CubeReadyCount + " TotalCubeActive: " + GamePlaySystem.Instance.TotalCubeActive + " indexCube: " + indexCube);
     }
 
     public void SetDefault()

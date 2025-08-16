@@ -470,7 +470,7 @@ MonoBehaviour:
   _hopScale: 0.9
   _hopDownTime: 0.2
   _hopUpTime: 0.2
-  boxWhooshClip: {fileID: 0}
+  boxWhooshClip: {fileID: 8300000, guid: dcd7230a4a4f74b478eee7f852f1e77f, type: 3}
   offsetMoveY: 0.18
 --- !u!114 &4827958210178221859
 MonoBehaviour:
@@ -495,6 +495,7 @@ MonoBehaviour:
   - {fileID: 1880203761277055586}
   - {fileID: 1292657623998917056}
   - {fileID: 6080229869832917061}
+  distance: 10
   Side: 0
   BarTransform: {fileID: 7793180559281586218}
   BarOriginalScale: {x: 0.2, y: 0.2, z: 0.2}
@@ -580,6 +581,7 @@ MonoBehaviour:
   _boxCollider: {fileID: 2307984005888696254}
   RollWoolTime: 0.5
   DelayTime: 0.3
+  vfxExplosonStar: {fileID: 4969589782501369025}
   _currentColor: {r: 0, g: 0, b: 0, a: 1}
   nameColor: 
   WoolLineRenderers:
@@ -591,6 +593,8 @@ MonoBehaviour:
   - {fileID: 9028978549254770761}
   - {fileID: 8639988423280591004}
   - {fileID: 7162246289751810461}
+  InTro: {fileID: 8300000, guid: a3e97e8ece8262b40b9ff61c01e21efd, type: 3}
+  OutTro: {fileID: 8300000, guid: 05f665a0f0a0736488ab057e6fe0c39d, type: 3}
 --- !u!1 &3337422697318988920
 GameObject:
   m_ObjectHideFlags: 0

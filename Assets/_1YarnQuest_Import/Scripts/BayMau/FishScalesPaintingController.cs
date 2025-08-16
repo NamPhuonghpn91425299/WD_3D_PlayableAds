@@ -303,6 +303,9 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
     {
         //Debug.Log("WoolLinePaintingCoroutine started");
         CanStartOuttro = false;
+        float vibrationTimer = Time.time;
+        float timerOffset = 0;
+        
         if (currentCube == null)
         {
             //Debug.LogError("currentCube is null");
@@ -362,7 +365,12 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
             {
                 var cell = targetPart.PaintingCells[i];
                 //Debug.Log($"Painting cell {i + 1}/{targetPart.PaintingCells.Count}: Row={cell.Row}, Column={cell.Column}");
-
+                timerOffset = Time.time - vibrationTimer;
+                if (timerOffset >= SoundFxPlayRate)
+                {
+                    vibrationTimer = Time.time;
+                    PlayPaintingCellAudioFx();
+                }
                 var spriteCell = GetCellAt(cell.Row, cell.Column);
                 if (spriteCell == null)
                 {
@@ -726,7 +734,13 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
     }
 
     public Vector3 GetCellWorldPosition(PaintingFishScaleSpriteCell spriteCell) => spriteCell.WorldPosition;
-    private void PlayPaintingCellAudioFx() => PaintingAudioSource.PlayOneShot(PaintingCellClips.GetRandom());
+
+    private void PlayPaintingCellAudioFx()
+    {
+        if(PaintingCellClips.Count<=0)
+            Debug.LogError("Thiếu âm thanh Hãy kéo âm thanh: Yarn print vào list c# FishScalesPaintingController");
+        PaintingAudioSource.PlayOneShot(PaintingCellClips.GetRandom());
+    }
 
     #endregion
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Serialization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -152,6 +153,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     // Tham chiếu đến các file âm thanh.
     public AudioClip woolXoayClip;
     public AudioClip wool1Clip;
+    public AudioClip soundCuonLenBay;
 
 
     private int _currentOpenCubeTargetCost;
@@ -432,11 +434,6 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                 Luna.Unity.LifeCycle.GameEnded();
             }
         }
-        else
-        {
-            // Tiếp tục kiểm tra điều kiện thắng chính
-            CheckEndGame();
-        }
     }
 
     /// <summary>
@@ -462,6 +459,9 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                     
                         // // Lấy vị trí bắt đầu và kết thúc cho animation
                         CurrentCubeTargets[indexCube].AddChild(indexCube, out var headTrans);
+                        if(soundCuonLenBay==null)
+                            Debug.LogError("thiếu âm thanh name: wool_xoay_reverse");
+                        SoundManager.Instance.PlayOneShot(soundCuonLenBay);
                         if (headTrans == null) return;
                         Transform startPoint = headTrans;
                         Transform targetPoint = t.transform;
