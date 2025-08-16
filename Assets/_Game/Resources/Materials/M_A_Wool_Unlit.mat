@@ -87,6 +87,7 @@ Material:
     - _LightIntensity: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NormalScale: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 3
@@ -96,6 +97,7 @@ Material:
     - _SpecularHighlights: 1
     - _SpecularPower: 32
     - _SrcBlend: 1
+    - _Threshold: 0
     - _UVSec: 0
     - _UseHaloGlow: 0
     - _UseRim: 0
