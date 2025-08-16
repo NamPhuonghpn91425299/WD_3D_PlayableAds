@@ -30,6 +30,7 @@ public class WoolControl : MonoBehaviour
     public Material MainMaterial;
     public Material TranparentMaterial;
     public WoolAnimationData WoolAnimationData;
+    public float x;
 
     public List<DecoreControl> DecoreControls;
     public List<DecoreControl> RemovedDecoreControls;
@@ -278,19 +279,7 @@ public class WoolControl : MonoBehaviour
             _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, nextColor);
             _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
             _currentColor = nextColor;
-            Vector3 originalScale = transform.localScale; // Lưu scale gốc
-            Debug.Log("Original scale = " + originalScale);
-
-            transform.DOScale(originalScale * 1.2f, 0.2f)
-                .OnComplete(() =>
-                {
-                    transform.DOScale(originalScale, 0.2f) // Dùng originalScale
-                        .OnComplete(() =>
-                        {
-                            Debug.Log("Scale animation complete");
-                            // Không cần set lại Vector3.one nữa vì đã về originalScale
-                        });
-                });
+            StartCoroutine(AnimateThreshold(TopMeshRenderer.material, .045f,.15f));
         }
 
         TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
@@ -655,5 +644,34 @@ public class WoolControl : MonoBehaviour
         return a + ab * t;
     }
 
+    private IEnumerator AnimateThreshold(Material material, float target, float time)
+    {
+        float t = 0f;
 
+        // Phase 1: Increase from 0 to target
+        while (t < time)
+        {
+            float current = Mathf.Lerp(0, target, t / time);
+            material.SetFloat("_Threshold", current);
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure exact value at the end
+        material.SetFloat("_Threshold", target);
+
+        t = 0f;
+
+        // Phase 2: Decrease from target to 0
+        while (t < time)
+        {
+            float current = Mathf.Lerp(target, 0, t / time);
+            material.SetFloat("_Threshold", current);
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure reset at end
+        material.SetFloat("_Threshold", 0);
+    }
 }
