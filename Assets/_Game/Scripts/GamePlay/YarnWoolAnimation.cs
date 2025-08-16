@@ -20,6 +20,10 @@ public class YarnWoolAnimation : MonoBehaviour
     [Tooltip("If true, uses direct world position instead of camera conversion")]
     public bool UseDirectWorldPosition = false;
 
+    [Header("VFX")] 
+    public ParticleSystem woolTrailEffect;
+    public Transform currentWoolTrailTransform;
+    private ParticleSystem.MainModule mainModule;
     #endregion
 
     #region UNITY_METHODS
@@ -30,6 +34,11 @@ public class YarnWoolAnimation : MonoBehaviour
         LineRenderer = GetComponentInChildren<LineRenderer>();
     }
 #endif
+    private void Awake()
+    {
+        mainModule = woolTrailEffect.main;
+        currentWoolTrailTransform = woolTrailEffect.transform;
+    }
 
     private void OnEnable()
     {
@@ -58,6 +67,7 @@ public class YarnWoolAnimation : MonoBehaviour
             InitPropertyBlock();
             _propertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, color);
             LineRenderer.SetPropertyBlock(_propertyBlock);
+            mainModule.startColor = color;
         }
     }
 
@@ -82,6 +92,7 @@ public class YarnWoolAnimation : MonoBehaviour
 
         float timer    = 0f;
         float duration = WoolAnimationData.Duration;
+        woolTrailEffect.Play();
         while (timer < duration)
         {
             var t = timer / duration;
@@ -91,10 +102,10 @@ public class YarnWoolAnimation : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-
         // Đảm bảo kết thúc ở điểm cuối
         var tailEnd = _tailParent.TransformPoint(_pointList[_pointList.Count - 1]);
         LineRenderer.SetPosition(1, tailEnd);
+        woolTrailEffect.Stop();
 
         // Fade out animation
         var totalTimeHide = WoolAnimationData.DurationHideWool;
@@ -193,6 +204,7 @@ public class YarnWoolAnimation : MonoBehaviour
         Vector3 tail1 = _tailParent.TransformPoint(_pointList[idx1]);
         Vector3 tailPos = Vector3.Lerp(tail0, tail1, lerpT);
         
+        currentWoolTrailTransform.position = tailPos;
         LineRenderer.SetPosition(1, tailPos);
     }
 
