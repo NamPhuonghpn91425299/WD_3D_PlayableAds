@@ -113,7 +113,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private int _queueCount;
 
     [Tooltip("Prefab của level hiện tại, chứa GamePlayMeshController và các mesh len.")] [SerializeField]
-    private GameObject _levelPrefab;
+    public GameObject _levelPrefab;
 
     /// <summary>
     /// Lấy tổng số màu sắc có trong level từ MeshController.

@@ -142,6 +142,7 @@ public class ModelSpawnerTool : EditorWindow
             GamePlaySystem gamePlaySystem = Object.FindObjectOfType<GamePlaySystem>();
             cameraController.ModelPrefab = obj;
             gamePlaySystem._levelPrefab = obj;
+            fishScalesPaintingController.CurrentLevelPrefab = obj.GetComponent<GamePlayMeshController>();
             if (controller != null)
             {
                 Undo.RecordObject(controller, "Assign PaintingConfig");
