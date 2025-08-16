@@ -22,14 +22,14 @@ public class WoolControl : MonoBehaviour
     [Header("Wool Settings")]
     [Tooltip("The order number of this wool in the sequence")]
     public int WoolOrder = 1;
-    public Transform        woolTransform;
-    [Header("Mesh Object")] public MeshObjectData    MeshObjectData;
-    public                         Renderer      TopMeshRenderer;
-    public                         Renderer      HideMeshRenderer;
-    public                         Collider          BoxCollider;
-    public                         Material          MainMaterial;
-    public                         Material          TranparentMaterial;
-    public                         WoolAnimationData WoolAnimationData;
+    public Transform woolTransform;
+    [Header("Mesh Object")] public MeshObjectData MeshObjectData;
+    public Renderer TopMeshRenderer;
+    public Renderer HideMeshRenderer;
+    public Collider BoxCollider;
+    public Material MainMaterial;
+    public Material TranparentMaterial;
+    public WoolAnimationData WoolAnimationData;
 
     public List<DecoreControl> DecoreControls;
     public List<DecoreControl> RemovedDecoreControls;
@@ -47,16 +47,16 @@ public class WoolControl : MonoBehaviour
 
     private int _indexLayer;
 
-    [SerializeField] private List<Vector3> _spiralPath    = new List<Vector3>();
-    [SerializeField] private List<float>   _spiralPathUVY = new List<float>();
+    [SerializeField] private List<Vector3> _spiralPath = new List<Vector3>();
+    [SerializeField] private List<float> _spiralPathUVY = new List<float>();
 
     #region custom attributes
 
     [Serializable] //temporary
     public class DecorObjectSetting
     {
-        public                DecoreControl DecorObject;
-        [Range(0, 1f)] public float         WoolProgressStartSrop = 0.5f;
+        public DecoreControl DecorObject;
+        [Range(0, 1f)] public float WoolProgressStartSrop = 0.5f;
     }
 
     #endregion
@@ -66,11 +66,11 @@ public class WoolControl : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        TopMeshRenderer  ??= GetComponent<MeshRenderer>();
+        TopMeshRenderer ??= GetComponent<MeshRenderer>();
         HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
         // BoxCollider      ??= GetComponent<BoxCollider>();
         //BoxCollider      ??= GetComponent<Collider>();
-        BoxCollider      = GetComponent<MeshCollider>();
+        BoxCollider = GetComponent<MeshCollider>();
     }
 #endif
 
@@ -96,9 +96,9 @@ public class WoolControl : MonoBehaviour
     public void InitMesh()
     {
         MeshObjectData.ColorStack.Clear();
-        _indexLayer         = 0;
+        _indexLayer = 0;
         BoxCollider.enabled = true;
-        _currentColor       = MeshObjectData.HightestColor;
+        _currentColor = MeshObjectData.HightestColor;
         PushColor(MeshObjectData.HightestColor);
     }
 
@@ -151,12 +151,12 @@ public class WoolControl : MonoBehaviour
         //     GamePlaySystem.Instance.GoToStore();
         //     return;
         // }
-        
+
         // Move to the next wool in sequence
         CurrentWoolInSequence++;
         StartCoroutine(AsyncWoolRotation());
     }
-    
+
     // Call this method to reset the sequence (e.g., when restarting the level)
     public static void ResetWoolSequence()
     {
@@ -168,7 +168,7 @@ public class WoolControl : MonoBehaviour
         {
             // Trigger your endgame event here
             Debug.Log("All wools interacted with in sequence! Game Complete!");
-        
+
             // Example: 
             // GameManager.Instance.CompleteLevel();
             // or
@@ -176,14 +176,14 @@ public class WoolControl : MonoBehaviour
         }
     }
     // For editor debugging
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     [ContextMenu("Select This Wool")]
     private void SelectThisWool()
     {
         UnityEditor.Selection.activeGameObject = gameObject;
         UnityEditor.SceneView.FrameLastActiveSceneView();
     }
-    #endif
+#endif
 
     public void SetColor(Color color)
     {
@@ -191,14 +191,14 @@ public class WoolControl : MonoBehaviour
         MeshObjectData.TotalLayer++;
     }
 
-    private bool            _isPlayAnim;
+    private bool _isPlayAnim;
 
     IEnumerator AsyncWoolRotation()
     {
         if (Time.deltaTime <= 0) yield return null;
         if (_isPlayAnim) yield break;
         if (GamePlaySystem.Instance && GamePlaySystem.Instance.QueueCount == GamePlaySystem.Instance.CurrentQueueTargets.Count) yield break;
-        if (!HideMeshRenderer || !WoolAnimationData || !TopMeshRenderer  ||
+        if (!HideMeshRenderer || !WoolAnimationData || !TopMeshRenderer ||
             _spiralPathUVY == null || _topMaterialPropertyBlock == null || !BoxCollider || MeshObjectData == null
             || MeshObjectData.ColorStack == null || MeshObjectData.ColorStack.Count == 0) yield break;
         if (!GamePlaySystem.Instance.OnClickMesh(transform, _spiralPath, _currentColor)) yield break;
@@ -208,7 +208,8 @@ public class WoolControl : MonoBehaviour
         try
         {
             MeshObjectData.ColorStack.RemoveAt(0);
-        } catch { }
+        }
+        catch { }
         var totalColor = MeshObjectData.ColorStack.Count;
 
         if (totalColor == 0)
@@ -224,13 +225,13 @@ public class WoolControl : MonoBehaviour
 
         HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
 
-        var   totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
-        float timer     = 0f;
+        var totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
+        float timer = 0f;
 
 
 
-        float minUVY  = _spiralPathUVY.Min();
-        float maxUVY  = _spiralPathUVY.Max();
+        float minUVY = _spiralPathUVY.Min();
+        float maxUVY = _spiralPathUVY.Max();
         float uvRange = Mathf.Max(0.0001f, maxUVY - minUVY);
 
         MaterialPropertyBlock woolProperties = new MaterialPropertyBlock();
@@ -238,16 +239,16 @@ public class WoolControl : MonoBehaviour
 
         while (timer < totalTime)
         {
-            float t     = timer / totalTime;
-            float idx   = t * (_spiralPath.Count - 1);
-            int   idx0  = Mathf.Clamp(Mathf.FloorToInt(idx), 0, _spiralPath.Count - 1);
-            int   idx1  = Mathf.Clamp(idx0 + 1,              0, _spiralPath.Count - 1);
+            float t = timer / totalTime;
+            float idx = t * (_spiralPath.Count - 1);
+            int idx0 = Mathf.Clamp(Mathf.FloorToInt(idx), 0, _spiralPath.Count - 1);
+            int idx1 = Mathf.Clamp(idx0 + 1, 0, _spiralPath.Count - 1);
             float lerpT = idx - idx0;
 
             // Nội suy UVY
-            float uvy0          = _spiralPathUVY[idx0];
-            float uvy1          = _spiralPathUVY[idx1];
-            float uvy           = Mathf.Lerp(uvy0, uvy1, lerpT);
+            float uvy0 = _spiralPathUVY[idx0];
+            float uvy1 = _spiralPathUVY[idx1];
+            float uvy = Mathf.Lerp(uvy0, uvy1, lerpT);
             float normalizedUVY = (uvy - minUVY) / uvRange;
 
             if (false)
@@ -277,6 +278,19 @@ public class WoolControl : MonoBehaviour
             _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, nextColor);
             _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
             _currentColor = nextColor;
+            Vector3 originalScale = transform.localScale; // Lưu scale gốc
+            Debug.Log("Original scale = " + originalScale);
+
+            transform.DOScale(originalScale * 1.2f, 0.2f)
+                .OnComplete(() =>
+                {
+                    transform.DOScale(originalScale, 0.2f) // Dùng originalScale
+                        .OnComplete(() =>
+                        {
+                            Debug.Log("Scale animation complete");
+                            // Không cần set lại Vector3.one nữa vì đã về originalScale
+                        });
+                });
         }
 
         TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
@@ -289,9 +303,9 @@ public class WoolControl : MonoBehaviour
 
         yield return null;
         _isPlayAnim = false;
-        
+
         Debug.Log($"=== LEN RÚT === Len thứ {CurrentWoolInSequence - 1} đã rút xong! Còn lại: {totalColor} lớp len trên mesh này");
-        
+
         // Kiểm tra xem đã rút hết len chưa để kết thúc game
         if (CheckWoolCountEndGame())
         {
@@ -305,8 +319,8 @@ public class WoolControl : MonoBehaviour
         if (GamePlaySystem.Instance.TotalCountClaimed == CurrentWoolInSequence - 1) return true;
         return false;
     }
-    
-    
+
+
     public void PLayAnim(int index) { StartCoroutine(ExecuteAnim(index)); }
 
     private IEnumerator ExecuteAnim(int index)
@@ -342,25 +356,25 @@ public class WoolControl : MonoBehaviour
 
         HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
 
-        var   totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
-        float timer     = 0f;
+        var totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
+        float timer = 0f;
 
-        float minUVY  = _spiralPathUVY.Min();
-        float maxUVY  = _spiralPathUVY.Max();
+        float minUVY = _spiralPathUVY.Min();
+        float maxUVY = _spiralPathUVY.Max();
         float uvRange = Mathf.Max(0.0001f, maxUVY - minUVY);
 
         while (timer < totalTime)
         {
-            float t     = timer / totalTime;
-            float idx   = t     * (_spiralPath.Count - 1);
-            int   idx0  = Mathf.FloorToInt(idx);
-            int   idx1  = Mathf.Clamp(idx0 + 1, 0, _spiralPath.Count - 1);
+            float t = timer / totalTime;
+            float idx = t * (_spiralPath.Count - 1);
+            int idx0 = Mathf.FloorToInt(idx);
+            int idx1 = Mathf.Clamp(idx0 + 1, 0, _spiralPath.Count - 1);
             float lerpT = idx - idx0;
 
             // Nội suy UVY
-            float uvy0          = _spiralPathUVY[idx0];
-            float uvy1          = _spiralPathUVY[idx1];
-            float uvy           = Mathf.Lerp(uvy0, uvy1, lerpT);
+            float uvy0 = _spiralPathUVY[idx0];
+            float uvy1 = _spiralPathUVY[idx1];
+            float uvy = Mathf.Lerp(uvy0, uvy1, lerpT);
             float normalizedUVY = (uvy - minUVY) / uvRange;
 
             // Set _Display theo UVY nội suy
@@ -394,18 +408,18 @@ public class WoolControl : MonoBehaviour
 
     private void DisplayColor()
     {
-        if (MeshObjectData             == null) return;
-        _topMaterialPropertyBlock  ??= new MaterialPropertyBlock();
+        if (MeshObjectData == null) return;
+        _topMaterialPropertyBlock ??= new MaterialPropertyBlock();
         _hideMaterialPropertyBlock ??= new MaterialPropertyBlock();
         TopMeshRenderer?.GetPropertyBlock(_topMaterialPropertyBlock);
         HideMeshRenderer?.GetPropertyBlock(_hideMaterialPropertyBlock);
         _topMaterialPropertyBlock?.SetColor(T_Utilities.ShaderPropertiesLib.Color, MeshObjectData.HightestColor);
         _topMaterialPropertyBlock?.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
+        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, 0);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 0);
         TopMeshRenderer?.SetPropertyBlock(_topMaterialPropertyBlock);
         if (HideMeshRenderer) HideMeshRenderer.enabled = true;
-        if (TopMeshRenderer) TopMeshRenderer.enabled   = true;
+        if (TopMeshRenderer) TopMeshRenderer.enabled = true;
     }
 
     public void DisplayColor(Color albedo)
@@ -414,10 +428,12 @@ public class WoolControl : MonoBehaviour
         if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
         TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
         _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, albedo);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display,      1);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
+        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
+        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, 0);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 1);
         TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+
+
 
         if (TopMeshRenderer) TopMeshRenderer.enabled = true;
     }
@@ -428,12 +444,12 @@ public class WoolControl : MonoBehaviour
         if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
 
         Color currnetColor = Color.grey;
-        Color targetColor  = MeshObjectData.HightestColor;
+        Color targetColor = MeshObjectData.HightestColor;
 
         TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
 
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display,      1);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
+        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
+        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, 0);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 1);
         TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
 
@@ -446,7 +462,9 @@ public class WoolControl : MonoBehaviour
               , targetColor, 1
             );
 
-        TopMeshRenderer.enabled  = true;
+
+
+        TopMeshRenderer.enabled = true;
     }
 
     public void BuildUpModelSmoothly(float duration)
@@ -456,7 +474,7 @@ public class WoolControl : MonoBehaviour
 
         TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
 
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
+        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, 0);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 0);
         _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, Color.gray);
         TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
@@ -471,7 +489,7 @@ public class WoolControl : MonoBehaviour
               , 1, duration
             );
 
-        TopMeshRenderer.enabled  = true;
+        TopMeshRenderer.enabled = true;
     }
 
     public void SetModelShaderEffect(bool useRim, bool useHalo)
@@ -491,7 +509,7 @@ public class WoolControl : MonoBehaviour
             );
         TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
 
-        TopMeshRenderer.enabled  = true;
+        TopMeshRenderer.enabled = true;
     }
 
     public void ClearThisWool()
@@ -500,7 +518,7 @@ public class WoolControl : MonoBehaviour
         if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
 
         TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
+        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, 0);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 0);
         _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, Color.gray);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 0);
@@ -509,7 +527,7 @@ public class WoolControl : MonoBehaviour
         _hideMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 0);
 
         HideMeshRenderer.enabled = false;
-        TopMeshRenderer.enabled  = true;
+        TopMeshRenderer.enabled = true;
     }
 
     public void HideInnerMesh()
@@ -611,15 +629,15 @@ public class WoolControl : MonoBehaviour
     private static bool PointInTriangle(Vector3 p, Vector3 v0_, Vector3 v1_, Vector3 v2_)
     {
         // Sử dụng tọa độ barycentric để kiểm tra
-        Vector3 v0v1  = v1_ - v0_;
-        Vector3 v0v2  = v2_ - v0_;
-        Vector3 v0p   = p   - v0_;
-        float   d00   = Vector3.Dot(v0v1, v0v1);
-        float   d01   = Vector3.Dot(v0v1, v0v2);
-        float   d11   = Vector3.Dot(v0v2, v0v2);
-        float   d20   = Vector3.Dot(v0p,  v0v1);
-        float   d21   = Vector3.Dot(v0p,  v0v2);
-        float   denom = d00 * d11 - d01 * d01;
+        Vector3 v0v1 = v1_ - v0_;
+        Vector3 v0v2 = v2_ - v0_;
+        Vector3 v0p = p - v0_;
+        float d00 = Vector3.Dot(v0v1, v0v1);
+        float d01 = Vector3.Dot(v0v1, v0v2);
+        float d11 = Vector3.Dot(v0v2, v0v2);
+        float d20 = Vector3.Dot(v0p, v0v1);
+        float d21 = Vector3.Dot(v0p, v0v2);
+        float denom = d00 * d11 - d01 * d01;
         if (Mathf.Abs(denom) < 1e-6f) return false;
         float v = (d11 * d20 - d01 * d21) / denom;
         float w = (d00 * d21 - d01 * d20) / denom;
@@ -632,10 +650,10 @@ public class WoolControl : MonoBehaviour
     {
         // Chiếu p lên đoạn ab, clamp t trong [0,1]
         Vector3 ab = b - a;
-        float   t  = Vector3.Dot(p - a, ab) / ab.sqrMagnitude;
+        float t = Vector3.Dot(p - a, ab) / ab.sqrMagnitude;
         t = Mathf.Clamp01(t);
         return a + ab * t;
     }
-    
-    
+
+
 }
