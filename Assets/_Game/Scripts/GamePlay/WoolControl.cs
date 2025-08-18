@@ -405,7 +405,16 @@ public class WoolControl : MonoBehaviour
         _hideMaterialPropertyBlock ??= new MaterialPropertyBlock();
         TopMeshRenderer?.GetPropertyBlock(_topMaterialPropertyBlock);
         HideMeshRenderer?.GetPropertyBlock(_hideMaterialPropertyBlock);
-        if(_colorPalleteData.colorPallete.Count<=0)return;
+        if (_colorPalleteData == null)
+        {
+            Debug.LogError("Null Color palet data");
+            return;
+        }
+        if(_colorPalleteData.colorPallete.Count<=0)
+        {
+            Debug.LogError("Count data palet colorPallete = 0");
+            _colorPalleteData.SetupColor();
+            return;}
         _topMaterialPropertyBlock?.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.HightestColor]);
         _topMaterialPropertyBlock?.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, 0);
