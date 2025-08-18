@@ -125,6 +125,7 @@ public class CameraController : Singleton<CameraController>
     [Header("Reset Settings")] public float ResetRotationDuration = 1f;
     public Ease ResetRotationEase = Ease.InOutCubic;
 
+    bool isTap;
     #endregion
 
     #region UNITY_METHODS
@@ -153,7 +154,14 @@ public class CameraController : Singleton<CameraController>
         InputInteractable.OnDragAction += HandleDragSmoothly;
         InputInteractable.OnMouseDown += HandleMouse;
     }
-
+    private void LateUpdate()
+    {
+        if (!isTap && Input.GetMouseButton(0))
+        {
+            isTap = true;
+            GamePlaySystem.Instance.ActiveHandController(false);
+        }
+    }
     private void Update()
     {
         if (BlockRotation || !SpawnPoint || !modelTransfrom) return;
@@ -422,7 +430,7 @@ public class CameraController : Singleton<CameraController>
         {
             initialRotation = modelTransfrom.rotation;
             hasStoredInitialRotation = true;
-            Debug.Log("Initial rotation stored: " + initialRotation.eulerAngles);
+//            Debug.Log("Initial rotation stored: " + initialRotation.eulerAngles);
         }
     }
 

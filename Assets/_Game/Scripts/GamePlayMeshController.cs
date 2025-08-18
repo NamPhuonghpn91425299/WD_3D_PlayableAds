@@ -164,6 +164,7 @@ public class GamePlayMeshController : MonoBehaviour
 
         } catch (Exception e)
         {
+            Debug.LogError("Check lại xem gán tên màu trong GamePlayMeshControl chưa");
             Debug.LogError($"LoadLevel error: {e}");
         }
         //Load mesh object

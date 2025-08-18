@@ -238,11 +238,11 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// <param name="spiralPath">Đường đi của sợi len khi được kéo ra.</param>
     /// <param name="colorClick">Màu của mesh len đã được click.</param>
     /// <returns>Trả về `true` nếu click hợp lệ và len được đặt vào một ô, ngược lại `false`.</returns>
-    public bool OnClickMesh(Transform startPoint, List<Vector3> spiralPath, string colorName)
+    public bool OnClickMesh(Transform startPoint, List<Vector3> spiralPath, string colorClick)
     {
-        Color colorClick = _colorPalleteData.colorPallete[colorName];
+        //Color colorClick = _colorPalleteData.colorPallete[colorName];
         MeshCountClick++;
-        Debug.Log($"=== CLICK LEN === Lần click thứ {MeshCountClick}, màu: {colorName}");
+        Debug.Log($"=== CLICK LEN === Lần click thứ {MeshCountClick}, màu: {colorClick}");
         if (woolXoayClip != null) SoundManager.Instance.PlayOneShot(woolXoayClip, 1);
 
         // 1. Ưu tiên kiểm tra các ô chứa chính (CubeTarget)
@@ -292,7 +292,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                 rollWool.GetComponent<RollWoolAnimation>()
                     .ResetMesh()
                     .SetParent(CurrentQueueTargets[i].transform)
-                    .SetColor(colorClick)
+                    .SetColor(_colorPalleteData.colorPallete[colorClick])
                     .PlayAnim(RollWoolAnimationExtensions.ParentType.CubeQueue);
 
                 ChoseYarnWool(rollWool.transform, startPoint, spiralPath, colorClick);
@@ -625,11 +625,11 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// <param name="tail">Transform của điểm bắt đầu trên mesh (đuôi sợi len).</param>
     /// <param name="spiralPath">Đường đi cho animation của sợi len.</param>
     /// <param name="color">Màu của sợi len.</param>
-    private void ChoseYarnWool(Transform head, Transform tail, List<Vector3> spiralPath, Color color)
+    private void ChoseYarnWool(Transform head, Transform tail, List<Vector3> spiralPath, string color)
     {
         var yarnWool = Instantiate(YarnWoolPrefab);
         var YarnWoolScript = yarnWool.GetComponent<YarnWoolAnimation>();
-        YarnWoolScript.SetColor(color);
+        YarnWoolScript.SetColor(_colorPalleteData.colorPallete[color]);
         YarnWoolScript.SetPoints(spiralPath);
         YarnWoolScript.SetParent(head, tail);
     }

@@ -207,7 +207,7 @@ public class WoolControl : MonoBehaviour
             || MeshObjectData.ColorStack == null || MeshObjectData.ColorStack.Count == 0) yield break;
         if (!GamePlaySystem.Instance.OnClickMesh(transform, _spiralPath, _currentColor)) yield break;
         _isPlayAnim = true;
-        GamePlaySystem.Instance.ActiveHandController(false);
+        //GamePlaySystem.Instance.ActiveHandController(false);
         string nextColor = null;
         try
         {

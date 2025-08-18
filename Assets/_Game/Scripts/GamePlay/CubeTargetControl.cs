@@ -135,7 +135,7 @@ public class CubeTargetControl : MonoBehaviour
         }
     }
 
-    public bool CheckColor(Color color) { return color == _currentColor; }
+    public bool CheckColor(string color) { return color == nameColor; }
 
     private IEnumerator WaitingAnim(int indexCube)
     {

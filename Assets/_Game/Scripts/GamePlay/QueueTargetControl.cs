@@ -14,10 +14,10 @@ public class QueueTargetControl : MonoBehaviour
 
     #region MAIN_METHODS
 
-    public bool AddChild(Color color)
+    public bool AddChild(string color)
     {
         if (_isActive) return false;
-        _currentColor = color;
+        _currentColor = GamePlaySystem.Instance._colorPalleteData.colorPallete[color];
         _isActive = true;
         return true;
     }
