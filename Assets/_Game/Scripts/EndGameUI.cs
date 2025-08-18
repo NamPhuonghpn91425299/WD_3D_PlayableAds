@@ -48,20 +48,46 @@ public class EndGameUI : MonoBehaviour
     
     private IEnumerator WinGame()
     {
+        Debug.Log("=== STARTING WIN ANIMATION ===");
+        
+        // Bước 1: Switch camera
         var instance = CameraContainer.Instance;
         if (instance != null)
         {
+            Debug.Log("Switching cameras...");
             instance.FakeUICamera.enabled = false;
             instance.EndgameModelCamera.enabled = true;
         }
+        
+        // Bước 2: Phát âm thanh
         if (winSound != null)
+        {
+            Debug.Log("Playing win sound...");
             SoundManager.Instance.PlayOneShot(winSound, 1f);
+        }
+        
+        // Bước 3: Bắt đầu outro animation
         if (paintingOverviewAnimation != null)
+        {
+            Debug.Log("Starting painting outro animation...");
             paintingOverviewAnimation.StartOutroAnimation();
-        yield return new WaitForSeconds(1.6f);
-        FadeTo(1f, 1f);
+        }
+        
+        // Bước 4: Chờ animation painting hoàn tất
+        yield return new WaitForSeconds(1.6f); // Tăng thêm thời gian để đảm bảo outro hoàn tất
+        
+        // Bước 5: Bắt đầu fade background
+        Debug.Log("Starting fade background...");
         renderer.enabled = true;
-        yield return StartCoroutine(FadeBetweenCanvasGroups(winGamePanel, btnPlay, 1f, .6f));
+        FadeTo(1f, 1f); // Làm chậm fade để mượt hơn
+        
+        // Bước 6: Chờ fade background gần xong rồi hiện UI
+        yield return new WaitForSeconds(0.8f);
+        
+        Debug.Log("Starting UI fade in...");
+        yield return StartCoroutine(FadeBetweenCanvasGroups(winGamePanel, btnPlay, 1.2f, .8f));
+        
+        Debug.Log("=== WIN ANIMATION COMPLETED ===");
     }
     
     private IEnumerator LoseGame()

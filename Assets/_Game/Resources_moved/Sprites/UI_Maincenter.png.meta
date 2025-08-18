@@ -2247,9 +2247,9 @@ TextureImporter:
       name: UI_Maincenter_96
       rect:
         serializedVersion: 2
-        x: 1421
+        x: 1420
         y: 939
-        width: 96
+        width: 98
         height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2294,7 +2294,7 @@ TextureImporter:
         width: 117
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
