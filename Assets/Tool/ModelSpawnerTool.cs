@@ -140,9 +140,18 @@ public class ModelSpawnerTool : EditorWindow
             FishScalesPaintingController fishScalesPaintingController = Object.FindObjectOfType<FishScalesPaintingController>();
             CameraController cameraController = Object.FindObjectOfType<CameraController>();
             GamePlaySystem gamePlaySystem = Object.FindObjectOfType<GamePlaySystem>();
+
+            List<int> colors = obj.GetComponent<GamePlayMeshController>().LevelData.ColorCountList;
+            int sum = 0;
+            foreach (var count in colors)
+            {
+                sum += count;
+            }
+            gamePlaySystem.cubeCountClaimed = sum / 3;
             cameraController.ModelPrefab = obj;
             gamePlaySystem._levelPrefab = obj;
             fishScalesPaintingController.CurrentLevelPrefab = obj.GetComponent<GamePlayMeshController>();
+
             if (controller != null)
             {
                 Undo.RecordObject(controller, "Assign PaintingConfig");

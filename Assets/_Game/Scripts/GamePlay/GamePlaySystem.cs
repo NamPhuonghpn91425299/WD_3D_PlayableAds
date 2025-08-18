@@ -30,7 +30,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private string url; // URL cuối cùng sau khi thay thế package name.
 
     [Tooltip("Số lượng hộp cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store).")] [SerializeField]
-    private int cubeCountClaimed = 15;
+    public int cubeCountClaimed = 15;
 
     [Tooltip("Số lượng khối len cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store). chưa dùng")]
     [SerializeField]
