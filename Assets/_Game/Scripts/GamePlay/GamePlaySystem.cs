@@ -18,7 +18,9 @@ using UnityEditor;
 public partial class GamePlaySystem : Singleton<GamePlaySystem>
 {
     #region <====================| Properties |====================>
-
+    [Header("DATA")] 
+    public ColorPalleteData _colorPalleteData;
+    
     [Tooltip("Tham chiếu đến HandController để hiển thị/ẩn hoạt ảnh hướng dẫn.")] [SerializeField]
     private HandController handController;
 
@@ -80,16 +82,16 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private GamePlayMeshController _meshController;
 
     // Mảng lưu trữ màu sắc của các ô chứa (CubeTarget) hiện tại.
-    private Color[] _colorTargets = new Color[]
+    private string[] _colorTargets = new String[]
     {
-        Color.black,
-        Color.black,
-        Color.black,
-        Color.black,
+        "",
+        "",
+        "",
+        "",
     };
 
     // Danh sách các màu mục tiêu có thể được chọn để sinh ra trong CubeTarget mới.
-    private List<Color> _colorTargetList = new List<Color>();
+    private List<string> _colorTargetList = new List<string>();
 
     // Pool chứa các booster "Broom" (chổi), không được sử dụng trong code hiện tại.
     private List<RollWoolAnimation> _broomBoosterPool = new List<RollWoolAnimation>();
@@ -236,10 +238,11 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// <param name="spiralPath">Đường đi của sợi len khi được kéo ra.</param>
     /// <param name="colorClick">Màu của mesh len đã được click.</param>
     /// <returns>Trả về `true` nếu click hợp lệ và len được đặt vào một ô, ngược lại `false`.</returns>
-    public bool OnClickMesh(Transform startPoint, List<Vector3> spiralPath, Color colorClick)
+    public bool OnClickMesh(Transform startPoint, List<Vector3> spiralPath, string colorName)
     {
+        Color colorClick = _colorPalleteData.colorPallete[colorName];
         MeshCountClick++;
-        Debug.Log($"=== CLICK LEN === Lần click thứ {MeshCountClick}, màu: {colorClick}");
+        Debug.Log($"=== CLICK LEN === Lần click thứ {MeshCountClick}, màu: {colorName}");
         if (woolXoayClip != null) SoundManager.Instance.PlayOneShot(woolXoayClip, 1);
 
         // 1. Ưu tiên kiểm tra các ô chứa chính (CubeTarget)
@@ -325,7 +328,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     }
 
     private bool _isUseBroomBooster;
-    private Color _nextColor;
+    private string _nextColor;
     private bool _hasCube;
 
     /// <summary>
@@ -333,67 +336,68 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// </summary>
     public bool HasCube => _hasCube;
 
-    /// <summary>
-    /// Sinh ra một màu mới cho một ô chứa (CubeTarget) đã trống.
-    /// </summary>
-    /// <param name="indexCube">Index của CubeTarget cần sinh màu mới.</param>
     public void GenNewCube(int indexCube)
     {
         if (indexCube == -1) return;
 
-        // Tính toán độ ưu tiên của các màu còn lại
         _meshController.ColorPriorityCalculator();
-        _colorTargets[indexCube] = Color.black;
+        _colorTargets[indexCube] = null;
 
         if (_meshController.CubeCount.Count > 1)
         {
-            // Lấy danh sách màu có thể chọn, loại trừ các màu đã có trên các CubeTarget khác
             _colorTargetList = RemoveColorInList(_meshController._colorPriority, _colorTargets);
-            _nextColor = _colorTargetList[0]; // Chọn màu có độ ưu tiên cao nhất
+        
+            if (_colorTargetList != null && _colorTargetList.Count > 0)
+            {
+                _nextColor = _colorTargetList[0];
+            }
+            else
+            {
+                _nextColor = null;
+            }
         }
-        else
+        else if (_meshController.CubeCount.Count > 0)
         {
             _nextColor = _meshController.CubeCount.FirstOrDefault().Key;
         }
+        else
+        {
+            _nextColor = null;
+        }
 
-        //Debug.LogError("Existing Cube Count: " + _meshController.CubeCount.Count + " Next Color: " + _nextColor);
+        int cubeCount = 0; // Khởi tạo biến ở đây
+        _hasCube = !string.IsNullOrEmpty(_nextColor) && _meshController.CubeCount.TryGetValue(_nextColor, out cubeCount);
 
-        // Kiểm tra màu đầu tiên
-        _hasCube = _meshController.CubeCount.TryGetValue(_nextColor, out var cubeCount);
-
-        // Nếu màu đầu tiên không có, kiểm tra các màu tiếp theo
-        if (!_hasCube && _meshController.CubeCount.Count > 1)
+        if (!_hasCube && _colorTargetList != null && _colorTargetList.Count > 1)
         {
             for (int i = 1; i < _colorTargetList.Count; i++)
             {
-                Color nextAvailableColor = _colorTargetList[i];
-                if (_meshController.CubeCount.TryGetValue(nextAvailableColor, out cubeCount))
+                string nextAvailableColor = _colorTargetList[i];
+                if (!string.IsNullOrEmpty(nextAvailableColor) && _meshController.CubeCount.TryGetValue(nextAvailableColor, out cubeCount))
                 {
-                    _nextColor = nextAvailableColor; // Cập nhật màu được chọn
+                    _nextColor = nextAvailableColor;
                     _hasCube = true;
-                    break; // Tìm thấy màu có sẵn, thoát khỏi vòng lặp
+                    break;
                 }
             }
         }
 
         if (_hasCube)
         {
-            // Giảm số lượng màu đó trong kho
             _meshController.CubeCount[_nextColor] = cubeCount - 1;
             if (_meshController.CubeCount[_nextColor] == 0)
             {
                 _meshController.CubeCount.Remove(_nextColor);
             }
 
-            // Gán màu mới cho CubeTarget
-            CurrentCubeTargets[indexCube].SetColor(_nextColor, _meshController.LevelData.FindKeyByColor(_nextColor));
+            CurrentCubeTargets[indexCube].SetColor(_nextColor);
             _colorTargets[indexCube] = _nextColor;
         }
 
-        // Nếu hết sạch màu trong kho, khóa chức năng mở thêm ô chứa
         if (_meshController.CubeCount.Count == 0)
             LockOpenCube();
     }
+
 
 
     /// <summary>
@@ -594,7 +598,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             CurrentCubeTargets[i].SetActiveCubeTarget(i, i + 1 <= newCubeCount);
             // Hiện nút "mở khóa" cho các ô vượt quá số lượng mới
             CurrentCubeTargets[i].ActiveOpenCube(i + 1 > newCubeCount);
-            Debug.Log("UnLockCubeTarget" + i);
+//            Debug.Log("UnLockCubeTarget" + i);
         }
 
         _cubeTargetCountDefault = newCubeCount;
@@ -641,17 +645,17 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// <param name="listReference">Mảng các màu hiện đang có trên các CubeTarget.</param>
     /// <param name="alowSameColor">Có cho phép sinh ra màu đã có trên CubeTarget khác không.</param>
     /// <returns>Danh sách các màu hợp lệ.</returns>
-    private List<Color> RemoveColorInList(Dictionary<Color, float> listRemove, Color[] listReference,
+    private List<string> RemoveColorInList(Dictionary<string, float> listRemove, string[] listReference,
         bool alowSameColor = false)
     {
         // ... (Logic phức tạp để chọn màu, đảm bảo không trùng lặp nếu cần)
-        List<Color> result = new List<Color>();
+        List<string> result = new List<string>();
         var copyListMove = listRemove;
         if (!alowSameColor)
         {
             for (int i = 0; i < listReference.Length && i < CurrentCubeTargets.Count; i++)
             {
-                if (listReference[i] == Color.black) continue;
+                if (listReference[i].IsNullOrEmpty()) continue;
                 copyListMove.Remove(listReference[i]);
             }
         }

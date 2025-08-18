@@ -673,7 +673,7 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
             CurrentPaintingConfig.ValidatePaintingParts();
 
             CurrentLevelPaintingColorParts = new List<PaintingPartBasedOnColor>(CurrentPaintingConfig.PaintingParts);
-            print(CurrentPaintingConfig.PaintingSeparateParts.Count);
+//            print(CurrentPaintingConfig.PaintingSeparateParts.Count);
             CurrentLevelPaintingSeparateParts =
                 new List<PaintingPartBasedOnColor>(CurrentPaintingConfig.PaintingSeparateParts);
             foreach (var seperatePart in CurrentLevelPaintingSeparateParts) seperatePart.Painted = false;

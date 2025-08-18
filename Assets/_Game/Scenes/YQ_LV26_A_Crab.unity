@@ -3139,26 +3139,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 935084528}
     m_Modifications:
-    - target: {fileID: 568682891559971649, guid: f886537df7126544693843e8a68f2ccb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.000016680136
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931497842822191871, guid: f886537df7126544693843e8a68f2ccb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.00010958394
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931497842822191871, guid: f886537df7126544693843e8a68f2ccb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.000019456924
-      objectReference: {fileID: 0}
-    - target: {fileID: 7070866979812568064, guid: f886537df7126544693843e8a68f2ccb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.113583855
-      objectReference: {fileID: 0}
-    - target: {fileID: 7070866979812568064, guid: f886537df7126544693843e8a68f2ccb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.000012594686
-      objectReference: {fileID: 0}
     - target: {fileID: 7109779203704688791, guid: f886537df7126544693843e8a68f2ccb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15316,9 +15296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39eec355d4c8f33469d20359071aa850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   handController: {fileID: 4659284094914571615}
   cubeCountClaimed: 33
-  totalCountClaimed: 99
+  totalCountClaimed: 999
   CameraController: {fileID: 1797259878}
   BoxChainReaction3D: {fileID: 1374435474}
   CurrentCubeTargets:

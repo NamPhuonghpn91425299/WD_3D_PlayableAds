@@ -17,31 +17,38 @@ public class WoolColorGroup
 }
 
 [Serializable]
-public class WoolColorData
+public class WoolColorKeyData
 {
     public string objectName;
-    public string colorHex;
-    public Color color;
+    public string colorKey;
+    public Color displayColor = Color.white;
     
-    public WoolColorData(string name, Color col)
+    public WoolColorKeyData(string name, string key)
     {
         objectName = name;
-        color = col;
-        colorHex = "#" + ColorUtility.ToHtmlStringRGBA(col);
+        colorKey = key;
+    }
+    
+    public WoolColorKeyData(string name, string key, Color color)
+    {
+        objectName = name;
+        colorKey = key;
+        displayColor = color;
     }
 }
 
 [Serializable]
-public class WoolColorDatabase
+public class WoolColorKeyDatabase
 {
-    public List<WoolColorData> colorDataList = new List<WoolColorData>();
+    public List<WoolColorKeyData> colorKeyDataList = new List<WoolColorKeyData>();
 }
 
 [Serializable]
-public class GameObjectColorEntry
+public class GameObjectColorKeyEntry
 {
     public GameObject gameObject;
-    public Color assignedColor = Color.white;
+    public string assignedColorKey = "";
+    public Color displayColor = Color.white;
     public bool isValid => gameObject != null && gameObject.GetComponent<WoolControl>() != null;
 }
 
@@ -58,7 +65,7 @@ public class WoolControlColorSetter : EditorWindow
     private GameObject importTargetGameObject;
     
     // Sequential GameObject List
-    private List<GameObjectColorEntry> gameObjectSequence = new List<GameObjectColorEntry>();
+    private List<GameObjectColorKeyEntry> gameObjectSequence = new List<GameObjectColorKeyEntry>();
     private Vector2 sequenceScroll;
     
     // Tabs
@@ -164,8 +171,12 @@ public class WoolControlColorSetter : EditorWindow
         {
             EditorGUILayout.Space();
 
-            // Color picker
-            group.Color = EditorGUILayout.ColorField("Color", group.Color);
+            // Color picker - This will be converted to color key when applied
+            group.Color = EditorGUILayout.ColorField("Display Color", group.Color);
+            
+            // Show the color key that will be generated
+            string colorKey = ColorToColorKey(group.Color);
+            EditorGUILayout.LabelField($"Color Key: {colorKey}", EditorStyles.miniLabel);
 
             EditorGUILayout.Space();
             EditorGUILayout.LabelField($"Wool Controls: {group.Count}", EditorStyles.boldLabel);
@@ -183,7 +194,7 @@ public class WoolControlColorSetter : EditorWindow
             EditorGUILayout.Space();
 
             // Apply color button cho group này
-            if (GUILayout.Button($"Apply Color to Group {index + 1} ({group.Count} objects)"))
+            if (GUILayout.Button($"Apply Color Key to Group {index + 1} ({group.Count} objects)"))
             {
                 ApplyColorToGroup(group);
             }
@@ -197,8 +208,8 @@ public class WoolControlColorSetter : EditorWindow
     
     private void DrawAutoOrganizeTab()
     {
-        EditorGUILayout.LabelField("Auto Organize by Existing Colors", EditorStyles.boldLabel);
-        EditorGUILayout.HelpBox("Drop a GameObject here to automatically find all WoolControls and organize them by their current colors.", MessageType.Info);
+        EditorGUILayout.LabelField("Auto Organize by Existing Color Keys", EditorStyles.boldLabel);
+        EditorGUILayout.HelpBox("Drop a GameObject here to automatically find all WoolControls and organize them by their current color keys.", MessageType.Info);
         
         EditorGUILayout.Space();
         
@@ -209,9 +220,9 @@ public class WoolControlColorSetter : EditorWindow
         EditorGUILayout.Space();
         
         EditorGUILayout.BeginHorizontal();
-        if (GUILayout.Button("Auto Organize by Colors") && targetGameObject != null)
+        if (GUILayout.Button("Auto Organize by Color Keys") && targetGameObject != null)
         {
-            AutoOrganizeByColors();
+            AutoOrganizeByColorKeys();
         }
         
         if (GUILayout.Button("Clear All Groups"))
@@ -238,13 +249,14 @@ public class WoolControlColorSetter : EditorWindow
                 int groupIndex = colorGroups.IndexOf(group);
                 EditorGUILayout.BeginHorizontal();
                 EditorGUI.DrawRect(GUILayoutUtility.GetRect(15, 15), group.Color);
-                EditorGUILayout.LabelField($"Group {groupIndex + 1}: {group.Count} objects ({group.Color})");
+                string colorKey = ColorToColorKey(group.Color);
+                EditorGUILayout.LabelField($"Group {groupIndex + 1}: {group.Count} objects (Key: {colorKey})");
                 EditorGUILayout.EndHorizontal();
             }
         }
     }
     
-    private void AutoOrganizeByColors()
+    private void AutoOrganizeByColorKeys()
     {
         // Tìm tất cả WoolControl trong target GameObject và children
         WoolControl[] woolControls = targetGameObject.GetComponentsInChildren<WoolControl>();
@@ -259,30 +271,33 @@ public class WoolControlColorSetter : EditorWindow
         // Clear existing groups
         colorGroups.Clear();
         
-        // Dictionary để group theo màu
-        Dictionary<Color, List<WoolControl>> colorDict = new Dictionary<Color, List<WoolControl>>();
+        // Dictionary để group theo color key
+        Dictionary<string, List<WoolControl>> colorKeyDict = new Dictionary<string, List<WoolControl>>();
         
         foreach (var woolControl in woolControls)
         {
-            if (woolControl.MeshObjectData != null)
+            if (woolControl.MeshObjectData != null && !string.IsNullOrEmpty(woolControl.MeshObjectData.HightestColor))
             {
-                Color currentColor = woolControl.MeshObjectData.HightestColor;
+                string currentColorKey = woolControl.MeshObjectData.HightestColor;
                 
-                if (!colorDict.ContainsKey(currentColor))
+                if (!colorKeyDict.ContainsKey(currentColorKey))
                 {
-                    colorDict[currentColor] = new List<WoolControl>();
+                    colorKeyDict[currentColorKey] = new List<WoolControl>();
                 }
                 
-                colorDict[currentColor].Add(woolControl);
+                colorKeyDict[currentColorKey].Add(woolControl);
             }
         }
         
         // Tạo color groups từ dictionary
-        foreach (var kvp in colorDict.OrderByDescending(x => x.Value.Count))
+        foreach (var kvp in colorKeyDict.OrderByDescending(x => x.Value.Count))
         {
+            // Try to parse color from key, fallback to random color if not possible
+            Color groupColor = ColorKeyToColor(kvp.Key);
+            
             var newGroup = new WoolColorGroup
             {
-                Color = kvp.Key,
+                Color = groupColor,
                 WoolControls = kvp.Value,
                 foldout = true
             };
@@ -323,7 +338,7 @@ public class WoolControlColorSetter : EditorWindow
     private void DrawSequentialGameObjectList()
     {
         EditorGUILayout.LabelField("Sequential GameObject List", EditorStyles.boldLabel);
-        EditorGUILayout.HelpBox("Drag GameObjects here in order. Colors will be applied based on imported data sequence.", MessageType.Info);
+        EditorGUILayout.HelpBox("Drag GameObjects here in order. Color keys will be applied based on imported data sequence.", MessageType.Info);
         
         EditorGUILayout.Space();
         
@@ -367,8 +382,11 @@ public class WoolControlColorSetter : EditorWindow
             entry.gameObject = (GameObject)EditorGUILayout.ObjectField(
                 entry.gameObject, typeof(GameObject), true, GUILayout.ExpandWidth(true));
             
-            // Color field
-            entry.assignedColor = EditorGUILayout.ColorField(entry.assignedColor, GUILayout.Width(50));
+            // Color key field
+            entry.assignedColorKey = EditorGUILayout.TextField(entry.assignedColorKey, GUILayout.Width(80));
+            
+            // Color field for display
+            entry.displayColor = EditorGUILayout.ColorField(entry.displayColor, GUILayout.Width(50));
             
             // Remove button
             if (GUILayout.Button("X", GUILayout.Width(20)))
@@ -378,6 +396,12 @@ public class WoolControlColorSetter : EditorWindow
             }
             
             EditorGUILayout.EndHorizontal();
+            
+            // Show color key
+            if (!string.IsNullOrEmpty(entry.assignedColorKey))
+            {
+                EditorGUILayout.LabelField($"Color Key: {entry.assignedColorKey}", EditorStyles.miniLabel);
+            }
             
             // Validation
             if (entry.gameObject == null)
@@ -395,11 +419,11 @@ public class WoolControlColorSetter : EditorWindow
         
         EditorGUILayout.EndScrollView();
         
-        // Apply colors từ sequence
+        // Apply color keys từ sequence
         EditorGUILayout.Space();
-        if (GUILayout.Button($"Apply Colors to Sequence ({gameObjectSequence.Count(e => e.isValid)} valid objects)"))
+        if (GUILayout.Button($"Apply Color Keys to Sequence ({gameObjectSequence.Count(e => e.isValid)} valid objects)"))
         {
-            ApplyColorsToSequence();
+            ApplyColorKeysToSequence();
         }
     }
     
@@ -410,9 +434,9 @@ public class WoolControlColorSetter : EditorWindow
         // Export section
         EditorGUILayout.LabelField("Export Data:", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
-        if (GUILayout.Button("Export Color Data"))
+        if (GUILayout.Button("Export Color Key Data"))
         {
-            ExportColorData();
+            ExportColorKeyData();
         }
         if (GUILayout.Button("Copy to Clipboard"))
         {
@@ -451,9 +475,9 @@ public class WoolControlColorSetter : EditorWindow
         {
             importData = EditorGUIUtility.systemCopyBuffer;
         }
-        if (GUILayout.Button("Import and Apply Colors"))
+        if (GUILayout.Button("Import and Apply Color Keys"))
         {
-            ImportAndApplyColorData();
+            ImportAndApplyColorKeyData();
         }
         EditorGUILayout.EndHorizontal();
         
@@ -522,10 +546,11 @@ public class WoolControlColorSetter : EditorWindow
                                     bool alreadyExists = gameObjectSequence.Any(e => e.gameObject == gameObject);
                                     if (!alreadyExists)
                                     {
-                                        gameObjectSequence.Add(new GameObjectColorEntry 
+                                        gameObjectSequence.Add(new GameObjectColorKeyEntry 
                                         { 
                                             gameObject = gameObject,
-                                            assignedColor = Color.white
+                                            assignedColorKey = "",
+                                            displayColor = Color.white
                                         });
                                     }
                                 }
@@ -566,19 +591,22 @@ public class WoolControlColorSetter : EditorWindow
             if (parts.Length >= 2)
             {
                 string objectName = parts[0].Trim();
-                string colorHex = parts[1].Trim();
+                string colorKey = parts[1].Trim();
                 
                 // Tìm WoolControl chưa được sử dụng với tên phù hợp
                 WoolControl targetWoolControl = targetWoolControls
                     .Where(w => w.name == objectName && !usedWoolControls.Contains(w))
                     .FirstOrDefault();
                 
-                if (targetWoolControl != null && ColorUtility.TryParseHtmlString(colorHex, out Color color))
+                if (targetWoolControl != null && !string.IsNullOrEmpty(colorKey))
                 {
-                    gameObjectSequence.Add(new GameObjectColorEntry 
+                    Color displayColor = ColorKeyToColor(colorKey);
+                    
+                    gameObjectSequence.Add(new GameObjectColorKeyEntry 
                     { 
                         gameObject = targetWoolControl.gameObject,
-                        assignedColor = color
+                        assignedColorKey = colorKey,
+                        displayColor = displayColor
                     });
                     
                     // Đánh dấu đã sử dụng
@@ -590,26 +618,26 @@ public class WoolControlColorSetter : EditorWindow
         Debug.Log($"Loaded {gameObjectSequence.Count} objects into sequence from import data");
     }
     
-    private void ApplyColorsToSequence()
+    private void ApplyColorKeysToSequence()
     {
         int applied = 0;
         
         foreach (var entry in gameObjectSequence)
         {
-            if (entry.isValid)
+            if (entry.isValid && !string.IsNullOrEmpty(entry.assignedColorKey))
             {
                 WoolControl woolControl = entry.gameObject.GetComponent<WoolControl>();
                 if (woolControl.MeshObjectData != null)
                 {
-                    Undo.RecordObject(woolControl, "Apply Sequential Color");
-                    woolControl.MeshObjectData.HightestColor = entry.assignedColor;
+                    Undo.RecordObject(woolControl, "Apply Sequential Color Key");
+                    woolControl.MeshObjectData.HightestColor = entry.assignedColorKey;
                     EditorUtility.SetDirty(woolControl);
                     applied++;
                 }
             }
         }
         
-        string message = $"Applied colors to {applied} objects in sequence.";
+        string message = $"Applied color keys to {applied} objects in sequence.";
         EditorUtility.DisplayDialog("Sequential Apply Complete", message, "OK");
         Debug.Log(message);
     }
@@ -634,7 +662,7 @@ public class WoolControlColorSetter : EditorWindow
             if (parts.Length >= 2)
             {
                 string objectName = parts[0].Trim();
-                string colorHex = parts[1].Trim();
+                string colorKey = parts[1].Trim();
                 
                 // Tìm object chưa được xử lý trong preview
                 WoolControl targetWoolControl = targetWoolControls
@@ -642,11 +670,12 @@ public class WoolControlColorSetter : EditorWindow
                     .FirstOrDefault();
                 
                 EditorGUILayout.BeginHorizontal();
-                if (targetWoolControl != null && ColorUtility.TryParseHtmlString(colorHex, out Color color))
+                if (targetWoolControl != null && !string.IsNullOrEmpty(colorKey))
                 {
                     EditorGUILayout.LabelField("✓", GUILayout.Width(20));
-                    EditorGUI.DrawRect(GUILayoutUtility.GetRect(15, 15), color);
-                    EditorGUILayout.LabelField($"{objectName} -> {colorHex}");
+                    Color displayColor = ColorKeyToColor(colorKey);
+                    EditorGUI.DrawRect(GUILayoutUtility.GetRect(15, 15), displayColor);
+                    EditorGUILayout.LabelField($"{objectName} -> {colorKey}");
                     
                     // Đánh dấu đã xử lý trong preview
                     previewProcessed.Add(targetWoolControl);
@@ -655,13 +684,13 @@ public class WoolControlColorSetter : EditorWindow
                 else if (targetWoolControls.Any(w => w.name == objectName && previewProcessed.Contains(w)))
                 {
                     EditorGUILayout.LabelField("⚠", GUILayout.Width(20));
-                    EditorGUILayout.LabelField($"{objectName} -> {colorHex} (Duplicate, will be skipped)", EditorStyles.miniLabel);
+                    EditorGUILayout.LabelField($"{objectName} -> {colorKey} (Duplicate, will be skipped)", EditorStyles.miniLabel);
                     duplicateCount++;
                 }
                 else
                 {
                     EditorGUILayout.LabelField("✗", GUILayout.Width(20));
-                    EditorGUILayout.LabelField($"{objectName} -> {colorHex} (Not Found)", EditorStyles.miniLabel);
+                    EditorGUILayout.LabelField($"{objectName} -> {colorKey} (Not Found)", EditorStyles.miniLabel);
                 }
                 EditorGUILayout.EndHorizontal();
             }
@@ -698,11 +727,11 @@ public class WoolControlColorSetter : EditorWindow
         }
     }
     
-    private void ExportColorData()
+    private void ExportColorKeyData()
     {
         StringBuilder sb = new StringBuilder();
-        sb.AppendLine("# Wool Control Color Data");
-        sb.AppendLine("# Format: ObjectName | ColorHex | ColorRGBA");
+        sb.AppendLine("# Wool Control Color Key Data");
+        sb.AppendLine("# Format: ObjectName | ColorKey");
         sb.AppendLine();
         
         foreach (var group in colorGroups)
@@ -711,17 +740,17 @@ public class WoolControlColorSetter : EditorWindow
             {
                 if (woolControl != null)
                 {
-                    string colorHex = "#" + ColorUtility.ToHtmlStringRGBA(group.Color);
-                    sb.AppendLine($"{woolControl.name} | {colorHex} | {group.Color}");
+                    string colorKey = ColorToColorKey(group.Color);
+                    sb.AppendLine($"{woolControl.name} | {colorKey}");
                 }
             }
         }
         
         exportedData = sb.ToString();
-        Debug.Log($"Exported color data for {colorGroups.Sum(g => g.Count)} objects");
+        Debug.Log($"Exported color key data for {colorGroups.Sum(g => g.Count)} objects");
     }
     
-    private void ImportAndApplyColorData()
+    private void ImportAndApplyColorKeyData()
     {
         if (string.IsNullOrEmpty(importData))
         {
@@ -750,19 +779,19 @@ public class WoolControlColorSetter : EditorWindow
             if (parts.Length >= 2)
             {
                 string objectName = parts[0].Trim();
-                string colorHex = parts[1].Trim();
+                string colorKey = parts[1].Trim();
                 
                 // Tìm object chưa được xử lý trong target WoolControls
                 WoolControl targetWoolControl = targetWoolControls
                     .Where(w => w.name == objectName && !processedWoolControls.Contains(w))
                     .FirstOrDefault();
                 
-                if (targetWoolControl != null && ColorUtility.TryParseHtmlString(colorHex, out Color color))
+                if (targetWoolControl != null && !string.IsNullOrEmpty(colorKey))
                 {
                     if (targetWoolControl.MeshObjectData != null)
                     {
-                        Undo.RecordObject(targetWoolControl, "Import Color Data");
-                        targetWoolControl.MeshObjectData.HightestColor = color;
+                        Undo.RecordObject(targetWoolControl, "Import Color Key Data");
+                        targetWoolControl.MeshObjectData.HightestColor = colorKey;
                         EditorUtility.SetDirty(targetWoolControl);
                         
                         // Đánh dấu đã xử lý
@@ -784,7 +813,7 @@ public class WoolControlColorSetter : EditorWindow
             }
         }
         
-        string message = $"Applied colors to {applied} objects {searchScope}.";
+        string message = $"Applied color keys to {applied} objects {searchScope}.";
         if (notFound > 0)
         {
             message += $"\n{notFound} objects not found.";
@@ -800,7 +829,7 @@ public class WoolControlColorSetter : EditorWindow
     
     private void ExportAsJSON()
     {
-        var database = new WoolColorDatabase();
+        var database = new WoolColorKeyDatabase();
         
         foreach (var group in colorGroups)
         {
@@ -808,7 +837,8 @@ public class WoolControlColorSetter : EditorWindow
             {
                 if (woolControl != null)
                 {
-                    database.colorDataList.Add(new WoolColorData(woolControl.name, group.Color));
+                    string colorKey = ColorToColorKey(group.Color);
+                    database.colorKeyDataList.Add(new WoolColorKeyData(woolControl.name, colorKey, group.Color));
                 }
             }
         }
@@ -817,17 +847,17 @@ public class WoolControlColorSetter : EditorWindow
         exportedData = json;
         
         // Lưu file JSON
-        string path = EditorUtility.SaveFilePanel("Save Color Data", "", "WoolColorData", "json");
+        string path = EditorUtility.SaveFilePanel("Save Color Key Data", "", "WoolColorKeyData", "json");
         if (!string.IsNullOrEmpty(path))
         {
             System.IO.File.WriteAllText(path, json);
-            Debug.Log($"Saved color data to: {path}");
+            Debug.Log($"Saved color key data to: {path}");
         }
     }
     
     private void ImportFromJSON()
     {
-        string path = EditorUtility.OpenFilePanel("Load Color Data", "", "json");
+        string path = EditorUtility.OpenFilePanel("Load Color Key Data", "", "json");
         if (!string.IsNullOrEmpty(path))
         {
             string json = System.IO.File.ReadAllText(path);
@@ -835,7 +865,7 @@ public class WoolControlColorSetter : EditorWindow
             
             try
             {
-                var database = JsonUtility.FromJson<WoolColorDatabase>(json);
+                var database = JsonUtility.FromJson<WoolColorKeyDatabase>(json);
                 ImportFromDatabase(database);
             }
             catch (System.Exception e)
@@ -845,7 +875,7 @@ public class WoolControlColorSetter : EditorWindow
         }
     }
     
-    private void ImportFromDatabase(WoolColorDatabase database)
+    private void ImportFromDatabase(WoolColorKeyDatabase database)
     {
         int applied = 0;
         int notFound = 0;
@@ -858,37 +888,37 @@ public class WoolControlColorSetter : EditorWindow
         string searchScope = importTargetGameObject != null ? 
             $"within '{importTargetGameObject.name}' and its children" : "in entire scene";
         
-        foreach (var colorData in database.colorDataList)
+        foreach (var colorKeyData in database.colorKeyDataList)
         {
             // Tìm object chưa được xử lý
             WoolControl targetWoolControl = targetWoolControls
-                .Where(w => w.name == colorData.objectName && !processedWoolControls.Contains(w))
+                .Where(w => w.name == colorKeyData.objectName && !processedWoolControls.Contains(w))
                 .FirstOrDefault();
             
-            if (targetWoolControl != null && targetWoolControl.MeshObjectData != null)
+            if (targetWoolControl != null && targetWoolControl.MeshObjectData != null && !string.IsNullOrEmpty(colorKeyData.colorKey))
             {
-                Undo.RecordObject(targetWoolControl, "Import JSON Color Data");
-                targetWoolControl.MeshObjectData.HightestColor = colorData.color;
+                Undo.RecordObject(targetWoolControl, "Import JSON Color Key Data");
+                targetWoolControl.MeshObjectData.HightestColor = colorKeyData.colorKey;
                 EditorUtility.SetDirty(targetWoolControl);
                 
                 // Đánh dấu đã xử lý
                 processedWoolControls.Add(targetWoolControl);
                 applied++;
             }
-            else if (targetWoolControls.Any(w => w.name == colorData.objectName && processedWoolControls.Contains(w)))
+            else if (targetWoolControls.Any(w => w.name == colorKeyData.objectName && processedWoolControls.Contains(w)))
             {
                 // Object cùng tên đã được xử lý
                 duplicateSkipped++;
-                Debug.LogWarning($"Object '{colorData.objectName}' skipped - already processed an object with this name");
+                Debug.LogWarning($"Object '{colorKeyData.objectName}' skipped - already processed an object with this name");
             }
             else
             {
                 notFound++;
-                Debug.LogWarning($"Object '{colorData.objectName}' not found {searchScope}");
+                Debug.LogWarning($"Object '{colorKeyData.objectName}' not found {searchScope}");
             }
         }
         
-        string message = $"Applied colors to {applied} objects {searchScope}.";
+        string message = $"Applied color keys to {applied} objects {searchScope}.";
         if (notFound > 0)
         {
             message += $"\n{notFound} objects not found.";
@@ -900,6 +930,33 @@ public class WoolControlColorSetter : EditorWindow
         
         EditorUtility.DisplayDialog("JSON Import Complete", message, "OK");
         Debug.Log(message);
+    }
+
+    // ========== COLOR KEY CONVERSION METHODS ==========
+    
+    private string ColorToColorKey(Color color)
+    {
+        // Convert Color to hex string as color key
+        return "#" + ColorUtility.ToHtmlStringRGBA(color);
+    }
+    
+    private Color ColorKeyToColor(string colorKey)
+    {
+        // Try to parse color key as hex color
+        if (ColorUtility.TryParseHtmlString(colorKey, out Color color))
+        {
+            return color;
+        }
+        
+        // If not a valid hex color, generate a color based on hash
+        int hash = colorKey.GetHashCode();
+        UnityEngine.Random.InitState(hash);
+        return new Color(
+            UnityEngine.Random.Range(0.2f, 0.8f),
+            UnityEngine.Random.Range(0.2f, 0.8f),
+            UnityEngine.Random.Range(0.2f, 0.8f),
+            1f
+        );
     }
 
     // ========== SHARED METHODS ==========
@@ -974,6 +1031,13 @@ public class WoolControlColorSetter : EditorWindow
             EditorGUI.BeginDisabledGroup(true);
             EditorGUILayout.ObjectField(group.WoolControls[i], typeof(WoolControl), true);
             EditorGUI.EndDisabledGroup();
+            
+            // Show current color key if available
+            var woolControl = group.WoolControls[i];
+            if (woolControl.MeshObjectData != null && !string.IsNullOrEmpty(woolControl.MeshObjectData.HightestColor))
+            {
+                EditorGUILayout.LabelField($"Key: {woolControl.MeshObjectData.HightestColor}", EditorStyles.miniLabel, GUILayout.Width(100));
+            }
 
             // Remove button
             if (GUILayout.Button("-", GUILayout.Width(20)))
@@ -988,15 +1052,16 @@ public class WoolControlColorSetter : EditorWindow
     private void ApplyColorToGroup(WoolColorGroup group)
     {
         int appliedCount = 0;
+        string colorKey = ColorToColorKey(group.Color);
         
         foreach (var woolControl in group.WoolControls)
         {
             if (woolControl != null && woolControl.MeshObjectData != null)
             {
-                if (woolControl.MeshObjectData.HightestColor != group.Color)
+                if (woolControl.MeshObjectData.HightestColor != colorKey)
                 {
-                    Undo.RecordObject(woolControl, "Set Highest Color");
-                    woolControl.MeshObjectData.HightestColor = group.Color;
+                    Undo.RecordObject(woolControl, "Set Highest Color Key");
+                    woolControl.MeshObjectData.HightestColor = colorKey;
                     EditorUtility.SetDirty(woolControl);
                     appliedCount++;
                 }
@@ -1005,7 +1070,7 @@ public class WoolControlColorSetter : EditorWindow
 
         if (appliedCount > 0)
         {
-            Debug.Log($"Applied color {group.Color} to {appliedCount} WoolControls");
+            Debug.Log($"Applied color key '{colorKey}' to {appliedCount} WoolControls");
         }
     }
 

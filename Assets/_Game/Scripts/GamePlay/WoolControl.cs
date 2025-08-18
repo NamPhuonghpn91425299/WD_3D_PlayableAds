@@ -17,13 +17,16 @@ public class WoolControl : MonoBehaviour
 {
     #region PROPERTIES
 
+    [Header("DATA")] public ColorPalleteData _colorPalleteData;
+    
+    [Header("------------------------------------------")]
     public bool debugUV;
 
     [Header("Wool Settings")]
     [Tooltip("The order number of this wool in the sequence")]
     public int WoolOrder = 1;
     public Transform woolTransform;
-    [Header("Mesh Object")] public MeshObjectData MeshObjectData;
+    public MeshObjectData MeshObjectData;
     public Renderer TopMeshRenderer;
     public Renderer HideMeshRenderer;
     public Collider BoxCollider;
@@ -44,7 +47,7 @@ public class WoolControl : MonoBehaviour
     private MaterialPropertyBlock _topMaterialPropertyBlock;
     private MaterialPropertyBlock _hideMaterialPropertyBlock;
 
-    private Color _currentColor;
+    private string _currentColor;
 
     private int _indexLayer;
 
@@ -100,19 +103,19 @@ public class WoolControl : MonoBehaviour
         _indexLayer = 0;
         BoxCollider.enabled = true;
         _currentColor = MeshObjectData.HightestColor;
-        PushColor(MeshObjectData.HightestColor);
+        PushColor(_currentColor);
     }
 
-    public bool PushColor(Color color)
+    public bool PushColor(string colorName)
     {
         if (MeshObjectData == null || !HideMeshRenderer || _indexLayer >= MeshObjectData.TotalLayer || _hideMaterialPropertyBlock == null) return false;
 
-        MeshObjectData.ColorStack ??= new List<Color>();
-        MeshObjectData.ColorStack.Add(color);
+        MeshObjectData.ColorStack ??= new List<string>();
+        MeshObjectData.ColorStack.Add(colorName);
         _indexLayer++;
         if (MeshObjectData.ColorStack.Count > 1)
         {
-            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, MeshObjectData.ColorStack[1]);
+            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.ColorStack[1]]);
             HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
         }
         HideMeshRenderer.enabled = MeshObjectData.ColorStack.Count > 1;
@@ -123,7 +126,7 @@ public class WoolControl : MonoBehaviour
     {
         if (MeshObjectData.ColorStack.Count > 1)
         {
-            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, MeshObjectData.ColorStack[1]);
+            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.ColorStack[1]]);
             HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
         }
         TopMeshRenderer.sharedMaterial = isTranparent
@@ -186,7 +189,7 @@ public class WoolControl : MonoBehaviour
     }
 #endif
 
-    public void SetColor(Color color)
+    public void SetColor(string color)
     {
         MeshObjectData.ColorStack.Add(color);
         MeshObjectData.TotalLayer++;
@@ -205,7 +208,7 @@ public class WoolControl : MonoBehaviour
         if (!GamePlaySystem.Instance.OnClickMesh(transform, _spiralPath, _currentColor)) yield break;
         _isPlayAnim = true;
         GamePlaySystem.Instance.ActiveHandController(false);
-        Color nextColor = Color.black;
+        string nextColor = null;
         try
         {
             MeshObjectData.ColorStack.RemoveAt(0);
@@ -220,7 +223,7 @@ public class WoolControl : MonoBehaviour
         else
         {
             nextColor = MeshObjectData.ColorStack[0];
-            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, nextColor);
+            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
             _hideMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
         }
 
@@ -274,9 +277,9 @@ public class WoolControl : MonoBehaviour
 
         PulseAllDecorObjects();
 
-        if (nextColor != Color.black)
+        if (!nextColor.IsNullOrEmpty())
         {
-            _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, nextColor);
+            _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
             _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
             _currentColor = nextColor;
             StartCoroutine(AnimateThreshold(TopMeshRenderer.material, .045f,.15f));
@@ -328,7 +331,7 @@ public class WoolControl : MonoBehaviour
             }
         }
 
-        Color nextColor = Color.black;
+        string nextColor = null;
         MeshObjectData.ColorStack.RemoveAt(index);
         var totalColor = MeshObjectData.ColorStack.Count;
 
@@ -339,7 +342,7 @@ public class WoolControl : MonoBehaviour
         else
         {
             nextColor = MeshObjectData.ColorStack[0];
-            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, nextColor);
+            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
             _hideMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
         }
 
@@ -376,9 +379,9 @@ public class WoolControl : MonoBehaviour
             yield return null;
         }
 
-        if (nextColor != Color.black)
+        if (nextColor != null)
         {
-            _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, nextColor);
+            _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
             _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
             _currentColor = nextColor;
         }
@@ -402,7 +405,8 @@ public class WoolControl : MonoBehaviour
         _hideMaterialPropertyBlock ??= new MaterialPropertyBlock();
         TopMeshRenderer?.GetPropertyBlock(_topMaterialPropertyBlock);
         HideMeshRenderer?.GetPropertyBlock(_hideMaterialPropertyBlock);
-        _topMaterialPropertyBlock?.SetColor(T_Utilities.ShaderPropertiesLib.Color, MeshObjectData.HightestColor);
+        if(_colorPalleteData.colorPallete.Count<=0)return;
+        _topMaterialPropertyBlock?.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.HightestColor]);
         _topMaterialPropertyBlock?.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, 0);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 0);
@@ -433,7 +437,7 @@ public class WoolControl : MonoBehaviour
         if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
 
         Color currnetColor = Color.grey;
-        Color targetColor = MeshObjectData.HightestColor;
+        Color targetColor = _colorPalleteData.colorPallete[MeshObjectData.HightestColor];
 
         TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
 

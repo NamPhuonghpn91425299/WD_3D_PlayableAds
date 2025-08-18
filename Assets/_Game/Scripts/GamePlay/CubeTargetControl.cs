@@ -110,10 +110,11 @@ public class CubeTargetControl : MonoBehaviour
         _indexChild++;
     }
 
-    public void SetColor(Color color,string _name)
+    public void SetColor(string color)
     {
-        _currentColor = color;
-        nameColor = _name;
+        print("Set Color " + gameObject.name + " "+color);
+        _currentColor = GamePlaySystem.Instance._colorPalleteData.colorPallete[color];
+        nameColor = color;
     }
 
 
