@@ -10041,7 +10041,7 @@ Transform:
   m_GameObject: {fileID: 1107262013}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12639,6 +12639,14 @@ PrefabInstance:
       propertyPath: distance
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4969589782501369025, guid: 51cf37405109cd34e8cfec1c1f30e453, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969589782501369025, guid: 51cf37405109cd34e8cfec1c1f30e453, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5811582875356020080, guid: 51cf37405109cd34e8cfec1c1f30e453, type: 3}
       propertyPath: nameColor
       value: 
@@ -14295,7 +14303,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14512,9 +14520,9 @@ MonoBehaviour:
   BGM:
     soundType: 4
     Loop: 1
-    Clip: {fileID: 8300000, guid: b77688acd19646948b82e2ac31c59991, type: 3}
+    Clip: {fileID: 8300000, guid: 74e2552d1387c82438df497de8cd0fe8, type: 3}
     ClipList:
-    - {fileID: 8300000, guid: b77688acd19646948b82e2ac31c59991, type: 3}
+    - {fileID: 8300000, guid: 74e2552d1387c82438df497de8cd0fe8, type: 3}
 --- !u!114 &1797259887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14527,6 +14535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39eec355d4c8f33469d20359071aa850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   handController: {fileID: 4659284094914571615}
   cubeCountClaimed: 37
   totalCountClaimed: 150
@@ -16844,17 +16853,81 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 353582218124507651, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Orange3
+      objectReference: {fileID: 0}
+    - target: {fileID: 418472560556456505, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
+      objectReference: {fileID: 0}
+    - target: {fileID: 585177081522320013, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: White
+      objectReference: {fileID: 0}
+    - target: {fileID: 695289980367541612, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
+    - target: {fileID: 780779963905518578, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Green2
+      objectReference: {fileID: 0}
+    - target: {fileID: 913260385694062525, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Green2
+      objectReference: {fileID: 0}
     - target: {fileID: 1390951688171890457, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.1151516e-10
+      value: 4.11516e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390951688171890457, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000001591671
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462758762097152614, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476998974592823057, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663163515662364658, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
       objectReference: {fileID: 0}
     - target: {fileID: 1939219096455356402, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2254501403265162048, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Orange3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442243416877528581, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
+      objectReference: {fileID: 0}
     - target: {fileID: 2508642616283385288, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688791190813373261, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056642024083949909, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064247252542976553, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: White
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250676466793513896, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
       objectReference: {fileID: 0}
     - target: {fileID: 3273094975560718366, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16896,6 +16969,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3453467948136020345, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741663736073996944, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Green2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952854661155038010, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Orange3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483607306024649497, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Green2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553750556110892756, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595485601350207341, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757244681167865470, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Brown3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892329472024905368, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
     - target: {fileID: 5176908987672918892, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -16904,25 +17009,105 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5252707136065668927, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Gray2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311580222192112910, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5431402918326892439, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Gray2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808964301601729986, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
+      objectReference: {fileID: 0}
     - target: {fileID: 5917791947448643535, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6214098789942894147, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.1151516e-10
+      value: 4.11516e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214098789942894147, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000001591671
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381923844690689111, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: LevelData.ColorList.Array.data[0]
+      value: Yellow5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381923844690689111, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: LevelData.ColorList.Array.data[1]
+      value: Green2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381923844690689111, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: LevelData.ColorList.Array.data[2]
+      value: Blue4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381923844690689111, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: LevelData.ColorList.Array.data[3]
+      value: White
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381923844690689111, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: LevelData.ColorList.Array.data[4]
+      value: Brown3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381923844690689111, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: LevelData.ColorList.Array.data[5]
+      value: Yellow4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381923844690689111, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: LevelData.ColorList.Array.data[6]
+      value: Orange3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381923844690689111, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: LevelData.ColorList.Array.data[7]
+      value: Gray2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407115546739923157, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Green2
       objectReference: {fileID: 0}
     - target: {fileID: 6453987684618450995, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.1151516e-10
+      value: 4.11516e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453987684618450995, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000001591671
       objectReference: {fileID: 0}
     - target: {fileID: 6465083105785675845, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6694766090286006047, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Gray2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755512362169250536, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894198928280179638, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124883490430942010, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow5
+      objectReference: {fileID: 0}
     - target: {fileID: 7295266166993949660, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801090126868476396, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
       objectReference: {fileID: 0}
     - target: {fileID: 7980044000559515256, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_Name
@@ -16930,27 +17115,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8026536111059667860, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.1151516e-10
+      value: 4.11516e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026536111059667860, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000001591671
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070519815300833750, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Blue4
       objectReference: {fileID: 0}
     - target: {fileID: 8141325758889864776, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.1151516e-10
+      value: 4.11516e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141325758889864776, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000001591671
       objectReference: {fileID: 0}
     - target: {fileID: 8177187386617128262, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.1151516e-10
+      value: 4.11516e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177187386617128262, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000001591671
       objectReference: {fileID: 0}
     - target: {fileID: 8196385123352751353, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.1151516e-10
+      value: 4.11516e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196385123352751353, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000001591671
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576941559432992624, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: White
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639716560593523260, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Gray2
       objectReference: {fileID: 0}
     - target: {fileID: 8914113551673323659, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9012169716629703598, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029557346540052765, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Yellow4
+      objectReference: {fileID: 0}
     - target: {fileID: 9151070558429857812, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 4.1151516e-10
+      value: 4.11516e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151070558429857812, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000001591671
+      objectReference: {fileID: 0}
+    - target: {fileID: 9190091096157236845, guid: fbe426e83a036a34fbebc7e6a119565e, type: 3}
+      propertyPath: MeshObjectData.HightestColor
+      value: Orange3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18257,6 +18486,10 @@ PrefabInstance:
     - target: {fileID: 5875118672531976744, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
       propertyPath: m_Name
       value: EndGameUILayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8285496051351274804, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
