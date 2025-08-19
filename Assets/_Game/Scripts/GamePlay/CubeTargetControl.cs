@@ -112,7 +112,6 @@ public class CubeTargetControl : MonoBehaviour
 
     public void SetColor(string color)
     {
-        print("Set Color " + gameObject.name + " "+color);
         _currentColor = GamePlaySystem.Instance._colorPalleteData.colorPallete[color];
         nameColor = color;
     }
@@ -142,13 +141,12 @@ public class CubeTargetControl : MonoBehaviour
         FishScalesPaintingController fishScalesPaintingController = FishScalesPaintingController.Instance;
         GamePlaySystem.Instance.CubeReadyCount--;
         yield return new WaitForSeconds(1f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
-        fishScalesPaintingController.WoolLinePaintingStart(this);
+        fishScalesPaintingController.WoolLinePaintingStart(this,indexCube);
+    }
 
-        while (!fishScalesPaintingController.CanStartOuttro)
-        {
-            Debug.Log("Waiting Anim");
-            yield return null;
-        }
+    public void StartOuttroGenColorCubeTarget(int indexCube) => StartCoroutine(StartOuttroGenColor(indexCube));
+    private IEnumerator StartOuttroGenColor(int indexCube)
+    {
         
         yield return new WaitForSeconds(.25f); // Thời gian chờ giữa mỗi vòng, tuỳ chỉnh
         SoundManager.Instance.PlayOneShot(OutTro);
@@ -184,6 +182,7 @@ public class CubeTargetControl : MonoBehaviour
         GamePlaySystem.Instance.CheckEndGame();
         // Debug.Log("CubeReadyCount: " + GamePlaySystem.Instance.CubeReadyCount + " TotalCubeActive: " + GamePlaySystem.Instance.TotalCubeActive + " indexCube: " + indexCube);
     }
+    
 
     public void SetDefault()
     {

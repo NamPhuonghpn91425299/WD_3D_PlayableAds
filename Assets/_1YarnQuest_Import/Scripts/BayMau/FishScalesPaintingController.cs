@@ -291,18 +291,15 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
 
     #region painting as level progress
 
-    public bool CanStartOuttro { get; private set; }
-
-    public void WoolLinePaintingStart(CubeTargetControl currentCube)
+    public void WoolLinePaintingStart(CubeTargetControl currentCube,int indexThisCube)
     {
         if (currentCube == null || currentCube.WoolLineHandler == null) return;
-        StartCoroutine(WoolLinePaintingCoroutine(currentCube));
+        StartCoroutine(WoolLinePaintingCoroutine(currentCube,indexThisCube));
     }
 
-    private IEnumerator WoolLinePaintingCoroutine(CubeTargetControl currentCube)
+    private IEnumerator WoolLinePaintingCoroutine(CubeTargetControl currentCube,int indexThisCube)
     {
         //Debug.Log("WoolLinePaintingCoroutine started");
-        CanStartOuttro = false;
         float vibrationTimer = Time.time;
         float timerOffset = 0;
         
@@ -360,7 +357,7 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
             float delay = 1.25f / targetPart.PaintingCells.Count;
             int cellCount = targetPart.PaintingCells.Count;
             AnimationData.GetRollOutAnimationDuration(cellCount, out float paintingDuration, out float durationEachCell);
-            currentCube.ThisBarAnimatorController.RollOutAllSpiralItems(paintingDuration + cellCount * delay);
+            currentCube.ThisBarAnimatorController.RollOutAllSpiralItems(paintingDuration - .2f + cellCount * delay);
             for (int i = 0; i < cellCount; i++)
             {
                 var cell = targetPart.PaintingCells[i];
@@ -384,6 +381,7 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
                 currentCube.WoolLineHandler.ConnectLine(cubePosition, cellPosition, cell.CellColor, i == 0);
                 yield return new WaitForSeconds(delay);
             }
+//            Debug.LogError("Đợi xong "+currentCube.gameObject.name+"   "+(paintingDuration + cellCount * delay));
         }
         else
         {
@@ -413,8 +411,8 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
         }
 
         //Debug.Log("Finished painting, clearing line");
-        CanStartOuttro = true;
         currentCube.WoolLineHandler?.ClearLine();
+        currentCube.StartOuttroGenColorCubeTarget(indexThisCube);
     }
 
 
