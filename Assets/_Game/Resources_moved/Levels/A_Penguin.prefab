@@ -474,12 +474,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0, g: 0.7019608, b: 0.654902, a: 1}
+    HightestColor: Cyan3
     ColorStack: []
   TopMeshRenderer: {fileID: 7984726170768908188}
   HideMeshRenderer: {fileID: 8512616289938566921}
@@ -487,6 +488,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 798603564093201632}
@@ -1270,12 +1272,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 2215100868456384073}
   HideMeshRenderer: {fileID: 1946005514610669557}
@@ -1283,6 +1286,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3966298145898732237}
@@ -2080,12 +2084,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
+    HightestColor: Cyan2
     ColorStack: []
   TopMeshRenderer: {fileID: 4316243691005570009}
   HideMeshRenderer: {fileID: 5019081575050597961}
@@ -2093,6 +2098,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4830799313521037751}
@@ -2807,12 +2813,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7742936171242497973}
   HideMeshRenderer: {fileID: 2907789309375720718}
@@ -2820,6 +2827,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5426973052879938083}
@@ -3368,12 +3376,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
+    HightestColor: Cyan2
     ColorStack: []
   TopMeshRenderer: {fileID: 1186132155336070550}
   HideMeshRenderer: {fileID: 432606712555583850}
@@ -3381,6 +3390,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7393283177192043948}
@@ -3929,12 +3939,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 6405407240111219366}
   HideMeshRenderer: {fileID: 5852667438716009901}
@@ -3942,6 +3953,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1768866878190865998}
@@ -4490,12 +4502,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7276350063632476541}
   HideMeshRenderer: {fileID: 3056760811499628774}
@@ -4503,6 +4516,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 843802588576225689}
@@ -5300,12 +5314,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 4748595831165885156}
   HideMeshRenderer: {fileID: 8886734732008504023}
@@ -5313,6 +5328,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7784034306022446179}
@@ -5861,12 +5877,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 4226004992709654917}
   HideMeshRenderer: {fileID: 4175549686454052883}
@@ -5874,6 +5891,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5166261987077172077}
@@ -6422,12 +6440,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
+    HightestColor: Cyan2
     ColorStack: []
   TopMeshRenderer: {fileID: 2090382511706019671}
   HideMeshRenderer: {fileID: 3692425575843518378}
@@ -6435,6 +6454,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1363730934587026972}
@@ -7066,12 +7086,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 8656207302531658727}
   HideMeshRenderer: {fileID: 7793842445519322752}
@@ -7079,6 +7100,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3843576991812032102}
@@ -7627,12 +7649,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 5571739056838044871}
   HideMeshRenderer: {fileID: 1106926605592239959}
@@ -7640,6 +7663,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 9165919858068203308}
@@ -8188,12 +8212,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
+    HightestColor: Cyan2
     ColorStack: []
   TopMeshRenderer: {fileID: 8498913728962774286}
   HideMeshRenderer: {fileID: 584447209624920591}
@@ -8201,6 +8226,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 8581739354560322212}
@@ -8749,12 +8775,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.7019608, b: 0.654902, a: 1}
+    HightestColor: Cyan3
     ColorStack: []
   TopMeshRenderer: {fileID: 1342740678216734547}
   HideMeshRenderer: {fileID: 7088637725915180831}
@@ -8762,6 +8789,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3470613235189235137}
@@ -9310,12 +9338,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
+    HightestColor: Cyan2
     ColorStack: []
   TopMeshRenderer: {fileID: 1872611664498144895}
   HideMeshRenderer: {fileID: 4433201154745447483}
@@ -9323,6 +9352,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 6803216203014388883}
@@ -10120,12 +10150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.7019608, b: 0.654902, a: 1}
+    HightestColor: Cyan3
     ColorStack: []
   TopMeshRenderer: {fileID: 4732673477422965061}
   HideMeshRenderer: {fileID: 7591302342290413970}
@@ -10133,6 +10164,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3600821397858731114}
@@ -10681,12 +10713,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
+    HightestColor: Cyan2
     ColorStack: []
   TopMeshRenderer: {fileID: 3365399899086331348}
   HideMeshRenderer: {fileID: 567322310769996245}
@@ -10694,6 +10727,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7114705076310012550}
@@ -11242,12 +11276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 5324528202409716823}
   HideMeshRenderer: {fileID: 3479950371655478220}
@@ -11255,6 +11290,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 294492451961615557}
@@ -11803,12 +11839,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 1241216993972290975}
   HideMeshRenderer: {fileID: 2828136442459968172}
@@ -11816,6 +11853,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 78128711861015992}
@@ -12530,12 +12568,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 620339033762709361}
   HideMeshRenderer: {fileID: 2225587800371966791}
@@ -12543,6 +12582,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 2567320475146164620}
@@ -13091,12 +13131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7578676486064170030}
   HideMeshRenderer: {fileID: 7606431022141827924}
@@ -13104,6 +13145,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7956509906827431150}
@@ -13735,12 +13777,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7735866494756343470}
   HideMeshRenderer: {fileID: 5589477354947848865}
@@ -13748,6 +13791,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1173174060373763305}
@@ -14296,12 +14340,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 3129451139379108037}
   HideMeshRenderer: {fileID: 6933095989254624135}
@@ -14309,6 +14354,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5648863198843742540}
@@ -14940,12 +14986,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.7019608, b: 0.654902, a: 1}
+    HightestColor: Cyan3
     ColorStack: []
   TopMeshRenderer: {fileID: 3445084921982907855}
   HideMeshRenderer: {fileID: 1248589682118149904}
@@ -14953,6 +15000,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 6783276545358518025}
@@ -15501,12 +15549,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0, g: 0.7019608, b: 0.654902, a: 1}
+    HightestColor: Cyan3
     ColorStack: []
   TopMeshRenderer: {fileID: 7951588841051177993}
   HideMeshRenderer: {fileID: 1559746538604444391}
@@ -15514,6 +15563,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 6415437855200207793}
@@ -16145,12 +16195,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 5981897666876052508}
   HideMeshRenderer: {fileID: 4961065084302599680}
@@ -16158,6 +16209,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3929881341614052188}
@@ -16789,12 +16841,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.7019608, b: 0.654902, a: 1}
+    HightestColor: Cyan3
     ColorStack: []
   TopMeshRenderer: {fileID: 3885277734243433019}
   HideMeshRenderer: {fileID: 7880015313480364238}
@@ -16802,6 +16855,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7128057237873879878}
@@ -17516,12 +17570,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 4221310462724292502}
   HideMeshRenderer: {fileID: 5073264046874296307}
@@ -17529,6 +17584,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 2159918430133332388}
@@ -18077,12 +18133,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7150298984825911431}
   HideMeshRenderer: {fileID: 4711093210869205719}
@@ -18090,6 +18147,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls:
   - {fileID: 3405452076390707906}
   RemovedDecoreControls: []
@@ -18722,12 +18780,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 6520777277615795511}
   HideMeshRenderer: {fileID: 4023987343476092276}
@@ -18735,6 +18794,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 8745226744770538573}
@@ -19325,22 +19385,14 @@ MonoBehaviour:
     CurrentcyLevel: 0
     DynamicDif: 0
     ColorList:
-    - {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
-    - {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
-    - {r: 1, g: 0.49019608, b: 0, a: 1}
-    - {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
-    - {r: 0, g: 0.7019608, b: 0.654902, a: 1}
-    - {r: 1, g: 0.8627451, b: 0.31764707, a: 1}
-    - {r: 0.38431373, g: 0.20392157, b: 0.21176471, a: 1}
+    - White
+    - Magenta5
+    - Orange3
+    - Cyan2
+    - Cyan3
+    - Yellow4
+    - Brown1
     ColorCountList: 0f0000000f0000000f0000000f0000000f0000000f0000000f000000
-    ColorListData:
-    - {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
-    - {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
-    - {r: 1, g: 0.49019608, b: 0, a: 1}
-    - {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
-    - {r: 0, g: 0.7019608, b: 0.654902, a: 1}
-    - {r: 1, g: 0.8627451, b: 0.31764707, a: 1}
-    - {r: 0.38431373, g: 0.20392157, b: 0.21176471, a: 1}
     NameColorList:
     - White
     - Magenta5
@@ -19714,12 +19766,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 1562821743195243756}
   HideMeshRenderer: {fileID: 2321581180147502234}
@@ -19727,6 +19780,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 6735423835314838999}
@@ -20472,12 +20526,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 3220969299223713520}
   HideMeshRenderer: {fileID: 2414513655289479483}
@@ -20485,6 +20540,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4103966198416767233}
@@ -21185,12 +21241,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 523811367508581430}
   HideMeshRenderer: {fileID: 7374462431000455840}
@@ -21198,6 +21255,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 2541920984835577202}
@@ -21829,12 +21887,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
+    HightestColor: Cyan2
     ColorStack: []
   TopMeshRenderer: {fileID: 8196342716935032382}
   HideMeshRenderer: {fileID: 2722034822768748349}
@@ -21842,6 +21901,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 6226207132110229776}
@@ -22390,12 +22450,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 651421297741970030}
   HideMeshRenderer: {fileID: 2649788890853087957}
@@ -22403,6 +22464,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4845788156014331287}
@@ -23034,12 +23096,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7244993634154161490}
   HideMeshRenderer: {fileID: 6257467908935081045}
@@ -23047,6 +23110,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4017309786546196302}
@@ -23595,12 +23659,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 2767123954692584970}
   HideMeshRenderer: {fileID: 8811001586073148722}
@@ -23608,6 +23673,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1655214327798935009}
@@ -24322,12 +24388,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0, g: 0.47843137, b: 0.44705883, a: 1}
+    HightestColor: Cyan2
     ColorStack: []
   TopMeshRenderer: {fileID: 919364835005147930}
   HideMeshRenderer: {fileID: 5607427979810886263}
@@ -24335,6 +24402,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4358287709768829648}
@@ -24966,12 +25034,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 171849740463945429}
   HideMeshRenderer: {fileID: 8738952611858877714}
@@ -24979,6 +25048,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5965434909997921578}
@@ -25527,12 +25597,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 1315157689345527872}
   HideMeshRenderer: {fileID: 7459517261728367553}
@@ -25540,6 +25611,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 8452837673332038787}
@@ -26088,12 +26160,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.93333334, g: 0.5411765, b: 0.68235296, a: 1}
+    HightestColor: Magenta5
     ColorStack: []
   TopMeshRenderer: {fileID: 6180238374051205459}
   HideMeshRenderer: {fileID: 2142784225030071422}
@@ -26101,6 +26174,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5377036776868597005}
@@ -26898,12 +26972,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 3866196975664114751}
   HideMeshRenderer: {fileID: 3444129093334475296}
@@ -26911,6 +26986,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls:
   - {fileID: 5390941562899188083}
   RemovedDecoreControls: []
@@ -27792,12 +27868,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.8627451, b: 0.31764707, a: 1}
+    HightestColor: Yellow4
     ColorStack: []
   TopMeshRenderer: {fileID: 7887029850001857681}
   HideMeshRenderer: {fileID: 3997623581012598741}
@@ -27805,6 +27882,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4849249176584454826}
@@ -28353,12 +28431,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8876870212060391012}
   HideMeshRenderer: {fileID: 6906665623978189751}
@@ -28366,6 +28445,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5160434053571885113}
@@ -28914,12 +28994,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.9098039, g: 0.99215686, b: 0.9882353, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 1062760641927943107}
   HideMeshRenderer: {fileID: 7839778264501004543}
@@ -28927,6 +29008,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5577795529095511993}
@@ -29558,12 +29640,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+    HightestColor: Orange3
     ColorStack: []
   TopMeshRenderer: {fileID: 1613211493035686072}
   HideMeshRenderer: {fileID: 7969991557984960799}
@@ -29571,6 +29654,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 436720122218851337}

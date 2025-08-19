@@ -650,9 +650,9 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
 
                 if (true)
                 {
-                    if (CurrentLevelPaintingColorParts.Any(x => x.ColorKey.Equals(colorKey)))
+                    if (CurrentLevelPaintingColorParts.Any(part => part.ColorKey.Equals(colorKey)))
                     {
-                        CurrentLevelPaintingColorParts.First(x => x.ColorKey.Equals(colorKey)).PaintingCells
+                        CurrentLevelPaintingColorParts.First(part => part.ColorKey.Equals(colorKey)).PaintingCells
                             .Add(thisCell);
                     }
                     else

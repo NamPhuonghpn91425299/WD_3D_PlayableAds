@@ -13,7 +13,7 @@ public class ClickEffectManager : Singleton<ClickEffectManager>
     [Header("COLOR STAT")]
     public float BrightnessDifference = 1f;
 
-    private List<ClickEffector> _effectPool = new();
+    private List<ClickEffector> _effectPool = new List<ClickEffector>();
     private Transform _poolParent;
 
     private void Start()
