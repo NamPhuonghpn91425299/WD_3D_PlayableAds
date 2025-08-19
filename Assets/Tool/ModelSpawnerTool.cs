@@ -148,6 +148,7 @@ public class ModelSpawnerTool : EditorWindow
                 sum += count;
             }
             gamePlaySystem.cubeCountClaimed = sum / 3;
+            gamePlaySystem.totalCountClaimed = sum;
             cameraController.ModelPrefab = obj;
             gamePlaySystem._levelPrefab = obj;
             fishScalesPaintingController.CurrentLevelPrefab = obj.GetComponent<GamePlayMeshController>();

@@ -36,7 +36,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
     [Tooltip("Số lượng khối len cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store). chưa dùng")]
     [SerializeField]
-    private int totalCountClaimed = 9;
+    public int totalCountClaimed = 9;
 
     private Coroutine _coroutineEndGame;
 
