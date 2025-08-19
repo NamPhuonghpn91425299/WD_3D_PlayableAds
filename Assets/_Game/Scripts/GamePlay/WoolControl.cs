@@ -181,6 +181,12 @@ public class WoolControl : MonoBehaviour
             // OnGameComplete?.Invoke();
         }
     }
+
+    public Color GetColor()
+    {
+        return _colorPalleteData.colorPallete[_currentColor];
+    }
+    
     // For editor debugging
 #if UNITY_EDITOR
     [ContextMenu("Select This Wool")]
@@ -208,6 +214,7 @@ public class WoolControl : MonoBehaviour
             _spiralPathUVY == null || _topMaterialPropertyBlock == null || !BoxCollider || MeshObjectData == null
             || MeshObjectData.ColorStack == null || MeshObjectData.ColorStack.Count == 0) yield break;
         if (!GamePlaySystem.Instance.OnClickMesh(transform, _spiralPath, _currentColor)) yield break;
+        StartCoroutine(AnimateThreshold(TopMeshRenderer.material, .045f,.15f));
         _isPlayAnim = true;
         //GamePlaySystem.Instance.ActiveHandController(false);
         string nextColor = null;

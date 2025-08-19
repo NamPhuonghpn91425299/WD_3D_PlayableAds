@@ -521,7 +521,15 @@ public class CameraController : Singleton<CameraController>
         if (foundWool != null)
         {
             HandleFoundWool(foundWool);
+            ClickEffectManager.Instance.PlayClickEffect(foundWool.GetColor());
+//            print("-------Click:"+foundWool.GetColor());
         }
+        else
+        {
+//            print("-------Click: Null");
+            ClickEffectManager.Instance.PlayClickEffect(Color.white);
+        }
+        
     }
 
     /// <summary>

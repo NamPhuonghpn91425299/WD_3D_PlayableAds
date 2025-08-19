@@ -275,7 +275,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
                 CurrentCubeTargets[i].AddChild(i, out Transform headtrans);
 
-                if (headtrans == null) break;
+                if (headtrans == null) continue;
 
                 ChoseYarnWool(headtrans, startPoint, spiralPath, colorClick);
                 return true; // Click thành công
@@ -309,7 +309,6 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                 return true; // Click thành công
             }
         }
-
         return false; // Click không hợp lệ (không có chỗ chứa)
     }
 
