@@ -11336,7 +11336,7 @@ Transform:
   m_GameObject: {fileID: 1266501309}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 2.2, z: -5}
+  m_LocalPosition: {x: -0.01, y: 2.2, z: -3.8}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -11997,7 +11997,7 @@ Transform:
   m_GameObject: {fileID: 1374435472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: -5}
+  m_LocalPosition: {x: 0, y: 1.6, z: -3.8}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15641,7 +15641,7 @@ MonoBehaviour:
   PaintingAudioSource: {fileID: 1929061861}
   PaintingCellClips:
   - {fileID: 8300000, guid: 3edf3e2721c26aa4da04a485071f1a25, type: 3}
-  SoundFxPlayRate: 0.1
+  SoundFxPlayRate: 0.05
   IgnoreColorPalette: 0
   ColorPalette: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   CurrentLevelPrefab: {fileID: 527349944}

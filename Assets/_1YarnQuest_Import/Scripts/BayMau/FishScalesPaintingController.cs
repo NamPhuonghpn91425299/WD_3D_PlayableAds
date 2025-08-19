@@ -300,6 +300,7 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
     private IEnumerator WoolLinePaintingCoroutine(CubeTargetControl currentCube,int indexThisCube)
     {
         //Debug.Log("WoolLinePaintingCoroutine started");
+        
         float vibrationTimer = Time.time;
         float timerOffset = 0;
         
@@ -357,17 +358,24 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
             float delay = 1.25f / targetPart.PaintingCells.Count;
             int cellCount = targetPart.PaintingCells.Count;
             AnimationData.GetRollOutAnimationDuration(cellCount, out float paintingDuration, out float durationEachCell);
-            currentCube.ThisBarAnimatorController.RollOutAllSpiralItems(paintingDuration - .2f + cellCount * delay);
+            float timeRew = paintingDuration - .2f + cellCount * delay;
+            StartCoroutine(MovePointOverTime(currentCube.WoolLineLeftPoint, currentCube.WoolLineRightPoint, currentCube.WoolLineMovePoint,timeRew,currentCube.WoolLineHandler));
+            currentCube.ThisBarAnimatorController.RollOutAllSpiralItems(timeRew);
             for (int i = 0; i < cellCount; i++)
             {
                 var cell = targetPart.PaintingCells[i];
                 //Debug.Log($"Painting cell {i + 1}/{targetPart.PaintingCells.Count}: Row={cell.Row}, Column={cell.Column}");
-                timerOffset = Time.time - vibrationTimer;
-                if (timerOffset >= SoundFxPlayRate)
+                if (cellCount > 20)
                 {
-                    vibrationTimer = Time.time;
+                    timerOffset = Time.time - vibrationTimer;
+                    if (timerOffset >= SoundFxPlayRate)
+                    {
+                        PlayPaintingCellAudioFx();
+                        vibrationTimer = Time.time;
+                    }
+                }else
                     PlayPaintingCellAudioFx();
-                }
+                
                 var spriteCell = GetCellAt(cell.Row, cell.Column);
                 if (spriteCell == null)
                 {
@@ -378,7 +386,7 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
                 spriteCell.Apply();
                 Vector3 cellPosition = GetCellWorldPosition(spriteCell);
                 PumpAnimationManager.SpawnEffectAt(cellPosition, cell.CellColor);
-                currentCube.WoolLineHandler.ConnectLine(cubePosition, cellPosition, cell.CellColor, i == 0);
+                currentCube.WoolLineHandler.ConnectLine(currentCube.WoolLineMovePoint.position, cellPosition, cell.CellColor, i == 0);
                 yield return new WaitForSeconds(delay);
             }
 //            Debug.LogError("Đợi xong "+currentCube.gameObject.name+"   "+(paintingDuration + cellCount * delay));
@@ -414,6 +422,29 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
         currentCube.WoolLineHandler?.ClearLine();
         currentCube.StartOuttroGenColorCubeTarget(indexThisCube);
     }
+
+    public IEnumerator MovePointOverTime(Transform from, Transform to, Transform pointToMove, float duration, PaintingLineRendererHandler WoolLineHandler)
+    {
+        if (from == null || to == null || pointToMove == null)
+            yield break;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / duration);
+            // Di chuyển từ vị trí hiện tại của "from" → "to" mỗi frame
+            pointToMove.position = Vector3.Lerp(from.position, to.position, t);
+            WoolLineHandler.TailFollow(pointToMove.position);
+
+            yield return null;
+        }
+
+        // Đảm bảo chính xác vị trí cuối
+        pointToMove.position = to.position;
+    }
+
 
 
     // private async UniTaskVoid WoolLinePaintingStart(BarTargetControl currentbar, CrochetBooster crochet = null)

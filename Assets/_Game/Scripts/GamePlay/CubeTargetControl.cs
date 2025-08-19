@@ -62,6 +62,11 @@ public class CubeTargetControl : MonoBehaviour
     [Header("WOOL AUDIO")]
     public AudioClip InTro;
     public AudioClip OutTro;
+
+    [Header("Point Move Wool Line")] 
+    public Transform WoolLineLeftPoint;
+    public Transform WoolLineRightPoint;
+    public Transform WoolLineMovePoint;
     #endregion
 
     #region MAIN_METHODS
