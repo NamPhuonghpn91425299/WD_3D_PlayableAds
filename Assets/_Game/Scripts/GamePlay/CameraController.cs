@@ -109,6 +109,7 @@ public class CameraController : Singleton<CameraController>
 
     // Đống này của thằng Đồng nó vất linh tinh đm đéo biết để đâu
     private bool BlockRotation;
+    public  void SetBlockRotation(bool _bool)=> BlockRotation = _bool;
     private bool BlockZoom;
     public Action<bool> OnHandleMouseAction;
     private bool BlockHandTap;

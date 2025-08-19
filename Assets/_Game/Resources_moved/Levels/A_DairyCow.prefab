@@ -1306,7 +1306,7 @@ GameObject:
   - component: {fileID: 758450911045754422}
   - component: {fileID: 8423106867608703367}
   - component: {fileID: 5283186563660165656}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1321,7 +1321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518171540259056013}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000077651646, y: -0.99937326, z: -0.035331354, w: 0.0021961743}
+  m_LocalRotation: {x: -0.00007765164, y: -0.99937326, z: -0.035331354, w: 0.0021961743}
   m_LocalPosition: {x: -0.17343327, y: -0.47900003, z: -0.5532431}
   m_LocalScale: {x: 1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0
@@ -7502,7 +7502,7 @@ GameObject:
   - component: {fileID: 204739476268303558}
   - component: {fileID: 4413256549008586046}
   - component: {fileID: 199739212311629532}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7517,7 +7517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235352948559224815}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000039173327, y: -0.9998387, z: -0.01782763, w: 0.002197197}
+  m_LocalRotation: {x: -0.000039173323, y: -0.9998387, z: -0.01782763, w: 0.002197197}
   m_LocalPosition: {x: -0.37236524, y: 0.639, z: -0.53736854}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8299,7 +8299,7 @@ GameObject:
   - component: {fileID: 4187926124119354246}
   - component: {fileID: 6903166708715525527}
   - component: {fileID: 2248954980431700877}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8314,7 +8314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486081548799366917}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000017108795, y: 0.9999976, z: 0.00000006698561, w: -0.0021976654}
+  m_LocalRotation: {x: -0.0000000017108795, y: 0.9999976, z: 0.000000066985635, w: -0.0021976654}
   m_LocalPosition: {x: 0.007746737, y: 1.467319, z: -0.29503664}
   m_LocalScale: {x: 1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0
@@ -10390,7 +10390,7 @@ GameObject:
   - component: {fileID: 5968959981295453342}
   - component: {fileID: 1884423551933487258}
   - component: {fileID: 7629483159875180172}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10405,7 +10405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906677678078166847}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00013209505, y: 0.99818987, z: -0.060101107, w: -0.002193693}
+  m_LocalRotation: {x: -0.0001320951, y: 0.99818987, z: -0.060101114, w: -0.002193693}
   m_LocalPosition: {x: 0.1545728, y: -0.741, z: -0.6256855}
   m_LocalScale: {x: 1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0
@@ -11750,7 +11750,7 @@ GameObject:
   - component: {fileID: 6526995582694731471}
   - component: {fileID: 8390312207835383890}
   - component: {fileID: 4875929694918469690}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11765,7 +11765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144779184107477348}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000077651646, y: -0.99937326, z: -0.035331354, w: 0.0021961743}
+  m_LocalRotation: {x: -0.00007765164, y: -0.99937326, z: -0.035331354, w: 0.0021961743}
   m_LocalPosition: {x: 0.15488482, y: -0.47900003, z: -0.55468625}
   m_LocalScale: {x: 1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0
@@ -14886,7 +14886,7 @@ GameObject:
   - component: {fileID: 5913991364777229097}
   - component: {fileID: 4047888322938945415}
   - component: {fileID: 8731122727376844081}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14901,7 +14901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2587148342443380121}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00019225477, y: -0.99616367, z: -0.087482475, w: 0.0021891217}
+  m_LocalRotation: {x: -0.00019225475, y: -0.99616367, z: -0.087482475, w: 0.0021891217}
   m_LocalPosition: {x: -0.010671884, y: 0.43699998, z: -0.607959}
   m_LocalScale: {x: -0.9273312, y: 0.9273312, z: 0.9273312}
   m_ConstrainProportionsScale: 0
@@ -18288,12 +18288,12 @@ MonoBehaviour:
     CurrentcyLevel: 0
     DynamicDif: 0
     ColorList:
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
+    - Yellow4
+    - Green2
+    - White
+    - Orange4
+    - Black
+    - Brown5
     ColorCountList: 120000000f0000000f0000000f000000120000000c000000
     NameColorList:
     - Yellow4
@@ -20564,7 +20564,7 @@ GameObject:
   - component: {fileID: 3309871203454113747}
   - component: {fileID: 7971046959683905375}
   - component: {fileID: 333194987869882828}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20579,7 +20579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4788110611719002831}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000017108795, y: 0.9999976, z: 0.00000006698561, w: -0.0021976654}
+  m_LocalRotation: {x: -0.0000000017108795, y: 0.9999976, z: 0.000000066985635, w: -0.0021976654}
   m_LocalPosition: {x: 0.007746737, y: 1.467319, z: -0.29503664}
   m_LocalScale: {x: -1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0
@@ -21776,7 +21776,7 @@ GameObject:
   - component: {fileID: 8176162810207426783}
   - component: {fileID: 6859418900542413147}
   - component: {fileID: 4666091358526196259}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21791,7 +21791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5446516294395507791}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.049996722, y: 0.998747, z: -0.000109803404, w: -0.0021951592}
+  m_LocalRotation: {x: 0.049996722, y: 0.998747, z: -0.00010980341, w: -0.0021951592}
   m_LocalPosition: {x: -0.47593406, y: 1.128, z: 0.01609205}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21927,7 +21927,7 @@ GameObject:
   - component: {fileID: 481657233611036845}
   - component: {fileID: 2376737412892898904}
   - component: {fileID: 5396135846675961872}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21942,7 +21942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5695655697839048144}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00013209505, y: 0.99818987, z: -0.060101107, w: -0.002193693}
+  m_LocalRotation: {x: -0.0001320951, y: 0.99818987, z: -0.060101114, w: -0.002193693}
   m_LocalPosition: {x: -0.17374508, y: -0.741, z: -0.62424266}
   m_LocalScale: {x: 1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0
@@ -23056,7 +23056,7 @@ GameObject:
   - component: {fileID: 8108201307524755962}
   - component: {fileID: 1660143811300317758}
   - component: {fileID: 6565078566532866507}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23207,7 +23207,7 @@ GameObject:
   - component: {fileID: 4509949685963456703}
   - component: {fileID: 1408942882315051638}
   - component: {fileID: 6708239327213277700}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23222,7 +23222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6112463539194932347}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000039173327, y: -0.9998387, z: -0.01782763, w: 0.002197197}
+  m_LocalRotation: {x: -0.000039173323, y: -0.9998387, z: -0.01782763, w: 0.002197197}
   m_LocalPosition: {x: 0.37224495, y: 0.639, z: -0.5406408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28047,7 +28047,7 @@ GameObject:
   - component: {fileID: 5705666958492245096}
   - component: {fileID: 6290473401640839116}
   - component: {fileID: 8999747544135099224}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28062,7 +28062,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7691879200648589290}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000017108795, y: 0.9999976, z: 0.00000006698561, w: -0.0021976654}
+  m_LocalRotation: {x: -0.0000000017108795, y: 0.9999976, z: 0.000000066985635, w: -0.0021976654}
   m_LocalPosition: {x: 0.0074390704, y: 1.1793191, z: -0.3650361}
   m_LocalScale: {x: 1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0
@@ -28761,7 +28761,7 @@ GameObject:
   - component: {fileID: 1922182068795932841}
   - component: {fileID: 7011457397004764100}
   - component: {fileID: 1781198147284656427}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29807,7 +29807,7 @@ GameObject:
   - component: {fileID: 2804893750317184988}
   - component: {fileID: 3538304198086321396}
   - component: {fileID: 5497815487840460353}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29958,7 +29958,7 @@ GameObject:
   - component: {fileID: 2628831432548908717}
   - component: {fileID: 4227125743494652017}
   - component: {fileID: 2916946749294899448}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29973,7 +29973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8321788894140361376}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00019225477, y: -0.99616367, z: -0.087482475, w: 0.0021891217}
+  m_LocalRotation: {x: -0.00019225475, y: -0.99616367, z: -0.087482475, w: 0.0021891217}
   m_LocalPosition: {x: -0.0026723442, y: 0.43699998, z: -0.60799396}
   m_LocalScale: {x: 0.9273312, y: 0.9273312, z: 0.9273312}
   m_ConstrainProportionsScale: 0
@@ -33095,7 +33095,7 @@ GameObject:
   - component: {fileID: 8136186169416983025}
   - component: {fileID: 6774838746208095192}
   - component: {fileID: 8631156626010972822}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Item_DairyCow_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33110,7 +33110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8954455180416913934}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000017108795, y: 0.9999976, z: 0.00000006698561, w: -0.0021976654}
+  m_LocalRotation: {x: -0.0000000017108795, y: 0.9999976, z: 0.000000066985635, w: -0.0021976654}
   m_LocalPosition: {x: 0.0073203314, y: 1.2883191, z: -0.3920359}
   m_LocalScale: {x: 1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0

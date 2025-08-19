@@ -416,6 +416,7 @@ public class WoolControl : MonoBehaviour
         {
             Debug.LogError("Count data palet colorPallete = 0");
             _colorPalleteData.SetupColor();
+            DisplayColor();
             return;}
         _topMaterialPropertyBlock?.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.HightestColor]);
         _topMaterialPropertyBlock?.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);

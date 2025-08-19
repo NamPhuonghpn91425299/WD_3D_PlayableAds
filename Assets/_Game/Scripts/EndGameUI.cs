@@ -79,10 +79,10 @@ public class EndGameUI : MonoBehaviour
         // Bước 5: Bắt đầu fade background
         Debug.Log("Starting fade background...");
         renderer.enabled = true;
-        FadeTo(1f, 1f); // Làm chậm fade để mượt hơn
+        FadeTo(.7f, 1f); // Làm chậm fade để mượt hơn
         
         // Bước 6: Chờ fade background gần xong rồi hiện UI
-        yield return new WaitForSeconds(0.8f);
+        //yield return new WaitForSeconds(0.8f);
         
         Debug.Log("Starting UI fade in...");
         yield return StartCoroutine(FadeBetweenCanvasGroups(winGamePanel, btnPlay, 1.2f, .8f));

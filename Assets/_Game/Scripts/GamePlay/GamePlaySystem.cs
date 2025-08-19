@@ -538,6 +538,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     {
         CameraController.Instance?.SetBlockHold(false);
         CameraController.Instance?.SetBlockHandTap(false);
+        CameraController.Instance?.SetBlockRotation(true);
         if (!isWin)
             yield return new WaitForSeconds(2f); // Chờ một chút trước khi hiện panel thua
         // else

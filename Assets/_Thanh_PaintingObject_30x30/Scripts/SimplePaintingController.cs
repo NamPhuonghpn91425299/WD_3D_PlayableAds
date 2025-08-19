@@ -135,7 +135,7 @@ public class SimplePaintingController : MonoBehaviour
                 cellsMap[key] = cell;
             }
         }
-        Debug.Log($"Initialized {cellsMap.Count} cells in map");
+//        Debug.Log($"Initialized {cellsMap.Count} cells in map");
     }
 
     public void LoadFromConfig()
@@ -166,7 +166,7 @@ public class SimplePaintingController : MonoBehaviour
         // Set desired colors for all cells
         SetupCellColors();
 
-        Debug.Log($"Loaded config with {CurrentPaintingParts.Count} main parts and {CurrentSeparateParts.Count} separate parts");
+//        Debug.Log($"Loaded config with {CurrentPaintingParts.Count} main parts and {CurrentSeparateParts.Count} separate parts");
     }
 
     private void SetupCellColors()
@@ -192,7 +192,7 @@ public class SimplePaintingController : MonoBehaviour
         {
             cell.Clear();
         }
-        Debug.Log("Cleared all cells");
+//        Debug.Log("Cleared all cells");
     }
 
     public void PaintAllCells()
