@@ -10,6 +10,7 @@ using System;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
+using UnityEditor;
 #endif
 
 [ExecuteAlways]
@@ -74,7 +75,8 @@ public class WoolControl : MonoBehaviour
         HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
         // BoxCollider      ??= GetComponent<BoxCollider>();
         //BoxCollider      ??= GetComponent<Collider>();
-        BoxCollider = GetComponent<MeshCollider>();
+        BoxCollider       = GetComponent<MeshCollider>();
+        _colorPalleteData = AssetDatabase.LoadAssetAtPath<ColorPalleteData>("Assets/_Game/Scripts/DataSO/ColorPallete/ColorPalleteData.asset");
     }
 #endif
 
