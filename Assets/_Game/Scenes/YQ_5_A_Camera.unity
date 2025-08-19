@@ -10074,14 +10074,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: A_Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 4035394952002893808, guid: 15a69c5a1970fb140aba09c70b902fd0, type: 3}
-      propertyPath: LevelData.NameColorList.Array.data[4]
-      value: Blue4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035394952002893808, guid: 15a69c5a1970fb140aba09c70b902fd0, type: 3}
-      propertyPath: LevelData.NameColorList.Array.data[5]
-      value: Blue2
-      objectReference: {fileID: 0}
     - target: {fileID: 6586401022194627512, guid: 15a69c5a1970fb140aba09c70b902fd0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
