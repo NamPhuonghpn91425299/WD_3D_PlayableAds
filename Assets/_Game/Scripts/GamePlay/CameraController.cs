@@ -185,8 +185,8 @@ public class CameraController : Singleton<CameraController>
 
         if (!BlockZoom)
         {
-            if (_mainCamera.fieldOfView <= targetFOV - .1f)
-                BlockZoom = true;
+            // if (_mainCamera.fieldOfView <= targetFOV - .1f)
+            //     BlockZoom = true;
             if (OnZoomCameraSmoothly())
             {
                 _mainCamera.fieldOfView =
