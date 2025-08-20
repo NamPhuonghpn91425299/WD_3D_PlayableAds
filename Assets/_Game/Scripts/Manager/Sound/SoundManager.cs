@@ -16,6 +16,14 @@ public class SoundManager : Singleton<SoundManager>
     private void Start()
     {
         isPlayBgmOnStart = true;
+
+        // Đảm bảo BGM AudioSource không tự động phát
+        if (specialBgmSource != null)
+        {
+            specialBgmSource.Stop();
+            specialBgmSource.playOnAwake = false;
+        }
+        
         var playMusic = 1;
         var playSound  = 1;
         OnSoundChange(playMusic);
@@ -32,10 +40,14 @@ public class SoundManager : Singleton<SoundManager>
 
     public void OnPlaySoundBG()
     {
+        // Dừng nếu đang phát và reset time về 0
+        specialBgmSource.Stop();
+        specialBgmSource.time = 0f;
+        
         specialBgmSource.clip = BGM.Clip;
         specialBgmSource.loop = BGM.Loop;
         specialBgmSource.Play();
-        Debug.Log("play bgm");
+        Debug.Log("play bgm from start, time: " + specialBgmSource.time);
     }
     private void OnSoundFxChange(float currentValue)
     {
