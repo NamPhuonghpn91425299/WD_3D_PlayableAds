@@ -15,6 +15,7 @@ public class SoundManager : Singleton<SoundManager>
 
     private void Start()
     {
+        isPlayBgmOnStart = true;
         var playMusic = 1;
         var playSound  = 1;
         OnSoundChange(playMusic);
