@@ -9532,7 +9532,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986590945}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b77688acd19646948b82e2ac31c59991, type: 3}
@@ -14730,12 +14730,13 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 98222d9ef8fbb024d980749c4b93ae4d, type: 2}
   fxMusicSource: {fileID: 1797259883}
   specialBgmSource: {fileID: 1797259882}
+  isPlayBgmOnStart: 1
   BGM:
     soundType: 4
     Loop: 1
-    Clip: {fileID: 8300000, guid: b77688acd19646948b82e2ac31c59991, type: 3}
+    Clip: {fileID: 8300000, guid: 74e2552d1387c82438df497de8cd0fe8, type: 3}
     ClipList:
-    - {fileID: 8300000, guid: b77688acd19646948b82e2ac31c59991, type: 3}
+    - {fileID: 8300000, guid: 74e2552d1387c82438df497de8cd0fe8, type: 3}
 --- !u!114 &1797259887
 MonoBehaviour:
   m_ObjectHideFlags: 0

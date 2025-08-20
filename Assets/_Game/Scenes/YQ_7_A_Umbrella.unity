@@ -9452,7 +9452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &986590946
 Transform:
   m_ObjectHideFlags: 0
@@ -14505,6 +14505,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 98222d9ef8fbb024d980749c4b93ae4d, type: 2}
   fxMusicSource: {fileID: 1797259883}
   specialBgmSource: {fileID: 1797259882}
+  isPlayBgmOnStart: 1
   BGM:
     soundType: 4
     Loop: 1

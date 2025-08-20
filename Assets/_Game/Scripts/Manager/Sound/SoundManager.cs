@@ -10,7 +10,7 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField]         AudioMixer  audioMixer;
     [SerializeField] private AudioSource fxMusicSource;
     [SerializeField] private AudioSource specialBgmSource;
-    
+    [SerializeField] private bool isPlayBgmOnStart = true;
     [SerializeField] private SoundDefine BGM;
 
     private void Start()
@@ -20,7 +20,21 @@ public class SoundManager : Singleton<SoundManager>
         OnSoundChange(playMusic);
         OnSoundFxChange(playSound);
     }
+    private void LateUpdate()
+    {
+        if (isPlayBgmOnStart && Input.GetMouseButton(0))
+        {
+            isPlayBgmOnStart = false;
+            OnPlaySoundBG();
+        }
+    }
 
+    public void OnPlaySoundBG()
+    {
+        specialBgmSource.clip = BGM.Clip;
+        specialBgmSource.loop = true;
+        specialBgmSource.Play();
+    }
     private void OnSoundFxChange(float currentValue)
     {
         if (audioMixer == null) return;
