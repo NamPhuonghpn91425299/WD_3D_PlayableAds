@@ -320,6 +320,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1527059064722298128, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: isPlayRandomBackGroundMusic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3434679544074817591, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
       propertyPath: btnPlay
       value: 
@@ -332,6 +336,10 @@ PrefabInstance:
       propertyPath: paintingOverviewAnimation
       value: 
       objectReference: {fileID: 1929061859}
+    - target: {fileID: 5659404832386844314, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: isPlayRandomBackGroundMusic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5875118672531976744, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
       propertyPath: m_Name
       value: EndGameUILayer
@@ -9853,6 +9861,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8159797463024659113, guid: 2cf55dbcd80e40e4aa4d96afb2cb34d3, type: 3}
+      propertyPath: isPlayRandomBackGroundMusic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14421,7 +14433,6 @@ GameObject:
   - component: {fileID: 1797259878}
   - component: {fileID: 1797259887}
   - component: {fileID: 1797259886}
-  - component: {fileID: 1797259885}
   - component: {fileID: 1797259883}
   - component: {fileID: 1797259882}
   m_Layer: 0
@@ -14513,7 +14524,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6123712913693632250, guid: 98222d9ef8fbb024d980749c4b93ae4d, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -14694,27 +14705,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1797259885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797259875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7141d87ccbb06674f9fee63c8de18f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sound:
-    soundType: 0
-    Loop: 0
-    Clip: {fileID: 0}
-    ClipList: []
-  PlayOnEnable: 0
-  StopOnDisable: 0
-  playWithInteractable: 0
-  isPlayRandomBackGroundMusic: 1
 --- !u!114 &1797259886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14735,8 +14725,7 @@ MonoBehaviour:
     soundType: 4
     Loop: 1
     Clip: {fileID: 8300000, guid: 74e2552d1387c82438df497de8cd0fe8, type: 3}
-    ClipList:
-    - {fileID: 8300000, guid: 74e2552d1387c82438df497de8cd0fe8, type: 3}
+    ClipList: []
 --- !u!114 &1797259887
 MonoBehaviour:
   m_ObjectHideFlags: 0

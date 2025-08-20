@@ -31,9 +31,9 @@ public class SoundUIElement : MonoBehaviour, IPointerClickHandler, ISubmitHandle
                 case SoundType.Effect:
                     SoundManager.PlaySound(Sound);
                     break;
-                case SoundType.BackgroundMusic:
-                    PlayBGM();
-                    break;
+                //case SoundType.BackgroundMusic:
+                    //PlayBGM();
+                    //break;
             }
         }
     }

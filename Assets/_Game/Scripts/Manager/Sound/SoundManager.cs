@@ -20,7 +20,7 @@ public class SoundManager : Singleton<SoundManager>
         OnSoundChange(playMusic);
         OnSoundFxChange(playSound);
     }
-    private void LateUpdate()
+    private void Update()
     {
         if (isPlayBgmOnStart && Input.GetMouseButton(0))
         {
@@ -32,8 +32,9 @@ public class SoundManager : Singleton<SoundManager>
     public void OnPlaySoundBG()
     {
         specialBgmSource.clip = BGM.Clip;
-        specialBgmSource.loop = true;
+        specialBgmSource.loop = BGM.Loop;
         specialBgmSource.Play();
+        Debug.Log("play bgm");
     }
     private void OnSoundFxChange(float currentValue)
     {
