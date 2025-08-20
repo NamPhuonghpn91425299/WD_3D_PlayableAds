@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClickEffectManager : Singleton<ClickEffectManager>
 {
     [Header("References")]
+    public Camera camMain;
     [SerializeField] private ClickEffector _clickEffectorPrefab;
 
     [Header("Effect Pool Settings")]
