@@ -105,11 +105,7 @@ public class ModelSpawnerTool : EditorWindow
 
     private void SpawnPrefab()
     {
-        if (prefabs.Count == 0 || spawnPoint == null)
-        {
-            Debug.LogWarning("No prefab selected or spawn point not set!");
-            return;
-        }
+        GameObject lastSpawnedObject = Object.FindObjectOfType<GamePlayMeshController>()?.gameObject;
 
         // ❌ Xóa prefab cũ nếu có
         if (lastSpawnedObject != null)
@@ -122,16 +118,23 @@ public class ModelSpawnerTool : EditorWindow
         GameObject prefab = prefabs[selectedIndex];
         GameObject obj = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
 
-        obj.transform.SetParent(spawnPoint, false);
-        obj.transform.localPosition = Vector3.zero;
-        obj.transform.localRotation = Quaternion.identity;
+        if (spawnPoint != null)
+        {
+            obj.transform.SetParent(spawnPoint, false);
+            obj.transform.localPosition = Vector3.zero;
+            obj.transform.localRotation = Quaternion.identity;
+        }
+        else
+        {
+            obj.transform.SetParent(null);
+            obj.transform.position = Vector3.zero;
+            obj.transform.rotation = Quaternion.identity;
+        }
 
         Undo.RegisterCreatedObjectUndo(obj, "Spawn Prefab");
         Selection.activeObject = obj;
 
         lastSpawnedObject = obj;
-
-        Debug.Log($"Spawned prefab: {prefab.name} as child of {spawnPoint.name}");
 
         // 🔥 Gán config vào SimplePaintingController trong scene
         if (paintingConfig != null)
@@ -148,7 +151,7 @@ public class ModelSpawnerTool : EditorWindow
                 sum += count;
             }
             gamePlaySystem.cubeCountClaimed = sum / 3;
-            gamePlaySystem.totalCountClaimed = sum;
+            gamePlaySystem.totalCountClaimed = sum + 100;
             cameraController.ModelPrefab = obj;
             gamePlaySystem._levelPrefab = obj;
             fishScalesPaintingController.CurrentLevelPrefab = obj.GetComponent<GamePlayMeshController>();
