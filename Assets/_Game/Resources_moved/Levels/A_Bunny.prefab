@@ -147,7 +147,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 4798765674191316246}
   - component: {fileID: 7082525303384117576}
   - component: {fileID: 1399941234394032652}
-  - component: {fileID: 2160192049849155231}
   - component: {fileID: 2182804386963374793}
   - component: {fileID: 3059965946032449607}
   m_Layer: 0
@@ -239,27 +238,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2160192049849155231
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250371049811282767}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2182804386963374793
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -294,12 +272,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 5
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 1399941234394032652}
   HideMeshRenderer: {fileID: 160464510990643243}
@@ -307,6 +286,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7082525303384117576}
@@ -724,7 +704,6 @@ GameObject:
   - component: {fileID: 4491208865005344040}
   - component: {fileID: 8491304934956731819}
   - component: {fileID: 6213049217283056482}
-  - component: {fileID: 2040619201364035886}
   - component: {fileID: 358501253929071347}
   - component: {fileID: 2475778830141536934}
   m_Layer: 0
@@ -800,27 +779,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2040619201364035886
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523563039357535404}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &358501253929071347
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -855,12 +813,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 6213049217283056482}
   HideMeshRenderer: {fileID: 1913350808273294333}
@@ -868,6 +827,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 8491304934956731819}
@@ -1285,7 +1245,6 @@ GameObject:
   - component: {fileID: 46679879761996831}
   - component: {fileID: 3843289538933244455}
   - component: {fileID: 3973400933065406007}
-  - component: {fileID: 4042542718335620209}
   - component: {fileID: 1032996144617480054}
   - component: {fileID: 5319524214144939329}
   m_Layer: 0
@@ -1361,27 +1320,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4042542718335620209
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556246210969539158}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1032996144617480054
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1416,12 +1354,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 3973400933065406007}
   HideMeshRenderer: {fileID: 1658384099842425055}
@@ -1429,6 +1368,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3843289538933244455}
@@ -1846,7 +1786,6 @@ GameObject:
   - component: {fileID: 1319734918026196434}
   - component: {fileID: 2094508739800606780}
   - component: {fileID: 1233024216374340841}
-  - component: {fileID: 6172572800803854690}
   - component: {fileID: 7745930582556325095}
   - component: {fileID: 2467825624749853368}
   m_Layer: 0
@@ -1922,27 +1861,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6172572800803854690
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864575764444761409}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7745930582556325095
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1977,12 +1895,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
+    HightestColor: Yellow3
     ColorStack: []
   TopMeshRenderer: {fileID: 1233024216374340841}
   HideMeshRenderer: {fileID: 4171035541976813097}
@@ -1990,6 +1909,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 2094508739800606780}
@@ -2573,7 +2493,6 @@ GameObject:
   - component: {fileID: 8830561314208464939}
   - component: {fileID: 5714223324587555147}
   - component: {fileID: 4357902228083334592}
-  - component: {fileID: 1644015628209788080}
   - component: {fileID: 842302152871779763}
   - component: {fileID: 8396902591240390495}
   m_Layer: 0
@@ -2649,27 +2568,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1644015628209788080
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967105052188887815}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &842302152871779763
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2704,12 +2602,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 4357902228083334592}
   HideMeshRenderer: {fileID: 4900102032021331897}
@@ -2717,6 +2616,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5714223324587555147}
@@ -3134,7 +3034,6 @@ GameObject:
   - component: {fileID: 2040103520703467807}
   - component: {fileID: 4487200006350582106}
   - component: {fileID: 5565902166680218390}
-  - component: {fileID: 376358625302618769}
   - component: {fileID: 7979267472617734492}
   - component: {fileID: 4935962984384423813}
   m_Layer: 0
@@ -3210,27 +3109,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &376358625302618769
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985549958466226004}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7979267472617734492
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3265,12 +3143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 5565902166680218390}
   HideMeshRenderer: {fileID: 8300822133701179468}
@@ -3278,6 +3157,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4487200006350582106}
@@ -3695,7 +3575,6 @@ GameObject:
   - component: {fileID: 6932793533511864048}
   - component: {fileID: 5452732217796156905}
   - component: {fileID: 2351293443369143303}
-  - component: {fileID: 5684079179042969417}
   - component: {fileID: 389005581757028877}
   - component: {fileID: 4457038260809280194}
   m_Layer: 0
@@ -3771,27 +3650,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5684079179042969417
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022296883723856696}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &389005581757028877
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3826,12 +3684,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
+    HightestColor: Yellow3
     ColorStack: []
   TopMeshRenderer: {fileID: 2351293443369143303}
   HideMeshRenderer: {fileID: 6003560257285666624}
@@ -3839,6 +3698,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5452732217796156905}
@@ -4339,7 +4199,6 @@ GameObject:
   - component: {fileID: 3560148645206000624}
   - component: {fileID: 4350965246461190926}
   - component: {fileID: 3024662920083332138}
-  - component: {fileID: 3842265839263663643}
   - component: {fileID: 1613647879668983640}
   - component: {fileID: 5948376234190580223}
   m_Layer: 0
@@ -4415,27 +4274,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3842265839263663643
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086592322950568108}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1613647879668983640
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4470,12 +4308,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 3024662920083332138}
   HideMeshRenderer: {fileID: 3437563347609037901}
@@ -4483,6 +4322,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4350965246461190926}
@@ -5149,7 +4989,6 @@ GameObject:
   - component: {fileID: 1742093199876647805}
   - component: {fileID: 2264451625380260}
   - component: {fileID: 5415005819770528640}
-  - component: {fileID: 2885744139803624813}
   - component: {fileID: 1824152349682160684}
   - component: {fileID: 8895232978381555501}
   m_Layer: 0
@@ -5225,27 +5064,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2885744139803624813
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541256713823430089}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1824152349682160684
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5280,12 +5098,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 5415005819770528640}
   HideMeshRenderer: {fileID: 5763636896078749996}
@@ -5293,6 +5112,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 2264451625380260}
@@ -5793,7 +5613,6 @@ GameObject:
   - component: {fileID: 703615256758400906}
   - component: {fileID: 875124996697770632}
   - component: {fileID: 6203996422418757070}
-  - component: {fileID: 4291020010056158745}
   - component: {fileID: 7784580775126121377}
   - component: {fileID: 3455621506628488146}
   m_Layer: 0
@@ -5869,27 +5688,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4291020010056158745
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734203075129734429}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7784580775126121377
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5924,12 +5722,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
+    HightestColor: Yellow3
     ColorStack: []
   TopMeshRenderer: {fileID: 6203996422418757070}
   HideMeshRenderer: {fileID: 786596281365664425}
@@ -5937,6 +5736,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 875124996697770632}
@@ -6490,7 +6290,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -6755,7 +6555,6 @@ GameObject:
   - component: {fileID: 4849478609578185466}
   - component: {fileID: 1818442467570510333}
   - component: {fileID: 691099651211034674}
-  - component: {fileID: 7218326913964204780}
   - component: {fileID: 5252682040700734018}
   - component: {fileID: 8293262272337475476}
   m_Layer: 0
@@ -6831,27 +6630,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7218326913964204780
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2292727312050786834}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5252682040700734018
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6886,12 +6664,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 691099651211034674}
   HideMeshRenderer: {fileID: 1850377621296304297}
@@ -6899,6 +6678,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1818442467570510333}
@@ -7316,7 +7096,6 @@ GameObject:
   - component: {fileID: 7612281542568817285}
   - component: {fileID: 3315131711477484263}
   - component: {fileID: 7304204187107901110}
-  - component: {fileID: 6947756823639335517}
   - component: {fileID: 4214435399102312029}
   - component: {fileID: 2856191041527068541}
   m_Layer: 0
@@ -7392,27 +7171,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6947756823639335517
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2297201782889563914}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4214435399102312029
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7447,12 +7205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 8
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 7304204187107901110}
   HideMeshRenderer: {fileID: 7451967520746026853}
@@ -7460,6 +7219,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3315131711477484263}
@@ -8047,24 +7807,15 @@ MonoBehaviour:
     CurrentcyLevel: 0
     DynamicDif: 0
     ColorList:
-    - {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
-    - {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
-    - {r: 0.11372549, g: 0.6666667, b: 0.27058825, a: 1}
-    - {r: 0.19215687, g: 0.15294118, b: 0.42352942, a: 1}
-    - {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
-    - {r: 1, g: 0.49019608, b: 0, a: 1}
-    - {r: 0.54509807, g: 0.2627451, b: 0.20784314, a: 1}
-    - {r: 0.5372549, g: 0.8666667, b: 0.2784314, a: 1}
+    - White
+    - Red3
+    - Green2
+    - Purple1
+    - Yellow3
+    - Orange3
+    - Brown2
+    - Green3
     ColorCountList: 12000000120000000f000000090000000c0000000c0000000c0000000c000000
-    ColorListData:
-    - {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
-    - {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
-    - {r: 0.11372549, g: 0.6666667, b: 0.27058825, a: 1}
-    - {r: 0.19215687, g: 0.15294118, b: 0.42352942, a: 1}
-    - {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
-    - {r: 1, g: 0.49019608, b: 0, a: 1}
-    - {r: 0.54509807, g: 0.2627451, b: 0.20784314, a: 1}
-    - {r: 0.5372549, g: 0.8666667, b: 0.2784314, a: 1}
     NameColorList:
     - White
     - Red3
@@ -8387,7 +8138,6 @@ GameObject:
   - component: {fileID: 5652284397983806988}
   - component: {fileID: 3895279666498275620}
   - component: {fileID: 4558258674865676079}
-  - component: {fileID: 368520003368872903}
   - component: {fileID: 7161429491983064261}
   - component: {fileID: 8479754572081094138}
   m_Layer: 0
@@ -8463,27 +8213,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &368520003368872903
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354320469982025517}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7161429491983064261
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8518,12 +8247,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.11372549, g: 0.6666667, b: 0.27058825, a: 1}
+    HightestColor: Green2
     ColorStack: []
   TopMeshRenderer: {fileID: 4558258674865676079}
   HideMeshRenderer: {fileID: 6086763990464663858}
@@ -8531,6 +8261,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3895279666498275620}
@@ -9197,7 +8928,6 @@ GameObject:
   - component: {fileID: 7972426656500245416}
   - component: {fileID: 846734767153143432}
   - component: {fileID: 2633566153596598636}
-  - component: {fileID: 3454823191697334923}
   - component: {fileID: 2909236158754153505}
   - component: {fileID: 4785503332443653585}
   m_Layer: 0
@@ -9273,27 +9003,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3454823191697334923
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3700374322721963501}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2909236158754153505
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9328,12 +9037,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 2633566153596598636}
   HideMeshRenderer: {fileID: 5093171607099962018}
@@ -9341,6 +9051,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 846734767153143432}
@@ -10309,7 +10020,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -10408,7 +10119,6 @@ GameObject:
   - component: {fileID: 3842858470018662269}
   - component: {fileID: 6882525027827672267}
   - component: {fileID: 2358028337891827450}
-  - component: {fileID: 7510223490959727753}
   - component: {fileID: 653591350818747656}
   - component: {fileID: 4624800648256069047}
   m_Layer: 0
@@ -10484,27 +10194,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7510223490959727753
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4156168653609755110}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &653591350818747656
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10539,12 +10228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 2358028337891827450}
   HideMeshRenderer: {fileID: 5314017000436632647}
@@ -10552,6 +10242,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 6882525027827672267}
@@ -11052,7 +10743,6 @@ GameObject:
   - component: {fileID: 2255466051990387319}
   - component: {fileID: 5130820223120797356}
   - component: {fileID: 8252976155538571122}
-  - component: {fileID: 4595681667185586621}
   - component: {fileID: 3365054090859444298}
   - component: {fileID: 7009332452534792694}
   m_Layer: 0
@@ -11128,27 +10818,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4595681667185586621
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4399074300747172929}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3365054090859444298
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11183,12 +10852,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8252976155538571122}
   HideMeshRenderer: {fileID: 5985721012698317697}
@@ -11196,6 +10866,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls:
   - {fileID: 415607737937300503}
   - {fileID: 8219207569078630854}
@@ -11617,7 +11288,6 @@ GameObject:
   - component: {fileID: 6494959389461403405}
   - component: {fileID: 6688216099780314370}
   - component: {fileID: 2864342863172000866}
-  - component: {fileID: 3189960008038289254}
   - component: {fileID: 4661267829229968348}
   - component: {fileID: 7523779022803656572}
   m_Layer: 0
@@ -11693,27 +11363,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3189960008038289254
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4501532256063846045}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4661267829229968348
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11748,12 +11397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 2864342863172000866}
   HideMeshRenderer: {fileID: 8526070057655158802}
@@ -11761,6 +11411,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 6688216099780314370}
@@ -12178,7 +11829,6 @@ GameObject:
   - component: {fileID: 11688263651977137}
   - component: {fileID: 1777548245670420408}
   - component: {fileID: 7393518976702268635}
-  - component: {fileID: 42240524359806415}
   - component: {fileID: 5433605472832845556}
   - component: {fileID: 3025202990358632242}
   m_Layer: 0
@@ -12254,27 +11904,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &42240524359806415
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4601134850120904349}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5433605472832845556
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12309,12 +11938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 7393518976702268635}
   HideMeshRenderer: {fileID: 5044684154094643811}
@@ -12322,6 +11952,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1777548245670420408}
@@ -12739,7 +12370,6 @@ GameObject:
   - component: {fileID: 5316690248859129507}
   - component: {fileID: 6465977737160985197}
   - component: {fileID: 7617960948254757252}
-  - component: {fileID: 7969789137026337954}
   - component: {fileID: 2689355709620715035}
   - component: {fileID: 6898510938604365231}
   m_Layer: 0
@@ -12815,27 +12445,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7969789137026337954
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4695847295227290358}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2689355709620715035
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12870,12 +12479,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7617960948254757252}
   HideMeshRenderer: {fileID: 8429482674763298047}
@@ -12883,6 +12493,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 6465977737160985197}
@@ -13300,7 +12911,6 @@ GameObject:
   - component: {fileID: 7200701469461230745}
   - component: {fileID: 8657480120524952390}
   - component: {fileID: 8261343344690280625}
-  - component: {fileID: 3989801591018001830}
   - component: {fileID: 4580033325830059003}
   - component: {fileID: 8533001868606219059}
   m_Layer: 0
@@ -13376,27 +12986,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3989801591018001830
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4736568057685713175}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4580033325830059003
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13431,12 +13020,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 8261343344690280625}
   HideMeshRenderer: {fileID: 2799655544635859068}
@@ -13444,6 +13034,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 8657480120524952390}
@@ -13861,7 +13452,6 @@ GameObject:
   - component: {fileID: 1823184151022868537}
   - component: {fileID: 7123732120554853815}
   - component: {fileID: 3137558866745952946}
-  - component: {fileID: 8411343119987699917}
   - component: {fileID: 7166398773969465329}
   - component: {fileID: 1542988436681268534}
   m_Layer: 0
@@ -13937,27 +13527,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &8411343119987699917
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4758088282527196527}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7166398773969465329
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13992,12 +13561,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 3137558866745952946}
   HideMeshRenderer: {fileID: 2985109064600023779}
@@ -14005,6 +13575,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7123732120554853815}
@@ -14422,7 +13993,6 @@ GameObject:
   - component: {fileID: 1348353275676704588}
   - component: {fileID: 4082883152433728159}
   - component: {fileID: 8694883704761230639}
-  - component: {fileID: 3078954704516735044}
   - component: {fileID: 8559595921416086157}
   - component: {fileID: 3711435174097605204}
   m_Layer: 0
@@ -14498,27 +14068,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3078954704516735044
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4827509536912519675}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &8559595921416086157
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14553,12 +14102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8694883704761230639}
   HideMeshRenderer: {fileID: 3516652959536027986}
@@ -14566,6 +14116,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4082883152433728159}
@@ -15149,7 +14700,6 @@ GameObject:
   - component: {fileID: 8123421859557363270}
   - component: {fileID: 7580806758631174590}
   - component: {fileID: 1635745002733683847}
-  - component: {fileID: 2129447485308619194}
   - component: {fileID: 3296451287389674039}
   - component: {fileID: 8308700913134149183}
   m_Layer: 0
@@ -15225,27 +14775,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2129447485308619194
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5175383010819688019}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3296451287389674039
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15280,12 +14809,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 1635745002733683847}
   HideMeshRenderer: {fileID: 3474883892962088959}
@@ -15293,6 +14823,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7580806758631174590}
@@ -15846,7 +15377,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -16028,7 +15559,6 @@ GameObject:
   - component: {fileID: 4621728624014468635}
   - component: {fileID: 3024748521537537410}
   - component: {fileID: 8408628602419609690}
-  - component: {fileID: 5110586595587350564}
   - component: {fileID: 39543720794703702}
   - component: {fileID: 5927491209076157941}
   m_Layer: 0
@@ -16104,27 +15634,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5110586595587350564
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5752959919277828276}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &39543720794703702
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16159,12 +15668,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8408628602419609690}
   HideMeshRenderer: {fileID: 1619977870013650357}
@@ -16172,6 +15682,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3024748521537537410}
@@ -16589,7 +16100,6 @@ GameObject:
   - component: {fileID: 7548422299529636954}
   - component: {fileID: 2091422674286170768}
   - component: {fileID: 807371752644676180}
-  - component: {fileID: 8935268606892412472}
   - component: {fileID: 4420675192151860580}
   - component: {fileID: 2338395365119432777}
   m_Layer: 0
@@ -16665,27 +16175,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &8935268606892412472
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5757886315880177002}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4420675192151860580
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16720,12 +16209,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 807371752644676180}
   HideMeshRenderer: {fileID: 3733884303596027754}
@@ -16733,6 +16223,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 2091422674286170768}
@@ -17565,7 +17056,6 @@ GameObject:
   - component: {fileID: 6564576903411140911}
   - component: {fileID: 7215278923891244450}
   - component: {fileID: 8505119024068425775}
-  - component: {fileID: 5820630754824188930}
   - component: {fileID: 3043231249291083098}
   - component: {fileID: 7437076603158005572}
   m_Layer: 0
@@ -17641,27 +17131,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5820630754824188930
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6408640918033770027}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3043231249291083098
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17696,12 +17165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8505119024068425775}
   HideMeshRenderer: {fileID: 6425319485349172220}
@@ -17709,6 +17179,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7215278923891244450}
@@ -18126,7 +17597,6 @@ GameObject:
   - component: {fileID: 2339380877498879358}
   - component: {fileID: 5297111229413721756}
   - component: {fileID: 1561195182338197257}
-  - component: {fileID: 9076833303721369096}
   - component: {fileID: 4001075545571675508}
   - component: {fileID: 6044592740277616248}
   m_Layer: 0
@@ -18202,27 +17672,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &9076833303721369096
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6524804749597517698}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4001075545571675508
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18257,12 +17706,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 1561195182338197257}
   HideMeshRenderer: {fileID: 2748108227860249434}
@@ -18270,6 +17720,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5297111229413721756}
@@ -18770,7 +18221,6 @@ GameObject:
   - component: {fileID: 1202717040931488538}
   - component: {fileID: 8504708649382269302}
   - component: {fileID: 8898658743967379869}
-  - component: {fileID: 4829063804434688518}
   - component: {fileID: 6730458012281664591}
   - component: {fileID: 8385705555940266198}
   m_Layer: 0
@@ -18846,27 +18296,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4829063804434688518
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556495107329961925}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &6730458012281664591
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18901,12 +18330,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8898658743967379869}
   HideMeshRenderer: {fileID: 3883044182146310233}
@@ -18914,6 +18344,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 8504708649382269302}
@@ -19331,7 +18762,6 @@ GameObject:
   - component: {fileID: 5178235129911207331}
   - component: {fileID: 4288538334247135097}
   - component: {fileID: 1424333496039355234}
-  - component: {fileID: 4485070107389052359}
   - component: {fileID: 3805775411601585312}
   - component: {fileID: 6973568805851983299}
   m_Layer: 0
@@ -19407,27 +18837,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4485070107389052359
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6662470227922420439}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3805775411601585312
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19462,12 +18871,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
+    HightestColor: Yellow3
     ColorStack: []
   TopMeshRenderer: {fileID: 1424333496039355234}
   HideMeshRenderer: {fileID: 5878946556810619260}
@@ -19475,6 +18885,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4288538334247135097}
@@ -20058,7 +19469,6 @@ GameObject:
   - component: {fileID: 3936015356286053890}
   - component: {fileID: 2979857715422398975}
   - component: {fileID: 3055740262671784293}
-  - component: {fileID: 6970955928937362688}
   - component: {fileID: 8866266231539361959}
   - component: {fileID: 8122582869282472951}
   m_Layer: 0
@@ -20134,27 +19544,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6970955928937362688
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7274166197301630711}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &8866266231539361959
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20189,12 +19578,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 3055740262671784293}
   HideMeshRenderer: {fileID: 4093326901613576927}
@@ -20202,6 +19592,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 2979857715422398975}
@@ -20619,7 +20010,6 @@ GameObject:
   - component: {fileID: 6376499002875199691}
   - component: {fileID: 1314867163426393499}
   - component: {fileID: 5589520568910017078}
-  - component: {fileID: 7752853139168176790}
   - component: {fileID: 6140945550409540005}
   - component: {fileID: 8339152073713040091}
   m_Layer: 0
@@ -20695,27 +20085,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7752853139168176790
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7358219272131566384}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &6140945550409540005
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20750,12 +20119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 8
-    HightestColor: {r: 0.19215687, g: 0.15294118, b: 0.42352942, a: 1}
+    HightestColor: Purple1
     ColorStack: []
   TopMeshRenderer: {fileID: 5589520568910017078}
   HideMeshRenderer: {fileID: 3416880019910494885}
@@ -20763,6 +20133,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1314867163426393499}
@@ -21263,7 +20634,6 @@ GameObject:
   - component: {fileID: 4287134656601281884}
   - component: {fileID: 229658001031640192}
   - component: {fileID: 9210143078489517126}
-  - component: {fileID: 7455020400770699476}
   - component: {fileID: 3034898996081158231}
   - component: {fileID: 7334562756080355690}
   m_Layer: 0
@@ -21339,27 +20709,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7455020400770699476
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7425410234687740507}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3034898996081158231
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21394,12 +20743,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 9210143078489517126}
   HideMeshRenderer: {fileID: 7823261109368090525}
@@ -21407,6 +20757,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 229658001031640192}
@@ -21824,7 +21175,6 @@ GameObject:
   - component: {fileID: 4216638644519422812}
   - component: {fileID: 3596075400662011514}
   - component: {fileID: 3996048904492377559}
-  - component: {fileID: 5205474177519635725}
   - component: {fileID: 2799559379177190371}
   - component: {fileID: 1664227759385661215}
   m_Layer: 0
@@ -21900,27 +21250,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5205474177519635725
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7547505701790412510}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2799559379177190371
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21955,12 +21284,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
+    HightestColor: Yellow3
     ColorStack: []
   TopMeshRenderer: {fileID: 3996048904492377559}
   HideMeshRenderer: {fileID: 2517014083185506036}
@@ -21968,6 +21298,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 3596075400662011514}
@@ -22385,7 +21716,6 @@ GameObject:
   - component: {fileID: 1197021087154743883}
   - component: {fileID: 5516994507663913924}
   - component: {fileID: 3755256262014037398}
-  - component: {fileID: 6907669228717926460}
   - component: {fileID: 8443709291448783667}
   - component: {fileID: 2294644707488550395}
   m_Layer: 0
@@ -22461,27 +21791,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6907669228717926460
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7823350215920327788}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &8443709291448783667
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22516,12 +21825,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
+    HightestColor: Yellow3
     ColorStack: []
   TopMeshRenderer: {fileID: 3755256262014037398}
   HideMeshRenderer: {fileID: 4803838925192968073}
@@ -22529,6 +21839,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5516994507663913924}
@@ -22946,7 +22257,6 @@ GameObject:
   - component: {fileID: 1097987972043009962}
   - component: {fileID: 1348743764227262297}
   - component: {fileID: 6246136132776998392}
-  - component: {fileID: 821167963082748179}
   - component: {fileID: 5128040178182209591}
   - component: {fileID: 9169546571606770196}
   m_Layer: 0
@@ -23022,27 +22332,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &821167963082748179
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7969021386253491751}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5128040178182209591
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23077,12 +22366,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 6246136132776998392}
   HideMeshRenderer: {fileID: 2320478818043012827}
@@ -23090,6 +22380,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1348743764227262297}
@@ -23590,7 +22881,6 @@ GameObject:
   - component: {fileID: 6638774897064108132}
   - component: {fileID: 238393462332175390}
   - component: {fileID: 1599238623325826028}
-  - component: {fileID: 6474887238548732200}
   - component: {fileID: 336723887130756609}
   - component: {fileID: 6725484114627226576}
   m_Layer: 0
@@ -23666,27 +22956,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6474887238548732200
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8193522575574993594}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &336723887130756609
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23721,12 +22990,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 1599238623325826028}
   HideMeshRenderer: {fileID: 5531591803794670457}
@@ -23734,6 +23004,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 238393462332175390}
@@ -24234,7 +23505,6 @@ GameObject:
   - component: {fileID: 229743175149799794}
   - component: {fileID: 4836514561109363436}
   - component: {fileID: 5759730967394449434}
-  - component: {fileID: 708534596973151940}
   - component: {fileID: 2427402541606777327}
   - component: {fileID: 823220273115812661}
   m_Layer: 0
@@ -24310,27 +23580,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &708534596973151940
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8276807972324302846}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2427402541606777327
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24365,12 +23614,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 1, g: 0.4509804, b: 0.47843137, a: 1}
+    HightestColor: Red3
     ColorStack: []
   TopMeshRenderer: {fileID: 5759730967394449434}
   HideMeshRenderer: {fileID: 791009019730137208}
@@ -24378,6 +23628,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4836514561109363436}
@@ -24795,7 +24046,6 @@ GameObject:
   - component: {fileID: 6426771746539063732}
   - component: {fileID: 7408143364982336064}
   - component: {fileID: 2903757905489916730}
-  - component: {fileID: 7942950431633335534}
   - component: {fileID: 1323635500065303681}
   - component: {fileID: 5137072619903171911}
   m_Layer: 0
@@ -24871,27 +24121,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7942950431633335534
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8465077105134960356}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1323635500065303681
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24926,12 +24155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 2903757905489916730}
   HideMeshRenderer: {fileID: 8570851348259367418}
@@ -24939,6 +24169,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 7408143364982336064}
@@ -25356,7 +24587,6 @@ GameObject:
   - component: {fileID: 923170699524938626}
   - component: {fileID: 4310147509170575204}
   - component: {fileID: 4579726714994237142}
-  - component: {fileID: 2749895623644080181}
   - component: {fileID: 81730023481897094}
   - component: {fileID: 1432265293794298555}
   m_Layer: 0
@@ -25432,27 +24662,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2749895623644080181
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8569279225383125879}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &81730023481897094
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25487,12 +24696,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 5
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 4579726714994237142}
   HideMeshRenderer: {fileID: 1796516482127414429}
@@ -25500,6 +24710,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4310147509170575204}
@@ -26000,7 +25211,6 @@ GameObject:
   - component: {fileID: 7762332570143984416}
   - component: {fileID: 8704972944302593493}
   - component: {fileID: 4454101281256112277}
-  - component: {fileID: 4328118546383949512}
   - component: {fileID: 5349759135560662764}
   - component: {fileID: 6111793787096889549}
   m_Layer: 0
@@ -26076,27 +25286,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4328118546383949512
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8714998666252882997}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5349759135560662764
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26131,12 +25320,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 1, g: 0.93333334, b: 0.8784314, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 4454101281256112277}
   HideMeshRenderer: {fileID: 8107541028078865770}
@@ -26144,6 +25334,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 8704972944302593493}
@@ -26561,7 +25752,6 @@ GameObject:
   - component: {fileID: 4039529693248677515}
   - component: {fileID: 5776201323088782328}
   - component: {fileID: 3441591258635753678}
-  - component: {fileID: 7503459166212820036}
   - component: {fileID: 8381561996962834646}
   - component: {fileID: 8540027268086716085}
   m_Layer: 0
@@ -26637,27 +25827,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7503459166212820036
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801297896620160070}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &8381561996962834646
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26692,12 +25861,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9490196, g: 0.76862746, b: 0, a: 1}
+    HightestColor: Yellow3
     ColorStack: []
   TopMeshRenderer: {fileID: 3441591258635753678}
   HideMeshRenderer: {fileID: 3813749021297580596}
@@ -26705,6 +25875,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 5776201323088782328}
@@ -27122,7 +26293,6 @@ GameObject:
   - component: {fileID: 666876287730045861}
   - component: {fileID: 519950065178989960}
   - component: {fileID: 6299829606329767445}
-  - component: {fileID: 7634983594442116544}
   - component: {fileID: 3179068735560199405}
   - component: {fileID: 2733374189778922087}
   m_Layer: 0
@@ -27198,27 +26368,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7634983594442116544
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8824339201596987084}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3179068735560199405
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27253,12 +26402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 6
-    HightestColor: {r: 0.11372549, g: 0.6666667, b: 0.27058825, a: 1}
+    HightestColor: Green2
     ColorStack: []
   TopMeshRenderer: {fileID: 6299829606329767445}
   HideMeshRenderer: {fileID: 5588906936913229856}
@@ -27266,6 +26416,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
+  x: 0
   DecoreControls: []
   RemovedDecoreControls: []
   MeshFilter: {fileID: 519950065178989960}

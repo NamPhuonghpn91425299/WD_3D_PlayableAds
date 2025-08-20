@@ -305,7 +305,7 @@ public class WoolControl : MonoBehaviour
         yield return null;
         _isPlayAnim = false;
 
-        Debug.Log($"=== LEN RÚT === Len thứ {CurrentWoolInSequence - 1} đã rút xong! Còn lại: {totalColor} lớp len trên mesh này");
+        //Debug.Log($"=== LEN RÚT === Len thứ {CurrentWoolInSequence - 1} đã rút xong! Còn lại: {totalColor} lớp len trên mesh này");
 
         // Kiểm tra xem đã rút hết len chưa để kết thúc game
         if (CheckWoolCountEndGame())

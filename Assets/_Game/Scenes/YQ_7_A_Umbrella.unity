@@ -14241,7 +14241,7 @@ MonoBehaviour:
   btnReCenterModel: {fileID: 4284353896370078690}
   ZoomSlider: {fileID: 4336709588875251284}
   maxZoom: 35
-  minZoom: 60
+  minZoom: 52
   ZoomCameraData: {fileID: 11400000, guid: e792702f91eea8b4c848453f10e77e97, type: 2}
   BackGround: {fileID: 295508402}
   SpawnPoint: {fileID: 935084528}
@@ -17868,6 +17868,7 @@ SceneRoots:
   - {fileID: 197102499}
   - {fileID: 1797259876}
   - {fileID: 1482729335131476903}
+  - {fileID: 1897736380}
   - {fileID: 1329309417}
   - {fileID: 385873971}
   - {fileID: 1171821273}
@@ -17875,6 +17876,5 @@ SceneRoots:
   - {fileID: 1659612415}
   - {fileID: 1107262014}
   - {fileID: 1852848274}
-  - {fileID: 1897736380}
   - {fileID: 1444754245}
   - {fileID: 370797986}
