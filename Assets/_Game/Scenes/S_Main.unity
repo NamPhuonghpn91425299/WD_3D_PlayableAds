@@ -834,7 +834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &986590946
 Transform:
   m_ObjectHideFlags: 0
@@ -1823,6 +1823,7 @@ MonoBehaviour:
   DraggingSpeed: 0.25
   SmoothFactor: 8
   ZoomStyle: 1
+  AudioSourceBG: {fileID: 986590945}
   layerMask:
     serializedVersion: 2
     m_Bits: 499

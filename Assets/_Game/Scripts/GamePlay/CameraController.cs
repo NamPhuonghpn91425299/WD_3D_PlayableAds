@@ -98,6 +98,7 @@ public class CameraController : Singleton<CameraController>
     public  Action       OnHandleDragWoolAction;
     private Vector3      LocalScaleBackGroundDefault = new Vector3(40f, 40f, 1);
     public Action OnEndGameIntro;
+    public GameObject AudioSourceBG;
 
     #endregion
 
@@ -226,6 +227,11 @@ public class CameraController : Singleton<CameraController>
     private void HandleTap(Vector2 pos)
     {
         if (BlockHandTap) return;
+        if (!AudioSourceBG.activeSelf)
+        {
+            AudioSourceBG.SetActive(true);
+            
+        }
 
         Ray ray = _mainCamera.ScreenPointToRay(pos);
 
