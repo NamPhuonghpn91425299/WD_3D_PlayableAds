@@ -451,16 +451,18 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
             //GoToStore();
             StartCoroutine(OnEndGameAction(true));
             Debug.Log("End Game Win");
-              Luna.Unity.Playable.InstallFullGame();
+            Luna.Unity.Playable.InstallFullGame();
             Luna.Unity.LifeCycle.GameEnded();
+            SoundManager.Instance.PlayOneShot(winSound, 1);
         }
-        
+
         // Điều kiện thua: Hàng đợi bị đầy
         if (_queueCount >= CurrentQueueTargets.Count && TotalCubeActive == CubeReadyCount)
         {
             StartCoroutine(OnEndGameAction(false));
-              Luna.Unity.Playable.InstallFullGame();
+            Luna.Unity.Playable.InstallFullGame();
             Luna.Unity.LifeCycle.GameEnded();
+            SoundManager.Instance.PlayOneShot(loseSound, 1);
         }
     }
 

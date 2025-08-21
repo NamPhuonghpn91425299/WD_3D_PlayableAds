@@ -16,9 +16,13 @@ public class HandleTapByPointSelection : MonoBehaviour
     public WoolPointData[] woolPoints;
 
     public HandController handScript;
+
+    [SerializeField] private GameObject AudioSourceBG;
   
     [SerializeField] private float _tapRadius = 0.2f;
     public GameObject UIWIn;
+
+    public AudioClip winSound;
 
     private void Start()
     {
@@ -48,6 +52,10 @@ public class HandleTapByPointSelection : MonoBehaviour
 
     private void HandleTap(Vector2 screenPos)
     {
+        if (!AudioSourceBG.activeSelf)
+        {
+            AudioSourceBG.SetActive(true);
+        }
         if (woolPoints.Length == 0) return;
 
         Ray ray = _mainCamera.ScreenPointToRay(screenPos);
@@ -115,7 +123,9 @@ public class HandleTapByPointSelection : MonoBehaviour
         if (selectedIndex >= woolPoints.Length )
         {
             yield return new WaitForSeconds(2f);
+            SoundManager.Instance.PlayOneShot(winSound, 1);
             GamePlaySystem.Instance.WinGame();
+
             UIWIn.SetActive(true);
             yield break;
         }

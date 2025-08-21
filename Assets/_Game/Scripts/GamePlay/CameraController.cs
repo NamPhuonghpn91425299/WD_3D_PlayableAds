@@ -122,7 +122,7 @@ public class CameraController : Singleton<CameraController>
 
     private void Start()
     {
-        InputInteractable.OnTap  += HandleTap;
+        //InputInteractable.OnTap  += HandleTap;
         InputInteractable.OnHold += HandleHold;
         //InputInteractable.OnDragAction += HandleDrag;
         InputInteractable.OnDragAction += HandleDragSmoothly;

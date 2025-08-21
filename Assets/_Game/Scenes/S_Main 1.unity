@@ -2079,7 +2079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &986590946
 Transform:
   m_ObjectHideFlags: 0
@@ -3256,8 +3256,10 @@ MonoBehaviour:
     woolControl: {fileID: 1322087739355121928}
     referenceTransform: {fileID: 7411666763325678263}
   handScript: {fileID: 4659284094914571615}
+  AudioSourceBG: {fileID: 986590945}
   _tapRadius: 0.2
   UIWIn: {fileID: 1282611390}
+  winSound: {fileID: 8300000, guid: 699b58fd2fb02134599510ff9f3fa8b0, type: 3}
   handMoveSpeed: 5
   arrivalThreshold: 0.1
 --- !u!1 &1454102132
@@ -4202,6 +4204,7 @@ MonoBehaviour:
   DraggingSpeed: 0.25
   SmoothFactor: 8
   ZoomStyle: 1
+  AudioSourceBG: {fileID: 986590945}
   layerMask:
     serializedVersion: 2
     m_Bits: 499
@@ -4454,6 +4457,7 @@ MonoBehaviour:
   handController: {fileID: 4659284094914571615}
   cubeCountClaimed: 8
   totalCountClaimed: 9
+  endGamePanel: {fileID: 1282611390}
   CameraController: {fileID: 1797259878}
   BoxChainReaction3D: {fileID: 1374435474}
   CurrentCubeTargets:
