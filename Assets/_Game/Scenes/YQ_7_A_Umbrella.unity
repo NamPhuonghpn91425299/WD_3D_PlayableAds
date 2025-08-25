@@ -15228,6 +15228,10 @@ PrefabInstance:
       value: ClickEffect
       objectReference: {fileID: 0}
     - target: {fileID: 5333680770087700757, guid: bae6a75d2f5371541be2e11531ebf90e, type: 3}
+      propertyPath: camMain
+      value: 
+      objectReference: {fileID: 1147096126}
+    - target: {fileID: 5333680770087700757, guid: bae6a75d2f5371541be2e11531ebf90e, type: 3}
       propertyPath: BrightnessDifference
       value: 1.6
       objectReference: {fileID: 0}
@@ -17874,8 +17878,8 @@ SceneRoots:
   - {fileID: 385873971}
   - {fileID: 1171821273}
   - {fileID: 1147096127}
-  - {fileID: 1659612415}
   - {fileID: 1107262014}
+  - {fileID: 1659612415}
   - {fileID: 1852848274}
   - {fileID: 1444754245}
   - {fileID: 370797986}
