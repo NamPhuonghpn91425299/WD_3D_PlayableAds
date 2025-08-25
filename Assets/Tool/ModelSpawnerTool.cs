@@ -143,6 +143,7 @@ public class ModelSpawnerTool : EditorWindow
             FishScalesPaintingController fishScalesPaintingController = Object.FindObjectOfType<FishScalesPaintingController>();
             CameraController cameraController = Object.FindObjectOfType<CameraController>();
             GamePlaySystem gamePlaySystem = Object.FindObjectOfType<GamePlaySystem>();
+            ProcessUI processUI = Object.FindObjectOfType<ProcessUI>();
 
             List<int> colors = obj.GetComponent<GamePlayMeshController>().LevelData.ColorCountList;
             int sum = 0;
@@ -150,6 +151,7 @@ public class ModelSpawnerTool : EditorWindow
             {
                 sum += count;
             }
+            processUI.totalMesh = sum;
             gamePlaySystem.cubeCountClaimed = sum / 3;
             gamePlaySystem.totalCountClaimed = sum + 100;
             cameraController.ModelPrefab = obj;

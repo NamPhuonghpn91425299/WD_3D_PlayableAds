@@ -105,6 +105,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// Đếm tổng số khối len đã được thu thập (mỗi ô chứa đầy tương đương 3 khối).
     /// </summary>
     private int _currentColorCollected;
+    public int CurrentColorCollected => _currentColorCollected;
 
     [Tooltip("Số lượng ô chứa (CubeTarget) mặc định khi bắt đầu level.")] [SerializeField]
     private int _cubeTargetCountDefault = 4;
