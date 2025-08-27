@@ -214,6 +214,7 @@ public class WoolControl : MonoBehaviour
             _spiralPathUVY == null || _topMaterialPropertyBlock == null || !BoxCollider || MeshObjectData == null
             || MeshObjectData.ColorStack == null || MeshObjectData.ColorStack.Count == 0) yield break;
         if (!GamePlaySystem.Instance.OnClickMesh(transform, _spiralPath, _currentColor)) yield break;
+        
         StartCoroutine(AnimateThreshold(TopMeshRenderer.material, .045f,.15f));
         _isPlayAnim = true;
         //GamePlaySystem.Instance.ActiveHandController(false);
@@ -240,7 +241,22 @@ public class WoolControl : MonoBehaviour
 
         var totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
         float timer = 0f;
-
+        
+        // Rung giật cục trong suốt thời gian rút len
+        int vibrationDuration = Mathf.RoundToInt(totalTime * 1000f); // Chuyển seconds sang milliseconds
+        
+        // Sử dụng VibrationPatterns class với kiểu Pulse (giật cục)
+        VibrationPatterns.Vibrate(VibrationPatterns.PatternType.Pulse, vibrationDuration);
+// #if !UNITY_EDITOR
+//         int vibrationDuration = Mathf.RoundToInt(totalTime * 1000f); // Chuyển seconds sang milliseconds
+//         string jsCode = $@"
+//             if (navigator.vibrate) {{
+//                 navigator.vibrate({vibrationDuration}); // Rung trong {vibrationDuration}ms
+//                 console.log('Vibrating for wool pull: ' + {vibrationDuration} + 'ms');
+//             }}
+//         ";
+//         Application.ExternalEval(jsCode);
+// #endif
 
 
         float minUVY = _spiralPathUVY.Min();
@@ -291,6 +307,10 @@ public class WoolControl : MonoBehaviour
             _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
             _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
             _currentColor = nextColor;
+            
+            // Rung nhẹ khi còn lớp len tiếp theo - dùng pattern DoubleTap
+            //VibrationPatterns.Vibrate(VibrationPatterns.PatternType.DoubleTap);
+            
             StartCoroutine(AnimateThreshold(TopMeshRenderer.material, .045f,.15f));
         }
 
