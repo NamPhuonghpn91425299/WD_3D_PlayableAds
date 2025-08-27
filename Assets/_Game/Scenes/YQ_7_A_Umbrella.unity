@@ -6235,6 +6235,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2359396011968308810, guid: e7b8b0b5c42cc404185d4faa1c391dba, type: 3}
+      propertyPath: CurrentLevelPrefab
+      value: 
+      objectReference: {fileID: 1155892101}
+    - target: {fileID: 2359396011968308810, guid: e7b8b0b5c42cc404185d4faa1c391dba, type: 3}
+      propertyPath: CurrentPaintingConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d6aa2b080d3c8840bc606667c606e94, type: 2}
     - target: {fileID: 2370125099821152292, guid: e7b8b0b5c42cc404185d4faa1c391dba, type: 3}
       propertyPath: m_Layer
       value: 7
