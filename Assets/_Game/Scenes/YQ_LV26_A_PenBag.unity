@@ -13051,6 +13051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClickEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 5333680770087700757, guid: bae6a75d2f5371541be2e11531ebf90e, type: 3}
+      propertyPath: camMain
+      value: 
+      objectReference: {fileID: 1147096126}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14408,7 +14412,7 @@ MonoBehaviour:
   btnReCenterModel: {fileID: 1537710602}
   ZoomSlider: {fileID: 1537710601}
   maxZoom: 35
-  minZoom: 60
+  minZoom: 52
   ZoomCameraData: {fileID: 11400000, guid: e792702f91eea8b4c848453f10e77e97, type: 2}
   BackGround: {fileID: 295508402}
   SpawnPoint: {fileID: 935084528}

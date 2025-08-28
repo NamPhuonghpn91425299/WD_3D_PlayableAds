@@ -39,6 +39,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     public int totalCountClaimed = 9;
 
     private Coroutine _coroutineEndGame;
+    private bool CanRunEndGame = true;
 
     public int TotalCountClaimed
     {
@@ -521,7 +522,9 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
     public void EndGameTotalCountWool()
     {
-        if (_isPLayAnimUsingRainBow) return;
+        if (_isPLayAnimUsingRainBow || !CanRunEndGame)
+            return;
+        
         if (_coroutineEndGame == null)
         {
             _coroutineEndGame = StartCoroutine(OnEndGameAction(true));
@@ -536,35 +539,40 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// <param name="isWin">`true` nếu thắng, `false` nếu thua.</param>
     private IEnumerator OnEndGameAction(bool isWin)
     {
-        CameraController.Instance?.SetBlockHold(false);
-        CameraController.Instance?.SetBlockHandTap(false);
-        CameraController.Instance?.SetBlockRotation(true);
-        if (!isWin)
-            yield return new WaitForSeconds(2f); // Chờ một chút trước khi hiện panel thua
-        // else
-        //     yield return new WaitForSeconds(.1f); // Chờ một chút trước khi hiện panel thua
-        Luna.Unity.LifeCycle.GameEnded();
-        if (_isUseBroomBooster)
-            yield break;
+        if (CanRunEndGame)
+        {
+            CanRunEndGame = false;
+            CameraController.Instance?.SetBlockHold(false);
+            CameraController.Instance?.SetBlockHandTap(false);
+            CameraController.Instance?.SetBlockRotation(true);
+            if (!isWin)
+                yield return new WaitForSeconds(2f); // Chờ một chút trước khi hiện panel thua
+            // else
+            //     yield return new WaitForSeconds(.1f); // Chờ một chút trước khi hiện panel thua
+            Luna.Unity.LifeCycle.GameEnded();
+            if (_isUseBroomBooster)
+                yield break;
 
-        print(isWin ? "Trạng thài game: Win" : "Trạng thài game: Lose");
-        if (isWin)
-        {
-            if (!_isEndGame)
+            print(isWin ? "Trạng thài game: Win" : "Trạng thài game: Lose");
+            if (isWin)
             {
-                _isEndGame = true;
-                TrackingEndGame(false, true);
-                EndGameUI.Instance?.ShowWinGamePanel();
+                if (!_isEndGame)
+                {
+                    _isEndGame = true;
+                    TrackingEndGame(false, true);
+                    EndGameUI.Instance?.ShowWinGamePanel();
+                }
             }
-        }
-        else
-        {
-            if (!_isEndGame)
+            else
             {
-                _isEndGame = true;
-                EndGameUI.Instance?.ShowLoseGamePanel();
+                if (!_isEndGame)
+                {
+                    _isEndGame = true;
+                    EndGameUI.Instance?.ShowLoseGamePanel();
+                }
             }
-        }
+        }else
+            Debug.Log("Không check end game nữa vì đã end game");
     }
 
 

@@ -40,6 +40,7 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
     public List<PaintingPartBasedOnColor> CurrentLevelPaintingColorParts = new List<PaintingPartBasedOnColor>();
     private List<PaintingCell> paintingCells = new List<PaintingCell>();
     public List<PaintingPartBasedOnColor> CurrentLevelPaintingSeparateParts = new List<PaintingPartBasedOnColor>();
+    private int coundIndex = 0;
 
     [Header("WOOL DRAWING TEST")] public CubeTargetControl CurrentBox;
     public List<Color> CurrentColorInUse = new List<Color>();
@@ -388,6 +389,14 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
                 PumpAnimationManager.SpawnEffectAt(cellPosition, cell.CellColor);
                 currentCube.WoolLineHandler.ConnectLine(currentCube.WoolLineMovePoint.position, cellPosition, cell.CellColor, i == 0);
                 yield return new WaitForSeconds(delay);
+            }
+
+            coundIndex++;
+            // print(coundIndex+"   "+CurrentLevelPaintingSeparateParts.Count);
+            if(coundIndex >= CurrentLevelPaintingSeparateParts.Count)
+            {
+                yield return new WaitForSeconds(.8f);
+                GamePlaySystem.Instance.EndGameTotalCountWool();
             }
 //            Debug.LogError("Đợi xong "+currentCube.gameObject.name+"   "+(paintingDuration + cellCount * delay));
         }
