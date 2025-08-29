@@ -236,7 +236,12 @@ public class WoolControl : MonoBehaviour
 
         var   totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
         float timer     = 0f;
-
+        
+        // Rung giật cục trong suốt thời gian rút len
+        int vibrationDuration = Mathf.RoundToInt(totalTime * 1000f); // Chuyển seconds sang milliseconds
+        
+        // Sử dụng VibrationPatterns class với kiểu Pulse (giật cục)
+        VibrationPatterns.Vibrate(VibrationPatterns.PatternType.Pulse, vibrationDuration);
 
 
         float minUVY  = _spiralPathUVY.Min();

@@ -37,7 +37,8 @@ Material:
     - _ColorMask: 15
     - _DstBlend: 1
     - _EnableExternalAlpha: 0
-    - _MainTexOpacity: 0.05
+    - _GradientWidth: 0.82
+    - _MainTexOpacity: 0.047
     - _ScrollSpeedX: 0
     - _ScrollSpeedY: 0
     - _ScrollXSpeed: -0.3
@@ -54,13 +55,15 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _BgColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.65882355}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _GradientBottom: {r: 0.5835262, g: 0.7811031, b: 0.8773585, a: 1}
+    - _GradientCenter: {r: 0.8627451, g: 0.88235295, b: 0.99607843, a: 1}
+    - _GradientEdge: {r: 0.68235296, g: 0.68699116, b: 0.93333334, a: 1}
     - _GradientTop: {r: 0.7176471, g: 0.87058824, b: 0.9433962, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ScrollSpeedUV: {r: 0.5, g: 0, b: 0, a: 0}
-    - _Tiling: {r: 12, g: 12, b: 0, a: 0}
+    - _Tiling: {r: 48, g: 48, b: 0, a: 0}
     - _UVOffset: {r: 0.85, g: -0.03, b: 0, a: 0}
     - _UVScaleUV: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

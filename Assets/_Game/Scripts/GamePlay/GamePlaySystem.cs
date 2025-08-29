@@ -57,6 +57,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// </summary>
     public BoxChainReaction3D BoxChainReaction3D;
 
+    public AnimCubeQueuePreLose AnimCubeQueuePreLose;
     /// <summary>
     /// Danh sách các ô chứa len chính đang hoạt động trên màn hình.
     /// </summary>
@@ -109,10 +110,6 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     [Tooltip("Số lượng ô chứa (CubeTarget) mặc định khi bắt đầu level.")] [SerializeField]
     private int _cubeTargetCountDefault = 4;
 
-    /// <summary>
-    /// Đếm số lượng cuộn len hiện có trong hàng đợi (Queue).
-    /// </summary>
-    private int _queueCount;
 
     [Tooltip("Prefab của level hiện tại, chứa GamePlayMeshController và các mesh len.")] [SerializeField]
     private GameObject _levelPrefab;
@@ -140,7 +137,9 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// </summary>
     [HideInInspector] public int CubeReadyCount;
 
-
+    
+    private int _queueCount;
+    
     /// <summary>
     /// Lấy số lượng cuộn len hiện tại trong hàng đợi.
     /// </summary>
@@ -160,7 +159,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
     private int _currentOpenCubeTargetCost;
     private static int _replayCount = 0;
-
+    private bool _isQueuePreLoseAnimActive = false; // Biến theo dõi trạng thái animation
     #endregion <=============================================>
 
 
@@ -283,7 +282,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                 ChoseYarnWool(rollWool.transform, startPoint, spiralPath, colorClick);
                 _currentColorClickedCount++;
                 _queueCount++;
-
+                ActiveAnimQueuePreLose();
                 // Kiểm tra điều kiện thua game
                 if (_queueCount >= CurrentQueueTargets.Count && CubeReadyCount == TotalCubeActive)
                 {
@@ -298,6 +297,47 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         return false; // Click không hợp lệ (không có chỗ chứa)
     }
 
+
+
+    
+    private void ActiveAnimQueuePreLose()
+    {
+        // Kiểm tra điều kiện pre-lose (còn 1 slot trống)
+        bool shouldAnimate = CheckQueuePreLose();
+        
+        // Chỉ thay đổi khi trạng thái khác với hiện tại
+        if (shouldAnimate && !_isQueuePreLoseAnimActive)
+        {
+            Debug.Log("Queue Pre-Lose: Starting animation");
+            AnimCubeQueuePreLose.PlayAnimQueueColor();
+            _isQueuePreLoseAnimActive = true;
+        }
+        else if (!shouldAnimate && _isQueuePreLoseAnimActive)
+        {
+            Debug.Log("Queue Pre-Lose: Stopping animation");
+            AnimCubeQueuePreLose.StopAnimQueueColor();
+            _isQueuePreLoseAnimActive = false;
+        }
+        // Nếu trạng thái không thay đổi, không làm gì cả
+    }
+    public QueueTargetControl GetEmptyQueueTarget()
+    {
+        for (int i = 0; i < CurrentQueueTargets.Count; i++)
+        {
+            if (CurrentQueueTargets[i].IsReady) continue;
+            return CurrentQueueTargets[i];
+        }
+        return null;
+    }
+    public bool CheckQueuePreLose()
+    {
+        if (_queueCount == CurrentQueueTargets.Count - 1)
+        {
+            return true;
+        }
+        return false;
+
+    }
     /// <summary>
     /// Gửi dữ liệu tracking khi kết thúc game.
     /// </summary>
@@ -466,6 +506,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                     t.ResetDefault();
                     _queueCount--;
                 }
+                ActiveAnimQueuePreLose();
             }
         }
         catch (Exception e)

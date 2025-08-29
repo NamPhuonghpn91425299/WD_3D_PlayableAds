@@ -798,13 +798,13 @@ TextureImporter:
       name: UI_Maincenter_30
       rect:
         serializedVersion: 2
-        x: 1792
-        y: 969
-        width: 256
-        height: 270
+        x: 1817
+        y: 1023
+        width: 197
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 128, y: 128, z: 128, w: 128}
+      border: {x: 64, y: 64, z: 64, w: 64}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -2294,7 +2294,7 @@ TextureImporter:
         width: 117
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
