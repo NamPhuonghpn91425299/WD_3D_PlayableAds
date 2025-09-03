@@ -107,6 +107,8 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// </summary>
     private int _currentColorCollected;
 
+    public int CurrentColorCollected => _currentColorCollected;
+
     [Tooltip("Số lượng ô chứa (CubeTarget) mặc định khi bắt đầu level.")] [SerializeField]
     private int _cubeTargetCountDefault = 4;
 
