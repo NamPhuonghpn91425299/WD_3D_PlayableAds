@@ -48,7 +48,7 @@ public class TargetBoxAnimation : MonoBehaviour
     private readonly string _flyInSequenceId   = "fly_in_sequence";
 
     //[SerializeField] private SoundSO   soundData;
-    public                   AudioClip boxWhooshClip;
+    public                   AudioClip[] boxWhooshClip;
     private void Awake()
     {
         BakePreLocalScale();
@@ -161,7 +161,7 @@ public class TargetBoxAnimation : MonoBehaviour
            .OnComplete(() =>
                     {
                         if (_closeParticle != null) _closeParticle.Play();
-                        if (boxWhooshClip != null) SoundManager.Instance.PlayOneShotDelayed(boxWhooshClip, 0.5f, 1);
+                        if (boxWhooshClip != null) SoundManager.Instance.PlayOneShotDelayed(boxWhooshClip[1], 0f, 1);
                         // Create the box sequence only after cap sequence is complete
                         _boxSequence = DOTween.Sequence();
                         _boxSequence
@@ -204,7 +204,7 @@ public class TargetBoxAnimation : MonoBehaviour
         transform.localPosition = _boxUpLocalPosition;
 
         _boxSequence = DOTween.Sequence();
-        if (boxWhooshClip != null) SoundManager.Instance.PlayOneShotDelayed(boxWhooshClip, 0.05f, 1);
+        if (boxWhooshClip != null) SoundManager.Instance.PlayOneShotDelayed(boxWhooshClip[0], 0.05f, 1);
         _boxSequence
            .Append(transform
                    .DOLocalMoveY(_boxOriginalLocalPosition.y + offsetMoveY, _boxMoveTime)

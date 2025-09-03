@@ -15,7 +15,9 @@ public class ProcessUI : MonoBehaviour
 
     public void Update()
     {
+        
         text.text = $"{GamePlaySystem.Instance.CurrentColorCollected}/{totalMesh}";
         shadow.text = $"{GamePlaySystem.Instance.CurrentColorCollected}/{totalMesh}";
+        
     }
 }

@@ -547,19 +547,19 @@ public class WoolControl : MonoBehaviour
         for (int i = 0; i < decorObjectToDrop.Count; i++)
         {
             if (decorObjectToDrop[i] == null) continue;
-            var renderer = decorObjectToDrop[i]
-               .GetComponent<Renderer>();
-            if (renderer == null)
-            {
-                decorObjectToDrop[i]
-                   .PulseOutOfParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
-            }
-            else
-            {
-                decorObjectToDrop[i]
-                   .PulseOutOfParrentWool(renderer.bounds.center, WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
-            }
-
+            // var renderer = decorObjectToDrop[i]
+            //    .GetComponent<Renderer>();
+            // if (renderer == null)
+            // {
+            //     decorObjectToDrop[i]
+            //        .PulseOutOfParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
+            // }
+            // else
+            // {
+            //     decorObjectToDrop[i]
+            //        .PulseOutOfParrentWool(renderer.bounds.center, WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
+            // }
+            decorObjectToDrop[i].PulseOutofParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor, WoolAnimationData.SpeedRotation);
             DecoreControls.Remove(decorObjectToDrop[i]);
             RemovedDecoreControls.Add(decorObjectToDrop[i]);
         }
@@ -571,16 +571,17 @@ public class WoolControl : MonoBehaviour
         for (int i = 0; i < DecoreControls.Count; i++)
         {
             var renderer = DecoreControls[i]
-               .GetComponent<Renderer>();
+                .GetComponent<Renderer>();
             if (renderer == null)
             {
                 DecoreControls[i]
-                   .PulseOutOfParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
+                    .PulseOutOfParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
             }
             else
             {
                 DecoreControls[i]
-                   .PulseOutOfParrentWool(renderer.bounds.center, WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
+                    .PulseOutOfParrentWool(renderer.bounds.center, WoolAnimationData.ForceValue,
+                        WoolAnimationData.RandomDirrectionFactor);
             }
         }
     }

@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c6cd049761db04fa81f65a05b12860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
 --- !u!1 &742689440549615202
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +268,9 @@ MonoBehaviour:
   _hopScale: 0.9
   _hopDownTime: 0.2
   _hopUpTime: 0.2
-  boxWhooshClip: {fileID: 8300000, guid: a3e97e8ece8262b40b9ff61c01e21efd, type: 3}
+  boxWhooshClip:
+  - {fileID: 8300000, guid: fdbc32342433b8e45be7768b75e72ef8, type: 3}
+  - {fileID: 8300000, guid: 1ccdf5e9b265afc4da482d96468bc620, type: 3}
   offsetMoveY: 0.18
 --- !u!65 &9119856963692134448
 BoxCollider:
@@ -461,6 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c6cd049761db04fa81f65a05b12860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
 --- !u!1 &2418332801549405579
 GameObject:
   m_ObjectHideFlags: 0
@@ -5732,6 +5736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c6cd049761db04fa81f65a05b12860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
 --- !u!1 &5088784769510439450
 GameObject:
   m_ObjectHideFlags: 0

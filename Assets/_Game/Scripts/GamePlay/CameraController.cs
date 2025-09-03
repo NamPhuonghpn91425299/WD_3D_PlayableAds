@@ -989,7 +989,7 @@ public class CameraController : Singleton<CameraController>
                 if (IsVectorInRangeUpward(modelLE, Vector3.zero, 15f) || introTimer > IntroLenght + 0.5f)
                 {
                     introEnded = true;
-                    //GamePlaySystem.Instance.ActiveHandController(true); // Dòng này có thể gây lỗi nếu GamePlaySystem không tồn tại
+                    GamePlaySystem.Instance.ActiveHandController(true); // Dòng này có thể gây lỗi nếu GamePlaySystem không tồn tại
                 }
             }
             if (modelTransfrom != null)
@@ -1002,6 +1002,11 @@ public class CameraController : Singleton<CameraController>
         _mainCamera
            .DOFieldOfView(IntroEndFOV, IntroCameraZoomInDuration)
            .SetEase(Ease.InOutSine);
+        
+        // Xoay mượt model về góc 0 cùng lúc với zoom camera
+        modelTransfrom.DOLocalRotate(Vector3.zero, IntroCameraZoomInDuration)
+           .SetEase(Ease.InOutSine);
+        
         //yield return Yielders.Get(IntroCameraZoomInDuration); // Dòng này có thể gây lỗi nếu không có class Yielders
         yield return new WaitForSeconds(IntroCameraZoomInDuration);
         _isActive = true;

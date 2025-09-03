@@ -12,8 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bea26ff8de1c1749b2ca57933890420, type: 3}
   m_Name: ScriptableObjects_WoolAnimation
   m_EditorClassIdentifier: 
-  Duration: 1
+  Duration: 0.9
   DurationHideWool: 0.2
   OffSet: 0.1
   ForceValue: 5.5
   RandomDirrectionFactor: 1
+  SpeedRotation: 300
+  UseGroupPulse: 1
+  GroupSize: 1
+  GroupDelayTime: 0.1
+  UpwardForceMultiplier: 2
+  AddRandomTorque: 1
+  TorqueValue: 5
+  StartScaleOffset: 1
+  MidScaleOffset: 1.1
+  EndScaleOffset: 1
+  MeshPumpAnimDuration: 0.3
+  VibrationValue: 0.5

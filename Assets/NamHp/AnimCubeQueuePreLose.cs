@@ -25,6 +25,7 @@ public class AnimCubeQueuePreLose : Singleton<AnimCubeQueuePreLose>
     public void PlayAnimQueueColor()
     {
         if(!GamePlaySystem.Instance.CheckQueuePreLose())return;
+        SoundManager.Instance.PlayOneShotFx(soundFx);
         StopAnimQueueColor();
         _lastQueueTargetRenderer = GamePlaySystem.Instance.GetEmptyQueueTarget().Renderer;
         if(!_lastQueueTargetRenderer)return;
