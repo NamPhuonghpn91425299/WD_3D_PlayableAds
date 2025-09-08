@@ -392,12 +392,6 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
             }
 
             coundIndex++;
-            // print(coundIndex+"   "+CurrentLevelPaintingSeparateParts.Count);
-            if(coundIndex >= CurrentLevelPaintingSeparateParts.Count)
-            {
-                yield return new WaitForSeconds(.8f);
-                GamePlaySystem.Instance.EndGameTotalCountWool();
-            }
 //            Debug.LogError("Đợi xong "+currentCube.gameObject.name+"   "+(paintingDuration + cellCount * delay));
         }
         else
@@ -430,6 +424,12 @@ public class FishScalesPaintingController : Singleton<FishScalesPaintingControll
         //Debug.Log("Finished painting, clearing line");
         currentCube.WoolLineHandler?.ClearLine();
         currentCube.StartOuttroGenColorCubeTarget(indexThisCube);
+        // print(coundIndex+"   "+CurrentLevelPaintingSeparateParts.Count);
+        if(coundIndex >= CurrentLevelPaintingSeparateParts.Count)
+        {
+            yield return new WaitForSeconds(.8f);
+            GamePlaySystem.Instance.EndGameTotalCountWool();
+        }
     }
 
     public IEnumerator MovePointOverTime(Transform from, Transform to, Transform pointToMove, float duration, PaintingLineRendererHandler WoolLineHandler)

@@ -5,7 +5,7 @@ Shader "Horus/Lit/WoolTransparent"
         _MainTex ("Albedo", 2D) = "white" {}
         _NormalMap ("Normal Map", 2D) = "bump" {}
         _FresnelPower ("Fresnel Power", Range(0.1, 10)) = 2
-        _FresnelColor ("Fresnel Color", Color) = (1,1,1,1)
+        _FresnelColor ("_FresnelColor", Color) = (1,1,1,1)
         _Threshold ("Threshold", Float) = 0.03
     }
 

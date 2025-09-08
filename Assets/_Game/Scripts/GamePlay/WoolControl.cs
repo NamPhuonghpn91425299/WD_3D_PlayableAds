@@ -131,9 +131,19 @@ public class WoolControl : MonoBehaviour
             _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.ColorStack[1]]);
             HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
         }
+        
         TopMeshRenderer.sharedMaterial = isTranparent
             ? TranparentMaterial
             : MainMaterial;
+            
+        // Nếu chuyển sang material trong suốt, đổi màu Fresnel Color
+        if (isTranparent)
+        {
+            if(MeshObjectData.ColorStack.Count > 0)
+                TranparentMaterial.SetColor(T_Utilities.ShaderPropertiesLib.FresnelColor, _colorPalleteData.colorPallete[MeshObjectData.ColorStack[0]]);
+            else
+                TranparentMaterial.SetColor(T_Utilities.ShaderPropertiesLib.FresnelColor, _colorPalleteData.colorPallete[MeshObjectData.HightestColor]);
+        }
         TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
     }
 
