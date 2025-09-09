@@ -1509,6 +1509,10 @@ PrefabInstance:
       value: ClickEffect
       objectReference: {fileID: 0}
     - target: {fileID: 5333680770087700757, guid: bae6a75d2f5371541be2e11531ebf90e, type: 3}
+      propertyPath: camMain
+      value: 
+      objectReference: {fileID: 1147096126}
+    - target: {fileID: 5333680770087700757, guid: bae6a75d2f5371541be2e11531ebf90e, type: 3}
       propertyPath: BrightnessDifference
       value: 1.6
       objectReference: {fileID: 0}
@@ -3065,8 +3069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handController: {fileID: 4659284094914571615}
-  cubeCountClaimed: 15
-  totalCountClaimed: 114
+  cubeCountClaimed: 38
+  totalCountClaimed: 300
   winGamePanel: {fileID: 5589369630598909744}
   loseGamePanel: {fileID: 1660716936}
   btnPlay: {fileID: 9092890581388930563}

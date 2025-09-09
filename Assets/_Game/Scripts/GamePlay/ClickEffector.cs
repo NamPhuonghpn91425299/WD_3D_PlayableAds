@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ClickEffector : MonoBehaviour
 {
-    [Header("References")]
+    [Header("References")] 
     [SerializeField] private Transform targetTransform;
     [SerializeField] private CanvasGroup canvasGroup; // có thể bỏ nếu không dùng UI nữa
     [SerializeField] private Image clickEffectImage;
@@ -33,7 +33,7 @@ public class ClickEffector : MonoBehaviour
         // Lấy vị trí chuột trong world space
         Vector3 mouseScreenPos = Input.mousePosition;
         mouseScreenPos.z = 10f; // khoảng cách tới camera, chỉnh theo nhu cầu
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+        Vector3 worldPos = ClickEffectManager.Instance.camMain.ScreenToWorldPoint(mouseScreenPos);
 
         targetTransform.position = worldPos;
 

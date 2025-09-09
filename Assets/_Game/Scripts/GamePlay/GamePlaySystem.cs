@@ -563,8 +563,8 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         CameraController.Instance?.SetBlockHandTap(false);
         if (!isWin)
             yield return new WaitForSeconds(2f); // Chờ một chút trước khi hiện panel thua
-        // else
-        //     yield return new WaitForSeconds(.1f); // Chờ một chút trước khi hiện panel thua
+        else
+             yield return new WaitForSeconds(3f); // Chờ một chút trước khi hiện panel thua
         Luna.Unity.LifeCycle.GameEnded();
         if (_isUseBroomBooster)
             yield break;
