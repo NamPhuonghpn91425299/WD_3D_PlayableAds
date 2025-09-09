@@ -160,7 +160,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
     private int _currentOpenCubeTargetCost;
     private static int _replayCount = 0;
-
+    private bool _isQueuePreLoseAnimActive = false; // Biến theo dõi trạng thái animation
     #endregion <=============================================>
 
 
@@ -283,7 +283,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                 ChoseYarnWool(rollWool.transform, startPoint, spiralPath, colorClick);
                 _currentColorClickedCount++;
                 _queueCount++;
-
+                ActiveAnimQueuePreLose();
                 // Kiểm tra điều kiện thua game
                 if (_queueCount >= CurrentQueueTargets.Count && CubeReadyCount == TotalCubeActive)
                 {
@@ -298,6 +298,44 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         return false; // Click không hợp lệ (không có chỗ chứa)
     }
 
+    private void ActiveAnimQueuePreLose()
+    {
+        // Kiểm tra điều kiện pre-lose (còn 1 slot trống)
+        bool shouldAnimate = CheckQueuePreLose();
+        
+        // Chỉ thay đổi khi trạng thái khác với hiện tại
+        if (shouldAnimate && !_isQueuePreLoseAnimActive)
+        {
+            Debug.Log("Queue Pre-Lose: Starting animation");
+            AnimCubeQueuePreLose.Instance.PlayAnimQueueColor();
+            _isQueuePreLoseAnimActive = true;
+        }
+        else if (!shouldAnimate && _isQueuePreLoseAnimActive)
+        {
+            Debug.Log("Queue Pre-Lose: Stopping animation");
+            AnimCubeQueuePreLose.Instance.StopAnimQueueColor();
+            _isQueuePreLoseAnimActive = false;
+        }
+        // Nếu trạng thái không thay đổi, không làm gì cả
+    }
+    public QueueTargetControl GetEmptyQueueTarget()
+    {
+        for (int i = 0; i < CurrentQueueTargets.Count; i++)
+        {
+            if (CurrentQueueTargets[i].IsReady) continue;
+            return CurrentQueueTargets[i];
+        }
+        return null;
+    }
+    public bool CheckQueuePreLose()
+    {
+        if (_queueCount == CurrentQueueTargets.Count - 1)
+        {
+            return true;
+        }
+        return false;
+
+    }
     /// <summary>
     /// Gửi dữ liệu tracking khi kết thúc game.
     /// </summary>
@@ -466,6 +504,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
                     t.ResetDefault();
                     _queueCount--;
                 }
+                ActiveAnimQueuePreLose();
             }
         }
         catch (Exception e)

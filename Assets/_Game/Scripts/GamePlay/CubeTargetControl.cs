@@ -19,7 +19,9 @@ public class CubeTargetControl : MonoBehaviour
     [SerializeField] private TargetBoxAnimation _boxAnimation;
     [SerializeField] private float              _boxMoveAnimation = 0.5f;
     [SerializeField] private BoxCollider        _boxCollider;
-
+    [Header("vfx explosion")]
+    [SerializeField]
+    private ParticleSystem vfxExplosion;
     public float RollWoolTime = 0.5f;
     public float DelayTime    = 0.3f;
 
@@ -107,7 +109,8 @@ public class CubeTargetControl : MonoBehaviour
         
         _boxAnimation.CloseAndMoveOut();
         
-        
+        vfxExplosion.Play();
+
         yield return new WaitForSeconds(_boxAnimation.CloseDuration);
 
         yield return new WaitForSeconds(_boxAnimation.MoveOutDuration);

@@ -5,10 +5,12 @@ using UnityEngine;
 public class QueueTargetControl : MonoBehaviour
 {
     #region PROPERTIES
-
+    [SerializeField]
+    private Renderer _renderer;
+    public  Renderer Renderer => _renderer;
     private Color _currentColor = Color.black;
     private bool  _isActive;
-
+    public bool IsReady => _isActive;
     #endregion
 
 

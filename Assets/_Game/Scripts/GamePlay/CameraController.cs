@@ -187,7 +187,7 @@ public class CameraController : Singleton<CameraController>
             else
             {
                 currentFOV = _mainCamera.fieldOfView;
-                if (MathF.Abs(currentFOV - targetFOV) > 0.15f)
+                if (Mathf.Abs(currentFOV - targetFOV) > 0.15f)
                 {
                     currentFOV = Mathf.Lerp(currentFOV, targetFOV, Time.deltaTime * zoomLerpSpeed);
                     _mainCamera.fieldOfView = currentFOV;
@@ -513,6 +513,7 @@ public class CameraController : Singleton<CameraController>
         {
             HandleFoundWool(foundWool);
         }
+        ClickEffectManager.Instance.PlayClickEffect(Color.white);
     }
 
     /// <summary>
@@ -957,6 +958,9 @@ public class CameraController : Singleton<CameraController>
         _isActive = true;
         _mainCamera
             .DOFieldOfView(IntroEndFOV, IntroCameraZoomInDuration)
+            .SetEase(Ease.InOutSine);
+        // Xoay mượt model về góc 0 cùng lúc với zoom camera
+        modelTransfrom.DOLocalRotate(Vector3.zero, IntroCameraZoomInDuration)
             .SetEase(Ease.InOutSine);
         yield return Yielders.Get(IntroCameraZoomInDuration);
         _isActive = true;
