@@ -75,7 +75,8 @@ public class WoolControl : MonoBehaviour
         HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
         // BoxCollider      ??= GetComponent<BoxCollider>();
         //BoxCollider      ??= GetComponent<Collider>();
-        BoxCollider       = GetComponent<MeshCollider>();
+        if(BoxCollider==null)
+            BoxCollider       = GetComponent<MeshCollider>();
         _colorPalleteData = AssetDatabase.LoadAssetAtPath<ColorPalleteData>("Assets/_Game/Scripts/DataSO/ColorPallete/ColorPalleteData.asset");
     }
 #endif

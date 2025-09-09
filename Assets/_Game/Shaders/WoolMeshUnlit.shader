@@ -1,6 +1,6 @@
 Shader "Horus/Unlit/WoolMeshUnlit"
 {
-     Properties
+    Properties
     {
         _MainTex ("Albedo", 2D) = "white" {}
         _NormalMap ("Normal Map", 2D) = "bump" {}
@@ -12,6 +12,17 @@ Shader "Horus/Unlit/WoolMeshUnlit"
         _DiffusePower ("Diffuse Power", Range(0, 2)) = 0.7
         _LightDir ("Light Direction", Vector) = (0.4, 1, 0.6, 0)
         _Threshold ("Threshold", Float) = 0
+
+        // Dissolve Effect Properties
+        _DissolveCutout ("Dissovle Edge", Range(0, 1)) = 0
+        _TestNoiseTex ("Test Noise Tex", Range(0, 1)) = 0
+        _NoiseTex ("Noise Texture", 2D) = "white" {}
+        _EdgeNoiseScale ("Edge Noise Scale", Range(0,1)) = 0.2
+
+        // Glow Edge Properties
+        _GlowEdge ("Glow Edge", Range(0, 1)) = 0
+        _GlowStrength ("Glow Strength", Range(0,5)) = 1
+        _GlowWidth ("Glow Width", Range(0,0.5)) = 0.1
     }
 
     SubShader
@@ -36,15 +47,30 @@ Shader "Horus/Unlit/WoolMeshUnlit"
             #pragma vertex vert
             #pragma fragment frag
             #pragma multi_compile_instancing
-
+            
+            // WebGL optimization pragmas
+            #pragma target 3.0
+            #pragma exclude_renderers gles
+            
             #include "UnityCG.cginc"
 
             sampler2D _MainTex;
             sampler2D _NormalMap;
+            sampler2D _NoiseTex;
             float4 _MainTex_ST;
             float4 _NormalMap_ST;
             float4 _LightDir;
             float _NormalScale;
+            
+            // Dissolve variables
+            float _DissolveCutout;
+            float _EdgeNoiseScale;
+            float _TestNoiseTex;
+            
+            // Glow variables
+            float _GlowEdge;
+            float _GlowStrength;
+            float _GlowWidth;
 
 
             UNITY_INSTANCING_BUFFER_START(Props)
@@ -107,7 +133,27 @@ Shader "Horus/Unlit/WoolMeshUnlit"
             {
                 UNITY_SETUP_INSTANCE_ID(i);
                 float display = UNITY_ACCESS_INSTANCED_PROP(Props, _Display);
-                clip(display - i.uv2.y);
+                
+                // Dissolve calculation with noise
+                float dissolve = i.uv2.y;
+                if (_DissolveCutout == 1)
+                {
+                    if (_TestNoiseTex == 1)
+                    {
+                        float noise = tex2D(_NoiseTex, i.uv * 5.0).r;
+                        dissolve = i.uv2.y + noise * _EdgeNoiseScale;
+                    }
+                    else
+                    {
+                        if (display < 1)
+                        {
+                            float noise = tex2D(_NoiseTex, i.uv * 5.0).r;
+                            float edgeNoiseCurrentValue = clamp(1.0 - display, 0.0, _EdgeNoiseScale);
+                            dissolve = i.uv2.y + noise * edgeNoiseCurrentValue;
+                        }
+                    }
+                }
+                clip(display - dissolve);
 
                 float4 color = UNITY_ACCESS_INSTANCED_PROP(Props, _Color);
                 float brightness = UNITY_ACCESS_INSTANCED_PROP(Props, _Brightness);
@@ -126,6 +172,14 @@ Shader "Horus/Unlit/WoolMeshUnlit"
 
                 fixed4 albedo = tex2D(_MainTex, i.uv) * color;
                 float3 litColor = albedo.rgb * (ambient + diffusePower * NdotL) * brightness;
+
+                // Add glow effect at dissolve edge
+                if (_GlowEdge == 1 && display < 1)
+                {
+                    float edgeDist = abs(display - dissolve);
+                    float glowFactor = 1.0 - smoothstep(0.0, _GlowWidth, edgeDist);
+                    litColor += color.rgb * glowFactor * _GlowStrength;
+                }
 
                 return fixed4(litColor, albedo.a);
             }
