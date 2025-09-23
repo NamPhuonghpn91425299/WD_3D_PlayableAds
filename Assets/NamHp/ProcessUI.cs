@@ -10,7 +10,7 @@ public class ProcessUI : MonoBehaviour
 
     private void Start()
     {
-        //totalMesh = GamePlaySystem.Instance.TotalColor;
+        totalMesh = GamePlaySystem.Instance.cubeCountClaimed*3;
     }
 
     public void Update()

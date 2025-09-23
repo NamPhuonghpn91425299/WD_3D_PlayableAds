@@ -27,7 +27,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private string url; // URL cuối cùng sau khi thay thế package name.
 
     [Tooltip("Số lượng hộp cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store).")] [SerializeField]
-    private int cubeCountClaimed = 15;
+    public int cubeCountClaimed = 15;
 
     [Tooltip("Số lượng khối len cần thu thập để kích hoạt sự kiện đặc biệt (ví dụ: đi đến store). chưa dùng")]
     [SerializeField]
@@ -252,7 +252,7 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
                 // Thêm một cuộn len vào ô
                 CurrentCubeTargets[i].AddChild(i, out var headtrans);
-                if (headtrans == null) break;
+                if (headtrans == null) continue;
 
                 // Tạo và thiết lập animation cho cuộn len (RollWool) và sợi len (YarnWool)
                 var rollWool = Instantiate(RollWoolPrefab);
@@ -566,9 +566,9 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         CameraController.Instance?.SetBlockHold(false);
         CameraController.Instance?.SetBlockHandTap(false);
         if (!isWin)
-            yield return new WaitForSeconds(2f); // Chờ một chút trước khi hiện panel thua
-        // else
-        //     yield return new WaitForSeconds(.1f); // Chờ một chút trước khi hiện panel thua
+            yield return new WaitForSeconds(2.5f); // Chờ một chút trước khi hiện panel thua
+        else
+             yield return new WaitForSeconds(3f); // Chờ một chút trước khi hiện panel thua
         Luna.Unity.LifeCycle.GameEnded();
         if (_isUseBroomBooster)
             yield break;
