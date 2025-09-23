@@ -26,13 +26,13 @@ public class CubeTargetControl : MonoBehaviour
     public float DelayTime    = 0.3f;
 
 
-    private bool  _isActiveGenNew;
-    private bool  _alowSameColor;
-    private int   _indexCube;
-    private int   _indexChild   = 0;
-    private Color _currentColor = Color.black;
-
-    private const int TotalChild = 3;
+    private       bool   _isActiveGenNew;
+    private       bool   _alowSameColor;
+    private       int    _indexCube;
+    private       int    _indexChild   = 0;
+    private       Color  _currentColor = Color.black;
+    public        string nameColor;
+    private const int    TotalChild = 3;
 
     private bool _isReady;
 
@@ -71,9 +71,10 @@ public class CubeTargetControl : MonoBehaviour
         _indexChild++;
     }
 
-    public void SetColor(Color color)
+    public void SetColor(string color)
     {
-        _currentColor = color;
+        _currentColor = GamePlaySystem.Instance._colorPalleteData.colorPallete[color];
+        nameColor     = color;
     }
 
 
@@ -94,40 +95,49 @@ public class CubeTargetControl : MonoBehaviour
         }
     }
 
-    public bool CheckColor(Color color) { return color == _currentColor; }
+    public bool CheckColor(string color) { return color == nameColor; }
 
     private IEnumerator WaitingAnim(int indexCube)
     {
+        //Debug.Log($"[CubeTargetControl] 📦 Bắt đầu WaitingAnim cho Cube[{indexCube}] - Vị trí: {transform.position}");
+        
         GamePlaySystem.Instance.GenNewCube(indexCube);
         GamePlaySystem.Instance.FinishedCollectingCube();
         
         _isActiveGenNew = GamePlaySystem.Instance.HasCube;
         GamePlaySystem.Instance.CubeReadyCount--;
         _isReady = false;
+        
         yield return new WaitForSeconds(RollWoolTime + DelayTime);
         
         
         _boxAnimation.CloseAndMoveOut();
         
         vfxExplosion.Play();
-
+        
         yield return new WaitForSeconds(_boxAnimation.CloseDuration);
-
+        
         yield return new WaitForSeconds(_boxAnimation.MoveOutDuration);
-
+        
         SetDefault();
         GamePlaySystem.Instance.CheckTurnOffCube(indexCube, _isActiveGenNew);
-        // GamePlaySystem.Instance.FinishedCollectingCube();
+        
         ChangeColor();
-        if(indexCube != -1) _boxAnimation.FlyIn();
+        
+        if(indexCube != -1) 
+        {
+            //Debug.Log($"[CubeTargetControl] ✈️ Bắt đầu FlyIn animation - Cube[{indexCube}]");
+            _boxAnimation.FlyIn();
+        }
         
         yield return new WaitForSeconds(_boxAnimation.FlyInDuration);
         
         GamePlaySystem.Instance.CubeReadyCount++;
         _isReady = true;
+        
         GamePlaySystem.Instance.UseQueueTarget(_currentColor, indexCube);
         GamePlaySystem.Instance.CheckEndGame();
-        Debug.Log("CubeReadyCount: " + GamePlaySystem.Instance.CubeReadyCount + " TotalCubeActive: " + GamePlaySystem.Instance.TotalCubeActive + " indexCube: " + indexCube);
+        
     }
 
     public void SetDefault()

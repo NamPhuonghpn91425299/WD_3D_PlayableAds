@@ -424,7 +424,7 @@ public class CameraController : Singleton<CameraController>
         {
             initialRotation = modelTransfrom.rotation;
             hasStoredInitialRotation = true;
-            Debug.Log("Initial rotation stored: " + initialRotation.eulerAngles);
+            //Debug.Log("Initial rotation stored: " + initialRotation.eulerAngles);
         }
     }
 
@@ -550,7 +550,7 @@ public class CameraController : Singleton<CameraController>
         // Đây là logic gốc từ HandleTap của bạn
         wool.WoolRotation();
         //GamePlaySystem.Instance.RaiseMotion(EMotionType.Shy, Random.value);
-        Debug.Log("Tapped on Wool: " + wool.name);
+        //Debug.Log("Tapped on Wool: " + wool.name);
     }
 
     /// <summary>

@@ -35,4 +35,6 @@ public class ColorPalleteData : ScriptableObject
 
         return null; // Không tìm thấy
     }
+
+    private void Awake() { SetupColor();}
 }

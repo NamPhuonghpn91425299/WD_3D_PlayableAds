@@ -26,14 +26,14 @@ public class GamePlayMeshController : MonoBehaviour
     public                    InterestCurve               InterestCurveData;
     public                    WoolAnimationData           WoolAnimationData;
 
-    private List<Color> _currentColorList      = new ();
-    public int TotalColor;
+    private List<string> _currentColorList      = new List<string>();
+    public  int          TotalColor;
 
     public Material WoolMaterial;
     public Material WoolChildMaterial;
 
-    public Dictionary<Color, float> _colorPriority = new ();
-    public Dictionary<Color, int>   CubeCount      = new ();
+    public Dictionary<string, float> _colorPriority = new Dictionary<string, float>();
+    public Dictionary<string, int>   CubeCount      = new Dictionary<string, int>();
 
     public int MaxLayerHasThreeSameColor = 2;
 
@@ -140,7 +140,7 @@ public class GamePlayMeshController : MonoBehaviour
                     _colorDistribution[meshIndex]
                        .Add(new ColorDistribution()
                             {
-                                Color      = Color.white,
+                                Color      = "",
                                 LayerIndex = i,
                                 MeshIndex  = meshIndex,
                                 IsSetted   = false
@@ -173,7 +173,7 @@ public class GamePlayMeshController : MonoBehaviour
     public void ColorPriorityCalculator()
     {
         _colorPriority.Clear();
-        Dictionary<Color, List<int>> colorSteps = new ();
+        Dictionary<string, List<int>> colorSteps = new Dictionary<string, List<int>>();
         for (int i = 0; i < _maxLayer; i++)
         {
             foreach (var wool in WoolControls)
@@ -299,9 +299,9 @@ public class GamePlayMeshController : MonoBehaviour
 
     #region HELPER
 
-    private Color GetNextColorToFill()
+    private string GetNextColorToFill()
     {
-        var colorResult    = Color.black;
+        var colorResult    = "";
         var maxRemainColor = int.MinValue;
         for (int i = 0; i < LevelData.ColorCountList.Count; i++)
         {

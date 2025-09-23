@@ -120,12 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 4405277068393937971}
   HideMeshRenderer: {fileID: 7009330422602342604}
@@ -991,12 +992,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 8056730611109156573}
   HideMeshRenderer: {fileID: 1884139064140342995}
@@ -2101,12 +2103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 9027674419454751336}
   HideMeshRenderer: {fileID: 6226295994711699657}
@@ -2806,12 +2809,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 4424779007035287611}
   HideMeshRenderer: {fileID: 6619245713606786256}
@@ -3345,12 +3349,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 2593288142879357724}
   HideMeshRenderer: {fileID: 3085343863681888117}
@@ -3884,12 +3889,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.5137255, g: 0.6666667, b: 0.16470589, a: 1}
+    HightestColor: Neon
     ColorStack: []
   TopMeshRenderer: {fileID: 8132237659859254859}
   HideMeshRenderer: {fileID: 9040433972604235934}
@@ -4411,7 +4417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486314302251413134}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
@@ -4501,13 +4507,13 @@ MonoBehaviour:
     CurrentcyLevel: 0
     DynamicDif: 0
     ColorList:
-    - {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    - {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
-    - {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
-    - {r: 0.5137255, g: 0.6666667, b: 0.16470589, a: 1}
-    - {r: 0.68235296, g: 0.42352942, b: 0.74509805, a: 1}
-    - {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
-    - {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    - White
+    - Neonrose
+    - Blue2
+    - Neon
+    - Purple1
+    - Orange2
+    - Yellow
     ColorCountList: 0c0000000c0000000f0000000c0000000c0000000f0000000f000000
   WoolControls:
   - {fileID: 5287057837320115358}
@@ -4948,12 +4954,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 9064746139115658937}
   HideMeshRenderer: {fileID: 1733704858071454292}
@@ -5487,12 +5494,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 4037925800437272796}
   HideMeshRenderer: {fileID: 6910845548303131330}
@@ -6109,12 +6117,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 1942491020476236699}
   HideMeshRenderer: {fileID: 4590841111350573866}
@@ -6648,12 +6657,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.5137255, g: 0.6666667, b: 0.16470589, a: 1}
+    HightestColor: Neon
     ColorStack: []
   TopMeshRenderer: {fileID: 819210157972308615}
   HideMeshRenderer: {fileID: 5894757962169883199}
@@ -7187,12 +7197,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 5725051203721144245}
   HideMeshRenderer: {fileID: 9154852993361221243}
@@ -7809,12 +7820,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 7912669291607237615}
   HideMeshRenderer: {fileID: 5203186746122099889}
@@ -8597,12 +8609,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 2326679949523354645}
   HideMeshRenderer: {fileID: 6263072655679133868}
@@ -9136,12 +9149,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 3628262032755039417}
   HideMeshRenderer: {fileID: 3236210303999111352}
@@ -9758,12 +9772,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 4920855213794658570}
   HideMeshRenderer: {fileID: 3904281659216188319}
@@ -10380,12 +10395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.5137255, g: 0.6666667, b: 0.16470589, a: 1}
+    HightestColor: Neon
     ColorStack: []
   TopMeshRenderer: {fileID: 3901853894808658195}
   HideMeshRenderer: {fileID: 307890148361691282}
@@ -10919,12 +10935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 169832054366311148}
   HideMeshRenderer: {fileID: 6688596153840646377}
@@ -11458,12 +11475,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 1200884647322646360}
   HideMeshRenderer: {fileID: 7288682924132781631}
@@ -12080,12 +12098,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 8655172210852485196}
   HideMeshRenderer: {fileID: 8601850424054522996}
@@ -12619,12 +12638,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8837726412352760270}
   HideMeshRenderer: {fileID: 1569784498120200066}
@@ -13162,12 +13182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 5736340998267105915}
   HideMeshRenderer: {fileID: 8674572341146419531}
@@ -14116,12 +14137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 6326076316061855925}
   HideMeshRenderer: {fileID: 6815510568765268725}
@@ -14738,12 +14760,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.68235296, g: 0.42352942, b: 0.74509805, a: 1}
+    HightestColor: Purple1
     ColorStack: []
   TopMeshRenderer: {fileID: 6365599387134273663}
   HideMeshRenderer: {fileID: 1636690141632756967}
@@ -15277,12 +15300,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 2128987626159460278}
   HideMeshRenderer: {fileID: 5302023686075693865}
@@ -15972,12 +15996,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 8806246383578413473}
   HideMeshRenderer: {fileID: 2074876726068516760}
@@ -16677,12 +16702,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 7157437263810021623}
   HideMeshRenderer: {fileID: 4309027791894418524}
@@ -17372,12 +17398,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 7504944244362348012}
   HideMeshRenderer: {fileID: 3373007816361755847}
@@ -17911,12 +17938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 3912538444592230391}
   HideMeshRenderer: {fileID: 3057360973648789056}
@@ -18450,12 +18478,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 5150506729615063891}
   HideMeshRenderer: {fileID: 2050192756130201409}
@@ -18989,12 +19018,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 5313817511749373114}
   HideMeshRenderer: {fileID: 8401125939822389622}
@@ -19611,12 +19641,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 262641141921464144}
   HideMeshRenderer: {fileID: 8974631731034351965}
@@ -20150,12 +20181,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 7931492307611156786}
   HideMeshRenderer: {fileID: 478135196751498357}
@@ -20772,12 +20804,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 5941799495268446546}
   HideMeshRenderer: {fileID: 1228959448145063923}
@@ -21311,12 +21344,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 1405916699657584096}
   HideMeshRenderer: {fileID: 814903045228889710}
@@ -22016,12 +22050,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 1748351179921384419}
   HideMeshRenderer: {fileID: 2735025778609292550}
@@ -22638,12 +22673,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 3359108862825764733}
   HideMeshRenderer: {fileID: 1368689747854620538}
@@ -23509,12 +23545,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.68235296, g: 0.42352942, b: 0.74509805, a: 1}
+    HightestColor: Purple1
     ColorStack: []
   TopMeshRenderer: {fileID: 6112577743840924798}
   HideMeshRenderer: {fileID: 5636513657124536841}
@@ -24463,12 +24500,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 1652006986701180545}
   HideMeshRenderer: {fileID: 8692990826538998510}
@@ -25002,12 +25040,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 3403845082294017329}
   HideMeshRenderer: {fileID: 8777018868075404901}
@@ -25541,12 +25580,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.5137255, g: 0.6666667, b: 0.16470589, a: 1}
+    HightestColor: Neon
     ColorStack: []
   TopMeshRenderer: {fileID: 3941898701890261715}
   HideMeshRenderer: {fileID: 7178227525435020303}
@@ -26080,12 +26120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 7850592921000608492}
   HideMeshRenderer: {fileID: 1099275359727835003}
@@ -26619,12 +26660,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.68235296, g: 0.42352942, b: 0.74509805, a: 1}
+    HightestColor: Purple1
     ColorStack: []
   TopMeshRenderer: {fileID: 8336869200351906311}
   HideMeshRenderer: {fileID: 2978453199290227398}
@@ -27241,12 +27283,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 2746787491168190352}
   HideMeshRenderer: {fileID: 8162463823648527300}
@@ -27863,12 +27906,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 998166892139777500}
   HideMeshRenderer: {fileID: 4138481050074597232}
@@ -28402,12 +28446,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 5255945991606405760}
   HideMeshRenderer: {fileID: 1618640678301303895}
@@ -29107,12 +29152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 9040135978099928446}
   HideMeshRenderer: {fileID: 759414449895132570}
@@ -29646,12 +29692,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.5137255, g: 0.6666667, b: 0.16470589, a: 1}
+    HightestColor: Neon
     ColorStack: []
   TopMeshRenderer: {fileID: 5257726731361909093}
   HideMeshRenderer: {fileID: 4038021519810783632}
@@ -30185,12 +30232,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 1846035537112037843}
   HideMeshRenderer: {fileID: 3840719340712358788}
@@ -30880,12 +30928,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.68235296, g: 0.42352942, b: 0.74509805, a: 1}
+    HightestColor: Purple1
     ColorStack: []
   TopMeshRenderer: {fileID: 8953172576760788507}
   HideMeshRenderer: {fileID: 8451023140002561717}
@@ -31502,12 +31551,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8496975821204475320}
   HideMeshRenderer: {fileID: 4024803780634697189}
@@ -32041,12 +32091,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.37254903, g: 0.5803922, b: 0.69803923, a: 1}
+    HightestColor: Blue2
     ColorStack: []
   TopMeshRenderer: {fileID: 4891864231892558333}
   HideMeshRenderer: {fileID: 5547613093637552896}
@@ -32580,12 +32631,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 6950575632159703898}
   HideMeshRenderer: {fileID: 1046460860019178299}
@@ -33119,12 +33171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 8652155178013519483}
   HideMeshRenderer: {fileID: 2886587766105499580}
@@ -33741,12 +33794,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.7921569, g: 0.40392157, b: 0.007843138, a: 1}
+    HightestColor: Orange2
     ColorStack: []
   TopMeshRenderer: {fileID: 2834860261904551576}
   HideMeshRenderer: {fileID: 1754146476262484456}
@@ -34280,12 +34334,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 2
-    HightestColor: {r: 0.5137255, g: 0.6666667, b: 0.16470589, a: 1}
+    HightestColor: Neon
     ColorStack: []
   TopMeshRenderer: {fileID: 7785781164384756312}
   HideMeshRenderer: {fileID: 2416512671451934092}
@@ -34902,12 +34957,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.68235296, g: 0.42352942, b: 0.74509805, a: 1}
+    HightestColor: Purple1
     ColorStack: []
   TopMeshRenderer: {fileID: 346073801024270125}
   HideMeshRenderer: {fileID: 899474642325285179}
@@ -35524,12 +35580,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.65882355, b: 0, a: 1}
+    HightestColor: Yellow
     ColorStack: []
   TopMeshRenderer: {fileID: 8694271415766627404}
   HideMeshRenderer: {fileID: 8202075160479600868}
@@ -36063,12 +36120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 4445762017043001453}
   HideMeshRenderer: {fileID: 4923258595789806964}
@@ -37017,12 +37075,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.68235296, g: 0.42352942, b: 0.74509805, a: 1}
+    HightestColor: Purple1
     ColorStack: []
   TopMeshRenderer: {fileID: 115026749203533702}
   HideMeshRenderer: {fileID: 2688689182823251711}
