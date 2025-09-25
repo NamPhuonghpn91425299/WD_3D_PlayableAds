@@ -106,6 +106,8 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     /// </summary>
     private int _currentColorCollected;
 
+    public int CurrentColorCollected => _currentColorCollected;
+
     [Tooltip("Số lượng ô chứa (CubeTarget) mặc định khi bắt đầu level.")] [SerializeField]
     private int _cubeTargetCountDefault = 4;
 
@@ -178,6 +180,10 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
     private void Start()
     {
+    }
+
+    private void OnEnable()
+    {
         LoadLevel();
     }
 
@@ -241,17 +247,38 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         if (woolXoayClip != null) SoundManager.Instance.PlayOneShot(woolXoayClip, 1);
 
         // 1. Ưu tiên kiểm tra các ô chứa chính (CubeTarget)
+        
         for (int i = 0; i < CurrentCubeTargets.Count; i++)
         {
-            if (!CurrentCubeTargets[i].IsActive && !CurrentCubeTargets[i].gameObject.activeSelf)
-                continue; // Bỏ qua nếu ô không hoạt động
-            if (CurrentCubeTargets[i].CheckColor(colorClick))
+            var cube = CurrentCubeTargets[i];
+            
+            // Bỏ qua nếu ô không hoạt động
+            if (!cube.IsActive || !cube.group.gameObject.activeSelf)
             {
-                if (!CurrentCubeTargets[i].IsReady) continue; // Bỏ qua nếu ô chưa sẵn sàng
-
+                Debug.Log($"[OnClickMesh] Cube[{i}] không active - bỏ qua");
+                continue;
+            }
+            
+            // Kiểm tra màu có match không
+            bool colorMatch = cube.CheckColor(colorClick);
+            
+            if (colorMatch)
+            {
+                
+                // ✅ QUAN TRỌNG: Kiểm tra ô có sẵn sàng không
+                if (!cube.IsReady) 
+                {
+                    Debug.Log($"[OnClickMesh] Cube[{i}] chưa sẵn sàng - tìm cube khác cùng màu");
+                    continue; // Tiếp tục tìm hộp khác cùng màu!
+                }
+                
                 // Thêm một cuộn len vào ô
-                CurrentCubeTargets[i].AddChild(i, out var headtrans);
-                if (headtrans == null) break;
+                cube.AddChild(i, out var headtrans);
+                if (headtrans == null) 
+                {
+                    Debug.Log($"[OnClickMesh] Cube[{i}] AddChild thất bại - tìm tiếp");
+                    continue;
+                }
 
                 // Tạo và thiết lập animation cho cuộn len (RollWool) và sợi len (YarnWool)
                 var rollWool = Instantiate(RollWoolPrefab);
@@ -263,6 +290,8 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
 
                 ChoseYarnWool(rollWool.transform, startPoint, spiralPath, colorClick);
                 _currentColorClickedCount++;
+                
+                //Debug.Log($"[OnClickMesh] ✅ THÀNH CÔNG: Len đã bay vào Cube[{i}]");
                 return true; // Click thành công
             }
         }

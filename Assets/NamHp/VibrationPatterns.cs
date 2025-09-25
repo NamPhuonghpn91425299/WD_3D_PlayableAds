@@ -68,7 +68,8 @@ public static class VibrationPatterns
                 return "[100, 50, 100, 50, 100]";
                 
             case PatternType.Heartbeat:
-                return "[100, 100, 200, 200, 100, 100, 200, 500]";
+                return "[50, 100, 50, 100, 50, 100, 50, 100]";
+                //return "[100, 100, 200, 200, 100, 100, 200, 500]";
                 
             case PatternType.BuildUp:
                 return "[50, 100, 100, 100, 150, 100, 200, 100, 300]";
