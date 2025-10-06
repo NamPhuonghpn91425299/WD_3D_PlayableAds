@@ -127,6 +127,17 @@ public class WoolControl : MonoBehaviour
 
     public void SetTranparentWool(bool isTranparent)
     {
+        if (_isPlayAnim)
+        {
+            // Chỉ đặt lại MainMaterial nếu hiện tại không phải là MainMaterial
+            if (TopMeshRenderer.sharedMaterial != MainMaterial)
+            {
+                TopMeshRenderer.sharedMaterial = MainMaterial;
+                TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
+            }
+            return;
+        }
+        
         if (MeshObjectData.ColorStack.Count > 1)
         {
             _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.ColorStack[1]]);
@@ -457,6 +468,8 @@ public class WoolControl : MonoBehaviour
             DisplayColor();
             return;}
         _topMaterialPropertyBlock?.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.HightestColor]);
+        if(gameObject.name == "A_Ghost")
+            print($"Set color for {gameObject.name} : {MeshObjectData.HightestColor} - {_colorPalleteData.colorPallete[MeshObjectData.HightestColor]}");
         _topMaterialPropertyBlock?.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, 0);
         _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 0);

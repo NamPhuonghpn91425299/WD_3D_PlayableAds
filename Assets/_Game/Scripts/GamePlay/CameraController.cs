@@ -14,8 +14,6 @@ public class CameraController : Singleton<CameraController>
     public Button btnReCenterModel;
     private bool canResset;
     public Slider ZoomSlider;
-    public float maxZoom;
-    public float minZoom;
     public ZoomCameraData ZoomCameraData;
     public Transform BackGround;
 
@@ -89,7 +87,7 @@ public class CameraController : Singleton<CameraController>
     [SerializeField] private Vector3 _cameraPosGamePlayDefault = new Vector3(0, 1, -10);
     [SerializeField] private Vector3 _cameraRoteGamePlayDefault = new Vector3(6, 0, 0);
 
-    [Header("INTRO SETTING(s)")] public float IntroLenght = 2f;
+    [Header("INTRO SETTING(s) -> Setting in Data cam SO")] public float IntroLenght = 2f;
     public float ModelRotationIntroSpeed = 0.5f;
     public float IntroCameraZoomInDuration = 0.5f;
     public int IntroStartFOV = 65;
@@ -259,8 +257,8 @@ public class CameraController : Singleton<CameraController>
             // ZoomSlider.value = normalizedValue;
 
             // CODE MỚI: Khởi tạo slider dựa trên FOV hiện tại để đồng bộ
-            float currentFOV = _mainCamera != null ? _mainCamera.fieldOfView : ZoomCameraData.DefaultFOV;
-            UpdateSliderFromFOV(currentFOV);
+            // float currentFOV = _mainCamera != null ? _mainCamera.fieldOfView : ZoomCameraData.DefaultFOV;
+            // UpdateSliderFromFOV(currentFOV);
 
             // SỬA ĐỔI: Dọn dẹp listener cũ trước khi thêm mới để tránh duplicate
             //ZoomSlider.onValueChanged.RemoveAllListeners();
@@ -282,7 +280,7 @@ public class CameraController : Singleton<CameraController>
         // THÊM: Kiểm tra isSliderUpdating để tránh vòng lặp khi cập nhật từ code
         if(!canResset) return;
 
-        float newFOV = Mathf.Lerp(minZoom, maxZoom, value);
+        float newFOV = Mathf.Lerp(ZoomCameraData.MaxFOV, ZoomCameraData.MinFOV, value);
 
         // Cập nhật targetFOV để touch zoom tiếp tục hoạt động
         targetFOV = newFOV;
@@ -312,11 +310,11 @@ public class CameraController : Singleton<CameraController>
             isSliderUpdating = true;
 
             // Chuyển đổi FOV thành giá trị slider (0-1)
-            float normalizedValue = (currentFOV - minZoom) / (maxZoom - minZoom);
+            float normalizedValue = (currentFOV - ZoomCameraData.MaxFOV) / (ZoomCameraData.MinFOV - ZoomCameraData.MaxFOV);
             normalizedValue = Mathf.Clamp01(normalizedValue);
 
             // Mượt hơn khi thay đổi
-            ZoomSlider.value = Mathf.Lerp(ZoomSlider.value, normalizedValue, Time.deltaTime * 10f);
+            ZoomSlider.value = Mathf.Lerp(ZoomSlider.value, normalizedValue, Time.deltaTime * 0f);
 
             isSliderUpdating = false;
         }
@@ -872,14 +870,15 @@ public class CameraController : Singleton<CameraController>
 
         float scaleRatio = Mathf.Tan(fovCam * 0.5f * Mathf.Deg2Rad) /
                            Mathf.Tan(ZoomCameraData.MaxFOV * 0.5f * Mathf.Deg2Rad);
-        BackGround.localScale = LocalScaleBackGroundDefault * scaleRatio;
+        // BackGround.localScale = LocalScaleBackGroundDefault * scaleRatio;
+        BackGround.localScale = Vector3.one*fovCam;
         BackGround.transform.position = _mainCamera.transform.position + _mainCamera.transform.forward * 25;
         BackGround.transform.rotation = Quaternion.LookRotation(_mainCamera.transform.forward);
 
         if (ZoomStyle == ZoomCameraStyle.Smoothly)
             targetFOV = fovCam;
 
-        _mainCamera.fieldOfView = fovCam;
+        //_mainCamera.fieldOfView = fovCam;
 
         // THÊM: Cập nhật slider để phản ánh FOV mới (chỉ khi không phải từ touch zoom)
         // Tránh cập nhật slider khi đang zoom bằng touch để không gây lag

@@ -10208,6 +10208,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1110147408676373481, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330511992551058414, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3434679544074817591, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
       propertyPath: btnPlay
       value: 
@@ -10232,9 +10240,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6314237483478137528, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970592974442557846, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033968792858113037, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 8285496051351274804, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137539439606973495, guid: 32750c12316d2a34f9dc8b15a592ccd9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -260
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16316,7 +16340,7 @@ MonoBehaviour:
   IntroCellAnimationDuration: 0.005
   IntroCellBumpAnimationDuration: 0.3
   OutroAnimationDuration: 1.6
-  YPositionShowPainting: -0.12
+  YPositionShowPainting: -0.95
   OverviewType: 0
   OverviewWaveColor: {r: 1, g: 1, b: 1, a: 1}
   OverviewWaveScale: {x: 0.02, y: 0.02, z: 0.02}
