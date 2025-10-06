@@ -9,7 +9,7 @@ public static partial class T_Utitilies
 
 public struct ColorDistribution
 {
-    public Color Color;
+    public string Color;
     public int   MeshIndex;
     public int   LayerIndex;
     public bool  IsSetted;
@@ -18,9 +18,9 @@ public struct ColorDistribution
 [Serializable]
 public class MeshObjectData
 {
-    public int         TotalLayer;
-    public Color       HightestColor;
-    public List<Color> ColorStack = new List<Color>();
+    public int          TotalLayer;
+    public string       HightestColor;
+    public List<string> ColorStack = new List<string>();
 }
 
 [Serializable]
@@ -38,7 +38,7 @@ public class LevelData
     public int         LevelId;
     public int         CurrentcyLevel;
     public float       DynamicDif;
-    public List<Color> ColorList      = new List<Color>();
+    public List<string> ColorList      = new List<string>();
     public List<int>   ColorCountList = new List<int>();
 }
 

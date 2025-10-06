@@ -12,4 +12,6 @@ public class WoolAnimationData : ScriptableObject
     [Header("DECOR OBJECT FORCE SETTING")]
     public float ForceValue = 2f;
     public float RandomDirrectionFactor = 0.2f;
+    public float SpeedRotation          = 444;
+
 }

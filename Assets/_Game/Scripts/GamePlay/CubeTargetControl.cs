@@ -26,13 +26,13 @@ public class CubeTargetControl : MonoBehaviour
     public float DelayTime    = 0.3f;
 
 
-    private bool  _isActiveGenNew;
-    private bool  _alowSameColor;
-    private int   _indexCube;
-    private int   _indexChild   = 0;
-    private Color _currentColor = Color.black;
-
-    private const int TotalChild = 3;
+    private       bool   _isActiveGenNew;
+    private       bool   _alowSameColor;
+    private       int    _indexCube;
+    private       int    _indexChild   = 0;
+    private       Color  _currentColor = Color.black;
+    public        string nameColor;
+    private const int    TotalChild = 3;
 
     private bool _isReady;
 
@@ -71,9 +71,11 @@ public class CubeTargetControl : MonoBehaviour
         _indexChild++;
     }
 
-    public void SetColor(Color color)
+    public void SetColor(string color)
     {
-        _currentColor = color;
+        _currentColor = GamePlaySystem.Instance._colorPalleteData.colorPallete[color];
+        nameColor     = color;
+
     }
 
 
@@ -94,7 +96,7 @@ public class CubeTargetControl : MonoBehaviour
         }
     }
 
-    public bool CheckColor(Color color) { return color == _currentColor; }
+    public bool CheckColor(string color) { return color == nameColor; }
 
     private IEnumerator WaitingAnim(int indexCube)
     {

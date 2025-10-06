@@ -16,9 +16,13 @@ public class DecoreControl : MonoBehaviour
     public MeshRenderer MeshRenderer;
     public Color        _color = Color.black;
 
+    public TypeOfDecore DecoreType = TypeOfDecore.None;
+
     private MaterialPropertyBlock _materialPropertyBlock;
 
     [SerializeField] private DecoreState _decoreState = DecoreState.None;
+
+    [SerializeField] private bool _executeRotation = false;
 
     [Range(0f, 1f)] public float WoolProgressStartDrop = 0.5f;
 
@@ -27,6 +31,14 @@ public class DecoreControl : MonoBehaviour
     private Vector3 _startScale;
     private Vector3 _startPosition;
     private Vector3 _startLocelEuler;
+
+    [Space]
+    public Transform ForceSourceCenter = null;
+
+    [SerializeField]
+    private Vector3 _decoreCenterPos;
+    
+    private bool _isActive;
 
     #endregion
 
@@ -49,25 +61,68 @@ public class DecoreControl : MonoBehaviour
         ResetDecorTransformStatus();
     }
 
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (MeshRenderer)
+            _decoreCenterPos = transform.parent != null 
+                ? transform.parent.InverseTransformPoint(MeshRenderer.bounds.center)
+                : MeshRenderer.bounds.center;
+    }
+
     private void Update()
     {
-#if UNITY_EDITOR
-        if (_decoreState == DecoreState.OnlyUsePhysic) return;
-        SetColor();
-#endif
+        if (!Application.isPlaying)
+        {
+            if (_decoreState == DecoreState.OnlyUsePhysic) return;
+            SetColor();
+        }
     }
+#else
+    private void Update()
+    {
+    }
+#endif
     #endregion
 
     #region MAIN_METHODS
 
     #region PULSE DECOR OBJECT
 
+    public void PulseOutOfParrentWool()
+    {
+        UseGravity(true);
+        //transform.parent.parent -> to get the ObjectSpawner -_-
+        Vector3 baseDirection = _thisTransform.forward.normalized;
+        try
+        {
+            baseDirection = (Rigid.position - _thisTransform.parent.parent.position).normalized;
+        } catch
+        {
+            Debug.Log("Check prefab decor objects: " + gameObject.name);
+        }
+        Vector3 randomOffset = new Vector3(
+                Random.Range(-0.2f, 0.2f),
+                Random.Range(-0.2f, 0.2f),
+                Random.Range(-0.2f, 0.2f)
+            );
+
+        Vector3 finalDirection = (baseDirection + randomOffset).normalized;
+        transform.SetParent(null);
+        Rigid.AddForce(finalDirection * 2, ForceMode.Impulse);
+        if (gameObject.activeSelf && gameObject.activeInHierarchy) StartCoroutine(DisablePhysicComponent());
+    }
+
     public void PulseOutOfParrentWool(float forcevalue, float randomDirrectionFactor)
     {
         UseGravity(true);
         //transform.parent.parent -> to get the ObjectSpawner -_-
         Vector3 baseDirection = _thisTransform.forward.normalized;
-        try { baseDirection = (Rigid.position - _thisTransform.parent.parent.position).normalized; } catch { }
+        try
+        {
+            if (ForceSourceCenter != null) baseDirection = (Rigid.position - ForceSourceCenter.position).normalized;
+            else baseDirection                           = (Rigid.position - _thisTransform.parent.parent.position).normalized;
+        } catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
 
         Vector3 randomOffset = new Vector3(
                 Random.Range(-randomDirrectionFactor, randomDirrectionFactor),
@@ -101,6 +156,36 @@ public class DecoreControl : MonoBehaviour
         if (gameObject.activeSelf && gameObject.activeInHierarchy) StartCoroutine(DisablePhysicComponent());
     }
 
+    public void PulseOutofParrentWool(float forceValue, float randomDirrectionFactor, float speedRotation)
+    {
+        UseGravity(true);
+        //transform.parent.parent -> to get the ObjectSpawner -_-
+        Vector3 baseDirection = _thisTransform.forward.normalized;
+        try
+        {
+            baseDirection = ForceSourceCenter != null
+                ? (_decoreCenterPos - ForceSourceCenter.position).normalized
+                : (_decoreCenterPos - _thisTransform.parent.position).normalized;
+        } catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
+
+        Vector3 randomOffset = new Vector3
+            (
+                Random.Range(0, randomDirrectionFactor) * baseDirection.x,
+                Random.Range(0, randomDirrectionFactor),
+                Random.Range(0, randomDirrectionFactor) * baseDirection.z
+            );
+
+        Vector3 finalDirection = randomOffset.normalized;
+        _thisTransform.SetParent(null);
+        Rigid.AddForce(finalDirection * forceValue, ForceMode.Impulse);
+        if (gameObject.activeSelf && gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DisablePhysicComponent());
+            if (_executeRotation)
+                StartCoroutine(CalculateImpactPoint(randomOffset, speedRotation));
+        }
+    }
+
     public void UseGravity(bool isUseGravity)
     {
         if (_decoreState == DecoreState.None)
@@ -115,14 +200,36 @@ public class DecoreControl : MonoBehaviour
 
     public void SetColor(Color color) { _color = color; }
 
-    private IEnumerator DisablePhysicComponent()
+    public IEnumerator DisablePhysicComponent()
     {
         yield return new WaitForSeconds(5);
-        Rigid.useGravity  = false;
-        Rigid.isKinematic = true;
-        _thisTransform.SetParent(_parent);
+        try
+        {
+            if (Rigid)
+            {
+                Rigid.useGravity  = false;
+                Rigid.isKinematic = true;
+            }
+            _thisTransform?.SetParent(_parent);
+        } catch { }
         yield return null;
         gameObject.SetActive(false);
+    }
+
+    private IEnumerator CalculateImpactPoint(Vector3 forceVector, float speedRota)
+    {
+        if (!_executeRotation) yield break;
+        var randomPoint = Random.Range(-1f, 1f) * Vector3.one;
+        var torQue      = Vector3.Cross(randomPoint, forceVector);
+        var axis        = torQue.normalized;
+        var timer       = 0f;
+        while (timer < 5f)
+        {
+            if (!transform) break;
+            transform.Rotate(axis, speedRota * Time.deltaTime, Space.World);
+            timer              += Time.deltaTime;
+            yield return null;
+        }
     }
 
     public void ResetDecorTransformStatus()
@@ -208,4 +315,16 @@ public class DecoreControl : MonoBehaviour
     #endregion
     
     
+}
+
+public enum TypeOfDecore
+{
+    None,
+    Wool,
+    Wood,
+    Stone,
+    Metal,
+    Plastic,
+    Glass,
+    Fabric
 }
