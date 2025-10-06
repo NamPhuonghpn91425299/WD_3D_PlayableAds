@@ -29,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98699187269072745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17936873, y: -0.42548642, z: -0.34456348, w: -0.81735194}
+  m_LocalRotation: {x: 0.17936867, y: -0.42548645, z: -0.34456354, w: -0.8173519}
   m_LocalPosition: {x: -1.4974446, y: 1.0511198, z: -0.24152325}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6705644620967308878}
+  m_Father: {fileID: 7423281975708008315}
   m_LocalEulerAnglesHint: {x: -35.904, y: 44.918, z: 30.46}
 --- !u!33 &2235264580509874076
 MeshFilter:
@@ -276,12 +276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 4614852572228992317}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
+    TotalLayer: 7
+    HightestColor: cyangreen2
     ColorStack: []
   TopMeshRenderer: {fileID: 7015305992589831906}
   HideMeshRenderer: {fileID: 759517389930005928}
@@ -724,12 +725,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130513836011841265}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
-  m_LocalPosition: {x: 0.9977089, y: -0.11248988, z: 0.32953185}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
+  m_LocalPosition: {x: 0.997709, y: -0.1124899, z: 0.32953188}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4003841669044764368}
+  m_Father: {fileID: 4673592870074186054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4679167959406209000
 MeshFilter:
@@ -800,8 +801,8 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 9216432622678170052}
-  _decoreCenterPos: {x: 0.997709, y: -0.1124899, z: 0.32953188}
+  ForceSourceCenter: {fileID: 5916638358198544503}
+  _decoreCenterPos: {x: 0.99770904, y: -0.1124899, z: 0.3295319}
 --- !u!54 &6315877189050411550
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1054,12 +1055,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 7510956515009684335}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.79607844, g: 0.7137255, b: 0.5254902, a: 1}
+    TotalLayer: 8
+    HightestColor: whiteyellow
     ColorStack: []
   TopMeshRenderer: {fileID: 2034216801883719913}
   HideMeshRenderer: {fileID: 2349957709161091150}
@@ -1068,8 +1070,8 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
-  - {fileID: 6637320001687671673}
-  - {fileID: 7465967431632572505}
+  - {fileID: 3132266214415137826}
+  - {fileID: 961728289207377465}
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4157559722586927202}
   IsSetColorHightest: 1
@@ -1587,7 +1589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297611784007850168}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000008480517, y: 0.9216506, z: -0.000000020143442, w: 0.388021}
+  m_LocalRotation: {x: 0.000000008480471, y: 0.9216506, z: -0.000000020143332, w: 0.388021}
   m_LocalPosition: {x: 0.07288784, y: -0.11052993, z: 0.67157584}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -1663,7 +1665,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.7
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.07288784, y: -0.11052999, z: 0.6715759}
 --- !u!54 &7888321546317537676
 Rigidbody:
@@ -1834,12 +1836,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 7833416054485285241}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 4167060885861111062}
   HideMeshRenderer: {fileID: 4428086233603132742}
@@ -2368,7 +2371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507084127056454459}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -1.0577011, y: -0.46051586, z: -0.38961813}
   m_LocalScale: {x: 2.8090804, y: 4.21362, z: 4.21362}
   m_ConstrainProportionsScale: 0
@@ -2524,7 +2527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522133169439751700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 0.33476052, y: -0.11052993, z: 0.5652141}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -2600,7 +2603,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.3
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.33476052, y: -0.11052999, z: 0.5652141}
 --- !u!54 &7147326250681688671
 Rigidbody:
@@ -2651,92 +2654,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5076868494674803189, guid: b32d1a8b3bded9941b5088b16a5186b0, type: 3}
---- !u!1 &578817611294592197
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7094008083164968684}
-  - component: {fileID: 1504337203051283195}
-  - component: {fileID: 5710114188670152964}
-  m_Layer: 0
-  m_Name: item_A_Kitchen_Stove (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7094008083164968684
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578817611294592197}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 995445292969820105}
-  - {fileID: 3598664962665117813}
-  - {fileID: 5860983418421312708}
-  - {fileID: 3184094643744488643}
-  - {fileID: 5104532888570102056}
-  m_Father: {fileID: 5547443825829857033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1504337203051283195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578817611294592197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigid: {fileID: 5710114188670152964}
-  MeshRenderer: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 1}
-  DecoreType: 0
-  _decoreState: 2
-  _executeRotation: 0
-  WoolProgressStartDrop: 0.3
-  ForceSourceCenter: {fileID: 6351142119204584226}
-  _decoreCenterPos: {x: 0, y: 0, z: 0}
---- !u!54 &5710114188670152964
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578817611294592197}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &612563209577122873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,12 +2774,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 3314782807644518744}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 1
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 454133155560697438}
   HideMeshRenderer: {fileID: 6271647023177802818}
@@ -3396,12 +3314,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 4684101418946285569}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    TotalLayer: 4
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 711162552537150835}
   HideMeshRenderer: {fileID: 6263593898936187875}
@@ -3410,7 +3329,7 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
-  - {fileID: 3756303604217153148}
+  - {fileID: 5223783481293205560}
   RemovedDecoreControls: []
   MeshFilter: {fileID: 189933187255144773}
   IsSetColorHightest: 1
@@ -3845,7 +3764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726711929907812331}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 0.39518735, y: 0.0068497956, z: 0.9711677}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -3921,7 +3840,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.5
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.39532733, y: 0.0068546426, z: 0.97126573}
 --- !u!54 &1182719311932874599
 Rigidbody:
@@ -4160,7 +4079,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.3
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.89318335, y: 0.18861522, z: 0.59964496}
 --- !u!54 &8543354165781877395
 Rigidbody:
@@ -4479,7 +4398,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890019799056685745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 0.6247493, y: 1.2866738, z: 1.1056036}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -4555,7 +4474,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.62474936, y: 1.2866738, z: 1.1056037}
 --- !u!54 &3285138138800964699
 Rigidbody:
@@ -4791,12 +4710,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022145284789889882}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -1.4725695, y: 1.0230544, z: -0.10452641}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6705644620967308878}
+  m_Father: {fileID: 7423281975708008315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2453142705815415242
 MeshFilter:
@@ -4947,7 +4866,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082023052023013626}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.27056396, y: -0.41752863, z: 0.08778567}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -5023,7 +4942,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 6351142119204584226}
+  ForceSourceCenter: {fileID: 942880591652050792}
   _decoreCenterPos: {x: -0.2706203, y: -0.4175286, z: 0.08745722}
 --- !u!54 &6417822863079608010
 Rigidbody:
@@ -5157,6 +5076,115 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1205834283630770827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2617757251778449103}
+  - component: {fileID: 1431769190024761964}
+  - component: {fileID: 1636436834114518478}
+  - component: {fileID: 335912564688753017}
+  m_Layer: 0
+  m_Name: item_A_Kitchen_Stove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2617757251778449103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205834283630770827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1833659936559191978}
+  - {fileID: 40155524901755743}
+  - {fileID: 3470936812107107465}
+  - {fileID: 7612840385406712568}
+  - {fileID: 2360109457123830775}
+  m_Father: {fileID: 5547443825829857033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1431769190024761964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205834283630770827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigid: {fileID: 1636436834114518478}
+  MeshRenderer: {fileID: 0}
+  _color: {r: 0, g: 0, b: 0, a: 1}
+  DecoreType: 0
+  _decoreState: 2
+  _executeRotation: 0
+  WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 942880591652050792}
+  _decoreCenterPos: {x: 0, y: 0, z: 0}
+--- !u!54 &1636436834114518478
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205834283630770827}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &335912564688753017
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205834283630770827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1217993852986650511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5277,12 +5305,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 8370158523389348766}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    TotalLayer: 8
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 2385765478540478153}
   HideMeshRenderer: {fileID: 2858637920262186207}
@@ -5816,12 +5845,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 335451448149564523}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    TotalLayer: 4
+    HightestColor: whiteyellow
     ColorStack: []
   TopMeshRenderer: {fileID: 8446061242096644392}
   HideMeshRenderer: {fileID: 4388154414090417311}
@@ -6235,91 +6265,6 @@ MonoBehaviour:
   - 0.0500611
   - 0.045446374
   - 0.040831596
---- !u!1 &1243048701605563892
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6029885103797594752}
-  - component: {fileID: 3756303604217153148}
-  - component: {fileID: 8003050986473003393}
-  m_Layer: 0
-  m_Name: item_A_Kitchen_Cactus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6029885103797594752
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243048701605563892}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4040336780974982106}
-  - {fileID: 957198146070165277}
-  - {fileID: 8411191665398009578}
-  - {fileID: 8598423643532377166}
-  m_Father: {fileID: 5547443825829857033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3756303604217153148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243048701605563892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigid: {fileID: 8003050986473003393}
-  MeshRenderer: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 1}
-  DecoreType: 0
-  _decoreState: 2
-  _executeRotation: 0
-  WoolProgressStartDrop: 0.8
-  ForceSourceCenter: {fileID: 9216432622678170052}
-  _decoreCenterPos: {x: 0, y: 0, z: 0}
---- !u!54 &8003050986473003393
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243048701605563892}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1280073816044593163
 GameObject:
   m_ObjectHideFlags: 0
@@ -6440,12 +6385,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 6214737902847815106}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
+    HightestColor: Pigskin
     ColorStack: []
   TopMeshRenderer: {fileID: 2636858099173699157}
   HideMeshRenderer: {fileID: 8749862406108658976}
@@ -6894,7 +6840,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6705644620967308878}
+  m_Father: {fileID: 7423281975708008315}
   m_LocalEulerAnglesHint: {x: -23.453, y: 197.663, z: 26.324}
 --- !u!33 &2648307242141104268
 MeshFilter:
@@ -7045,12 +6991,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503405947171082815}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9537174, z: -0, w: 0.30070448}
+  m_LocalRotation: {x: 0, y: 0.9537174, z: 0, w: 0.30070448}
   m_LocalPosition: {x: -0.39791685, y: -0.08227154, z: 0.35536945}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4033981807592437819}
+  m_Father: {fileID: 8680774404112007296}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &4057395796548413606
 MeshFilter:
@@ -7172,6 +7118,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6695896778768798175, guid: b32d1a8b3bded9941b5088b16a5186b0, type: 3}
+--- !u!1 &1537151399916613667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 942880591652050792}
+  m_Layer: 0
+  m_Name: S2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &942880591652050792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537151399916613667}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.894, y: 0.675, z: 1.794}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5547443825829857033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571651515254548827
 GameObject:
   m_ObjectHideFlags: 0
@@ -7201,12 +7178,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571651515254548827}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
-  m_LocalPosition: {x: -0.86673737, y: -0.12771347, z: 0.50559247}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
+  m_LocalPosition: {x: -0.86673737, y: -0.12771341, z: 0.50559247}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3892609726539463420}
+  m_Father: {fileID: 2617757251778449103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1640813272842378248
 MeshFilter:
@@ -7328,6 +7305,113 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -379337040831323650, guid: b32d1a8b3bded9941b5088b16a5186b0, type: 3}
+--- !u!1 &1585951651838045837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4432234947629809246}
+  - component: {fileID: 3132266214415137826}
+  - component: {fileID: 7076905961427719020}
+  - component: {fileID: 8678804433589008230}
+  m_Layer: 0
+  m_Name: item_A_Kitchen_Sponge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4432234947629809246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585951651838045837}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1702350864758090230}
+  - {fileID: 875343104965858259}
+  - {fileID: 8050037947440363563}
+  m_Father: {fileID: 5547443825829857033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3132266214415137826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585951651838045837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigid: {fileID: 7076905961427719020}
+  MeshRenderer: {fileID: 0}
+  _color: {r: 0, g: 0, b: 0, a: 1}
+  DecoreType: 0
+  _decoreState: 2
+  _executeRotation: 0
+  WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 5916638358198544503}
+  _decoreCenterPos: {x: 0, y: 0, z: 0}
+--- !u!54 &7076905961427719020
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585951651838045837}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8678804433589008230
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585951651838045837}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1617526386044832632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7448,12 +7532,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 7701379539276337904}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    TotalLayer: 1
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 4528420313070574629}
   HideMeshRenderer: {fileID: 5951636093506066499}
@@ -7897,12 +7982,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638062465751628526}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000020844164, y: 0.3007043, z: -0.0000000065720998, w: -0.9537174}
+  m_LocalRotation: {x: -0.000000020844162, y: 0.3007043, z: -0.000000006572101, w: -0.9537174}
   m_LocalPosition: {x: -0.77326685, y: -0.08227154, z: 0.56837803}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3892609726539463420}
+  m_Father: {fileID: 2617757251778449103}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &1117293645022258802
 MeshFilter:
@@ -8227,12 +8312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 8714184686473691064}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 9064135345939758912}
   HideMeshRenderer: {fileID: 6248878199165290637}
@@ -8678,7 +8764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881156078999086902}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 1.2579777, y: 1.2866738, z: 0.20125961}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -8754,7 +8840,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.2579777, y: 1.2866738, z: 0.20125963}
 --- !u!54 &3161000905315778103
 Rigidbody:
@@ -8839,7 +8925,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6705644620967308878}
+  m_Father: {fileID: 7423281975708008315}
   m_LocalEulerAnglesHint: {x: -3.058, y: 51.278, z: 17.207}
 --- !u!33 &1230465145968441718
 MeshFilter:
@@ -8990,12 +9076,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058506719759282504}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
-  m_LocalPosition: {x: -0.53051656, y: -0.12771347, z: 0.7410168}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
+  m_LocalPosition: {x: -0.53051656, y: -0.12771341, z: 0.7410168}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7094008083164968684}
+  m_Father: {fileID: 2705997131739969820}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7621533974401406789
 MeshFilter:
@@ -9320,12 +9406,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 1467259203917414690}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.40784314, g: 0.69803923, b: 0.6784314, a: 1}
+    HightestColor: Blue3
     ColorStack: []
   TopMeshRenderer: {fileID: 3034034731320969149}
   HideMeshRenderer: {fileID: 8726426946565122551}
@@ -9739,6 +9826,224 @@ MonoBehaviour:
   - 0.07882391
   - 0.07450418
   - 0.07018441
+--- !u!1 &2127149973238629650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2705997131739969820}
+  - component: {fileID: 6636814364302117700}
+  - component: {fileID: 586968294517555788}
+  - component: {fileID: 6390024421813778209}
+  m_Layer: 0
+  m_Name: item_A_Kitchen_Stove (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2705997131739969820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127149973238629650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 995445292969820105}
+  - {fileID: 3598664962665117813}
+  - {fileID: 5860983418421312708}
+  - {fileID: 3184094643744488643}
+  - {fileID: 5104532888570102056}
+  m_Father: {fileID: 5547443825829857033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6636814364302117700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127149973238629650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigid: {fileID: 586968294517555788}
+  MeshRenderer: {fileID: 0}
+  _color: {r: 0, g: 0, b: 0, a: 1}
+  DecoreType: 0
+  _decoreState: 2
+  _executeRotation: 0
+  WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 942880591652050792}
+  _decoreCenterPos: {x: 0, y: 0, z: 0}
+--- !u!54 &586968294517555788
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127149973238629650}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6390024421813778209
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127149973238629650}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!1 &2129108636139227449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7423281975708008315}
+  - component: {fileID: 4290318838033008084}
+  - component: {fileID: 2108536214850357357}
+  - component: {fileID: 8890725984662683632}
+  m_Layer: 0
+  m_Name: item_A_Kitchen_Tree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7423281975708008315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129108636139227449}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1898029935281145074}
+  - {fileID: 5312948064277641379}
+  - {fileID: 3878941389643136752}
+  - {fileID: 8316143007550634617}
+  - {fileID: 2133942261391118763}
+  m_Father: {fileID: 5547443825829857033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4290318838033008084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129108636139227449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigid: {fileID: 2108536214850357357}
+  MeshRenderer: {fileID: 0}
+  _color: {r: 0, g: 0, b: 0, a: 1}
+  DecoreType: 0
+  _decoreState: 2
+  _executeRotation: 0
+  WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 942880591652050792}
+  _decoreCenterPos: {x: 0, y: 0, z: 0}
+--- !u!54 &2108536214850357357
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129108636139227449}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &8890725984662683632
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129108636139227449}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2136919235843780748
 GameObject:
   m_ObjectHideFlags: 0
@@ -9859,12 +10164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 7020064474843065197}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 1050256731603604863}
   HideMeshRenderer: {fileID: 30399013026259403}
@@ -10308,11 +10614,11 @@ Transform:
   m_GameObject: {fileID: 2180584812446925636}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000002088078, y: 0.29533878, z: -0.000000006454838, w: 0.9553926}
-  m_LocalPosition: {x: 1.2160248, y: -0.091215916, z: -0.12989166}
+  m_LocalPosition: {x: 1.2160248, y: -0.091215864, z: -0.12989166}
   m_LocalScale: {x: 5.322904, y: 1.9172554, z: 2.139087}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2500712388216140181}
+  m_Father: {fileID: 4432234947629809246}
   m_LocalEulerAnglesHint: {x: 0, y: -20.644, z: 0}
 --- !u!33 &3756294128997196984
 MeshFilter:
@@ -10383,7 +10689,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.5
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.2160249, y: -0.091215916, z: -0.12989166}
 --- !u!54 &3684127320672756565
 Rigidbody:
@@ -10463,7 +10769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2193598326427915835}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.048018508, y: 0.4610714, z: -0.024996873, w: 0.8857102}
+  m_LocalRotation: {x: 0.048018288, y: 0.46107152, z: -0.024996737, w: 0.8857102}
   m_LocalPosition: {x: 0.9765353, y: 0.26047075, z: 0.8626403}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -10539,7 +10845,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.9754512, y: 0.24830092, z: 0.8618813}
 --- !u!54 &4262551159126411384
 Rigidbody:
@@ -10876,12 +11182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 3841389349515888121}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.49411765, g: 0.29803923, b: 0.19607843, a: 1}
+    HightestColor: Brown
     ColorStack: []
   TopMeshRenderer: {fileID: 8246025310882571061}
   HideMeshRenderer: {fileID: 3741650915634711193}
@@ -11427,12 +11734,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 5905466790398185067}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.49411765, g: 0.29803923, b: 0.19607843, a: 1}
+    HightestColor: Brown
     ColorStack: []
   TopMeshRenderer: {fileID: 2544384270770732805}
   HideMeshRenderer: {fileID: 8830107705346392877}
@@ -11441,7 +11749,7 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
-  - {fileID: 1570667629805568952}
+  - {fileID: 4290318838033008084}
   RemovedDecoreControls: []
   MeshFilter: {fileID: 1434327600367928330}
   IsSetColorHightest: 1
@@ -11876,7 +12184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2541957509695589383}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.3005388, y: 0.4819461, z: 0.40284824}
   m_LocalScale: {x: 3.3393, y: 3.3393002, z: 3.3393}
   m_ConstrainProportionsScale: 0
@@ -12032,12 +12340,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2599510196274669210}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.5773458, y: -0.08227154, z: 0.09229839}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8497585100750409639}
+  m_Father: {fileID: 5396211646412237156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1178217737086827437
 MeshFilter:
@@ -12188,7 +12496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2666160125855615726}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 1.3818702, y: 1.2866738, z: 0.024322689}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -12264,7 +12572,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.3818703, y: 1.2866738, z: 0.02432269}
 --- !u!54 &6720178122711652323
 Rigidbody:
@@ -12518,12 +12826,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 6081903873482052102}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 2135086731033642849}
   HideMeshRenderer: {fileID: 7592296436565562319}
@@ -13042,7 +13351,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.8228607, y: 0.24768895, z: 0.7908032}
 --- !u!54 &6894236019310565141
 Rigidbody:
@@ -13296,12 +13605,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 8883041082701925501}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
+    TotalLayer: 7
+    HightestColor: cyangreen2
     ColorStack: []
   TopMeshRenderer: {fileID: 7011753245057662365}
   HideMeshRenderer: {fileID: 5376981567725552200}
@@ -14157,12 +14467,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 3858784030681313213}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 4806042615814939517}
   HideMeshRenderer: {fileID: 7508606802210756508}
@@ -14696,12 +15007,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 8658157531838583916}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
+    TotalLayer: 7
+    HightestColor: cyangreen2
     ColorStack: []
   TopMeshRenderer: {fileID: 3540337158476232881}
   HideMeshRenderer: {fileID: 684546300539619877}
@@ -15235,12 +15547,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 6776295460502792404}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    TotalLayer: 1
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 4517831935660404478}
   HideMeshRenderer: {fileID: 8623025651577004643}
@@ -15931,12 +16244,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 6918874958822537402}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    TotalLayer: 4
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 412659948983066067}
   HideMeshRenderer: {fileID: 7515474921763212037}
@@ -16350,92 +16664,6 @@ MonoBehaviour:
   - 0.044354767
   - 0.039680164
   - 0.03500551
---- !u!1 &3311985728462419852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6705644620967308878}
-  - component: {fileID: 1570667629805568952}
-  - component: {fileID: 4586456878839002157}
-  m_Layer: 0
-  m_Name: item_A_Kitchen_Tree
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6705644620967308878
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311985728462419852}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1898029935281145074}
-  - {fileID: 5312948064277641379}
-  - {fileID: 3878941389643136752}
-  - {fileID: 8316143007550634617}
-  - {fileID: 2133942261391118763}
-  m_Father: {fileID: 5547443825829857033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1570667629805568952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311985728462419852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigid: {fileID: 4586456878839002157}
-  MeshRenderer: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 1}
-  DecoreType: 0
-  _decoreState: 2
-  _executeRotation: 0
-  WoolProgressStartDrop: 0.5
-  ForceSourceCenter: {fileID: 6351142119204584226}
-  _decoreCenterPos: {x: 0, y: 0, z: 0}
---- !u!54 &4586456878839002157
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3311985728462419852}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3315541311205420354
 GameObject:
   m_ObjectHideFlags: 0
@@ -16624,7 +16852,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.9
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.9054015, y: 0.20511422, z: 1.1896214}
 --- !u!54 &6860930396258785565
 Rigidbody:
@@ -16787,12 +17015,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3371066967319633248}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
-  m_LocalPosition: {x: -0.6431696, y: -0.12771347, z: 0.18630442}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
+  m_LocalPosition: {x: -0.6431696, y: -0.12771341, z: 0.18630442}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8497585100750409639}
+  m_Father: {fileID: 5396211646412237156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1832971204276454154
 MeshFilter:
@@ -16943,12 +17171,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3375332892188644099}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000020844164, y: 0.3007043, z: -0.0000000065720998, w: -0.9537174}
+  m_LocalRotation: {x: -0.000000020844162, y: 0.3007043, z: -0.000000006572101, w: -0.9537174}
   m_LocalPosition: {x: -0.21347816, y: -0.08227154, z: 0.48451424}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4033981807592437819}
+  m_Father: {fileID: 8680774404112007296}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &1716100796510198247
 MeshFilter:
@@ -17153,92 +17381,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &3451759143303284928
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3892609726539463420}
-  - component: {fileID: 4967339464731953674}
-  - component: {fileID: 6879883893448654637}
-  m_Layer: 0
-  m_Name: item_A_Kitchen_Stove
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3892609726539463420
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451759143303284928}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1833659936559191978}
-  - {fileID: 40155524901755743}
-  - {fileID: 3470936812107107465}
-  - {fileID: 7612840385406712568}
-  - {fileID: 2360109457123830775}
-  m_Father: {fileID: 5547443825829857033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4967339464731953674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451759143303284928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigid: {fileID: 6879883893448654637}
-  MeshRenderer: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 1}
-  DecoreType: 0
-  _decoreState: 2
-  _executeRotation: 0
-  WoolProgressStartDrop: 0.3
-  ForceSourceCenter: {fileID: 6351142119204584226}
-  _decoreCenterPos: {x: 0, y: 0, z: 0}
---- !u!54 &6879883893448654637
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451759143303284928}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3518172781296821810
 GameObject:
   m_ObjectHideFlags: 0
@@ -17268,12 +17410,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3518172781296821810}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.8870108, z: -0, w: -0.46174866}
+  m_LocalRotation: {x: 0, y: 0.8870108, z: 0, w: -0.46174866}
   m_LocalPosition: {x: -0.593838, y: -0.08227154, z: 0.8314492}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7094008083164968684}
+  m_Father: {fileID: 2705997131739969820}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &2723482994841089895
 MeshFilter:
@@ -17424,7 +17566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3578429817762792635}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08472036, y: 0.45786053, z: 0.008786359, w: 0.8849345}
+  m_LocalRotation: {x: -0.08472036, y: 0.45786044, z: 0.00878635, w: 0.88493454}
   m_LocalPosition: {x: 1.0902056, y: 0.2396841, z: 0.63533026}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -17500,7 +17642,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.0913457, y: 0.22762017, z: 0.6370674}
 --- !u!54 &322477507784799380
 Rigidbody:
@@ -17671,12 +17813,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 768999973488372967}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
+    TotalLayer: 3
+    HightestColor: Pigskin
     ColorStack: []
   TopMeshRenderer: {fileID: 5280969639643947727}
   HideMeshRenderer: {fileID: 5474401261603850884}
@@ -18123,7 +18266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3663597469586101894}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.47907248, y: 0.3886088, z: -0.24938944, w: 0.7465103}
+  m_LocalRotation: {x: 0.47907236, y: 0.3886088, z: -0.2493893, w: 0.74651045}
   m_LocalPosition: {x: -1.0580121, y: 0.3407841, z: -0.4168947}
   m_LocalScale: {x: 2.4813156, y: 2.4813151, z: 2.481315}
   m_ConstrainProportionsScale: 0
@@ -18250,6 +18393,113 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7759012013860684829, guid: b32d1a8b3bded9941b5088b16a5186b0, type: 3}
+--- !u!1 &3779810508094114512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4673592870074186054}
+  - component: {fileID: 961728289207377465}
+  - component: {fileID: 548777895289697514}
+  - component: {fileID: 6715560247698635903}
+  m_Layer: 0
+  m_Name: item_A_Kitchen_Tap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4673592870074186054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779810508094114512}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1579172891965119023}
+  - {fileID: 2667959834339472884}
+  - {fileID: 3393687857171340096}
+  m_Father: {fileID: 5547443825829857033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961728289207377465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779810508094114512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigid: {fileID: 548777895289697514}
+  MeshRenderer: {fileID: 0}
+  _color: {r: 0, g: 0, b: 0, a: 1}
+  DecoreType: 0
+  _decoreState: 2
+  _executeRotation: 0
+  WoolProgressStartDrop: 0.6
+  ForceSourceCenter: {fileID: 5916638358198544503}
+  _decoreCenterPos: {x: 0, y: 0, z: 0}
+--- !u!54 &548777895289697514
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779810508094114512}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6715560247698635903
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779810508094114512}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &3958574684899604207
 GameObject:
   m_ObjectHideFlags: 0
@@ -18279,12 +18529,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3958574684899604207}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
-  m_LocalPosition: {x: -0.30694884, y: -0.12771347, z: 0.4217287}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
+  m_LocalPosition: {x: -0.30694884, y: -0.12771341, z: 0.4217287}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4033981807592437819}
+  m_Father: {fileID: 8680774404112007296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3994788981805776662
 MeshFilter:
@@ -18435,7 +18685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063076826238373022}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386247, y: 0.46174863, z: -0.000000010091839, w: 0.8870109}
   m_LocalPosition: {x: 0.38395596, y: -0.11052993, z: 0.49495572}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -18511,7 +18761,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.1
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.383956, y: -0.11052999, z: 0.49495575}
 --- !u!54 &5558004735853685542
 Rigidbody:
@@ -18562,6 +18812,223 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5076868494674803189, guid: b32d1a8b3bded9941b5088b16a5186b0, type: 3}
+--- !u!1 &4075308588930332383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3115390530776192616}
+  - component: {fileID: 5223783481293205560}
+  - component: {fileID: 704279188215937526}
+  - component: {fileID: 636874185567242656}
+  m_Layer: 0
+  m_Name: item_A_Kitchen_Cactus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3115390530776192616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075308588930332383}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4040336780974982106}
+  - {fileID: 957198146070165277}
+  - {fileID: 8411191665398009578}
+  - {fileID: 8598423643532377166}
+  m_Father: {fileID: 5547443825829857033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5223783481293205560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075308588930332383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigid: {fileID: 704279188215937526}
+  MeshRenderer: {fileID: 0}
+  _color: {r: 0, g: 0, b: 0, a: 1}
+  DecoreType: 0
+  _decoreState: 2
+  _executeRotation: 0
+  WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 5916638358198544503}
+  _decoreCenterPos: {x: 0, y: 0, z: 0}
+--- !u!54 &704279188215937526
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075308588930332383}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &636874185567242656
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075308588930332383}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!1 &4207568871161580602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5396211646412237156}
+  - component: {fileID: 8469746780926080325}
+  - component: {fileID: 4982118570263149240}
+  - component: {fileID: 6371560215620367191}
+  m_Layer: 0
+  m_Name: item_A_Kitchen_Stove (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5396211646412237156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4207568871161580602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5443964734580858516}
+  - {fileID: 7654374753649798487}
+  - {fileID: 8668011911576687790}
+  - {fileID: 7065472685292481912}
+  - {fileID: 8092670425104488624}
+  m_Father: {fileID: 5547443825829857033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8469746780926080325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4207568871161580602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigid: {fileID: 4982118570263149240}
+  MeshRenderer: {fileID: 0}
+  _color: {r: 0, g: 0, b: 0, a: 1}
+  DecoreType: 0
+  _decoreState: 2
+  _executeRotation: 0
+  WoolProgressStartDrop: 0.6
+  ForceSourceCenter: {fileID: 942880591652050792}
+  _decoreCenterPos: {x: 0, y: 0, z: 0}
+--- !u!54 &4982118570263149240
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4207568871161580602}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6371560215620367191
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4207568871161580602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4236076195500264211
 GameObject:
   m_ObjectHideFlags: 0
@@ -18682,12 +19149,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 1456607225875200293}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    TotalLayer: 8
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 2814235264614002088}
   HideMeshRenderer: {fileID: 3691674146511883579}
@@ -19130,7 +19598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4245618678531999286}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.035409898, y: 0.6240754, z: 0.31419066}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -19377,12 +19845,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 1263008480189285305}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
+    TotalLayer: 9
+    HightestColor: Pigskin
     ColorStack: []
   TopMeshRenderer: {fileID: 5352327913326056975}
   HideMeshRenderer: {fileID: 5198936890970467850}
@@ -20089,12 +20558,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 2054822405823916330}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 3
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 4530749118937169650}
   HideMeshRenderer: {fileID: 3261690623919425974}
@@ -20620,12 +21090,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4471517039007712514}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.8009136, y: -0.08227154, z: 0.41158643}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3892609726539463420}
+  m_Father: {fileID: 2617757251778449103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4107977194205357065
 MeshFilter:
@@ -20776,7 +21246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4477656575504093524}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.57138103, y: -0.23286289, z: -0.061100572}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -21088,12 +21558,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4523686457350228099}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000020844164, y: 0.3007043, z: -0.0000000065720998, w: -0.9537174}
+  m_LocalRotation: {x: -0.000000020844162, y: 0.3007043, z: -0.000000006572101, w: -0.9537174}
   m_LocalPosition: {x: -0.43704608, y: -0.08227154, z: 0.8038024}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7094008083164968684}
+  m_Father: {fileID: 2705997131739969820}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &5542070463102166455
 MeshFilter:
@@ -21244,7 +21714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4625423429298754184}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -1.1879188, y: 0.27742255, z: -0.50690347}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -21647,12 +22117,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 8107901725116807774}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
+    TotalLayer: 7
+    HightestColor: cyangreen2
     ColorStack: []
   TopMeshRenderer: {fileID: 5047526663701473172}
   HideMeshRenderer: {fileID: 1715238043760520596}
@@ -22344,7 +22815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4860377554194427834}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 0.7658491, y: 1.2866738, z: 0.9040921}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -22420,7 +22891,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.7658492, y: 1.2866738, z: 0.90409213}
 --- !u!54 &3846640460767583850
 Rigidbody:
@@ -22583,7 +23054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5067014900012242813}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 1.1323644, y: 1.2866738, z: 0.38065392}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -22659,7 +23130,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.1323644, y: 1.2866738, z: 0.38065395}
 --- !u!54 &7583144170272044466
 Rigidbody:
@@ -22739,7 +23210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5111678891513624240}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.048018508, y: 0.4610714, z: -0.024996873, w: 0.8857102}
+  m_LocalRotation: {x: 0.048018288, y: 0.46107152, z: -0.024996737, w: 0.8857102}
   m_LocalPosition: {x: 0.9765353, y: 0.26047075, z: 0.8626403}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -22815,7 +23286,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.9729704, y: 0.27088696, z: 0.86449677}
 --- !u!54 &671987722213049848
 Rigidbody:
@@ -22986,12 +23457,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 5000382390131209506}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    TotalLayer: 4
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 8383609940821743146}
   HideMeshRenderer: {fileID: 9221067004981746225}
@@ -23405,92 +23877,6 @@ MonoBehaviour:
   - 0.02869297
   - 0.023859087
   - 0.019025147
---- !u!1 &5306540751133209829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4033981807592437819}
-  - component: {fileID: 4454092921538036616}
-  - component: {fileID: 3769392323736424366}
-  m_Layer: 0
-  m_Name: item_A_Kitchen_Stove (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4033981807592437819
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5306540751133209829}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5777510979093791296}
-  - {fileID: 1968608570144324821}
-  - {fileID: 5410408276811461582}
-  - {fileID: 3230130087130271785}
-  - {fileID: 8059688621570218193}
-  m_Father: {fileID: 5547443825829857033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4454092921538036616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5306540751133209829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigid: {fileID: 3769392323736424366}
-  MeshRenderer: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 1}
-  DecoreType: 0
-  _decoreState: 2
-  _executeRotation: 0
-  WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 6351142119204584226}
-  _decoreCenterPos: {x: 0, y: 0, z: 0}
---- !u!54 &3769392323736424366
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5306540751133209829}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5327221391415485278
 GameObject:
   m_ObjectHideFlags: 0
@@ -23525,7 +23911,7 @@ Transform:
   m_LocalScale: {x: 1.3878001, y: 1.3878007, z: 1.387801}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6029885103797594752}
+  m_Father: {fileID: 3115390530776192616}
   m_LocalEulerAnglesHint: {x: -58.459, y: -9.262, z: 1.974}
 --- !u!33 &6929924289938223716
 MeshFilter:
@@ -23596,7 +23982,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.3157672, y: 0.29088736, z: 0.17797989}
 --- !u!54 &3919762305865884262
 Rigidbody:
@@ -23676,7 +24062,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5335634375451138717}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.1339664, y: 0.6240754, z: 0.24518067}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -23923,12 +24309,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 6781806160099642851}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    TotalLayer: 6
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 8936099611351701942}
   HideMeshRenderer: {fileID: 5891134998043479715}
@@ -24371,12 +24758,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5477753870949869522}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 1.3604608, y: 0.19255324, z: 0.2330792}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6029885103797594752}
+  m_Father: {fileID: 3115390530776192616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6886426441644256861
 MeshFilter:
@@ -24447,7 +24834,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.3604608, y: 0.19255324, z: 0.2330792}
 --- !u!54 &6887443500567679002
 Rigidbody:
@@ -24610,7 +24997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5502074566939684544}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0745261, y: 0.45569468, z: 0.14316323, w: 0.87538135}
+  m_LocalRotation: {x: 0.07452611, y: 0.45569468, z: 0.14316326, w: 0.87538135}
   m_LocalPosition: {x: 0.76268595, y: 0.22498411, z: 1.0494689}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -24686,7 +25073,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.7649228, y: 0.2133803, z: 1.0462745}
 --- !u!54 &1217613425041798900
 Rigidbody:
@@ -24854,7 +25241,7 @@ Transform:
   m_LocalScale: {x: 1.3878001, y: 1.3878007, z: 1.387801}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6029885103797594752}
+  m_Father: {fileID: 3115390530776192616}
   m_LocalEulerAnglesHint: {x: -58.459, y: -9.262, z: 1.974}
 --- !u!33 &1594901262023678143
 MeshFilter:
@@ -24925,7 +25312,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.3075677, y: 0.29510292, z: 0.17278893}
 --- !u!54 &5218801945192919689
 Rigidbody:
@@ -25005,12 +25392,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5830674644252336814}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.24112496, y: -0.08227154, z: 0.3277227}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4033981807592437819}
+  m_Father: {fileID: 8680774404112007296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1763574766935922387
 MeshFilter:
@@ -25161,7 +25548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5887508015862465869}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.094143, y: -0.23286289, z: 0.27306506}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -25316,7 +25703,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.7, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3314782807644518744}
   - {fileID: 6214737902847815106}
@@ -25369,16 +25756,6 @@ Transform:
   - {fileID: 594462826439439238}
   - {fileID: 7649679123426333107}
   - {fileID: 2349643649862553686}
-  - {fileID: 2500712388216140181}
-  - {fileID: 6029885103797594752}
-  - {fileID: 4003841669044764368}
-  - {fileID: 6705644620967308878}
-  - {fileID: 3892609726539463420}
-  - {fileID: 7094008083164968684}
-  - {fileID: 8497585100750409639}
-  - {fileID: 4033981807592437819}
-  - {fileID: 9216432622678170052}
-  - {fileID: 6351142119204584226}
   - {fileID: 2079545686223420835}
   - {fileID: 4729569599944593567}
   - {fileID: 26403501041600963}
@@ -25417,6 +25794,16 @@ Transform:
   - {fileID: 6733319091853005612}
   - {fileID: 6739992635529102185}
   - {fileID: 6348012748795327810}
+  - {fileID: 4432234947629809246}
+  - {fileID: 3115390530776192616}
+  - {fileID: 4673592870074186054}
+  - {fileID: 7423281975708008315}
+  - {fileID: 2617757251778449103}
+  - {fileID: 2705997131739969820}
+  - {fileID: 5396211646412237156}
+  - {fileID: 8680774404112007296}
+  - {fileID: 5916638358198544503}
+  - {fileID: 942880591652050792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1289514809090802136
@@ -25439,19 +25826,18 @@ MonoBehaviour:
     CurrentcyLevel: 0
     DynamicDif: 0
     ColorList:
-    - {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
-    - {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
-    - {r: 0.79607844, g: 0.7137255, b: 0.5254902, a: 1}
-    - {r: 0.18431373, g: 0.34117648, b: 0.44313726, a: 1}
-    - {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
-    - {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    - {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
-    - {r: 0.40784314, g: 0.69803923, b: 0.6784314, a: 1}
-    - {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
-    - {r: 0.49411765, g: 0.29803923, b: 0.19607843, a: 1}
-    ColorCountList: 090000000600000003000000030000000c0000000300000006000000030000000600000003000000
+    - Purple3
+    - whiteyellow
+    - Blue3
+    - Neonrose
+    - Yellow17
+    - White
+    - Pigskin
+    - Brown
+    - cyangreen2
+    - Blue4
+    ColorCountList: 150000001500000015000000150000001200000012000000120000000f0000000f0000000f000000
   WoolControls:
-  - {fileID: 7352775296644854964}
   - {fileID: 8988830814448266301}
   - {fileID: 4183853673108951005}
   - {fileID: 8038208392842317946}
@@ -25495,47 +25881,17 @@ MonoBehaviour:
   - {fileID: 6248207716427752740}
   - {fileID: 6607793330354450577}
   - {fileID: 2809109844825265306}
+  - {fileID: 7352775296644854964}
   InterestCurveData: {fileID: 0}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   TotalColor: 0
   WoolMaterial: {fileID: 2100000, guid: 2f8d316a60113e14cb2df953dc7731c8, type: 2}
   WoolChildMaterial: {fileID: 2100000, guid: 7fbf0b724a9980c4ba0f180041168239, type: 2}
-  MaxLayerHasThreeSameColor: 5
+  MaxLayerHasThreeSameColor: 2
   _maxDistanceFromCetner: 0
   MainMotionAnimator: {fileID: 0}
   MainAudioSource: {fileID: 0}
   MotionAudioClips: []
---- !u!1 &5932138437210483721
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9216432622678170052}
-  m_Layer: 0
-  m_Name: S1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9216432622678170052
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5932138437210483721}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.796, y: -1.39, z: 3.042}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5547443825829857033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5936432906356927905
 GameObject:
   m_ObjectHideFlags: 0
@@ -25724,7 +26080,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.6921102, y: 0.2154177, z: 0.8420962}
 --- !u!54 &1124195595044518984
 Rigidbody:
@@ -25804,7 +26160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5987964156331394576}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08472036, y: 0.45786053, z: 0.008786359, w: 0.8849345}
+  m_LocalRotation: {x: -0.08472036, y: 0.45786044, z: 0.00878635, w: 0.88493454}
   m_LocalPosition: {x: 1.0902056, y: 0.2396841, z: 0.63533026}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -25880,7 +26236,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.5
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.0847871, y: 0.24944317, z: 0.63510144}
 --- !u!54 &2810130440763892568
 Rigidbody:
@@ -25960,12 +26316,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6106274508991848423}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9537174, z: -0, w: 0.30070448}
+  m_LocalRotation: {x: 0, y: 0.9537174, z: 0, w: 0.30070448}
   m_LocalPosition: {x: -0.7341377, y: -0.08227154, z: 0.11994514}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8497585100750409639}
+  m_Father: {fileID: 5396211646412237156}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &3697538112454373048
 MeshFilter:
@@ -26116,12 +26472,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6134887493177438734}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.8870108, z: -0, w: -0.46174866}
+  m_LocalRotation: {x: 0, y: 0.8870108, z: 0, w: -0.46174866}
   m_LocalPosition: {x: -0.7064909, y: -0.08227154, z: 0.27673683}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8497585100750409639}
+  m_Father: {fileID: 5396211646412237156}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &6697696445994706300
 MeshFilter:
@@ -26272,7 +26628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220945773809541093}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.14123562, y: 0.10905811, z: 0.55958664}
   m_LocalScale: {x: 3.3393, y: 3.3393002, z: 3.3393}
   m_ConstrainProportionsScale: 0
@@ -26428,7 +26784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6233028063547414337}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.18356615, y: 0.3585261, z: 0.51833695}
   m_LocalScale: {x: 3.3393, y: 3.3393002, z: 3.3393}
   m_ConstrainProportionsScale: 0
@@ -26750,7 +27106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6429131607793457723}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.41262937, y: -0.23286289, z: 0.05005856}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -26906,12 +27262,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6592993390342086920}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.46469283, y: -0.08227154, z: 0.64701074}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7094008083164968684}
+  m_Father: {fileID: 2705997131739969820}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8675366967074568367
 MeshFilter:
@@ -27033,92 +27389,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6695896778768798175, guid: b32d1a8b3bded9941b5088b16a5186b0, type: 3}
---- !u!1 &6697696548995470009
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8497585100750409639}
-  - component: {fileID: 8446740940715827044}
-  - component: {fileID: 4443710811944923088}
-  m_Layer: 0
-  m_Name: item_A_Kitchen_Stove (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8497585100750409639
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6697696548995470009}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5443964734580858516}
-  - {fileID: 7654374753649798487}
-  - {fileID: 8668011911576687790}
-  - {fileID: 7065472685292481912}
-  - {fileID: 8092670425104488624}
-  m_Father: {fileID: 5547443825829857033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8446740940715827044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6697696548995470009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigid: {fileID: 4443710811944923088}
-  MeshRenderer: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 1}
-  DecoreType: 0
-  _decoreState: 2
-  _executeRotation: 0
-  WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 6351142119204584226}
-  _decoreCenterPos: {x: 0, y: 0, z: 0}
---- !u!54 &4443710811944923088
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6697696548995470009}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &6885192377790390342
 GameObject:
   m_ObjectHideFlags: 0
@@ -27148,12 +27418,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6885192377790390342}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.8870108, z: -0, w: -0.46174866}
+  m_LocalRotation: {x: 0, y: 0.8870108, z: 0, w: -0.46174866}
   m_LocalPosition: {x: -0.9300588, y: -0.08227154, z: 0.5960249}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3892609726539463420}
+  m_Father: {fileID: 2617757251778449103}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &170110831454938299
 MeshFilter:
@@ -27304,12 +27574,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6915228353862267105}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9537174, z: -0, w: 0.30070448}
+  m_LocalRotation: {x: 0, y: 0.9537174, z: 0, w: 0.30070448}
   m_LocalPosition: {x: -0.95770556, y: -0.08227154, z: 0.4392332}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3892609726539463420}
+  m_Father: {fileID: 2617757251778449103}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7670287508371999758
 MeshFilter:
@@ -27536,7 +27806,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.82573086, y: 0.23074053, z: 0.791665}
 --- !u!54 &6951062469025978835
 Rigidbody:
@@ -27873,12 +28143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 6907894424454435781}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    TotalLayer: 6
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 8892072061970892937}
   HideMeshRenderer: {fileID: 8942319630617761120}
@@ -28412,12 +28683,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 5537756263654655257}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 7
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 3006183275067085255}
   HideMeshRenderer: {fileID: 8820605774704485947}
@@ -28951,12 +29223,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 9073936224366256929}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.40784314, g: 0.69803923, b: 0.6784314, a: 1}
+    TotalLayer: 1
+    HightestColor: Blue3
     ColorStack: []
   TopMeshRenderer: {fileID: 4626653426280451466}
   HideMeshRenderer: {fileID: 8458383180618205747}
@@ -29576,12 +29849,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 2474799590783770044}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.79607844, g: 0.7137255, b: 0.5254902, a: 1}
+    HightestColor: whiteyellow
     ColorStack: []
   TopMeshRenderer: {fileID: 1867685542488523024}
   HideMeshRenderer: {fileID: 7255762478353325568}
@@ -30024,7 +30298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7308202998781945717}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.46573126, y: 0.35702613, z: 0.32076278}
   m_LocalScale: {x: 3.3393, y: 3.3393002, z: 3.3393}
   m_ConstrainProportionsScale: 0
@@ -30271,12 +30545,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 4951437809219391087}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 7
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 8486246535129729571}
   HideMeshRenderer: {fileID: 3689431671868977187}
@@ -30719,7 +30994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7395599940690529432}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -1.1879188, y: -0.3405159, z: -0.50690347}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -30959,11 +31234,11 @@ Transform:
   m_GameObject: {fileID: 7493115535967135709}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000002088078, y: 0.29533878, z: -0.000000006454838, w: 0.9553926}
-  m_LocalPosition: {x: 1.2160248, y: -0.109815925, z: -0.12989166}
+  m_LocalPosition: {x: 1.2160248, y: -0.10981587, z: -0.12989166}
   m_LocalScale: {x: 5.322904, y: 1.9172554, z: 2.139087}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2500712388216140181}
+  m_Father: {fileID: 4432234947629809246}
   m_LocalEulerAnglesHint: {x: 0, y: -20.644, z: 0}
 --- !u!33 &921255903507340759
 MeshFilter:
@@ -31034,7 +31309,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.3
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.2160249, y: -0.109815925, z: -0.12989166}
 --- !u!54 &8328928692879706992
 Rigidbody:
@@ -31115,11 +31390,11 @@ Transform:
   m_GameObject: {fileID: 7516992179497997556}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000002088078, y: 0.29533878, z: -0.000000006454838, w: 0.9553926}
-  m_LocalPosition: {x: 1.2160248, y: -0.13921586, z: -0.12989166}
+  m_LocalPosition: {x: 1.2160248, y: -0.13921592, z: -0.12989166}
   m_LocalScale: {x: 6.3566937, y: 4.062633, z: 2.5545309}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2500712388216140181}
+  m_Father: {fileID: 4432234947629809246}
   m_LocalEulerAnglesHint: {x: 0, y: -20.644, z: 0}
 --- !u!33 &8470266662648229207
 MeshFilter:
@@ -31190,7 +31465,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.3
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.2160249, y: -0.13921586, z: -0.12989166}
 --- !u!54 &9124151741015082658
 Rigidbody:
@@ -31361,12 +31636,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 1078071753618605842}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 7
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 9200720620885911320}
   HideMeshRenderer: {fileID: 6849392296966278134}
@@ -31983,12 +32259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 7440670246641588341}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
+    TotalLayer: 5
+    HightestColor: Pigskin
     ColorStack: []
   TopMeshRenderer: {fileID: 4566572483453989922}
   HideMeshRenderer: {fileID: 6529521559237736550}
@@ -32431,12 +32708,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7855111693869617116}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 1.3604608, y: 0.0369694, z: 0.23307909}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6029885103797594752}
+  m_Father: {fileID: 3115390530776192616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3821922668986116942
 MeshFilter:
@@ -32507,7 +32784,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.3604608, y: 0.0369694, z: 0.23307909}
 --- !u!54 &7201922293878111827
 Rigidbody:
@@ -32675,7 +32952,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6705644620967308878}
+  m_Father: {fileID: 7423281975708008315}
   m_LocalEulerAnglesHint: {x: -23.453, y: 263.492, z: 26.324}
 --- !u!33 &2882442551798896552
 MeshFilter:
@@ -32917,12 +33194,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 6908789895952347562}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    TotalLayer: 5
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 9193488803643828485}
   HideMeshRenderer: {fileID: 4280162050949346368}
@@ -33365,7 +33643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7986125664893544654}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0745261, y: 0.45569468, z: 0.14316323, w: 0.87538135}
+  m_LocalRotation: {x: 0.07452611, y: 0.45569468, z: 0.14316326, w: 0.87538135}
   m_LocalPosition: {x: 0.76268595, y: 0.22498411, z: 1.0494689}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -33441,7 +33719,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.75645864, y: 0.23347378, z: 1.0531834}
 --- !u!54 &264422888927387126
 Rigidbody:
@@ -33521,12 +33799,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7989718993474289147}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9537174, z: -0, w: 0.30070448}
+  m_LocalRotation: {x: 0, y: 0.9537174, z: 0, w: 0.30070448}
   m_LocalPosition: {x: -0.6214848, y: -0.08227154, z: 0.6746576}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7094008083164968684}
+  m_Father: {fileID: 2705997131739969820}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &2741261065081724277
 MeshFilter:
@@ -33768,12 +34046,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 3397746692941137982}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.18431373, g: 0.34117648, b: 0.44313726, a: 1}
+    TotalLayer: 5
+    HightestColor: Blue4
     ColorStack: []
   TopMeshRenderer: {fileID: 7732809228820773283}
   HideMeshRenderer: {fileID: 3740251032395767751}
@@ -33782,14 +34061,14 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
+  - {fileID: 1431769190024761964}
+  - {fileID: 6636814364302117700}
+  - {fileID: 8469746780926080325}
+  - {fileID: 730300015560006226}
   - {fileID: 1995751357256281808}
   - {fileID: 3450280813132490322}
   - {fileID: 5659461846934390004}
   - {fileID: 982685349224950694}
-  - {fileID: 4967339464731953674}
-  - {fileID: 1504337203051283195}
-  - {fileID: 8446740940715827044}
-  - {fileID: 4454092921538036616}
   RemovedDecoreControls: []
   MeshFilter: {fileID: 4789593112970154558}
   IsSetColorHightest: 1
@@ -34398,12 +34677,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 6427336584599910681}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7523786024948212335}
   HideMeshRenderer: {fileID: 5897615968889752589}
@@ -34817,7 +35097,7 @@ MonoBehaviour:
   - 0.035914443
   - 0.031154629
   - 0.026394755
---- !u!1 &8076922528762997584
+--- !u!1 &8071229013366721540
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34825,93 +35105,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6351142119204584226}
+  - component: {fileID: 8680774404112007296}
+  - component: {fileID: 730300015560006226}
+  - component: {fileID: 1466575934481396545}
+  - component: {fileID: 6054364677092627520}
   m_Layer: 0
-  m_Name: S2
+  m_Name: item_A_Kitchen_Stove (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6351142119204584226
+--- !u!4 &8680774404112007296
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076922528762997584}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.894, y: 0.675, z: 1.794}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5547443825829857033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8108516892214989998
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4003841669044764368}
-  - component: {fileID: 6637320001687671673}
-  - component: {fileID: 5343635769499364542}
-  m_Layer: 0
-  m_Name: item_A_Kitchen_Tap
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4003841669044764368
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8108516892214989998}
+  m_GameObject: {fileID: 8071229013366721540}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1579172891965119023}
-  - {fileID: 2667959834339472884}
-  - {fileID: 3393687857171340096}
+  - {fileID: 5777510979093791296}
+  - {fileID: 1968608570144324821}
+  - {fileID: 5410408276811461582}
+  - {fileID: 3230130087130271785}
+  - {fileID: 8059688621570218193}
   m_Father: {fileID: 5547443825829857033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6637320001687671673
+--- !u!114 &730300015560006226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8108516892214989998}
+  m_GameObject: {fileID: 8071229013366721540}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigid: {fileID: 5343635769499364542}
+  Rigid: {fileID: 1466575934481396545}
   MeshRenderer: {fileID: 0}
   _color: {r: 0, g: 0, b: 0, a: 1}
   DecoreType: 0
   _decoreState: 2
   _executeRotation: 0
   WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 942880591652050792}
   _decoreCenterPos: {x: 0, y: 0, z: 0}
---- !u!54 &5343635769499364542
+--- !u!54 &1466575934481396545
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8108516892214989998}
+  m_GameObject: {fileID: 8071229013366721540}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -34932,6 +35184,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6054364677092627520
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8071229013366721540}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8152767604011242952
 GameObject:
   m_ObjectHideFlags: 0
@@ -34961,7 +35235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8152767604011242952}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: -0.2546149, y: -0.23286289, z: 0.16070145}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -35208,12 +35482,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 5250522204409615248}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 3
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 1256457156043971444}
   HideMeshRenderer: {fileID: 4133986123425009225}
@@ -35750,12 +36025,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 8713507588765146114}
+  woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.49411765, g: 0.29803923, b: 0.19607843, a: 1}
+    HightestColor: Brown
     ColorStack: []
   TopMeshRenderer: {fileID: 5353606263764340642}
   HideMeshRenderer: {fileID: 7405176447325875666}
@@ -36538,12 +36814,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 7763536340789080455}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.9529412, g: 0.67058825, b: 0.61960787, a: 1}
+    TotalLayer: 5
+    HightestColor: Pigskin
     ColorStack: []
   TopMeshRenderer: {fileID: 257593165536992227}
   HideMeshRenderer: {fileID: 2663526165176057959}
@@ -36989,12 +37266,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8417004803892055365}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.8870108, z: -0, w: -0.46174866}
+  m_LocalRotation: {x: 0, y: 0.8870108, z: 0, w: -0.46174866}
   m_LocalPosition: {x: -0.37027007, y: -0.08227154, z: 0.51216114}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4033981807592437819}
+  m_Father: {fileID: 8680774404112007296}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &8130566541500578891
 MeshFilter:
@@ -37060,7 +37337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigid: {fileID: 5924665359988192043}
   MeshRenderer: {fileID: 3795538494347411250}
-  _color: {r: 0.53333336, g: 0.5176471, b: 0.79215693, a: 1}
+  _color: {r: 0.44313726, g: 0.34509805, b: 0.64705884, a: 1}
   DecoreType: 0
   _decoreState: 3
   _executeRotation: 0
@@ -37236,12 +37513,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 8988419102588327093}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    TotalLayer: 8
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 8185008663555026076}
   HideMeshRenderer: {fileID: 4908435651421602236}
@@ -37684,12 +37962,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8615615386869187675}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000020844164, y: 0.3007043, z: -0.0000000065720998, w: -0.9537174}
+  m_LocalRotation: {x: -0.000000020844162, y: 0.3007043, z: -0.000000006572101, w: -0.9537174}
   m_LocalPosition: {x: -0.54969895, y: -0.08227154, z: 0.24908996}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8497585100750409639}
+  m_Father: {fileID: 5396211646412237156}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &6369818807721212863
 MeshFilter:
@@ -37840,7 +38118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8620456592000193909}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 0.96792644, y: 1.2776029, z: 0.61549586}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -37916,7 +38194,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.96792656, y: 1.2776029, z: 0.61549574}
 --- !u!54 &2458287098562334132
 Rigidbody:
@@ -37996,12 +38274,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8669740783138240271}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
-  m_LocalPosition: {x: 1.049724, y: -0.06926221, z: 0.2552467}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
+  m_LocalPosition: {x: 1.0497241, y: -0.06926222, z: 0.2552467}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4003841669044764368}
+  m_Father: {fileID: 4673592870074186054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4497728094165795117
 MeshFilter:
@@ -38072,8 +38350,8 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 9216432622678170052}
-  _decoreCenterPos: {x: 1.0497241, y: -0.06970796, z: 0.2552467}
+  ForceSourceCenter: {fileID: 5916638358198544503}
+  _decoreCenterPos: {x: 1.0497242, y: -0.06970796, z: 0.2552467}
 --- !u!54 &2014030598547758731
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38123,7 +38401,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6316416889169666494, guid: b32d1a8b3bded9941b5088b16a5186b0, type: 3}
---- !u!1 &8753171357763156902
+--- !u!1 &8756743043680443538
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38131,82 +38409,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2500712388216140181}
-  - component: {fileID: 7465967431632572505}
-  - component: {fileID: 8506912527093327644}
+  - component: {fileID: 5916638358198544503}
   m_Layer: 0
-  m_Name: item_A_Kitchen_Sponge
+  m_Name: S1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2500712388216140181
+--- !u!4 &5916638358198544503
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8753171357763156902}
+  m_GameObject: {fileID: 8756743043680443538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.796, y: -1.39, z: 3.042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1702350864758090230}
-  - {fileID: 875343104965858259}
-  - {fileID: 8050037947440363563}
+  m_Children: []
   m_Father: {fileID: 5547443825829857033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7465967431632572505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8753171357763156902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97132bb3ddb7ec14ca6ce4d08298b086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigid: {fileID: 8506912527093327644}
-  MeshRenderer: {fileID: 0}
-  _color: {r: 0, g: 0, b: 0, a: 1}
-  DecoreType: 0
-  _decoreState: 2
-  _executeRotation: 0
-  WoolProgressStartDrop: 0.3
-  ForceSourceCenter: {fileID: 9216432622678170052}
-  _decoreCenterPos: {x: 0, y: 0, z: 0}
---- !u!54 &8506912527093327644
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8753171357763156902}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8786630402102385429
 GameObject:
   m_ObjectHideFlags: 0
@@ -38410,12 +38635,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 2892820737659003501}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 7
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 1610117999362530918}
   HideMeshRenderer: {fileID: 1607384088483718364}
@@ -39422,7 +39648,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.3
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 1.1789341, y: 0.2051153, z: 0.855833}
 --- !u!54 &754010168239630525
 Rigidbody:
@@ -39502,7 +39728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9151407896718373316}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
   m_LocalPosition: {x: 0.4716044, y: 1.2866738, z: 1.3243171}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -39578,7 +39804,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.2
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.47160444, y: 1.2866738, z: 1.3243172}
 --- !u!54 &7964826203913919595
 Rigidbody:
@@ -39749,12 +39975,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 4162104880590430235}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.88235295, g: 0.39215687, b: 0.4392157, a: 1}
+    TotalLayer: 5
+    HightestColor: Neonrose
     ColorStack: []
   TopMeshRenderer: {fileID: 5834902531283537164}
   HideMeshRenderer: {fileID: 1216266630795396307}
@@ -40288,12 +40515,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
-  woolTransform: {fileID: 8955499261975708016}
+  woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    TotalLayer: 8
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 3643170414090726736}
   HideMeshRenderer: {fileID: 3638967231246168179}
@@ -40736,12 +40964,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9184410243133510213}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000019386265, y: 0.46174863, z: -0.00000001009185, w: 0.8870109}
-  m_LocalPosition: {x: 0.90956926, y: 0.013038427, z: 0.26781586}
+  m_LocalRotation: {x: 0.000000019386245, y: 0.46174863, z: -0.0000000100918385, w: 0.8870109}
+  m_LocalPosition: {x: 0.90956926, y: 0.013038408, z: 0.26781586}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4003841669044764368}
+  m_Father: {fileID: 4673592870074186054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1500009968917387493
 MeshFilter:
@@ -40812,7 +41040,7 @@ MonoBehaviour:
   _decoreState: 3
   _executeRotation: 0
   WoolProgressStartDrop: 0.6
-  ForceSourceCenter: {fileID: 9216432622678170052}
+  ForceSourceCenter: {fileID: 5916638358198544503}
   _decoreCenterPos: {x: 0.9093988, y: 0.011918762, z: 0.26769647}
 --- !u!54 &8313162064365474360
 Rigidbody:
