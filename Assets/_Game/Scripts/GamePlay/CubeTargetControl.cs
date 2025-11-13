@@ -119,6 +119,9 @@ public class CubeTargetControl : MonoBehaviour
     {
         _currentColor = GamePlaySystem.Instance._colorPalleteData.colorPallete[color];
         nameColor = color;
+        WoolLineHandler.SetupColor(nameColor,_currentColor);
+        foreach (PaintingLineRendererHandler VARIABLE in WoolLineRenderers)
+            VARIABLE.SetupColor(nameColor, _currentColor);
     }
 
 

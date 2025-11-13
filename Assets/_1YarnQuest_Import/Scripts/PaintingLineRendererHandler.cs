@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using DG.Tweening;
 using UnityEngine;
 using static UnityEngine.UI.Image;
@@ -15,6 +16,8 @@ public class PaintingLineRendererHandler : MonoBehaviour
 
     public bool SlerpMoving = false;
     public float LineConnectSpeed = 1f;
+    public Color currentColor;
+    public string nameColor;
 
     void Update()
     {
@@ -29,15 +32,32 @@ public class PaintingLineRendererHandler : MonoBehaviour
         }
     }
 
+    public void SetupColor(string name,Color color)
+    {
+        if (name != nameColor)
+        {
+            if (!initialized)
+            {
+                initialized = true;
+                lineRenderer.material = new Material(LineMaterial);
+                instanceLineMaterial = lineRenderer.material;
+            }
+            instanceLineMaterial.SetColor("_Color", color);
+            currentColor = color;
+            nameColor = name;
+        }
+        Debug.LogError("Setup Color Line Renderer: " + nameColor);
+    }
+
     public void ConnectLine(Vector3 origin, Vector3 target, Color color, bool firstCell = false)
     {
-        if (!initialized)
-        {
-            initialized = true;
-            lineRenderer.material = new Material(LineMaterial);
-            instanceLineMaterial = lineRenderer.material;
-        }
-        instanceLineMaterial.SetColor("_Color", color);
+        // if (!initialized) 
+        // {
+        //     initialized = true;
+        //     lineRenderer.material = new Material(LineMaterial);
+        //     instanceLineMaterial = lineRenderer.material;
+        // }
+        // instanceLineMaterial.SetColor("_Color", color);
 
         if (SlerpMoving)
         {
