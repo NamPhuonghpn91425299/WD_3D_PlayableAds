@@ -7,44 +7,55 @@ public class ProcessUI : MonoBehaviour
     public Text text;
     public Text shadow;
     public int totalMesh;
-
-    private int _lastCollected = -1;
-    private string _cachedSuffix; // "/{total}"
-    private GamePlaySystem _game;
+    
+    private const int MESH_PER_CUBE = 3;
 
     private void Start()
     {
-        _game = GamePlaySystem.Instance;
-
-        // Hiển thị theo đơn vị màu
-        totalMesh = _game.TotalColor;
-        _cachedSuffix = "/" + totalMesh;
-
-        // Khởi tạo UI lần đầu
-        ForceRefresh();
+        // Error handling cho GamePlaySystem.Instance
+        if (GamePlaySystem.Instance == null)
+        {
+            Debug.LogError("GamePlaySystem.Instance is null!");
+            return;
+        }
+        
+        // Error handling cho Text components
+        if (text == null || shadow == null)
+        {
+            Debug.LogError("Text components are not assigned!");
+            return;
+        }
+        
+        totalMesh = GamePlaySystem.Instance.cubeCountClaimed * MESH_PER_CUBE;
+        
+        // Cập nhật lần đầu
+        UpdateProgressText(GamePlaySystem.Instance.CurrentColorCollected);
+        
+        // Subscribe to event từ GamePlaySystem
+        GamePlaySystem.Instance.OnColorCollectedChanged += HandleColorCollectedChanged;
     }
 
-    public void Update()
+    private void OnDestroy()
     {
-        TryUpdateUI();
+        // Unsubscribe từ event để avoid memory leaks
+        if (GamePlaySystem.Instance != null)
+        {
+            GamePlaySystem.Instance.OnColorCollectedChanged -= HandleColorCollectedChanged;
+        }
     }
-
-    // Chỉ cập nhật khi thay đổi để tránh GC và tốn CPU
-    private void TryUpdateUI()
+    
+    private void HandleColorCollectedChanged(int newColorCollected)
     {
-        int collected = _game.CurrentColorCollected; // đơn vị màu (units)
-        if (collected == _lastCollected) return;
-
-        _lastCollected = collected;
-        string value = collected + _cachedSuffix;
-        if (text) text.text = value;
-        if (shadow) shadow.text = value;
+        UpdateProgressText(newColorCollected);
     }
-
-    // Dùng khi cần cưỡng bức refresh (ví dụ sau khi load level)
-    public void ForceRefresh()
+    
+    private void UpdateProgressText(int colorCollected)
     {
-        _lastCollected = -1;
-        TryUpdateUI();
+        if (text != null && shadow != null)
+        {
+            string progressText = $"{colorCollected}/{totalMesh}";
+            text.text = progressText;
+            shadow.text = progressText;
+        }
     }
 }

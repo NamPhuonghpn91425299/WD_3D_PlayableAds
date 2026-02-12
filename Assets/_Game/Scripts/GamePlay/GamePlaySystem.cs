@@ -108,6 +108,11 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     private int _currentColorCollected;
 
     public int CurrentColorCollected => _currentColorCollected;
+    
+    /// <summary>
+    /// Event được trigger khi số màu đã thu thập thay đổi
+    /// </summary>
+    public event System.Action<int> OnColorCollectedChanged;
 
     [Tooltip("Số lượng ô chứa (CubeTarget) mặc định khi bắt đầu level.")] [SerializeField]
     private int _cubeTargetCountDefault = 4;
@@ -497,6 +502,10 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
     public void FinishedCollectingCube()
     {
         _currentColorCollected += 3;
+        
+        // Trigger event khi CurrentColorCollected thay đổi
+        OnColorCollectedChanged?.Invoke(_currentColorCollected);
+        
         //Debug.LogWarning(_currentColorCollected + "-----------------" + cubeCountClaimed);
         if (_currentColorCollected/3 == cubeCountClaimed)
         {
@@ -822,6 +831,9 @@ public partial class GamePlaySystem : Singleton<GamePlaySystem>
         _currentColorCollected = 0;
         _queueCount = 0;
         MeshCountClick = 0;
+        
+        // Trigger event để reset UI khi bắt đầu level mới
+        OnColorCollectedChanged?.Invoke(_currentColorCollected);
 
         // Sinh màu ban đầu cho các ô chứa
         for (int i = 0; i < _cubeTargetCountDefault; i++)

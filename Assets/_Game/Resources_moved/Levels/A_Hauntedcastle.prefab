@@ -120,12 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 5555940661343512650}
   HideMeshRenderer: {fileID: 1969342543827470760}
@@ -659,12 +660,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    TotalLayer: 3
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 3302076497275796257}
   HideMeshRenderer: {fileID: 874843455707940516}
@@ -1092,7 +1094,7 @@ GameObject:
   - component: {fileID: 1803589230784935029}
   - component: {fileID: 5346443607633961747}
   - component: {fileID: 7120639546774304670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,8 +1181,12 @@ MonoBehaviour:
   Rigid: {fileID: 5346443607633961747}
   MeshRenderer: {fileID: 7903071105647299942}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.6325097, y: 0.19325209, z: 0.06908694}
 --- !u!54 &5346443607633961747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1433,12 +1439,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
+    HightestColor: cyangreen2
     ColorStack: []
   TopMeshRenderer: {fileID: 5958143947447047682}
   HideMeshRenderer: {fileID: 5941991485683249505}
@@ -1972,12 +1979,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 6
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 2630277351602322608}
   HideMeshRenderer: {fileID: 1847270000132165947}
@@ -2511,12 +2519,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 8616118249343737560}
   HideMeshRenderer: {fileID: 335845705650411178}
@@ -3299,12 +3308,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 5533540931487559954}
   HideMeshRenderer: {fileID: 6615788813955632137}
@@ -3921,12 +3931,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 5061619588635204207}
   HideMeshRenderer: {fileID: 6854630425151730404}
@@ -4619,7 +4630,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: 0.00000003774895, w: 0}
   m_LocalPosition: {x: -0.4222719, y: 0.29693538, z: 0.013787421}
-  m_LocalScale: {x: -2, y: 2, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5147355228250808470}
@@ -4632,7 +4643,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933828670784032712}
-  m_Mesh: {fileID: -858831242638542952, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
+  m_Mesh: {fileID: 4782761050918183523, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
 --- !u!23 &3112487122821185789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4696,7 +4707,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -858831242638542952, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
+  m_Mesh: {fileID: 4782761050918183523, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
 --- !u!114 &8654665372523073514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4709,12 +4720,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 3112487122821185789}
   HideMeshRenderer: {fileID: 400867385734761975}
@@ -5237,7 +5249,7 @@ GameObject:
   - component: {fileID: 7675232518949066597}
   - component: {fileID: 3402549750335653059}
   - component: {fileID: 9186097553702713460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5324,8 +5336,12 @@ MonoBehaviour:
   Rigid: {fileID: 3402549750335653059}
   MeshRenderer: {fileID: 8357118859852247204}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.58860546, y: 0.03423357, z: 0.06558663}
 --- !u!54 &3402549750335653059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5389,7 +5405,7 @@ GameObject:
   - component: {fileID: 912081250753527200}
   - component: {fileID: 7801863445582929540}
   - component: {fileID: 5378122341501228354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5476,8 +5492,12 @@ MonoBehaviour:
   Rigid: {fileID: 7801863445582929540}
   MeshRenderer: {fileID: 4843913412978842321}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.38284853, y: 0.081005216, z: -0.15013936}
 --- !u!54 &7801863445582929540
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5647,12 +5667,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    TotalLayer: 2
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 5244411748703217192}
   HideMeshRenderer: {fileID: 5053623478234509864}
@@ -6080,7 +6101,7 @@ GameObject:
   - component: {fileID: 1307862343081506167}
   - component: {fileID: 4063865693182897740}
   - component: {fileID: 5787120723655014311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6167,8 +6188,12 @@ MonoBehaviour:
   Rigid: {fileID: 4063865693182897740}
   MeshRenderer: {fileID: 187052676827723753}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.36352035, y: 0.5230521, z: -0.1559747}
 --- !u!54 &4063865693182897740
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6338,12 +6363,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 6
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 3098209572947382478}
   HideMeshRenderer: {fileID: 5950920255573329647}
@@ -6885,7 +6911,7 @@ GameObject:
   - component: {fileID: 6201093979396930331}
   - component: {fileID: 5696487415811902718}
   - component: {fileID: 7927660755726462070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6972,8 +6998,12 @@ MonoBehaviour:
   Rigid: {fileID: 5696487415811902718}
   MeshRenderer: {fileID: 1303354272730062614}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.3289933, y: 0.0800271, z: -0.15080068}
 --- !u!54 &5696487415811902718
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7143,12 +7173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 8333121694848212392}
   HideMeshRenderer: {fileID: 4077172776014591831}
@@ -7848,12 +7879,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 5912343894667051010}
   HideMeshRenderer: {fileID: 1100175614287220059}
@@ -8387,12 +8419,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 6312401380547861642}
   HideMeshRenderer: {fileID: 7263720518459789232}
@@ -8926,12 +8959,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 229022485696301608}
   HideMeshRenderer: {fileID: 9167974260014743312}
@@ -9465,12 +9499,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 2
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 7643037296193446719}
   HideMeshRenderer: {fileID: 3381848864144129830}
@@ -9898,7 +9933,7 @@ GameObject:
   - component: {fileID: 2110237602859764981}
   - component: {fileID: 4799281008617275733}
   - component: {fileID: 5180583062239604994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9985,8 +10020,12 @@ MonoBehaviour:
   Rigid: {fileID: 4799281008617275733}
   MeshRenderer: {fileID: 5180334890206254729}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.41735938, y: 0.5230521, z: -0.1559747}
 --- !u!54 &4799281008617275733
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10239,12 +10278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0, g: 0.4, b: 0.41568628, a: 1}
+    HightestColor: Teal
     ColorStack: []
   TopMeshRenderer: {fileID: 3702901981903051152}
   HideMeshRenderer: {fileID: 1082830734645456854}
@@ -10778,12 +10818,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0, g: 0.4, b: 0.41568628, a: 1}
+    HightestColor: Teal
     ColorStack: []
   TopMeshRenderer: {fileID: 5606050280703884376}
   HideMeshRenderer: {fileID: 3929187877372706270}
@@ -11317,12 +11358,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 8032481915852382927}
   HideMeshRenderer: {fileID: 6783643186917194578}
@@ -11856,12 +11898,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 8223977875579510700}
   HideMeshRenderer: {fileID: 4330777863437265100}
@@ -12478,12 +12521,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 2098213300180529638}
   HideMeshRenderer: {fileID: 2458317855182932729}
@@ -12911,7 +12955,7 @@ GameObject:
   - component: {fileID: 3189385792506344667}
   - component: {fileID: 4498808147422863433}
   - component: {fileID: 5604041263997221815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12998,8 +13042,12 @@ MonoBehaviour:
   Rigid: {fileID: 4498808147422863433}
   MeshRenderer: {fileID: 837340652948919750}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.58742666, y: 0.031654358, z: 0.075289935}
 --- !u!54 &4498808147422863433
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13252,12 +13300,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    TotalLayer: 3
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 800462499557246991}
   HideMeshRenderer: {fileID: 4214554482092747267}
@@ -13685,7 +13734,7 @@ GameObject:
   - component: {fileID: 1886137487170383972}
   - component: {fileID: 8936375735266229485}
   - component: {fileID: 8997789897747625839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13772,8 +13821,12 @@ MonoBehaviour:
   Rigid: {fileID: 8936375735266229485}
   MeshRenderer: {fileID: 993830656077369367}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.3619187, y: 0.5247958, z: -0.16925158}
 --- !u!54 &8936375735266229485
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13837,7 +13890,7 @@ GameObject:
   - component: {fileID: 8019830321391225461}
   - component: {fileID: 6663434176969607748}
   - component: {fileID: 3941919530073055961}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13924,8 +13977,12 @@ MonoBehaviour:
   Rigid: {fileID: 6663434176969607748}
   MeshRenderer: {fileID: 8994412698657838001}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.5347665, y: 0.03423357, z: 0.06558663}
 --- !u!54 &6663434176969607748
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14261,12 +14318,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 6
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
+    HightestColor: White
     ColorStack: []
   TopMeshRenderer: {fileID: 7020762702776663983}
   HideMeshRenderer: {fileID: 171608366895977927}
@@ -14800,12 +14858,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 6
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    TotalLayer: 8
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 115690717868951505}
   HideMeshRenderer: {fileID: 2704721200194230452}
@@ -15339,12 +15398,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.3372549, g: 0.35686275, b: 0.3647059, a: 1}
+    HightestColor: Gray
     ColorStack: []
   TopMeshRenderer: {fileID: 4509885070312404790}
   HideMeshRenderer: {fileID: 8011180294956223137}
@@ -15878,12 +15938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 6
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 8651522625035638827}
   HideMeshRenderer: {fileID: 1119832312069805680}
@@ -16394,7 +16455,7 @@ GameObject:
   - component: {fileID: 2802626356713277556}
   - component: {fileID: 7304791699581931834}
   - component: {fileID: 3324560869337443211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16481,8 +16542,12 @@ MonoBehaviour:
   Rigid: {fileID: 7304791699581931834}
   MeshRenderer: {fileID: 1550352192994797318}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.41575772, y: 0.5247958, z: -0.16925158}
 --- !u!54 &7304791699581931834
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16652,12 +16717,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 416726131547044612}
   HideMeshRenderer: {fileID: 5896842650239379219}
@@ -17251,7 +17317,7 @@ GameObject:
   - component: {fileID: 8669293056805020819}
   - component: {fileID: 5088234748053412610}
   - component: {fileID: 5222905495932124843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17338,8 +17404,12 @@ MonoBehaviour:
   Rigid: {fileID: 5088234748053412610}
   MeshRenderer: {fileID: 522966808590130499}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.58672726, y: 0.030677438, z: 0.076426744}
 --- !u!54 &5088234748053412610
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17403,7 +17473,7 @@ GameObject:
   - component: {fileID: 1707246673156458839}
   - component: {fileID: 394222380992634885}
   - component: {fileID: 3197845976768206766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17490,8 +17560,12 @@ MonoBehaviour:
   Rigid: {fileID: 394222380992634885}
   MeshRenderer: {fileID: 7061087801193754057}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.34667078, y: 0.29556334, z: -0.14471202}
 --- !u!54 &394222380992634885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17555,7 +17629,7 @@ GameObject:
   - component: {fileID: 634508089955665077}
   - component: {fileID: 2582730957533426506}
   - component: {fileID: 1943264680823292513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17642,8 +17716,12 @@ MonoBehaviour:
   Rigid: {fileID: 2582730957533426506}
   MeshRenderer: {fileID: 3745458821939785227}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.57792616, y: 0.1922121, z: 0.07029709}
 --- !u!54 &2582730957533426506
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17707,7 +17785,7 @@ GameObject:
   - component: {fileID: 8765889346618250569}
   - component: {fileID: 8747438846107022779}
   - component: {fileID: 9151602926963013999}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17794,8 +17872,12 @@ MonoBehaviour:
   Rigid: {fileID: 8747438846107022779}
   MeshRenderer: {fileID: 5808641136710432178}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.3842818, y: 0.079444885, z: -0.13825826}
 --- !u!54 &8747438846107022779
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17954,7 +18036,7 @@ Transform:
   m_GameObject: {fileID: 3060269200920766269}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.92, z: 0}
+  m_LocalPosition: {x: 0, y: -2.75, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18094,18 +18176,18 @@ MonoBehaviour:
     CurrentcyLevel: 0
     DynamicDif: 0
     ColorList:
-    - {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
-    - {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    - {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
-    - {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
-    - {r: 0.3372549, g: 0.35686275, b: 0.3647059, a: 1}
-    - {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    - {r: 0.8627451, g: 0.49803922, b: 0.16078432, a: 1}
-    - {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
-    - {r: 0, g: 0.4, b: 0.41568628, a: 1}
-    - {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
-    - {r: 0.49411765, g: 0.29803923, b: 0.19607843, a: 1}
-    ColorCountList: 12000000120000001200000012000000120000000f0000000c0000000c0000000c0000000900000009000000
+    - Gray2
+    - White
+    - Berry
+    - Yellow17
+    - Gray
+    - Pickle
+    - Orangewhite
+    - Purple3
+    - Teal
+    - cyangreen2
+    - Brown
+    ColorCountList: 12000000120000001200000012000000120000000f0000000f0000000f0000000f0000000c0000000c000000
   WoolControls:
   - {fileID: 8393636535421136135}
   - {fileID: 1068292286484641060}
@@ -18176,7 +18258,7 @@ MonoBehaviour:
   TotalColor: 0
   WoolMaterial: {fileID: 2100000, guid: 2f8d316a60113e14cb2df953dc7731c8, type: 2}
   WoolChildMaterial: {fileID: 2100000, guid: 7fbf0b724a9980c4ba0f180041168239, type: 2}
-  MaxLayerHasThreeSameColor: 5
+  MaxLayerHasThreeSameColor: 2
   _maxDistanceFromCetner: 0
   MainMotionAnimator: {fileID: 0}
   MainAudioSource: {fileID: 0}
@@ -18195,7 +18277,7 @@ GameObject:
   - component: {fileID: 9144301484831915905}
   - component: {fileID: 2993107303760673783}
   - component: {fileID: 5933821287053106121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18282,8 +18364,12 @@ MonoBehaviour:
   Rigid: {fileID: 2993107303760673783}
   MeshRenderer: {fileID: 8387730908810533384}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.39892653, y: 0.29756093, z: -0.15892433}
 --- !u!54 &2993107303760673783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18347,7 +18433,7 @@ GameObject:
   - component: {fileID: 2174941524624430527}
   - component: {fileID: 267830421838039629}
   - component: {fileID: 6647199736353619077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18434,8 +18520,12 @@ MonoBehaviour:
   Rigid: {fileID: 267830421838039629}
   MeshRenderer: {fileID: 7487174308935087773}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.6251854, y: 0.36178207, z: 0.0628542}
 --- !u!54 &267830421838039629
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18771,12 +18861,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.49411765, g: 0.29803923, b: 0.19607843, a: 1}
+    HightestColor: Brown
     ColorStack: []
   TopMeshRenderer: {fileID: 7116648610508308859}
   HideMeshRenderer: {fileID: 3200857371586475098}
@@ -19393,12 +19484,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 6
-    HightestColor: {r: 0.8627451, g: 0.49803922, b: 0.16078432, a: 1}
+    HightestColor: Orangewhite
     ColorStack: []
   TopMeshRenderer: {fileID: 1665915977074200550}
   HideMeshRenderer: {fileID: 2178377055511874814}
@@ -19909,7 +20001,7 @@ GameObject:
   - component: {fileID: 4852485199082372355}
   - component: {fileID: 8477488099259159024}
   - component: {fileID: 7443517832377550533}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19996,8 +20088,12 @@ MonoBehaviour:
   Rigid: {fileID: 8477488099259159024}
   MeshRenderer: {fileID: 851520797827825471}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.6811232, y: 0.36575615, z: 0.050740603}
 --- !u!54 &8477488099259159024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20250,12 +20346,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 1517961546412161988}
   HideMeshRenderer: {fileID: 1905677869413748875}
@@ -20683,7 +20780,7 @@ GameObject:
   - component: {fileID: 6303855199467944550}
   - component: {fileID: 3120279081065399524}
   - component: {fileID: 7079511916487329262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20770,8 +20867,12 @@ MonoBehaviour:
   Rigid: {fileID: 3120279081065399524}
   MeshRenderer: {fileID: 4973002435573896191}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.36358067, y: 0.5226988, z: -0.15433265}
 --- !u!54 &3120279081065399524
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20941,12 +21042,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
+    HightestColor: Pickle
     ColorStack: []
   TopMeshRenderer: {fileID: 7096055978293894023}
   HideMeshRenderer: {fileID: 8078300065827180946}
@@ -21400,7 +21502,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3772509255154365438}
-  m_Mesh: {fileID: -2687906076142321793, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
+  m_Mesh: {fileID: 6138539430244947189, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
 --- !u!23 &2853237252593071104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21563,12 +21665,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.4, b: 0.41568628, a: 1}
+    HightestColor: Teal
     ColorStack: []
   TopMeshRenderer: {fileID: 1985883978528242301}
   HideMeshRenderer: {fileID: 2264572546911081514}
@@ -22102,12 +22205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
+    HightestColor: cyangreen2
     ColorStack: []
   TopMeshRenderer: {fileID: 4641288396727893376}
   HideMeshRenderer: {fileID: 4419418747903212195}
@@ -22641,12 +22745,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
+    HightestColor: Pickle
     ColorStack: []
   TopMeshRenderer: {fileID: 6407273912348498816}
   HideMeshRenderer: {fileID: 5335557244953249901}
@@ -23180,12 +23285,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
+    HightestColor: Pickle
     ColorStack: []
   TopMeshRenderer: {fileID: 5968345228586595380}
   HideMeshRenderer: {fileID: 7529401546259712522}
@@ -23719,12 +23825,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.44313726, g: 0.3529412, b: 0.6156863, a: 1}
+    TotalLayer: 2
+    HightestColor: Purple3
     ColorStack: []
   TopMeshRenderer: {fileID: 1914027217108966492}
   HideMeshRenderer: {fileID: 1745739376809862114}
@@ -24424,12 +24531,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 3176277186084555132}
   HideMeshRenderer: {fileID: 1281850208140920560}
@@ -24857,7 +24965,7 @@ GameObject:
   - component: {fileID: 5466670402375104742}
   - component: {fileID: 8349731518064032966}
   - component: {fileID: 1486845961343681657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24944,8 +25052,12 @@ MonoBehaviour:
   Rigid: {fileID: 8349731518064032966}
   MeshRenderer: {fileID: 3380864789052259381}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.5328883, y: 0.030677438, z: 0.076426744}
 --- !u!54 &8349731518064032966
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25092,7 +25204,7 @@ GameObject:
   - component: {fileID: 7901229929138359760}
   - component: {fileID: 5975866787371227774}
   - component: {fileID: 6533461381463255902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25179,8 +25291,12 @@ MonoBehaviour:
   Rigid: {fileID: 5975866787371227774}
   MeshRenderer: {fileID: 2677782662432969732}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.3304968, y: 0.07912874, z: -0.13678889}
 --- !u!54 &5975866787371227774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25350,12 +25466,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0, g: 0.4, b: 0.41568628, a: 1}
+    TotalLayer: 2
+    HightestColor: Teal
     ColorStack: []
   TopMeshRenderer: {fileID: 8911794609187533460}
   HideMeshRenderer: {fileID: 6821053904238544338}
@@ -25889,12 +26006,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
+    HightestColor: Pickle
     ColorStack: []
   TopMeshRenderer: {fileID: 1996693735905960754}
   HideMeshRenderer: {fileID: 7011567744372273007}
@@ -26322,7 +26440,7 @@ GameObject:
   - component: {fileID: 7567285101421759596}
   - component: {fileID: 7208689567814460519}
   - component: {fileID: 2673585270338576183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26409,8 +26527,12 @@ MonoBehaviour:
   Rigid: {fileID: 7208689567814460519}
   MeshRenderer: {fileID: 1159329620467708126}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.38283232, y: 0.0800271, z: -0.15080068}
 --- !u!54 &7208689567814460519
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26580,12 +26702,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 4
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
+    HightestColor: Pickle
     ColorStack: []
   TopMeshRenderer: {fileID: 2335586954227200241}
   HideMeshRenderer: {fileID: 3247471742042661528}
@@ -27285,12 +27408,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 4771528406887326415}
   HideMeshRenderer: {fileID: 949498627693601644}
@@ -27824,12 +27948,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0, g: 0.4, b: 0.41568628, a: 1}
+    TotalLayer: 2
+    HightestColor: Teal
     ColorStack: []
   TopMeshRenderer: {fileID: 6255871227741981396}
   HideMeshRenderer: {fileID: 2761047002017277037}
@@ -28672,7 +28797,7 @@ GameObject:
   - component: {fileID: 1661987501691210555}
   - component: {fileID: 2696058598048808025}
   - component: {fileID: 4460667824090269652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28759,8 +28884,12 @@ MonoBehaviour:
   Rigid: {fileID: 2696058598048808025}
   MeshRenderer: {fileID: 6107416120186790386}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.38433582, y: 0.07912874, z: -0.13678889}
 --- !u!54 &2696058598048808025
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29006,7 +29135,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: 0.00000003774895, w: 0}
   m_LocalPosition: {x: -0.65144145, y: 0.19805443, z: 0.19291863}
-  m_LocalScale: {x: -2, y: 2, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9115729356436123462}
@@ -29019,7 +29148,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5236365054308973124}
-  m_Mesh: {fileID: -2687906076142321793, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
+  m_Mesh: {fileID: 6138539430244947189, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
 --- !u!23 &2365760468212668695
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29096,12 +29225,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
+    HightestColor: cyangreen2
     ColorStack: []
   TopMeshRenderer: {fileID: 2365760468212668695}
   HideMeshRenderer: {fileID: 2853237252593071104}
@@ -29647,12 +29777,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.4, b: 0.41568628, a: 1}
+    HightestColor: Teal
     ColorStack: []
   TopMeshRenderer: {fileID: 7326436574166439110}
   HideMeshRenderer: {fileID: 5931123987528709126}
@@ -30329,7 +30460,7 @@ GameObject:
   - component: {fileID: 8330310454393142975}
   - component: {fileID: 2221202586644040976}
   - component: {fileID: 492411953501790867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30416,8 +30547,12 @@ MonoBehaviour:
   Rigid: {fileID: 2221202586644040976}
   MeshRenderer: {fileID: 4475521919424369328}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.62746376, y: 0.36652923, z: 0.05131233}
 --- !u!54 &2221202586644040976
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30587,12 +30722,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.02745098, g: 0.65882355, b: 0.5294118, a: 1}
+    HightestColor: cyangreen2
     ColorStack: []
   TopMeshRenderer: {fileID: 3255300904153920926}
   HideMeshRenderer: {fileID: 7530130663291482386}
@@ -31032,7 +31168,7 @@ GameObject:
   - component: {fileID: 1799923939132086027}
   - component: {fileID: 4154064239140124623}
   - component: {fileID: 2102235930360855537}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31119,8 +31255,12 @@ MonoBehaviour:
   Rigid: {fileID: 4154064239140124623}
   MeshRenderer: {fileID: 3090861321068642778}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.34507027, y: 0.29651976, z: -0.15962833}
 --- !u!54 &4154064239140124623
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31290,12 +31430,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0, g: 0.4, b: 0.41568628, a: 1}
+    HightestColor: Teal
     ColorStack: []
   TopMeshRenderer: {fileID: 3775442960206217360}
   HideMeshRenderer: {fileID: 443187616127559484}
@@ -31806,7 +31947,7 @@ GameObject:
   - component: {fileID: 3650022254636750376}
   - component: {fileID: 3189785619899281466}
   - component: {fileID: 4906061761440162141}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31893,8 +32034,12 @@ MonoBehaviour:
   Rigid: {fileID: 3189785619899281466}
   MeshRenderer: {fileID: 5580784456880928605}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.62596697, y: 0.3628738, z: 0.06158385}
 --- !u!54 &3189785619899281466
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32064,12 +32209,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 863226852438363564}
   HideMeshRenderer: {fileID: 8098512457620531543}
@@ -32603,12 +32749,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 6069099023294820660}
   HideMeshRenderer: {fileID: 1519240929680710798}
@@ -33308,12 +33455,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 4789018972632949928}
   HideMeshRenderer: {fileID: 8420290271330334600}
@@ -33741,7 +33889,7 @@ GameObject:
   - component: {fileID: 8250572179090297385}
   - component: {fileID: 4615770343798414363}
   - component: {fileID: 4457068028606456384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33828,8 +33976,12 @@ MonoBehaviour:
   Rigid: {fileID: 4615770343798414363}
   MeshRenderer: {fileID: 8054558881640468963}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.5799256, y: 0.19599795, z: 0.05875722}
 --- !u!54 &4615770343798414363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34059,7 +34211,7 @@ GameObject:
   - component: {fileID: 1859056760065065943}
   - component: {fileID: 4990307305508429251}
   - component: {fileID: 2305357965561037542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34146,8 +34298,12 @@ MonoBehaviour:
   Rigid: {fileID: 4990307305508429251}
   MeshRenderer: {fileID: 8960272934976614546}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.5335877, y: 0.031654358, z: 0.075289935}
 --- !u!54 &4990307305508429251
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34294,7 +34450,7 @@ GameObject:
   - component: {fileID: 6139814792712581320}
   - component: {fileID: 8635859816530668131}
   - component: {fileID: 1529318779736361948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34381,8 +34537,12 @@ MonoBehaviour:
   Rigid: {fileID: 8635859816530668131}
   MeshRenderer: {fileID: 4968630611036703474}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.3989093, y: 0.29651976, z: -0.15962833}
 --- !u!54 &8635859816530668131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34446,7 +34606,7 @@ GameObject:
   - component: {fileID: 8116908492059692456}
   - component: {fileID: 8438070137588068777}
   - component: {fileID: 8612214943834486272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34533,8 +34693,12 @@ MonoBehaviour:
   Rigid: {fileID: 8438070137588068777}
   MeshRenderer: {fileID: 6668782174597326362}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.6339356, y: 0.19673443, z: 0.059301917}
 --- !u!54 &8438070137588068777
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34598,7 +34762,7 @@ GameObject:
   - component: {fileID: 2836876422358998102}
   - component: {fileID: 1678781242794969204}
   - component: {fileID: 1220502225950333029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34685,8 +34849,12 @@ MonoBehaviour:
   Rigid: {fileID: 1678781242794969204}
   MeshRenderer: {fileID: 8820976065921233188}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.63376456, y: 0.19599795, z: 0.05875722}
 --- !u!54 &1678781242794969204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34833,7 +35001,7 @@ GameObject:
   - component: {fileID: 6564740658697510797}
   - component: {fileID: 8333768572253664348}
   - component: {fileID: 2766443778922384163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34920,8 +35088,12 @@ MonoBehaviour:
   Rigid: {fileID: 8333768572253664348}
   MeshRenderer: {fileID: 7845484517705176354}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.41573963, y: 0.5237028, z: -0.16999058}
 --- !u!54 &8333768572253664348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35091,12 +35263,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 5
-    HightestColor: {r: 0.3372549, g: 0.35686275, b: 0.3647059, a: 1}
+    HightestColor: Gray
     ColorStack: []
   TopMeshRenderer: {fileID: 172553023765530926}
   HideMeshRenderer: {fileID: 2995355799330001408}
@@ -35524,7 +35697,7 @@ GameObject:
   - component: {fileID: 1860065886915370496}
   - component: {fileID: 177939357306509070}
   - component: {fileID: 7847323778685108926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35611,8 +35784,12 @@ MonoBehaviour:
   Rigid: {fileID: 177939357306509070}
   MeshRenderer: {fileID: 1122118279655630078}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.3450875, y: 0.29756093, z: -0.15892433}
 --- !u!54 &177939357306509070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35865,12 +36042,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0, g: 0.4, b: 0.41568628, a: 1}
+    HightestColor: Teal
     ColorStack: []
   TopMeshRenderer: {fileID: 8487208787003931849}
   HideMeshRenderer: {fileID: 8675513384043912574}
@@ -36298,7 +36476,7 @@ GameObject:
   - component: {fileID: 2652041484454092078}
   - component: {fileID: 9075386904589033246}
   - component: {fileID: 8463278488685417900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36385,8 +36563,12 @@ MonoBehaviour:
   Rigid: {fileID: 9075386904589033246}
   MeshRenderer: {fileID: 8873612440052654869}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.5800966, y: 0.19673443, z: 0.059301917}
 --- !u!54 &9075386904589033246
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36533,7 +36715,7 @@ GameObject:
   - component: {fileID: 5389250969061329974}
   - component: {fileID: 6383067428566225970}
   - component: {fileID: 3636438698720907946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36620,8 +36802,12 @@ MonoBehaviour:
   Rigid: {fileID: 6383067428566225970}
   MeshRenderer: {fileID: 2375171061046211698}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.4005098, y: 0.29556334, z: -0.14471202}
 --- !u!54 &6383067428566225970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36685,7 +36871,7 @@ GameObject:
   - component: {fileID: 7675211284941924749}
   - component: {fileID: 4420554445871041045}
   - component: {fileID: 806346910534646984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36772,8 +36958,12 @@ MonoBehaviour:
   Rigid: {fileID: 4420554445871041045}
   MeshRenderer: {fileID: 8258118471072347375}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.67980593, y: 0.3628738, z: 0.06158385}
 --- !u!54 &4420554445871041045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36837,7 +37027,7 @@ GameObject:
   - component: {fileID: 8577601795476553976}
   - component: {fileID: 7724525512445470306}
   - component: {fileID: 6123840321637792356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36924,8 +37114,12 @@ MonoBehaviour:
   Rigid: {fileID: 7724525512445470306}
   MeshRenderer: {fileID: 1145096192217534042}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.3466133, y: 0.29589975, z: -0.14627627}
 --- !u!54 &7724525512445470306
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37015,7 +37209,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7311627686423725441}
-  m_Mesh: {fileID: -858831242638542952, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
+  m_Mesh: {fileID: 4782761050918183523, guid: 2a8e81b8676f0a14db3936cd359eac16, type: 3}
 --- !u!23 &400867385734761975
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37261,12 +37455,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    TotalLayer: 3
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 3185245800798177169}
   HideMeshRenderer: {fileID: 3801850418761949371}
@@ -37777,7 +37972,7 @@ GameObject:
   - component: {fileID: 6492395692244806892}
   - component: {fileID: 836820737623161624}
   - component: {fileID: 8765405737513451349}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37864,8 +38059,12 @@ MonoBehaviour:
   Rigid: {fileID: 836820737623161624}
   MeshRenderer: {fileID: 6805275964899943129}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.67902434, y: 0.36178207, z: 0.0628542}
 --- !u!54 &836820737623161624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38035,12 +38234,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 6111763421756872546}
   HideMeshRenderer: {fileID: 2695498893079524077}
@@ -38551,7 +38751,7 @@ GameObject:
   - component: {fileID: 2148613986361461386}
   - component: {fileID: 1669005390122074167}
   - component: {fileID: 1420960513836517649}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38638,8 +38838,12 @@ MonoBehaviour:
   Rigid: {fileID: 1669005390122074167}
   MeshRenderer: {fileID: 3134671767360189649}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.6272842, y: 0.36575615, z: 0.050740603}
 --- !u!54 &1669005390122074167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38809,12 +39013,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
+    HightestColor: Pickle
     ColorStack: []
   TopMeshRenderer: {fileID: 3641607481671198814}
   HideMeshRenderer: {fileID: 3407449610014241766}
@@ -39325,7 +39530,7 @@ GameObject:
   - component: {fileID: 3498574484832816604}
   - component: {fileID: 5446841347096435838}
   - component: {fileID: 1143894272796412482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39412,8 +39617,12 @@ MonoBehaviour:
   Rigid: {fileID: 5446841347096435838}
   MeshRenderer: {fileID: 3978505220976836327}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.3304428, y: 0.079444885, z: -0.13825826}
 --- !u!54 &5446841347096435838
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39666,12 +39875,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    TotalLayer: 2
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 7268601799986092092}
   HideMeshRenderer: {fileID: 2012825999369556482}
@@ -40099,7 +40309,7 @@ GameObject:
   - component: {fileID: 3348794390606747824}
   - component: {fileID: 4010261742592476704}
   - component: {fileID: 6144686987201072638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40186,8 +40396,12 @@ MonoBehaviour:
   Rigid: {fileID: 4010261742592476704}
   MeshRenderer: {fileID: 6066737689355157052}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.57867074, y: 0.19325209, z: 0.06908694}
 --- !u!54 &4010261742592476704
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40251,7 +40465,7 @@ GameObject:
   - component: {fileID: 7213079326567151086}
   - component: {fileID: 5522681914180923622}
   - component: {fileID: 999467343572344145}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40338,8 +40552,12 @@ MonoBehaviour:
   Rigid: {fileID: 5522681914180923622}
   MeshRenderer: {fileID: 8969552734701635536}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.3290095, y: 0.081005216, z: -0.15013936}
 --- !u!54 &5522681914180923622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40403,7 +40621,7 @@ GameObject:
   - component: {fileID: 4883142517722173439}
   - component: {fileID: 8335675247436990727}
   - component: {fileID: 9001409949154315129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40490,8 +40708,12 @@ MonoBehaviour:
   Rigid: {fileID: 8335675247436990727}
   MeshRenderer: {fileID: 2220261067900930183}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.5349271, y: 0.03492546, z: 0.06609827}
 --- !u!54 &8335675247436990727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40555,7 +40777,7 @@ GameObject:
   - component: {fileID: 7021358243307191215}
   - component: {fileID: 1868065904925173919}
   - component: {fileID: 6845381823417336467}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40642,8 +40864,12 @@ MonoBehaviour:
   Rigid: {fileID: 1868065904925173919}
   MeshRenderer: {fileID: 6398431631359066625}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.3619006, y: 0.5237028, z: -0.16999058}
 --- !u!54 &1868065904925173919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40707,7 +40933,7 @@ GameObject:
   - component: {fileID: 1907012295934991693}
   - component: {fileID: 1547250363241114521}
   - component: {fileID: 1511627840980737801}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40794,8 +41020,12 @@ MonoBehaviour:
   Rigid: {fileID: 1547250363241114521}
   MeshRenderer: {fileID: 6941618966132301755}
   _color: {r: 1, g: 0.6406671, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: 0.019622777, y: 0.07075691, z: -0.7077724}
 --- !u!54 &1547250363241114521
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41048,12 +41278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 6
-    HightestColor: {r: 0.8627451, g: 0.49803922, b: 0.16078432, a: 1}
+    HightestColor: Orangewhite
     ColorStack: []
   TopMeshRenderer: {fileID: 3557834722319759685}
   HideMeshRenderer: {fileID: 5053898329610933497}
@@ -41587,12 +41818,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 3743369871365980108}
   HideMeshRenderer: {fileID: 2904943816039835167}
@@ -42103,7 +42335,7 @@ GameObject:
   - component: {fileID: 8059355131558869037}
   - component: {fileID: 995152185949412426}
   - component: {fileID: 3350610309582836010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42190,8 +42422,12 @@ MonoBehaviour:
   Rigid: {fileID: 995152185949412426}
   MeshRenderer: {fileID: 4077505429225844078}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.6813027, y: 0.36652923, z: 0.05131233}
 --- !u!54 &995152185949412426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42361,12 +42597,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 6108027129989091005}
   HideMeshRenderer: {fileID: 5870384302334526462}
@@ -42794,7 +43031,7 @@ GameObject:
   - component: {fileID: 6427075229669308009}
   - component: {fileID: 8321661086174178937}
   - component: {fileID: 1735983256200592371}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42881,8 +43118,12 @@ MonoBehaviour:
   Rigid: {fileID: 8321661086174178937}
   MeshRenderer: {fileID: 4753256868100639207}
   _color: {r: 1, g: 0.5685203, b: 0.25471687, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.40045232, y: 0.29589975, z: -0.14627627}
 --- !u!54 &8321661086174178937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42946,7 +43187,7 @@ GameObject:
   - component: {fileID: 1378686226950034970}
   - component: {fileID: 53056059337153386}
   - component: {fileID: 9040356070399914636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43033,8 +43274,12 @@ MonoBehaviour:
   Rigid: {fileID: 53056059337153386}
   MeshRenderer: {fileID: 4320861387346252635}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.4174197, y: 0.5226988, z: -0.15433265}
 --- !u!54 &53056059337153386
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43204,12 +43449,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 434100987216907075}
   HideMeshRenderer: {fileID: 5471418322408203129}
@@ -43755,12 +44001,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    TotalLayer: 2
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 7479492837675720457}
   HideMeshRenderer: {fileID: 6973603534128508774}
@@ -44294,12 +44541,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.8862745, g: 0.654902, b: 0.22745098, a: 1}
+    HightestColor: Yellow17
     ColorStack: []
   TopMeshRenderer: {fileID: 471168492023863925}
   HideMeshRenderer: {fileID: 2041355238835529830}
@@ -44810,7 +45058,7 @@ GameObject:
   - component: {fileID: 7683138854167470055}
   - component: {fileID: 3186392988478112942}
   - component: {fileID: 3396449686561201176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44897,8 +45145,12 @@ MonoBehaviour:
   Rigid: {fileID: 3186392988478112942}
   MeshRenderer: {fileID: 5963928797719257866}
   _color: {r: 0.25882354, g: 0.20784315, b: 0.47058827, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.6317651, y: 0.1922121, z: 0.07029709}
 --- !u!54 &3186392988478112942
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44962,7 +45214,7 @@ GameObject:
   - component: {fileID: 4470998021283970114}
   - component: {fileID: 5935742126861468145}
   - component: {fileID: 5589451464827106313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: item_A_Hauntedcastle_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45049,8 +45301,12 @@ MonoBehaviour:
   Rigid: {fileID: 5935742126861468145}
   MeshRenderer: {fileID: 7115674965509730468}
   _color: {r: 0.1879557, g: 0.17043069, b: 0.2981131, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.8
+  ForceSourceCenter: {fileID: 6507517915710462019}
+  _decoreCenterPos: {x: -0.5887661, y: 0.03492546, z: 0.06609827}
 --- !u!54 &5935742126861468145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45220,12 +45476,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 6
-    HightestColor: {r: 0.2627451, g: 0.27450982, b: 0.4862745, a: 1}
+    HightestColor: Berry
     ColorStack: []
   TopMeshRenderer: {fileID: 1083548870488075956}
   HideMeshRenderer: {fileID: 711904542336463136}
@@ -45760,12 +46017,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 1
-    HightestColor: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+    HightestColor: Gray2
     ColorStack: []
   TopMeshRenderer: {fileID: 2558261355548480308}
   HideMeshRenderer: {fileID: 46330272636293596}
@@ -46465,12 +46723,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
+    HightestColor: Pickle
     ColorStack: []
   TopMeshRenderer: {fileID: 6781798011825697131}
   HideMeshRenderer: {fileID: 2453113472530362122}
@@ -47004,12 +47263,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorPalleteData: {fileID: 11400000, guid: 376519d4519358445a14bae0c9dfd941, type: 2}
   debugUV: 0
   WoolOrder: 1
   woolTransform: {fileID: 0}
   MeshObjectData:
     TotalLayer: 3
-    HightestColor: {r: 0.49411765, g: 0.29803923, b: 0.19607843, a: 1}
+    HightestColor: Brown
     ColorStack: []
   TopMeshRenderer: {fileID: 4207197800575726962}
   HideMeshRenderer: {fileID: 8251170720037363986}
