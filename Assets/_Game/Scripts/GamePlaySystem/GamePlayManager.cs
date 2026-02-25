@@ -16,7 +16,8 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 #endif
 
     public ColorPalleteData_new colorPalleteData;
-    [Tooltip("Tham chiếu đến HandController để hiển thị/ẩn hoạt ảnh hướng dẫn.")] [SerializeField]
+    [Tooltip("Tham chiếu đến HandController để hiển thị/ẩn hoạt ảnh hướng dẫn.")]
+    [SerializeField]
     private HandController handController;
     [SerializeField] private int LoseOffer = 1;
     [SerializeField] private LevelConfigSO levelConfigSO;
@@ -132,30 +133,18 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
     #region UNITY_METHODS
     void OnEnable()
     {
-
+        OnGameStateChange();
+        LoadNewLevel();
+        Luna.Unity.LifeCycle.GameStarted();
     }
     private void Start()
     {
         GameEventManager.ShowPopupOfferEndGame += ShowPopupOfferEndGame;
-        // GameEventManager.OnUseSawAdsBooster += OnSawAdsBooster;
-        // GameEventManager.OnUseSaveBooster += OnUseSaveBooster;
-        // GameEventManager.OnSaveBooster += OnSaveBooster;
-        OnGameStateChange();
-        LoadNewLevel();
     }
 
     public override void Awake()
     {
         base.Awake();
-        if (levelConfigSO != null)
-        {
-            Debug.Log($"[GamePlayManager] Using LevelConfigSO: {levelConfigSO.name} with {levelConfigSO.levelConfigDataList.Count} levels.");
-        }
-        else
-        {
-            Debug.LogError("[GamePlayManager] LevelConfigSO is NOT assigned!");
-        }
-
         if (colorPalleteData != null)
         {
             colorPalleteData.BuildDictionary();
@@ -324,7 +313,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         GameEventManager.OnMeshCountClickChange?.Invoke();
         //if (soundDict.GetAudioClip("wool_xoay") != null) GameAudioManager.Instance.PlayOneShot(soundDict.GetAudioClip("wool_xoay"), soundDict.GetSoundVolume("wool_xoay"));
         SoundManager.Instance.PlayOneShot("wool_xoay");
-        Debug.Log("Play sound wool_xoay");
+        //Debug.Log("Play sound wool_xoay");
         if (CheckChosenColorInCubeTarget(startPoint.transform, spiralPath, colorClick)) return true;
 
         if (_isUsingRainBowBooster)
@@ -343,16 +332,6 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         foreach (QueueTargetControl queue in CurrentQueueTargets)
         {
             if (!queue.AddChild(colorClick)) continue;
-            // if (TotalCubeActive == CubeReadyCount)
-            // {
-            //     GamePlayUIManager.Instance.SetBroomBoosterInteractable(true);
-            //     GamePlayUIManager.Instance.SetRedoBoosterInteractable(true);
-            // }
-            // else
-            // {
-            //     GamePlayUIManager.Instance.SetBroomButtonInteractable(false);
-            //     GamePlayUIManager.Instance.SetRedoButtonInteractable(false);
-            // }
             var rollWool = GenericObjectPool.Instance.PopFromPool(RollWoolPrefab, instantiateIfNone: true);
             rollWool.transform.SetParent(queue.transform, true);
             var rollWoolAnimator = rollWool.GetComponent<WoolRollAnimator>();

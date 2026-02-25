@@ -38,6 +38,9 @@ public partial class GamePlayManager
     {
         if (_isUseBroomBooster) yield break;
         //UIFullScreenBlocker.Instance.Lock(4);
+        CameraController.Instance.BlockRotate(true);
+        CameraController.Instance.SetBlockHandTap(true);
+        CameraController.Instance.SetBlockHold(true);
         IsEndGame = true;
         if (!isWin)
             yield return new WaitForSeconds(1.2f);
@@ -48,29 +51,14 @@ public partial class GamePlayManager
                 IsWinGame = true;
                 GameEventManager.OnEndGameAction?.Invoke(true);
             }
+            GamePlayUIManager.Instance?.ShowWinPanel();
+            Debug.Log($"[GamePlayManager] Trigger Win Game Action");
         }
         else
         {
-            // if (_replayCount <= LoseOffer && TotalCubeActive != maxCubeTarget)
-            if (false)
-            {
-                _purchaseOfferCost = _replayCount == 0
-                    ? AddCubeDataSO.FirstCubeTargetCost
-                    : AddCubeDataSO.SecondCubeTargetCost;
-                _offerIcon = AddCubeDataSO.AddCubeTargetIcon;
-                _isUseOpenCubeoffer = true;
-                _replayCount++;
-                GameEventManager.ShowPopupOfferEndGame?.Invoke();
-            }
-            else
-            {
-                _purchaseOfferCost = broomDataSO.BoosterCost;
-                _offerIcon = broomDataSO.BoosterIcon;
-                _isUseOpenCubeoffer = false;
-                GameEventManager.ShowPopupOfferEndGame?.Invoke();
-
-            }
-
+            yield return new WaitForSeconds(1.2f);
+            GamePlayUIManager.Instance?.ShowLosePanel();
+            Debug.Log($"[GamePlayManager] Trigger Lose Game Action");
         }
 
         yield return null;

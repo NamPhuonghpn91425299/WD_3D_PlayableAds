@@ -259,6 +259,7 @@ public class WoolControl : MonoBehaviour
         if (!HasValidWoolAnimationState()) yield break;
         if (!GamePlayManager.Instance.OnChoseColor(this, _spiralPath, _currentColor)) yield break;
         GamePlayManager.Instance.ActiveHandController(false);
+        CameraController.Instance.BlockRotate(false);
         _isPlayAnim = true;
 
         try

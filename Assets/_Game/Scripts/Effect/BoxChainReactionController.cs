@@ -304,5 +304,6 @@ public class BoxChainReactionController : SingletonBase<BoxChainReactionControll
     {
         if (!gameObject.activeSelf) gameObject.SetActive(true);
         StartCoroutine(AddBoxWithAnimationCoroutine());
+
     }
 }

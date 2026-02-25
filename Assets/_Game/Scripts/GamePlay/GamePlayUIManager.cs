@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
 {
     #region PROPERTIES
+    [SerializeField] private UiEndGame uiEndGame;
     [Header("ZOOM OLD")] public Slider ZomSlider;
     public Text ProgressText;
     public ZoomCameraData ZoomCameraData;
@@ -38,9 +39,7 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
     private void OnEnable()
     {
         RegisterButton();
-        //SetBroomBoosterInteractable(true);
-        //SetRedoBoosterInteractable(true);
-        //SetLevelText(DataManager.PlayerData.Level);
+
         _iconPercentPropertyBlock = new MaterialPropertyBlock();
     }
 
@@ -55,77 +54,15 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
 
     #region MAIN_METHODS
 
+    public void ShowWinPanel()
+    {
+        if (uiEndGame != null) uiEndGame.ShowWinPanel();
+    }
 
-    // public void UpdateProgressVisual(int? indexCube = null)
-    // {
-    //     try
-    //     {
-    //         if (indexCube != null)
-    //         {
-    //             var flyEffect = Instantiate(starFlyEffectPrefab, transform);
-    //             flyEffect.SetStart(indexCube == -1
-    //                     ? GamePlaySystem.Instance.RainBowTargetControl.transform
-    //                     : GamePlaySystem.Instance.CurrentCubeTargets[indexCube.Value].transform
-    //                 );
-    //             flyEffect.SetEnd(iconPercent.rectTransform);
-    //             flyEffect.Init();
-    //             flyEffect.Play();
-    //             WaitUpdateVisual(flyEffect.FlyDuration)
-    //                .Forget();
-    //         }
-    //         else
-    //         {
-    //             UpdateProgressTextAndIcon();
-    //         }
-    //     } catch (Exception e)
-    //     {
-    //         Debug.LogError("GamePlayUI: UpdateProgressVisual error: " + e);
-    //     }
-    // }
-
-    // public void SetBroomBoosterInteractable(bool isInteractable)
-    // {
-    //     if (broomBooster)
-    //     {
-    //         broomBooster.SetEffectInteractable(isInteractable);
-    //         broomBooster.SetInteractableButton(true);
-    //     }
-    // }
-
-    // public void SetBroomButtonInteractable(bool interactable)
-    // {
-    //     if (broomBooster)
-    //     {
-    //         broomBooster.SetInteractableButton(interactable);
-    //         broomBooster.SetEffectInteractable(interactable);
-    //     }
-    // }
-
-    // public void OfferUseBroomBooster()
-    // {
-    //     if (broomBooster)
-    //     {
-    //         broomBooster.OfferUseBroomBooster();
-    //     }
-    // }
-
-    // public void SetRedoBoosterInteractable(bool isInteractable)
-    // {
-    //     if (redoBooster)
-    //     {
-    //         redoBooster.SetRedoInteractable(isInteractable);
-    //         redoBooster.SetInteractableButton(true);
-    //     }
-    // }
-
-    // public void SetRedoButtonInteractable(bool interactable)
-    // {
-    //     if (redoBooster)
-    //     {
-    //         redoBooster.SetInteractableButton(interactable);
-    //         redoBooster.SetRedoInteractable(interactable);
-    //     }
-    // }
+    public void ShowLosePanel()
+    {
+        if (uiEndGame != null) uiEndGame.ShowLosePanel();
+    }
 
     public void UpdateProgressTextAndIcon()
     {

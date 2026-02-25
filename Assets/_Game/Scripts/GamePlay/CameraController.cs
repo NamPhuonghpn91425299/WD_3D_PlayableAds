@@ -14,13 +14,6 @@ public class CameraController : SingletonBase<CameraController>
 
     [SerializeField]
     private AudioClip introFinishRotateSound;
-
-    [SerializeField]
-    private Vector3 _cameraPosMainMenuDefault = new(0, 1.8f, -11);
-
-    [SerializeField]
-    private Vector3 _cameraRoteMainMenuDefault = new(15f, 0, 0);
-
     [SerializeField]
     private Vector3 _cameraPosGamePlayDefault = new(0, 1, -10);
 
@@ -209,7 +202,6 @@ public class CameraController : SingletonBase<CameraController>
     public void BlockRotate(bool isBlock)
     {
         BlockRotation = isBlock;
-        //if (modelTransfrom) targetRotation = modelTransfrom.rotation;
         if (SpawnPoint) targetRotation = SpawnPoint.rotation;
     }
 
@@ -775,6 +767,7 @@ public class CameraController : SingletonBase<CameraController>
            .DOFieldOfView(IntroEndFOV, IntroCameraZoomInDuration)
            .SetEase(Ease.InOutSine);
         GamePlayManager.Instance.ActiveHandController(true);
+        BlockRotate(true);
         yield return new WaitForSeconds(IntroCameraZoomInDuration);
         if (token.IsCancellationRequested) yield break;
 

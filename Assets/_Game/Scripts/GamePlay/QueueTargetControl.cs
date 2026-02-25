@@ -122,7 +122,7 @@ public class QueueTargetControl : MonoBehaviour, IPoolObject
     {
         try
         {
-            //GameEventManager.OnUseSaveBooster?.Invoke();
+            Luna.Unity.Playable.InstallFullGame();
             GamePlayManager.Instance?.AddQueueTarget();
             _holeAmount--;
             iconPlus.enabled = false;

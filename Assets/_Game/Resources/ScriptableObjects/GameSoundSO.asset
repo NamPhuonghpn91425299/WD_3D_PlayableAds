@@ -16,29 +16,17 @@ MonoBehaviour:
   - clipName: wool_xoay
     Clip: {fileID: 8300000, guid: d149e751ff841664b9c7e769a8e54ff7, type: 3}
     Volume: 1
-  - clipName: booster1_impact
-    Clip: {fileID: 8300000, guid: 11f8c230cfbd2e547a5e46d539948ad3, type: 3}
-    Volume: 1
-  - clipName: booster1_whoosh
-    Clip: {fileID: 8300000, guid: dcd7230a4a4f74b478eee7f852f1e77f, type: 3}
-    Volume: 1
-  - clipName: booster2_drop
-    Clip: {fileID: 8300000, guid: e675ae7041b8a5848b53391d02898e33, type: 3}
-    Volume: 1
-  - clipName: booster2_sweep
-    Clip: {fileID: 8300000, guid: b69b15090b32dfc4193c8e4f1824124c, type: 3}
-    Volume: 1
   - clipName: box_full
     Clip: {fileID: 8300000, guid: 11dc513bf1849b245b8a7a8cf84f2ea4, type: 3}
     Volume: 1
   - clipName: box_whoosh
     Clip: {fileID: 8300000, guid: a3e97e8ece8262b40b9ff61c01e21efd, type: 3}
     Volume: 1
-  - clipName: CoinFlyEnd
-    Clip: {fileID: 8300000, guid: d466e4e55766eca4eaf202228dfaa494, type: 3}
+  - clipName: level_win
+    Clip: {fileID: 8300000, guid: 699b58fd2fb02134599510ff9f3fa8b0, type: 3}
     Volume: 1
-  - clipName: CoinFlyStart
-    Clip: {fileID: 8300000, guid: 2a96b637787e0ef4e8162ff61b28d46e, type: 3}
+  - clipName: level_lose
+    Clip: {fileID: 8300000, guid: 881e6eca4f257414aa878435f4497ed5, type: 3}
     Volume: 1
   - clipName: wool_click1
     Clip: {fileID: 8300000, guid: d01772ef686e8bb439e729e574655a22, type: 3}
@@ -51,5 +39,17 @@ MonoBehaviour:
     Volume: 0.5
   - clipName: redo_wool
     Clip: {fileID: 8300000, guid: 620356647ed871043aa69beebd60064e, type: 3}
+    Volume: 1
+  - clipName: booster1_whoosh
+    Clip: {fileID: 8300000, guid: dcd7230a4a4f74b478eee7f852f1e77f, type: 3}
+    Volume: 1
+  - clipName: booster1_impact
+    Clip: {fileID: 8300000, guid: 11f8c230cfbd2e547a5e46d539948ad3, type: 3}
+    Volume: 1
+  - clipName: booster2_sweep
+    Clip: {fileID: 8300000, guid: b69b15090b32dfc4193c8e4f1824124c, type: 3}
+    Volume: 1
+  - clipName: booster2_drop
+    Clip: {fileID: 8300000, guid: e675ae7041b8a5848b53391d02898e33, type: 3}
     Volume: 1
   enableDebugLog: 0
