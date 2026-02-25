@@ -16,3 +16,10 @@ MonoBehaviour:
   MinFOV: 35
   MaxFOV: 60
   DefaultFOV: 60
+  MainMenuFOV: 52
+  enableSmartFocus: 1
+  zoomStepPercentage: 5
+  cameraClipPos: {x: 0.5, y: 0.5}
+  focusSpeed: 1.5
+  focusSmoothTime: 1
+  minimumAdjustmentDistance: 1

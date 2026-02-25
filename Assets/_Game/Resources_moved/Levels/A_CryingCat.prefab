@@ -120,21 +120,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 9
-    HightestColor: {r: 0.8, g: 0.5882353, b: 0.3529412, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8790244266804223624}
   HideMeshRenderer: {fileID: 2183039109693266279}
-  BoxCollider: {fileID: 4236588799950309929}
+  MeshCollider: {fileID: 4236588799950309929}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 8582988121798127089}
   IsSetColorHightest: 1
   _spiralPath:
@@ -539,6 +537,11 @@ MonoBehaviour:
   - 0.029769491
   - 0.024946649
   - 0.02012375
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &223740530191408966
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,21 +745,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 3
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 6377811042602144772}
   HideMeshRenderer: {fileID: 1331838655819795081}
-  BoxCollider: {fileID: 1058113608300490261}
+  MeshCollider: {fileID: 1058113608300490261}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 2652047489186885648}
   IsSetColorHightest: 1
   _spiralPath:
@@ -1161,6 +1162,11 @@ MonoBehaviour:
   - 0.03379788
   - 0.029016353
   - 0.024234772
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &990906940336071938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,8 +1268,12 @@ MonoBehaviour:
   Rigid: {fileID: 817150285593829900}
   MeshRenderer: {fileID: 8722621794313900550}
   _color: {r: 0.90943396, g: 0.57868445, b: 0.2728301, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.16580328, y: -0.11450435, z: -0.22121072}
 --- !u!54 &817150285593829900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1931,16 +1941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 3
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 3193077148896796858}
   HideMeshRenderer: {fileID: 3299860874744802963}
-  BoxCollider: {fileID: 1404621878668778509}
+  MeshCollider: {fileID: 1404621878668778509}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
@@ -1949,6 +1955,8 @@ MonoBehaviour:
   - {fileID: 6370919689156491379}
   - {fileID: 2455914618385160328}
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 2050452394176325602}
   IsSetColorHightest: 1
   _spiralPath:
@@ -2353,6 +2361,11 @@ MonoBehaviour:
   - 0.03174217
   - 0.026939563
   - 0.022136897
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &1387857341362057075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,8 +2467,12 @@ MonoBehaviour:
   Rigid: {fileID: 8800710624853076476}
   MeshRenderer: {fileID: 2569193361723191466}
   _color: {r: 0.8867924, g: 0.5043398, b: 0.10541113, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.6
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: 0.063466616, y: -0.22937448, z: 0.34581438}
 --- !u!54 &8800710624853076476
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2708,21 +2725,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 9
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 2081038417374508817}
   HideMeshRenderer: {fileID: 6384974509504010481}
-  BoxCollider: {fileID: 7037915101738675832}
+  MeshCollider: {fileID: 7037915101738675832}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 4698555992454715261}
   IsSetColorHightest: 1
   _spiralPath:
@@ -3127,6 +3142,11 @@ MonoBehaviour:
   - 0.031852424
   - 0.027050948
   - 0.022249412
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &1599257063646094203
 GameObject:
   m_ObjectHideFlags: 0
@@ -3228,8 +3248,12 @@ MonoBehaviour:
   Rigid: {fileID: 5306700668491486878}
   MeshRenderer: {fileID: 3635396881453851242}
   _color: {r: 0.90943396, g: 0.57868445, b: 0.2728301, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.4
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.1981032, y: -0.09886759, z: -0.18338697}
 --- !u!54 &5306700668491486878
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3399,21 +3423,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 3576372179017319812}
   HideMeshRenderer: {fileID: 4583819455646290997}
-  BoxCollider: {fileID: 1900956716861522305}
+  MeshCollider: {fileID: 1900956716861522305}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7560214349934932918}
   IsSetColorHightest: 1
   _spiralPath:
@@ -3818,6 +3840,11 @@ MonoBehaviour:
   - 0.024192654
   - 0.019306181
   - 0.014419652
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &1652476572067248158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,21 +4131,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.40784314, g: 0.69803923, b: 0.6784314, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8561097518428931104}
   HideMeshRenderer: {fileID: 9142617741327729498}
-  BoxCollider: {fileID: 5833580540106375435}
+  MeshCollider: {fileID: 5833580540106375435}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 3560239865290652447}
   IsSetColorHightest: 1
   _spiralPath:
@@ -4523,6 +4548,11 @@ MonoBehaviour:
   - 0.042400762
   - 0.03770664
   - 0.033012457
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &1933984430282175511
 GameObject:
   m_ObjectHideFlags: 0
@@ -4809,21 +4839,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 5
-    HightestColor: {r: 0.32941177, g: 0.1882353, b: 0.11372549, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 5453432423326890597}
   HideMeshRenderer: {fileID: 418522613707039493}
-  BoxCollider: {fileID: 6744133484445017101}
+  MeshCollider: {fileID: 6744133484445017101}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7469020272594428408}
   IsSetColorHightest: 1
   _spiralPath:
@@ -5228,6 +5256,11 @@ MonoBehaviour:
   - 0.034020644
   - 0.02924114
   - 0.024461577
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &2110065630370358205
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,21 +5381,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8627451, g: 0.49803922, b: 0.16078432, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 5429116055305441491}
   HideMeshRenderer: {fileID: 5349649494827020412}
-  BoxCollider: {fileID: 4655498231720096591}
+  MeshCollider: {fileID: 4655498231720096591}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 1625503950982781916}
   IsSetColorHightest: 1
   _spiralPath:
@@ -5767,6 +5798,11 @@ MonoBehaviour:
   - 0.040002573
   - 0.03528318
   - 0.03056373
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &2173297367734965961
 GameObject:
   m_ObjectHideFlags: 0
@@ -5868,8 +5904,12 @@ MonoBehaviour:
   Rigid: {fileID: 1202669322227168842}
   MeshRenderer: {fileID: 4458680342454465232}
   _color: {r: 0.90196085, g: 0.49411768, b: 0.5294118, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.006, y: 0.19627048, z: -0.31580937}
 --- !u!54 &1202669322227168842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6039,21 +6079,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8635894863457966156}
   HideMeshRenderer: {fileID: 8729203087144288694}
-  BoxCollider: {fileID: 5819024717920621047}
+  MeshCollider: {fileID: 5819024717920621047}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7817549342571424952}
   IsSetColorHightest: 1
   _spiralPath:
@@ -6458,6 +6496,11 @@ MonoBehaviour:
   - 0.022663943
   - 0.017765516
   - 0.012867033
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &2355782939924949908
 GameObject:
   m_ObjectHideFlags: 0
@@ -6578,21 +6621,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 6
-    HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 974750064534166615}
   HideMeshRenderer: {fileID: 3126820266794982240}
-  BoxCollider: {fileID: 3544846934082977125}
+  MeshCollider: {fileID: 3544846934082977125}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 5353179421462325444}
   IsSetColorHightest: 1
   _spiralPath:
@@ -6997,6 +7038,11 @@ MonoBehaviour:
   - 0.048086226
   - 0.043451246
   - 0.038816214
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &2369935259364532816
 GameObject:
   m_ObjectHideFlags: 0
@@ -7283,21 +7329,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 2564158075850195714}
   HideMeshRenderer: {fileID: 2517508196341261608}
-  BoxCollider: {fileID: 7812669383975666072}
+  MeshCollider: {fileID: 7812669383975666072}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 3205874128742988249}
   IsSetColorHightest: 1
   _spiralPath:
@@ -7702,6 +7746,11 @@ MonoBehaviour:
   - 0.02640194
   - 0.02154337
   - 0.01668474
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &2535271150448337543
 GameObject:
   m_ObjectHideFlags: 0
@@ -7822,21 +7871,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 5896360095761607990}
   HideMeshRenderer: {fileID: 8155961664045314511}
-  BoxCollider: {fileID: 7972175327400326015}
+  MeshCollider: {fileID: 7972175327400326015}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 3848318867258209647}
   IsSetColorHightest: 1
   _spiralPath:
@@ -8241,6 +8288,11 @@ MonoBehaviour:
   - 0.028293528
   - 0.023455547
   - 0.01861751
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &2636460570081304944
 GameObject:
   m_ObjectHideFlags: 0
@@ -8361,21 +8413,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.18431373, g: 0.34117648, b: 0.44313726, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 7907241793859182618}
   HideMeshRenderer: {fileID: 9095284319924444521}
-  BoxCollider: {fileID: 6843870100250313183}
+  MeshCollider: {fileID: 6843870100250313183}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 1063701812473014560}
   IsSetColorHightest: 1
   _spiralPath:
@@ -8780,6 +8830,11 @@ MonoBehaviour:
   - 0.04673394
   - 0.042085093
   - 0.037436187
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &2652407528896955025
 GameObject:
   m_ObjectHideFlags: 0
@@ -8964,8 +9019,12 @@ MonoBehaviour:
   Rigid: {fileID: 3905562412613491296}
   MeshRenderer: {fileID: 1631742391675568122}
   _color: {r: 0.18490559, g: 0.11297318, b: 0.07500886, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.4
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.13314658, y: 0.24177815, z: -0.25395232}
 --- !u!54 &3905562412613491296
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9384,21 +9443,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 7253170185654849788}
   HideMeshRenderer: {fileID: 4707978625079495963}
-  BoxCollider: {fileID: 2741457692796910946}
+  MeshCollider: {fileID: 2741457692796910946}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 2429593582717150870}
   IsSetColorHightest: 1
   _spiralPath:
@@ -9803,6 +9860,11 @@ MonoBehaviour:
   - 0.0343609
   - 0.02958553
   - 0.024810104
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &2986767486945085342
 GameObject:
   m_ObjectHideFlags: 0
@@ -10089,21 +10151,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 5
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 7167099910950353736}
   HideMeshRenderer: {fileID: 220642345273825914}
-  BoxCollider: {fileID: 4147656417233666957}
+  MeshCollider: {fileID: 4147656417233666957}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 3293053577862165283}
   IsSetColorHightest: 1
   _spiralPath:
@@ -10508,6 +10568,11 @@ MonoBehaviour:
   - 0.02407206
   - 0.01918364
   - 0.014295161
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &3142303150117894596
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,8 +10674,12 @@ MonoBehaviour:
   Rigid: {fileID: 4530291853881971492}
   MeshRenderer: {fileID: 6448736191099468620}
   _color: {r: 0.8867924, g: 0.5043398, b: 0.10541113, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.013274874, y: -0.22939344, z: 0.29778954}
 --- !u!54 &4530291853881971492
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10927,8 +10996,12 @@ MonoBehaviour:
   Rigid: {fileID: 7289395143234099336}
   MeshRenderer: {fileID: 5893233931536989983}
   _color: {r: 0.90943396, g: 0.57868445, b: 0.2728301, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: 0.15380329, y: -0.11450435, z: -0.22121072}
 --- !u!54 &7289395143234099336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11098,21 +11171,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8671537119873712029}
   HideMeshRenderer: {fileID: 2645633839737060262}
-  BoxCollider: {fileID: 6880794988792020261}
+  MeshCollider: {fileID: 6880794988792020261}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 5089734601261449166}
   IsSetColorHightest: 1
   _spiralPath:
@@ -11517,6 +11588,11 @@ MonoBehaviour:
   - 0.029270783
   - 0.024442827
   - 0.019614814
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &3908454530752242299
 GameObject:
   m_ObjectHideFlags: 0
@@ -11720,21 +11796,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8515012234626462595}
   HideMeshRenderer: {fileID: 2871098880344885051}
-  BoxCollider: {fileID: 5828948839671045415}
+  MeshCollider: {fileID: 5828948839671045415}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 6031756228648685263}
   IsSetColorHightest: 1
   _spiralPath:
@@ -12139,6 +12213,11 @@ MonoBehaviour:
   - 0.028239392
   - 0.023399722
   - 0.018559992
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &4111503805312234563
 GameObject:
   m_ObjectHideFlags: 0
@@ -12572,8 +12651,12 @@ MonoBehaviour:
   Rigid: {fileID: 8145418961788201066}
   MeshRenderer: {fileID: 3574096791021934165}
   _color: {r: 0.81886786, g: 0.6777613, b: 0.5175863, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.5
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.086428426, y: -0.18558651, z: -0.022688357}
 --- !u!54 &8145418961788201066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12743,21 +12826,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 2364847982308613646}
   HideMeshRenderer: {fileID: 4775538514538201651}
-  BoxCollider: {fileID: 8648163097156594984}
+  MeshCollider: {fileID: 8648163097156594984}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 2732446087197748365}
   IsSetColorHightest: 1
   _spiralPath:
@@ -13162,6 +13243,11 @@ MonoBehaviour:
   - 0.02640194
   - 0.02154337
   - 0.01668474
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &4768340627131979405
 GameObject:
   m_ObjectHideFlags: 0
@@ -13282,21 +13368,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 3
-    HightestColor: {r: 0.8, g: 0.5882353, b: 0.3529412, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 5693666595721088982}
   HideMeshRenderer: {fileID: 2063236331039357389}
-  BoxCollider: {fileID: 8780071704329171271}
+  MeshCollider: {fileID: 8780071704329171271}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7955913862952272255}
   IsSetColorHightest: 1
   _spiralPath:
@@ -13701,6 +13785,11 @@ MonoBehaviour:
   - 0.037616763
   - 0.032874405
   - 0.028131992
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &4891577921860487911
 GameObject:
   m_ObjectHideFlags: 0
@@ -13802,8 +13891,12 @@ MonoBehaviour:
   Rigid: {fileID: 2361130862705944221}
   MeshRenderer: {fileID: 6177457776429302723}
   _color: {r: 0.90196085, g: 0.49411768, b: 0.5294118, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: 0.24759674, y: -0.1655713, z: -0.30259958}
 --- !u!54 &2361130862705944221
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13973,21 +14066,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 9122476169878748930}
   HideMeshRenderer: {fileID: 8025101642672075122}
-  BoxCollider: {fileID: 5695047681381127960}
+  MeshCollider: {fileID: 5695047681381127960}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 3856622349878739956}
   IsSetColorHightest: 1
   _spiralPath:
@@ -14392,6 +14483,11 @@ MonoBehaviour:
   - 0.024525218
   - 0.019656816
   - 0.014788357
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &4993176518926155235
 GameObject:
   m_ObjectHideFlags: 0
@@ -14576,8 +14672,12 @@ MonoBehaviour:
   Rigid: {fileID: 8158227797093754627}
   MeshRenderer: {fileID: 1739523922794494107}
   _color: {r: 0.90943396, g: 0.57868445, b: 0.2728301, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.4
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: 0.18610322, y: -0.09886759, z: -0.18338697}
 --- !u!54 &8158227797093754627
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14830,16 +14930,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 578195966185141136}
   HideMeshRenderer: {fileID: 1585332084726668055}
-  BoxCollider: {fileID: 7999120735010018881}
+  MeshCollider: {fileID: 7999120735010018881}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
@@ -14847,6 +14943,8 @@ MonoBehaviour:
   - {fileID: 7938418996495652547}
   - {fileID: 887838138913058457}
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 3044592711027330447}
   IsSetColorHightest: 1
   _spiralPath:
@@ -15251,6 +15349,11 @@ MonoBehaviour:
   - 0.027122164
   - 0.022273134
   - 0.017424047
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5134459890468616814
 GameObject:
   m_ObjectHideFlags: 0
@@ -15371,21 +15474,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 582216968719272231}
   HideMeshRenderer: {fileID: 4674946690716862455}
-  BoxCollider: {fileID: 3217579427644403810}
+  MeshCollider: {fileID: 3217579427644403810}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 1119065138157887556}
   IsSetColorHightest: 1
   _spiralPath:
@@ -15790,6 +15891,11 @@ MonoBehaviour:
   - 0.02618541
   - 0.021335118
   - 0.016484767
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5184067179072640988
 GameObject:
   m_ObjectHideFlags: 0
@@ -15891,8 +15997,12 @@ MonoBehaviour:
   Rigid: {fileID: 4417197658124440543}
   MeshRenderer: {fileID: 6755834796126003323}
   _color: {r: 0.18490559, g: 0.11297318, b: 0.07500886, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.4
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: 0.1211466, y: 0.24177815, z: -0.25395232}
 --- !u!54 &4417197658124440543
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16062,21 +16172,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 3499816097264267752}
   HideMeshRenderer: {fileID: 87067925732249514}
-  BoxCollider: {fileID: 8966082141894559504}
+  MeshCollider: {fileID: 8966082141894559504}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7510727671223834636}
   IsSetColorHightest: 1
   _spiralPath:
@@ -16481,6 +16589,11 @@ MonoBehaviour:
   - 0.044987604
   - 0.040278453
   - 0.03556925
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5264589435944248970
 GameObject:
   m_ObjectHideFlags: 0
@@ -16582,8 +16695,12 @@ MonoBehaviour:
   Rigid: {fileID: 7126310657805099861}
   MeshRenderer: {fileID: 8217600432801076928}
   _color: {r: 0.90196085, g: 0.49411768, b: 0.5294118, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: 0.17949946, y: -0.12867403, z: -0.3213063}
 --- !u!54 &7126310657805099861
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16836,21 +16953,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 9
-    HightestColor: {r: 0.18431373, g: 0.34117648, b: 0.44313726, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 2279834627823539652}
   HideMeshRenderer: {fileID: 347611885058781467}
-  BoxCollider: {fileID: 510427518363267003}
+  MeshCollider: {fileID: 510427518363267003}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7751618962279242429}
   IsSetColorHightest: 1
   _spiralPath:
@@ -17255,6 +17370,11 @@ MonoBehaviour:
   - 0.03525131
   - 0.03048469
   - 0.025718015
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5405961575336506923
 GameObject:
   m_ObjectHideFlags: 0
@@ -17375,21 +17495,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 5043745241475565535}
   HideMeshRenderer: {fileID: 1271241738858268848}
-  BoxCollider: {fileID: 1360276480683987519}
+  MeshCollider: {fileID: 1360276480683987519}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 3226060987584682109}
   IsSetColorHightest: 1
   _spiralPath:
@@ -17794,6 +17912,11 @@ MonoBehaviour:
   - 0.023785755
   - 0.018896496
   - 0.014007181
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5675803353719743765
 GameObject:
   m_ObjectHideFlags: 0
@@ -17997,22 +18120,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 9
-    HightestColor: {r: 0.8627451, g: 0.49803922, b: 0.16078432, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 3419015544619175150}
   HideMeshRenderer: {fileID: 2586810693604027159}
-  BoxCollider: {fileID: 6359823385558328415}
+  MeshCollider: {fileID: 6359823385558328415}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
   - {fileID: 960213031026687472}
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 1934883385727107594}
   IsSetColorHightest: 1
   _spiralPath:
@@ -18417,6 +18538,11 @@ MonoBehaviour:
   - 0.03862807
   - 0.03389609
   - 0.029164046
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5737145066616607778
 GameObject:
   m_ObjectHideFlags: 0
@@ -18537,21 +18663,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 7071015863020608223}
   HideMeshRenderer: {fileID: 2421752944297234849}
-  BoxCollider: {fileID: 7751465119030433347}
+  MeshCollider: {fileID: 7751465119030433347}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 4822460210541936185}
   IsSetColorHightest: 1
   _spiralPath:
@@ -18956,6 +19080,11 @@ MonoBehaviour:
   - 0.022923473
   - 0.018080978
   - 0.013238426
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5801897815911387639
 GameObject:
   m_ObjectHideFlags: 0
@@ -19076,21 +19205,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 4026976204962348291}
   HideMeshRenderer: {fileID: 3635900460356020904}
-  BoxCollider: {fileID: 3593171962641782761}
+  MeshCollider: {fileID: 3593171962641782761}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 2044162670842389899}
   IsSetColorHightest: 1
   _spiralPath:
@@ -19495,6 +19622,11 @@ MonoBehaviour:
   - 0.016791271
   - 0.011860661
   - 0.006929993
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5831902170241151854
 GameObject:
   m_ObjectHideFlags: 0
@@ -19781,21 +19913,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 3828467873279744516}
   HideMeshRenderer: {fileID: 4390155729486504558}
-  BoxCollider: {fileID: 1617983241242746249}
+  MeshCollider: {fileID: 1617983241242746249}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 8718927772411286908}
   IsSetColorHightest: 1
   _spiralPath:
@@ -20200,6 +20330,11 @@ MonoBehaviour:
   - 0.044987604
   - 0.040278453
   - 0.03556925
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &5961000080020868367
 GameObject:
   m_ObjectHideFlags: 0
@@ -20403,16 +20538,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 6641761718195252837}
   HideMeshRenderer: {fileID: 6792990615527908641}
-  BoxCollider: {fileID: 890410866342551364}
+  MeshCollider: {fileID: 890410866342551364}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
@@ -20420,6 +20551,8 @@ MonoBehaviour:
   - {fileID: 8334089779625550196}
   - {fileID: 6779645843989582958}
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 6055397691928327334}
   IsSetColorHightest: 1
   _spiralPath:
@@ -20824,6 +20957,11 @@ MonoBehaviour:
   - 0.027122164
   - 0.022273134
   - 0.017424047
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &6093683493985879608
 GameObject:
   m_ObjectHideFlags: 0
@@ -21008,8 +21146,12 @@ MonoBehaviour:
   Rigid: {fileID: 3586874535538580338}
   MeshRenderer: {fileID: 3042185570803803389}
   _color: {r: 0.49411768, g: 0.29803923, b: 0.19607845, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.085823424, y: 0.2894518, z: -0.26116243}
 --- !u!54 &3586874535538580338
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21160,8 +21302,12 @@ MonoBehaviour:
   Rigid: {fileID: 7351579972259419214}
   MeshRenderer: {fileID: 2395914336006472858}
   _color: {r: 0.90196085, g: 0.49411768, b: 0.5294118, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.19149946, y: -0.12867403, z: -0.3213063}
 --- !u!54 &7351579972259419214
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21331,16 +21477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 3
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8630766165451876822}
   HideMeshRenderer: {fileID: 6370869275317189097}
-  BoxCollider: {fileID: 3023922282713995284}
+  MeshCollider: {fileID: 3023922282713995284}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
@@ -21349,6 +21491,8 @@ MonoBehaviour:
   - {fileID: 3510818759415605354}
   - {fileID: 2021647763723307472}
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 6310739836939666629}
   IsSetColorHightest: 1
   _spiralPath:
@@ -21753,6 +21897,11 @@ MonoBehaviour:
   - 0.03174217
   - 0.026939563
   - 0.022136897
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &6394648714010117892
 GameObject:
   m_ObjectHideFlags: 0
@@ -21873,21 +22022,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.40784314, g: 0.69803923, b: 0.6784314, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 4760939445695031878}
   HideMeshRenderer: {fileID: 1114451614533400542}
-  BoxCollider: {fileID: 4713134669832890633}
+  MeshCollider: {fileID: 4713134669832890633}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 8840100660062122880}
   IsSetColorHightest: 1
   _spiralPath:
@@ -22292,6 +22439,11 @@ MonoBehaviour:
   - 0.036569837
   - 0.031817734
   - 0.027065573
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &6447138723275849147
 GameObject:
   m_ObjectHideFlags: 0
@@ -22744,21 +22896,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 3
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 564368550434417861}
   HideMeshRenderer: {fileID: 2879809526609239341}
-  BoxCollider: {fileID: 7504569039105246631}
+  MeshCollider: {fileID: 7504569039105246631}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 145478196833585600}
   IsSetColorHightest: 1
   _spiralPath:
@@ -23163,6 +23313,11 @@ MonoBehaviour:
   - 0.03379788
   - 0.029016353
   - 0.024234772
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &7157494917102053019
 GameObject:
   m_ObjectHideFlags: 0
@@ -23366,21 +23521,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 5244342044988388326}
   HideMeshRenderer: {fileID: 7073819231299537419}
-  BoxCollider: {fileID: 8969861611199844573}
+  MeshCollider: {fileID: 8969861611199844573}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 4176233631591516610}
   IsSetColorHightest: 1
   _spiralPath:
@@ -23785,6 +23938,11 @@ MonoBehaviour:
   - 0.036079124
   - 0.031320993
   - 0.02656281
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &7296557631187209704
 GameObject:
   m_ObjectHideFlags: 0
@@ -23988,21 +24146,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.32941177, g: 0.1882353, b: 0.11372549, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 6263643367253098728}
   HideMeshRenderer: {fileID: 4245529236310529519}
-  BoxCollider: {fileID: 7543888614138461494}
+  MeshCollider: {fileID: 7543888614138461494}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 8180575241564951653}
   IsSetColorHightest: 1
   _spiralPath:
@@ -24407,6 +24563,11 @@ MonoBehaviour:
   - 0.036569837
   - 0.031817734
   - 0.027065573
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &7359400441048846529
 GameObject:
   m_ObjectHideFlags: 0
@@ -24776,21 +24937,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 8
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8342715476935305368}
   HideMeshRenderer: {fileID: 1195282392474483308}
-  BoxCollider: {fileID: 2504103329441214481}
+  MeshCollider: {fileID: 2504103329441214481}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 1710061593043456612}
   IsSetColorHightest: 1
   _spiralPath:
@@ -25195,6 +25354,11 @@ MonoBehaviour:
   - 0.042778958
   - 0.038084734
   - 0.03339045
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &7646321619403628001
 GameObject:
   m_ObjectHideFlags: 0
@@ -25296,8 +25460,12 @@ MonoBehaviour:
   Rigid: {fileID: 4622062505332598130}
   MeshRenderer: {fileID: 6984612965217051478}
   _color: {r: 0.90196085, g: 0.49411768, b: 0.5294118, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.25959674, y: -0.1655713, z: -0.30259958}
 --- !u!54 &4622062505332598130
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25467,16 +25635,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8627451, g: 0.49803922, b: 0.16078432, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 7429529078247375606}
   HideMeshRenderer: {fileID: 7402204304217391180}
-  BoxCollider: {fileID: 5628661582241379492}
+  MeshCollider: {fileID: 5628661582241379492}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
@@ -25486,6 +25650,8 @@ MonoBehaviour:
   - {fileID: 1295103512359310664}
   - {fileID: 7782614513962483384}
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 63987414319549395}
   IsSetColorHightest: 1
   _spiralPath:
@@ -25890,6 +26056,11 @@ MonoBehaviour:
   - 0.037656248
   - 0.032907646
   - 0.02815899
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &7811773504519105932
 GameObject:
   m_ObjectHideFlags: 0
@@ -26010,21 +26181,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 6387459024942661298}
   HideMeshRenderer: {fileID: 8669113928812224772}
-  BoxCollider: {fileID: 6023696922006629781}
+  MeshCollider: {fileID: 6023696922006629781}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7311510563631751729}
   IsSetColorHightest: 1
   _spiralPath:
@@ -26429,6 +26598,11 @@ MonoBehaviour:
   - 0.036079124
   - 0.031320993
   - 0.02656281
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &7882085582982272351
 GameObject:
   m_ObjectHideFlags: 0
@@ -26549,21 +26723,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 8
-    HightestColor: {r: 0.40784314, g: 0.69803923, b: 0.6784314, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 1003413878416773182}
   HideMeshRenderer: {fileID: 5397598086536924607}
-  BoxCollider: {fileID: 7879112093811450900}
+  MeshCollider: {fileID: 7879112093811450900}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7284060189904754678}
   IsSetColorHightest: 1
   _spiralPath:
@@ -26968,6 +27140,11 @@ MonoBehaviour:
   - 0.035391208
   - 0.030626027
   - 0.025860786
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &8113464131002539275
 GameObject:
   m_ObjectHideFlags: 0
@@ -27069,8 +27246,12 @@ MonoBehaviour:
   Rigid: {fileID: 6377332578245131211}
   MeshRenderer: {fileID: 2393984575637369774}
   _color: {r: 0.49411768, g: 0.29803923, b: 0.19607845, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.3
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: 0.07382342, y: 0.2894518, z: -0.26116243}
 --- !u!54 &6377332578245131211
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27129,7 +27310,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1816778037201507063}
-  - component: {fileID: 7940903125791363108}
   m_Layer: 0
   m_Name: A_CryingCat
   m_TagString: Untagged
@@ -27219,95 +27399,6 @@ Transform:
   - {fileID: 4658482549343549993}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7940903125791363108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197958464772942788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e94c4a7e09630f4492309dba6ba343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CenterTransform: {fileID: 0}
-  LevelId: 0
-  IrgnoreLevelId: 1
-  LevelData:
-    LevelId: 0
-    CurrentcyLevel: 0
-    DynamicDif: 0
-    ColorList:
-    - {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    - {r: 0.18431373, g: 0.34117648, b: 0.44313726, a: 1}
-    - {r: 0.8627451, g: 0.49803922, b: 0.16078432, a: 1}
-    - {r: 0.9019608, g: 0.49411765, b: 0.5294118, a: 1}
-    - {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    - {r: 0.40784314, g: 0.69803923, b: 0.6784314, a: 1}
-    - {r: 0.32941177, g: 0.1882353, b: 0.11372549, a: 1}
-    - {r: 0.8, g: 0.5882353, b: 0.3529412, a: 1}
-    - {r: 0.33333334, g: 0.4862745, b: 0.19607843, a: 1}
-    ColorCountList: 12000000120000001200000012000000120000001200000012000000120000000f000000
-  WoolControls:
-  - {fileID: 3682080630327619900}
-  - {fileID: 6836912597629669612}
-  - {fileID: 8126119837883624305}
-  - {fileID: 6217205717562139552}
-  - {fileID: 7267529324193145246}
-  - {fileID: 8284971088568673127}
-  - {fileID: 5209244354510953294}
-  - {fileID: 5067782914770952833}
-  - {fileID: 857453711083544608}
-  - {fileID: 3770540752822198456}
-  - {fileID: 8941022214980793298}
-  - {fileID: 2792492436536439264}
-  - {fileID: 4718018002245373488}
-  - {fileID: 9103189421114475121}
-  - {fileID: 5295449636075660587}
-  - {fileID: 9198621267580156913}
-  - {fileID: 6787657797589818863}
-  - {fileID: 5784763242244174861}
-  - {fileID: 612637905548756871}
-  - {fileID: 1732765463469990925}
-  - {fileID: 6645625901070844388}
-  - {fileID: 8999685755163048227}
-  - {fileID: 1072721722023261998}
-  - {fileID: 2201136378126944773}
-  - {fileID: 350623498302393399}
-  - {fileID: 1433147907834299199}
-  - {fileID: 4512429192417696354}
-  - {fileID: 5859863449414044191}
-  - {fileID: 6873116822785884706}
-  - {fileID: 6242740989692777785}
-  - {fileID: 2545066908008877692}
-  - {fileID: 5738571692718545198}
-  - {fileID: 5346446609809116049}
-  - {fileID: 4497691953998381325}
-  - {fileID: 1187823546118400297}
-  - {fileID: 2766479451296361076}
-  - {fileID: 1251049934656522075}
-  - {fileID: 7645224708894603993}
-  - {fileID: 6586113264039305697}
-  - {fileID: 257064080384427171}
-  - {fileID: 7521084156284438885}
-  - {fileID: 8924160204943880407}
-  - {fileID: 2098887500028002589}
-  - {fileID: 5135529850549527585}
-  - {fileID: 7852332543884813863}
-  - {fileID: 7269004253108057641}
-  - {fileID: 883654443717670920}
-  - {fileID: 5053376454826147703}
-  InterestCurveData: {fileID: 0}
-  WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  TotalColor: 0
-  WoolMaterial: {fileID: 2100000, guid: 2f8d316a60113e14cb2df953dc7731c8, type: 2}
-  WoolChildMaterial: {fileID: 2100000, guid: 7fbf0b724a9980c4ba0f180041168239, type: 2}
-  MaxLayerHasThreeSameColor: 6
-  _maxDistanceFromCetner: 0
-  MainMotionAnimator: {fileID: 0}
-  MainAudioSource: {fileID: 0}
-  MotionAudioClips: []
 --- !u!1 &8283766782890234664
 GameObject:
   m_ObjectHideFlags: 0
@@ -27428,21 +27519,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 9
-    HightestColor: {r: 0.18431373, g: 0.34117648, b: 0.44313726, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 2613592062734532899}
   HideMeshRenderer: {fileID: 1129600852524482963}
-  BoxCollider: {fileID: 2469031792167814441}
+  MeshCollider: {fileID: 2469031792167814441}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 1111835156727978489}
   IsSetColorHightest: 1
   _spiralPath:
@@ -27847,6 +27936,11 @@ MonoBehaviour:
   - 0.0433859
   - 0.03870271
   - 0.03401947
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &8426521131475289381
 GameObject:
   m_ObjectHideFlags: 0
@@ -27948,8 +28042,12 @@ MonoBehaviour:
   Rigid: {fileID: 7616545947247245639}
   MeshRenderer: {fileID: 1777419013716711523}
   _color: {r: 0.90196085, g: 0.49411768, b: 0.5294118, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: 0.21569817, y: -0.14365807, z: -0.31972715}
 --- !u!54 &7616545947247245639
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28119,21 +28217,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 2
-    HightestColor: {r: 0.8, g: 0.5882353, b: 0.3529412, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 4063273981853140482}
   HideMeshRenderer: {fileID: 3008840100580998158}
-  BoxCollider: {fileID: 5881796071633779567}
+  MeshCollider: {fileID: 5881796071633779567}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 1764632072972264553}
   IsSetColorHightest: 1
   _spiralPath:
@@ -28538,6 +28634,11 @@ MonoBehaviour:
   - 0.023767924
   - 0.018883528
   - 0.013999075
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &8560188226281973223
 GameObject:
   m_ObjectHideFlags: 0
@@ -28824,21 +28925,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.32941177, g: 0.1882353, b: 0.11372549, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 4771636299172978009}
   HideMeshRenderer: {fileID: 7281495761019744623}
-  BoxCollider: {fileID: 7965505732147562826}
+  MeshCollider: {fileID: 7965505732147562826}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 6555688207502409644}
   IsSetColorHightest: 1
   _spiralPath:
@@ -29243,6 +29342,11 @@ MonoBehaviour:
   - 0.042400762
   - 0.03770664
   - 0.033012457
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &8781864296277341370
 GameObject:
   m_ObjectHideFlags: 0
@@ -29363,22 +29467,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 8
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 6065308438377705090}
   HideMeshRenderer: {fileID: 1598762883721443786}
-  BoxCollider: {fileID: 3994763015658059078}
+  MeshCollider: {fileID: 3994763015658059078}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
   - {fileID: 747984854577874998}
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7230042309997527864}
   IsSetColorHightest: 1
   _spiralPath:
@@ -29783,6 +29885,11 @@ MonoBehaviour:
   - 0.033766065
   - 0.028984295
   - 0.02420247
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &8794553920396294690
 GameObject:
   m_ObjectHideFlags: 0
@@ -30069,21 +30176,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.8627451, g: 0.49803922, b: 0.16078432, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 470906221361922966}
   HideMeshRenderer: {fileID: 5271019550870908332}
-  BoxCollider: {fileID: 7010573188339777871}
+  MeshCollider: {fileID: 7010573188339777871}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 6679775777506364617}
   IsSetColorHightest: 1
   _spiralPath:
@@ -30488,6 +30593,11 @@ MonoBehaviour:
   - 0.040002573
   - 0.03528318
   - 0.03056373
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &8937360330319119909
 GameObject:
   m_ObjectHideFlags: 0
@@ -30608,21 +30718,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 8
-    HightestColor: {r: 0.40784314, g: 0.69803923, b: 0.6784314, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8283344409229773023}
   HideMeshRenderer: {fileID: 3934875176321811359}
-  BoxCollider: {fileID: 8873484334726840489}
+  MeshCollider: {fileID: 8873484334726840489}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 7848858577773738780}
   IsSetColorHightest: 1
   _spiralPath:
@@ -31027,6 +31135,11 @@ MonoBehaviour:
   - 0.035391208
   - 0.030626027
   - 0.025860786
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &8964392043679341077
 GameObject:
   m_ObjectHideFlags: 0
@@ -31159,8 +31272,12 @@ MonoBehaviour:
   Rigid: {fileID: 3413714628851617894}
   MeshRenderer: {fileID: 590446842301996013}
   _color: {r: 0.90196085, g: 0.49411768, b: 0.5294118, a: 1}
+  DecoreType: 0
   _decoreState: 3
+  _executeRotation: 0
   WoolProgressStartDrop: 0.2
+  ForceSourceCenter: {fileID: 0}
+  _decoreCenterPos: {x: -0.22769818, y: -0.14365807, z: -0.31972715}
 --- !u!54 &3413714628851617894
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31330,21 +31447,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 5
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 3984792660891677185}
   HideMeshRenderer: {fileID: 7137379339356551947}
-  BoxCollider: {fileID: 2628549121874799418}
+  MeshCollider: {fileID: 2628549121874799418}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 475392483293022294}
   IsSetColorHightest: 1
   _spiralPath:
@@ -31749,6 +31864,11 @@ MonoBehaviour:
   - 0.02407206
   - 0.01918364
   - 0.014295161
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &9148499321176648428
 GameObject:
   m_ObjectHideFlags: 0
@@ -31869,16 +31989,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 8
-    HightestColor: {r: 0.8039216, g: 0.39215687, b: 0.1254902, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8583487110752481264}
   HideMeshRenderer: {fileID: 1197282510527534884}
-  BoxCollider: {fileID: 5098147413245380155}
+  MeshCollider: {fileID: 5098147413245380155}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
@@ -31886,6 +32002,8 @@ MonoBehaviour:
   - {fileID: 8569434475532366995}
   - {fileID: 2180982180850612890}
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 4853852237875920873}
   IsSetColorHightest: 1
   _spiralPath:
@@ -32290,6 +32408,11 @@ MonoBehaviour:
   - 0.023757365
   - 0.018871877
   - 0.0139863305
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0
 --- !u!1 &9193792860952782174
 GameObject:
   m_ObjectHideFlags: 0
@@ -32410,21 +32533,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoolID: 0
+  colorPalleteData: {fileID: 0}
   debugUV: 0
-  WoolOrder: 1
-  woolTransform: {fileID: 0}
-  MeshObjectData:
-    TotalLayer: 1
-    HightestColor: {r: 0.827451, g: 0.7764706, b: 0.70980394, a: 1}
-    ColorStack: []
   TopMeshRenderer: {fileID: 8686262440088547912}
   HideMeshRenderer: {fileID: 8029994618509648094}
-  BoxCollider: {fileID: 8129118988734163108}
+  MeshCollider: {fileID: 8129118988734163108}
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls: []
   RemovedDecoreControls: []
+  _childWoolControls: []
+  Animator: {fileID: 0}
   MeshFilter: {fileID: 1030523367799887113}
   IsSetColorHightest: 1
   _spiralPath:
@@ -32829,3 +32950,8 @@ MonoBehaviour:
   - 0.022923473
   - 0.018080978
   - 0.013238426
+  _uvMin: 0
+  _uvMax: 0
+  WeightOrder: 0
+  WoolMinimumScaleValue: 0.85
+  IsCheckClick: 0

@@ -4,10 +4,12 @@ Shader "Horus/UnLit/IgnoreYarn"
     {
         _MainTex ("Albedo", 2D) = "white" {}
         _NormalMap ("Normal Map", 2D) = "bump" {}
+        _AOTex ("Ambient Occlusion", 2D) = "white" {}
         _Color ("Color Tint", Color) = (1,1,1,1)
+        _AOColor ("AO Color", Color) = (1,1,1,1)
         _Brightness ("Brightness", Range(0.1, 10)) = 1.0
         _Ambient ("Ambient Light", Range(0, 1)) = 0.3
-        _DiffusePower ("Diffuse Power", Range(0, 2)) = 0.7
+        _DiffusePower ("Diffuse Power", Range(0, 10)) = 0.7
         _LightDir ("Light Direction", Vector) = (0.4, 1, 0.6, 0)
     }
 
@@ -36,12 +38,14 @@ Shader "Horus/UnLit/IgnoreYarn"
 
             sampler2D _MainTex;
             sampler2D _NormalMap;
+            sampler2D _AOTex;
             float4 _MainTex_ST;
             float4 _NormalMap_ST;
             float4 _LightDir;
 
             UNITY_INSTANCING_BUFFER_START(Props)
             UNITY_DEFINE_INSTANCED_PROP(float4, _Color)
+            UNITY_DEFINE_INSTANCED_PROP(float4, _AOColor)
             UNITY_DEFINE_INSTANCED_PROP(float, _Brightness)
             UNITY_DEFINE_INSTANCED_PROP(float, _Ambient)
             UNITY_DEFINE_INSTANCED_PROP(float, _DiffusePower)
@@ -67,15 +71,14 @@ Shader "Horus/UnLit/IgnoreYarn"
                 float3 worldBinormal : TEXCOORD5;
                 float3 worldViewDir : TEXCOORD6;
                 float4 vertex : SV_POSITION;
-                UNITY_VERTEX_INPUT_INSTANCE_ID // necessary only if you want to access instanced properties in fragment Shader.
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             v2f vert(appdata v)
             {
                 v2f o;
                 UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_TRANSFER_INSTANCE_ID(v, o)
-                ; // necessary only if you want to access instanced properties in the fragment Shader.
+                UNITY_TRANSFER_INSTANCE_ID(v, o);
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.normalUV = TRANSFORM_TEX(v.uv, _NormalMap);
@@ -90,26 +93,39 @@ Shader "Horus/UnLit/IgnoreYarn"
                 return o;
             }
 
-            // Temporary - sua lai sau
             fixed4 frag(v2f i) : SV_Target
             {
                 UNITY_SETUP_INSTANCE_ID(i)
 
                 float4 color = UNITY_ACCESS_INSTANCED_PROP(Props, _Color);
+                float4 aoColor = UNITY_ACCESS_INSTANCED_PROP(Props, _AOColor);
                 float brightness = UNITY_ACCESS_INSTANCED_PROP(Props, _Brightness);
                 float ambient = UNITY_ACCESS_INSTANCED_PROP(Props, _Ambient);
                 float diffusePower = UNITY_ACCESS_INSTANCED_PROP(Props, _DiffusePower);
 
+                // Albedo
+                fixed4 albedo = tex2D(_MainTex, i.uv) * color;
+
+                // AO processing (giống WoolMeshUnlit_Vuong_YQ_Mobile)
+                half ao = tex2D(_AOTex, i.uv).r;
+                half3 aoFinal = ao * aoColor.rgb;
+
+                // Normal mapping
                 float3 tangentNormal = UnpackNormal(tex2D(_NormalMap, i.normalUV));
                 float3x3 TBN = float3x3(normalize(i.worldTangent), normalize(i.worldBinormal), normalize(i.worldNormal));
                 float3 worldNormal = normalize(mul(tangentNormal, TBN));
 
-                // calculate manually -_- leave it be
+                // Lighting direction
                 float3 lightDir = normalize(_LightDir.xyz);
+                
+                // Diffuse lighting (NdotL)
                 float NdotL = saturate(dot(worldNormal, lightDir));
 
-                fixed4 albedo = tex2D(_MainTex, i.uv) * color;
-                float3 litColor = albedo.rgb * (ambient + diffusePower * NdotL) * brightness;
+                // Base brightness with AO
+                half3 baseBrightness = albedo.rgb * aoFinal;
+
+                // Lit color with ambient, diffuse power and brightness
+                half3 litColor = baseBrightness * (ambient + diffusePower * NdotL) * brightness;
 
                 return fixed4(litColor, albedo.a);
             }

@@ -1,0 +1,369 @@
+{
+    "Level": 62,
+    "GoldReward": 10,
+    "MainPrefabPath": "Levels/A_Motoped",
+    "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
+    "LevelType": 1,
+    "BoxsQueue": [
+        "brown_light",
+        "brown_light",
+        "brown_light",
+        "black_dark",
+        "pigskin",
+        "white_dark",
+        "black_light",
+        "yellow",
+        "brown_light",
+        "pgirl",
+        "black_dark",
+        "brown",
+        "pigskin",
+        "purple",
+        "white",
+        "white_dark"
+    ],
+    "WoolPropertiesList": [
+        {
+            "WoolId": 4911759834171119481,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 2828148293775032706,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 279103598699148933,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "pigskin"
+            ]
+        },
+        {
+            "WoolId": 2074499491866798916,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "pigskin"
+            ]
+        },
+        {
+            "WoolId": 5481430271949438541,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 5134401172967136864,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 709186490272408277,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown"
+            ]
+        },
+        {
+            "WoolId": 6135321300106798040,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown"
+            ]
+        },
+        {
+            "WoolId": 5157392486500681182,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "yellow"
+            ]
+        },
+        {
+            "WoolId": 8848446537179738577,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 5005151171500433315,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "white"
+            ]
+        },
+        {
+            "WoolId": 6639615696112650977,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "white_dark"
+            ]
+        },
+        {
+            "WoolId": 6774719027153245722,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "white_dark"
+            ]
+        },
+        {
+            "WoolId": 4284865304230695782,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 5611353859455253926,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 4109457027028882465,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "black_dark"
+            ]
+        },
+        {
+            "WoolId": 1705190220852898807,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "black_dark"
+            ]
+        },
+        {
+            "WoolId": 1880185758550970109,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "yellow"
+            ]
+        },
+        {
+            "WoolId": 4282305735068974668,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "yellow"
+            ]
+        },
+        {
+            "WoolId": 5642583664061159003,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "black_dark"
+            ]
+        },
+        {
+            "WoolId": 594152075379440823,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "black_dark"
+            ]
+        },
+        {
+            "WoolId": 9184553266525997827,
+            "WeightOrder": 1,
+            "ActiveState": true,
+            "Color": [
+                "brown_light",
+                "white_dark"
+            ]
+        },
+        {
+            "WoolId": 6365934276292112253,
+            "WeightOrder": 1,
+            "ActiveState": true,
+            "Color": [
+                "white_dark",
+                "pigskin"
+            ]
+        },
+        {
+            "WoolId": 3198033037405685491,
+            "WeightOrder": 1,
+            "ActiveState": true,
+            "Color": [
+                "pgirl",
+                "black_dark"
+            ]
+        },
+        {
+            "WoolId": 5633941642629135098,
+            "WeightOrder": 1,
+            "ActiveState": true,
+            "Color": [
+                "black_dark",
+                "white"
+            ]
+        },
+        {
+            "WoolId": 5130195743156987233,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "pgirl"
+            ]
+        },
+        {
+            "WoolId": 3382467794531302576,
+            "WeightOrder": 1,
+            "ActiveState": true,
+            "Color": [
+                "pigskin",
+                "brown"
+            ]
+        },
+        {
+            "WoolId": 6825628516339165796,
+            "WeightOrder": 1,
+            "ActiveState": true,
+            "Color": [
+                "pgirl",
+                "purple"
+            ]
+        },
+        {
+            "WoolId": 3180677187346983293,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "purple"
+            ]
+        },
+        {
+            "WoolId": 8108661327378208910,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "purple"
+            ]
+        },
+        {
+            "WoolId": 6145530993034617671,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "black_light"
+            ]
+        },
+        {
+            "WoolId": 1547887048272667136,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "black_light"
+            ]
+        },
+        {
+            "WoolId": 4397808332197459057,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "black_light"
+            ]
+        },
+        {
+            "WoolId": 5099105154477044377,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "white_dark"
+            ]
+        },
+        {
+            "WoolId": 4880886916492667305,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "white_dark"
+            ]
+        },
+        {
+            "WoolId": 4535589541846455686,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 6275725383494574979,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 640529979547230000,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "pigskin"
+            ]
+        },
+        {
+            "WoolId": 349083483031765152,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "pigskin"
+            ]
+        },
+        {
+            "WoolId": 1908937802815172351,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "white"
+            ]
+        },
+        {
+            "WoolId": 6016743997074023629,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        },
+        {
+            "WoolId": 4051910067522356687,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "brown_light"
+            ]
+        }
+    ]
+}

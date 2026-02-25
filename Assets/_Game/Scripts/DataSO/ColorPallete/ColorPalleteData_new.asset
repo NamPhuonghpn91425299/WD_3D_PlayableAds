@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb58007a7c46d3a48b81a67b8bcd0fb1, type: 3}
+  m_Name: ColorPalleteData_new
+  m_EditorClassIdentifier: 
+  m_colorPallete:
+  - colorName: black
+    material: {fileID: 2100000, guid: a62ea152a130fb94c938abf31db7b6fe, type: 2}
+  - colorName: black_dark
+    material: {fileID: 2100000, guid: de39a9a1d2d0e5f46b031394d430557e, type: 2}
+  - colorName: black_light
+    material: {fileID: 2100000, guid: 237ca080d2a0a6c4da94e4f3e3f19b2b, type: 2}
+  - colorName: blue
+    material: {fileID: 2100000, guid: db01aadb06eecce44bb5af58f003c2f8, type: 2}
+  - colorName: blue_dark
+    material: {fileID: 2100000, guid: 9f425b8d8dfbd9146b1628096d181aaf, type: 2}
+  - colorName: blue_light
+    material: {fileID: 2100000, guid: 92f94fbec276b1a4fa0ee6298b4d0047, type: 2}
+  - colorName: brown
+    material: {fileID: 2100000, guid: bc2ce5682d2eea94292a0ae2ec50033d, type: 2}
+  - colorName: brown_dark
+    material: {fileID: 2100000, guid: ed5ab9ef43b65c74b87008c5b4960167, type: 2}
+  - colorName: brown_light
+    material: {fileID: 2100000, guid: 30bbb96d208813c4f87af9e4acb63d64, type: 2}
+  - colorName: cyan
+    material: {fileID: 2100000, guid: 38a015099ec9eb243a02281c9d1c3608, type: 2}
+  - colorName: cyan_dark
+    material: {fileID: 2100000, guid: 030658580aa03774b97a77a187fa7b62, type: 2}
+  - colorName: cyan_light
+    material: {fileID: 2100000, guid: a1071c511bd2a0d45b1f93bb4a11609b, type: 2}
+  - colorName: green
+    material: {fileID: 2100000, guid: db63bc8cf4b1bf643b19965576ca47c6, type: 2}
+  - colorName: green_dark
+    material: {fileID: 2100000, guid: 0992d216a93af93438377647abf91405, type: 2}
+  - colorName: green_light
+    material: {fileID: 2100000, guid: 776d478a561f6e04fae7baf636c912ae, type: 2}
+  - colorName: khaki
+    material: {fileID: 2100000, guid: 3562af24872cc42468dd45683f8b3886, type: 2}
+  - colorName: lime
+    material: {fileID: 2100000, guid: 040509b2c40ec4a4180946418cb043b6, type: 2}
+  - colorName: lime_dark
+    material: {fileID: 2100000, guid: 94634f96dc48ac04aa27aa78a43da008, type: 2}
+  - colorName: lime_light
+    material: {fileID: 2100000, guid: 0f8bf3aad54db64438b1d48abc806915, type: 2}
+  - colorName: orange
+    material: {fileID: 2100000, guid: 06160ead988508843a697f5938ebac2f, type: 2}
+  - colorName: orange_dark
+    material: {fileID: 2100000, guid: 8e156b4bd07c55f489a09df9e1b46e45, type: 2}
+  - colorName: orange_light
+    material: {fileID: 2100000, guid: b93499467f6d5ef4db6826ea74019152, type: 2}
+  - colorName: pgirl
+    material: {fileID: 2100000, guid: d83cdb2ad184ae74ba7f6d5b59f0408d, type: 2}
+  - colorName: pigskin
+    material: {fileID: 2100000, guid: 90b41764053b00848972b245d5104a65, type: 2}
+  - colorName: pink
+    material: {fileID: 2100000, guid: ca1526fd14326aa45b693f869ab2f49e, type: 2}
+  - colorName: pink_dark
+    material: {fileID: 2100000, guid: 798b1ca1c0fcb6f46ae1e7fe4b1b926e, type: 2}
+  - colorName: pink_light
+    material: {fileID: 2100000, guid: 648c54bd82861b34ab38fd752d0e9850, type: 2}
+  - colorName: purple
+    material: {fileID: 2100000, guid: aaea83ac8a97d03468f0ce4a038ba475, type: 2}
+  - colorName: purple_dark
+    material: {fileID: 2100000, guid: 4ba52b26d2fbe864592e12721ed794a3, type: 2}
+  - colorName: purple_light
+    material: {fileID: 2100000, guid: 734d14fc4f4ea684c85a930c247f701d, type: 2}
+  - colorName: red
+    material: {fileID: 2100000, guid: b3173f054c4440345b160cfdf106dfd8, type: 2}
+  - colorName: red_dark
+    material: {fileID: 2100000, guid: f21f612ff537d2a4baf1fa339e311e41, type: 2}
+  - colorName: red_light
+    material: {fileID: 2100000, guid: 5e701a312a22ad549876436acb5a48fa, type: 2}
+  - colorName: skin
+    material: {fileID: 2100000, guid: 5970b0a3be6a4004a884470821efbde3, type: 2}
+  - colorName: white
+    material: {fileID: 2100000, guid: eac311b8d0d91c14d8660591ca281deb, type: 2}
+  - colorName: white_dark
+    material: {fileID: 2100000, guid: c12e6a51e9e42294fa5bc65ac027a104, type: 2}
+  - colorName: white_light
+    material: {fileID: 2100000, guid: c44cb69fea89a16499f0c0ebbae5cad2, type: 2}
+  - colorName: wood
+    material: {fileID: 2100000, guid: 0dda5b594354ceb4fb8467e6fe567673, type: 2}
+  - colorName: yellow
+    material: {fileID: 2100000, guid: 52249b4eb3c5f6d4b9ae91922846ed26, type: 2}
+  - colorName: yellow_dark
+    material: {fileID: 2100000, guid: b620ddca4d8df1d418759670d78911c8, type: 2}
+  - colorName: yellow_light
+    material: {fileID: 2100000, guid: d456ccd8246bd3648977ef389fc8bd77, type: 2}

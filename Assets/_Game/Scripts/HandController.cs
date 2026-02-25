@@ -9,11 +9,11 @@ using UnityEditor;
 #endif
 public class HandController : MonoBehaviour
 {
-    [SerializeField] private List<Sprite>   handSprites = new List<Sprite>();
+    [SerializeField] private List<Sprite> handSprites = new List<Sprite>();
     [SerializeField] private SpriteRenderer handSpriteRenderer;
-    [SerializeField] private Vector3        positionShow = new Vector3(0.2f, -0.2f, -1.5f);
-    [SerializeField] private Vector3        positionHide = new Vector3(0.2f, 10, 0);
-    [SerializeField] private Vector3        offset = new Vector3(0.3f, + -0.3f, -1.4f);
+    [SerializeField] private Vector3 positionShow = new Vector3(0.2f, -0.2f, -1.5f);
+    [SerializeField] private Vector3 positionHide = new Vector3(0.2f, 10, 0);
+    [SerializeField] private Vector3 offset = new Vector3(0.3f, +-0.3f, -1.4f);
     [SerializeField] private float delayTime = 0.5f;
     public List<WoolControl> WoolControls;
 
@@ -30,14 +30,14 @@ public class HandController : MonoBehaviour
     {
         if (_playAnimCoroutine != null) StopCoroutine(_playAnimCoroutine);
     }
-    
+
 
     public void SetActiveAnim(bool isActive)
     {
         if (_playAnimCoroutine != null) StopCoroutine(_playAnimCoroutine);
         if (isActive)
         {
-            transform.DOMove(positionShow, delayTime).SetEase(Ease.OutQuad);    
+            transform.DOMove(positionShow, delayTime).SetEase(Ease.OutQuad);
         }
         else
         {
@@ -58,33 +58,33 @@ public class HandController : MonoBehaviour
 
         _lastIndex = index;
         _lastIsActive = isActive;
-        
+
         if (_playAnimCoroutine != null)
             StopCoroutine(_playAnimCoroutine);
-        
+
         bool foundTarget = false;
 
-        foreach (var wools in WoolControls)
-        {
-            // Skip nếu không trùng index hoặc thiếu transform
-            if (wools.WoolOrder != index || wools.woolTransform == null)
-                continue;
+        // foreach (var wools in WoolControls)
+        // {
+        //     // Skip nếu không trùng index hoặc thiếu transform
+        //     if (wools.WoolOrder != index || wools.woolTransform == null)
+        //         continue;
 
-            Debug.Log($"[HandController] Found match: WoolOrder = {wools.WoolOrder}, isActive = {isActive}", gameObject);
+        //     Debug.Log($"[HandController] Found match: WoolOrder = {wools.WoolOrder}, isActive = {isActive}", gameObject);
 
-            // Nếu isActive = true → Di chuyển tới vị trí đó
-            if (isActive)
-            {
-                gameObject.SetActive(true);
+        //     // Nếu isActive = true → Di chuyển tới vị trí đó
+        //     if (isActive)
+        //     {
+        //         gameObject.SetActive(true);
 
-                Vector3 endPos = wools.woolTransform.position + offset;
+        //         Vector3 endPos = wools.woolTransform.position + offset;
 
-                transform.DOMove(endPos, delayTime).SetEase(Ease.OutQuad);
-            }
+        //         transform.DOMove(endPos, delayTime).SetEase(Ease.OutQuad);
+        //     }
 
-            foundTarget = true;
-            break; // chỉ xử lý 1 target là đủ
-        }
+        //     foundTarget = true;
+        //     break; // chỉ xử lý 1 target là đủ
+        // }
 
         // Chỉ play anim nếu đang active và có target hợp lệ
         if (gameObject.activeSelf && foundTarget)

@@ -1,15 +1,13 @@
-using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using UnityEngine;
-using DG.Tweening;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
+using DG.Tweening;
+
+using UnityEngine;
+using System.Linq;
 
 #if UNITY_EDITOR
-using Unity.Burst;
-using Unity.Collections;
-using Unity.Jobs;
 using UnityEditor;
 #endif
 
@@ -17,25 +15,27 @@ using UnityEditor;
 public class WoolControl : MonoBehaviour
 {
     #region PROPERTIES
-    [Header("DATA")] public ColorPalleteData _colorPalleteData;
-    public                  bool             debugUV;
 
-    [Header("Wool Settings")]
-    [Tooltip("The order number of this wool in the sequence")]
-    public int WoolOrder = 1;
-    public Transform        woolTransform;
-    [Header("Mesh Object")] public MeshObjectData    MeshObjectData;
-    public                         Renderer      TopMeshRenderer;
-    public                         Renderer      HideMeshRenderer;
-    public                         MeshCollider          BoxCollider;
-    public                         Material          MainMaterial;
-    public                         Material          TranparentMaterial;
-    public                         WoolAnimationData WoolAnimationData;
+    [Header("WOOL ID")] public long WoolID;
+
+    public ColorPalleteData_new colorPalleteData;
+
+    public bool debugUV;
+
+    [Header("Mesh Object")] public MeshRenderer TopMeshRenderer;
+    public MeshRenderer HideMeshRenderer;
+    public MeshCollider MeshCollider;
+    public Material MainMaterial;
+    public Material TranparentMaterial;
+    public WoolAnimationData WoolAnimationData;
 
     public List<DecoreControl> DecoreControls;
     public List<DecoreControl> RemovedDecoreControls;
 
+    public List<WoolControl> _childWoolControls = new();
 
+
+    public Animator Animator;
 
     public MeshFilter MeshFilter;
 
@@ -48,16 +48,35 @@ public class WoolControl : MonoBehaviour
 
     private int _indexLayer;
 
-    [SerializeField] private List<Vector3> _spiralPath    = new ();
-    [SerializeField] private List<float>   _spiralPathUVY = new ();
+    [SerializeField] private List<Vector3> _spiralPath = new();
+    [SerializeField] private List<float> _spiralPathUVY = new();
+
+    [SerializeField] private float _uvMin;
+    [SerializeField] private float _uvMax;
+    public int WeightOrder;
+
+    public static bool IsIgnoreXRay;
+
+    private List<string> _colorStack = new();
+    public List<string> ColorStack => _colorStack;
+
+    [Space]
+    [Header("DYNAMIC SCALE")]
+    public float WoolMinimumScaleValue = 0.85f;
+    private bool IsDynamicScale = true;
+    private float MaximumScaleValue = 1f;
+    private float scaleStep;
+    private float currentScaleValue;
+    private float layerCount = 1f;
+    private static readonly float MinUvRange = 0.0001f;
 
     #region custom attributes
 
     [Serializable] //temporary
     public class DecorObjectSetting
     {
-        public                DecoreControl DecorObject;
-        [Range(0, 1f)] public float         WoolProgressStartSrop = 0.5f;
+        public DecoreControl DecorObject;
+        [Range(0, 1f)] public float WoolProgressStartSrop = 0.5f;
     }
 
     #endregion
@@ -67,265 +86,329 @@ public class WoolControl : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        TopMeshRenderer  ??= GetComponent<MeshRenderer>();
+        TopMeshRenderer ??= GetComponent<MeshRenderer>();
         HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
-        HideMeshRenderer.gameObject.SetActive(true);
-        BoxCollider       ??= GetComponent<MeshCollider>();
-        _colorPalleteData =   AssetDatabase.LoadAssetAtPath<ColorPalleteData>("Assets/_Game/Scripts/DataSO/ColorPallete/ColorPalleteData.asset");
+        MeshCollider ??= GetComponent<MeshCollider>();
+        if (MeshFilter == null || MeshFilter.sharedMesh == null) return;
+        if (MeshCollider is MeshCollider meshCol)
+        {
+            meshCol.sharedMesh = MeshFilter.sharedMesh;
+        }
+
+        bool sameMesh = HideMeshRenderer != null && HideMeshRenderer == TopMeshRenderer;
+        if (sameMesh) HideMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+
+        if (HideMeshRenderer != null && HideMeshRenderer.TryGetComponent<MeshFilter>(out var childFilter))
+        {
+            childFilter.sharedMesh = MeshFilter.sharedMesh;
+        }
+
+        EditorUtility.SetDirty(this);
     }
 #endif
 
     private void Awake()
     {
-        InitPropertyBlock();
+        EnsureMaterialPropertyBlocks();
     }
 
-    private void OnEnable()
-    {
-        DisplayColor();
-        ResetWoolSequence();
-    }
-
-    private void InitPropertyBlock()
-    {
-        _topMaterialPropertyBlock = new MaterialPropertyBlock();
-        _hideMaterialPropertyBlock = new MaterialPropertyBlock();
-    }
-
-
+#if UNITY_EDITOR
     private void Update()
     {
-#if UNITY_EDITOR
         if (!Application.isPlaying)
         {
             DisplayColor();
         }
-#endif
     }
+#endif
 
     #region MAIN_METHODS
 
+    public void SetColorStack(List<string> colors)
+    {
+        _colorStack = new(colors);
+        if (_colorStack.Count > 0) _hightestColor = _colorStack[0];
+    }
+
     public void InitMesh()
     {
-        MeshObjectData.ColorStack.Clear();
-        _indexLayer         = 0;
-        BoxCollider.enabled = true;
-        _currentColor       = MeshObjectData.HightestColor;
-        PushColor(MeshObjectData.HightestColor);
+        _indexLayer = 0;
+        MeshCollider.enabled = true;
+        if (_colorStack.Count > 0) _currentColor = _colorStack[0];
+        _isTransparent = false;
+        DisplayColor();
+        PushColor();
+        InitializeDynamicScale();
     }
 
-    public bool PushColor(string colorName)
+    public void SetActiveDecor(bool isActive)
     {
-        if (MeshObjectData == null || !HideMeshRenderer || _indexLayer >= MeshObjectData.TotalLayer || _hideMaterialPropertyBlock == null) return false;
-
-        MeshObjectData.ColorStack ??= new List<string>();
-        MeshObjectData.ColorStack.Add(colorName);
-        _indexLayer++;
-        if (MeshObjectData.ColorStack.Count > 1)
+        foreach (var decor in DecoreControls)
         {
-            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.ColorStack[1]]);
-            HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
+            decor?.gameObject.SetActive(isActive);
         }
-        HideMeshRenderer.enabled = MeshObjectData.ColorStack.Count > 1;
-        return true;
     }
+
+    public void PushColor()
+    {
+        if (!HideMeshRenderer || _indexLayer >= _colorStack.Count || _hideMaterialPropertyBlock == null) return;
+
+        var totalColor = _colorStack.Count;
+        _indexLayer++;
+        if (totalColor > 1 && _indexLayer == 2)
+        {
+            TryApplyHideMaterial(_colorStack[1]);
+        }
+        HideMeshRenderer.enabled = totalColor > 1;
+    }
+
+    private bool _isTransparent;
 
     public void SetTranparentWool(bool isTranparent)
     {
-        if (MeshObjectData.ColorStack.Count > 1)
-        {
-            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.ColorStack[1]]);
-            HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
-        }
-        TopMeshRenderer.sharedMaterial = isTranparent
-            ? TranparentMaterial
-            : MainMaterial;
-        TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
-    }
+#if USE_ACCOUNT_TOOL
+        if (IsIgnoreXRay) return;
+#endif
+        if (_isPlayAnim) return;
 
-    // Static variable to track the current expected wool number in the sequence
-    public static int CurrentWoolInSequence { get; private set; } = 1;
-
-    public void WoolRotation()
-    {
-        // Check if this wool is the next one in the sequence
-        // if (WoolOrder != CurrentWoolInSequence)
-        // {
-        //     Debug.Log($"Please interact with wool number {CurrentWoolInSequence} first!");
-        //     return;
-        // }
-
-        //Debug.Log($"Wool number {CurrentWoolInSequence} is selected.");
-
-        // tự nhảy khi đạt điều kiện chơi game
-        // if (GamePlaySystem.Instance.IsGoToStore)
-        // {
-        //     GamePlaySystem.Instance.GoToStore();
-        //     return;
-        // }
-        
-        // Move to the next wool in sequence
-        //CurrentWoolInSequence++;
-        StartCoroutine(AsyncWoolRotation());
-    }
-    
-    // Call this method to reset the sequence (e.g., when restarting the level)
-    public static void ResetWoolSequence()
-    {
-        CurrentWoolInSequence = 1;
-    }
-    public void CheckForEndGame(int totalWoolsInGame)
-    {
-        if (CurrentWoolInSequence > totalWoolsInGame)
-        {
-            // Trigger your endgame event here
-            Debug.Log("All wools interacted with in sequence! Game Complete!");
-        
-            // Example: 
-            // GameManager.Instance.CompleteLevel();
-            // or
-            // OnGameComplete?.Invoke();
-        }
-    }
-    // For editor debugging
-    #if UNITY_EDITOR
-    [ContextMenu("Select This Wool")]
-    private void SelectThisWool()
-    {
-        UnityEditor.Selection.activeGameObject = gameObject;
-        UnityEditor.SceneView.FrameLastActiveSceneView();
-    }
-    #endif
-
-    public void SetColor(string color)
-    {
-        MeshObjectData.ColorStack.Add(color);
-        MeshObjectData.TotalLayer++;
-    }
-
-    private bool            _isPlayAnim;
-
-    IEnumerator AsyncWoolRotation()
-    {
-        if (Time.deltaTime <= 0) yield return null;
-        if (_isPlayAnim) yield break;
-        if (GamePlaySystem.Instance && GamePlaySystem.Instance.QueueCount == GamePlaySystem.Instance.CurrentQueueTargets.Count) yield break;
-        if (!HideMeshRenderer || !WoolAnimationData || !TopMeshRenderer  ||
-            _spiralPathUVY == null || _topMaterialPropertyBlock == null || !BoxCollider || MeshObjectData == null
-            || MeshObjectData.ColorStack == null || MeshObjectData.ColorStack.Count == 0) yield break;
-        if (!GamePlaySystem.Instance.OnClickMesh(transform, _spiralPath, _currentColor)) yield break;
-        _isPlayAnim = true;
-        GamePlaySystem.Instance.ActiveHandController(false);
-        string nextColor = null;
         try
         {
-            MeshObjectData.ColorStack.RemoveAt(0);
-        } catch { }
-        var totalColor = MeshObjectData.ColorStack.Count;
-
-        if (totalColor == 0)
-        {
-            HideMeshRenderer.enabled = false;
-        }
-        else
-        {
-            nextColor = MeshObjectData.ColorStack[0];
-            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
-            _hideMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
-        }
-
-        HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
-
-        var   totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
-        float timer     = 0f;
-        
-        // Rung giật cục trong suốt thời gian rút len
-        int vibrationDuration = Mathf.RoundToInt(totalTime * 1000f); // Chuyển seconds sang milliseconds
-        
-        // Sử dụng VibrationPatterns class với kiểu Pulse (giật cục)
-        VibrationPatterns.Vibrate(VibrationPatterns.PatternType.Pulse, vibrationDuration);
-
-
-        float minUVY  = _spiralPathUVY.Min();
-        float maxUVY  = _spiralPathUVY.Max();
-        float uvRange = Mathf.Max(0.0001f, maxUVY - minUVY);
-
-        MaterialPropertyBlock woolProperties = new MaterialPropertyBlock();
-        TopMeshRenderer.GetPropertyBlock(woolProperties);
-
-        while (timer < totalTime)
-        {
-            float t     = timer / totalTime;
-            float idx   = t * (_spiralPath.Count - 1);
-            int   idx0  = Mathf.Clamp(Mathf.FloorToInt(idx), 0, _spiralPath.Count - 1);
-            int   idx1  = Mathf.Clamp(idx0 + 1,              0, _spiralPath.Count - 1);
-            float lerpT = idx - idx0;
-
-            // Nội suy UVY
-            float uvy0          = _spiralPathUVY[idx0];
-            float uvy1          = _spiralPathUVY[idx1];
-            float uvy           = Mathf.Lerp(uvy0, uvy1, lerpT);
-            float normalizedUVY = (uvy - minUVY) / uvRange;
-
-            if (false)
+            HideMeshRenderer.gameObject.SetActive(isTranparent);
+            if (_colorStack.Count > 1)
             {
-                // Set _Display theo UVY nội suy
-                _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display,
-                        Mathf.Clamp01(normalizedUVY)
-                    );
-                TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+                scaleStep = (MaximumScaleValue - WoolMinimumScaleValue) / layerCount;
+                float nextScale = Mathf.Clamp(currentScaleValue - scaleStep * 2, WoolMinimumScaleValue, MaximumScaleValue);
+                if (WoolMinimumScaleValue >= MaximumScaleValue) nextScale = MaximumScaleValue - 0.05f;
+                _hideMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, nextScale);
+                ApplyHideRendererProperties();
+                TryApplyHideMaterial(_colorStack[1]);
+            }
+            if (_colorStack.Count > 0 && colorPalleteData.colorPallete_New.TryGetValue(_colorStack[0], out var matTop))
+            {
+                TopMeshRenderer.sharedMaterial = isTranparent ? TranparentMaterial : matTop;
+            }
+            EnsureTopMaterialPropertyBlock();
+            TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
+            if (IsDynamicScale)
+            {
+                float scaleFactor = WoolMinimumScaleValue >= MaximumScaleValue ? MaximumScaleValue + 0.025f : currentScaleValue;
+                _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, isTranparent ? scaleFactor : currentScaleValue);
             }
             else
             {
-                woolProperties.SetFloat(T_Utilities.ShaderPropertiesLib.Display, Mathf.Clamp01(normalizedUVY));
-                TopMeshRenderer.SetPropertyBlock(woolProperties);
+                _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleThreshold, isTranparent ? TranparentMaterial.GetFloat(ShaderPropertiesLib.ScaleThreshold) : 0f);
             }
+            ApplyTopRendererProperties();
+            _isTransparent = isTranparent;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"SetTranparentWool: {ex.Message}");
+        }
+    }
+
+    public void WoolRotation()
+    {
+        StartCoroutine(AsyncWoolRotation());
+    }
+
+    public void ReFillMesh(string colorPush)
+    {
+        _isPlayAnim = true;
+        List<string> newColorStack = new();
+        newColorStack.Add(colorPush);
+        foreach (var color in _colorStack)
+        {
+            newColorStack.Add(color);
+        }
+        _colorStack = newColorStack;
+        StartCoroutine(AsyncWoolRotationReFill());
+    }
+
+    private bool _isPlayAnim;
+    public bool IsPlayAnim => _isPlayAnim;
+
+    private bool _isVacuumChose;
+
+    public bool IsCheckClick;
+
+    public void SetIsVacuumChose(bool isChose) => _isVacuumChose = isChose;
+
+    private IEnumerator AsyncWoolRotation()
+    {
+        if (Time.deltaTime <= 0) yield break;
+        if (_isPlayAnim || _isVacuumChose) yield break;
+        IsCheckClick = true;
+        if (IsQueueFull()) yield break;
+        if (!HasValidWoolAnimationState()) yield break;
+        if (!GamePlayManager.Instance.OnChoseColor(this, _spiralPath, _currentColor)) yield break;
+
+        _isPlayAnim = true;
+
+        try
+        {
+            _colorStack.RemoveAt(0);
+            IsCheckClick = false;
+        }
+        catch { }
+
+        string nextColor;
+        var totalColor = PrepareHideRendererForNextLayer(out nextColor);
+        MeshCollider.enabled = totalColor > 0;
+
+        var totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
+        float timer = 0f;
+
+        //DeviceVibrationManager.Instance?.ExecuteWoolVibration(totalTime);
+        //UserBehaviorTracker.SendMoveWoolTracking();
+
+        // Skip animation delays for AI_AGENT testing when IsNative is true
+        bool skipAnimationDelays = ShouldSkipAnimationDelays();
+
+        InitializeUvContext(out float minUVY, out float uvRange, out int spiralPathCount);
+        TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
+
+        while (timer < totalTime)
+        {
+            if (_spiralPathUVY.Count == 0) break;
+            float t = timer / totalTime;
+            float normalizedUVY = GetNormalizedUVY(t, spiralPathCount, minUVY, uvRange);
+            UpdateTopDisplay(normalizedUVY);
 
             DecorObjectCheckAlongWoolRotation(t);
 
             timer += Time.deltaTime;
-            yield return null;
+            //Debug.Log($"Deltatime: {Time.deltaTime}, Timer: {timer}, Display: {normalizedUVY}");
+
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+                // Skip animation by jumping to end
+                timer = totalTime;
+            }
         }
 
         PulseAllDecorObjects();
 
-        if (!nextColor.IsNullOrEmpty())
+        if (!nextColor.Equals(ShaderPropertiesLib.IgnoredWoolColorKey))
         {
-            _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
-            _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
+            try
+            {
+                TryApplyTopMaterial(nextColor);
+            }
+            catch { Debug.LogError(name + "- Check colorbalette for key - " + nextColor); }
+
+            SetTopDisplay(1f);
             _currentColor = nextColor;
+            ApplyTopRendererProperties();
+
+            scaleStep = (MaximumScaleValue - WoolMinimumScaleValue) / layerCount;
+            float startScale = Mathf.Clamp(currentScaleValue - scaleStep * 2f, WoolMinimumScaleValue, MaximumScaleValue);
+            currentScaleValue = Mathf.Clamp(currentScaleValue - scaleStep, WoolMinimumScaleValue, MaximumScaleValue);
+            float nextScale = Mathf.Clamp(currentScaleValue - scaleStep, WoolMinimumScaleValue, MaximumScaleValue);
+            _hideMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, nextScale);
+            float midscale = currentScaleValue + scaleStep / 3f;
+            if (midscale <= currentScaleValue) midscale = currentScaleValue + 0.025f;
+            ApplyHideRendererProperties();
+            HideMeshRenderer.gameObject.SetActive(false);
+            yield return StartCoroutine(PumpMeshAnimation(startScale, midscale, currentScaleValue, WoolAnimationData.MeshPumpAnimDuration));
+
+            _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, currentScaleValue); //just to make sure lmao
+            ApplyTopRendererProperties();
         }
 
-        TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+        ApplyTopRendererProperties();
         _indexLayer--;
-        BoxCollider.enabled = totalColor > 0;
-        if (totalColor == 1)
-            HideMeshRenderer.enabled = false;
+
+        if (totalColor == 1) HideMeshRenderer.enabled = false;
         if (totalColor == 0)
+        {
             TopMeshRenderer.enabled = false;
+            DecreaseWeightForMeshChild();
+            GameEventManager.OnAWoolMeshCompleted?.Invoke();
+        }
 
-        yield return null;
         _isPlayAnim = false;
-        // yield return new WaitForSeconds(3f);
-        // if (CheckWoolCountEndGame())
-        // {
-        //     Debug.Log("Rotation Done next CurrentWoolInSequence :" + CurrentWoolInSequence);
-        //     GamePlaySystem.Instance.EndGameTotalCountWool();
-        // }
-
+        if (!_isTransparent)
+            HideMeshRenderer.gameObject.SetActive(false);
     }
-    private bool CheckWoolCountEndGame()
-    {
-        if (GamePlaySystem.Instance.TotalCountClaimed == CurrentWoolInSequence - 1) return true;
-        return false;
-    }
-    
-    
-    public void PLayAnim(int index) { StartCoroutine(ExecuteAnim(index)); }
 
-    private IEnumerator ExecuteAnim(int index)
+    private IEnumerator AsyncWoolRotationReFill()
     {
-        if (Time.deltaTime <= 0) yield return null;
+        _currentColor = _colorStack[0];
+        TopMeshRenderer.enabled = true;
+        MeshCollider.enabled = true;
+        TryApplyTopMaterial(_colorStack[0]);
+        ApplyTopRendererProperties();
+        if (_colorStack.Count > 1)
+        {
+            HideMeshRenderer.enabled = true;
+            HideMeshRenderer.gameObject.SetActive(true);
+            TryApplyHideMaterial(_colorStack[1]);
+            ApplyHideRendererProperties();
+        }
+        else HideMeshRenderer.gameObject.SetActive(false);
+
+        var totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
+        float timer = 0f;
+
+        // Skip animation delays for AI_AGENT testing when IsNative is true
+        bool skipAnimationDelays = ShouldSkipAnimationDelays();
+
+        InitializeUvContext(out float minUVY, out float uvRange, out int spiralPathCount);
+        TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
+
+        while (timer < totalTime)
+        {
+            float t = 1 - timer / totalTime;
+            float normalizedUVY = GetNormalizedUVY(t, spiralPathCount, minUVY, uvRange);
+            UpdateTopDisplay(normalizedUVY);
+
+            DecorObjectCheckAlongWoolRotation(t);
+
+            timer += Time.deltaTime;
+            Debug.Log($"Deltatime: {Time.deltaTime}, Timer: {timer}, Display: {normalizedUVY}");
+            ;
+
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+                // Skip animation by jumping to end
+                timer = totalTime;
+            }
+        }
+
+        _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, 1);
+        ApplyTopRendererProperties();
+
+
+        HideMeshRenderer.gameObject.SetActive(false);
+        HideMeshRenderer.enabled = _colorStack.Count > 1;
+        _isPlayAnim = false;
+    }
+
+    public void PLayAnim(string color)
+    {
+        try
+        {
+            //if (CoreGameplayManager.Instance.CurrentGameState != GameState.InGame) return;
+            StartCoroutine(ExecuteAnim(color));
+        }
+        catch { }
+    }
+
+    private IEnumerator ExecuteAnim(string color)
+    {
+        if (Time.deltaTime <= 0) yield break;
+        if (!HasValidWoolAnimationState()) yield break;
+        _isPlayAnim = true;
+
         if (DecoreControls.Count != 0 || DecoreControls != null)
         {
             for (int i = 0; i < DecoreControls.Count; i++)
@@ -339,244 +422,523 @@ public class WoolControl : MonoBehaviour
             }
         }
 
-        string nextColor = null;
-        MeshObjectData.ColorStack.RemoveAt(index);
-        var totalColor = MeshObjectData.ColorStack.Count;
+        // Skip animation delays for AI_AGENT testing when IsNative is true
+        bool skipAnimationDelays = ShouldSkipAnimationDelays();
 
-        if (totalColor == 0)
+        cubeCount++;
+        for (var index = 0; index < _colorStack.Count; index++)
         {
-            HideMeshRenderer.enabled = false;
+            var c = _colorStack[index];
+            if (!c.Equals(color)) continue;
+            _colorStack.RemoveAt(index);
+            break;
         }
-        else
-        {
-            nextColor = MeshObjectData.ColorStack[0];
-            _hideMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
-            _hideMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
-        }
+        string nextColor;
+        var totalColor = PrepareHideRendererForNextLayer(out nextColor);
 
-        HideMeshRenderer.SetPropertyBlock(_hideMaterialPropertyBlock);
+        var totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
+        float timer = 0f;
 
-        var   totalTime = WoolAnimationData.Duration + WoolAnimationData.OffSet;
-        float timer     = 0f;
-
-        float minUVY  = _spiralPathUVY.Min();
-        float maxUVY  = _spiralPathUVY.Max();
-        float uvRange = Mathf.Max(0.0001f, maxUVY - minUVY);
-
+        InitializeUvContext(out float minUVY, out float uvRange, out int spiralPathCount);
+        TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
         while (timer < totalTime)
         {
-            float t     = timer / totalTime;
-            float idx   = t     * (_spiralPath.Count - 1);
-            int   idx0  = Mathf.FloorToInt(idx);
-            int   idx1  = Mathf.Clamp(idx0 + 1, 0, _spiralPath.Count - 1);
-            float lerpT = idx - idx0;
-
-            // Nội suy UVY
-            float uvy0          = _spiralPathUVY[idx0];
-            float uvy1          = _spiralPathUVY[idx1];
-            float uvy           = Mathf.Lerp(uvy0, uvy1, lerpT);
-            float normalizedUVY = (uvy - minUVY) / uvRange;
-
-            // Set _Display theo UVY nội suy
-            _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display,
-                    Mathf.Clamp01(normalizedUVY)
-                );
-            TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+            float t = timer / totalTime;
+            float normalizedUVY = GetNormalizedUVY(t, spiralPathCount, minUVY, uvRange);
+            UpdateTopDisplay(normalizedUVY);
 
             timer += Time.deltaTime;
-            yield return null;
+
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+                // Skip animation by jumping to end
+                timer = totalTime;
+            }
         }
 
-        if (nextColor != null)
+        if (!nextColor.Equals(ShaderPropertiesLib.IgnoredWoolColorKey))
         {
-            _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[nextColor]);
-            _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
+            try
+            {
+                TryApplyTopMaterial(nextColor);
+            }
+            catch { Debug.LogError(name + "- Check colorbalette for key - " + nextColor); }
+
+            SetTopDisplay(1f);
             _currentColor = nextColor;
+            ApplyTopRendererProperties();
+
+            scaleStep = (MaximumScaleValue - WoolMinimumScaleValue) / layerCount;
+            float startScale = Mathf.Clamp(currentScaleValue - scaleStep * 2f, WoolMinimumScaleValue, MaximumScaleValue);
+            currentScaleValue = Mathf.Clamp(currentScaleValue - scaleStep, WoolMinimumScaleValue, MaximumScaleValue);
+            float nextScale = Mathf.Clamp(currentScaleValue - scaleStep, WoolMinimumScaleValue, MaximumScaleValue);
+            _hideMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, nextScale);
+            float midscale = currentScaleValue + scaleStep / 3f;
+            if (midscale <= currentScaleValue) midscale = currentScaleValue + 0.025f;
+            ApplyHideRendererProperties();
+            HideMeshRenderer.gameObject.SetActive(false);
+            yield return StartCoroutine(PumpMeshAnimation(startScale, midscale, currentScaleValue, WoolAnimationData.MeshPumpAnimDuration));
+
+            _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, currentScaleValue); //just to make sure lmao
+            ApplyTopRendererProperties();
         }
 
-        TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+        ApplyTopRendererProperties();
         _indexLayer--;
-        BoxCollider.enabled = totalColor > 0;
+        MeshCollider.enabled = totalColor > 0;
         if (totalColor == 1)
             HideMeshRenderer.enabled = false;
         if (totalColor == 0)
+        {
             TopMeshRenderer.enabled = false;
+            DecreaseWeightForMeshChild();
+        }
+        _isVacuumChose = false;
+        _isPlayAnim = false;
+        HideMeshRenderer.gameObject.SetActive(false);
 
-        yield return null;
+        if (!skipAnimationDelays)
+        {
+            yield return null;
+        }
     }
+
+    private IEnumerator PumpMeshAnimation(float startScale, float midScale, float endScale, float duration)
+    {
+        // Skip animation delays for AI_AGENT testing when IsNative is true
+        bool skipAnimationDelays = ShouldSkipAnimationDelays();
+
+        float firstHalfDuration = duration / 1.5f;
+        float secondHalfDuration = duration / 3f;
+
+        float t = 0f;
+        float scaleValue = startScale;
+        if (_topMaterialPropertyBlock == null)
+        {
+            EnsureTopMaterialPropertyBlock();
+            TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
+        }
+        _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, scaleValue);
+
+        if (skipAnimationDelays)
+        {
+            // Skip animation by setting directly to final state
+            _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, endScale);
+            ApplyTopRendererProperties();
+            yield break;
+        }
+
+        while (t < firstHalfDuration)
+        {
+            if (!TopMeshRenderer) break;
+            t += Time.deltaTime;
+            float progress = Mathf.Clamp01(t / firstHalfDuration);
+            scaleValue = Mathf.Lerp(startScale, midScale, progress);
+            _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, scaleValue);
+            ApplyTopRendererProperties();
+
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+                // Skip animation by jumping to end
+                t = firstHalfDuration;
+            }
+        }
+
+        t = 0f;
+        while (t < secondHalfDuration)
+        {
+            if (!TopMeshRenderer) break;
+            t += Time.deltaTime;
+            float progress = Mathf.Clamp01(t / secondHalfDuration);
+            scaleValue = Mathf.Lerp(midScale, endScale, progress);
+            _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, scaleValue);
+            ApplyTopRendererProperties();
+
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+                // Skip animation by jumping to end
+                t = secondHalfDuration;
+            }
+        }
+        _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, endScale);
+        ApplyTopRendererProperties();
+    }
+
+    private void DecreaseWeightForMeshChild()
+    {
+        if (_childWoolControls.Count == 0) return;
+        //
+        foreach (var child in _childWoolControls)
+        {
+            if (child == null) continue;
+            child.WeightOrder -= 1;
+            child.DecreaseWeightForMeshChild();
+        }
+    }
+
+    private static int cubeCount = 0;
 
 
     private void DisplayColor()
     {
-        if (_colorPalleteData == null)
+        try
         {
-            Debug.LogError("Null Color palet data");
-            return;
+            if (_colorStack == null) return;
+            EnsureMaterialPropertyBlocks();
+            TryApplyTopMaterial(_colorStack[0]);
+            TopMeshRenderer?.GetPropertyBlock(_topMaterialPropertyBlock);
+            HideMeshRenderer?.GetPropertyBlock(_hideMaterialPropertyBlock);
+            SetTopDisplay(1f);
+            if (HideMeshRenderer) HideMeshRenderer.enabled = true;
+            if (TopMeshRenderer) TopMeshRenderer.enabled = true;
         }
-        if(_colorPalleteData.colorPallete.Count<=0)
-        {
-            Debug.LogError("Count data palet colorPallete = 0");
-            _colorPalleteData.SetupColor();
-            DisplayColor();
-            return;
-        }
-        if (MeshObjectData             == null) return;
-        _topMaterialPropertyBlock  ??= new MaterialPropertyBlock();
-        _hideMaterialPropertyBlock ??= new MaterialPropertyBlock();
-        TopMeshRenderer?.GetPropertyBlock(_topMaterialPropertyBlock);
-        HideMeshRenderer?.GetPropertyBlock(_hideMaterialPropertyBlock);
-        _topMaterialPropertyBlock?.SetColor(T_Utilities.ShaderPropertiesLib.Color, _colorPalleteData.colorPallete[MeshObjectData.HightestColor]);
-        _topMaterialPropertyBlock?.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 0);
-        TopMeshRenderer?.SetPropertyBlock(_topMaterialPropertyBlock);
-        if (HideMeshRenderer) HideMeshRenderer.enabled = true;
-        if (TopMeshRenderer) TopMeshRenderer.enabled   = true;
+        catch { }
     }
 
     public void DisplayColor(Color albedo)
     {
-        if (MeshObjectData == null) return;
-        if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
-        TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
-        _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, albedo);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display,      1);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 1);
-        TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
-
-        if (TopMeshRenderer) TopMeshRenderer.enabled = true;
+        // if (_colorStack == null) return;
+        // if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
+        // if (TopMeshRenderer == null) return; // Ngăn NullReferenceException nếu TopMeshRenderer đã bị destroy
+        //     
+        // TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
+        // _topMaterialPropertyBlock.SetColor(ShaderPropertiesLib.Color, albedo);
+        // _topMaterialPropertyBlock.SetFloat(ShaderPropertiesLib.Display,      1);
+        // TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+        //
+        // TopMeshRenderer.enabled = true; // Đã kiểm tra null ở trên nên không cần check lại
     }
 
     public void DisplayColorSmoothly()
     {
-        if (MeshObjectData == null) return;
-        if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
+        if (_colorStack == null) return;
+        EnsureTopMaterialPropertyBlock();
+        if (TopMeshRenderer == null) return; // Ngăn NullReferenceException nếu TopMeshRenderer đã bị destroy
 
-        Color currnetColor = Color.grey;
-        Color targetColor  = _colorPalleteData.colorPallete[MeshObjectData.HightestColor];
+        // Skip animation delays for AI_AGENT testing when IsNative is true
+        bool skipAnimationDelays = ShouldSkipAnimationDelays();
+
+        Color currnetColor = Color.gray;
+        string targetColor = _colorStack[0];
 
         TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
 
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display,      1);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 1);
-        TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+        _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, 1);
 
-        DOTween.To(() => currnetColor, x =>
-                {
-                    currnetColor = x;
-                    _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, currnetColor);
-                    TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
-                }
-              , targetColor, 1
-            );
+        ApplyTopRendererProperties();
 
-        TopMeshRenderer.enabled  = true;
+        try
+        {
+            if (skipAnimationDelays)
+            {
+                // Skip animation by setting directly to final color
+                TryApplyTopMaterial(targetColor);
+                ApplyTopRendererProperties();
+            }
+            else { }
+        }
+        catch
+        {
+            // Xử lý trường hợp colorPalleteData hoặc colorPallete bị null hoặc thiếu key
+            Debug.LogError($"{name} - Check colorPallete for key - {targetColor}");
+        }
+
+        TopMeshRenderer.enabled = true; // Đã kiểm tra null ở trên
     }
 
     public void BuildUpModelSmoothly(float duration)
     {
-        if (MeshObjectData == null) return;
-        if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
+        if (_colorStack == null) return;
+        EnsureTopMaterialPropertyBlock();
+
+        // Skip animation delays for AI_AGENT testing when IsNative is true
+        bool skipAnimationDelays = ShouldSkipAnimationDelays();
 
         TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
 
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 0);
-        _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, Color.gray);
-        TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+        _topMaterialPropertyBlock.SetColor(ShaderPropertiesLib.Color, Color.gray);
 
-        float currentDisplay = 0;
-        DOTween.To(() => currentDisplay, x =>
-                {
-                    currentDisplay = x;
-                    _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, currentDisplay);
-                    TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
-                }
-              , 1, duration
-            );
+        ApplyTopRendererProperties();
 
-        TopMeshRenderer.enabled  = true;
+        if (skipAnimationDelays)
+        {
+            // Skip animation by setting directly to final state
+            _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, 1);
+            ApplyTopRendererProperties();
+        }
+        else
+        {
+            float currentDisplay = 0;
+            DOTween.To(() => currentDisplay, x =>
+            {
+                currentDisplay = x;
+                _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, currentDisplay);
+                ApplyTopRendererProperties();
+            }
+                  , 1, duration
+                );
+        }
+
+        TopMeshRenderer.enabled = true;
     }
 
-    public void SetModelShaderEffect(bool useRim, bool useHalo)
-    {
-        if (MeshObjectData == null) return;
-        if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
-
-        TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
-
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim, useRim
-                ? 1
-                : 0
-            );
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, useHalo
-                ? 1
-                : 0
-            );
-        TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
-
-        TopMeshRenderer.enabled  = true;
-    }
 
     public void ClearThisWool()
     {
-        if (MeshObjectData == null) return;
-        if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
-
-        TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseRim,       0);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.UseHaloOuter, 0);
-        _topMaterialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, Color.gray);
-        _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 0);
-        TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
-
-        _hideMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 0);
-
+        if (_colorStack == null) return;
+        EnsureTopMaterialPropertyBlock();
         HideMeshRenderer.enabled = false;
-        TopMeshRenderer.enabled  = true;
+        TopMeshRenderer.enabled = true;
+
+        TopMeshRenderer.GetPropertyBlock(_topMaterialPropertyBlock);
+
+        _topMaterialPropertyBlock.SetColor(ShaderPropertiesLib.Color, Color.gray);
+        _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, 0);
+
+        ApplyTopRendererProperties();
+
+        _hideMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, 0);
     }
 
     public void HideInnerMesh()
     {
-        if (MeshObjectData == null) return;
+        if (_colorStack == null) return;
         HideMeshRenderer.enabled = false;
+    }
+
+    public void ChangeLayer(string layer)
+    {
+        TopMeshRenderer.gameObject.layer = LayerMask.NameToLayer(layer);
+        HideMeshRenderer.gameObject.layer = LayerMask.NameToLayer(layer);
+        foreach (var decor in DecoreControls)
+        {
+            if (decor == null) continue;
+            decor.ChangeLayer(layer);
+        }
+
+        foreach (var decor in RemovedDecoreControls)
+        {
+            if (decor == null) continue;
+            decor.ChangeLayer(layer);
+        }
     }
 
     public List<Vector3> GetSpiralPath() => _spiralPath;
 
+
+#if UNITY_EDITOR
+
+    public void SetWeightForChild()
+    {
+        foreach (var child in _childWoolControls)
+        {
+            if (child == null) continue;
+            child.WeightOrder = WeightOrder + 1;
+            child.SetWeightForChild();
+        }
+    }
+
+    public void SetCenterDecores(Transform center)
+    {
+        foreach (var decore in DecoreControls)
+        {
+            decore.SetCenterDecore(center);
+        }
+    }
+
+    // [ContextMenu("Bake Spiral Path")]
+    // public void BakeSpiralPath()
+    // {
+    //     if (!gameObject.TryGetComponent<MeshSlicer>(out var meshSlicer))
+    //     {
+    //         meshSlicer = gameObject.AddComponent<MeshSlicer>();
+    //     }
+    //     meshSlicer.GenerateSlicesAndSpiral();
+    //     _spiralPath = meshSlicer.GetSpiralPositions();
+    //     _spiralPathUVY = meshSlicer.spiralPathUVY;
+    //     _spiralPath.Reverse();
+    //     _spiralPathUVY.Reverse();
+    //     _uvMin = _spiralPathUVY.Min();
+    //     _uvMax = _spiralPathUVY.Max();
+
+
+    //     try
+    //     {
+    //         if (PrefabUtility.IsPartOfPrefabInstance(gameObject))
+    //         {
+    //             // Prefab instance
+    //             DestroyImmediate(meshSlicer);
+    //             PrefabUtility.ApplyRemovedComponent(gameObject, meshSlicer, InteractionMode.UserAction);
+    //         }
+    //         else
+    //         {
+    //             // Regular GameObject
+    //             DestroyImmediate(meshSlicer);
+    //         }
+    //     }
+    //     catch { }
+    // }
+
+    [ContextMenu("Smooth Spiral Path")]
+    public void SmoothSpiralPath()
+    {
+        if (_spiralPath == null || _spiralPathUVY == null || _spiralPath.Count < 2 ||
+            _spiralPath.Count != _spiralPathUVY.Count)
+            return;
+        var mesh = MeshFilter.sharedMesh;
+        var vertices = mesh.vertices;
+        var uvs = mesh.uv2;
+
+        if (mesh.vertices.Length != mesh.uv2.Length)
+        {
+            Debug.LogError($"{mesh.name} chưa có uv 2");
+            return;
+        }
+
+        int N = _spiralPath.Count;
+        if (N < 2) return;
+
+        // Tính tổng chiều dài path
+        float totalLen = 0f;
+        float[] segLen = new float[N - 1];
+        for (int i = 0; i < N - 1; i++)
+        {
+            segLen[i] = Vector3.Distance(_spiralPath[i], _spiralPath[i + 1]);
+            totalLen += segLen[i];
+        }
+
+        // Tính các mốc đều
+        float[] targetDist = new float[N];
+        for (int i = 0; i < N; i++)
+            targetDist[i] = i * totalLen / (N - 1);
+
+        // Tạo path mới với khoảng cách đều
+        List<Vector3> newPath = new List<Vector3>(N);
+        List<float> newUVY = new List<float>(N);
+        int segIdx = 0;
+        float currDist = 0f;
+        newPath.Add(_spiralPath[0]);
+        newUVY.Add(_spiralPathUVY[0]);
+        for (int i = 1; i < N - 1; i++)
+        {
+            float d = targetDist[i];
+            // Tìm đoạn chứa d
+            while (segIdx < segLen.Length - 1 && currDist + segLen[segIdx] < d)
+            {
+                currDist += segLen[segIdx];
+                segIdx++;
+            }
+
+            float t = (d - currDist) / segLen[segIdx];
+            Vector3 pos = Vector3.Lerp(_spiralPath[segIdx], _spiralPath[segIdx + 1], t);
+
+            // Tìm vertex mesh gần nhất để lấy lại UVY
+            float minDist = float.MaxValue;
+            float uvY = 0f;
+            for (int k = 0; k < vertices.Length; k++)
+            {
+                float dist = Vector3.Distance(pos, vertices[k]);
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    uvY = uvs[k].y;
+                }
+            }
+
+            newPath.Add(pos);
+            newUVY.Add(uvY);
+        }
+
+        newPath.Add(_spiralPath[N - 1]);
+        newUVY.Add(_spiralPathUVY[N - 1]);
+
+        _spiralPath = newPath;
+        _spiralPathUVY = newUVY;
+
+        // Smooth lại UVY: giảm dần đều từ đầu đến cuối
+        float startUVY = _spiralPathUVY[0];
+        float endUVY = _spiralPathUVY[_spiralPathUVY.Count - 1];
+        for (int i = 0; i < _spiralPathUVY.Count; i++)
+        {
+            _spiralPathUVY[i] = Mathf.Lerp(startUVY, endUVY, i / (float)(N - 1));
+        }
+    }
+
+    // private void OnDrawGizmosSelected()
+    // {
+    //     if (_spiralPath == null || _spiralPath.Count < 2) return;
+    //     // Vẽ line spiral path
+    //     Gizmos.color = Color.cyan;
+    //     for (int i = 0; i < _spiralPath.Count - 1; i++)
+    //     {
+    //         Gizmos.DrawLine(transform.TransformPoint(_spiralPath[i]), transform.TransformPoint(_spiralPath[i + 1]));
+    //     }
+
+    //     // Vẽ điểm với màu theo UVY
+    //     if (!debugUV) return;
+    //     float minUVY = _spiralPathUVY.Min();
+    //     float maxUVY = _spiralPathUVY.Max();
+    //     for (int i = 0; i < _spiralPath.Count; i++)
+    //     {
+    //         float t = Mathf.InverseLerp(minUVY, maxUVY, _spiralPathUVY[i]);
+    //         Color c = Color.Lerp(Color.blue, Color.red, t);
+    //         Gizmos.color = c;
+    //         Gizmos.DrawSphere(transform.TransformPoint(_spiralPath[i]), 0.01f);
+    //     }
+    // }
+
+#endif
+
     #endregion
 
     #region SUPPORTIVE
-
+    private void InitializeDynamicScale()
+    {
+        layerCount = (float)_colorStack.Count;
+        layerCount = Mathf.Max(1f, layerCount);
+        currentScaleValue = MaximumScaleValue;
+        scaleStep = (MaximumScaleValue - WoolMinimumScaleValue) / layerCount;
+        if (IsDynamicScale)
+        {
+            float nextScale = Mathf.Clamp(currentScaleValue - scaleStep * 2, WoolMinimumScaleValue, MaximumScaleValue);
+            _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, MaximumScaleValue);
+            _hideMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, nextScale);
+            ApplyTopRendererProperties();
+            ApplyHideRendererProperties();
+        }
+    }
     public void DecorObjectCheckAlongWoolRotation(float progress)
     {
-        if (DecoreControls == null || DecoreControls.Count == 0 || !WoolAnimationData) return;
-        progress = Mathf.Clamp01((float)progress);
-        List<DecoreControl> decorObjectToDrop = DecoreControls
-           .Where(x => x.WoolProgressStartDrop <= progress)
-           .ToList();
-        if (decorObjectToDrop.Count == 0) return;
-        for (int i = 0; i < decorObjectToDrop.Count; i++)
+        try
         {
-            if (decorObjectToDrop[i] == null) continue;
-            // var renderer = decorObjectToDrop[i]
-            //    .GetComponent<Renderer>();
-            // if (renderer == null)
-            // {
-            //     decorObjectToDrop[i]
-            //        .PulseOutOfParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
-            // }
-            // else
-            // {
-            //     decorObjectToDrop[i]
-            //        .PulseOutOfParrentWool(renderer.bounds.center, WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
-            // }
-            decorObjectToDrop[i].PulseOutofParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor, WoolAnimationData.SpeedRotation);
-            DecoreControls.Remove(decorObjectToDrop[i]);
-            RemovedDecoreControls.Add(decorObjectToDrop[i]);
+            if (DecoreControls == null || DecoreControls.Count == 0 || !WoolAnimationData) return;
+            progress = Mathf.Clamp01((float)progress);
+            List<DecoreControl> decorObjectToDrop = DecoreControls
+               .Where(x => x != null && x.WoolProgressStartDrop <= progress)
+               .ToList();
+            if (decorObjectToDrop.Count == 0) return;
+            for (int i = 0; i < decorObjectToDrop.Count; i++)
+            {
+                if (decorObjectToDrop[i] == null) continue;
+                decorObjectToDrop[i].PulseOutofParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor, WoolAnimationData.SpeedRotation);
+
+                DecoreControls.Remove(decorObjectToDrop[i]);
+                RemovedDecoreControls.Add(decorObjectToDrop[i]);
+            }
         }
+        catch { }
     }
 
     public void PulseAllDecorObjects()
@@ -584,85 +946,199 @@ public class WoolControl : MonoBehaviour
         if (DecoreControls.Count == 0) return;
         for (int i = 0; i < DecoreControls.Count; i++)
         {
-            var renderer = DecoreControls[i]
-                .GetComponent<Renderer>();
+            if (DecoreControls[i] == null) continue;
+            var renderer = DecoreControls[i].GetComponent<Renderer>();
             if (renderer == null)
             {
                 DecoreControls[i]
-                    .PulseOutOfParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
+                   .PulseOutOfParrentWool(WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
             }
             else
             {
                 DecoreControls[i]
-                    .PulseOutOfParrentWool(renderer.bounds.center, WoolAnimationData.ForceValue,
-                        WoolAnimationData.RandomDirrectionFactor);
+                   .PulseOutOfParrentWool(renderer.bounds.center, WoolAnimationData.ForceValue, WoolAnimationData.RandomDirrectionFactor);
             }
         }
     }
 
+    private string _hightestColor;
+    [ContextMenu("RESET MODEL")]
     public void ResetWoolState()
     {
         DisplayColor();
-        MaterialPropertyBlock woolProperties = new MaterialPropertyBlock();
-        TopMeshRenderer.GetPropertyBlock(woolProperties);
+        EnsureTopMaterialPropertyBlock();
+        if (TopMeshRenderer != null) TopMeshRenderer.enabled = true;
+        if (!string.IsNullOrEmpty(_hightestColor)) TryApplyTopMaterial(_hightestColor);
+        TopMeshRenderer?.GetPropertyBlock(_topMaterialPropertyBlock);
 
         if (false)
         {
-            _topMaterialPropertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display,
-                    Mathf.Clamp01(1)
-                );
-            TopMeshRenderer.SetPropertyBlock(_topMaterialPropertyBlock);
+            SetTopDisplay(Mathf.Clamp01(1f));
         }
         else
         {
-            woolProperties.SetFloat(T_Utilities.ShaderPropertiesLib.Display, 1);
-            TopMeshRenderer.SetPropertyBlock(woolProperties);
+            SetTopDisplay(1f);
+            SetTopScaleFactor(1f);
         }
-
-        StartCoroutine(ResetDecorObjects());
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(ResetDecorObjects());
+        }
     }
 
     private IEnumerator ResetDecorObjects()
     {
+        // Skip animation delays for AI_AGENT testing when IsNative is true
+        bool skipAnimationDelays = ShouldSkipAnimationDelays();
+
         foreach (var decoreControl in RemovedDecoreControls)
         {
             decoreControl.gameObject.SetActive(true);
-            yield return null;
+
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+
             decoreControl.ResetDecorTransformStatusAsync();
         }
     }
 
+    private void ApplyTopRendererProperties()
+    {
+        TopMeshRenderer?.SetPropertyBlock(_topMaterialPropertyBlock);
+    }
+
+    private void ApplyHideRendererProperties()
+    {
+        HideMeshRenderer?.SetPropertyBlock(_hideMaterialPropertyBlock);
+    }
+
+    private void InitializeUvContext(out float minUVY, out float uvRange, out int spiralPathCount)
+    {
+        minUVY = _uvMin;
+        float maxUVY = _uvMax;
+        uvRange = Mathf.Max(MinUvRange, maxUVY - minUVY);
+        spiralPathCount = _spiralPath.Count;
+    }
+
+    private void UpdateTopDisplay(float normalizedUVY)
+    {
+        _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, Mathf.Clamp01(normalizedUVY));
+        ApplyTopRendererProperties();
+    }
+
+    private float GetNormalizedUVY(float progress, int pathCount, float minUVY, float uvRange)
+    {
+        float idx = progress * (pathCount - 1);
+        int idx0 = Mathf.Clamp(Mathf.FloorToInt(idx), 0, pathCount - 1);
+        int idx1 = Mathf.Clamp(idx0 + 1, 0, pathCount - 1);
+        float lerpT = idx - idx0;
+
+        float uvy0 = _spiralPathUVY[idx0];
+        float uvy1 = _spiralPathUVY[idx1];
+        float uvy = Mathf.Lerp(uvy0, uvy1, lerpT);
+        return (uvy - minUVY) / uvRange;
+    }
+
+    private bool IsQueueFull()
+    {
+        return GamePlayManager.Instance &&
+               GamePlayManager.Instance.QueueCount == GamePlayManager.Instance.TotalQueueActiveCount;
+    }
+
+    private bool HasValidWoolAnimationState()
+    {
+        return HideMeshRenderer && WoolAnimationData && TopMeshRenderer &&
+               _spiralPathUVY != null && _topMaterialPropertyBlock != null &&
+               MeshCollider && _colorStack != null && _colorStack.Count > 0;
+    }
+
+    private int PrepareHideRendererForNextLayer(out string nextColor)
+    {
+        nextColor = ShaderPropertiesLib.IgnoredWoolColorKey;
+        var totalColor = _colorStack.Count;
+
+        HideMeshRenderer.gameObject.SetActive(true);
+
+        if (totalColor == 0)
+        {
+            HideMeshRenderer.enabled = false;
+        }
+        else
+        {
+            nextColor = _colorStack.Count > 0 ? _colorStack[0] : ShaderPropertiesLib.IgnoredWoolColorKey;
+            float nextScale = Mathf.Clamp(currentScaleValue - scaleStep * 2f, WoolMinimumScaleValue, MaximumScaleValue);
+            TryApplyHideMaterial(nextColor);
+            UpdateHideRendererForNextLayer(nextScale);
+        }
+
+        ApplyHideRendererProperties();
+        return totalColor;
+    }
+
+    private bool TryApplyTopMaterial(string colorKey)
+    {
+        if (colorPalleteData.colorPallete_New.TryGetValue(colorKey, out var mat))
+        {
+            TopMeshRenderer.sharedMaterial = mat;
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool TryApplyHideMaterial(string colorKey)
+    {
+        if (colorPalleteData.colorPallete_New.TryGetValue(colorKey, out var mat))
+        {
+            HideMeshRenderer.sharedMaterial = mat;
+            return true;
+        }
+
+        return false;
+    }
+
+    private void SetTopDisplay(float display)
+    {
+        _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, display);
+        ApplyTopRendererProperties();
+    }
+
+    private void SetTopScaleFactor(float scaleFactor)
+    {
+        _topMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, scaleFactor);
+        ApplyTopRendererProperties();
+    }
+
+    private void UpdateHideRendererForNextLayer(float nextScale)
+    {
+        _hideMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.Display, 1);
+        _hideMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleFactor, nextScale);
+        if (WoolMinimumScaleValue >= MaximumScaleValue)
+            _hideMaterialPropertyBlock?.SetFloat(ShaderPropertiesLib.ScaleThreshold, -0.01f);
+    }
+
+    private void EnsureTopMaterialPropertyBlock()
+    {
+        if (_topMaterialPropertyBlock == null) _topMaterialPropertyBlock = new MaterialPropertyBlock();
+    }
+
+    private void EnsureHideMaterialPropertyBlock()
+    {
+        if (_hideMaterialPropertyBlock == null) _hideMaterialPropertyBlock = new MaterialPropertyBlock();
+    }
+
+    private void EnsureMaterialPropertyBlocks()
+    {
+        EnsureTopMaterialPropertyBlock();
+        EnsureHideMaterialPropertyBlock();
+    }
+
+    private static bool ShouldSkipAnimationDelays()
+    {
+        return false;
+    }
     #endregion
 
-    // Kiểm tra điểm p có nằm trong tam giác (v0,v1,v2) không (barycentric)
-    private static bool PointInTriangle(Vector3 p, Vector3 v0_, Vector3 v1_, Vector3 v2_)
-    {
-        // Sử dụng tọa độ barycentric để kiểm tra
-        Vector3 v0v1  = v1_ - v0_;
-        Vector3 v0v2  = v2_ - v0_;
-        Vector3 v0p   = p   - v0_;
-        float   d00   = Vector3.Dot(v0v1, v0v1);
-        float   d01   = Vector3.Dot(v0v1, v0v2);
-        float   d11   = Vector3.Dot(v0v2, v0v2);
-        float   d20   = Vector3.Dot(v0p,  v0v1);
-        float   d21   = Vector3.Dot(v0p,  v0v2);
-        float   denom = d00 * d11 - d01 * d01;
-        if (Mathf.Abs(denom) < 1e-6f) return false;
-        float v = (d11 * d20 - d01 * d21) / denom;
-        float w = (d00 * d21 - d01 * d20) / denom;
-        float u = 1.0f - v - w;
-        return (u >= 0) && (v >= 0) && (w >= 0);
-    }
-
-    // Tìm điểm gần nhất trên đoạn thẳng ab tới p
-    private static Vector3 ClosestPointOnSegment(Vector3 p, Vector3 a, Vector3 b)
-    {
-        // Chiếu p lên đoạn ab, clamp t trong [0,1]
-        Vector3 ab = b - a;
-        float   t  = Vector3.Dot(p - a, ab) / ab.sqrMagnitude;
-        t = Mathf.Clamp01(t);
-        return a + ab * t;
-    }
-    
-    
 }

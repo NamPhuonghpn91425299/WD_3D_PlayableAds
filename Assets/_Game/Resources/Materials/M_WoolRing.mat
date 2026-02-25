@@ -8,15 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_WoolRing
-  m_Shader: {fileID: 4800000, guid: 0a1f4ab9d2f1b4c4d91b9e608d5c3eff, type: 3}
+  m_Shader: {fileID: 4800000, guid: 06647adb88a9af44da9150ac7de1c7e7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _GLOSSYREFLECTIONS_OFF
   - _NORMALMAP
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -25,6 +25,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AOTex:
+        m_Texture: {fileID: 2800000, guid: d52d64f9a2a53e540bdef6a1e6e66ba0, type: 3}
+        m_Scale: {x: 0.5, y: 0.5}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 8303736468d1a6e489cc7273159476b5, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -46,7 +50,7 @@ Material:
         m_Scale: {x: 1.29, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 792b21ee3b50cee4dbbfe2653f3f009c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 53d1c66c032b83d42a5b1a4d1a1c2600, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -58,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 8303736468d1a6e489cc7273159476b5, type: 3}
+        m_Texture: {fileID: 2800000, guid: f1e8d46d05caab44f86fccd79660607a, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -72,21 +76,28 @@ Material:
     m_Ints: []
     m_Floats:
     - _Ambient: 0.15
-    - _Brightness: 2.85
+    - _Brightness: 3.09
     - _BumpScale: 1.2
     - _Cutoff: 0.5
+    - _DarkThreadSmoothness: 0.5
+    - _DarkThreadThreshold: 0
     - _DetailNormalMapScale: 1
-    - _DiffusePower: 0.3
+    - _DiffusePower: 10
     - _Display: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.1
     - _GlossyReflections: 0
     - _LightIntensity: 1
+    - _Lowp: 0
     - _Metallic: 0
     - _Mode: 0
+    - _NormalStrength: 1.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Saturation: 1.31
+    - _ShadowExposure: 1
+    - _ShadowStrength: 1
     - _Smoothness: 0.2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -95,10 +106,13 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - _AOColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DarkThreadColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightDir: {r: 0, g: 0, b: -1, a: 0}
     - _Scale: {r: -2, g: 2.6, b: 0, a: 0}
     - _ScreenTiling: {r: 5, g: 5, b: 0, a: 0}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

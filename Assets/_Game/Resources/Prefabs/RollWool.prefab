@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &738016954184188211
 Transform:
   m_ObjectHideFlags: 0
@@ -92,7 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5149792449305618333}
-  - component: {fileID: 2510134583101358957}
+  - component: {fileID: 2436036790223133476}
+  - component: {fileID: 928626317761160156}
   m_Layer: 6
   m_Name: RollWool
   m_TagString: Untagged
@@ -116,7 +117,7 @@ Transform:
   - {fileID: 8985511801665510055}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2510134583101358957
+--- !u!114 &2436036790223133476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,18 +126,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 2594109155775345338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef80e912022c7c4a8b5355b24406c0b, type: 3}
+  m_Script: {fileID: 11500000, guid: c58d29ff71ea489283e49a0f5025cd7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woolClip1: {fileID: 8300000, guid: d01772ef686e8bb439e729e574655a22, type: 3}
-  woolClip2: {fileID: 8300000, guid: fc925dcd7bfb69044b36332c529c0b34, type: 3}
+--- !u!114 &928626317761160156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594109155775345338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d29be2c58319874cbd9b0f997abba3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorPalleteData: {fileID: 11400000, guid: 37b34e5668136f442998ee62ff0b08f5, type: 2}
+  soundData: {fileID: 11400000, guid: e2500db82c770a24b8a1af4adf664f38, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   MeshRenderers:
   - {fileID: 3684723991258354720}
   - {fileID: 7175382048141487667}
   - {fileID: 7747172728833061970}
-  - {fileID: 3139742300462387812}
   _localScale: {x: 0, y: 0, z: 0}
+  IsRedo: 0
+  IsWoolToCube: 0
 --- !u!1 &2874321475390319083
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,8 +178,8 @@ Transform:
   m_GameObject: {fileID: 2874321475390319083}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.3712}
-  m_LocalScale: {x: 0.8471501, y: 0.8471501, z: 0.8471501}
+  m_LocalPosition: {x: 0, y: 0, z: -0.457}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8985511801665510055}
@@ -247,8 +261,8 @@ Transform:
   m_GameObject: {fileID: 2981629772112524294}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.3199}
-  m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
+  m_LocalPosition: {x: 0, y: -0, z: -0.372}
+  m_LocalScale: {x: 1, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8985511801665510055}
@@ -313,15 +327,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.90000004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.90000004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.90000004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -390,6 +404,26 @@ PrefabInstance:
     - target: {fileID: 5434654592241094870, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614721796825244640, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614721796825244640, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614721796825244640, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614721796825244640, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614721796825244640, guid: fd7b8dc0e3b7bd14998e3cfdeda578cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.284
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

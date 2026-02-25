@@ -2,106 +2,82 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public static partial  class T_Utilities
+public static partial class T_Utilities
 {
-    #region MAIN_METHODS
-
-    public static Vector3 Mul_Vector3(this Vector3 vector1, Vector3 vector2) { return new Vector3(vector1.x * vector2.x, vector1.y * vector2.y, vector1.z * vector2.z); }
+    #region CanvasGroup
 
     public static void SetActive(this CanvasGroup canvasGroup, bool isActive)
     {
         if (canvasGroup == null) return;
-        canvasGroup.interactable   = isActive;
+        canvasGroup.interactable = isActive;
         canvasGroup.blocksRaycasts = isActive;
-        canvasGroup.alpha = isActive
-            ? 1
-            : 0;
+        canvasGroup.alpha = isActive ? 1 : 0;
     }
+
+    #endregion
+
+    #region Coroutine
 
     public static Coroutine Delay(this MonoBehaviour host, float delayTime, Action action)
     {
-        if (Precondition(host, action))
+        if (host != null && host.gameObject != null && host.gameObject.activeInHierarchy && host.enabled && action != null)
             return host.StartCoroutine(DelayCall(delayTime, action));
-
         return default;
     }
 
     public static IEnumerator DelayCall(float delayTime, Action action)
     {
-        yield return Yielders.Get(delayTime);
+        yield return new WaitForSeconds(delayTime);
         action();
     }
 
-    private static bool Precondition(MonoBehaviour host, Action action)
-    {
-        return host   != null && host.gameObject != null && host.gameObject.activeInHierarchy && host.enabled &&
-            action != null;
-    }
+    #endregion
+
+    #region NullCheck
 
     public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
     {
         if (source == null) return true;
         if (source is ICollection<T> collection) return collection.Count == 0;
-        return !source
-           .GetEnumerator()
-           .MoveNext();
+        return !source.GetEnumerator().MoveNext();
+    }
+
+    public static bool IsNullOrEmpty(this string source) => string.IsNullOrEmpty(source);
+
+    public static int ZeroReplace(this int value, int replace = 0)
+    {
+        return value > 0 ? value : replace;
+    }
+
+    public static string NullReplace(this string str, string replace = "null")
+    {
+        return string.IsNullOrEmpty(str) ? replace : str;
     }
 
     #endregion
 
-    public static string NullReplace(this string str, string replace = "null")
+    #region GameObject
+
+    public static void SetActive(this List<GameObject> gameObjects, bool isActive)
     {
-        return string.IsNullOrEmpty(str)
-            ? replace
-            : str;
+        if (gameObjects == null || gameObjects.Count == 0) return;
+        foreach (var go in gameObjects)
+        {
+            go?.SetActive(isActive);
+        }
     }
 
+    #endregion
 
-    public static class DefaultValue
+    #region Button
+
+    public static void RegisterListener(this Button button, Action onClick)
     {
-        public const int MaxEnergyDefault = 10;
-
-        public const float MaxZomInDefault = 5f;
-        public const float MinZomInDefault = 1f;
-
-        public const string AddressableItemLable = "ItemProperty";
+        if (button != null)
+            button.onClick.AddListener(() => onClick?.Invoke());
     }
 
-    public static class PlayerPrefKey
-    {
-        public static string InitializedPlayer = "InitializedPlayer";
-    }
-
-    public static class AnimatorHashKey
-    {
-        public const  string IndexBottomHashKey = "IndexBottom";
-        public const  string ShowHideWool       = "ShowHideWool";
-        public static int    ShowHashKey        = Animator.StringToHash("Show");
-        public static int    HideHashKey        = Animator.StringToHash("Hide");
-        public static int    TutLevel1HashKey   = Animator.StringToHash("TutLevel1");
-    }
-
-    public static class ShaderPropertiesLib
-    {
-        public static int Color        = Shader.PropertyToID("_Color");
-        public static int Display      = Shader.PropertyToID("_Display");
-        public static int FresnelColor = Shader.PropertyToID("_FresnelColor");
-        public static int Percent      = Shader.PropertyToID("_Percent");
-        public static int Progress     = Shader.PropertyToID("_Progress");
-        public static int UseRim       = Shader.PropertyToID("_UseRim");
-        public static int UseHaloOuter = Shader.PropertyToID("_UseHaloGlow");
-
-        public static string GameplayModelLayer = "LevelModel";
-        public static string EndgameModelLayer  = "EndgameModel";
-
-    }
-
-    [Serializable]
-    public enum MenuType
-    {
-        Shop,
-        Home,
-        Rank
-    }
+    #endregion
 }

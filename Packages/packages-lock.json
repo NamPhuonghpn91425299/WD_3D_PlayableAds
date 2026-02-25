@@ -73,6 +73,12 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.playworks.upp": {
+      "version": "file:C:/Users/HLC_2021/Downloads/7.0.0/scripts",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.settings-manager": {
       "version": "2.1.0",
       "depth": 2,
@@ -119,12 +125,6 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
-    },
-    "uk.lunalabs.luna": {
-      "version": "file:D:/Package/Luna/scripts",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

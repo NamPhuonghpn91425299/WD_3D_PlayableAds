@@ -5,9 +5,9 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SoundManager : Singleton<SoundManager>
+public class SoundManager : SingletonBase<SoundManager>
 {
-    [SerializeField]         AudioMixer  audioMixer;
+    [SerializeField] AudioMixer audioMixer;
     [SerializeField] private AudioSource fxMusicSource;
     [SerializeField] private AudioSource specialBgmSource;
     [SerializeField] private bool isPlayBgmOnStart = true;
@@ -23,9 +23,9 @@ public class SoundManager : Singleton<SoundManager>
             specialBgmSource.Stop();
             specialBgmSource.playOnAwake = false;
         }
-        
+
         var playMusic = 1;
-        var playSound  = 1;
+        var playSound = 1;
         OnSoundChange(playMusic);
         OnSoundFxChange(playSound);
     }
@@ -43,7 +43,7 @@ public class SoundManager : Singleton<SoundManager>
         // Dừng nếu đang phát và reset time về 0
         specialBgmSource.Stop();
         specialBgmSource.time = 0f;
-        
+
         specialBgmSource.clip = BGM.Clip;
         specialBgmSource.loop = BGM.Loop;
         specialBgmSource.Play();
@@ -55,9 +55,9 @@ public class SoundManager : Singleton<SoundManager>
     {
         if (audioMixer == null) return;
         currentValue *= 2; // sound fx có âm lượng gấp đôi
-        var soundValue    = currentValue == 0 ? -100 : Mathf.Log10(currentValue) * 20;
+        var soundValue = currentValue == 0 ? -100 : Mathf.Log10(currentValue) * 20;
         var parameterName = Enum.GetName(typeof(SoundMixerGroup), SoundMixerGroup.SoundFx);
-        var checkSet      = audioMixer.SetFloat(parameterName, soundValue);
+        var checkSet = audioMixer.SetFloat(parameterName, soundValue);
 #if UNITY_EDITOR
         if (!checkSet) Debug.LogError($"không set được giá trị audio mixer với parameter {parameterName}");
 #endif
@@ -68,9 +68,9 @@ public class SoundManager : Singleton<SoundManager>
         if (audioMixer == null) return;
         float maxRangeDesign = 1f;
         currentValue = MathHr.Remap(currentValue, 0, 1, 0, maxRangeDesign);
-        var soundValue    = currentValue == 0 ? -100 : Mathf.Log10(currentValue) * 20;
+        var soundValue = currentValue == 0 ? -100 : Mathf.Log10(currentValue) * 20;
         var parameterName = Enum.GetName(typeof(SoundMixerGroup), SoundMixerGroup.Sound);
-        var checkSet      = audioMixer.SetFloat(parameterName, soundValue);
+        var checkSet = audioMixer.SetFloat(parameterName, soundValue);
 #if UNITY_EDITOR
         if (!checkSet) Debug.LogError($"không set được giá trị audio mixer với parameter {parameterName}");
 #endif
@@ -79,9 +79,9 @@ public class SoundManager : Singleton<SoundManager>
     private void ChangeVolumeSpecialBgmSound(float currentValue)
     {
         if (audioMixer == null) return;
-        var soundValue    = currentValue == 0 ? -100 : Mathf.Log10(currentValue) * 20;
+        var soundValue = currentValue == 0 ? -100 : Mathf.Log10(currentValue) * 20;
         var parameterName = Enum.GetName(typeof(SoundMixerGroup), SoundMixerGroup.SpecialSound);
-        var checkSet      = audioMixer.SetFloat(parameterName, soundValue);
+        var checkSet = audioMixer.SetFloat(parameterName, soundValue);
 #if UNITY_EDITOR
         if (!checkSet) Debug.LogError($"không set được giá trị audio mixer với parameter {parameterName}");
 #endif
@@ -92,9 +92,9 @@ public class SoundManager : Singleton<SoundManager>
     {
         if (audioMixer == null) return;
         currentValue *= 2;
-        var soundValue    = currentValue == 0 ? -100 : Mathf.Log10(currentValue) * 20;
+        var soundValue = currentValue == 0 ? -100 : Mathf.Log10(currentValue) * 20;
         var parameterName = Enum.GetName(typeof(SoundMixerGroup), SoundMixerGroup.MainSound);
-        var checkSet      = audioMixer.SetFloat(parameterName, soundValue);
+        var checkSet = audioMixer.SetFloat(parameterName, soundValue);
 #if UNITY_EDITOR
         if (!checkSet) Debug.LogError($"không set được giá trị audio mixer với parameter {parameterName}");
 #endif
@@ -103,9 +103,9 @@ public class SoundManager : Singleton<SoundManager>
     private void OnEnableShowFxInGame(bool enable)
     {
         if (audioMixer == null) return;
-        var soundValue    = enable ? Mathf.Log10(1) * 20 : -100;
+        var soundValue = enable ? Mathf.Log10(1) * 20 : -100;
         var parameterName = Enum.GetName(typeof(SoundMixerGroup), SoundMixerGroup.SoundFxInGame);
-        var checkSet      = audioMixer.SetFloat(parameterName, soundValue);
+        var checkSet = audioMixer.SetFloat(parameterName, soundValue);
 #if UNITY_EDITOR
         if (!checkSet) Debug.LogError($"không set được giá trị audio mixer với parameter {parameterName}");
 #endif
@@ -129,9 +129,9 @@ public class SoundManager : Singleton<SoundManager>
             }
         }
 
-        var actualValue   = 1 - Mathf.Abs(1 - speed) / 2 * Mathf.Sign(1 - speed); // công thức của mr xương rồng
+        var actualValue = 1 - Mathf.Abs(1 - speed) / 2 * Mathf.Sign(1 - speed); // công thức của mr xương rồng
         var parameterName = Enum.GetName(typeof(SoundMixerGroup), group) + "Pitch";
-        var checkSet      = audioMixer.SetFloat(parameterName, actualValue);
+        var checkSet = audioMixer.SetFloat(parameterName, actualValue);
 #if UNITY_EDITOR
         if (!checkSet) Debug.LogError($"không set được giá trị pitch audio mixer với parameter {parameterName}");
 #endif
@@ -145,7 +145,7 @@ public class SoundManager : Singleton<SoundManager>
     {
         fxMusicSource.PlayOneShot(clip);
     }
-    
+
     /// <summary>
     /// Hàm phát một âm thanh với Mixer là Sound
     /// </summary>
@@ -155,7 +155,7 @@ public class SoundManager : Singleton<SoundManager>
     {
         fxMusicSource.PlayOneShot(clip, volume);
     }
-    
+
     public void PlayOneShotDelayed(AudioClip clip, float delay, float volume = 1f)
     {
         StartCoroutine(PlayDelayed(clip, delay, volume));
@@ -163,7 +163,7 @@ public class SoundManager : Singleton<SoundManager>
     private IEnumerator PlayDelayed(AudioClip clip, float delay, float volume = 1f)
     {
         yield return new WaitForSeconds(delay);
-        PlayOneShot(clip,volume);
+        PlayOneShot(clip, volume);
     }
     public static void PlaySound(SoundDefine sound)
     {
@@ -180,8 +180,8 @@ public class SoundManager : Singleton<SoundManager>
     }
 
     private Coroutine _specialSoundStopCountDown;
-    
-    
+
+
     private Coroutine _specialSoundLoop;
     public void PlaySpecialSoundLoop(AudioClip clip, float delay = 0, float bgmRatio = 0)
     {
@@ -192,7 +192,7 @@ public class SoundManager : Singleton<SoundManager>
         }
         _specialSoundLoop = StartCoroutine(LoopSpecialSound(clip, delay, bgmRatio));
     }
-    public IEnumerator LoopSpecialSound(AudioClip clip,float delay = 0 , float bgmRatio = 0)
+    public IEnumerator LoopSpecialSound(AudioClip clip, float delay = 0, float bgmRatio = 0)
     {
         //float targetBgmVolume = DataManager.SettingData.Sound * bgmRatio;
         //OnSoundChange(targetBgmVolume);
@@ -230,9 +230,9 @@ public class SoundManager : Singleton<SoundManager>
     }
 
     private static List<AudioClip> _backGroundMusics = new List<AudioClip>();
-    private static List<AudioClip> _bgmWaitingList   = new List<AudioClip>();
-    private        bool            _isLoopRandomBGM  = false;
-    private        bool            _isEndGame        = false;
+    private static List<AudioClip> _bgmWaitingList = new List<AudioClip>();
+    private bool _isLoopRandomBGM = false;
+    private bool _isEndGame = false;
 
     public static void PlayRandomBGM(SoundDefine sound)
     {
@@ -246,9 +246,9 @@ public class SoundManager : Singleton<SoundManager>
     {
         _isEndGame = value;
     }
-    
+
 }
-    
+
 // đặt theo exposed Parameters trong audio mixer
 public enum SoundMixerGroup
 {

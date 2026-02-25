@@ -1,133 +1,134 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Threading;
 using DG.Tweening;
 using UnityEngine;
-using System;
-using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
-public class CameraController : Singleton<CameraController>
+public class CameraController : SingletonBase<CameraController>
 {
-    #region PROPERTIES
+    #region Serialized Fields
 
+    [SerializeField]
+    private AudioClip introRotateSound;
+
+    [SerializeField]
+    private AudioClip introFinishRotateSound;
+
+    [SerializeField]
+    private Vector3 _cameraPosMainMenuDefault = new(0, 1.8f, -11);
+
+    [SerializeField]
+    private Vector3 _cameraRoteMainMenuDefault = new(15f, 0, 0);
+
+    [SerializeField]
+    private Vector3 _cameraPosGamePlayDefault = new(0, 1, -10);
+
+    [SerializeField]
+    private Vector3 _cameraRoteGamePlayDefault = new(6, 0, 0);
+
+    [Header("Intro Settings")]
+    public float IntroLenght = 2f;
+
+    [Tooltip("Model will rotate exactly 360 degrees during intro duration")]
+    public bool enableExact360Rotation = true;
+
+    public float ModelRotationIntroSpeed = 0.5f;
+
+    public float IntroCameraZoomInDuration = 0.5f;
+
+    public int IntroStartFOV = 65;
+
+    public int IntroEndFOV = 65;
+
+    [Header("Dragging Settings")]
+    public DraggingStyle DragStyle;
+
+
+    public float DraggingSpeed = 0.25f;
+
+
+    public float SmoothFactor = 7;
+
+    [Header("Zoom Settings")]
+    public ZoomCameraStyle ZoomStyle;
+
+    [Header("Auto - center model along gameplay progress :D")]
+    public bool AutoCenterModel = true;
+    public bool UseRendererBoundsCenter = true;
+    public float ThresholdToChangeCenter = 1f;
+    public float WoolPercentLeftStopAutoZoom = 20f;
+    private Vector3 originalSpawnPos;
+    private float farthestWoolDistance;
+    private float nearestWoolDistance;
+
+    #endregion
+
+    #region Public Properties
+    [Space]
     public Interactable InputInteractable;
-
-    public Button btnReCenterModel;
-    private bool canResset;
-    public Slider ZoomSlider;
-    public float maxZoom;
-    public float minZoom;
+    public TargetObjectData TargetObjectData;
     public ZoomCameraData ZoomCameraData;
     public Transform BackGround;
-
     public Transform SpawnPoint;
     public GameObject ModelPrefab;
-    private Transform modelTransfrom;
     public Quaternion targetRotation;
-
-    public float Friction = 3f; // The speed of decay of inertia
-    public Vector2 RotationSensitivity = new Vector2(1f, 1f); // Giới hạn tốc độ xoay
-    public Vector2 AccelerationRange = new Vector2(0.1f, 1f); // Giới hạn tốc độ xoay
-    public float RotationSpeed = 5f; // Tốc độ xoay
-    public float RotationAutoSpeed = 0.5f; // Tốc độ xoay tự động
+    public LevelController CurrentLevel;
+    public float Friction = 3f;
+    public Vector2 RotationSensitivity = new(1f, 1f);
+    public Vector2 AccelerationRange = new(0.1f, 1f);
+    public float RotationSpeed = 5f;
+    public float RotationAutoSpeed = 0.5f;
     public float SmoothingTime = 0.05f;
-    [Header("Rotation")] public float TimeAFKToAutoRotation = 10f;
-    // Thêm các thuộc tính này vào khu vực PROPERTIES ở đầu class
+    public float TimeAFKToAutoRotation = 10f;
 
-    private RaycastHit[] _woolHits = new RaycastHit[10];
+    public Action OnHandleTapWoolAction;
+    public Action<bool> OnHandleMouseAction;
+    public Action OnHandleHoldWoolAction;
+    public Action OnHandleDragWoolAction;
 
-    [Header("Tapping Settings")]
-    [Tooltip("Bán kính của vùng tìm kiếm lân cận khi người chơi tap trượt.")]
-    [SerializeField]
-    private float _tapRadius = 0.2f;
+    public static int HoldClickTime = 0;
 
-    // ===== BỔ SUNG: CÁC THUỘC TÍNH CHO ZOOM 2 NGÓN TAY =====
-    [Header("TOUCH ZOOM SETTINGS")]
-    [SerializeField]
-    [Tooltip("Độ nhạy khi zoom bằng 2 ngón tay (1.0f = bình thường, 2.0f = nhạy gấp đôi)")]
-    private float touchZoomSensitivity = 2f;
+    #endregion
 
-    [SerializeField] [Tooltip("Bật/tắt tính năng zoom bằng 2 ngón tay")]
-    private bool enableTouchZoom = true;
+    #region Private Fields
 
-    [SerializeField] [Tooltip("Thời gian smooth khi zoom bằng touch (không sử dụng hiện tại)")]
-    private float touchZoomSmoothTime = 0.1f;
-
-    // Biến để theo dõi trạng thái zoom - BỔ SUNG để tránh xung đột giữa touch zoom và slider
-    private bool isTouchZooming = false;
-    private bool isSliderUpdating = false; // Tránh vòng lặp khi cập nhật slider từ code
-    // ===== KẾT THÚC BỔ SUNG =====
-
+    private Transform modelTransfrom;
     private float _acceleration;
-    private float _timerAfterMouseUp = 0f;
-    private float _timerAfterMouseDown = 0f;
-    private Vector2 _previousDelta = Vector2.zero;
-    private Vector3 _lastMousePosition;
-
-    private Vector2 _sceenRate;
-
     private Camera _mainCamera;
     private Camera _fakeUICamera;
-    private GameObject _targetObject;
-
-    private bool _isIdling = false;
     private float _timeIdle = 0f;
-
-    private bool _isActive = false;
-
-    private bool _isClickOnMesh;
-    private float _timerHoldClick;
-
+    private static bool _isActive = false;
     private bool _isClicking;
     private bool _isDragging;
     private bool _isHolding;
-    [SerializeField] private bool _isRotateObjectInMainMenu;
-
     private WoolControl _targetWool;
-
-    [SerializeField] private Vector3 _cameraPosMainMenuDefault = new Vector3(0, 1.8f, -11);
-    [SerializeField] private Vector3 _cameraRoteMainMenuDefault = new Vector3(15f, 0, 0);
-    [SerializeField] private Vector3 _cameraPosGamePlayDefault = new Vector3(0, 1, -10);
-    [SerializeField] private Vector3 _cameraRoteGamePlayDefault = new Vector3(6, 0, 0);
-
-    [Header("INTRO SETTING(s)")] public float IntroLenght = 2f;
-    public float ModelRotationIntroSpeed = 0.5f;
-    public float IntroCameraZoomInDuration = 0.5f;
-    public int IntroStartFOV = 65;
-    public int IntroEndFOV = 65;
-    private Coroutine introCoroutine;
-
-    [Header("DRAGGING SETTING(s)")] public DraggingStyle DragStyle;
-    public float DraggingSpeed = 0.25f;
-    public float SmoothFactor = 7;
-
-    [Header("DRAGGING SETTING(s)")] public ZoomCameraStyle ZoomStyle;
+    private float totalIntroRotation;
+    private Dictionary<int, Touch> activeTouches = new();
+    private Touch firstTouch;
+    private Touch secondTouch;
+    private int firstTouchID = 0;
+    private int secondTouchID = 0;
+    private bool cameraForZoomReady = false;
     private bool isZooming = false;
     private float targetFOV;
     private float currentFOV;
     private float previousDistance;
     private float zoomLerpSpeed = 7f;
-
-    // Đống này của thằng Đồng nó vất linh tinh đm đéo biết để đâu
     private bool BlockRotation;
     private bool BlockZoom;
-    public Action<bool> OnHandleMouseAction;
     private bool BlockHandTap;
     private bool _blockHold;
-    public Action OnHandleHoldWoolAction;
     private bool _blockDrag;
-    public Action OnHandleDragWoolAction;
-    private Vector3 LocalScaleBackGroundDefault = new Vector3(40f, 40f, 1);
-
-    // Lưu rotation ban đầu để reset
-    private Quaternion initialRotation;
-    private bool hasStoredInitialRotation = false;
-
-    [Header("Reset Settings")] public float ResetRotationDuration = 1f;
-    public Ease ResetRotationEase = Ease.InOutCubic;
-
+    private Vector3 LocalScaleBackGroundDefault = new(60f, 60f, 1);
+    private CancellationTokenSource _cts;
+    private bool _introEnded = true;
+    public float _introTimer = 0f;
+    private RaycastHit[] hits = new RaycastHit[5];
+    private Vector3 modelOriginalEA = Vector3.zero;
     #endregion
 
-    #region UNITY_METHODS
+    #region Unity Lifecycle
 
     public override void Awake()
     {
@@ -135,408 +136,318 @@ public class CameraController : Singleton<CameraController>
         _mainCamera = CameraContainer.Instance.MainCamera;
         _fakeUICamera = CameraContainer.Instance.FakeUICamera;
         targetFOV = ZoomCameraData.DefaultFOV;
+        cameraForZoomReady = ZoomCameraData != null && _mainCamera != null;
+        originalSpawnPos = SpawnPoint.position;
     }
 
     private void OnEnable()
     {
-        _timerAfterMouseUp = 0;
         _acceleration = AccelerationRange.x;
         _timeIdle = 0f;
-        ResetCamearState();
+        ResetCameraStateMainMenu();
     }
 
     private void Start()
     {
         InputInteractable.OnTap += HandleTap;
         InputInteractable.OnHold += HandleHold;
-        //InputInteractable.OnDragAction += HandleDrag;
         InputInteractable.OnDragAction += HandleDragSmoothly;
         InputInteractable.OnMouseDown += HandleMouse;
+        //GameEventManager.OnGameStateChange += OnGameStateChange;
+        OnGameStateChange();
+        InputInteractable.enabled = true;
+        GameEventManager.ChangeCameraFOVThroughButton += ZoomCameraAdditional;
+        GameEventManager.ReCenterModelThroughButton += ReCenterModel;
+        GameEventManager.OnAWoolMeshCompleted += () => { OnChangingCenterBaseOnModel(false); };
+        GameEventManager.OnAWoolMeshRedo += () => { OnChangingCenterBaseOnModel(false); };
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (BlockRotation || !SpawnPoint || !modelTransfrom) return;
-        if (_isRotateObjectInMainMenu)
-        {
-            SpawnPoint.Rotate(0f, RotationAutoSpeed * _acceleration * RotationSensitivity.x, 0f, Space.World);
-            return;
-        }
+        if (!SpawnPoint || !modelTransfrom) return;
 
+        UpdateRotateIntro();
+
+        if (BlockRotation || !_introEnded) return;
         if (!_isActive) return;
 
-        if (_isDragging || _timeIdle > 0)
-        {
-            if (DragStyle == DraggingStyle.Smoothly || DragStyle == DraggingStyle.SmoothlyYAxis)
-            {
-                modelTransfrom.rotation =
-                    Quaternion.Slerp(modelTransfrom.rotation, targetRotation, Time.deltaTime * SmoothFactor);
-            }
-        }
+        HandleModelRotation();
+        HandleCameraZoom();
+        HandleAutoRotation();
+    }
 
-        if (!BlockZoom)
-        {
-            if (_mainCamera.fieldOfView <= targetFOV - .1f)
-                BlockZoom = true;
-            if (OnZoomCameraSmoothly())
-            {
-                _mainCamera.fieldOfView =
-                    Mathf.Lerp(_mainCamera.fieldOfView, targetFOV, Time.deltaTime * zoomLerpSpeed);
-                ZoomCamera(_mainCamera.fieldOfView);
-            }
-            else
-            {
-                currentFOV = _mainCamera.fieldOfView;
-                if (Mathf.Abs(currentFOV - targetFOV) > 0.15f)
-                {
-                    currentFOV = Mathf.Lerp(currentFOV, targetFOV, Time.deltaTime * zoomLerpSpeed);
-                    _mainCamera.fieldOfView = currentFOV;
-
-                    // ===== BỔ SUNG: Cập nhật slider trong chế độ smooth =====
-                    // Khi camera zoom smooth, slider cũng cần được cập nhật để đồng bộ
-                    if (ZoomStyle == ZoomCameraStyle.Smoothly && !isTouchZooming)
-                    {
-                        UpdateSliderFromFOV(currentFOV);
-                    }
-                    // ===== KẾT THÚC BỔ SUNG =====
-                }
-            }
-        }
-
-        if (_isClicking) return;
-
-        if (_timeIdle <= 0f)
-        {
-            // if (DragStyle == DraggingStyle.SmoothlyYAxis)
-            //     SpawnPoint.Rotate(0f, RotationAutoSpeed * _acceleration * RotationSensitivity.x, 0f, Space.World);
-            // else if (DragStyle == DraggingStyle.Smoothly)
-            //     SpawnPoint.Rotate(Vector3.up, RotationAutoSpeed * _acceleration * RotationSensitivity.x, Space.World);
-        }
-        else
-        {
-            _timeIdle -= Time.deltaTime;
-        }
+    private void OnDestroy()
+    {
+        //GameEventManager.OnGameStateChange -= OnGameStateChange;
+        GameEventManager.ChangeCameraFOVThroughButton -= ZoomCameraAdditional;
+        GameEventManager.ReCenterModelThroughButton -= ReCenterModel;
+        GameEventManager.OnAWoolMeshCompleted -= () => { OnChangingCenterBaseOnModel(false); };
+        GameEventManager.OnAWoolMeshRedo -= () => { OnChangingCenterBaseOnModel(false); };
     }
 
     #endregion
 
-    #region MAIN_METHODS
-
-    public void SetActive(bool isActive)
-    {
-        _isActive = isActive;
-    }
-
+    #region Public Methods
     public void Setup(GameObject levelObjectPrefab)
     {
         _isActive = true;
         BlockZoom = false;
         ModelPrefab = levelObjectPrefab;
         modelTransfrom = ModelPrefab.transform;
-        targetRotation = modelTransfrom.rotation;
-        btnReCenterModel.onClick.AddListener(() => ResetToInitialRotation());
-        canResset = true;
-        StoreInitialRotation();
-        // Thiết lập giá trị slider
-        if (ZoomSlider != null)
-        {
-            ZoomSlider.minValue = 0f;
-            ZoomSlider.maxValue = 1f;
-
-            // ===== SỬA ĐỔI: Thay thế cách khởi tạo slider =====
-            // CODE CŨ (đã comment): Không khởi tạo giá trị mặc định cho slider
-            // float currentFOV = _mainCamera.fieldOfView;
-            // float normalizedValue = (currentFOV - minZoom) / (maxZoom - minZoom);
-            // ZoomSlider.value = normalizedValue;
-
-            // CODE MỚI: Khởi tạo slider dựa trên FOV hiện tại để đồng bộ
-            float currentFOV = _mainCamera != null ? _mainCamera.fieldOfView : ZoomCameraData.DefaultFOV;
-            UpdateSliderFromFOV(currentFOV);
-
-            // SỬA ĐỔI: Dọn dẹp listener cũ trước khi thêm mới để tránh duplicate
-            //ZoomSlider.onValueChanged.RemoveAllListeners();
-            // ===== KẾT THÚC SỬA ĐỔI =====
-
-            // Thêm listener cho sự kiện thay đổi slider
-            ZoomSlider.onValueChanged.AddListener(OnZoomSliderChanged);
-        }
+        targetRotation = SpawnPoint.rotation;
+        modelOriginalEA = modelTransfrom.localEulerAngles;
+        ModelPrefab.transform.localPosition = Vector3.zero;
+        CurrentLevel = levelObjectPrefab.GetComponent<LevelController>();
+        SpawnPoint.localEulerAngles = Vector3.zero;
+        OnChangingCenterBaseOnModel(true);
     }
 
-    #region _input
-
-    #region SLIDER_ZOOM_METHODS
-
-    // ===== SỬA ĐỔI: Cải tiến phương thức OnZoomSliderChanged =====
-    // Phương thức được gọi khi slider thay đổi giá trị
-    public void OnZoomSliderChanged(float value)
-    {
-        // THÊM: Kiểm tra isSliderUpdating để tránh vòng lặp khi cập nhật từ code
-        if(!canResset) return;
-
-        float newFOV = Mathf.Lerp(minZoom, maxZoom, value);
-
-        // Cập nhật targetFOV để touch zoom tiếp tục hoạt động
-        targetFOV = newFOV;
-
-        if (ZoomStyle == ZoomCameraStyle.Smoothly)
-        {
-            // Smooth: chỉ update targetFOV, phần Update() sẽ Lerp tới giá trị này
-        }
-        else
-        {
-            _mainCamera.fieldOfView = newFOV;
-        }
-
-        ZoomCamera(newFOV); // Giữ đồng bộ background + slider
-    }
-    // ===== KẾT THÚC SỬA ĐỔI =====
-
-    // ===== BỔ SUNG: Phương thức mới để cập nhật slider từ FOV =====
-    /// <summary>
-    /// Cập nhật giá trị slider dựa trên FOV hiện tại của camera
-    /// Được gọi khi zoom bằng 2 ngón tay để đồng bộ slider
-    /// </summary>
-    private void UpdateSliderFromFOV(float currentFOV)
-    {
-        if (ZoomSlider != null && !isSliderUpdating)
-        {
-            isSliderUpdating = true;
-
-            // Chuyển đổi FOV thành giá trị slider (0-1)
-            float normalizedValue = (currentFOV - minZoom) / (maxZoom - minZoom);
-            normalizedValue = Mathf.Clamp01(normalizedValue);
-
-            // Mượt hơn khi thay đổi
-            ZoomSlider.value = Mathf.Lerp(ZoomSlider.value, normalizedValue, Time.deltaTime * 10f);
-
-            isSliderUpdating = false;
-        }
-    }
-    // ===== KẾT THÚC BỔ SUNG =====
-
-    // // ===== BỔ SUNG: Các phương thức tiện ích cho zoom =====
-    // /// <summary>
-    // /// Đặt mức zoom theo giá trị từ 0-1 và cập nhật slider
-    // /// </summary>
-    // public void SetZoomLevel(float zoomLevel)
-    // {
-    //     // zoomLevel từ 0 (zoom max) đến 1 (zoom min)
-    //     zoomLevel = Mathf.Clamp01(zoomLevel);
-    //
-    //     float newFOV = Mathf.Lerp(minZoom, maxZoom, zoomLevel);
-    //
-    //     if (ZoomStyle == ZoomCameraStyle.Smoothly)
-    //     {
-    //         targetFOV = newFOV;
-    //     }
-    //     else
-    //     {
-    //         ZoomCamera(newFOV);
-    //     }
-    //
-    //     // Cập nhật slider
-    //     UpdateSliderFromFOV(newFOV);
-    // }
-    //
-    // /// <summary>
-    // /// Zoom in một lượng nhất định
-    // /// </summary>
-    // public void ZoomIn(float amount = 0.1f)
-    // {
-    //     float currentValue = ZoomSlider != null ? ZoomSlider.value : 0.5f;
-    //     SetZoomLevel(currentValue + amount); // + vì slider đảo ngược
-    // }
-    //
-    // /// <summary>
-    // /// Zoom out một lượng nhất định
-    // /// </summary>
-    // public void ZoomOut(float amount = 0.1f)
-    // {
-    //     float currentValue = ZoomSlider != null ? ZoomSlider.value : 0.5f;
-    //     SetZoomLevel(currentValue - amount); // - vì slider đảo ngược
-    // }
-    //
-    // /// <summary>
-    // /// Reset zoom về giá trị mặc định
-    // /// </summary>
-    // public void ResetZoomToDefault()
-    // {
-    //     float defaultFOV = ZoomCameraData.DefaultFOV;
-    //
-    //     if (ZoomStyle == ZoomCameraStyle.Smoothly)
-    //     {
-    //         targetFOV = defaultFOV;
-    //     }
-    //     else
-    //     {
-    //         ZoomCamera(defaultFOV);
-    //     }
-    //
-    //     UpdateSliderFromFOV(defaultFOV);
-    // }
-    // ===== KẾT THÚC BỔ SUNG =====
-
-    // // Phương thức zoom bằng code (tùy chọn) - GIỮ NGUYÊN CODE CŨ (COMMENTED)
-    // public void SetZoomLevel(float zoomLevel)
-    // {
-    //     // zoomLevel từ 0 (zoom max) đến 1 (zoom min)
-    //     zoomLevel = Mathf.Clamp01(zoomLevel);
-    //     
-    //     if (ZoomSlider != null)
-    //         ZoomSlider.value = zoomLevel;
-    //         
-    //     OnZoomSliderChanged(zoomLevel);
-    // }
-    //
-    // // Phương thức zoom in
-    // public void ZoomIn(float amount = 0.1f)
-    // {
-    //     float currentValue = ZoomSlider != null ? ZoomSlider.value : 0.5f;
-    //     SetZoomLevel(currentValue - amount);
-    // }
-    //
-    // // Phương thức zoom out
-    // public void ZoomOut(float amount = 0.1f)
-    // {
-    //     float currentValue = ZoomSlider != null ? ZoomSlider.value : 0.5f;
-    //     SetZoomLevel(currentValue + amount);
-    // }
-    //
-    // void OnDestroy()
-    // {
-    //     // Dọn dẹp listener khi object bị destroy
-    //     if (ZoomSlider != null)
-    //         ZoomSlider.onValueChanged.RemoveListener(OnZoomSliderChanged);
-    // }
-
-    #endregion
-
-    #region RESET_ROTATION_METHODS
-
-    /// <summary>
-    /// Lưu rotation ban đầu của model
-    /// </summary>
-    public void StoreInitialRotation()
-    {
-        if (modelTransfrom != null)
-        {
-            initialRotation = modelTransfrom.rotation;
-            hasStoredInitialRotation = true;
-            Debug.Log("Initial rotation stored: " + initialRotation.eulerAngles);
-        }
-    }
-
-    /// <summary>
-    /// Reset model về rotation ban đầu với animation mượt
-    /// </summary>
-    public void ResetToInitialRotation()
-    {
-        if (!hasStoredInitialRotation || modelTransfrom == null || !canResset)
-        {
-            Debug.LogWarning("Initial rotation not stored or model not found!");
-            return;
-        }
-
-        canResset = false;
-        // Block rotation during reset
-        BlockRotation = true;
-
-        // Animate back to initial rotation
-        modelTransfrom.DORotate(initialRotation.eulerAngles, ResetRotationDuration)
-            .SetEase(ResetRotationEase)
-            .OnComplete(() =>
-            {
-                BlockRotation = false;
-                canResset = true;
-                targetRotation = initialRotation;
-                Debug.Log("Model reset to initial rotation");
-            });
-    }
-
-    #endregion
-
-    // ===== BỔ SUNG: Các phương thức điều khiển tính năng zoom =====
-    /// <summary>
-    /// Bật/tắt tính năng zoom bằng 2 ngón tay
-    /// </summary>
-    public void SetTouchZoomEnabled(bool enabled)
-    {
-        enableTouchZoom = enabled;
-        Debug.Log("Touch zoom enabled: " + enabled);
-    }
-
-    /// <summary>
-    /// Điều chỉnh độ nhạy zoom bằng 2 ngón tay
-    /// </summary>
-    public void SetTouchZoomSensitivity(float sensitivity)
-    {
-        touchZoomSensitivity = Mathf.Clamp(sensitivity, 0.1f, 10f);
-        Debug.Log("Touch zoom sensitivity set to: " + touchZoomSensitivity);
-    }
-    // ===== KẾT THÚC BỔ SUNG =====
-
-    public void SetBlockHandTap(bool isBlock)
-    {
-        BlockHandTap = isBlock;
-        Debug.Log("Block hand tap: " + isBlock);
-    }
+    public void SetBlockHandTap(bool isBlock) { BlockHandTap = isBlock; }
 
     public void BlockRotate(bool isBlock)
     {
         BlockRotation = isBlock;
-        targetRotation = modelTransfrom.rotation;
+        //if (modelTransfrom) targetRotation = modelTransfrom.rotation;
+        if (SpawnPoint) targetRotation = SpawnPoint.rotation;
     }
 
-    public void SetBlockHold(bool isBlock)
+    public void SetBlockHold(bool isBlock) { _blockHold = isBlock; }
+
+    public void SetBlockDrag(bool isBlock) { _blockDrag = isBlock; }
+
+    public void ZoomCamera(float fovCam)
     {
-        _blockHold = isBlock;
-        Debug.Log("Block hold: " + isBlock);
+        fovCam = Mathf.Clamp(fovCam, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
+        var camForward = _mainCamera.transform.forward;
+        var deltaFOV = fovCam - _mainCamera.fieldOfView;
+        GameEventManager.ChangeCameraFOVThroughButton?.Invoke(deltaFOV);
+        float scaleRatio = Mathf.Tan(fovCam * 0.5f * Mathf.Deg2Rad) /
+            Mathf.Tan(ZoomCameraData.MaxFOV * 0.5f * Mathf.Deg2Rad);
+        BackGround.localScale = LocalScaleBackGroundDefault * scaleRatio;
+        BackGround.transform.position = _mainCamera.transform.position + camForward * 25;
+        BackGround.transform.rotation = Quaternion.LookRotation(camForward);
+        GamePlayUIManager.Instance.ChangeValueZoom(fovCam);
+        if (ZoomStyle == ZoomCameraStyle.Smoothly) targetFOV = fovCam;
+        _mainCamera.fieldOfView = fovCam;
     }
 
-    public void SetBlockDrag(bool isBlock)
+    public void ZoomCameraAdditional(float additionalFOV)
     {
-        _blockDrag = isBlock;
-        Debug.Log("Block drag: " + isBlock);
+        if (!ZoomCameraData || !_mainCamera) return;
+        targetFOV = _mainCamera.fieldOfView + additionalFOV;
+        targetFOV = Mathf.Clamp(targetFOV, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
+        return;
     }
 
-    public LayerMask layerMask;
+    public void ResetCameraState()
+    {
+        if (!_mainCamera || !ZoomCameraData || !BackGround) return;
+
+        _mainCamera.fieldOfView = ZoomCameraData.DefaultFOV;
+        targetFOV = ZoomCameraData.DefaultFOV;
+
+        _mainCamera.transform.position = _cameraPosGamePlayDefault;
+        _mainCamera.transform.rotation = Quaternion.Euler(_cameraRoteGamePlayDefault);
+
+        BackGround.localScale = LocalScaleBackGroundDefault;
+
+        try
+        {
+            GamePlayUIManager.Instance?.ChangeValueZoom(_mainCamera.fieldOfView);
+        }
+        catch { }
+
+        Debug.Log($"Camera reset completed: Position={_mainCamera.transform.position}, Rotation={_mainCamera.transform.rotation.eulerAngles}, FOV={_mainCamera.fieldOfView}");
+    }
+
+    public void ResetCameraStateMainMenu()
+    {
+        if (!_mainCamera || !ZoomCameraData || !BackGround) return;
+        _mainCamera.fieldOfView = ZoomCameraData.MainMenuFOV;
+        BackGround.localScale = LocalScaleBackGroundDefault;
+        //GamePlayUIManager.Instance?.ChangeValueZoom(_mainCamera.fieldOfView);
+
+    }
+
+    public void StartIntro()
+    {
+        //UIFullScreenBlocker.Instance.Lock(10);
+        _isActive = false;
+        GameEventManager.OnCountYarnComplete?.Invoke(false);
+        GameEventManager.OnIntroComplete?.Invoke(_isActive);
+        _introEnded = true;
+        if (_cts != null && _cts.Token.CanBeCanceled)
+            _cts.Cancel();
+        _cts = new CancellationTokenSource();
+        StartCoroutine(IntroExecuteAsync(_cts.Token));
+    }
+
+    #endregion
+
+    #region Private Methods - Core Logic
+
+    // private void SetActiveInteractable(GameState currentGameState)
+    // {
+    //     InputInteractable.enabled = currentGameState == GameState.InGame;
+    // }
+
+    private void OnGameStateChange()
+    {
+        try
+        {
+
+            StartCoroutine(SetCameraPos());
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error in OnGameStateChange: {e.Message}");
+        }
+    }
+
+    private void HandleModelRotation()
+    {
+        if (_isDragging || _timeIdle > 0)
+        {
+            if (DragStyle == DraggingStyle.Smoothly)
+            {
+                //modelTransfrom.rotation = Quaternion.Slerp(modelTransfrom.rotation, targetRotation,
+                //        Time.fixedDeltaTime * SmoothFactor
+                //    );
+                SpawnPoint.rotation = Quaternion.Slerp(SpawnPoint.rotation, targetRotation,
+                        Time.fixedDeltaTime * SmoothFactor
+                    );
+            }
+        }
+    }
+
+    private void HandleCameraZoom()
+    {
+        if (BlockZoom) return;
+
+        if (OnZoomCameraSmoothly())
+        {
+            _mainCamera.fieldOfView =
+                Mathf.Lerp(_mainCamera.fieldOfView, targetFOV, Time.fixedDeltaTime * zoomLerpSpeed);
+            ZoomCamera(_mainCamera.fieldOfView);
+        }
+        else
+        {
+            currentFOV = _mainCamera.fieldOfView;
+            if (MathF.Abs(currentFOV - targetFOV) > 0.15f)
+            {
+                currentFOV = Mathf.Lerp(currentFOV, targetFOV, Time.fixedDeltaTime * zoomLerpSpeed);
+                _mainCamera.fieldOfView = currentFOV;
+            }
+        }
+    }
+
+    private void HandleAutoRotation()
+    {
+        if (_isClicking) return;
+        if (_timeIdle <= 0f)
+        {
+            SpawnPoint.Rotate(0f, RotationAutoSpeed * _acceleration * RotationSensitivity.x, 0f, Space.World);
+            targetRotation = SpawnPoint.rotation;
+        }
+        else _timeIdle -= Time.fixedDeltaTime;
+    }
+
+    #endregion
+
+    #region Private Methods - Input Handling
 
     private void HandleTap(Vector2 pos)
     {
+        if (!_isActive) return;
         if (BlockHandTap) return;
 
         Ray ray = _mainCamera.ScreenPointToRay(pos);
+        Ray rayFakeUI = _fakeUICamera.ScreenPointToRay(pos);
 
-        WoolControl foundWool = FindBestWoolNearRay(ray);
-
-        if (foundWool != null)
+        if (Physics.Raycast(rayFakeUI, out RaycastHit hitFakeUI))
         {
-            HandleFoundWool(foundWool);
+            if (HandleFakeUITap(hitFakeUI)) return;
         }
-        ClickEffectManager.Instance.PlayClickEffect(Color.white);
+
+        ClickEffectManager.Instance?.PlayClickEffect(Color.white);
+        TryTap(ray, pos);
     }
 
-    /// <summary>
-    /// Tạo một phương thức phụ để xử lý WoolControl, tránh lặp code.
-    /// </summary>
-    private void HandleFoundWool(WoolControl wool)
+    private bool HandleFakeUITap(RaycastHit hitFakeUI)
     {
-        // Đây là logic gốc từ HandleTap của bạn
-        wool.WoolRotation();
-        GamePlaySystem.Instance.RaiseMotion(EMotionType.Shy, Random.value);
-        Debug.Log("Tapped on Wool: " + wool.name);
+        var cubeTarget = hitFakeUI.collider.GetComponent<CubeTargetControl>();
+        if (cubeTarget != null)
+        {
+            if (cubeTarget.IsActive) return false;
+            //cubeTarget.OnOpenCubeByAds();
+            return true;
+        }
+
+        var queueTarget = hitFakeUI.collider.GetComponent<QueueTargetControl>();
+        if (queueTarget != null)
+        {
+            queueTarget.GetNewQueue();
+            return true;
+        }
+        return false;
+    }
+
+    private void TryTap(Ray ray, Vector2 screenPosition, float radius = .1f)
+    {
+        try
+        {
+            if (Physics.Raycast(ray, out RaycastHit directHit))
+            {
+                if (HandleDirectHit(directHit)) return;
+            }
+
+            var wool = FindBestWoolHit(ray, radius);
+            if (wool != null)
+            {
+                wool.WoolRotation();
+                OnHandleTapWoolAction?.Invoke();
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error in TryTap: {e.Message}");
+        }
+    }
+
+    private bool HandleDirectHit(RaycastHit hit)
+    {
+        var decor = hit.collider.GetComponent<DecoreControl>();
+        if (decor != null && decor.DecoreType == TypeOfDecore.Glass) return true;
+
+        var wool = hit.collider.GetComponent<WoolControl>();
+        if (wool != null)
+        {
+            wool.WoolRotation();
+            OnHandleTapWoolAction?.Invoke();
+            ClickEffectManager.Instance?.PlayClickEffect(Color.white);
+            return true;
+        }
+
+        return false;
     }
 
     private void HandleMouse(bool isPointerDown)
     {
+        if (!modelTransfrom) return;
+
         _isClicking = isPointerDown;
         _timeIdle = TimeAFKToAutoRotation;
+
+        if (isPointerDown)
+        {
+            targetRotation = SpawnPoint.rotation;
+        }
+
         if (_isHolding && !isPointerDown && _targetWool != null)
         {
             _isHolding = false;
             _targetWool.SetTranparentWool(false);
             _targetWool = null;
-            Debug.Log("Pointer up");
         }
 
         OnHandleMouseAction?.Invoke(isPointerDown);
@@ -544,466 +455,453 @@ public class CameraController : Singleton<CameraController>
             _isDragging = false;
     }
 
-    public static int HoldClickTime = 0;
-
-    /// <summary>
-    /// Tìm kiếm WoolControl tốt nhất gần một tia Ray.
-    /// Ưu tiên tìm kiếm bằng Raycast trực tiếp, nếu thất bại sẽ dùng SphereCast.
-    /// </summary>
-    /// <param name="ray">Tia ray từ camera theo hướng con trỏ.</param>
-    /// <returns>Trả về WoolControl tốt nhất tìm được, hoặc null nếu không có.</returns>
-    private WoolControl FindBestWoolNearRay(Ray ray)
-    {
-        // Bước 1: Ưu tiên Raycast trực tiếp
-        if (Physics.Raycast(ray, out RaycastHit directHit, 100f, layerMask))
-        {
-            if (directHit.collider.gameObject.TryGetComponent<WoolControl>(out var directWool))
-            {
-                return directWool; // Tìm thấy, trả về ngay lập tức
-            }
-        }
-
-        // Bước 2: Tìm kiếm lân cận bằng SphereCast nếu Raycast trượt
-        int hitCount = Physics.SphereCastNonAlloc(ray, _tapRadius, _woolHits, 100f, layerMask);
-
-        if (hitCount > 0)
-        {
-            WoolControl bestWool = null;
-            float bestScore = float.MaxValue;
-
-            for (int i = 0; i < hitCount; i++)
-            {
-                if (_woolHits[i].collider.gameObject.TryGetComponent<WoolControl>(out var wool))
-                {
-                    // Tính điểm dựa trên khoảng cách
-                    Vector3 pointToOrigin = _woolHits[i].point - ray.origin;
-                    float score = Vector3.Dot(pointToOrigin, ray.direction);
-
-                    if (score < bestScore)
-                    {
-                        bestScore = score;
-                        bestWool = wool;
-                    }
-                }
-            }
-
-            return bestWool; // Trả về đối tượng tốt nhất tìm được trong vùng lân cận
-        }
-
-        return null; // Không tìm thấy bất kỳ đối tượng nào
-    }
-
     private void HandleHold(Vector2 pos)
     {
         if (_blockHold) return;
+        TryRayCastHold(pos);
+    }
 
-        Ray ray = _mainCamera.ScreenPointToRay(pos);
-
-        // Sử dụng lại logic tìm kiếm thông minh từ HandleTap
-        WoolControl foundWool = FindBestWoolNearRay(ray);
-
-        // Nếu tìm thấy một khối len phù hợp (dù là chạm trúng hay chạm gần)
-        if (foundWool != null)
+    private void TryRayCastHold(Vector2 pos, float radius = .025f)
+    {
+        try
         {
-            // Nếu chúng ta đang giữ một khối len khác, hãy trả nó về trạng thái bình thường trước
-            if (_isHolding && _targetWool != foundWool)
+            Ray ray = _mainCamera.ScreenPointToRay(pos);
+
+            if (Physics.Raycast(ray, out RaycastHit directionHit))
             {
-                _targetWool.SetTranparentWool(false);
+                var wool = directionHit.collider.GetComponent<WoolControl>();
+                if (wool != null)
+                {
+                    ActivateHoldOnWool(wool);
+                    return;
+                }
             }
 
-            // Cập nhật khối len mục tiêu mới
-            _targetWool = foundWool;
-
-            // Nếu chưa ở trạng thái "holding", hãy kích hoạt nó
-            if (!_isHolding)
+            var bestWool = FindBestWoolHit(ray, radius);
+            if (bestWool != null)
             {
-                _isHolding = true;
-                OnHandleHoldWoolAction?.Invoke();
-                HoldClickTime++;
+                ActivateHoldOnWool(bestWool);
             }
-
-            // Áp dụng hiệu ứng cho khối len đang được giữ
-            _targetWool.SetTranparentWool(true);
-        }
-        else
-        {
-            // Nếu không tìm thấy khối len nào gần đó,
-            // và chúng ta đang trong trạng thái "holding", hãy hủy trạng thái đó.
-            if (_isHolding && _targetWool != null)
+            else
             {
-                _isHolding = false;
-                _targetWool.SetTranparentWool(false);
                 _targetWool = null;
             }
         }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error in TryRayCastHold: {e.Message}");
+        }
     }
 
-    private Vector2 AdjustLunaMousePosition(Vector2 originalPos)
+    private void ActivateHoldOnWool(WoolControl wool)
     {
-        // Điều chỉnh tọa độ dựa trên tỷ lệ khung hình của Luna
-        float screenWidth = Screen.width;
-        float screenHeight = Screen.height;
-
-        // Luna thường sử dụng tỷ lệ canvas khác với kích thước thực tế
-        // Các giá trị offset này cần được điều chỉnh dựa trên thử nghiệm
-        float offsetX = 0f; // Thử các giá trị khác nhau
-        float offsetY = 0f; // Thử các giá trị khác nhau
-
-        // Điều chỉnh tọa độ
-        return new Vector2(originalPos.x * screenWidth / 886, originalPos.y * screenHeight / 1920) +
-               new Vector2(offsetX, offsetY);
-    }
-
-    private void HandleDrag(Vector2 pos)
-    {
-        if (!_isActive) return;
-        if (OnZoomCamera()) return;
-
-        if (_blockDrag || DragStyle != DraggingStyle.Instantly) return;
-
-        /*if (MainTutorialLayer.IsInTutorial)
-        {
-            ModelPrefab.transform.DORotate(_rotationTargetDefault, 0.8f);
-            OnHandleDragWoolAction?.Invoke();
-            return;
-        }*/
-
-        if (DragStyle == DraggingStyle.SmoothlyYAxis)
-        {
-            float yRotation = -pos.x * RotationSpeed;
-            ModelPrefab.transform.Rotate(0f, yRotation, 0f, Space.World);
-        }
-        else
-        {
-            Vector3 rotateDir = new Vector3(pos.y, -pos.x, 0f) * RotationSpeed;
-            ModelPrefab.transform.Rotate(rotateDir, Space.World);
-        }
-
-        OnHandleDragWoolAction?.Invoke();
+        if (_targetWool != null)
+            _targetWool.SetTranparentWool(false);
+        _targetWool = wool;
+        _isHolding = true;
+        _targetWool.SetTranparentWool(true);
+        OnHandleHoldWoolAction?.Invoke();
+        HoldClickTime++;
     }
 
     private void HandleDragSmoothly(Vector2 pos)
     {
         if (!_isActive) return;
         if (_blockDrag) return;
+
         if (ZoomStyle == ZoomCameraStyle.Instantly)
         {
             if (OnZoomCamera()) return;
         }
         else if (isZooming) return;
 
-        // Check if we should handle rotation based on drag style
-        bool isYAxisMode = DragStyle == DraggingStyle.SmoothlyYAxis;
-        bool isSmoothMode = DragStyle == DraggingStyle.Smoothly || DragStyle == DraggingStyle.SmoothlyYAxis;
-
         _isDragging = true;
 
-        if (DragStyle == DraggingStyle.SmoothlyYAxis)
-        {
-            float yRotation = -pos.x * DraggingSpeed;
-            Quaternion delta = Quaternion.Euler(0f, yRotation, 0f);
-            targetRotation = delta * targetRotation;
-        }
-        else
-        {
-            Vector3 rotateDir = new Vector3(pos.y, -pos.x, 0f) * DraggingSpeed;
-            Quaternion delta = Quaternion.Euler(rotateDir);
-            targetRotation = delta * targetRotation;
-        }
+        Vector3 rotateDir = new Vector3(pos.y, -pos.x, 0f) * DraggingSpeed;
+        Quaternion delta = Quaternion.Euler(rotateDir);
+        targetRotation = delta * targetRotation;
 
-        OnHandleDragWoolAction?.Invoke();
-    }
-
-    private void ReCenterModel()
-    {
-        BlockRotation = true;
-        if (false)
-        {
-            _mainCamera
-                .DOFieldOfView(ZoomCameraData.DefaultFOV, 0.5f)
-                .SetEase(Ease.InOutCubic)
-                .OnComplete(() =>
-                    {
-                        var endFov = ZoomCameraData.DefaultFOV - 5;
-                        targetFOV = endFov;
-                    }
-                );
-        }
-
-        modelTransfrom
-            .DORotate(Vector3.zero, 0.5f)
-            .SetEase(Ease.InOutCubic)
-            .OnComplete(() =>
-                {
-                    BlockRotation = false;
-                    targetRotation = modelTransfrom.rotation;
-                }
-            );
+        if (rotateDir.sqrMagnitude > 5f) OnHandleDragWoolAction?.Invoke();
     }
 
     #endregion
 
-    #region _zoom camera
+    #region Private Methods - Camera Zoom
 
-    // ===== SỬA ĐỔI: Cải tiến phương thức OnZoomCamera cho zoom 2 ngón tay =====
     private bool OnZoomCamera()
     {
-        // THÊM: Kiểm tra enableTouchZoom để có thể tắt tính năng
-        if (!enableTouchZoom || !ZoomCameraData || !_mainCamera) return false;
+        if (!ZoomCameraData || !_mainCamera) return false;
 
         if (Input.touchCount >= 2)
         {
-            Touch touch0 = Input.GetTouch(0);
-            Touch touch1 = Input.GetTouch(1);
+            Touch t0 = Input.GetTouch(0);
+            Touch t1 = Input.GetTouch(1);
 
-            float currentDistance = Vector2.Distance(touch0.position, touch1.position);
+            float currentDistance = Vector2.Distance(t0.position, t1.position);
 
-            if (touch0.phase == TouchPhase.Began || touch1.phase == TouchPhase.Began)
+            if (t0.phase == TouchPhase.Began || t1.phase == TouchPhase.Began)
             {
                 previousDistance = currentDistance;
-                // THÊM: Đánh dấu đang zoom bằng touch để tránh cập nhật slider không cần thiết
-                isTouchZooming = true;
             }
-            else if ((touch0.phase == TouchPhase.Moved || touch1.phase == TouchPhase.Moved) && isTouchZooming)
+            else if (t0.phase == TouchPhase.Moved || t1.phase == TouchPhase.Moved)
             {
                 float deltaDistance = currentDistance - previousDistance;
                 previousDistance = currentDistance;
 
-                // SỬA ĐỔI: Tính toán zoom dựa trên kích thước màn hình để có trải nghiệm nhất quán
-                // CODE CŨ: float fov = _mainCamera.fieldOfView; fov -= deltaDistance * ZoomCameraData.ZoomSpeed;
-                // CODE MỚI: Tính toán dựa trên đường chéo màn hình
-                float screenDiagonal = Mathf.Sqrt(Screen.width * Screen.width + Screen.height * Screen.height);
-                float normalizedDelta = (deltaDistance / screenDiagonal) * touchZoomSensitivity;
+                float fov = _mainCamera.fieldOfView;
+                fov -= deltaDistance * ZoomCameraData.ZoomSpeed;
 
-                float fov = _mainCamera.fieldOfView - (normalizedDelta * 100f);
                 fov = Mathf.Clamp(fov, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
 
                 ZoomCamera(fov);
-
-                // THÊM: Cập nhật slider để đồng bộ với zoom touch
-                UpdateSliderFromFOV(fov);
-            }
-
-            // THÊM: Reset trạng thái khi không còn touch
-            if (touch0.phase == TouchPhase.Ended || touch1.phase == TouchPhase.Ended ||
-                touch0.phase == TouchPhase.Canceled || touch1.phase == TouchPhase.Canceled)
-            {
-                isTouchZooming = false;
             }
 
             return true;
         }
 
-        // THÊM: Reset trạng thái khi không còn đủ 2 ngón tay
-        isTouchZooming = false;
         return false;
     }
-    // ===== KẾT THÚC SỬA ĐỔI =====
 
-    // ===== SỬA ĐỔI: Cải tiến phương thức OnZoomCameraSmoothly =====
     private bool OnZoomCameraSmoothly()
     {
-        // THÊM: Kiểm tra enableTouchZoom
-        if (!enableTouchZoom || ZoomCameraData == null || _mainCamera == null) return false;
+        if (!cameraForZoomReady) return false;
 
         if (Input.touchCount >= 2)
         {
-            Touch touch0 = Input.GetTouch(0);
-            Touch touch1 = Input.GetTouch(1);
+            Touch t0 = Input.GetTouch(0);
+            Touch t1 = Input.GetTouch(1);
 
-            float currentDistance = Vector2.Distance(touch0.position, touch1.position);
+            float currentDistance = Vector2.Distance(t0.position, t1.position);
 
             if (!isZooming)
             {
-                previousDistance = currentDistance;
-                isZooming = true;
-                // THÊM: Đánh dấu đang zoom bằng touch
-                isTouchZooming = true;
+                InitializeZoomGesture(t0, t1, currentDistance);
             }
-            else if (isTouchZooming) // THÊM: Chỉ xử lý khi đang touch zoom
+            else
             {
-                float deltaDistance = currentDistance - previousDistance;
-                previousDistance = currentDistance;
-
-                // SỬA ĐỔI: Cải tiến tính toán zoom với touchZoomSensitivity
-                float screenScale = Mathf.Min(Screen.width, Screen.height);
-                float normalizedDelta = deltaDistance / screenScale;
-
-                // THÊM: Sử dụng touchZoomSensitivity để điều chỉnh độ nhạy
-                float zoomFactor = normalizedDelta * ZoomCameraData.ZoomSpeed * touchZoomSensitivity;
-                float newTargetFOV = targetFOV - (zoomFactor * 500f);
-
-                targetFOV = Mathf.Clamp(newTargetFOV, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
-
-                // THÊM: Cập nhật slider để đồng bộ
-                UpdateSliderFromFOV(targetFOV);
+                UpdateZoomGesture(t0, t1);
             }
 
             return true;
         }
 
         isZooming = false;
-        // THÊM: Reset trạng thái touch zoom
-        isTouchZooming = false;
         return false;
     }
-    // ===== KẾT THÚC SỬA ĐỔI =====
 
-    // ===== SỬA ĐỔI: Cải tiến phương thức ZoomCamera để cập nhật slider =====
-    public void ZoomCamera(float fovCam)
+    private void InitializeZoomGesture(Touch t0, Touch t1, float currentDistance)
     {
-        fovCam = Mathf.Clamp(fovCam, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
+        activeTouches = new Dictionary<int, Touch>();
+        firstTouchID = t0.fingerId;
+        secondTouchID = t1.fingerId;
+        activeTouches.Add(firstTouchID, t0);
+        activeTouches.Add(secondTouchID, t1);
 
-        float scaleRatio = Mathf.Tan(fovCam * 0.5f * Mathf.Deg2Rad) /
-                           Mathf.Tan(ZoomCameraData.MaxFOV * 0.5f * Mathf.Deg2Rad);
-        BackGround.localScale = LocalScaleBackGroundDefault * scaleRatio;
-        BackGround.transform.position = _mainCamera.transform.position + _mainCamera.transform.forward * 25;
-        BackGround.transform.rotation = Quaternion.LookRotation(_mainCamera.transform.forward);
-
-        if (ZoomStyle == ZoomCameraStyle.Smoothly)
-            targetFOV = fovCam;
-
-        _mainCamera.fieldOfView = fovCam;
-
-        // THÊM: Cập nhật slider để phản ánh FOV mới (chỉ khi không phải từ touch zoom)
-        // Tránh cập nhật slider khi đang zoom bằng touch để không gây lag
-        if (!isTouchZooming)
-        {
-            UpdateSliderFromFOV(fovCam);
-        }
+        previousDistance = currentDistance;
+        isZooming = true;
     }
-    // ===== KẾT THÚC SỬA ĐỔI =====
 
-    public void ZoomCameraAdditional(float additionalFOV)
+    private void UpdateZoomGesture(Touch t0, Touch t1)
     {
-        if (!ZoomCameraData || !_mainCamera) return;
-        var currentTargetFOV = targetFOV;
-        targetFOV = _mainCamera.fieldOfView + additionalFOV;
+        Vector2 lastDragPosition_1st = activeTouches[firstTouchID].position;
+        Vector2 lastDragPosition_2nd = activeTouches[secondTouchID].position;
+
+        UpdateActiveTouches(t0, t1);
+
+        firstTouch = activeTouches[firstTouchID];
+        secondTouch = activeTouches[secondTouchID];
+
+        float currentDistance = Vector2.Distance(firstTouch.position, secondTouch.position);
+        float deltaDistance = currentDistance - previousDistance;
+        previousDistance = currentDistance;
+
+        float screenScale = Mathf.Min(Screen.width, Screen.height);
+        float normalizedDelta = deltaDistance / screenScale;
+
+        targetFOV -= normalizedDelta * ZoomCameraData.ZoomSpeed * 500f;
         targetFOV = Mathf.Clamp(targetFOV, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
-        return;
 
-        bool outOfBound = (targetFOV < ZoomCameraData.MinFOV || targetFOV > ZoomCameraData.MaxFOV) &&
-                          (currentTargetFOV == ZoomCameraData.MaxFOV || currentTargetFOV == ZoomCameraData.MinFOV);
-        if (outOfBound)
-        {
-            BlockZoom = true;
-
-            Sequence cameraPullBack = DOTween.Sequence();
-            var outOfBoundFOV = targetFOV < ZoomCameraData.MinFOV
-                ? ZoomCameraData.MinFOV - 1
-                : ZoomCameraData.MaxFOV + 1;
-            var inBoundFOV = targetFOV < ZoomCameraData.MinFOV
-                ? ZoomCameraData.MinFOV
-                : ZoomCameraData.MaxFOV;
-
-            cameraPullBack.Append(_mainCamera.DOFieldOfView(outOfBoundFOV, 0.15f));
-            cameraPullBack.Append(_mainCamera.DOFieldOfView(inBoundFOV, 0.25f));
-            cameraPullBack.SetEase(Ease.InOutCubic);
-            cameraPullBack.OnComplete(() =>
-                {
-                    targetFOV = inBoundFOV;
-                    BlockZoom = false;
-                }
-            );
-        }
-        else targetFOV = Mathf.Clamp(targetFOV, ZoomCameraData.MinFOV, ZoomCameraData.MaxFOV);
+        HandleTouchRotation(lastDragPosition_1st, lastDragPosition_2nd);
     }
 
-    public void ResetCamearState()
+    private void UpdateActiveTouches(Touch t0, Touch t1)
     {
-        if (!_mainCamera || !ZoomCameraData || !BackGround) return;
-        _mainCamera.fieldOfView = ZoomCameraData.DefaultFOV;
-        BackGround.localScale = LocalScaleBackGroundDefault;
+        if (t0.fingerId == firstTouchID)
+        {
+            activeTouches[firstTouchID] = t0;
+            activeTouches[secondTouchID] = t1;
+        }
+        else if (t1.fingerId == firstTouchID)
+        {
+            activeTouches[firstTouchID] = t1;
+            activeTouches[secondTouchID] = t0;
+        }
+    }
+
+    private void HandleTouchRotation(Vector2 lastDragPosition_1st, Vector2 lastDragPosition_2nd)
+    {
+        if (firstTouch.phase == TouchPhase.Moved)
+        {
+            Vector2 delta = firstTouch.position - lastDragPosition_1st;
+            InputInteractable.UpdateLastDragPosition(firstTouch.position);
+            HandleRotation(delta);
+        }
+        else if (secondTouch.phase == TouchPhase.Moved)
+        {
+            Vector2 delta = secondTouch.position - lastDragPosition_2nd;
+            InputInteractable.UpdateLastDragPosition(secondTouch.position);
+            HandleRotation(delta);
+        }
+    }
+
+    private void HandleRotation(Vector3 pos)
+    {
+        Vector3 rotateDir = new Vector3(pos.y, -pos.x, 0f) * DraggingSpeed;
+        Quaternion delta = Quaternion.Euler(rotateDir);
+        targetRotation = delta * targetRotation;
+    }
+
+    private void ReCenterModel()
+    {
+        _timeIdle = TimeAFKToAutoRotation;
+        BlockRotation = true;
+        SpawnPoint
+           .DOLocalRotate(Vector3.zero, 0.5f)
+           .SetEase(Ease.InOutCubic)
+           .OnComplete(() =>
+           {
+               SpawnPoint.rotation = Quaternion.identity;
+               targetRotation = SpawnPoint.rotation;
+               BlockRotation = false;
+           });
+        //modelTransfrom
+        //   .DOLocalRotate(modelOriginalEA, 0.5f)
+        //   .SetEase(Ease.InOutCubic)
+        //   .OnComplete(() =>
+        //   {
+        //       BlockRotation = false;
+        //       targetRotation = modelTransfrom.rotation;
+        //   });
     }
 
     #endregion
 
-    #region _intro handle
+    #region Private Methods - Intro
 
-    public void StartIntro()
+    private void UpdateRotateIntro()
     {
-        _isActive = false;
-        if (introCoroutine != null) StopCoroutine(introCoroutine);
-        introCoroutine = StartCoroutine(IntroExecuteAsync());
+        if (_introEnded) return;
+        if (GamePlayManager.Instance.IsWaitingForFakeLoading) return;
+
+        if (_introTimer >= IntroLenght)
+        {
+            CompleteIntroRotation();
+            return;
+        }
+
+        _introTimer += Time.fixedDeltaTime;
+
+        float rotationThisFrame = CalculateIntroRotationFrame();
+        modelTransfrom.Rotate(0f, rotationThisFrame, 0f, Space.World);
+
+        if (enableExact360Rotation)
+        {
+            totalIntroRotation += rotationThisFrame;
+        }
     }
 
-    private IEnumerator IntroExecuteAsync()
+    private float CalculateIntroRotationFrame()
     {
-        if (!_mainCamera || !modelTransfrom) yield return null;
-        float introTimer = 0f;
-        bool introEnded = false;
+        if (enableExact360Rotation)
+        {
+            return (360f / IntroLenght) * Time.fixedDeltaTime;
+        }
+        else
+        {
+            return ModelRotationIntroSpeed * Time.fixedDeltaTime;
+        }
+    }
 
+    private void CompleteIntroRotation()
+    {
+        _introEnded = true;
+
+        if (enableExact360Rotation)
+        {
+            float remainingRotation = 360f - totalIntroRotation;
+            if (Mathf.Abs(remainingRotation) > 0.1f)
+            {
+                modelTransfrom.Rotate(0f, remainingRotation, 0f, Space.World);
+            }
+        }
+
+        if (modelTransfrom != null)
+        {
+            targetRotation = SpawnPoint.rotation;
+        }
+    }
+
+    private IEnumerator IntroExecuteAsync(CancellationToken token)
+    {
+        if (!_mainCamera || !modelTransfrom || !GamePlayManager.Instance) yield break;
+
+        BlockHandTap = true;
         targetFOV = IntroEndFOV;
         _mainCamera.fieldOfView = IntroStartFOV;
 
-        while (!introEnded)
+        _introTimer = 0;
+        _introEnded = false;
+        totalIntroRotation = 0;
+
+        SoundManager.Instance.PlayOneShot(introRotateSound);
+        yield return new WaitForSeconds(IntroLenght);
+        if (token.IsCancellationRequested) yield break;
+        SoundManager.Instance.PlayOneShot(introFinishRotateSound);
+
+        GameEventManager.OnIntroComplete?.Invoke(true);
+        yield return null;
+        yield return null;
+
+        _mainCamera
+           .DOFieldOfView(IntroEndFOV, IntroCameraZoomInDuration)
+           .SetEase(Ease.InOutSine);
+
+        yield return new WaitForSeconds(IntroCameraZoomInDuration);
+        if (token.IsCancellationRequested) yield break;
+
+        GamePlayUIManager.Instance?.ChangeValueZoom(IntroEndFOV);
+
+        if (modelTransfrom != null)
         {
-            introTimer += Time.deltaTime;
-            if (introTimer >= IntroLenght)
-            {
-                Vector3 modelLE = modelTransfrom.localEulerAngles;
-                if (IsVectorInRangeUpward(modelLE, Vector3.zero, 15f) || introTimer > IntroLenght + 0.5f)
-                {
-                    introEnded = true;
-                    GamePlaySystem.Instance.ActiveHandController(true);
-                }
-            }
-
-            if (modelTransfrom != null)
-                modelTransfrom.Rotate(0f, ModelRotationIntroSpeed * Time.deltaTime, 0f, Space.World);
-
-            yield return null;
+            targetRotation = SpawnPoint.rotation;
         }
 
         _isActive = true;
-        _mainCamera
-            .DOFieldOfView(IntroEndFOV, IntroCameraZoomInDuration)
-            .SetEase(Ease.InOutSine);
-        // Xoay mượt model về góc 0 cùng lúc với zoom camera
-        modelTransfrom.DOLocalRotate(Vector3.zero, IntroCameraZoomInDuration)
-            .SetEase(Ease.InOutSine);
-        yield return Yielders.Get(IntroCameraZoomInDuration);
-        _isActive = true;
-    }
-
-    /// <summary>
-    /// Should've been an extension =.=
-    /// </summary>
-    /// <param name="original"></param>
-    /// <param name="target"></param>
-    /// <param name="offset"></param>
-    /// <returns></returns>
-    private bool IsVectorInRangeUpward(Vector3 original, Vector3 target, float offset)
-    {
-        return original.y > target.y - offset && original.y < target.y + offset;
+        GameEventManager.OnIntroComplete2?.Invoke(true);
+        yield return new WaitForSeconds(0.3f);
+        if (token.IsCancellationRequested) yield break;
+        BlockHandTap = false;
+        //UIFullScreenBlocker.Instance?.Unlock(10);
     }
 
     #endregion
 
+    #region Private Methods - Camera Position
+
+    private IEnumerator SetCameraPos()
+    {
+        yield return new WaitForSeconds(0.02f);
+
+        _mainCamera.transform.position = _cameraPosGamePlayDefault;
+        _mainCamera.transform.rotation = Quaternion.Euler(_cameraRoteGamePlayDefault);
+
+
+    }
+
     #endregion
 
-    // ===== BỔ SUNG: Override OnDestroy để dọn dẹp =====
-    /// <summary>
-    /// Dọn dẹp khi object bị destroy để tránh memory leak
-    /// </summary>
-    void OnDestroy()
+    #region SUPPORTIVE
+    private WoolControl FindBestWoolHit(Ray ray, float radius)
     {
-        // Dọn dẹp listener khi object bị destroy
-        if (ZoomSlider != null)
-            ZoomSlider.onValueChanged.RemoveAllListeners();
+        var size = Physics.SphereCastNonAlloc(ray, radius, hits);
 
-        // Dọn dẹp button listener
-        if (btnReCenterModel != null)
-            btnReCenterModel.onClick.RemoveAllListeners();
+        if (size == 0) return null;
+
+        WoolControl bestWool = null;
+        float bestScore = float.MaxValue;
+
+        for (var index = 0; index < size; index++)
+        {
+            RaycastHit hit = hits[index];
+            var wool = hit.collider.GetComponent<WoolControl>();
+            if (wool == null) continue;
+
+            Vector3 pointToOrigin = hit.point - ray.origin;
+            float projectionDistance = Vector3.Dot(pointToOrigin, ray.direction);
+            float score = projectionDistance;
+
+            if (score < bestScore)
+            {
+                bestScore = score;
+                bestWool = wool;
+            }
+        }
+
+        return bestWool;
     }
-    // ===== KẾT THÚC BỔ SUNG =====
+
+    private void OnChangingCenterBaseOnModel(bool immediately)
+    {
+        if (!AutoCenterModel) return;
+        if (!AllowToAutoCenter()) return;
+        if (CurrentLevel == null) return;
+
+        WoolControl farthestWool, nearestWool;
+
+        Vector3 modelCurrentlyCenterPos = CurrentLevel.GetEnabledWoolCenters(UseRendererBoundsCenter, out farthestWool, out nearestWool);
+        if (immediately)
+        {
+            nearestWoolDistance = Vector3.Distance(nearestWool.transform.position, modelCurrentlyCenterPos);
+            farthestWoolDistance = Vector3.Distance(farthestWool.transform.position, modelCurrentlyCenterPos);
+        }
+
+        bool needToChangeCenter = Vector3.Distance(SpawnPoint.position, modelCurrentlyCenterPos) >= ThresholdToChangeCenter;
+
+        if (!needToChangeCenter) return;
+
+        if (!immediately && farthestWool) ZoomCameraBasedOnModel(farthestWool, modelCurrentlyCenterPos);
+
+        Transform child = CurrentLevel.transform;
+
+        Transform oldParent = child.parent;
+
+        child.SetParent(null, true);
+
+        SpawnPoint.position = modelCurrentlyCenterPos;
+
+        child.SetParent(oldParent, true);
+
+        if (immediately)
+        {
+            SpawnPoint.position = originalSpawnPos;
+        }
+        else
+        {
+            SpawnPoint.DOMove(originalSpawnPos, 0.5f).SetEase(Ease.InOutSine);
+        }
+    }
+
+    private void ZoomCameraBasedOnModel(WoolControl curentFarthestWool, Vector3 center)
+    {
+        currentFOV = _mainCamera.fieldOfView;
+        float distanceToCurrentFarthestWool = Vector3.Distance(curentFarthestWool.transform.position, center);
+        float distanceRatio = Mathf.InverseLerp(nearestWoolDistance, farthestWoolDistance, distanceToCurrentFarthestWool);
+        float targetFOVBasedOnModel = Mathf.Lerp(ZoomCameraData.MinFOV, IntroEndFOV, distanceRatio);
+        targetFOV = (int)targetFOVBasedOnModel;
+        GamePlayUIManager.Instance.ChangeValueZoomNoNotify(targetFOV);
+    }
+
+    private bool AllowToAutoCenter()
+    {
+        if (CurrentLevel == null) return false;
+        int completedWools = 0;
+        int totalWool = CurrentLevel.WoolControls.Count;
+        foreach (var wool in CurrentLevel.WoolControls)
+        {
+            if (wool == null) continue;
+            if (!wool.TopMeshRenderer.enabled || !wool.gameObject.activeSelf) completedWools++;
+        }
+
+        if ((float)completedWools / (float)totalWool * 100f <= (100f - WoolPercentLeftStopAutoZoom)) return true;
+        return false;
+    }
+    #endregion
 }
 
 public enum DraggingStyle
 {
     Instantly,
-    Smoothly,
-    SmoothlyYAxis
+    Smoothly
 }
 
 public enum ZoomCameraStyle

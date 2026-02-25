@@ -6,15 +6,15 @@ using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-
+using static T_Utilities;
 [ExecuteAlways]
 public class DecoreControl : MonoBehaviour
 {
     #region PROPERTIES
 
-    public Rigidbody    Rigid;
+    public Rigidbody Rigid;
     public MeshRenderer MeshRenderer;
-    public Color        _color = Color.black;
+    public Color _color = Color.black;
 
     public TypeOfDecore DecoreType = TypeOfDecore.None;
 
@@ -37,7 +37,7 @@ public class DecoreControl : MonoBehaviour
 
     [SerializeField]
     private Vector3 _decoreCenterPos;
-    
+
     private bool _isActive;
 
     #endregion
@@ -65,7 +65,7 @@ public class DecoreControl : MonoBehaviour
     private void OnValidate()
     {
         if (MeshRenderer)
-            _decoreCenterPos = transform.parent != null 
+            _decoreCenterPos = transform.parent != null
                 ? transform.parent.InverseTransformPoint(MeshRenderer.bounds.center)
                 : MeshRenderer.bounds.center;
     }
@@ -97,7 +97,8 @@ public class DecoreControl : MonoBehaviour
         try
         {
             baseDirection = (Rigid.position - _thisTransform.parent.parent.position).normalized;
-        } catch
+        }
+        catch
         {
             Debug.Log("Check prefab decor objects: " + gameObject.name);
         }
@@ -121,8 +122,9 @@ public class DecoreControl : MonoBehaviour
         try
         {
             if (ForceSourceCenter != null) baseDirection = (Rigid.position - ForceSourceCenter.position).normalized;
-            else baseDirection                           = (Rigid.position - _thisTransform.parent.parent.position).normalized;
-        } catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
+            else baseDirection = (Rigid.position - _thisTransform.parent.parent.position).normalized;
+        }
+        catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
 
         Vector3 randomOffset = new Vector3(
                 Random.Range(-randomDirrectionFactor, randomDirrectionFactor),
@@ -138,7 +140,7 @@ public class DecoreControl : MonoBehaviour
 
     public void PulseOutOfParrentWool(Vector3 forceSource, float forcevalue, float randomDirrectionFactor)
     {
-        if(!Rigid) return;
+        if (!Rigid) return;
         UseGravity(true);
         //transform.parent.parent -> to get the ObjectSpawner -_-
         Vector3 baseDirection = _thisTransform.forward.normalized;
@@ -166,7 +168,8 @@ public class DecoreControl : MonoBehaviour
             baseDirection = ForceSourceCenter != null
                 ? (_decoreCenterPos - ForceSourceCenter.position).normalized
                 : (_decoreCenterPos - _thisTransform.parent.position).normalized;
-        } catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
+        }
+        catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
 
         Vector3 randomOffset = new Vector3
             (
@@ -193,12 +196,33 @@ public class DecoreControl : MonoBehaviour
             return;
         }
         if (_decoreState == DecoreState.OnlyUseColor) return;
-        Rigid.useGravity  = isUseGravity;
+        Rigid.useGravity = isUseGravity;
         Rigid.isKinematic = !isUseGravity;
     }
     #endregion
 
-    public void SetColor(Color color) { _color = color; }
+    public void SetColor(Color color) { _color = color; SetColor(); }
+
+    public void SetMaterial(Material material)
+    {
+        if (MeshRenderer != null)
+        {
+            MeshRenderer.material = material;
+            // Cập nhật lại property block nếu cần hiển thị
+            if (_materialPropertyBlock == null) _materialPropertyBlock = new MaterialPropertyBlock();
+            MeshRenderer.GetPropertyBlock(_materialPropertyBlock);
+            _materialPropertyBlock.SetFloat(ShaderPropertiesLib.Display, 1);
+            MeshRenderer.SetPropertyBlock(_materialPropertyBlock);
+        }
+    }
+
+    public void SetColor(string colorName)
+    {
+        if (GamePlayManager.Instance != null && GamePlayManager.Instance.colorPalleteData != null)
+        {
+            SetMaterial(GamePlayManager.Instance.colorPalleteData.GetMaterial(colorName));
+        }
+    }
 
     public IEnumerator DisablePhysicComponent()
     {
@@ -207,11 +231,12 @@ public class DecoreControl : MonoBehaviour
         {
             if (Rigid)
             {
-                Rigid.useGravity  = false;
+                Rigid.useGravity = false;
                 Rigid.isKinematic = true;
             }
             _thisTransform?.SetParent(_parent);
-        } catch { }
+        }
+        catch { }
         yield return null;
         gameObject.SetActive(false);
     }
@@ -220,14 +245,14 @@ public class DecoreControl : MonoBehaviour
     {
         if (!_executeRotation) yield break;
         var randomPoint = Random.Range(-1f, 1f) * Vector3.one;
-        var torQue      = Vector3.Cross(randomPoint, forceVector);
-        var axis        = torQue.normalized;
-        var timer       = 0f;
+        var torQue = Vector3.Cross(randomPoint, forceVector);
+        var axis = torQue.normalized;
+        var timer = 0f;
         while (timer < 5f)
         {
             if (!transform) break;
             transform.Rotate(axis, speedRota * Time.deltaTime, Space.World);
-            timer              += Time.deltaTime;
+            timer += Time.deltaTime;
             yield return null;
         }
     }
@@ -267,7 +292,7 @@ public class DecoreControl : MonoBehaviour
         }
         _decoreState = DecoreState.OnlyUseColor;
     }
-
+    public void SetCenterDecore(Transform center) { ForceSourceCenter = center; }
     public void SetUseOnlyPhysic()
     {
         if (_decoreState == DecoreState.OnlyUseColor)
@@ -278,7 +303,7 @@ public class DecoreControl : MonoBehaviour
         _decoreState = DecoreState.OnlyUsePhysic;
     }
 
-    
+
 #endif
 
     #endregion
@@ -296,7 +321,7 @@ public class DecoreControl : MonoBehaviour
         {
             _materialPropertyBlock = new MaterialPropertyBlock();
             MeshRenderer.GetPropertyBlock(_materialPropertyBlock);
-            _materialPropertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, _color);
+            _materialPropertyBlock.SetColor(ShaderPropertiesLib.Color, _color);
             MeshRenderer.SetPropertyBlock(_materialPropertyBlock);
         }
         catch
@@ -313,8 +338,8 @@ public class DecoreControl : MonoBehaviour
     }
 
     #endregion
-    
-    
+
+
 }
 
 public enum TypeOfDecore

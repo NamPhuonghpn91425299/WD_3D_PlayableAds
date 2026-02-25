@@ -23,6 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AOTex:
+        m_Texture: {fileID: 2800000, guid: d52d64f9a2a53e540bdef6a1e6e66ba0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AnimTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -48,12 +52,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d18fe6422e5e7dd4599b858f17aa2363, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: f1e8d46d05caab44f86fccd79660607a, type: 3}
+        m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
@@ -65,14 +73,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Ambient: 0.3
     - _Amplitude: 0.3
     - _AnglePerUnit: 0.2
     - _AnimLoop: 1
     - _BorderSize: 0.265
+    - _Brightness: 5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Display: 1
+    - _DiffusePower: 0.7
+    - _Display: 0.911
     - _DstBlend: 0
     - _EdgeFalloff: 0.1
     - _EdgeVisibleRange: 0.036
@@ -83,18 +94,27 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _GravitySag: 0.05
     - _Metallic: 0
     - _Mode: 0
+    - _NormalStrength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Pitch: 0.02
+    - _ShadowExposure: 5
+    - _ShadowStrength: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 3
     - _SrcBlend: 1
     - _StartAngle: 60
     - _StretchSpeed: 0.5
+    - _SwayAmplitude: 0.02
+    - _SwayFrequency: 3
     - _Tension: 0.5
+    - _TensionWave: 0.5
+    - _TwistAmount: 2
+    - _TwistSpeed: 1
     - _UVSec: 0
     - _Unroll: 1
     - _UnrollSpeed: 0.5
@@ -105,12 +125,16 @@ Material:
     - _WaveSpeed: 5
     - _WaveWidth: 0.1
     - _Witdh: 0.5
+    - _WoolWidth: 0.05
     - _ZWrite: 1
     - radiusAtSplit: 1
     m_Colors:
+    - _AOColor: {r: 1, g: 1, b: 1, a: 1}
     - _AnimAdd: {r: 0, g: 0, b: 0, a: 0}
     - _AnimMul: {r: 1, g: 1, b: 1, a: 0}
     - _AnimTime: {r: 0, g: 1, b: 1, a: 0}
     - _Color: {r: 0.7433963, g: 0.20618726, b: 0.20618726, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightDir: {r: 0.4, g: 1, b: 0.6, a: 0}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

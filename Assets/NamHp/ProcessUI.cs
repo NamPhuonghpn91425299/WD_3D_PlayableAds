@@ -7,48 +7,49 @@ public class ProcessUI : MonoBehaviour
     public Text text;
     public Text shadow;
     public int totalMesh;
-    
+
     private const int MESH_PER_CUBE = 3;
 
     private void Start()
     {
-        // Error handling cho GamePlaySystem.Instance
-        if (GamePlaySystem.Instance == null)
+        // Error handling cho GamePlayManager.Instance
+        if (GamePlayManager.Instance == null)
         {
-            Debug.LogError("GamePlaySystem.Instance is null!");
+            Debug.LogError("GamePlayManager.Instance is null!");
             return;
         }
-        
+
         // Error handling cho Text components
         if (text == null || shadow == null)
         {
             Debug.LogError("Text components are not assigned!");
             return;
         }
-        
-        totalMesh = GamePlaySystem.Instance.cubeCountClaimed * MESH_PER_CUBE;
-        
+
+        totalMesh = GamePlayManager.Instance.CubeTargetCount * MESH_PER_CUBE;
+
         // Cập nhật lần đầu
-        UpdateProgressText(GamePlaySystem.Instance.CurrentColorCollected);
-        
-        // Subscribe to event từ GamePlaySystem
-        GamePlaySystem.Instance.OnColorCollectedChanged += HandleColorCollectedChanged;
+        UpdateProgressText(GamePlayManager.Instance.MeshCountClick);
+
+        // Subscribe to event từ GamePlayManager
+
+        //GamePlayManager.Instance.OnMeshCountClickChange += HandleColorCollectedChanged;
     }
 
     private void OnDestroy()
     {
         // Unsubscribe từ event để avoid memory leaks
-        if (GamePlaySystem.Instance != null)
+        if (GamePlayManager.Instance != null)
         {
-            GamePlaySystem.Instance.OnColorCollectedChanged -= HandleColorCollectedChanged;
+            //GamePlayManager.Instance.OnMeshCountClickChange -= HandleColorCollectedChanged;
         }
     }
-    
-    private void HandleColorCollectedChanged(int newColorCollected)
+
+    private void HandleColorCollectedChanged(int newMeshCount)
     {
-        UpdateProgressText(newColorCollected);
+        UpdateProgressText(newMeshCount);
     }
-    
+
     private void UpdateProgressText(int colorCollected)
     {
         if (text != null && shadow != null)

@@ -7,6 +7,7 @@ Shader "Horus/Lit/WoolTransparent"
         _FresnelPower ("Fresnel Power", Range(0.1, 10)) = 2
         _FresnelColor ("Fresnel Color", Color) = (1,1,1,1)
         _Threshold ("Threshold", Float) = 0.03
+        _ScaleFactor ("Scale Factor", Range(0.1, 5)) = 1.0
     }
 
     SubShader
@@ -23,10 +24,10 @@ Shader "Horus/Lit/WoolTransparent"
         sampler2D _NormalMap;
         float _FresnelPower;
         fixed4 _FresnelColor;
-        float _Threshold;
 
         UNITY_INSTANCING_BUFFER_START(Props)
-        // (add instanced properties here if needed)
+            UNITY_DEFINE_INSTANCED_PROP(float, _Threshold)
+            UNITY_DEFINE_INSTANCED_PROP(float, _ScaleFactor)
         UNITY_INSTANCING_BUFFER_END(Props)
 
         struct Input
@@ -40,10 +41,12 @@ Shader "Horus/Lit/WoolTransparent"
         {
             UNITY_SETUP_INSTANCE_ID(v);
             float threshold = UNITY_ACCESS_INSTANCED_PROP(Props, _Threshold);
-            float3 normalWS = normalize(UnityObjectToWorldNormal(v.normal));
-            float3 posWS = mul(unity_ObjectToWorld, v.vertex).xyz;
-            posWS += normalWS * threshold;
-            float3 posOS = mul(unity_WorldToObject, float4(posWS, 1)).xyz;
+            float scaleFactor = UNITY_ACCESS_INSTANCED_PROP(Props, _ScaleFactor);
+            if (scaleFactor == 0) scaleFactor = 1.0;
+            float3 posOS = v.vertex.xyz;
+            float3 normalOS = normalize(v.normal);
+            posOS += normalOS * threshold;
+            posOS *= scaleFactor;
             v.vertex.xyz = posOS;
         }
 

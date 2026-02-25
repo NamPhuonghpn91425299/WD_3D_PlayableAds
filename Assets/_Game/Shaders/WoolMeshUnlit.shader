@@ -10,21 +10,15 @@ Shader "Horus/Unlit/WoolMeshUnlit"
         _Ambient ("Ambient Light", Range(0, 1)) = 0.3
         _DiffusePower ("Diffuse Power", Range(0, 2)) = 0.7
         _LightDir ("Light Direction", Vector) = (0.4, 1, 0.6, 0)
-
-        _RimColor ("Rim Color", Color) = (1,1,1,1)
-        _RimPower ("Rim Power", Range(0.1, 8)) = 3.0
-        _RimStrength ("Rim Strength", Range(0, 1)) = 0.5
-        _UseRim ("Use Rim Light", Float) = 1.0
-
-        _UseHaloGlow ("Use Halo Glow", Float) = 1.0
-        _HaloColor ("Halo Color", Color) = (1, 1, 1, 1)
-        _HaloPower ("Halo Power", Range(0.1, 8)) = 2.5
-        _HaloIntensity ("Halo Intensity", Range(0, 3)) = 1.0
+        _Threshold ("Threshold", Float) = 0
     }
 
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags
+        {
+            "RenderType"="Opaque"
+        }
         LOD 200
         Cull Off
 
@@ -32,7 +26,10 @@ Shader "Horus/Unlit/WoolMeshUnlit"
         Pass
         {
             Name "Main"
-            Tags { "LightMode"="ForwardBase" }
+            Tags
+            {
+                "LightMode"="ForwardBase"
+            }
 
             CGPROGRAM
             #pragma vertex vert
@@ -46,10 +43,7 @@ Shader "Horus/Unlit/WoolMeshUnlit"
             float4 _MainTex_ST;
             float4 _NormalMap_ST;
             float4 _LightDir;
-            float4 _RimColor;
-            float _RimPower;
-            float _RimStrength;
-            float _UseRim;
+
 
             UNITY_INSTANCING_BUFFER_START(Props)
                 UNITY_DEFINE_INSTANCED_PROP(float4, _Color)
@@ -57,6 +51,7 @@ Shader "Horus/Unlit/WoolMeshUnlit"
                 UNITY_DEFINE_INSTANCED_PROP(float, _Brightness)
                 UNITY_DEFINE_INSTANCED_PROP(float, _Ambient)
                 UNITY_DEFINE_INSTANCED_PROP(float, _DiffusePower)
+                UNITY_DEFINE_INSTANCED_PROP(float, _Threshold)
             UNITY_INSTANCING_BUFFER_END(Props)
 
             struct appdata
@@ -82,12 +77,17 @@ Shader "Horus/Unlit/WoolMeshUnlit"
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
-            v2f vert (appdata v)
+            v2f vert(appdata v)
             {
                 v2f o;
                 UNITY_SETUP_INSTANCE_ID(v);
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                float threshold = UNITY_ACCESS_INSTANCED_PROP(Props, _Threshold);
+                float3 posWS = mul(unity_ObjectToWorld, v.vertex).xyz;
+                float3 normalWS = normalize(UnityObjectToWorldNormal(v.normal));
+                posWS += normalWS * threshold;
+                float3 posOS = mul(unity_WorldToObject, float4(posWS, 1)).xyz;
+                o.vertex = UnityObjectToClipPos(posOS);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.normalUV = TRANSFORM_TEX(v.uv, _NormalMap);
                 o.uv2 = v.uv2;
@@ -101,7 +101,7 @@ Shader "Horus/Unlit/WoolMeshUnlit"
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 UNITY_SETUP_INSTANCE_ID(i);
                 float display = UNITY_ACCESS_INSTANCED_PROP(Props, _Display);
@@ -123,71 +123,7 @@ Shader "Horus/Unlit/WoolMeshUnlit"
                 fixed4 albedo = tex2D(_MainTex, i.uv) * color;
                 float3 litColor = albedo.rgb * (ambient + diffusePower * NdotL) * brightness;
 
-                if (_UseRim > 0.5)
-                {
-                    float rim = 1.0 - saturate(dot(viewDir, worldNormal));
-                    float rimFactor = pow(rim, _RimPower) * _RimStrength;
-                    litColor += _RimColor.rgb * rimFactor;
-                }
-
                 return fixed4(litColor, albedo.a);
-            }
-            ENDCG
-        }
-
-        // ---------- Halo Glow Pass ----------
-        Pass
-        {
-            Name "HaloGlow"
-            Tags { "LightMode"="Always" }
-
-            Cull Front
-            ZWrite Off
-            Blend SrcAlpha One
-
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-
-            #include "UnityCG.cginc"
-
-            float _UseHaloGlow;
-            float _HaloPower;
-            float _HaloIntensity;
-            float4 _HaloColor;
-
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float3 normal : NORMAL;
-            };
-
-            struct v2f
-            {
-                float4 vertex : SV_POSITION;
-                float3 worldNormal : TEXCOORD0;
-                float3 viewDir : TEXCOORD1;
-            };
-
-            v2f vert(appdata v)
-            {
-                v2f o;
-                float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
-                float3 worldNormal = UnityObjectToWorldNormal(v.normal);
-                float3 offset = worldNormal * 0.05; // glow thickness
-                o.vertex = UnityObjectToClipPos(v.vertex + float4(offset, 0));
-                o.worldNormal = worldNormal;
-                o.viewDir = normalize(_WorldSpaceCameraPos - worldPos);
-                return o;
-            }
-
-            fixed4 frag(v2f i) : SV_Target
-            {
-                if (_UseHaloGlow < 0.5)
-                    discard;
-
-                float glow = pow(1.0 - saturate(dot(i.viewDir, i.worldNormal)), _HaloPower);
-                return _HaloColor * glow * _HaloIntensity;
             }
             ENDCG
         }

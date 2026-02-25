@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickEffectManager : Singleton<ClickEffectManager>
+public class ClickEffectManager : SingletonBase<ClickEffectManager>
 {
     [Header("References")]
     public Camera camMain;

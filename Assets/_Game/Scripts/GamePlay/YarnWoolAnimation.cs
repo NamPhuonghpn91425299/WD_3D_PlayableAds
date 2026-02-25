@@ -3,149 +3,354 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YarnWoolAnimation : MonoBehaviour
+public class YarnWoolAnimation : MonoBehaviour, IPoolObject
 {
     #region PROPERTIES
 
     public WoolAnimationData WoolAnimationData;
     public LineRenderer      LineRenderer;
-    
+    public ZoomCameraData    ZoomCameraData;
+
     private Transform             _headParent;
     private Transform             _tailParent;
     private List<Vector3>         _pointList;
     private MaterialPropertyBlock _propertyBlock;
     private const float           HeadOffset = 0.2f;
 
+    private Coroutine _rotationCoroutine;
+
+    private float _currentFOV;
+    private float _baseWidth;
+
+    public GameObject Prefab { get; set; }
+
+    public void OnPushToPool()
+    {
+        StopRotationCoroutine();
+        ResetToDefault();
+    }
     #endregion
 
     #region UNITY_METHODS
 
-#if UNITY_EDITOR
-    private void OnValidate()
+    private void Awake()
     {
-        LineRenderer = GetComponentInChildren<LineRenderer>();
+        GameEventManager.ChangeCameraFOVThroughButton += OnChangeFOVCamera;
+        if (CameraContainer.Instance != null && CameraContainer.Instance.MainCamera != null)
+        {
+            _currentFOV = CameraContainer.Instance.MainCamera.fieldOfView;
+        }
+        _baseWidth = LineRenderer.startWidth;
+        OnChangeFOVCamera(0);
     }
+
+    private void OnDisable()
+    {
+        GameEventManager.OnLoadLevelDone -= OnCancelCoroutine;
+        StopRotationCoroutine();
+    }
+
+#if UNITY_EDITOR
+    private void OnValidate() { LineRenderer = GetComponentInChildren<LineRenderer>(); }
 #endif
 
     private void OnEnable()
     {
         if (LineRenderer == null) LineRenderer = GetComponentInChildren<LineRenderer>();
         LineRenderer.enabled = true;
+        GameEventManager.OnLoadLevelDone += OnCancelCoroutine;
         InitPropertyBlock();
         LineRenderer.positionCount = 2;
+    }
+
+    private void OnDestroy() 
+    { 
+        GameEventManager.ChangeCameraFOVThroughButton -= OnChangeFOVCamera; 
+        GameEventManager.OnLoadLevelDone -= OnCancelCoroutine;
     }
 
     #endregion
 
     #region MAIN_METHODS
 
-    public void SetParent(Transform head, Transform tail)
+    public void SetParent(Transform head, Transform tail, bool isRedo = false)
     {
-        _headParent          = head;
-        _tailParent          = tail;
+        _headParent = head;
+        _tailParent = tail;
         LineRenderer.enabled = true;
-        StartCoroutine(AsyncWoolRotation());
+        
+        StopRotationCoroutine();
+        
+        if (isRedo)
+            _rotationCoroutine = StartCoroutine(AsyncWoolRotationRedoCoroutine());
+        else
+            _rotationCoroutine = StartCoroutine(AsyncWoolRotationCoroutine());
     }
 
-    public void SetColor(Color color)
+    private void OnCancelCoroutine()
+    {
+        StopRotationCoroutine();
+        var go = this.gameObject;
+        GenericObjectPool.Instance.PushToPool_Object(ref go);
+    }
+
+    private void StopRotationCoroutine()
+    {
+        if (_rotationCoroutine != null)
+        {
+            StopCoroutine(_rotationCoroutine);
+            _rotationCoroutine = null;
+        }
+    }
+
+    public void SetColor(Material mat)
     {
         if (LineRenderer != null)
         {
             InitPropertyBlock();
-            _propertyBlock.SetColor(T_Utilities.ShaderPropertiesLib.Color, color);
+
+            Color aocolor = Color.white;
+            Color darkColor = Color.white;
+            Color shadowColor = Color.white;
+            float saturaion = 1f;
+            float brigtness = 3f;
+            float diffuse = 0.5f;
+            float shadowStrength = 1f;
+            float shadowExposure = 1f;
+            if (mat != null)
+            {
+                aocolor = mat.GetColor(ShaderPropertiesLib.AOColor);
+                saturaion = mat.GetFloat(ShaderPropertiesLib.Saturation);
+                brigtness = mat.GetFloat(ShaderPropertiesLib.Brightness);
+                diffuse = mat.GetFloat(ShaderPropertiesLib.DiffusePower);
+                darkColor = mat.GetColor(ShaderPropertiesLib.DarkThreadColor);
+                shadowColor = mat.GetColor(ShaderPropertiesLib.ShadowColor);
+                shadowStrength = mat.GetFloat(ShaderPropertiesLib.ShadowStrength);
+                shadowExposure = mat.GetFloat(ShaderPropertiesLib.ShadowExposure);
+            }
+            LineRenderer.GetPropertyBlock(_propertyBlock);
+            Color finalColor = Color.Lerp(mat.color, darkColor, 0.35f);
+            _propertyBlock.SetColor(ShaderPropertiesLib.Color, finalColor);
+            _propertyBlock.SetColor(ShaderPropertiesLib.AOColor, aocolor);
+            _propertyBlock.SetFloat(ShaderPropertiesLib.Saturation, saturaion);
+            _propertyBlock.SetFloat(ShaderPropertiesLib.Brightness, brigtness);
+            _propertyBlock.SetFloat(ShaderPropertiesLib.DiffusePower, diffuse);
+            _propertyBlock.SetColor(ShaderPropertiesLib.ShadowColor, shadowColor);
+            _propertyBlock.SetFloat(ShaderPropertiesLib.ShadowStrength, shadowStrength);
+            _propertyBlock.SetFloat(ShaderPropertiesLib.ShadowExposure, shadowExposure);
             LineRenderer.SetPropertyBlock(_propertyBlock);
         }
     }
 
-    public void SetPoints(List<Vector3> points)
+    public void SetPoints(List<Vector3> points) { _pointList = points; }
+
+    public void ResetToDefault()
     {
-        _pointList = points;
+        _headParent = null;
+        _tailParent = null;
+        LineRenderer.enabled = false;
+        StopRotationCoroutine();
     }
 
-    public void Reset()
+    private void OnChangeFOVCamera(float fov)
     {
-        _headParent          = null;
-        _tailParent          = null;
-        LineRenderer.enabled = false;
+        if (CameraContainer.Instance != null && CameraContainer.Instance.MainCamera != null)
+        {
+            _currentFOV = CameraContainer.Instance.MainCamera.fieldOfView;
+            float fovRatio = _currentFOV / ZoomCameraData.MainMenuFOV;
+            float adjustedWidth = _baseWidth * fovRatio;
+            LineRenderer.startWidth = adjustedWidth;
+            LineRenderer.endWidth = adjustedWidth;
+        }
     }
-    
-    private IEnumerator AsyncWoolRotation()
+
+    private IEnumerator AsyncWoolRotationCoroutine()
     {
-        if (_headParent == null || _tailParent == null || _pointList.Count == 0 || !WoolAnimationData) yield break;
-        
+        if (_headParent == null || _tailParent == null || _pointList == null || _pointList.Count == 0 || !WoolAnimationData) yield break;
+
         UpdateHeadPosition(0);
         SetDisplay(1f);
 
-        float timer    = 0f;
+        bool skipAnimationDelays = false;
+#if AI_AGENT
+        skipAnimationDelays = DataManager.PlayerData.IsNative;
+#endif
+
+        float timer = 0f;
         float duration = WoolAnimationData.Duration;
         while (timer < duration)
         {
             var t = timer / duration;
             UpdateHeadPosition(t);
             UpdateTailPosition(t);
-            
+
             timer += Time.deltaTime;
-            yield return null;
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+                timer = duration;
+            }
         }
 
-        // Đảm bảo kết thúc ở điểm cuối
-        var tailEnd = _tailParent.TransformPoint(_pointList[_pointList.Count - 1]);
+        if (_headParent == null || _tailParent == null) yield break;
+        var tailEnd = _tailParent.TransformPoint(_pointList[^1]);
         LineRenderer.SetPosition(1, tailEnd);
 
-        // Fade out animation
         var totalTimeHide = WoolAnimationData.DurationHideWool;
-        var hideTimer     = totalTimeHide;
+        var hideTimer = totalTimeHide;
         while (hideTimer > 0)
         {
             UpdateHeadPosition(1);
             SetDisplay(hideTimer / totalTimeHide);
-            
-            hideTimer -= Time.deltaTime;
-            yield return null;
+
+            hideTimer = Mathf.Clamp(hideTimer - Time.deltaTime, 0, totalTimeHide);
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+                hideTimer = 0;
+            }
         }
 
-        Reset();
+        ResetToDefault();
+        var go = gameObject;
+        GenericObjectPool.Instance.PushToPool_Object(ref go);
     }
 
-    private void UpdateHeadPosition(float percent)
+    private IEnumerator AsyncWoolRotationRedoCoroutine()
     {
-        Vector3 headPos;
-        
-        if (CameraContainer.Instance != null)
+        if (_headParent == null || _tailParent == null || _pointList == null || _pointList.Count == 0 || !WoolAnimationData) yield break;
+
+        UpdateHeadPositionRedo(0);
+        SetDisplay(1f);
+
+        bool skipAnimationDelays = false;
+#if AI_AGENT
+        skipAnimationDelays = DataManager.PlayerData.IsNative;
+#endif
+
+        float timer = 0f;
+        float duration = WoolAnimationData.Duration;
+        while (timer < duration)
         {
-            // Get head position in world space with offset
-            Vector3 origHeadPos = _headParent.position - _headParent.forward * HeadOffset * percent;
-            
-            // Convert between cameras
-            Vector3 screenPos = CameraContainer.Instance.FakeUICamera.WorldToScreenPoint(origHeadPos);
-            headPos = CameraContainer.Instance.MainCamera.ScreenToWorldPoint(screenPos);
+            var t = 1 - timer / duration;
+            UpdateHeadPositionRedo(t);
+            UpdateTailPositionRedo(t);
+
+            timer += Time.deltaTime;
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+                timer = duration;
+            }
         }
-        else
+        if (_headParent == null || _tailParent == null) yield break;
+        var tailEnd = _headParent.TransformPoint(_pointList[0]);
+        LineRenderer.SetPosition(0, tailEnd);
+
+        var totalTimeHide = WoolAnimationData.DurationHideWool;
+        var hideTimer = totalTimeHide;
+        while (hideTimer > 0)
         {
-            // Fallback to original calculation
-            headPos = _headParent.position - _headParent.forward * HeadOffset;
+            UpdateHeadPositionRedo(0);
+            SetDisplay(hideTimer / totalTimeHide);
+
+            hideTimer -= Time.deltaTime;
+            if (!skipAnimationDelays)
+            {
+                yield return null;
+            }
+            else
+            {
+            }
         }
-        
-        LineRenderer.SetPosition(0, headPos);
+        ResetToDefault();
+        var go = gameObject;
+        GenericObjectPool.Instance.PushToPool_Object(ref go);
     }
-    
-    private void UpdateTailPosition(float t)
+
+    private void UpdateHeadPositionRedo(float t)
     {
         if (_pointList == null || _pointList.Count == 0) return;
-        if (_tailParent == null) return;
-        // Calculate interpolated position from points list
+        if (_headParent == null) return;
         float idx = t * (_pointList.Count - 1);
         idx = Mathf.Clamp(idx, 0, _pointList.Count - 1);
         int idx0 = Mathf.FloorToInt(idx);
         int idx1 = Mathf.Clamp(idx0 + 1, 0, _pointList.Count - 1);
         float lerpT = idx - idx0;
-        
+
+        idx0 = Mathf.Clamp(idx0, 0, _pointList.Count - 1);
+        idx1 = Mathf.Clamp(idx1, 0, _pointList.Count - 1);
+        Vector3 tail0 = _headParent.TransformPoint(_pointList[idx0]);
+        Vector3 tail1 = _headParent.TransformPoint(_pointList[idx1]);
+        Vector3 tailPos = Vector3.Lerp(tail0, tail1, lerpT);
+
+        LineRenderer.SetPosition(0, tailPos);
+    }
+
+    private void UpdateTailPositionRedo(float percent)
+    {
+        Vector3 headPos;
+
+        if (_headParent == null || _tailParent == null) return;
+        if (CameraContainer.Instance != null && CameraContainer.Instance.FakeUICamera != null && CameraContainer.Instance.MainCamera != null)
+        {
+            Vector3 origHeadPos = _tailParent.position - _tailParent.forward * HeadOffset * percent;
+            Vector3 screenPos = CameraContainer.Instance.FakeUICamera.WorldToScreenPoint(origHeadPos);
+            headPos = CameraContainer.Instance.MainCamera.ScreenToWorldPoint(screenPos);
+        }
+        else
+        {
+            headPos = _tailParent.position - _tailParent.forward * HeadOffset;
+        }
+
+        LineRenderer.SetPosition(1, headPos);
+    }
+
+    private void UpdateHeadPosition(float percent)
+    {
+        Vector3 headPos;
+
+        if (CameraContainer.Instance != null && CameraContainer.Instance.FakeUICamera != null && CameraContainer.Instance.MainCamera != null)
+        {
+            if (_headParent == null || _tailParent == null) return;
+            Vector3 origHeadPos = _headParent.position - _headParent.forward * HeadOffset * percent;
+            Vector3 screenPos = CameraContainer.Instance.FakeUICamera.WorldToScreenPoint(origHeadPos);
+            headPos = CameraContainer.Instance.MainCamera.ScreenToWorldPoint(screenPos);
+        }
+        else
+        {
+            if (_headParent == null) return;
+            headPos = _headParent.position - _headParent.forward * HeadOffset;
+        }
+
+        LineRenderer.SetPosition(0, headPos);
+    }
+
+    private void UpdateTailPosition(float t)
+    {
+        if (_pointList == null || _pointList.Count == 0) return;
+        if (_tailParent == null) return;
+        float idx = t * (_pointList.Count - 1);
+        idx = Mathf.Clamp(idx, 0, _pointList.Count - 1);
+        int idx0 = Mathf.FloorToInt(idx);
+        int idx1 = Mathf.Clamp(idx0 + 1, 0, _pointList.Count - 1);
+        float lerpT = idx - idx0;
+
         idx0 = Mathf.Clamp(idx0, 0, _pointList.Count - 1);
         idx1 = Mathf.Clamp(idx1, 0, _pointList.Count - 1);
         Vector3 tail0 = _tailParent.TransformPoint(_pointList[idx0]);
         Vector3 tail1 = _tailParent.TransformPoint(_pointList[idx1]);
         Vector3 tailPos = Vector3.Lerp(tail0, tail1, lerpT);
-        
+
         LineRenderer.SetPosition(1, tailPos);
     }
 
@@ -154,11 +359,11 @@ public class YarnWoolAnimation : MonoBehaviour
         if (LineRenderer != null)
         {
             InitPropertyBlock();
-            _propertyBlock.SetFloat(T_Utilities.ShaderPropertiesLib.Display, display);
+            _propertyBlock.SetFloat(ShaderPropertiesLib.Display, display);
             LineRenderer.SetPropertyBlock(_propertyBlock);
         }
     }
-    
+
     private void InitPropertyBlock()
     {
         _propertyBlock ??= new MaterialPropertyBlock();

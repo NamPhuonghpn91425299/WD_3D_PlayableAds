@@ -25,6 +25,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AOTex:
+        m_Texture: {fileID: 2800000, guid: d52d64f9a2a53e540bdef6a1e6e66ba0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 8303736468d1a6e489cc7273159476b5, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -46,8 +50,8 @@ Material:
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 792b21ee3b50cee4dbbfe2653f3f009c, type: 3}
-        m_Scale: {x: 0.5, y: 0.5}
+        m_Texture: {fileID: 2800000, guid: 8f74fc4037b40754d820c55c269b412f, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -58,8 +62,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 8303736468d1a6e489cc7273159476b5, type: 3}
-        m_Scale: {x: 0.5, y: 0.5}
+        m_Texture: {fileID: 2800000, guid: f1e8d46d05caab44f86fccd79660607a, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
@@ -71,12 +75,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Ambient: 0.45
-    - _Brightness: 2
+    - _Ambient: 0.4
+    - _Brightness: 3
     - _BumpScale: 0.2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DiffusePower: 0.15
+    - _DiffusePower: 0.5
     - _Display: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -94,7 +98,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.759, b: 0.6667294, a: 1}
+    - _AOColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightDir: {r: 0, g: 0, b: -1, a: 0}
     - _Scale: {r: -0.5, g: 0.5, b: 0, a: 0}

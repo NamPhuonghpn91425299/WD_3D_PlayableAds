@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class Interactable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
+
     public Action<Vector2> OnTap;
     public Action<Vector2> OnHold;
     public Action<Vector2> OnDragAction;
@@ -19,6 +20,7 @@ public class Interactable : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     public float HoldThreshold  = 0.3f;   // Giữ bao lâu thì tính là hold
     public  float   SwipeThreshold = 100f; // Vuốt ít nhất bao xa để tính là swipe
     private Vector2 _lastDragPosition;
+    public Vector2 LastDragPosition => _lastDragPosition;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -49,18 +51,21 @@ public class Interactable : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 
     public void OnDrag(PointerEventData eventData)
     {
+        //if(CoreGameplayManager.Instance.CurrentGameState == GameState.MainMenu) return;
         Vector2 delta = eventData.position - _lastDragPosition;
         _lastDragPosition = eventData.position;
 
         OnDragAction?.Invoke(delta);
     }
 
+    public void UpdateLastDragPosition(Vector2 pos) => _lastDragPosition = pos;
+
     private void Update()
     {
         if (_isHolding)
         {
             _holdTime += Time.deltaTime;
-            if(_holdTime >= HoldThreshold && Vector2.Distance(_startPos, _lastDragPosition) < SwipeThreshold)
+            if(_holdTime >= HoldThreshold && Vector3.Distance(_startPos, _lastDragPosition) < SwipeThreshold)
             {
                 //Hold
                 OnHold?.Invoke(_startPos);
