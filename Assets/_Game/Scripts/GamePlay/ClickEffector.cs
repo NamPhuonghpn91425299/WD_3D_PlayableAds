@@ -16,27 +16,52 @@ public class ClickEffector : MonoBehaviour
     [SerializeField] private float delay = 0.3f;
 
     private Coroutine _playAnimCoroutine;
+    private RectTransform _targetRectTransform;
+    private Canvas _parentCanvas;
 
     private void Awake()
     {
+        _targetRectTransform = targetTransform as RectTransform;
+        _parentCanvas = GetComponentInParent<Canvas>();
         StopAnim();
     }
 
     public void PlayAnim(Action onComplete = null)
     {
+        PlayAnimAtScreenPosition(Input.mousePosition, onComplete);
+    }
+
+    public void PlayAnimAtScreenPosition(Vector2 screenPosition, Action onComplete = null)
+    {
         StopAnim();
+        UpdateEffectPosition(screenPosition);
         _playAnimCoroutine = StartCoroutine(PlayAnimCoroutine(onComplete));
+    }
+
+    private void UpdateEffectPosition(Vector2 screenPosition)
+    {
+        if (_targetRectTransform != null && _parentCanvas != null)
+        {
+            var canvasRect = _parentCanvas.transform as RectTransform;
+            var uiCamera = _parentCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : _parentCanvas.worldCamera;
+
+            if (canvasRect != null && RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPosition, uiCamera, out var localPoint))
+            {
+                _targetRectTransform.anchoredPosition = localPoint;
+                return;
+            }
+        }
+
+        Vector3 worldPos = new Vector3(screenPosition.x, screenPosition.y, 10f);
+        if (ClickEffectManager.Instance != null && ClickEffectManager.Instance.camMain != null)
+        {
+            worldPos = ClickEffectManager.Instance.camMain.ScreenToWorldPoint(worldPos);
+        }
+        targetTransform.position = worldPos;
     }
 
     private IEnumerator PlayAnimCoroutine(Action onComplete)
     {
-        // Lấy vị trí chuột trong world space
-        Vector3 mouseScreenPos = Input.mousePosition;
-        mouseScreenPos.z = 10f; // khoảng cách tới camera, chỉnh theo nhu cầu
-        Vector3 worldPos = ClickEffectManager.Instance.camMain.ScreenToWorldPoint(mouseScreenPos);
-
-        targetTransform.position = worldPos;
-
         if (canvasGroup != null)
             canvasGroup.alpha = 1;
 

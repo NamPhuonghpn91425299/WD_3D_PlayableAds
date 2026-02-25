@@ -24,6 +24,7 @@ public class HandController : MonoBehaviour
     private void Start()
     {
         transform.position = positionHide;
+        
     }
 
     private void OnDisable()

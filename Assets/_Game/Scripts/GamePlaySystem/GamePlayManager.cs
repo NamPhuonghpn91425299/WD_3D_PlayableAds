@@ -16,11 +16,13 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 #endif
 
     public ColorPalleteData_new colorPalleteData;
-
+    [Tooltip("Tham chiếu đến HandController để hiển thị/ẩn hoạt ảnh hướng dẫn.")] [SerializeField]
+    private HandController handController;
     [SerializeField] private int LoseOffer = 1;
     [SerializeField] private LevelConfigSO levelConfigSO;
     [SerializeField] private AddCubeTargetData AddCubeDataSO;
     [SerializeField] private BoosterDataSO broomDataSO;
+
     public Transform ParentObject;
 
     public CameraController CameraController;
@@ -214,7 +216,14 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
     #endregion
 
     #region MAIN_METHODS
-
+    /// <summary>
+    /// Kích hoạt hoặc vô hiệu hóa hoạt ảnh hướng dẫn của bàn tay.
+    /// </summary>
+    /// <param name="isActive">`true` để kích hoạt, `false` để tắt.</param>
+    public void ActiveHandController(bool isActive)
+    {
+        handController.SetActiveAnim(isActive);
+    }
     public void Reset()
     {
         _replayCount = 0;

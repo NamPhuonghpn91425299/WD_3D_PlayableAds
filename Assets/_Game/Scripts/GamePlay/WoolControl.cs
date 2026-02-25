@@ -34,9 +34,6 @@ public class WoolControl : MonoBehaviour
 
     public List<WoolControl> _childWoolControls = new();
 
-
-    public Animator Animator;
-
     public MeshFilter MeshFilter;
 
     [HideInInspector] public bool IsSetColorHightest;
@@ -261,7 +258,7 @@ public class WoolControl : MonoBehaviour
         if (IsQueueFull()) yield break;
         if (!HasValidWoolAnimationState()) yield break;
         if (!GamePlayManager.Instance.OnChoseColor(this, _spiralPath, _currentColor)) yield break;
-
+        GamePlayManager.Instance.ActiveHandController(false);
         _isPlayAnim = true;
 
         try

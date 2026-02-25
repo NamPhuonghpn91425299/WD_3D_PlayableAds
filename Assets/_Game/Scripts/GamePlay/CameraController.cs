@@ -371,7 +371,7 @@ public class CameraController : SingletonBase<CameraController>
             if (HandleFakeUITap(hitFakeUI)) return;
         }
 
-        ClickEffectManager.Instance?.PlayClickEffect(Color.white);
+        ClickEffectManager.Instance?.PlayClickEffect(pos, Color.white);
         TryTap(ray, pos);
     }
 
@@ -400,7 +400,7 @@ public class CameraController : SingletonBase<CameraController>
         {
             if (Physics.Raycast(ray, out RaycastHit directHit))
             {
-                if (HandleDirectHit(directHit)) return;
+                if (HandleDirectHit(directHit, screenPosition)) return;
             }
 
             var wool = FindBestWoolHit(ray, radius);
@@ -416,7 +416,7 @@ public class CameraController : SingletonBase<CameraController>
         }
     }
 
-    private bool HandleDirectHit(RaycastHit hit)
+    private bool HandleDirectHit(RaycastHit hit, Vector2 screenPosition)
     {
         var decor = hit.collider.GetComponent<DecoreControl>();
         if (decor != null && decor.DecoreType == TypeOfDecore.Glass) return true;
@@ -426,7 +426,7 @@ public class CameraController : SingletonBase<CameraController>
         {
             wool.WoolRotation();
             OnHandleTapWoolAction?.Invoke();
-            ClickEffectManager.Instance?.PlayClickEffect(Color.white);
+            ClickEffectManager.Instance?.PlayClickEffect(screenPosition, Color.white);
             return true;
         }
 
@@ -682,7 +682,7 @@ public class CameraController : SingletonBase<CameraController>
                BlockRotation = false;
                _isRecenteringModel = false;
                GameEventManager.SetReCenterButtonInteractable?.Invoke(true);
-            });
+           });
         //modelTransfrom
         //   .DOLocalRotate(modelOriginalEA, 0.5f)
         //   .SetEase(Ease.InOutCubic)
@@ -774,7 +774,7 @@ public class CameraController : SingletonBase<CameraController>
         _mainCamera
            .DOFieldOfView(IntroEndFOV, IntroCameraZoomInDuration)
            .SetEase(Ease.InOutSine);
-
+        GamePlayManager.Instance.ActiveHandController(true);
         yield return new WaitForSeconds(IntroCameraZoomInDuration);
         if (token.IsCancellationRequested) yield break;
 

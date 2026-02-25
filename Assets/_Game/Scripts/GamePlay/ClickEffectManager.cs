@@ -53,12 +53,17 @@ public class ClickEffectManager : SingletonBase<ClickEffectManager>
 
     public void PlayClickEffect(Color color)
     {
+        PlayClickEffect(Input.mousePosition, color);
+    }
+
+    public void PlayClickEffect(Vector2 screenPosition, Color color)
+    {
         var effector = GetAvailableEffector();
         effector.gameObject.SetActive(true);
 
         color = AdjustBrightness(color, BrightnessDifference);
         effector.SetColor(color);
-        effector.PlayAnim(() =>
+        effector.PlayAnimAtScreenPosition(screenPosition, () =>
         {
             effector.gameObject.SetActive(false); // "trả lại" effector
         });
