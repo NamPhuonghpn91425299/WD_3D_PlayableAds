@@ -231,8 +231,8 @@ TextureImporter:
       name: UI_Maincenter_5
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1792
+        x: 1245
+        y: 1788
         width: 256
         height: 256
       alignment: 0
@@ -252,10 +252,10 @@ TextureImporter:
       name: UI_Maincenter_6
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 1792
-        width: 256
-        height: 256
+        x: 1664
+        y: 1785
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: UI_Maincenter_7
       rect:
         serializedVersion: 2
-        x: 1792
-        y: 1792
-        width: 256
-        height: 256
+        x: 1662
+        y: 1920
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,8 +483,8 @@ TextureImporter:
       name: UI_Maincenter_Button6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 474
+        x: 245
+        y: 637
         width: 72
         height: 72
       alignment: 0
@@ -538,48 +538,6 @@ TextureImporter:
       bones: []
       spriteID: 4686eccce60d77149b2f2765960c28be
       internalID: 603325926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Maincenter_16
-      rect:
-        serializedVersion: 2
-        x: 1062
-        y: 1319
-        width: 128
-        height: 140
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 61, y: 58, z: 67, w: 69}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23695ea5268259a4cae7595871983068
-      internalID: 155451907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Maincenter_17
-      rect:
-        serializedVersion: 2
-        x: 927
-        y: 1319
-        width: 128
-        height: 140
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 42, y: 60, z: 38, w: 51}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db0d72eafe4612f41a9420a634cef16c
-      internalID: -834306928
       vertices: []
       indices: 
       edges: []
@@ -693,8 +651,8 @@ TextureImporter:
       name: UI_Maincenter_25
       rect:
         serializedVersion: 2
-        x: 3
-        y: 270
+        x: 340
+        y: 268
         width: 409
         height: 104
       alignment: 0
@@ -1134,8 +1092,8 @@ TextureImporter:
       name: UI_Maincenter_46
       rect:
         serializedVersion: 2
-        x: 929
-        y: 971
+        x: 1149
+        y: 969
         width: 575
         height: 344
       alignment: 0
@@ -1365,8 +1323,8 @@ TextureImporter:
       name: UI_Maincenter_57
       rect:
         serializedVersion: 2
-        x: 0
-        y: 375
+        x: 498
+        y: 390
         width: 488
         height: 91
       alignment: 0
@@ -1470,10 +1428,10 @@ TextureImporter:
       name: UI_Maincenter_62
       rect:
         serializedVersion: 2
-        x: 82
-        y: 475
-        width: 128
-        height: 128
+        x: 0
+        y: 256
+        width: 48
+        height: 296
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1806,10 +1764,10 @@ TextureImporter:
       name: UI_Maincenter_75
       rect:
         serializedVersion: 2
-        x: 210
-        y: 475
-        width: 128
-        height: 128
+        x: 48
+        y: 257
+        width: 48
+        height: 295
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1848,8 +1806,8 @@ TextureImporter:
       name: UI_Maincenter_77
       rect:
         serializedVersion: 2
-        x: 663
-        y: 1250
+        x: 769
+        y: 1280
         width: 256
         height: 256
       alignment: 0
@@ -1932,9 +1890,9 @@ TextureImporter:
       name: UI_Maincenter_81
       rect:
         serializedVersion: 2
-        x: 1326
-        y: 1331
-        width: 138
+        x: 1531
+        y: 1785
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2294,7 +2252,7 @@ TextureImporter:
         width: 117
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

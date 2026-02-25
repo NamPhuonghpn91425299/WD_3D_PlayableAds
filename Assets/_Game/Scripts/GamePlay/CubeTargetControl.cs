@@ -226,7 +226,7 @@ public class CubeTargetControl : MonoBehaviour
         ChangeColor();
         if (indexCube != -1) m_boxAnimator?.FlyIn();
 
-        //if (this.IsActive) SoundManager.Instance?.PlayOneShot("box_whoosh");
+        if (this.IsActive) SoundManager.Instance?.PlayOneShot("box_whoosh");
 
 
         //SetACtiveVacuumCleanerAnimation(false);
