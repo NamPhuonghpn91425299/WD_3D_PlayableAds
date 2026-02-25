@@ -22,11 +22,11 @@ public class LevelConfigSO : ScriptableObject
         if (index >= 0 && index < levelConfigDataList.Count)
         {
             var data = levelConfigDataList[index];
-            Debug.Log($"[LevelConfigSO] Mapping Level {originalId} -> Index {index} (LevelID in data: {data.Level}). Prefab: {data.MainPrefabPath}");
+            ///Debug.Log($"[LevelConfigSO] Mapping Level {originalId} -> Index {index} (LevelID in data: {data.Level}). Prefab: {data.MainPrefabPath}");
             return data;
         }
         
-        Debug.LogError($"[LevelConfigSO] Level {originalId} (mapped to index {index}) NOT FOUND! List count: {levelConfigDataList.Count}");
+        //Debug.LogError($"[LevelConfigSO] Level {originalId} (mapped to index {index}) NOT FOUND! List count: {levelConfigDataList.Count}");
         return null;
     }
 

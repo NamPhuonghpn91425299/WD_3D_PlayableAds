@@ -257,7 +257,7 @@ public class CameraController : SingletonBase<CameraController>
         }
         catch { }
 
-        Debug.Log($"Camera reset completed: Position={_mainCamera.transform.position}, Rotation={_mainCamera.transform.rotation.eulerAngles}, FOV={_mainCamera.fieldOfView}");
+        //Debug.Log($"Camera reset completed: Position={_mainCamera.transform.position}, Rotation={_mainCamera.transform.rotation.eulerAngles}, FOV={_mainCamera.fieldOfView}");
     }
 
     public void ResetCameraStateMainMenu()

@@ -215,7 +215,7 @@ public partial class GamePlayManager
         //    .transform
         //    .DOMove(_displayPosWoolBasket, 1.2f)
         //    .SetEase(Ease.OutBounce);
-        GamePlayUIManager.Instance?.ActiveWoolBasket(true);
+        GamePlayUIManager.Instance.ActiveWoolBasket(true);
         _isUseBroomBooster = true;
         List<QueueTargetControl> QueueTargets = new();
         foreach (var queue in this.CurrentQueueTargets)
@@ -237,7 +237,6 @@ public partial class GamePlayManager
             _broomBoosterPool.Add(rollWoolAnimator);
             rollWoolChild.SetParent(null);
             var startPos = rollWoolChild.position;
-            if (GamePlayUIManager.Instance == null) yield break;
             var endPos = GetUIWorldPosition(GamePlayUIManager.Instance.WoolBasket);
             var midPos = (startPos + endPos) * 0.5f + Vector3.up * 0.5f;
             rollWoolChild.DOKill();

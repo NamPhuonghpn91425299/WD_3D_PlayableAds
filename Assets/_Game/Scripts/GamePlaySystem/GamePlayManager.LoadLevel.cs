@@ -56,7 +56,7 @@ public partial class GamePlayManager
             yield break;
         }
 
-        Debug.Log($"[LoadNewLevel] Loading Level {levelToLoad} using Prefab: {configData.MainPrefabPath} from {levelConfigSO.name}");
+        //Debug.Log($"[LoadNewLevel] Loading Level {levelToLoad} using Prefab: {configData.MainPrefabPath} from {levelConfigSO.name}");
         _replayCount = 0;
 
         yield return ReLoadLevel();
@@ -82,7 +82,7 @@ public partial class GamePlayManager
         var configData = levelConfigSO.GetLevelConfigData(CurrentLevelIndex);
         if (configData != null)
         {
-            Debug.Log($"[LoadLevel] Starting load for Level {CurrentLevelIndex} using Prefab: {configData.MainPrefabPath} from asset [{levelConfigSO.name}]");
+            //Debug.Log($"[LoadLevel] Starting load for Level {CurrentLevelIndex} using Prefab: {configData.MainPrefabPath} from asset [{levelConfigSO.name}]");
         }
 
         yield return StartCoroutine(LoadAsyncLevelCoroutine(CurrentLevelIndex));
@@ -184,20 +184,20 @@ public partial class GamePlayManager
         GameEventManager.OnInstanceNewLevel?.Invoke();
 
         // Load prefab từ Resources_moved folder (dùng AssetDatabase cho Editor, Resources cho Build)
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         string prefabPath = $"Assets/_Game/Resources_moved/Levels/{System.IO.Path.GetFileName(_currentLevelConfigData.MainPrefabPath)}.prefab";
         var prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
         if (prefab == null)
         {
             Debug.LogError($"[LoadAsyncLevel] Prefab NOT FOUND at path: {prefabPath}. Check if the file exists or if the MainPrefabPath in LevelConfig is correct.");
         }
-        #else
+#else
         var prefab = Resources.Load<GameObject>(_currentLevelConfigData.MainPrefabPath);
         if (prefab == null)
         {
             Debug.LogError($"[LoadAsyncLevel] Prefab NOT FOUND in Resources: {_currentLevelConfigData.MainPrefabPath}");
         }
-        #endif
+#endif
         if (prefab != null)
         {
             Debug.Log($"[LoadAsyncLevel] Spawning prefab: {prefab.name}");

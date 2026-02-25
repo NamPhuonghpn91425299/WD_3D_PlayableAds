@@ -126,7 +126,7 @@ public class BoxChainReactionController : SingletonBase<BoxChainReactionControll
         // Create a new box that will fly in
         var newBox = CreateBox();
         //if (soundData?.GetAudioClip("booster1_whoosh") != null) GameAudioManager.Instance.PlayOneShot(soundData?.GetAudioClip("booster1_whoosh"), soundData?.GetSoundVolume("booster1_whoosh") ?? 0 );
-        //SoundManager.Instance.PlayOneShot("booster1_whoosh");
+        SoundManager.Instance.PlayOneShot("booster1_whoosh");
         Debug.Log("Playing sound booster1_whoosh");
         // Calculate positions with dynamic spacing
         CalculatePositions(out List<Vector3> oldPositions, out List<Vector3> newPositions);

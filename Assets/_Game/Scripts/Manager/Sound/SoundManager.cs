@@ -7,6 +7,7 @@ using UnityEngine.Audio;
 
 public class SoundManager : SingletonBase<SoundManager>
 {
+    [SerializeField] private SoundSO soundData;
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] private AudioSource fxMusicSource;
     [SerializeField] private AudioSource specialBgmSource;
@@ -155,7 +156,11 @@ public class SoundManager : SingletonBase<SoundManager>
     {
         fxMusicSource.PlayOneShot(clip, volume);
     }
-
+    public void PlayOneShot(string clipName)
+    {
+        if (soundData.GetAudioClip(clipName) == null) return;
+        fxMusicSource.PlayOneShot(soundData.GetAudioClip(clipName), soundData.GetSoundVolume(clipName));
+    }
     public void PlayOneShotDelayed(AudioClip clip, float delay, float volume = 1f)
     {
         StartCoroutine(PlayDelayed(clip, delay, volume));

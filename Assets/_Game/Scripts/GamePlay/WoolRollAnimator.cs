@@ -252,13 +252,13 @@ public class WoolRollAnimator : MonoBehaviour, IPoolObject
         {
             DefaultLocalPosition = DefaultLocalPositionInQueue;
             //if (soundData.GetAudioClip("wool_click2") != null) GameAudioManager.Instance.PlayOneShot(soundData.GetAudioClip("wool_click2"), soundData.GetSoundVolume("wool_click2"));
-            //SoundManager.Instance.PlayOneShot("wool_click2");
+            SoundManager.Instance.PlayOneShot("wool_click2");
         }
         else
         {
             DefaultLocalPosition = DefaultLocalPositionInTarget;
             //if (soundData.GetAudioClip("wool_click1") != null) GameAudioManager.Instance.PlayOneShot(soundData.GetAudioClip("wool_click1"), soundData.GetSoundVolume("wool_click1"));
-            //SoundManager.Instance.PlayOneShot("wool_click1");
+            SoundManager.Instance.PlayOneShot("wool_click1");
         }
         if(_isPopToBroomPool) yield break;
         SnapToHole();

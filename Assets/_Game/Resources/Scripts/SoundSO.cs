@@ -18,7 +18,7 @@ public class SoundSO : ScriptableObject
             else soundDict.Add(sound.clipName, sound);
         }
     }
-
+    
     public AudioClip GetAudioClip(string soundName)
     {
         return soundDict.ContainsKey(soundName) ? soundDict[soundName].Clip : null;

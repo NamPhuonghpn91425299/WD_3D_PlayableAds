@@ -321,7 +321,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         MeshCountClick++;
         GameEventManager.OnMeshCountClickChange?.Invoke();
         //if (soundDict.GetAudioClip("wool_xoay") != null) GameAudioManager.Instance.PlayOneShot(soundDict.GetAudioClip("wool_xoay"), soundDict.GetSoundVolume("wool_xoay"));
-        //SoundManager.Instance.PlayOneShot("wool_xoay");
+        SoundManager.Instance.PlayOneShot("wool_xoay");
         Debug.Log("Play sound wool_xoay");
         if (CheckChosenColorInCubeTarget(startPoint.transform, spiralPath, colorClick)) return true;
 
@@ -403,7 +403,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
                             var anim = rollWool.GetComponent<WoolRollAnimator>();
                             anim.SetParentType(RollWoolAnimationExtensions.ParentType.CubeTarget);
                             rollWool.SnapToHole();
-                            //SoundManager.Instance.PlayOneShot("wool1");
+                            SoundManager.Instance.PlayOneShot("wool1");
                             Debug.Log("Play sound wool1");
 
                         }
@@ -414,7 +414,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
             }
         }
 
-        if (_broomBoosterPool.Count == 0 && GamePlayUIManager.Instance != null)
+        if (_broomBoosterPool.Count == 0)
         {
             GamePlayUIManager.Instance.ActiveWoolBasket(false);
         }
@@ -461,7 +461,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
                     .OnComplete(() =>
                         {
                             anim.SnapToHole();
-                            //SoundManager.Instance.PlayOneShot("wool1");
+                            SoundManager.Instance.PlayOneShot("wool1");
                             Debug.Log("Play sound wool1");
                         }
                     ).OnStart(() =>
@@ -549,7 +549,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
             _originalCameraFOV = mainCamera.fieldOfView;
             _cameraStatesSaved = true;
 
-            Debug.Log($"Camera states saved: Position={_originalCameraPosition}, Rotation={_originalCameraRotation.eulerAngles}, FOV={_originalCameraFOV}");
+            //Debug.Log($"Camera states saved: Position={_originalCameraPosition}, Rotation={_originalCameraRotation.eulerAngles}, FOV={_originalCameraFOV}");
         }
     }
 
@@ -563,7 +563,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         Camera mainCamera = CameraContainer.Instance?.MainCamera;
         if (mainCamera == null) return;
 
-        Debug.Log($"Restoring camera to original states: Position={_originalCameraPosition}, Rotation={_originalCameraRotation.eulerAngles}, FOV={_originalCameraFOV}");
+        //Debug.Log($"Restoring camera to original states: Position={_originalCameraPosition}, Rotation={_originalCameraRotation.eulerAngles}, FOV={_originalCameraFOV}");
 
         // Tạo sequence để restore camera một cách mượt mà
         Sequence restoreSequence = DOTween.Sequence();
@@ -589,7 +589,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 
         restoreSequence.OnComplete(() =>
         {
-            Debug.Log($"Camera restoration completed. Final Position: {mainCamera.transform.position}, Rotation: {mainCamera.transform.rotation.eulerAngles}, FOV: {mainCamera.fieldOfView}");
+            //Debug.Log($"Camera restoration completed. Final Position: {mainCamera.transform.position}, Rotation: {mainCamera.transform.rotation.eulerAngles}, FOV: {mainCamera.fieldOfView}");
         });
     }
 
@@ -735,7 +735,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
                 Debug.LogError($"[GamePlayManager] PopFromPool returned object [{rollWool.name}] WITHOUT WoolRollAnimator in Queue (even in children!). Root components: {allComponents}. Prefab: {RollWoolPrefab.name}");
                 continue;
             }
-            
+
             rollWool.transform.SetParent(queue.transform, true);
             queue.SetWoolRollAnimator(rollWoolAnimator);
             rollWoolAnimator
@@ -794,14 +794,14 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
             }
             return;
         }
-        
+
         if (colorPalleteData == null)
         {
             Debug.LogError("[GamePlayManager] colorPalleteData is NULL!");
             return;
         }
 
-        if (string.IsNullOrEmpty(color) || !colorPalleteData.colorPallete_New.TryGetValue(color, out var mat)) 
+        if (string.IsNullOrEmpty(color) || !colorPalleteData.colorPallete_New.TryGetValue(color, out var mat))
         {
             // If color is null/empty during pre-warm, it's expected if we use null for logic.
             // But if isUse is true, we need a color.
@@ -827,7 +827,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         {
             // Pre-warm YarnWool
             ChoseYarnWool(null, null, null, null, false, false);
-            
+
             // Pre-warm RollWool
             var rollWool = GenericObjectPool.Instance.PopFromPool(RollWoolPrefab, instantiateIfNone: true);
             var animator = rollWool.GetComponentInChildren<WoolRollAnimator>();
@@ -874,26 +874,6 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
     {
         Debug.Log("ShowPopupOfferEndGame");
     }
-
-    // private void ShowPopupKeepPlaying()
-    // {
-    //     if (FirebaseManager.Instance.GetRemoteOffHeartSystemValue())
-    //     {
-    //         StartCoroutine(ShowPopupEndGame());
-    //         return;
-    //     }
-    //     if (HeartManager.Instance.IsInfiniteHeart())
-    //     {
-    //         StartCoroutine(ShowPopupEndGame());
-    //         return;
-    //     }
-
-    //     var popupData = new PopupKeepPlayingData()
-    //     {
-    //         ContinueAction = ShowPopupEndGame
-    //     };
-    //     StartCoroutine(CoroutineBridge.WaitFor(UILayerManager.Instance.ShowPopupKeepPlaying(popupData)));
-    // }
 
     private IEnumerator ShowPopupEndGame()
     {
