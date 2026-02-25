@@ -40,16 +40,4 @@ MonoBehaviour:
   - clipName: redo_wool
     Clip: {fileID: 8300000, guid: 620356647ed871043aa69beebd60064e, type: 3}
     Volume: 1
-  - clipName: booster1_whoosh
-    Clip: {fileID: 8300000, guid: dcd7230a4a4f74b478eee7f852f1e77f, type: 3}
-    Volume: 1
-  - clipName: booster1_impact
-    Clip: {fileID: 8300000, guid: 11f8c230cfbd2e547a5e46d539948ad3, type: 3}
-    Volume: 1
-  - clipName: booster2_sweep
-    Clip: {fileID: 8300000, guid: b69b15090b32dfc4193c8e4f1824124c, type: 3}
-    Volume: 1
-  - clipName: booster2_drop
-    Clip: {fileID: 8300000, guid: e675ae7041b8a5848b53391d02898e33, type: 3}
-    Volume: 1
   enableDebugLog: 0

@@ -309,7 +309,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74968777
 MonoBehaviour:
@@ -1281,7 +1281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -300}
+  m_AnchoredPosition: {x: 0, y: -450}
   m_SizeDelta: {x: 1024, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355756577
@@ -2428,7 +2428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 563}
+  m_AnchoredPosition: {x: 0, y: 450}
   m_SizeDelta: {x: 400, y: 172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549197479
@@ -2710,7 +2710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -850}
+  m_AnchoredPosition: {x: 0, y: -1000}
   m_SizeDelta: {x: 477.9753, y: 484.0492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812996193
@@ -3038,7 +3038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -300}
+  m_AnchoredPosition: {x: 0, y: -450}
   m_SizeDelta: {x: 1024, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &977652064
@@ -3303,7 +3303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 563}
+  m_AnchoredPosition: {x: 0, y: 450}
   m_SizeDelta: {x: 400, y: 172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136375244
@@ -3676,7 +3676,7 @@ Transform:
   m_GameObject: {fileID: 1266501309}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.8, z: -4.5}
+  m_LocalPosition: {x: 0, y: 4, z: -4.5}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8669,7 +8669,7 @@ Transform:
   m_GameObject: {fileID: 1374435472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.6, z: -5}
+  m_LocalPosition: {x: 0, y: 2.8, z: -5}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9356,9 +9356,9 @@ RectTransform:
   - {fileID: 849676485}
   m_Father: {fileID: 197102499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 443, y: 960}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 886, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1405606722
@@ -9752,7 +9752,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1568773703
 MonoBehaviour:
@@ -10225,7 +10225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -850}
+  m_AnchoredPosition: {x: 0, y: -1000}
   m_SizeDelta: {x: 477.9753, y: 484.0492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768382358
@@ -10361,7 +10361,7 @@ GameObject:
   - component: {fileID: 1797259881}
   - component: {fileID: 1797259884}
   m_Layer: 0
-  m_Name: GamePlaySystem
+  m_Name: GamePlayManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10511,7 +10511,7 @@ MonoBehaviour:
   colorPalleteData: {fileID: 11400000, guid: 37b34e5668136f442998ee62ff0b08f5, type: 2}
   handController: {fileID: 1673621352}
   LoseOffer: 1
-  levelConfigSO: {fileID: 11400000, guid: ba86fba62bf944d4db47bdbd08eb6528, type: 2}
+  levelConfigSO: {fileID: 11400000, guid: 51ea234f9cc603446abab1f4700ad31d, type: 2}
   AddCubeDataSO: {fileID: 11400000, guid: abcaa88e84e135e419664611844b2e02, type: 2}
   broomDataSO: {fileID: 11400000, guid: c88dead6f7dbf024fa2d755e8d23e15e, type: 2}
   ParentObject: {fileID: 935084528}
@@ -10539,7 +10539,7 @@ MonoBehaviour:
   IsWaitingForFakeLoading: 0
   IsEndGame: 0
   IsRainBowBoosterTut: 0
-  CurrentLevelIndex: 18
+  CurrentLevelIndex: 1
   spacingCubeTarget: 0.8
   IsBroomTut: 0
   IsUsingBroom: 0

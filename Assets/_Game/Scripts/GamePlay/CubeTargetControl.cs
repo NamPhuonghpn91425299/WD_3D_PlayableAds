@@ -103,7 +103,7 @@ public class CubeTargetControl : MonoBehaviour
         child = TargetChildren[_indexChild];
         if (_indexChild + 1 == TotalChild)
         {
-        StartCoroutine(WaitingAnim(indexCube));
+            StartCoroutine(WaitingAnim(indexCube));
         }
         if (child != null)
             _indexChild++;
@@ -226,7 +226,7 @@ public class CubeTargetControl : MonoBehaviour
         ChangeColor();
         if (indexCube != -1) m_boxAnimator?.FlyIn();
 
-        if (this.IsActive) SoundManager.Instance?.PlayOneShot("box_whoosh");
+        SoundManager.Instance?.PlayOneShot("box_whoosh");
 
 
         //SetACtiveVacuumCleanerAnimation(false);

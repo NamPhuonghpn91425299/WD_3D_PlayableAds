@@ -19,9 +19,6 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
 
     private Coroutine _rotationCoroutine;
 
-    private float _currentFOV;
-    private float _baseWidth;
-
     public GameObject Prefab { get; set; }
 
     public void OnPushToPool()
@@ -35,13 +32,6 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
 
     private void Awake()
     {
-        GameEventManager.ChangeCameraFOVThroughButton += OnChangeFOVCamera;
-        if (CameraContainer.Instance != null && CameraContainer.Instance.MainCamera != null)
-        {
-            _currentFOV = CameraContainer.Instance.MainCamera.fieldOfView;
-        }
-        _baseWidth = LineRenderer.startWidth;
-        OnChangeFOVCamera(0);
     }
 
     private void OnDisable()
@@ -65,7 +55,6 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
 
     private void OnDestroy() 
     { 
-        GameEventManager.ChangeCameraFOVThroughButton -= OnChangeFOVCamera; 
         GameEventManager.OnLoadLevelDone -= OnCancelCoroutine;
     }
 
@@ -150,18 +139,6 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
         _tailParent = null;
         LineRenderer.enabled = false;
         StopRotationCoroutine();
-    }
-
-    private void OnChangeFOVCamera(float fov)
-    {
-        if (CameraContainer.Instance != null && CameraContainer.Instance.MainCamera != null)
-        {
-            _currentFOV = CameraContainer.Instance.MainCamera.fieldOfView;
-            float fovRatio = _currentFOV / ZoomCameraData.MainMenuFOV;
-            float adjustedWidth = _baseWidth * fovRatio;
-            LineRenderer.startWidth = adjustedWidth;
-            LineRenderer.endWidth = adjustedWidth;
-        }
     }
 
     private IEnumerator AsyncWoolRotationCoroutine()
