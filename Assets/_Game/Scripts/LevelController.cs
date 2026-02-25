@@ -98,16 +98,47 @@ public class LevelController : MonoBehaviour
 
     public void InitData(LevelConfigData levelData)
     {
+        if (levelData == null)
+        {
+            TotalColor = 0;
+            Debug.LogError($"[LevelController] InitData failed on {name}: levelData is null.");
+            return;
+        }
+
         _LevelData = levelData;
         var totalColor = 0;
+        int matchedById = 0;
+        int matchedByIndex = 0;
+        int unmatched = 0;
+
+        var woolPropertiesList = levelData.WoolPropertiesList;
         var woolCount = WoolControls.Count;
         for (int i = 0; i < woolCount; i++)
         {
             var woolControl = WoolControls[i];
             if (woolControl == null) continue;
-            var woolProperties = levelData.WoolPropertiesList.FirstOrDefault(x => x.WoolId == woolControl.WoolID);
 
-            if (woolProperties == null) continue;
+            WoolProperties woolProperties = null;
+            if (woolPropertiesList != null)
+            {
+                woolProperties = woolPropertiesList.FirstOrDefault(x => x.WoolId == woolControl.WoolID);
+            }
+
+            if (woolProperties != null)
+            {
+                matchedById++;
+            }
+            else if (woolPropertiesList != null && i < woolPropertiesList.Count)
+            {
+                // Fallback for legacy/misaligned data where WoolID in prefab is not populated.
+                woolProperties = woolPropertiesList[i];
+                matchedByIndex++;
+            }
+            else
+            {
+                unmatched++;
+                continue;
+            }
 
             if (woolControl == null) continue;
             woolControl.SetActiveDecor(woolProperties.ActiveState);
@@ -118,6 +149,11 @@ public class LevelController : MonoBehaviour
             woolControl.InitMesh();
         }
         TotalColor = totalColor;
+        Debug.Log($"Level {LevelId} initialized with total color: {TotalColor} (matchedById={matchedById}, matchedByIndex={matchedByIndex}, unmatched={unmatched})");
+        if (matchedByIndex > 0 || unmatched > 0 || TotalColor == 0)
+        {
+            Debug.LogWarning($"[LevelController] Data mapping warning on {name}: TotalColor={TotalColor}, WoolControls={woolCount}, WoolProperties={(woolPropertiesList?.Count ?? 0)}");
+        }
     }
 
     #endregion

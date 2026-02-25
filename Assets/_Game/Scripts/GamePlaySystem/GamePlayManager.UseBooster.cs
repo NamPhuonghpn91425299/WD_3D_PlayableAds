@@ -207,61 +207,61 @@ public partial class GamePlayManager
     public IEnumerator UseBroomBoosterCleanUpQueue()
     {
         yield return null;
-        IsUsingBroom = true;
-        //GamePlayUIManager.Instance.SetBroomBoosterInteractable(true);
-        //GamePlayUIManager.Instance.SetRedoBoosterInteractable(true);
-        // WoolBasket.transform.DOKill();
-        // WoolBasket
-        //    .transform
-        //    .DOMove(_displayPosWoolBasket, 1.2f)
-        //    .SetEase(Ease.OutBounce);
-        GamePlayUIManager.Instance.ActiveWoolBasket(true);
-        _isUseBroomBooster = true;
-        List<QueueTargetControl> QueueTargets = new();
-        foreach (var queue in this.CurrentQueueTargets)
-        {
-            if (!queue.IsAtive()) continue;
-            QueueTargets.Add(queue);
-        }
-        //SoundManager.Instance.PlayOneShotDelayed("sfx_meobay", 0.5f);
+        // IsUsingBroom = true;
+        // //GamePlayUIManager.Instance.SetBroomBoosterInteractable(true);
+        // //GamePlayUIManager.Instance.SetRedoBoosterInteractable(true);
+        // // WoolBasket.transform.DOKill();
+        // // WoolBasket
+        // //    .transform
+        // //    .DOMove(_displayPosWoolBasket, 1.2f)
+        // //    .SetEase(Ease.OutBounce);
+        // GamePlayUIManager.Instance.ActiveWoolBasket(true);
+        // _isUseBroomBooster = true;
+        // List<QueueTargetControl> QueueTargets = new();
+        // foreach (var queue in this.CurrentQueueTargets)
+        // {
+        //     if (!queue.IsAtive()) continue;
+        //     QueueTargets.Add(queue);
+        // }
+        // //SoundManager.Instance.PlayOneShotDelayed("sfx_meobay", 0.5f);
 
-        yield return new WaitForSeconds(_waitTimeCatFly);
-        GameEventManager.PlayAnimPreLose?.Invoke(false);
-        foreach (var queue in QueueTargets)
-        {
-            if (!queue.IsAtive() || !queue.IsHasWoolRool() || queue.IsReDo()) continue;
-            var rollWoolChild = queue.transform.GetChild(2);
-            _scaleDefaultRollWool = rollWoolChild.lossyScale;
-            var rollWoolAnimator = rollWoolChild.GetComponent<WoolRollAnimator>();
-            rollWoolAnimator._isPopToBroomPool = true;
-            _broomBoosterPool.Add(rollWoolAnimator);
-            rollWoolChild.SetParent(null);
-            var startPos = rollWoolChild.position;
-            var endPos = GetUIWorldPosition(GamePlayUIManager.Instance.WoolBasket);
-            var midPos = (startPos + endPos) * 0.5f + Vector3.up * 0.5f;
-            rollWoolChild.DOKill();
-            rollWoolChild
-               .DOPath(new[]
-                       {
-                           rollWoolChild.position,
-                           midPos,
-                           endPos
-                       }, 0.6f, PathType.CatmullRom
-                    )
-               .SetEase(Ease.OutCubic)
-               .OnComplete(() =>
-                        {
-                            rollWoolChild.DOKill();
-                            rollWoolChild.DOScale(Vector3.zero, 0.3f);
-                        }
-                    );
-            queue.ResetDefault();
-            _queueCount--;
-        }
-        yield return null;
-        _isUseBroomBooster = false;
-        IsUsingBroom = false;
-        IsBroomBoosterTutorial = false;
+        // yield return new WaitForSeconds(_waitTimeCatFly);
+        // GameEventManager.PlayAnimPreLose?.Invoke(false);
+        // foreach (var queue in QueueTargets)
+        // {
+        //     if (!queue.IsAtive() || !queue.IsHasWoolRool() || queue.IsReDo()) continue;
+        //     var rollWoolChild = queue.transform.GetChild(2);
+        //     _scaleDefaultRollWool = rollWoolChild.lossyScale;
+        //     var rollWoolAnimator = rollWoolChild.GetComponent<WoolRollAnimator>();
+        //     rollWoolAnimator._isPopToBroomPool = true;
+        //     _broomBoosterPool.Add(rollWoolAnimator);
+        //     rollWoolChild.SetParent(null);
+        //     var startPos = rollWoolChild.position;
+        //     var endPos = GetUIWorldPosition(GamePlayUIManager.Instance.WoolBasket);
+        //     var midPos = (startPos + endPos) * 0.5f + Vector3.up * 0.5f;
+        //     rollWoolChild.DOKill();
+        //     rollWoolChild
+        //        .DOPath(new[]
+        //                {
+        //                    rollWoolChild.position,
+        //                    midPos,
+        //                    endPos
+        //                }, 0.6f, PathType.CatmullRom
+        //             )
+        //        .SetEase(Ease.OutCubic)
+        //        .OnComplete(() =>
+        //                 {
+        //                     rollWoolChild.DOKill();
+        //                     rollWoolChild.DOScale(Vector3.zero, 0.3f);
+        //                 }
+        //             );
+        //     queue.ResetDefault();
+        //     _queueCount--;
+        // }
+        // yield return null;
+        // _isUseBroomBooster = false;
+        // IsUsingBroom = false;
+        // IsBroomBoosterTutorial = false;
     }
 
     #endregion
@@ -323,7 +323,7 @@ public partial class GamePlayManager
         var rollColor = colorPalleteData.colorPallete_New[rollWool._currentColor];
         ChoseYarnWool(rollWool._woolRedo.transform, rollWool.transform, rollWool._woolRedo.GetSpiralPath(), rollWool._currentColor, true);
         rollWool._woolRedo.ReFillMesh(rollWool._currentColor);
-        
+
         //SoundManager.Instance.PlayOneShot("redo_wool");
 
         rollWool.PlayAnimRedo();

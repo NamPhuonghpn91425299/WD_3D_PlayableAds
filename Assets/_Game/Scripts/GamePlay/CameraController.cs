@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using DG.Tweening;
+using System.Threading;
 using UnityEngine;
 
 public class CameraController : SingletonBase<CameraController>
@@ -109,6 +109,7 @@ public class CameraController : SingletonBase<CameraController>
     private Touch secondTouch;
     private int firstTouchID = 0;
     private int secondTouchID = 0;
+    private CancellationTokenSource _cts;
     private bool cameraForZoomReady = false;
     private bool isZooming = false;
     private float targetFOV;
@@ -120,8 +121,9 @@ public class CameraController : SingletonBase<CameraController>
     private bool BlockHandTap;
     private bool _blockHold;
     private bool _blockDrag;
+    private bool _isRecenteringModel;
     private Vector3 LocalScaleBackGroundDefault = new(60f, 60f, 1);
-    private CancellationTokenSource _cts;
+
     private bool _introEnded = true;
     public float _introTimer = 0f;
     private RaycastHit[] hits = new RaycastHit[5];
@@ -265,7 +267,7 @@ public class CameraController : SingletonBase<CameraController>
         if (!_mainCamera || !ZoomCameraData || !BackGround) return;
         _mainCamera.fieldOfView = ZoomCameraData.MainMenuFOV;
         BackGround.localScale = LocalScaleBackGroundDefault;
-        //GamePlayUIManager.Instance?.ChangeValueZoom(_mainCamera.fieldOfView);
+        GamePlayUIManager.Instance?.ChangeValueZoomNoNotify(_mainCamera.fieldOfView);
 
     }
 
@@ -663,6 +665,11 @@ public class CameraController : SingletonBase<CameraController>
 
     private void ReCenterModel()
     {
+        if (_isRecenteringModel) return;
+        if (SpawnPoint == null) return;
+
+        _isRecenteringModel = true;
+        GameEventManager.SetReCenterButtonInteractable?.Invoke(false);
         _timeIdle = TimeAFKToAutoRotation;
         BlockRotation = true;
         SpawnPoint
@@ -673,7 +680,9 @@ public class CameraController : SingletonBase<CameraController>
                SpawnPoint.rotation = Quaternion.identity;
                targetRotation = SpawnPoint.rotation;
                BlockRotation = false;
-           });
+               _isRecenteringModel = false;
+               GameEventManager.SetReCenterButtonInteractable?.Invoke(true);
+            });
         //modelTransfrom
         //   .DOLocalRotate(modelOriginalEA, 0.5f)
         //   .SetEase(Ease.InOutCubic)

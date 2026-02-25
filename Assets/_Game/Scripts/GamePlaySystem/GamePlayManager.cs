@@ -128,7 +128,10 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 
 
     #region UNITY_METHODS
+    void OnEnable()
+    {
 
+    }
     private void Start()
     {
         GameEventManager.ShowPopupOfferEndGame += ShowPopupOfferEndGame;
@@ -164,17 +167,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 
     private void GetCutOuts()
     {
-        // if (Screen.cutouts.Length > 0) // a.k.a has rabbit ears
-        // {
-        // }
-        // else
-        // {
-        //     cubeTargetParent.position = CubeTargetDefaultPos;
-        //     queueTargetParent.position = QueueTargetDefaultPos;
-        // }
-        var levelProgressPos = GetUIWorldPosition(GamePlayUIManager.Instance?.levelProgress);
-        //cubeTargetParent.position = new Vector3(0, levelProgressPos.y - deltaCubeWhenRabitEars, -4.5f);
-        queueTargetParent.position = new Vector3(0, levelProgressPos.y - deltaQueueWhenRabitEars, -5);
+
     }
 
     public float GetHeightOfQueue => queueTargetParent.position.y;

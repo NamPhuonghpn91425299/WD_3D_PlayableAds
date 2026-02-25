@@ -84,26 +84,45 @@ public class WoolControl : MonoBehaviour
     #endregion
 
 #if UNITY_EDITOR
+    private bool _editorMeshSyncScheduled;
+
     private void OnValidate()
     {
         TopMeshRenderer ??= GetComponent<MeshRenderer>();
         HideMeshRenderer ??= transform.GetChild(0).GetComponent<MeshRenderer>();
         MeshCollider ??= GetComponent<MeshCollider>();
+        bool sameMesh = HideMeshRenderer != null && HideMeshRenderer == TopMeshRenderer;
+        if (sameMesh) HideMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+
+        // Avoid assigning sharedMesh directly inside OnValidate, Unity can throw
+        // "SendMessage cannot be called during ... OnValidate".
+        ScheduleEditorMeshSync();
+
+        EditorUtility.SetDirty(this);
+    }
+
+    private void ScheduleEditorMeshSync()
+    {
+        if (_editorMeshSyncScheduled) return;
+        _editorMeshSyncScheduled = true;
+        EditorApplication.delayCall += DelayedEditorMeshSync;
+    }
+
+    private void DelayedEditorMeshSync()
+    {
+        _editorMeshSyncScheduled = false;
+        if (this == null) return;
         if (MeshFilter == null || MeshFilter.sharedMesh == null) return;
+
         if (MeshCollider is MeshCollider meshCol)
         {
             meshCol.sharedMesh = MeshFilter.sharedMesh;
         }
 
-        bool sameMesh = HideMeshRenderer != null && HideMeshRenderer == TopMeshRenderer;
-        if (sameMesh) HideMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
-
         if (HideMeshRenderer != null && HideMeshRenderer.TryGetComponent<MeshFilter>(out var childFilter))
         {
             childFilter.sharedMesh = MeshFilter.sharedMesh;
         }
-
-        EditorUtility.SetDirty(this);
     }
 #endif
 

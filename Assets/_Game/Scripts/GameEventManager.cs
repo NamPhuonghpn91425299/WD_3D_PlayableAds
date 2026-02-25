@@ -68,6 +68,7 @@ public static class GameEventManager
 
     public static Action<float> ChangeCameraFOVThroughButton;
     public static Action        ReCenterModelThroughButton;
+    public static Action<bool>  SetReCenterButtonInteractable;
 
     #endregion
 

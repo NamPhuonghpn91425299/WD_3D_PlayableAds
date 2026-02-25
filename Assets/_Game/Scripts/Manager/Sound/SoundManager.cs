@@ -8,6 +8,8 @@ using UnityEngine.Audio;
 public class SoundManager : SingletonBase<SoundManager>
 {
     [SerializeField] private SoundSO soundData;
+    [SerializeField] private bool enableSoundDebugLog = true;
+    [SerializeField] private string fallbackSoundSoPath = "ScriptableObjects/GameSoundSO";
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] private AudioSource fxMusicSource;
     [SerializeField] private AudioSource specialBgmSource;
@@ -16,6 +18,7 @@ public class SoundManager : SingletonBase<SoundManager>
 
     private void Start()
     {
+        EnsureSoundData();
         isPlayBgmOnStart = true;
 
         // Đảm bảo BGM AudioSource không tự động phát
@@ -144,6 +147,7 @@ public class SoundManager : SingletonBase<SoundManager>
     /// <param name="clip"></param>
     public void PlayOneShotFx(AudioClip clip)
     {
+        if (fxMusicSource == null || clip == null) return;
         fxMusicSource.PlayOneShot(clip);
     }
 
@@ -154,12 +158,46 @@ public class SoundManager : SingletonBase<SoundManager>
     /// <param name="volume"></param>
     public void PlayOneShot(AudioClip clip, float volume = 1f)
     {
+        if (fxMusicSource == null || clip == null) return;
         fxMusicSource.PlayOneShot(clip, volume);
     }
     public void PlayOneShot(string clipName)
     {
-        if (soundData.GetAudioClip(clipName) == null) return;
-        fxMusicSource.PlayOneShot(soundData.GetAudioClip(clipName), soundData.GetSoundVolume(clipName));
+        if (enableSoundDebugLog) Debug.Log($"[SoundManager] PlayOneShot request: '{clipName}'");
+        if (string.IsNullOrEmpty(clipName)) return;
+        if (!EnsureSoundData())
+        {
+            Debug.LogWarning($"[SoundManager] Missing soundData. Cannot play clip '{clipName}'.");
+            return;
+        }
+        if (fxMusicSource == null)
+        {
+            Debug.LogWarning($"[SoundManager] Missing fxMusicSource. Cannot play clip '{clipName}'.");
+            return;
+        }
+
+        var clip = soundData.GetAudioClip(clipName);
+        if (clip == null)
+        {
+            if (enableSoundDebugLog) Debug.LogWarning($"[SoundManager] Clip key not found: '{clipName}' in SoundSO '{soundData.name}'.");
+            return;
+        }
+        if (enableSoundDebugLog) Debug.Log($"[SoundManager] Play clip '{clipName}' from SoundSO '{soundData.name}'.");
+        fxMusicSource.PlayOneShot(clip, soundData.GetSoundVolume(clipName));
+    }
+
+    private bool EnsureSoundData()
+    {
+        if (soundData != null) return true;
+        soundData = Resources.Load<SoundSO>(fallbackSoundSoPath);
+        if (soundData != null)
+        {
+            if (enableSoundDebugLog) Debug.Log($"[SoundManager] Auto-loaded SoundSO from Resources path '{fallbackSoundSoPath}'.");
+            return true;
+        }
+
+        if (enableSoundDebugLog) Debug.LogWarning($"[SoundManager] Failed to auto-load SoundSO at Resources path '{fallbackSoundSoPath}'.");
+        return false;
     }
     public void PlayOneShotDelayed(AudioClip clip, float delay, float volume = 1f)
     {

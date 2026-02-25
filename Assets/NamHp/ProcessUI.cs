@@ -26,7 +26,7 @@ public class ProcessUI : MonoBehaviour
             return;
         }
 
-        totalMesh = GamePlayManager.Instance.CubeTargetCount * MESH_PER_CUBE;
+        totalMesh = GamePlayManager.Instance.TotalColor;
 
         // Cập nhật lần đầu
         UpdateProgressText(GamePlayManager.Instance.MeshCountClick);

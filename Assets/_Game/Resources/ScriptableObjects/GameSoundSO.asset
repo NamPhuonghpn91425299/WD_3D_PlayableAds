@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: GameSoundSO
   m_EditorClassIdentifier: 
   soundList:
+  - clipName: wool_xoay
+    Clip: {fileID: 8300000, guid: d149e751ff841664b9c7e769a8e54ff7, type: 3}
+    Volume: 1
   - clipName: booster1_impact
     Clip: {fileID: 8300000, guid: 11f8c230cfbd2e547a5e46d539948ad3, type: 3}
     Volume: 1
@@ -43,36 +46,10 @@ MonoBehaviour:
   - clipName: wool_click2
     Clip: {fileID: 8300000, guid: fc925dcd7bfb69044b36332c529c0b34, type: 3}
     Volume: 1
-  - clipName: wool_xoay
-    Clip: {fileID: 8300000, guid: d149e751ff841664b9c7e769a8e54ff7, type: 3}
-    Volume: 1
   - clipName: wool1
     Clip: {fileID: 8300000, guid: 77358be51b3f9ca4c8eb40826ad33ec0, type: 3}
     Volume: 0.5
-  - clipName: booster3_shimmer
-    Clip: {fileID: 8300000, guid: a8aacb19479dcc94098da04015d92480, type: 3}
-    Volume: 1
-  - clipName: sfx_meobay
-    Clip: {fileID: 8300000, guid: b69b15090b32dfc4193c8e4f1824124c, type: 3}
-    Volume: 1
-  - clipName: sfx_meohutbui
-    Clip: {fileID: 8300000, guid: 73034b8264a0b9540914d7af8cbd855b, type: 3}
-    Volume: 1
   - clipName: redo_wool
     Clip: {fileID: 8300000, guid: 620356647ed871043aa69beebd60064e, type: 3}
     Volume: 1
-  - clipName: tut_cat_short_1
-    Clip: {fileID: 0}
-    Volume: 1
-  - clipName: tut_cat_short_2
-    Clip: {fileID: 0}
-    Volume: 1
-  - clipName: tut_cat_long_1
-    Clip: {fileID: 0}
-    Volume: 1
-  - clipName: tut_cat_long_2
-    Clip: {fileID: 0}
-    Volume: 1
-  - clipName: tut_cat_long_3
-    Clip: {fileID: 0}
-    Volume: 1
+  enableDebugLog: 0

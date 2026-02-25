@@ -7,36 +7,21 @@ using UnityEngine.UI;
 public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
 {
     #region PROPERTIES
-
-    public RectTransform WoolBasket;
-    [Header("Level")] public Text LevelText;
-
-    [Header("Target")] public Text TargetPass;
-
     [Header("ZOOM OLD")] public Slider ZomSlider;
-
-
+    public Text ProgressText;
     public ZoomCameraData ZoomCameraData;
     public float ZoomDistance = 2f;
 
     [Header("ZOOM NEW")]
     public float ZoomStep = 5f;
-    public Button ZoomInButton;
-    public Button ZoomOutButton;
     public Button ReCenterButton;
-
-    public RectTransform levelProgress;
-
     //[Header("Effect")] public ParticleFlyEffectController starFlyEffectPrefab;
-
-    private int _totalTargetPassed = 0;
-    private int _indexColorCubeTarget = -1;
-    private int _indexColorQueueTarget = 0;
-
     //[Header("Broom booster")] [SerializeField]    private BroomBooster   broomBooster;
     //[Header("Add Hold booster")] [SerializeField] private RedoBooster redoBooster;
 
     private MaterialPropertyBlock _iconPercentPropertyBlock;
+    private int _totalTargetPassed = -1;
+    private int _totalTarget = -1;
 
 
     private readonly Vector3 _displayWoolBasketPosition = new Vector3(-34, -534, 0);
@@ -47,10 +32,7 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
 
     private void Start()
     {
-        GameEventManager.OnLoadLevelDone += () =>
-        {
-            WoolBasket.anchoredPosition = _hideWoolBasketPosition;
-        };
+
     }
 
     private void OnEnable()
@@ -63,6 +45,11 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
     }
 
     private void OnDisable() { UnRegisterButton(); }
+
+    private void LateUpdate()
+    {
+        UpdateProgressTextAndIcon();
+    }
 
     #endregion
 
@@ -142,43 +129,54 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
 
     public void UpdateProgressTextAndIcon()
     {
-        try
+        var gamePlayManager = GamePlayManager.Instance;
+        if (gamePlayManager == null)
         {
-            var targetPassed = GamePlayManager.Instance.CurrentCubeCollected;
-            var totalTarget = GamePlayManager.Instance.TotalColor;
-            _totalTargetPassed = targetPassed;
-            TargetPass.text = $"{_totalTargetPassed}/{totalTarget}";
-
+            SetProgressUI(0, 0);
+            return;
         }
-        catch { }
+
+        var targetPassed = Mathf.Max(0, gamePlayManager.CurrentCubeCollected);
+        var totalTarget = Mathf.Max(0, gamePlayManager.TotalColor);
+        SetProgressUI(targetPassed, totalTarget);
+    }
+
+    private void SetProgressUI(int targetPassed, int totalTarget)
+    {
+        if (_totalTargetPassed == targetPassed && _totalTarget == totalTarget) return;
+        _totalTargetPassed = targetPassed;
+        _totalTarget = totalTarget;
+
+        if (ProgressText != null)
+        {
+            ProgressText.text = $"{targetPassed}/{totalTarget}";
+        }
     }
 
     float _lastValueZoom = -1f;
     public void ChangeValueZoom(float value)
     {
+        if (ZomSlider == null || ZoomCameraData == null) return;
         if (Mathf.Approximately(_lastValueZoom, value)) return;
         _lastValueZoom = value;
+        if (Mathf.Approximately(ZoomCameraData.MaxFOV, ZoomCameraData.MinFOV)) return;
         var changeToValue = 1 - (value - ZoomCameraData.MinFOV) / (ZoomCameraData.MaxFOV - ZoomCameraData.MinFOV);
         ZomSlider.value = changeToValue;
     }
 
     public void ChangeValueZoomNoNotify(float value)
     {
+        if (ZomSlider == null || ZoomCameraData == null) return;
         if (Mathf.Approximately(_lastValueZoom, value)) return;
         _lastValueZoom = value;
+        if (Mathf.Approximately(ZoomCameraData.MaxFOV, ZoomCameraData.MinFOV)) return;
         var changeToValue = 1 - (value - ZoomCameraData.MinFOV) / (ZoomCameraData.MaxFOV - ZoomCameraData.MinFOV);
         ZomSlider.SetValueWithoutNotify(changeToValue);
     }
 
-    public void SetLevelText(int level) { LevelText.text = $"Level {level}"; }
-
     public void ActiveWoolBasket(bool isActive)
     {
         var nextPos = isActive ? _displayWoolBasketPosition : _hideWoolBasketPosition;
-        WoolBasket.DOKill();
-        WoolBasket
-           .DOAnchorPos(nextPos, 1.2f)
-           .SetEase(Ease.OutBack);
     }
 
     #endregion
@@ -187,14 +185,17 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
 
     private void RegisterButton()
     {
-        ZomSlider.onValueChanged.AddListener(OnZomSilder);
-
-        ZoomInButton.onClick.AddListener(() => ZoomCameraExecute(true));
-        ZoomOutButton.onClick.AddListener(() => ZoomCameraExecute(false));
-        ReCenterButton.onClick.AddListener(() => GameEventManager.ReCenterModelThroughButton?.Invoke());
+        if (ZomSlider != null) ZomSlider.onValueChanged.AddListener(OnZomSilder);
+        ReCenterButton?.onClick.AddListener(OnClickReCenterButton);
+        GameEventManager.SetReCenterButtonInteractable += SetReCenterButtonInteractable;
     }
 
-    private void UnRegisterButton() { ZomSlider.onValueChanged.RemoveListener(OnZomSilder); }
+    private void UnRegisterButton()
+    {
+        if (ZomSlider != null) ZomSlider.onValueChanged.RemoveListener(OnZomSilder);
+        if (ReCenterButton != null) ReCenterButton.onClick.RemoveListener(OnClickReCenterButton);
+        GameEventManager.SetReCenterButtonInteractable -= SetReCenterButtonInteractable;
+    }
 
     #endregion
 
@@ -202,13 +203,27 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
 
     private void OnZomSilder(float value)
     {
+        if (ZoomCameraData == null) return;
+        var gamePlayManager = GamePlayManager.Instance;
+        if (gamePlayManager == null || gamePlayManager.CameraController == null) return;
         var changeTotalFov = Mathf.Lerp(ZoomCameraData.MaxFOV, ZoomCameraData.MinFOV, value);
-        GamePlayManager.Instance.CameraController.ZoomCamera(changeTotalFov);
+        gamePlayManager.CameraController.ZoomCamera(changeTotalFov);
     }
 
     public void ZoomCameraExecute(bool zoomIn)
     {
         GameEventManager.ChangeCameraFOVThroughButton?.Invoke(zoomIn ? -ZoomStep : +ZoomStep);
+    }
+
+    private void OnClickReCenterButton()
+    {
+        GameEventManager.ReCenterModelThroughButton?.Invoke();
+    }
+
+    private void SetReCenterButtonInteractable(bool isInteractable)
+    {
+        if (ReCenterButton == null) return;
+        ReCenterButton.interactable = isInteractable;
     }
 
     public void ReturnMainMenu()
@@ -217,7 +232,11 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
         SceneManager.LoadScene(0);
     }
 
-    public void ResetData() { ZomSlider.value = 0; }
+    public void ResetData()
+    {
+        if (ZomSlider != null) ZomSlider.value = 0;
+        SetProgressUI(0, 0);
+    }
 
     #endregion
 }
