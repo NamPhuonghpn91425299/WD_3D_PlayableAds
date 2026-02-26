@@ -18,7 +18,7 @@ public class DecoreControl : MonoBehaviour
 
     public TypeOfDecore DecoreType = TypeOfDecore.None;
 
-    private MaterialPropertyBlock _materialPropertyBlock;
+    private Material _runtimeMaterial;
 
     [SerializeField] private DecoreState _decoreState = DecoreState.None;
 
@@ -59,6 +59,15 @@ public class DecoreControl : MonoBehaviour
     private void OnDisable()
     {
         ResetDecorTransformStatus();
+    }
+
+    private void OnDestroy()
+    {
+        if (Application.isPlaying && _runtimeMaterial != null)
+        {
+            Destroy(_runtimeMaterial);
+            _runtimeMaterial = null;
+        }
     }
 
 #if UNITY_EDITOR
@@ -209,10 +218,8 @@ public class DecoreControl : MonoBehaviour
         {
             MeshRenderer.material = material;
             // Cập nhật lại property block nếu cần hiển thị
-            if (_materialPropertyBlock == null) _materialPropertyBlock = new MaterialPropertyBlock();
-            MeshRenderer.GetPropertyBlock(_materialPropertyBlock);
-            _materialPropertyBlock.SetFloat(ShaderPropertiesLib.Display, 1);
-            MeshRenderer.SetPropertyBlock(_materialPropertyBlock);
+            _runtimeMaterial = MeshRenderer.material;
+            _runtimeMaterial?.SetFloat(ShaderPropertiesLib.Display, 1);
         }
     }
 
@@ -319,14 +326,18 @@ public class DecoreControl : MonoBehaviour
 
         try
         {
-            _materialPropertyBlock = new MaterialPropertyBlock();
-            MeshRenderer.GetPropertyBlock(_materialPropertyBlock);
-            _materialPropertyBlock.SetColor(ShaderPropertiesLib.Color, _color);
-            MeshRenderer.SetPropertyBlock(_materialPropertyBlock);
+            EnsureRuntimeMaterial()?.SetColor(ShaderPropertiesLib.Color, _color);
         }
         catch
         {
         }
+    }
+
+    private Material EnsureRuntimeMaterial()
+    {
+        if (MeshRenderer == null) return null;
+        if (_runtimeMaterial == null) _runtimeMaterial = MeshRenderer.material;
+        return _runtimeMaterial;
     }
 
     public enum DecoreState

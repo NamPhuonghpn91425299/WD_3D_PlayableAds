@@ -327,7 +327,7 @@ public class CameraController : SingletonBase<CameraController>
         else
         {
             currentFOV = _mainCamera.fieldOfView;
-            if (MathF.Abs(currentFOV - targetFOV) > 0.15f)
+            if (Mathf.Abs(currentFOV - targetFOV) > 0.15f)
             {
                 currentFOV = Mathf.Lerp(currentFOV, targetFOV, Time.fixedDeltaTime * zoomLerpSpeed);
                 _mainCamera.fieldOfView = currentFOV;

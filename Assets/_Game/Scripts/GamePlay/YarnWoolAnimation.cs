@@ -14,7 +14,7 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
     private Transform             _headParent;
     private Transform             _tailParent;
     private List<Vector3>         _pointList;
-    private MaterialPropertyBlock _propertyBlock;
+    private Material              _lineMaterialInstance;
     private const float           HeadOffset = 0.2f;
 
     private Coroutine _rotationCoroutine;
@@ -49,13 +49,18 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
         if (LineRenderer == null) LineRenderer = GetComponentInChildren<LineRenderer>();
         LineRenderer.enabled = true;
         GameEventManager.OnLoadLevelDone += OnCancelCoroutine;
-        InitPropertyBlock();
+        EnsureLineMaterial();
         LineRenderer.positionCount = 2;
     }
 
     private void OnDestroy() 
     { 
         GameEventManager.OnLoadLevelDone -= OnCancelCoroutine;
+        if (_lineMaterialInstance != null)
+        {
+            Destroy(_lineMaterialInstance);
+            _lineMaterialInstance = null;
+        }
     }
 
     #endregion
@@ -96,11 +101,13 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
     {
         if (LineRenderer != null)
         {
-            InitPropertyBlock();
+            var lineMat = EnsureLineMaterial();
+            if (lineMat == null) return;
 
             Color aocolor = Color.white;
             Color darkColor = Color.white;
             Color shadowColor = Color.white;
+            Color baseColor = Color.white;
             float saturaion = 1f;
             float brigtness = 3f;
             float diffuse = 0.5f;
@@ -108,6 +115,7 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
             float shadowExposure = 1f;
             if (mat != null)
             {
+                baseColor = mat.color;
                 aocolor = mat.GetColor(ShaderPropertiesLib.AOColor);
                 saturaion = mat.GetFloat(ShaderPropertiesLib.Saturation);
                 brigtness = mat.GetFloat(ShaderPropertiesLib.Brightness);
@@ -117,17 +125,15 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
                 shadowStrength = mat.GetFloat(ShaderPropertiesLib.ShadowStrength);
                 shadowExposure = mat.GetFloat(ShaderPropertiesLib.ShadowExposure);
             }
-            LineRenderer.GetPropertyBlock(_propertyBlock);
-            Color finalColor = Color.Lerp(mat.color, darkColor, 0.35f);
-            _propertyBlock.SetColor(ShaderPropertiesLib.Color, finalColor);
-            _propertyBlock.SetColor(ShaderPropertiesLib.AOColor, aocolor);
-            _propertyBlock.SetFloat(ShaderPropertiesLib.Saturation, saturaion);
-            _propertyBlock.SetFloat(ShaderPropertiesLib.Brightness, brigtness);
-            _propertyBlock.SetFloat(ShaderPropertiesLib.DiffusePower, diffuse);
-            _propertyBlock.SetColor(ShaderPropertiesLib.ShadowColor, shadowColor);
-            _propertyBlock.SetFloat(ShaderPropertiesLib.ShadowStrength, shadowStrength);
-            _propertyBlock.SetFloat(ShaderPropertiesLib.ShadowExposure, shadowExposure);
-            LineRenderer.SetPropertyBlock(_propertyBlock);
+            Color finalColor = Color.Lerp(baseColor, darkColor, 0.35f);
+            lineMat.SetColor(ShaderPropertiesLib.Color, finalColor);
+            lineMat.SetColor(ShaderPropertiesLib.AOColor, aocolor);
+            lineMat.SetFloat(ShaderPropertiesLib.Saturation, saturaion);
+            lineMat.SetFloat(ShaderPropertiesLib.Brightness, brigtness);
+            lineMat.SetFloat(ShaderPropertiesLib.DiffusePower, diffuse);
+            lineMat.SetColor(ShaderPropertiesLib.ShadowColor, shadowColor);
+            lineMat.SetFloat(ShaderPropertiesLib.ShadowStrength, shadowStrength);
+            lineMat.SetFloat(ShaderPropertiesLib.ShadowExposure, shadowExposure);
         }
     }
 
@@ -335,16 +341,17 @@ public class YarnWoolAnimation : MonoBehaviour, IPoolObject
     {
         if (LineRenderer != null)
         {
-            InitPropertyBlock();
-            _propertyBlock.SetFloat(ShaderPropertiesLib.Display, display);
-            LineRenderer.SetPropertyBlock(_propertyBlock);
+            var lineMat = EnsureLineMaterial();
+            if (lineMat == null) return;
+            lineMat.SetFloat(ShaderPropertiesLib.Display, display);
         }
     }
 
-    private void InitPropertyBlock()
+    private Material EnsureLineMaterial()
     {
-        _propertyBlock ??= new MaterialPropertyBlock();
-        LineRenderer.GetPropertyBlock(_propertyBlock);
+        if (LineRenderer == null) return null;
+        if (_lineMaterialInstance == null) _lineMaterialInstance = LineRenderer.material;
+        return _lineMaterialInstance;
     }
 
     #endregion

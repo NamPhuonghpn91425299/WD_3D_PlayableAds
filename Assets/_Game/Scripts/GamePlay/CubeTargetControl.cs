@@ -87,7 +87,6 @@ public class CubeTargetControl : MonoBehaviour
     {
         // GameEventManager.OnLanguageChanged += ChangeLockText;
         // ChangeLockText();
-        _propertyBlock = new MaterialPropertyBlock();
     }
 
     //private void OnDestroy() { GameEventManager.OnLanguageChanged -= ChangeLockText; }
@@ -326,7 +325,6 @@ public class CubeTargetControl : MonoBehaviour
         }
     }
 
-    private MaterialPropertyBlock _propertyBlock;
     public void ChangeColor()
     {
         if (string.IsNullOrEmpty(_currentColor)) return;
@@ -337,16 +335,10 @@ public class CubeTargetControl : MonoBehaviour
             {
                 if (meshRenderer == null) continue;
                 if (!colorPalleteData.colorPallete_New.TryGetValue(_currentColor, out var mat)) continue;
-                meshRenderer.sharedMaterial = mat;
-                meshRenderer.GetPropertyBlock(_propertyBlock);
-                _propertyBlock.SetVector("_LightDir", AddCubeDataSO.LightDirection);
-                _propertyBlock.SetColor(ShaderPropertiesLib.Color, mat.color);
-                meshRenderer.SetPropertyBlock(_propertyBlock);
-                // var propertyBlock = new MaterialPropertyBlock();
-                // meshRenderer.GetPropertyBlock(propertyBlock);
-                // propertyBlock.SetColor(ShaderPropertiesLib.Color, mat.color);
-                // propertyBlock.SetColor(ShaderPropertiesLib.AmbientOccllusionColor, mat.GetColor(ShaderPropertiesLib.AmbientOccllusionColor));
-                // meshRenderer.SetPropertyBlock(propertyBlock);
+                meshRenderer.material = mat;
+                var runtimeMaterial = meshRenderer.material;
+                runtimeMaterial.SetVector("_LightDir", AddCubeDataSO.LightDirection);
+                runtimeMaterial.SetColor(ShaderPropertiesLib.Color, mat.color);
             }
         }
         catch { }
@@ -356,10 +348,9 @@ public class CubeTargetControl : MonoBehaviour
     {
         foreach (var meshRenderer in MeshRenderer)
         {
-            var propertyBlock = new MaterialPropertyBlock();
-            meshRenderer.GetPropertyBlock(propertyBlock);
-            propertyBlock.SetColor(ShaderPropertiesLib.Color, _defaultColor);
-            meshRenderer.SetPropertyBlock(propertyBlock);
+            if (meshRenderer == null) continue;
+            var runtimeMaterial = meshRenderer.material;
+            runtimeMaterial.SetColor(ShaderPropertiesLib.Color, _defaultColor);
         }
     }
 

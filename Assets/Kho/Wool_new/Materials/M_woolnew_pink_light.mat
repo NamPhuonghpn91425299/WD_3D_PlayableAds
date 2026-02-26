@@ -105,7 +105,7 @@ Material:
     m_Floats:
     - _AOStrength: 0.3
     - _Ambient: 0.8
-    - _Brightness: 1.6
+    - _Brightness: 2.8
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DarkAreaSmoothness: 0.5
@@ -128,7 +128,6 @@ Material:
     - _HaloIntensity: 1
     - _HaloPower: 2.5
     - _LightIntensity: 1
-    - _Lowp: 0
     - _MaxShadow: 0.61
     - _Metallic: 0
     - _MinShadow: -1

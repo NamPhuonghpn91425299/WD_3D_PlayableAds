@@ -8,41 +8,13 @@ public static class RollWoolAnimationExtensions
     public static WoolRollAnimator SetColor(this WoolRollAnimator woolRollAnimator, string mainColor)
     {
         woolRollAnimator._currentColor = mainColor;
-        var materialProperty = woolRollAnimator.materialProperty;
+        if (!woolRollAnimator.colorPalleteData.colorPallete_New.TryGetValue(mainColor, out var mat)) return null;
+
         var meshRenderers = woolRollAnimator.MeshRenderers;
         for (var i = 0; i < meshRenderers.Count; i++)
         {
-            if (!woolRollAnimator.colorPalleteData.colorPallete_New.TryGetValue(mainColor, out var mat)) return null;
-            Color aocolor = Color.white;
-            Color darkColor = Color.white;
-            Color shadowColor = Color.white;
-            float saturaion = 1f;
-            float brigtness = 3f;
-            float diffuse = 0.5f;
-            float shadowStrength = 1f;
-            float shadowExposure = 1f;
-            if (mat != null)
-            {
-                aocolor = mat.GetColor(ShaderPropertiesLib.AOColor);
-                saturaion = mat.GetFloat(ShaderPropertiesLib.Saturation);
-                brigtness = mat.GetFloat(ShaderPropertiesLib.Brightness);
-                diffuse = mat.GetFloat(ShaderPropertiesLib.DiffusePower);
-                darkColor = mat.GetColor(ShaderPropertiesLib.DarkThreadColor);
-                shadowColor = mat.GetColor(ShaderPropertiesLib.ShadowColor);
-                shadowStrength = mat.GetFloat(ShaderPropertiesLib.ShadowStrength);
-                shadowExposure = mat.GetFloat(ShaderPropertiesLib.ShadowExposure);
-            }
-            meshRenderers[i].GetPropertyBlock(materialProperty);
-            materialProperty.SetColor(ShaderPropertiesLib.Color, mat.color);
-            materialProperty.SetColor(ShaderPropertiesLib.AOColor, aocolor);
-            materialProperty.SetFloat(ShaderPropertiesLib.Saturation, saturaion);
-            materialProperty.SetFloat(ShaderPropertiesLib.Brightness, brigtness);
-            materialProperty.SetFloat(ShaderPropertiesLib.DiffusePower, diffuse);
-            materialProperty.SetColor(ShaderPropertiesLib.DarkThreadColor, darkColor);
-            materialProperty.SetColor(ShaderPropertiesLib.ShadowColor, shadowColor);
-            materialProperty.SetFloat(ShaderPropertiesLib.ShadowStrength, shadowStrength);
-            materialProperty.SetFloat(ShaderPropertiesLib.ShadowExposure, shadowExposure);
-            meshRenderers[i].SetPropertyBlock(materialProperty);
+            if (meshRenderers[i] == null) continue;
+            meshRenderers[i].material = mat;
         }
 
         return woolRollAnimator;
@@ -94,7 +66,6 @@ public class WoolRollAnimator : MonoBehaviour, IPoolObject
     public WoolAnimationData WoolAnimationData;
     public List<MeshRenderer> MeshRenderers;
 
-    internal MaterialPropertyBlock materialProperty;
     internal string                _currentColor = ShaderPropertiesLib.IgnoredWoolColorKey;
     internal bool                  _isPopToBroomPool;
 
@@ -112,7 +83,6 @@ public class WoolRollAnimator : MonoBehaviour, IPoolObject
 
     public void ResetData()
     {
-        materialProperty = new MaterialPropertyBlock();
         foreach (var mesh in MeshRenderers)
         {
             mesh.enabled = false;
@@ -143,9 +113,6 @@ public class WoolRollAnimator : MonoBehaviour, IPoolObject
 
         // Skip animation delays for AI_AGENT testing when IsNative is true
         bool skipAnimationDelays = false;
-#if AI_AGENT
-        skipAnimationDelays = DataManager.PlayerData.IsNative;
-#endif
 
         var meshCount = MeshRenderers.Count;
         for (int i = meshCount - 1; i >= 0; i--)

@@ -154,6 +154,8 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         }
         OnGameStateChange();
         LoadNewLevel();
+
+        Luna.Unity.LifeCycle.GameStarted();
     }
 
     private void GetCutOuts()
