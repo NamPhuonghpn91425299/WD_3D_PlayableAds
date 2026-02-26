@@ -19,6 +19,14 @@ public class UiEndGame : MonoBehaviour
         if (winGamePanel != null) winGamePanel.gameObject.SetActive(false);
         if (loseGamePanel != null) loseGamePanel.gameObject.SetActive(false);
     }
+
+    public void SetAlphaPanel( float alpha)
+    {
+        if (group != null)
+        {
+            group.alpha = alpha;
+        }
+    }
     [ContextMenu("Test Show Win Panel")]
     public void ShowWinPanel()
     {

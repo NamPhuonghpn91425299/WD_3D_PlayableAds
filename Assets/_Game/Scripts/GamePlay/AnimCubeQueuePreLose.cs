@@ -44,7 +44,7 @@ public class AnimCubeQueuePreLose : SingletonBase<AnimCubeQueuePreLose>
         if (queueTargets == null || queueTargets.Count == 0)
         {
             _cubeOriginalScale = new Vector3(1, 0.9f, 1);
-            _iconPlusOriginalScale = new Vector3(0.35f, 0.45f, 0.35f);
+            _iconPlusOriginalScale = new Vector3(0.35f, 0.35f, 0.35f);
             return;
         }
 
@@ -69,12 +69,12 @@ public class AnimCubeQueuePreLose : SingletonBase<AnimCubeQueuePreLose>
             }
             else
             {
-                _iconPlusOriginalScale = new Vector3(0.35f, 0.45f, 0.35f);
+                _iconPlusOriginalScale = new Vector3(0.35f, 0.35f, 0.35f);
             }
         }
         else
         {
-            _iconPlusOriginalScale = new Vector3(0.35f, 0.45f, 0.35f);
+            _iconPlusOriginalScale = new Vector3(0.35f, 0.35f, 0.35f);
         }
     }
 

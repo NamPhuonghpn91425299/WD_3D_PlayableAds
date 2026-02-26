@@ -56,7 +56,7 @@ public partial class GamePlayManager
         }
         else
         {
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(0.8f);
             GamePlayUIManager.Instance?.ShowLosePanel();
             Debug.Log($"[GamePlayManager] Trigger Lose Game Action");
         }

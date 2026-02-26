@@ -36,6 +36,7 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
 
     }
 
+
     private void OnEnable()
     {
         RegisterButton();
@@ -53,6 +54,10 @@ public class GamePlayUIManager : SingletonBase<GamePlayUIManager>
     #endregion
 
     #region MAIN_METHODS
+    public void SetAlphaEndGamePanel(float alpha)
+    {
+        if (uiEndGame != null) uiEndGame.SetAlphaPanel(alpha);
+    }
 
     public void ShowWinPanel()
     {

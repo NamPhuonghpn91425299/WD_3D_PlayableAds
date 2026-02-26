@@ -766,9 +766,12 @@ public class CameraController : SingletonBase<CameraController>
         _mainCamera
            .DOFieldOfView(IntroEndFOV, IntroCameraZoomInDuration)
            .SetEase(Ease.InOutSine);
-        GamePlayManager.Instance.ActiveHandController(true);
         BlockRotate(true);
         yield return new WaitForSeconds(IntroCameraZoomInDuration);
+
+        CameraContainer.Instance.SetFakeUICamera(true);
+        GamePlayUIManager.Instance.SetAlphaEndGamePanel(1);
+        GamePlayManager.Instance.ActiveHandController(true);
         if (token.IsCancellationRequested) yield break;
 
         GamePlayUIManager.Instance?.ChangeValueZoom(IntroEndFOV);

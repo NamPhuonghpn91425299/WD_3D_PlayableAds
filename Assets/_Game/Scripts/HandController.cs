@@ -20,6 +20,7 @@ public class HandController : MonoBehaviour
     private Coroutine _playAnimCoroutine;
     private int _lastIndex = -1;
     private bool _lastIsActive = false;
+    private bool _hasShownAtLeastOnce = false;
 
     private void Start()
     {
@@ -38,7 +39,16 @@ public class HandController : MonoBehaviour
         if (_playAnimCoroutine != null) StopCoroutine(_playAnimCoroutine);
         if (isActive)
         {
-            transform.DOMove(positionShow, delayTime).SetEase(Ease.OutQuad);
+            transform.DOKill();
+            if (!_hasShownAtLeastOnce)
+            {
+                transform.position = positionShow;
+                _hasShownAtLeastOnce = true;
+            }
+            else
+            {
+                transform.DOMove(positionShow, delayTime).SetEase(Ease.OutQuad);
+            }
         }
         else
         {
@@ -146,5 +156,7 @@ public class HandControllerEditor : Editor
     }
 }
 #endif
+
+
 
 

@@ -133,9 +133,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
     #region UNITY_METHODS
     void OnEnable()
     {
-        OnGameStateChange();
-        LoadNewLevel();
-        Luna.Unity.LifeCycle.GameStarted();
+
     }
     private void Start()
     {
@@ -154,6 +152,8 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         {
             _cubeTargetDefaultPos.Add(cube.transform.localPosition);
         }
+        OnGameStateChange();
+        LoadNewLevel();
     }
 
     private void GetCutOuts()

@@ -7,8 +7,6 @@ public class CameraContainer : SingletonBase<CameraContainer>
 {
     public Camera MainCamera;
     public Camera FakeUICamera;
-    public Camera EndgameModelCamera;
-    public Camera TutorialCamera;
 
 #if UNITY_EDITOR
     private void OnValidate()
@@ -24,25 +22,16 @@ public class CameraContainer : SingletonBase<CameraContainer>
                 case "FakeUI_Camera":
                     FakeUICamera = cam;
                     break;
-                case "EndgameModelRenderCamera":
-                    EndgameModelCamera = cam;
-                    break;
-                case "Camera":
-                    TutorialCamera = cam;
-                    break;
+
             }
         }
     }
 #endif
 
-    public void TurnTutorialCamera(bool isOn)
-    {
-        TutorialCamera.enabled = isOn;
-    }
 
-    public void SetTextureCameraTutorial(RenderTexture texture)
+    public void SetFakeUICamera(bool isActive)
     {
-        TutorialCamera.targetTexture = texture;
+        FakeUICamera.enabled = isActive;
     }
 
     public override void Awake()

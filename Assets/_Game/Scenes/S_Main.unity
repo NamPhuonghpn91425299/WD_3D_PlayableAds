@@ -1120,9 +1120,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2989442862649663784, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5610390555655577030, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
       propertyPath: m_Name
       value: UiCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610390555655577030, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786779874818333059, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014293850837275448, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2849,7 +2865,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900492972}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -3449,7 +3465,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147096124}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -8716,7 +8732,6 @@ GameObject:
   - component: {fileID: 1385159973}
   - component: {fileID: 1385159972}
   - component: {fileID: 1385159971}
-  - component: {fileID: 1385159970}
   m_Layer: 0
   m_Name: PlayButton
   m_TagString: Untagged
@@ -8744,18 +8759,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 400, y: 172}
   m_Pivot: {x: 0.5, y: 0}
---- !u!225 &1385159970
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385159968}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!114 &1385159971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8772,6 +8775,7 @@ MonoBehaviour:
   maxScale: {x: 1.2, y: 1.2, z: 1.2}
   minScale: {x: 1, y: 1, z: 1}
   scaleDuration: 0.5
+  animateOnStart: 0
 --- !u!114 &1385159972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9220,7 +9224,7 @@ MonoBehaviour:
   isPlayBgmOnStart: 1
   BGM:
     soundType: 4
-    Loop: 0
+    Loop: 1
     Clip: {fileID: 8300000, guid: b77688acd19646948b82e2ac31c59991, type: 3}
     ClipList: []
 --- !u!114 &1386965088
@@ -9977,8 +9981,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 1171821272}
   FakeUICamera: {fileID: 1147096126}
-  EndgameModelCamera: {fileID: 0}
-  TutorialCamera: {fileID: 0}
 --- !u!4 &1659612415
 Transform:
   m_ObjectHideFlags: 0
