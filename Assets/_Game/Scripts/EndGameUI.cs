@@ -30,7 +30,7 @@ public class EndGameUI : MonoBehaviour
 
     private void GoToStore()
     {
-        //GamePlaySystem.Instance.GoToStore();
+        Luna.Unity.Playable.InstallFullGame();
     }
 
     private void StartScalingAnimation()

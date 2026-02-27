@@ -18,8 +18,9 @@ MonoBehaviour:
     Level: 1
     GoldReward: 50
     MainPrefabPath: Levels/A_BunnysGift
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pgirl
     - lime
@@ -116,8 +117,9 @@ MonoBehaviour:
     Level: 2
     GoldReward: 50
     MainPrefabPath: Levels/A_Trophy
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pgirl
     - yellow
@@ -296,8 +298,9 @@ MonoBehaviour:
     Level: 3
     GoldReward: 50
     MainPrefabPath: Levels/A_Donkey
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white_light
     - cyan
@@ -452,8 +455,9 @@ MonoBehaviour:
     Level: 4
     GoldReward: 50
     MainPrefabPath: Levels/A_Avocado
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - brown_dark
     - cyan
@@ -612,8 +616,9 @@ MonoBehaviour:
     Level: 5
     GoldReward: 50
     MainPrefabPath: Levels/A_Socks
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - red
     - green
@@ -808,8 +813,9 @@ MonoBehaviour:
     Level: 6
     GoldReward: 50
     MainPrefabPath: Levels/A_Ghost
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - khaki
     - orange
@@ -948,8 +954,9 @@ MonoBehaviour:
     Level: 7
     GoldReward: 50
     MainPrefabPath: Levels/A_Fox
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - red
     - white
@@ -1064,8 +1071,9 @@ MonoBehaviour:
     Level: 8
     GoldReward: 50
     MainPrefabPath: Levels/A_PigBow
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pink
     - pink
@@ -1268,8 +1276,9 @@ MonoBehaviour:
     Level: 9
     GoldReward: 10
     MainPrefabPath: Levels/A_Capybara
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - wood
     - brown_dark
@@ -1452,8 +1461,9 @@ MonoBehaviour:
     Level: 10
     GoldReward: 50
     MainPrefabPath: Levels/A_GameControl
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - blue
     - black
@@ -1592,8 +1602,9 @@ MonoBehaviour:
     Level: 11
     GoldReward: 50
     MainPrefabPath: Levels/A_Alpaca
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pink
     - skin
@@ -1836,8 +1847,9 @@ MonoBehaviour:
     Level: 12
     GoldReward: 50
     MainPrefabPath: Levels/A_AncientBook
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white_dark
     - orange
@@ -2052,8 +2064,9 @@ MonoBehaviour:
     Level: 13
     GoldReward: 50
     MainPrefabPath: Levels/A_Bag
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - purple
     - lime
@@ -2308,8 +2321,9 @@ MonoBehaviour:
     Level: 14
     GoldReward: 50
     MainPrefabPath: Levels/A_CastleWater
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - white_light
     - yellow
@@ -2616,8 +2630,9 @@ MonoBehaviour:
     Level: 15
     GoldReward: 10
     MainPrefabPath: Levels/A_BedRoom
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - wood
     - lime_dark
@@ -2928,8 +2943,9 @@ MonoBehaviour:
     Level: 16
     GoldReward: 10
     MainPrefabPath: Levels/A_Besties
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - blue
     - red_light
@@ -3200,8 +3216,9 @@ MonoBehaviour:
     Level: 17
     GoldReward: 10
     MainPrefabPath: Levels/A_BlanketPig
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - blue_light
     - pigskin
@@ -3432,8 +3449,9 @@ MonoBehaviour:
     Level: 18
     GoldReward: 10
     MainPrefabPath: Levels/A_BluesPlayer
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - lime
@@ -3708,8 +3726,9 @@ MonoBehaviour:
     Level: 19
     GoldReward: 10
     MainPrefabPath: Levels/A_BlockHouse
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - red_light
     - yellow
@@ -3908,8 +3927,9 @@ MonoBehaviour:
     Level: 20
     GoldReward: 10
     MainPrefabPath: Levels/A_Boat
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - wood
     - brown_dark
@@ -4120,8 +4140,9 @@ MonoBehaviour:
     Level: 21
     GoldReward: 10
     MainPrefabPath: Levels/A_Bouquet
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange_light
     - white
@@ -4486,8 +4507,9 @@ MonoBehaviour:
     Level: 22
     GoldReward: 10
     MainPrefabPath: Levels/A_Boombox
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - purple_dark
     - yellow
@@ -4767,8 +4789,9 @@ MonoBehaviour:
     Level: 23
     GoldReward: 10
     MainPrefabPath: Levels/A_CakeCart
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - red_light
     - wood
@@ -5019,8 +5042,9 @@ MonoBehaviour:
     Level: 24
     GoldReward: 10
     MainPrefabPath: Levels/A_Candy
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pgirl
     - lime
@@ -5243,8 +5267,9 @@ MonoBehaviour:
     Level: 25
     GoldReward: 10
     MainPrefabPath: Levels/A_CandyHouse
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - cyan
     - yellow
@@ -5651,8 +5676,9 @@ MonoBehaviour:
     Level: 26
     GoldReward: 10
     MainPrefabPath: Levels/A_Ballet
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - skin
     - pgirl
@@ -5911,8 +5937,9 @@ MonoBehaviour:
     Level: 27
     GoldReward: 10
     MainPrefabPath: Levels/A_CatBunny
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pigskin
     - orange_light
@@ -6159,8 +6186,9 @@ MonoBehaviour:
     Level: 28
     GoldReward: 10
     MainPrefabPath: Levels/A_Chocolate
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - skin
     - white_light
@@ -6407,8 +6435,9 @@ MonoBehaviour:
     Level: 29
     GoldReward: 10
     MainPrefabPath: Levels/A_Circus
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - red
@@ -6695,8 +6724,9 @@ MonoBehaviour:
     Level: 30
     GoldReward: 10
     MainPrefabPath: Levels/A_ClothesHanger
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white
     - wood
@@ -6987,8 +7017,9 @@ MonoBehaviour:
     Level: 31
     GoldReward: 50
     MainPrefabPath: Levels/A_CornHouse
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 4
+    CubeTargetCount: 2
     BoxsQueue:
     - wood
     - brown_dark
@@ -7321,8 +7352,9 @@ MonoBehaviour:
     Level: 32
     GoldReward: 10
     MainPrefabPath: Levels/A_Cook
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange
     - black_dark
@@ -7554,8 +7586,9 @@ MonoBehaviour:
     Level: 33
     GoldReward: 10
     MainPrefabPath: Levels/A_Cooking
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - red
     - white_dark
@@ -7782,8 +7815,9 @@ MonoBehaviour:
     Level: 34
     GoldReward: 10
     MainPrefabPath: Levels/A_CoolMan
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - brown
@@ -7994,8 +8028,9 @@ MonoBehaviour:
     Level: 35
     GoldReward: 50
     MainPrefabPath: Levels/A_DinoMuseum
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - skin
     - green
@@ -8366,8 +8401,9 @@ MonoBehaviour:
     Level: 36
     GoldReward: 10
     MainPrefabPath: Levels/A_DinoRed
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - red
     - skin
@@ -8638,8 +8674,9 @@ MonoBehaviour:
     Level: 37
     GoldReward: 10
     MainPrefabPath: Levels/A_Dragon
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - red_light
     - green_light
@@ -8882,8 +8919,9 @@ MonoBehaviour:
     Level: 38
     GoldReward: 10
     MainPrefabPath: Levels/A_Dreamcatcher
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - cyan_light
     - blue_light
@@ -9098,8 +9136,9 @@ MonoBehaviour:
     Level: 39
     GoldReward: 10
     MainPrefabPath: Levels/A_DreamySundaeCup
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - pigskin
     - pgirl
@@ -9486,8 +9525,9 @@ MonoBehaviour:
     Level: 40
     GoldReward: 10
     MainPrefabPath: Levels/A_Dress
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - cyan_dark
     - cyan_dark
@@ -9674,8 +9714,9 @@ MonoBehaviour:
     Level: 41
     GoldReward: 10
     MainPrefabPath: Levels/A_DuckMotor
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - cyan
@@ -9934,8 +9975,9 @@ MonoBehaviour:
     Level: 42
     GoldReward: 10
     MainPrefabPath: Levels/A_Duckoo
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - pgirl
@@ -10102,8 +10144,9 @@ MonoBehaviour:
     Level: 43
     GoldReward: 10
     MainPrefabPath: Levels/A_Fortress
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - skin
     - wood
@@ -10426,8 +10469,9 @@ MonoBehaviour:
     Level: 44
     GoldReward: 10
     MainPrefabPath: Levels/A_FriedShrimp
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - lime
@@ -10698,8 +10742,9 @@ MonoBehaviour:
     Level: 45
     GoldReward: 10
     MainPrefabPath: Levels/A_Fry
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange_light
     - yellow
@@ -10986,8 +11031,9 @@ MonoBehaviour:
     Level: 46
     GoldReward: 50
     MainPrefabPath: Levels/A_Golf
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white_light
     - white_dark
@@ -11218,8 +11264,9 @@ MonoBehaviour:
     Level: 47
     GoldReward: 50
     MainPrefabPath: Levels/A_FunnyWagon
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - red
     - blue
@@ -11642,8 +11689,9 @@ MonoBehaviour:
     Level: 48
     GoldReward: 50
     MainPrefabPath: Levels/A_Grilledribs
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange
     - red_light
@@ -11874,8 +11922,9 @@ MonoBehaviour:
     Level: 49
     GoldReward: 50
     MainPrefabPath: Levels/A_Griller
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white_dark
     - red
@@ -12114,8 +12163,9 @@ MonoBehaviour:
     Level: 50
     GoldReward: 50
     MainPrefabPath: Levels/A_Gummybears
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pigskin
     - white
@@ -12334,8 +12384,9 @@ MonoBehaviour:
     Level: 51
     GoldReward: 50
     MainPrefabPath: Levels/A_HairDryer
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - pink_light
     - blue_light
@@ -12630,8 +12681,9 @@ MonoBehaviour:
     Level: 52
     GoldReward: 50
     MainPrefabPath: Levels/A_HandBag
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - blue_light
     - purple_light
@@ -12974,8 +13026,9 @@ MonoBehaviour:
     Level: 53
     GoldReward: 50
     MainPrefabPath: Levels/A_Hen
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pigskin
     - red
@@ -13186,8 +13239,9 @@ MonoBehaviour:
     Level: 54
     GoldReward: 50
     MainPrefabPath: Levels/A_Horse
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - wood
@@ -13458,8 +13512,9 @@ MonoBehaviour:
     Level: 55
     GoldReward: 50
     MainPrefabPath: Levels/A_LadyCastle
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - cyan_light
     - yellow
@@ -13854,8 +13909,9 @@ MonoBehaviour:
     Level: 56
     GoldReward: 50
     MainPrefabPath: Levels/A_HorsePink
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white_light
     - orange_dark
@@ -14119,8 +14175,9 @@ MonoBehaviour:
     Level: 57
     GoldReward: 50
     MainPrefabPath: Levels/A_Keyboard
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - blue_light
     - white_light
@@ -14319,8 +14376,9 @@ MonoBehaviour:
     Level: 58
     GoldReward: 50
     MainPrefabPath: Levels/A_Lighthouse
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - cyan_light
     - yellow
@@ -14551,8 +14609,9 @@ MonoBehaviour:
     Level: 59
     GoldReward: 50
     MainPrefabPath: Levels/A_LotusPig
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 4
+    CubeTargetCount: 2
     BoxsQueue:
     - pgirl
     - green
@@ -14995,8 +15054,9 @@ MonoBehaviour:
     Level: 60
     GoldReward: 50
     MainPrefabPath: Levels/A_MagicRabbit
-    LevelIconPath: 
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white
     - black_dark
@@ -15259,8 +15319,9 @@ MonoBehaviour:
     Level: 61
     GoldReward: 10
     MainPrefabPath: Levels/A_Mobile
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pigskin
     - brown_light
@@ -15439,8 +15500,9 @@ MonoBehaviour:
     Level: 62
     GoldReward: 10
     MainPrefabPath: Levels/A_Motoped
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - brown_light
     - brown_light
@@ -15679,8 +15741,9 @@ MonoBehaviour:
     Level: 63
     GoldReward: 10
     MainPrefabPath: Levels/A_Music
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - white_light
@@ -16006,8 +16069,9 @@ MonoBehaviour:
     Level: 64
     GoldReward: 10
     MainPrefabPath: Levels/A_Nest
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange_light
     - white_light
@@ -16230,8 +16294,9 @@ MonoBehaviour:
     Level: 65
     GoldReward: 10
     MainPrefabPath: Levels/A_Noel
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - brown_dark
     - brown_dark
@@ -16490,8 +16555,9 @@ MonoBehaviour:
     Level: 66
     GoldReward: 10
     MainPrefabPath: Levels/A_Peacock
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - cyan_light
@@ -16838,34 +16904,35 @@ MonoBehaviour:
     Level: 67
     GoldReward: 50
     MainPrefabPath: Levels/A_Pig
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - red_light
+    - pigskin
+    - pgirl
     - red_light
     - lime
-    - pgirl
-    - orange
-    - purple
-    - red
     - red_light
+    - white
+    - orange
+    - white
+    - purple
+    - red_light
+    - red
     - yellow
     - black_dark
-    - red_light
-    - blue_dark
-    - white
-    - cyan_dark
-    - black_light
     - cyan_light
     - blue_dark
-    - red_light
-    - pigskin
-    - pink_light
-    - white
     - pgirl
+    - pink_light
+    - cyan_dark
+    - black_light
+    - red_light
     - yellow_light
     - black_dark
     - black_light
+    - blue_dark
     - cyan_dark
     - cyan_light
     - lime
@@ -17186,8 +17253,9 @@ MonoBehaviour:
     Level: 68
     GoldReward: 50
     MainPrefabPath: Levels/A_Petgame
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - pink_light
@@ -17434,8 +17502,9 @@ MonoBehaviour:
     Level: 69
     GoldReward: 50
     MainPrefabPath: Levels/A_Phone
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - brown_light
     - lime
@@ -17674,8 +17743,9 @@ MonoBehaviour:
     Level: 70
     GoldReward: 50
     MainPrefabPath: Levels/A_Physics
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - skin
@@ -17970,8 +18040,9 @@ MonoBehaviour:
     Level: 71
     GoldReward: 50
     MainPrefabPath: Levels/A_PigGame
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - brown_light
     - pigskin
@@ -18266,8 +18337,9 @@ MonoBehaviour:
     Level: 72
     GoldReward: 50
     MainPrefabPath: Levels/A_Pineapple
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 4
+    CubeTargetCount: 2
     BoxsQueue:
     - orange_light
     - yellow
@@ -18276,39 +18348,39 @@ MonoBehaviour:
     - orange_light
     - yellow
     - skin
+    - orange_light
     - brown_dark
     - yellow
-    - cyan
     - orange_light
-    - green
+    - orange_light
+    - cyan
+    - yellow
     - skin
     - brown_dark
     - orange_light
-    - yellow
     - cyan
+    - yellow
+    - orange_light
+    - pink
+    - white_light
     - green
-    - yellow
-    - pink
-    - pigskin
     - orange_light
     - white_dark
-    - pigskin
+    - white_light
     - pink
     - pink_light
+    - green
+    - orange_light
     - lime
     - yellow
-    - orange_light
     - red
     - pink_light
-    - orange_light
     - white_dark
     - yellow
     - red
     - lime
-    - orange_light
     - red
     - yellow
-    - orange_light
     WoolPropertiesList:
     - WoolId: 5881923687494119475
       WeightOrder: 0
@@ -18332,8 +18404,8 @@ MonoBehaviour:
       WeightOrder: 0
       ActiveState: 1
       Color:
-      - pigskin
       - skin
+      - white_light
     - WoolId: 1138166590626665293
       WeightOrder: 1
       ActiveState: 1
@@ -18377,7 +18449,7 @@ MonoBehaviour:
       ActiveState: 1
       Color:
       - orange_light
-      - pigskin
+      - white_light
     - WoolId: 8900674523707269301
       WeightOrder: 0
       ActiveState: 1
@@ -18419,7 +18491,7 @@ MonoBehaviour:
       ActiveState: 1
       Color:
       - yellow
-      - pigskin
+      - white_light
     - WoolId: 7827186838222610415
       WeightOrder: 0
       ActiveState: 1
@@ -18503,7 +18575,7 @@ MonoBehaviour:
       ActiveState: 1
       Color:
       - orange_light
-      - pigskin
+      - white_light
     - WoolId: 4232339771733870871
       WeightOrder: 0
       ActiveState: 1
@@ -18539,7 +18611,7 @@ MonoBehaviour:
       ActiveState: 1
       Color:
       - orange_light
-      - pigskin
+      - white_light
     - WoolId: 4442846511676703511
       WeightOrder: 0
       ActiveState: 1
@@ -18674,7 +18746,7 @@ MonoBehaviour:
       ActiveState: 1
       Color:
       - lime
-      - pigskin
+      - white_light
     - WoolId: 6094854768934213106
       WeightOrder: 0
       ActiveState: 1
@@ -18694,8 +18766,9 @@ MonoBehaviour:
     Level: 73
     GoldReward: 50
     MainPrefabPath: Levels/A_PlayfulShiba
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange
     - pgirl
@@ -18902,8 +18975,9 @@ MonoBehaviour:
     Level: 74
     GoldReward: 50
     MainPrefabPath: Levels/A_Pot
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white
     - blue_light
@@ -19070,8 +19144,9 @@ MonoBehaviour:
     Level: 75
     GoldReward: 50
     MainPrefabPath: Levels/A_Reindeer
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white
     - brown_dark
@@ -19302,8 +19377,9 @@ MonoBehaviour:
     Level: 76
     GoldReward: 50
     MainPrefabPath: Levels/A_RoyalLunch
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - brown_dark
@@ -19674,8 +19750,9 @@ MonoBehaviour:
     Level: 77
     GoldReward: 50
     MainPrefabPath: Levels/A_RoastChicken
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange_light
     - lime
@@ -19842,8 +19919,9 @@ MonoBehaviour:
     Level: 78
     GoldReward: 50
     MainPrefabPath: Levels/A_Shoes
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - white
     - cyan_dark
@@ -20010,8 +20088,9 @@ MonoBehaviour:
     Level: 79
     GoldReward: 50
     MainPrefabPath: Levels/A_Slipper
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - purple_light
@@ -20274,8 +20353,9 @@ MonoBehaviour:
     Level: 80
     GoldReward: 50
     MainPrefabPath: Levels/A_SofaDuck
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - pigskin
     - white
@@ -20538,8 +20618,9 @@ MonoBehaviour:
     Level: 81
     GoldReward: 50
     MainPrefabPath: Levels/A_StarFriend
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - orange
@@ -20798,8 +20879,9 @@ MonoBehaviour:
     Level: 82
     GoldReward: 50
     MainPrefabPath: Levels/A_StarGirl
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pigskin
     - yellow
@@ -21002,8 +21084,9 @@ MonoBehaviour:
     Level: 83
     GoldReward: 50
     MainPrefabPath: Levels/A_Starfruit
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - lime
     - orange_dark
@@ -21210,8 +21293,9 @@ MonoBehaviour:
     Level: 84
     GoldReward: 50
     MainPrefabPath: Levels/A_TreatorTrick
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange
     - white
@@ -21562,8 +21646,9 @@ MonoBehaviour:
     Level: 85
     GoldReward: 50
     MainPrefabPath: Levels/A_Takoyaki
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - skin
     - brown
@@ -21826,8 +21911,9 @@ MonoBehaviour:
     Level: 86
     GoldReward: 50
     MainPrefabPath: Levels/A_TreasurePus
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - cyan_light
@@ -22130,8 +22216,9 @@ MonoBehaviour:
     Level: 87
     GoldReward: 50
     MainPrefabPath: Levels/A_Trumpet
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - pgirl
@@ -22314,8 +22401,9 @@ MonoBehaviour:
     Level: 88
     GoldReward: 50
     MainPrefabPath: Levels/A_TrippingCar
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - skin
@@ -22654,8 +22742,9 @@ MonoBehaviour:
     Level: 89
     GoldReward: 50
     MainPrefabPath: Levels/A_Wand
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pigskin
     - yellow
@@ -22818,8 +22907,9 @@ MonoBehaviour:
     Level: 90
     GoldReward: 50
     MainPrefabPath: Levels/A_WaterGun
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - red
@@ -23002,8 +23092,9 @@ MonoBehaviour:
     Level: 91
     GoldReward: 50
     MainPrefabPath: Levels/A_WatermelonFarm
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - green_dark
     - brown_dark
@@ -23330,8 +23421,9 @@ MonoBehaviour:
     Level: 92
     GoldReward: 50
     MainPrefabPath: Levels/A_WitchRabbit
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - orange
     - purple_dark
@@ -23674,8 +23766,9 @@ MonoBehaviour:
     Level: 93
     GoldReward: 50
     MainPrefabPath: Levels/A_WhiteDeer
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - white
@@ -23918,8 +24011,9 @@ MonoBehaviour:
     Level: 94
     GoldReward: 50
     MainPrefabPath: Levels/A_Witch
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - purple
     - black_dark
@@ -24094,8 +24188,9 @@ MonoBehaviour:
     Level: 95
     GoldReward: 50
     MainPrefabPath: Levels/A_ZooCar
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange_dark
     - yellow
@@ -24366,8 +24461,9 @@ MonoBehaviour:
     Level: 96
     GoldReward: 10
     MainPrefabPath: Levels/A_HawaiiStore
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 3
+    CubeTargetCount: 2
     BoxsQueue:
     - brown_dark
     - yellow
@@ -24726,8 +24822,9 @@ MonoBehaviour:
     Level: 97
     GoldReward: 10
     MainPrefabPath: Levels/A_HangThere
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - black_dark
     - orange
@@ -24998,8 +25095,9 @@ MonoBehaviour:
     Level: 98
     GoldReward: 10
     MainPrefabPath: Levels/A_UnicornBaby
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - yellow
     - orange
@@ -25262,8 +25360,9 @@ MonoBehaviour:
     Level: 99
     GoldReward: 10
     MainPrefabPath: Levels/A_BunnyCafeTime
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - pgirl
     - white_light
@@ -25510,8 +25609,9 @@ MonoBehaviour:
     Level: 100
     GoldReward: 10
     MainPrefabPath: Levels/A_Flybird
-    LevelIconPath: Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png
+    MainPrefab: {fileID: 0}
     LevelType: 1
+    CubeTargetCount: 2
     BoxsQueue:
     - orange
     - orange
@@ -25762,3 +25862,787 @@ MonoBehaviour:
       ActiveState: 1
       Color:
       - black_dark
+  - LevelName: Level 101 - A_Guitar
+    Level: 101
+    GoldReward: 10
+    MainPrefabPath: Levels/A_Guitar
+    MainPrefab: {fileID: 0}
+    LevelType: 1
+    CubeTargetCount: 2
+    BoxsQueue:
+    - blue_light
+    - blue_dark
+    - brown_light
+    - lime_light
+    - yellow
+    - blue_light
+    - purple_dark
+    - brown_light
+    - white_light
+    - blue_dark
+    - blue_light
+    - lime_light
+    - purple_dark
+    - white_light
+    - yellow
+    WoolPropertiesList:
+    - WoolId: 423396864048616398
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+    - WoolId: 1511653320172098583
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - brown_light
+      - blue_dark
+      - white_light
+    - WoolId: 8469610745812474910
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - white_light
+      - blue_light
+      - yellow
+    - WoolId: 1902277133155644551
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - lime_light
+      - purple_dark
+      - blue_light
+    - WoolId: 4150044227788428655
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - brown_light
+      - purple_dark
+      - white_light
+    - WoolId: 2595121085211259319
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - purple_dark
+      - brown_light
+      - lime_light
+    - WoolId: 6174325268420552208
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+    - WoolId: 7976069317028242575
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+    - WoolId: 8950323682940141442
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - purple_dark
+      - white_light
+      - lime_light
+    - WoolId: 657928722876587906
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - purple_dark
+      - yellow
+      - blue_light
+    - WoolId: 4545331515309106272
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - brown_light
+      - lime_light
+      - yellow
+    - WoolId: 5298912931643151851
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white_light
+    - WoolId: 7243522984014658880
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white_light
+      - lime_light
+      - blue_light
+      - purple_dark
+    - WoolId: 3323190082636540916
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - brown_light
+      - blue_dark
+      - blue_light
+    - WoolId: 4580178557421678950
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - blue_dark
+      - lime_light
+      - yellow
+    - WoolId: 4415678343261813265
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - yellow
+      - brown_light
+  - LevelName: Level 102 - A_DairyCow
+    Level: 102
+    GoldReward: 10
+    MainPrefabPath: Levels/A_DairyCow
+    MainPrefab: {fileID: 0}
+    LevelType: 1
+    CubeTargetCount: 2
+    BoxsQueue:
+    - black_dark
+    - white
+    - lime
+    - brown_light
+    - black_dark
+    - yellow
+    - brown_light
+    - lime
+    - white
+    - orange_light
+    - lime
+    - yellow
+    - black_dark
+    - white
+    - blue_light
+    - red_light
+    - orange_light
+    - red_light
+    - black_dark
+    - red_light
+    - orange_light
+    - blue_light
+    WoolPropertiesList:
+    - WoolId: 2187236743422856935
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - lime
+    - WoolId: 8978611965890899516
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - brown_light
+    - WoolId: 3674851292022478657
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - brown_light
+      - lime
+    - WoolId: 1807541636563674507
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - brown_light
+    - WoolId: 5957013418606739846
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - brown_light
+    - WoolId: 4658697115914906651
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - yellow
+    - WoolId: 6183442932347042955
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - blue_light
+    - WoolId: 2516926856385709898
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+      - black_dark
+    - WoolId: 3530342174583201283
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+      - brown_light
+    - WoolId: 7248948440074896497
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - lime
+    - WoolId: 7060554036812820802
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - red_light
+    - WoolId: 2811824556857072813
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - white
+    - WoolId: 4994393588471373369
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - blue_light
+    - WoolId: 419311932369284436
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - lime
+    - WoolId: 3660053516014314081
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - orange_light
+    - WoolId: 7219102565661836758
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red_light
+    - WoolId: 3172875658267166617
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red_light
+    - WoolId: 2172963290613386676
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red_light
+    - WoolId: 8729879567187347267
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red_light
+    - WoolId: 7545853497017619850
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+    - WoolId: 8866946653982359226
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+    - WoolId: 1240527303707417044
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+    - WoolId: 8394487273365214681
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - orange_light
+      - yellow
+    - WoolId: 6254469965819190912
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+    - WoolId: 936839072274069817
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+    - WoolId: 3928664334957767701
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+    - WoolId: 5700792855570616457
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+    - WoolId: 2781989185903845573
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red_light
+    - WoolId: 5504124756985923848
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red_light
+    - WoolId: 8398393375255531214
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red_light
+    - WoolId: 7157814848462258253
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red_light
+    - WoolId: 5470634841389203882
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+    - WoolId: 6678942401674248093
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+    - WoolId: 3339587382441658696
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+    - WoolId: 3995708354211016136
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+    - WoolId: 6507403404810992281
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - yellow
+    - WoolId: 1994439920938013465
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - lime
+    - WoolId: 6648128867127012329
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+      - yellow
+    - WoolId: 7783582857368511364
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+    - WoolId: 9006194233298197787
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - brown_light
+    - WoolId: 6540847045890523626
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+    - WoolId: 8851315015187503631
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+    - WoolId: 3138292418293017541
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+    - WoolId: 955529873229789475
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+    - WoolId: 7126924587566085277
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+    - WoolId: 8389373419726501865
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - black_dark
+    - WoolId: 1262817431309868016
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+  - LevelName: Level 103 - A_Camera
+    Level: 103
+    GoldReward: 10
+    MainPrefabPath: Levels/A_Camera
+    MainPrefab: {fileID: 0}
+    LevelType: 1
+    CubeTargetCount: 2
+    BoxsQueue:
+    - white
+    - blue_light
+    - yellow
+    - purple_light
+    - pigskin
+    - pgirl
+    - purple_light
+    - blue_light
+    - green
+    - pgirl
+    - pigskin
+    - white
+    - blue_light
+    - yellow
+    - orange_light
+    - blue_light
+    - purple_light
+    - white
+    - purple_light
+    - green
+    - orange_light
+    - white
+    - pgirl
+    - pigskin
+    WoolPropertiesList:
+    - WoolId: 5972145751876056249
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - pgirl
+      - blue_light
+      - pigskin
+    - WoolId: 3964358466756199912
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - purple_light
+      - yellow
+      - pigskin
+      - blue_light
+    - WoolId: 4450385547961202740
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - pigskin
+      - purple_light
+      - orange_light
+    - WoolId: 1359785992494083767
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - green
+      - pigskin
+    - WoolId: 1472055169359450549
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - white
+      - pgirl
+    - WoolId: 2633760562529460901
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - purple_light
+      - blue_light
+    - WoolId: 3254522484255340268
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - purple_light
+      - white
+    - WoolId: 6509250860319894123
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pgirl
+      - pigskin
+      - green
+    - WoolId: 4587380476454779624
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - white
+      - orange_light
+      - blue_light
+    - WoolId: 7282886630804682397
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - white
+      - green
+      - pgirl
+    - WoolId: 2039491676643489937
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+      - white
+      - blue_light
+    - WoolId: 6819406314905139595
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - green
+      - purple_light
+      - white
+    - WoolId: 9122696197633456174
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - pgirl
+      - purple_light
+      - white
+    - WoolId: 6524416856688867774
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+      - pigskin
+      - white
+    - WoolId: 1728704157269970007
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+      - pigskin
+      - blue_light
+    - WoolId: 3229081605500594268
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - orange_light
+      - purple_light
+      - blue_light
+    - WoolId: 7951524429162752226
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pgirl
+    - WoolId: 6305026811478711271
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - green
+      - purple_light
+      - pgirl
+    - WoolId: 3373583532161615401
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+      - purple_light
+      - blue_light
+    - WoolId: 5941041574095471246
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pigskin
+      - green
+      - yellow
+    - WoolId: 435921751314072226
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+      - purple_light
+      - yellow
+    - WoolId: 2832480344542666912
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+    - WoolId: 4346363074604741746
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+    - WoolId: 7833314909644993307
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pigskin
+      - purple_light
+      - pgirl
+    - WoolId: 209109554028966050
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - purple_light
+      - blue_light
+      - pgirl
+  - LevelName: Level 104 - A_PenBag
+    Level: 104
+    GoldReward: 10
+    MainPrefabPath: Levels/A_PenBag
+    MainPrefab: {fileID: 0}
+    LevelType: 1
+    CubeTargetCount: 2
+    BoxsQueue:
+    - blue_dark
+    - skin
+    - khaki
+    - blue_dark
+    - white_light
+    - lime
+    - cyan_light
+    - khaki
+    - white_light
+    - red
+    - skin
+    - blue_dark
+    - orange_dark
+    - yellow
+    - red
+    - skin
+    WoolPropertiesList:
+    - WoolId: 6062623139168049156
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - khaki
+      - white_light
+      - orange_dark
+    - WoolId: 1522610409449884797
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - khaki
+      - blue_dark
+      - skin
+    - WoolId: 3792237727761502811
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - skin
+      - khaki
+    - WoolId: 6066839012049152447
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - skin
+      - blue_dark
+      - white_light
+    - WoolId: 5438112112582677257
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - skin
+      - orange_dark
+    - WoolId: 9030264566730801298
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - skin
+      - cyan_light
+    - WoolId: 7803350377036229203
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - skin
+      - red
+    - WoolId: 799879566124328740
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white_light
+      - lime
+    - WoolId: 7185827429419028832
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+      - lime
+    - WoolId: 990056092149818372
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+      - khaki
+    - WoolId: 6980696772244973026
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+      - skin
+    - WoolId: 1141592708618057550
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+      - white_light
+    - WoolId: 3829792660044461371
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - khaki
+    - WoolId: 7017288399434393786
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+      - yellow
+    - WoolId: 8872028358431064374
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - cyan_light
+      - red
+    - WoolId: 4403347581563100560
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - cyan_light
+    - WoolId: 4716816585984333743
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white_light
+      - skin
+    - WoolId: 2389994056594980086
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - orange_dark
+      - red
+    - WoolId: 8912258101652269427
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red
+      - skin
+    - WoolId: 6064153513947617495
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - white_light
+    - WoolId: 1680508259650370891
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+      - yellow
+    - WoolId: 6471250995044406367
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_dark
+      - khaki
