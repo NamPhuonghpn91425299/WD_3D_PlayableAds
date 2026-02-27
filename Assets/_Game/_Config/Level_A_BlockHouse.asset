@@ -20,7 +20,7 @@ MonoBehaviour:
     MainPrefabPath: Levels/A_BlockHouse
     MainPrefab: {fileID: 5669009532030782487, guid: 35dbfaa89e0d36549b2986f620c7d2fb, type: 3}
     LevelType: 1
-    CubeTargetCount: 0
+    CubeTargetCount: 4
     BoxsQueue:
     - red_light
     - yellow

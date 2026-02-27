@@ -72,14 +72,14 @@ Material:
     - _NoiseTex:
         m_Texture: {fileID: 2800000, guid: 6cf59efce82937043a62cf6674a05948, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 2.93, y: 0}
+        m_Offset: {x: 0, y: 0}
     - _Normal:
         m_Texture: {fileID: 2800000, guid: f828a1c210a817c48b80080ffe549e0a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 2800000, guid: f1e8d46d05caab44f86fccd79660607a, type: 3}
-        m_Scale: {x: 1.06, y: 1}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
@@ -173,7 +173,7 @@ Material:
     - _GlowColor: {r: 0.90943396, g: 0.8652, b: 0.3826486, a: 1}
     - _HaloColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _LightDir: {r: 0.7, g: -0.34, b: -0.5, a: 0}
+    - _LightDir: {r: 0.7, g: 0, b: -0.5, a: 0}
     - _LightDirection: {r: 0, g: 1, b: 0, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _PaintLayer: {r: 0, g: 0, b: 0, a: 0}

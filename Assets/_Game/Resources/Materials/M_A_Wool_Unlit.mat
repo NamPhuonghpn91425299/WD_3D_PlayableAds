@@ -25,6 +25,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AO:
+        m_Texture: {fileID: 2800000, guid: d52d64f9a2a53e540bdef6a1e6e66ba0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AOMap:
+        m_Texture: {fileID: 2800000, guid: d52d64f9a2a53e540bdef6a1e6e66ba0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 93f8a86c1b1fd184b96f4085b9b97076, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -45,8 +53,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 792b21ee3b50cee4dbbfe2653f3f009c, type: 3}
+        m_Texture: {fileID: 2800000, guid: b400e08e5a0162d4fb7bc362e186a5ae, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -58,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 8303736468d1a6e489cc7273159476b5, type: 3}
+        m_Texture: {fileID: 2800000, guid: f1e8d46d05caab44f86fccd79660607a, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -69,15 +81,25 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
+        m_Texture: {fileID: 2800000, guid: dbb010c951f25fa4a8573226462e1907, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: b400e08e5a0162d4fb7bc362e186a5ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Ambient: 0.35
-    - _Brightness: 2.6
+    - _AOStrength: 0.3
+    - _Ambient: 0.8
+    - _Brightness: 3
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DebugView: 0
     - _DetailNormalMapScale: 1
-    - _DiffusePower: 0.2
-    - _Display: 0.975
+    - _DiffusePower: 0.5
+    - _Display: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
@@ -85,28 +107,46 @@ Material:
     - _HaloIntensity: 1
     - _HaloPower: 2.5
     - _LightIntensity: 1
+    - _MaxShadow: 0.61
     - _Metallic: 0
+    - _MinShadow: -1
     - _Mode: 0
+    - _NormalShadowPower: 2
+    - _NormalShadowStrength: 0.5
+    - _NormalStrength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 3
     - _RimStrength: 0.5
+    - _RoughnessMultiplier: 1
+    - _ScrollAlongV: 0
+    - _ShadowSpace: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularPower: 32
     - _SrcBlend: 1
+    - _Threshold: 0
+    - _ToonSteps: 3
+    - _USEGRADIENT: 0
     - _UVSec: 0
     - _UseHaloGlow: 0
     - _UseRim: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _AOcolor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.9294118, g: 0.9333334, b: 0.9568628, a: 1}
+    - _DarkThreadColor: {r: 0.29999998, g: 0.29999998, b: 0.29999998, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HaloColor: {r: 1, g: 1, b: 1, a: 1}
-    - _LightDir: {r: -0.5, g: 12, b: -11.4, a: 0}
+    - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LightDir: {r: 0, g: 12, b: 5, a: 0}
+    - _LightDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PaintLayer: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Scale: {r: -2, g: 2.6, b: 0, a: 0}
     - _ScreenTiling: {r: 5, g: 5, b: 0, a: 0}
+    - _ShadowColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
