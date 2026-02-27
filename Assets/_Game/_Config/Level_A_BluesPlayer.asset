@@ -18,7 +18,7 @@ MonoBehaviour:
     Level: 18
     GoldReward: 10
     MainPrefabPath: Levels/A_BluesPlayer
-    LevelIconPath: 
+    MainPrefab: {fileID: 734751480386753843, guid: 6401326e5edf5f24385f1bcbc0f06331, type: 3}
     LevelType: 3
     CubeTargetCount: 0
     BoxsQueue:

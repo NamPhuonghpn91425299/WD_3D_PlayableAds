@@ -9623,7 +9623,7 @@ Light:
     serializedVersion: 2
     m_Bits: 960
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10364,8 +10364,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1797259876}
-  - component: {fileID: 1797259878}
   - component: {fileID: 1797259885}
+  - component: {fileID: 1797259878}
   - component: {fileID: 1797259879}
   - component: {fileID: 1797259880}
   - component: {fileID: 1797259881}
@@ -10521,7 +10521,7 @@ MonoBehaviour:
   colorPalleteData: {fileID: 11400000, guid: 37b34e5668136f442998ee62ff0b08f5, type: 2}
   handController: {fileID: 1673621352}
   LoseOffer: 1
-  levelConfigSO: {fileID: 11400000, guid: 51ea234f9cc603446abab1f4700ad31d, type: 2}
+  levelConfigSO: {fileID: 11400000, guid: 7ee9ab91866e2d04ba99a587a8369014, type: 2}
   AddCubeDataSO: {fileID: 11400000, guid: abcaa88e84e135e419664611844b2e02, type: 2}
   broomDataSO: {fileID: 11400000, guid: c88dead6f7dbf024fa2d755e8d23e15e, type: 2}
   ParentObject: {fileID: 935084528}
@@ -11053,9 +11053,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1876893894}
   - {fileID: 1487752620}
-  - {fileID: 197102499}
   - {fileID: 1797259876}
   - {fileID: 1386965083}
+  - {fileID: 197102499}
   - {fileID: 1673621353}
   - {fileID: 1329309417}
   - {fileID: 385873971}

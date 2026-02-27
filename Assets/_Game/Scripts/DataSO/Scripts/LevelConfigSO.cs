@@ -16,8 +16,8 @@ public class LevelConfigSO : ScriptableObject
     {
         int originalId = levelId;
         levelId = GetLevelToLoad(levelId);
-        if (levelId == 0) levelId = levelConfigDataList.Count; 
-        
+        if (levelId == 0) levelId = levelConfigDataList.Count;
+
         int index = levelId - 1;
         if (index >= 0 && index < levelConfigDataList.Count)
         {
@@ -25,7 +25,7 @@ public class LevelConfigSO : ScriptableObject
             ///Debug.Log($"[LevelConfigSO] Mapping Level {originalId} -> Index {index} (LevelID in data: {data.Level}). Prefab: {data.MainPrefabPath}");
             return data;
         }
-        
+
         //Debug.LogError($"[LevelConfigSO] Level {originalId} (mapped to index {index}) NOT FOUND! List count: {levelConfigDataList.Count}");
         return null;
     }
@@ -122,7 +122,7 @@ public class LevelConfigData
     public int Level;
     public int GoldReward;
     public string MainPrefabPath;
-    public string LevelIconPath;
+    public GameObject MainPrefab; 
     public LevelType LevelType;
     public int CubeTargetCount; // Number of unlocked cube targets on start
     public List<string> BoxsQueue;

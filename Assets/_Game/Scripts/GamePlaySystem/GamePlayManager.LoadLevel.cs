@@ -226,13 +226,24 @@ public partial class GamePlayManager
 
     private GameObject LoadLevelPrefab(LevelConfigData configData)
     {
+        if (configData == null)
+        {
+            Debug.LogError("[LevelLoad] Level config is null");
+            return null;
+        }
+
+        if (configData.MainPrefab != null)
+        {
+            return configData.MainPrefab;
+        }
+
         var prefab = Resources.Load<GameObject>(configData.MainPrefabPath);
         if (prefab != null)
         {
             return prefab;
         }
 
-        Debug.LogError($"[LevelLoad] Prefab NOT FOUND in Resources: {configData.MainPrefabPath}");
+        Debug.LogError($"[LevelLoad] Prefab NOT FOUND. MainPrefab is null and Resources path invalid: {configData.MainPrefabPath}");
         return null;
     }
 
