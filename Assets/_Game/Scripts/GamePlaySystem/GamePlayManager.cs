@@ -19,11 +19,9 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
     [Tooltip("Tham chiếu đến HandController để hiển thị/ẩn hoạt ảnh hướng dẫn.")]
     [SerializeField]
     private HandController handController;
-    [SerializeField] private int LoseOffer = 1;
+
     [SerializeField] private LevelConfigSO levelConfigSO;
     [SerializeField] private AddCubeTargetData AddCubeDataSO;
-    [SerializeField] private BoosterDataSO broomDataSO;
-
     public Transform ParentObject;
 
     public CameraController CameraController;
@@ -31,8 +29,6 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 
     public List<CubeTargetControl> CurrentCubeTargets = new List<CubeTargetControl>();
     public List<QueueTargetControl> CurrentQueueTargets = new List<QueueTargetControl>();
-    // public CubeTargetControl RainBowTargetControl;
-    public GameObject WoolBasket;
 
     public GameObject YarnWoolPrefab;
     public GameObject RollWoolPrefab;
@@ -63,8 +59,6 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
     private List<int> _cubeTargetPrio;
 
 
-    private List<WoolRollAnimator> _broomBoosterPool = new List<WoolRollAnimator>();
-
     private int _currentColorCollected;
     private int _currentColorDistributed;
     [SerializeField] private int _cubeTargetCountDefault = 2;
@@ -73,16 +67,6 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
     private int _queueCount;
 
     private GameObject _levelPrefab;
-    private Sprite _offerIcon;
-
-    private bool _isUseOpenCubeoffer;
-
-    private bool _isUsingRainBowBooster;
-    private bool _isPLayAnimUsingRainBow;
-
-    private readonly int maxCubeTarget = 4;
-    private Vector3 _scaleDefaultRollWool;
-
 
     [HideInInspector] public int TotalCubeActive;
     [HideInInspector] public int CubeReadyCount;
@@ -96,12 +80,8 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 
     public int CurrentColorDistributed => _currentColorDistributed;
 
-    public bool IsFinishedUsingRainBow => _isPLayAnimUsingRainBow;
-
     public Action<bool> LockVacuumCleaner;
 
-    //public         SoundSO soundDict;
-    private int _purchaseOfferCost;
     private static int _replayCount = 0;
 
     [SerializeField] private Transform cubeTargetParent;
@@ -318,12 +298,6 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         //Debug.Log("Play sound wool_xoay");
         if (CheckChosenColorInCubeTarget(startPoint.transform, spiralPath, colorClick)) return true;
 
-        if (_isUsingRainBowBooster)
-        {
-            GameEventManager.OnRainbowBoxBoosterComplete?.Invoke();
-            return UseRainBowBooster(startPoint.transform, spiralPath, colorClick);
-        }
-
         if (CheckChosenColorInQueueTarget(startPoint, spiralPath, colorClick)) return true;
 
         return false;
@@ -348,60 +322,6 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
         }
     }
 
-
-    public void CheckColorInBroomPool(string color, int indexCube)
-    {
-        if (_isInitCube) return;
-        if (string.IsNullOrEmpty(color)) return;
-        for (var index = 0; index < _broomBoosterPool.Count; index++)
-        {
-            var broomCount = _broomBoosterPool.Count;
-            if (broomCount == 0) break;
-            index = Mathf.Clamp(index, 0, broomCount - 1);
-            var rollWool = _broomBoosterPool[index];
-            if (color.Equals(rollWool._currentColor) && CurrentCubeTargets.Count > 0)
-            {
-                index = Mathf.Clamp(index, 0, broomCount - 1);
-                CurrentCubeTargets[indexCube]
-                    .AddChild(indexCube, out var headTrans);
-                if (headTrans == null) continue;
-                rollWool.transform.localScale = Vector3.one * _scaleDefaultRollWool.x;
-                rollWool.SetParent(headTrans);
-                Vector3 start = rollWool.transform.position;
-                Vector3 mid = (start + headTrans.position) * 0.5f + Vector3.up * 0.5f;
-                var index1 = index;
-                rollWool.transform.DOKill();
-                rollWool
-                    .transform
-                    .DOPath(new[]
-                        {
-                            start,
-                            mid,
-                            headTrans.position
-                        }, 0.6f, PathType.CatmullRom
-                    )
-                    .SetEase(Ease.InOutCubic)
-                    .OnComplete(() =>
-                        {
-                            var anim = rollWool.GetComponent<WoolRollAnimator>();
-                            anim.SetParentType(RollWoolAnimationExtensions.ParentType.CubeTarget);
-                            rollWool.SnapToHole();
-                            SoundManager.Instance.PlayOneShot("wool1");
-                            Debug.Log("Play sound wool1");
-
-                        }
-                    );
-
-                _broomBoosterPool.RemoveAt(index);
-                index--;
-            }
-        }
-
-        if (_broomBoosterPool.Count == 0)
-        {
-            GamePlayUIManager.Instance.ActiveWoolBasket(false);
-        }
-    }
 
     public void CheckColorInQueuePool(string nextColor, int indexCube)
     {
@@ -469,28 +389,9 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 
     }
 
-    public void CheckLockBroomBooster()
-    {
-        // if (TotalCubeActive == CubeReadyCount)
-        // {
-        //     GamePlayUIManager.Instance?.SetBroomBoosterInteractable(true);
-        //     GamePlayUIManager.Instance?.SetRedoBoosterInteractable(true);
-        // }
-        // else
-        // {
-        //     GamePlayUIManager.Instance?.SetBroomButtonInteractable(false);
-        //     GamePlayUIManager.Instance?.SetRedoButtonInteractable(false);
-        // }
-    }
-
     public void CheckLockVacuumCleaner()
     {
         LockVacuumCleaner?.Invoke(CubeReadyCount == 0);
-    }
-
-    public void CheckLockRedoBooster()
-    {
-        //GamePlayUIManager.Instance.SetRedoBoosterInteractable(true);
     }
 
     public void AddQueueTarget()
@@ -729,7 +630,7 @@ public partial class GamePlayManager : SingletonBase<GamePlayManager>
 
             ChoseYarnWool(rollWool.transform, startPoint.transform, spiralPath, colorClick);
             _queueCount++;
-            if (_queueCount == TotalQueueActiveCount - 1 && !IsBroomBoosterTutorial)
+            if (_queueCount == TotalQueueActiveCount - 1)
             {
                 GameEventManager.PlayAnimPreLose?.Invoke(true);
             }

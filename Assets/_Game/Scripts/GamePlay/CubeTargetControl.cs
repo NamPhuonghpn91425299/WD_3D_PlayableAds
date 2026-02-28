@@ -183,7 +183,6 @@ public class CubeTargetControl : MonoBehaviour
         WaitingAnimTokenSource = new CancellationTokenSource();
 
         GamePlayManager.Instance.CubeReadyCount--;
-        GamePlayManager.Instance.CheckLockBroomBooster();
         GamePlayManager.Instance.CheckLockVacuumCleaner();
         _isReady = false;
 
@@ -237,13 +236,10 @@ public class CubeTargetControl : MonoBehaviour
             if (WaitingAnimTokenSource.Token.IsCancellationRequested) yield break;
         }
 
-        GamePlayManager.Instance.CheckColorInBroomPool(_currentColor, indexCube);
         GamePlayManager.Instance.CheckColorInQueuePool(_currentColor, indexCube);
         _isReady = true;
         GamePlayManager.Instance.CubeReadyCount++;
-        GamePlayManager.Instance.CheckLockBroomBooster();
         GamePlayManager.Instance.CheckLockVacuumCleaner();
-        GamePlayManager.Instance.CheckLockRedoBooster();
         GamePlayManager.Instance.CheckEndGame();
     }
 
@@ -379,7 +375,6 @@ public class CubeTargetControl : MonoBehaviour
             yield return new WaitForSeconds(m_boxAnimator.FlyInDuration);
         }
 
-        GamePlayManager.Instance.CheckColorInBroomPool(_currentColor, _indexCube);
         GamePlayManager.Instance.CheckColorInQueuePool(_currentColor, _indexCube);
         GamePlayManager.Instance.CheckEndGame();
         GamePlayManager.Instance.CheckEndGame();

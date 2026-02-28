@@ -4271,7 +4271,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e0fafd482b63a71419a51f64495d1622, type: 2}
+  - {fileID: 2100000, guid: 0d6134436be132941831afbb8ba119aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14872,7 +14872,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e0fafd482b63a71419a51f64495d1622, type: 2}
+  - {fileID: 2100000, guid: 0d6134436be132941831afbb8ba119aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19408,7 +19408,8 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls: []
+  DecoreControls:
+  - {fileID: 2782898831982341622}
   RemovedDecoreControls: []
   _childWoolControls:
   - {fileID: 8468924586792236101}
@@ -22466,7 +22467,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e0fafd482b63a71419a51f64495d1622, type: 2}
+  - {fileID: 2100000, guid: 0d6134436be132941831afbb8ba119aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26978,7 +26979,6 @@ MonoBehaviour:
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
   - {fileID: 8418541553576654118}
-  - {fileID: 2782898831982341622}
   RemovedDecoreControls: []
   _childWoolControls:
   - {fileID: 9219908177567255432}

@@ -8900,7 +8900,6 @@ GameObject:
   - component: {fileID: 1386965086}
   - component: {fileID: 1386965085}
   - component: {fileID: 1386965084}
-  - component: {fileID: 1386965088}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -9235,28 +9234,6 @@ MonoBehaviour:
     Loop: 1
     Clip: {fileID: 8300000, guid: b77688acd19646948b82e2ac31c59991, type: 3}
     ClipList: []
---- !u!114 &1386965088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386965082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7141d87ccbb06674f9fee63c8de18f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sound:
-    soundType: 4
-    Loop: 1
-    Clip: {fileID: 0}
-    ClipList:
-    - {fileID: 8300000, guid: b77688acd19646948b82e2ac31c59991, type: 3}
-  PlayOnEnable: 0
-  StopOnDisable: 0
-  playWithInteractable: 0
-  isPlayRandomBackGroundMusic: 1
 --- !u!1 &1403500499
 GameObject:
   m_ObjectHideFlags: 0
@@ -10520,10 +10497,8 @@ MonoBehaviour:
   FrameCount: 10
   colorPalleteData: {fileID: 11400000, guid: 37b34e5668136f442998ee62ff0b08f5, type: 2}
   handController: {fileID: 1673621352}
-  LoseOffer: 1
-  levelConfigSO: {fileID: 11400000, guid: dc77353a91b57844a99602e74eb28064, type: 2}
+  levelConfigSO: {fileID: 11400000, guid: 51ea234f9cc603446abab1f4700ad31d, type: 2}
   AddCubeDataSO: {fileID: 11400000, guid: abcaa88e84e135e419664611844b2e02, type: 2}
-  broomDataSO: {fileID: 11400000, guid: c88dead6f7dbf024fa2d755e8d23e15e, type: 2}
   ParentObject: {fileID: 935084528}
   CameraController: {fileID: 1797259878}
   BoxChainReactionController: {fileID: 1374435474}
@@ -10533,7 +10508,6 @@ MonoBehaviour:
   - {fileID: 439355249}
   - {fileID: 510527630}
   CurrentQueueTargets: []
-  WoolBasket: {fileID: 2076438815}
   YarnWoolPrefab: {fileID: 3194223680210052533, guid: b104697c1049ae54f8d41fc19ac7534a, type: 3}
   RollWoolPrefab: {fileID: 2594109155775345338, guid: f316b4426176b854eb541577280e7bdb, type: 3}
   MaxQueueTargetCount: 6
@@ -10551,9 +10525,6 @@ MonoBehaviour:
   IsRainBowBoosterTut: 0
   CurrentLevelIndex: 1
   spacingCubeTarget: 0.8
-  IsBroomTut: 0
-  IsUsingBroom: 0
-  IsBroomBoosterTutorial: 0
 --- !u!1001 &1833509701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10825,11 +10796,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033559403}
   m_CullTransparentMesh: 1
---- !u!1 &2076438815 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3401304732810595152, guid: b04347e53db32b84892d8a552418dc9d, type: 3}
-  m_PrefabInstance: {fileID: 1833509701}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8519306288255218371
 PrefabInstance:
   m_ObjectHideFlags: 0

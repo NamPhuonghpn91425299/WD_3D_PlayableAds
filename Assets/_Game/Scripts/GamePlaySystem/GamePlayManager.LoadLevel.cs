@@ -96,7 +96,6 @@ public partial class GamePlayManager
     private IEnumerator ResetLevelIntoDefaultCoroutine()
     {
         _isInitCube = true;
-        IsUsingBroom = false;
         _isAutoPlay = false;
         IsWinGame = false;
         _replayCount = 0;
@@ -106,7 +105,6 @@ public partial class GamePlayManager
         MeshCountClick = 0;
         _currentIndexColor = 0;
         _isInitCube = false;
-        _purchaseOfferCost = AddCubeDataSO.FirstCubeTargetCost;
         IsEndGame = false;
 
         int targetCount = _cubeTargetCountDefault;
@@ -121,7 +119,6 @@ public partial class GamePlayManager
         yield return null;
         ResetQueueTarget();
         yield return null;
-        ResetBroomBooster();
         PreWarmGamePools();
         yield return null;
         CameraController.SpawnPoint.rotation = Quaternion.identity;
@@ -258,8 +255,6 @@ public partial class GamePlayManager
             cube.transform.localPosition = _cubeTargetDefaultPos[index];
         }
         _cubeTargetPrio = new List<int>() { 0, 1 };
-        _isUsingRainBowBooster = false;
-        _isPLayAnimUsingRainBow = false;
     }
 
     private void ResetQueueTarget()
@@ -276,11 +271,6 @@ public partial class GamePlayManager
             queue.ResetDefault();
             queue.SetActive(index != BoxChainReactionController.InitialBoxCount);
         }
-    }
-
-    private void ResetBroomBooster()
-    {
-        _broomBoosterPool.Clear();
     }
 
     #endregion

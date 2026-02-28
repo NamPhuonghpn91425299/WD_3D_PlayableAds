@@ -36,7 +36,6 @@ public partial class GamePlayManager
 
     private IEnumerator OnEndGameAction(bool isWin)
     {
-        if (_isUseBroomBooster) yield break;
         //UIFullScreenBlocker.Instance.Lock(4);
         CameraController.Instance.BlockRotate(true);
         CameraController.Instance.SetBlockHandTap(true);
@@ -62,6 +61,6 @@ public partial class GamePlayManager
         }
 
         yield return null;
-        //UIFullScreenBlocker.Instance.Unlock(4);
+        Luna.Unity.LifeCycle.GameEnded();
     }
 }
