@@ -1844,9 +1844,23 @@ MonoBehaviour:
     upToDate: 0
     keywords:
     - _LOWP
+  - shaderCompilerPlatform: 5
+    shader: {fileID: 4800000, guid: 05964a4fcbb4bcd4facbd869fc680999, type: 3}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords: []
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 4800000, guid: 05964a4fcbb4bcd4facbd869fc680999, type: 3}
+    passType: 0
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords: []
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 2321
+  version: 3259
   _shaderParsedShaders:
   - ParsedSubShaders:
     - Index: 0
