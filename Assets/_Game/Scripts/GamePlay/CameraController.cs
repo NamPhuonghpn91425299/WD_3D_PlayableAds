@@ -754,10 +754,10 @@ public class CameraController : SingletonBase<CameraController>
         _introEnded = false;
         totalIntroRotation = 0;
 
-        SoundManager.Instance.PlayOneShot(introRotateSound);
+        SoundManager.Instance.PlayOneShotFx(introRotateSound);
         yield return new WaitForSeconds(IntroLenght);
         if (token.IsCancellationRequested) yield break;
-        SoundManager.Instance.PlayOneShot(introFinishRotateSound);
+        SoundManager.Instance.PlayOneShotFx(introFinishRotateSound);
 
         GameEventManager.OnIntroComplete?.Invoke(true);
         yield return null;

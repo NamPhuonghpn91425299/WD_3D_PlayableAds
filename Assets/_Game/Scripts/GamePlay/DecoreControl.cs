@@ -18,9 +18,9 @@ public class DecoreControl : MonoBehaviour
 
     public TypeOfDecore DecoreType = TypeOfDecore.None;
 
-    private Material _runtimeMaterial;
 
     [SerializeField] private DecoreState _decoreState = DecoreState.None;
+    private Material _runtimeMaterial;
 
     [SerializeField] private bool _executeRotation = false;
 
@@ -53,6 +53,14 @@ public class DecoreControl : MonoBehaviour
     private void OnEnable()
     {
         if (_decoreState == DecoreState.OnlyUsePhysic) return;
+        if (Application.isPlaying)
+        {
+            EnsureRuntimeMaterial()?.SetFloat(ShaderPropertiesLib.Display, 1);
+        }
+        else
+        {
+            MeshRenderer?.sharedMaterial?.SetFloat(ShaderPropertiesLib.Display, 1);
+        }
         SetColor();
     }
 
@@ -63,35 +71,31 @@ public class DecoreControl : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Application.isPlaying && _runtimeMaterial != null)
-        {
-            Destroy(_runtimeMaterial);
-            _runtimeMaterial = null;
-        }
+        ReleaseRuntimeMaterial();
     }
 
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        if (MeshRenderer)
-            _decoreCenterPos = transform.parent != null
-                ? transform.parent.InverseTransformPoint(MeshRenderer.bounds.center)
-                : MeshRenderer.bounds.center;
-    }
+// #if UNITY_EDITOR
+//     private void OnValidate()
+//     {
+//         if (MeshRenderer)
+//             _decoreCenterPos = transform.parent != null
+//                 ? transform.parent.InverseTransformPoint(MeshRenderer.bounds.center)
+//                 : MeshRenderer.bounds.center;
+//     }
 
-    private void Update()
-    {
-        if (!Application.isPlaying)
-        {
-            if (_decoreState == DecoreState.OnlyUsePhysic) return;
-            SetColor();
-        }
-    }
-#else
-    private void Update()
-    {
-    }
-#endif
+//     private void Update()
+//     {
+//         if (!Application.isPlaying)
+//         {
+//             if (_decoreState == DecoreState.OnlyUsePhysic) return;
+//             SetColor();
+//         }
+//     }
+// #else
+//     private void Update()
+//     {
+//     }
+// #endif
     #endregion
 
     #region MAIN_METHODS
@@ -210,16 +214,35 @@ public class DecoreControl : MonoBehaviour
     }
     #endregion
 
-    public void SetColor(Color color) { _color = color; SetColor(); }
+    public void SetColor(Color color)
+    {
+        _color = color;
+        SetColor();
+    }
 
     public void SetMaterial(Material material)
     {
         if (MeshRenderer != null)
         {
-            MeshRenderer.material = material;
+            if (Application.isPlaying)
+            {
+                ReleaseRuntimeMaterial();
+                if (material != null)
+                {
+                    _runtimeMaterial = new Material(material);
+                    MeshRenderer.sharedMaterial = _runtimeMaterial;
+                    _runtimeMaterial.SetFloat(ShaderPropertiesLib.Display, 1);
+                    _runtimeMaterial.SetColor(ShaderPropertiesLib.Color, _color);
+                }
+                else
+                {
+                    MeshRenderer.sharedMaterial = null;
+                }
+                return;
+            }
+            MeshRenderer.sharedMaterial = material;
             // Cập nhật lại property block nếu cần hiển thị
-            _runtimeMaterial = MeshRenderer.material;
-            _runtimeMaterial?.SetFloat(ShaderPropertiesLib.Display, 1);
+            MeshRenderer.sharedMaterial?.SetFloat(ShaderPropertiesLib.Display, 1);
         }
     }
 
@@ -319,25 +342,36 @@ public class DecoreControl : MonoBehaviour
 
     private void SetColor()
     {
-        if (_decoreState == DecoreState.None)
-        {
-            return;
-        }
-
-        try
+        if (_decoreState == DecoreState.None || MeshRenderer == null) return;
+        if (Application.isPlaying)
         {
             EnsureRuntimeMaterial()?.SetColor(ShaderPropertiesLib.Color, _color);
-        }
-        catch
-        {
         }
     }
 
     private Material EnsureRuntimeMaterial()
     {
-        if (MeshRenderer == null) return null;
-        if (_runtimeMaterial == null) _runtimeMaterial = MeshRenderer.material;
+        if (MeshRenderer == null || !Application.isPlaying) return null;
+        if (_runtimeMaterial != null) return _runtimeMaterial;
+
+        var source = MeshRenderer.sharedMaterial;
+        if (source == null) return null;
+
+        _runtimeMaterial = new Material(source);
+        MeshRenderer.sharedMaterial = _runtimeMaterial;
         return _runtimeMaterial;
+    }
+
+    private void ReleaseRuntimeMaterial()
+    {
+        if (_runtimeMaterial == null) return;
+        if (MeshRenderer != null && MeshRenderer.sharedMaterial == _runtimeMaterial)
+        {
+            MeshRenderer.sharedMaterial = null;
+        }
+        if (Application.isPlaying) Destroy(_runtimeMaterial);
+        else DestroyImmediate(_runtimeMaterial);
+        _runtimeMaterial = null;
     }
 
     public enum DecoreState

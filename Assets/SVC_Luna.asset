@@ -1224,6 +1224,40 @@ MonoBehaviour:
     upToDate: 0
     keywords: []
   - shaderCompilerPlatform: 5
+    shader: {fileID: 4800000, guid: 3fe0009e8609923429959ac2aab997ec, type: 3}
+    passType: 4
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - DIRECTIONAL
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 4800000, guid: 3fe0009e8609923429959ac2aab997ec, type: 3}
+    passType: 4
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - DIRECTIONAL
+  - shaderCompilerPlatform: 5
+    shader: {fileID: 4800000, guid: 3fe0009e8609923429959ac2aab997ec, type: 3}
+    passType: 4
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - DIRECTIONAL
+    - LIGHTPROBE_SH
+  - shaderCompilerPlatform: 9
+    shader: {fileID: 4800000, guid: 3fe0009e8609923429959ac2aab997ec, type: 3}
+    passType: 4
+    passId: 0
+    subShaderIndex: 0
+    upToDate: 0
+    keywords:
+    - DIRECTIONAL
+    - LIGHTPROBE_SH
+  - shaderCompilerPlatform: 5
     shader: {fileID: 4800000, guid: 5ca26d1e64585e840b094f52337398db, type: 3}
     passType: 0
     passId: 0
@@ -1455,40 +1489,6 @@ MonoBehaviour:
     subShaderIndex: 0
     upToDate: 0
     keywords: []
-  - shaderCompilerPlatform: 5
-    shader: {fileID: 4800000, guid: 3fe0009e8609923429959ac2aab997ec, type: 3}
-    passType: 4
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - DIRECTIONAL
-  - shaderCompilerPlatform: 9
-    shader: {fileID: 4800000, guid: 3fe0009e8609923429959ac2aab997ec, type: 3}
-    passType: 4
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - DIRECTIONAL
-  - shaderCompilerPlatform: 5
-    shader: {fileID: 4800000, guid: 3fe0009e8609923429959ac2aab997ec, type: 3}
-    passType: 4
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - DIRECTIONAL
-    - LIGHTPROBE_SH
-  - shaderCompilerPlatform: 9
-    shader: {fileID: 4800000, guid: 3fe0009e8609923429959ac2aab997ec, type: 3}
-    passType: 4
-    passId: 0
-    subShaderIndex: 0
-    upToDate: 0
-    keywords:
-    - DIRECTIONAL
-    - LIGHTPROBE_SH
   - shaderCompilerPlatform: 5
     shader: {fileID: 4800000, guid: e2222bdfe93a27b47bb1c6fd407b34ee, type: 3}
     passType: 4
@@ -1860,7 +1860,7 @@ MonoBehaviour:
     keywords: []
   _includedShaderVariants: []
   _excludedShaderVariants: []
-  version: 3405
+  version: 4727
   _shaderParsedShaders:
   - ParsedSubShaders:
     - Index: 0

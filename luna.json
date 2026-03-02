@@ -2,7 +2,7 @@
     "version": "7.0.0",
     "projectId": "1d50191528698274c8378a20ad162070",
     "applicationID": 37245,
-    "creativeName": "Cozy_Yarn_3D_A_Starfruit",
+    "creativeName": "Cozy_Yarn_3D_A_Pineapple",
     "pgServer": "EU",
     "window": {
         "‐⁏": true
@@ -16563,11 +16563,11 @@
                     },
                     {
                         "name": "HasProperty$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "HasProperty",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "GetFloat$1",
@@ -17967,7 +17967,7 @@
                     },
                     {
                         "name": "sharedMaterial#get",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "sharedMaterials#get",
@@ -20789,7 +20789,7 @@
                     },
                     {
                         "name": "PlayOneShotFx",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "PlayOneShot$1",
@@ -26826,10 +26826,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "Update",
-                        "excluded": false
-                    },
-                    {
                         "name": "PulseOutOfParrentWool$1",
                         "excluded": false
                     },
@@ -26892,6 +26888,10 @@
                     {
                         "name": "EnsureRuntimeMaterial",
                         "excluded": false
+                    },
+                    {
+                        "name": "ReleaseRuntimeMaterial",
+                        "excluded": true
                     }
                 ]
             },
@@ -29403,7 +29403,7 @@
                     },
                     {
                         "name": "matchWidthOrHeight#set",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "referencePixelsPerUnit#set",
@@ -31454,10 +31454,6 @@
                         "excluded": true
                     },
                     {
-                        "name": "IsFinishedUsingRainBow#get",
-                        "excluded": true
-                    },
-                    {
                         "name": "RenderCamera#get",
                         "excluded": true
                     },
@@ -31538,23 +31534,11 @@
                         "excluded": true
                     },
                     {
-                        "name": "CheckColorInBroomPool",
-                        "excluded": false
-                    },
-                    {
                         "name": "CheckColorInQueuePool",
                         "excluded": false
                     },
                     {
-                        "name": "CheckLockBroomBooster",
-                        "excluded": false
-                    },
-                    {
                         "name": "CheckLockVacuumCleaner",
-                        "excluded": false
-                    },
-                    {
-                        "name": "CheckLockRedoBooster",
                         "excluded": false
                     },
                     {
@@ -31698,10 +31682,6 @@
                         "excluded": false
                     },
                     {
-                        "name": "ResetBroomBooster",
-                        "excluded": false
-                    },
-                    {
                         "name": "SmoothRepositioner",
                         "excluded": false
                     },
@@ -31711,50 +31691,6 @@
                     },
                     {
                         "name": "Reposition",
-                        "excluded": true
-                    },
-                    {
-                        "name": "AddRainBowBox",
-                        "excluded": true
-                    },
-                    {
-                        "name": "UseRainBowBooster",
-                        "excluded": true
-                    },
-                    {
-                        "name": "UseBroomBoosterCleanUpQueue",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnChoseRandomWoolForUseBroomBooster",
-                        "excluded": true
-                    },
-                    {
-                        "name": "UseRedoBooster",
-                        "excluded": true
-                    },
-                    {
-                        "name": "ActiveHelperItem",
-                        "excluded": true
-                    },
-                    {
-                        "name": "OnCompleteBroomBoosterTutorial",
-                        "excluded": true
-                    },
-                    {
-                        "name": "DisplayRainBowBox",
-                        "excluded": true
-                    },
-                    {
-                        "name": "HideRainBowBox",
-                        "excluded": true
-                    },
-                    {
-                        "name": "GetWorldPosUIElement",
-                        "excluded": true
-                    },
-                    {
-                        "name": "GetUIWorldPosition",
                         "excluded": true
                     },
                     {
@@ -32442,6 +32378,82 @@
                         "excluded": false
                     }
                 ]
+            },
+            {
+                "className": "OrientationElement",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "InitializeValues",
+                        "excluded": false
+                    },
+                    {
+                        "name": "ApplyOrientation",
+                        "excluded": false
+                    },
+                    {
+                        "name": "OnDestroy",
+                        "excluded": true
+                    }
+                ]
+            },
+            {
+                "className": "OrientationManager",
+                "staticMethods": [],
+                "instanceMethods": [
+                    {
+                        "name": "init",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Awake",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Start",
+                        "excluded": false
+                    },
+                    {
+                        "name": "Update",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UpdateOrientation",
+                        "excluded": false
+                    },
+                    {
+                        "name": "RegisterElement",
+                        "excluded": false
+                    },
+                    {
+                        "name": "UnregisterElement",
+                        "excluded": true
+                    },
+                    {
+                        "name": "ForceUpdateOrientation",
+                        "excluded": true
+                    },
+                    {
+                        "name": "CleanupElements",
+                        "excluded": true
+                    },
+                    {
+                        "name": "OnValidate",
+                        "excluded": true
+                    }
+                ]
             }
         ],
         "stubberDataList": [],
@@ -32624,7 +32636,7 @@
                         "maxWidth": 1024,
                         "maxHeight": 1024,
                         "format": "png32",
-                        "compression": "quantSize",
+                        "compression": "quantQuality",
                         "quality": 65,
                         "script": "",
                         "ext": "",
