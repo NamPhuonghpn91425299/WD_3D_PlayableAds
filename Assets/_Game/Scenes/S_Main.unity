@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36943937}
   - component: {fileID: 36943939}
+  - component: {fileID: 36943940}
   - component: {fileID: 36943938}
   m_Layer: 0
   m_Name: NewZoomButtons
@@ -274,6 +275,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36943936}
   m_CullTransparentMesh: 1
+--- !u!114 &36943940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36943936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 1
+  portraitAnchoredPosition: {x: 25.09998, y: -382.1}
+  landscapeAnchoredPosition: {x: 25.09998, y: -232.1}
+  adjustSizeDelta: 0
+  portraitSizeDelta: {x: 0, y: 0}
+  landscapeSizeDelta: {x: 0, y: 0}
+  adjustLocalScale: 0
+  portraitLocalScale: {x: 1, y: 1, z: 1}
+  landscapeLocalScale: {x: 1, y: 1, z: 1}
 --- !u!1 &74968775
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +337,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 0}
+  m_SizeDelta: {x: 2000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74968777
 MonoBehaviour:
@@ -654,6 +682,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37ea5a915fdeb4469b935f11a9fc67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &137544586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2989442862649663784, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
+  m_PrefabInstance: {fileID: 295829883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &137544590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137544586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 1
+  portraitAnchoredPosition: {x: 80, y: -575}
+  landscapeAnchoredPosition: {x: 80, y: -300}
+  adjustSizeDelta: 0
+  portraitSizeDelta: {x: 0, y: 0}
+  landscapeSizeDelta: {x: 0, y: 0}
+  adjustLocalScale: 0
+  portraitLocalScale: {x: 1, y: 1, z: 1}
+  landscapeLocalScale: {x: 1, y: 1, z: 1}
 --- !u!1 &149449967
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 197102499}
+  - component: {fileID: 197102509}
   - component: {fileID: 197102508}
   - component: {fileID: 197102503}
   - component: {fileID: 197102507}
@@ -949,6 +1010,21 @@ MonoBehaviour:
   ZoomDistance: 2
   ZoomStep: 5
   ReCenterButton: {fileID: 913078354}
+--- !u!114 &197102509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197102495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0032dd7fbc53684fa2c17bc62c2813c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portraitMatch: 0.5
+  landscapeMatch: 0.5
+  checkInterval: 0.5
 --- !u!1 &295508398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,7 +1219,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2989442862649663784, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 137544590}
   m_SourcePrefab: {fileID: 100100000, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
 --- !u!224 &295829884 stripped
 RectTransform:
@@ -1274,6 +1353,7 @@ GameObject:
   - component: {fileID: 355756576}
   - component: {fileID: 355756578}
   - component: {fileID: 355756577}
+  - component: {fileID: 355756579}
   m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
@@ -1338,6 +1418,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355756575}
   m_CullTransparentMesh: 1
+--- !u!114 &355756579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355756575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 1
+  portraitAnchoredPosition: {x: 0, y: -450}
+  landscapeAnchoredPosition: {x: 0, y: -620}
+  adjustSizeDelta: 0
+  portraitSizeDelta: {x: 0, y: 0}
+  landscapeSizeDelta: {x: 0, y: 0}
+  adjustLocalScale: 1
+  portraitLocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  landscapeLocalScale: {x: 0.45, y: 0.45, z: 0.45}
 --- !u!1 &370797983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,10 +1911,10 @@ RectTransform:
   - {fileID: 1136375243}
   m_Father: {fileID: 849676485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 886, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &452730297
 CanvasGroup:
@@ -1935,10 +2042,10 @@ RectTransform:
   - {fileID: 549197478}
   m_Father: {fileID: 1226484627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 886, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &499688041
 CanvasGroup:
@@ -2424,6 +2531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 549197478}
   - component: {fileID: 549197483}
+  - component: {fileID: 549197484}
   - component: {fileID: 549197482}
   - component: {fileID: 549197481}
   - component: {fileID: 549197480}
@@ -2574,6 +2682,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549197477}
   m_CullTransparentMesh: 1
+--- !u!114 &549197484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549197477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 1
+  portraitAnchoredPosition: {x: 0, y: 450}
+  landscapeAnchoredPosition: {x: 0, y: 582}
+  adjustSizeDelta: 1
+  portraitSizeDelta: {x: 400, y: 172}
+  landscapeSizeDelta: {x: 360, y: 150}
+  adjustLocalScale: 0
+  portraitLocalScale: {x: 1, y: 1, z: 1}
+  landscapeLocalScale: {x: 1, y: 1, z: 1}
 --- !u!1 &576126929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,6 +2845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 812996192}
   - component: {fileID: 812996194}
+  - component: {fileID: 812996195}
   - component: {fileID: 812996193}
   m_Layer: 0
   m_Name: Image
@@ -2775,6 +2911,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812996191}
   m_CullTransparentMesh: 1
+--- !u!114 &812996195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812996191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 0
+  portraitAnchoredPosition: {x: 0, y: -1000}
+  landscapeAnchoredPosition: {x: 0, y: -620}
+  adjustSizeDelta: 0
+  portraitSizeDelta: {x: 0, y: 0}
+  landscapeSizeDelta: {x: 0, y: 0}
+  adjustLocalScale: 1
+  portraitLocalScale: {x: 1, y: 1, z: 1}
+  landscapeLocalScale: {x: 0.8, y: 0.8, z: 0.8}
 --- !u!1 &849676484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3038,6 +3201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 977652063}
   - component: {fileID: 977652065}
+  - component: {fileID: 977652066}
   - component: {fileID: 977652064}
   m_Layer: 0
   m_Name: Image (1)
@@ -3103,6 +3267,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977652062}
   m_CullTransparentMesh: 1
+--- !u!114 &977652066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977652062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 1
+  portraitAnchoredPosition: {x: 0, y: -450}
+  landscapeAnchoredPosition: {x: 0, y: -620}
+  adjustSizeDelta: 0
+  portraitSizeDelta: {x: 0, y: 0}
+  landscapeSizeDelta: {x: 0, y: 0}
+  adjustLocalScale: 1
+  portraitLocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  landscapeLocalScale: {x: 0.45, y: 0.45, z: 0.45}
 --- !u!1 &981935727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +3329,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 120}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981935729
 MonoBehaviour:
@@ -3187,6 +3378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1096736469}
+  - component: {fileID: 1096736470}
   m_Layer: 0
   m_Name: ZoomButton
   m_TagString: Untagged
@@ -3214,6 +3406,33 @@ RectTransform:
   m_AnchoredPosition: {x: 48.30005, y: -580}
   m_SizeDelta: {x: 44, y: 296}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1096736470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096736468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 1
+  portraitAnchoredPosition: {x: 48.30005, y: -580}
+  landscapeAnchoredPosition: {x: 48.30005, y: -430}
+  adjustSizeDelta: 0
+  portraitSizeDelta: {x: 0, y: 0}
+  landscapeSizeDelta: {x: 0, y: 0}
+  adjustLocalScale: 0
+  portraitLocalScale: {x: 1, y: 1, z: 1}
+  landscapeLocalScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1113540139
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,6 +3522,7 @@ GameObject:
   - component: {fileID: 1136375246}
   - component: {fileID: 1136375245}
   - component: {fileID: 1136375244}
+  - component: {fileID: 1136375249}
   m_Layer: 0
   m_Name: ReplayBtn
   m_TagString: Untagged
@@ -3449,6 +3669,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136375242}
   m_CullTransparentMesh: 1
+--- !u!114 &1136375249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136375242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 1
+  portraitAnchoredPosition: {x: 0, y: 450}
+  landscapeAnchoredPosition: {x: 0, y: 582}
+  adjustSizeDelta: 1
+  portraitSizeDelta: {x: 400, y: 172}
+  landscapeSizeDelta: {x: 360, y: 150}
+  adjustLocalScale: 0
+  portraitLocalScale: {x: 1, y: 1, z: 1}
+  landscapeLocalScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1147096124
 GameObject:
   m_ObjectHideFlags: 0
@@ -8736,6 +8983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385159969}
   - component: {fileID: 1385159975}
+  - component: {fileID: 1385159976}
   - component: {fileID: 1385159974}
   - component: {fileID: 1385159973}
   - component: {fileID: 1385159972}
@@ -8887,6 +9135,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385159968}
   m_CullTransparentMesh: 1
+--- !u!114 &1385159976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385159968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 1
+  portraitAnchoredPosition: {x: 0, y: 120}
+  landscapeAnchoredPosition: {x: 0, y: 45}
+  adjustSizeDelta: 0
+  portraitSizeDelta: {x: 0, y: 0}
+  landscapeSizeDelta: {x: 0, y: 0}
+  adjustLocalScale: 1
+  portraitLocalScale: {x: 1, y: 1, z: 1}
+  landscapeLocalScale: {x: 0.6, y: 0.6, z: 0.6}
 --- !u!1 &1386965082
 GameObject:
   m_ObjectHideFlags: 0
@@ -9734,14 +10009,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1226484627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 0}
+  m_SizeDelta: {x: 2000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1568773703
 MonoBehaviour:
@@ -10189,6 +10464,7 @@ GameObject:
   - component: {fileID: 1768382357}
   - component: {fileID: 1768382359}
   - component: {fileID: 1768382358}
+  - component: {fileID: 1768382360}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -10253,6 +10529,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768382356}
   m_CullTransparentMesh: 1
+--- !u!114 &1768382360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768382356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bde8c00161e9943adddbc243656812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustPosition: 0
+  portraitPosition: {x: 0, y: 0, z: 0}
+  landscapePosition: {x: 0, y: 0, z: 0}
+  adjustScale: 0
+  portraitScale: {x: 1, y: 1, z: 1}
+  landscapeScale: {x: 1, y: 1, z: 1}
+  adjustAnchoredPosition: 0
+  portraitAnchoredPosition: {x: 0, y: -1000}
+  landscapeAnchoredPosition: {x: 0, y: -620}
+  adjustSizeDelta: 0
+  portraitSizeDelta: {x: 0, y: 0}
+  landscapeSizeDelta: {x: 0, y: 0}
+  adjustLocalScale: 1
+  portraitLocalScale: {x: 1, y: 1, z: 1}
+  landscapeLocalScale: {x: 0.8, y: 0.8, z: 0.8}
 --- !u!1 &1775531071
 GameObject:
   m_ObjectHideFlags: 0
@@ -10497,7 +10800,7 @@ MonoBehaviour:
   FrameCount: 10
   colorPalleteData: {fileID: 11400000, guid: 37b34e5668136f442998ee62ff0b08f5, type: 2}
   handController: {fileID: 1673621352}
-  levelConfigSO: {fileID: 11400000, guid: 51ea234f9cc603446abab1f4700ad31d, type: 2}
+  levelConfigSO: {fileID: 11400000, guid: 25c135080445e7b4dadf94dbd13a09df, type: 2}
   AddCubeDataSO: {fileID: 11400000, guid: abcaa88e84e135e419664611844b2e02, type: 2}
   ParentObject: {fileID: 935084528}
   CameraController: {fileID: 1797259878}
