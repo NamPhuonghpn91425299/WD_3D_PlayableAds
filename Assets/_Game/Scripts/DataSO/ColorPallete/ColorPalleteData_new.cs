@@ -6,7 +6,7 @@ using UnityEngine;
 public class ColorPalleteData_new : ScriptableObject
 {
     public ColorPallete_New[] m_colorPallete;
-    
+
     private Dictionary<string, Material> _colorPalleteDict;
     public Dictionary<string, Material> colorPallete_New
     {

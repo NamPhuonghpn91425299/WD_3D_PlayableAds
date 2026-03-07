@@ -6,25 +6,21 @@
     "LevelType": 1,
     "BoxsQueue": [
         "wood",
-        "lime_dark",
-        "orange_light",
-        "white_light",
-        "red_light",
-        "wood",
-        "lime_dark",
-        "wood",
+        "brown_dark",
         "red_light",
         "brown_dark",
-        "wood",
-        "lime_dark",
-        "brown_dark",
         "orange_light",
+        "wood",
+        "wood",
         "white_light",
-        "brown_dark",
-        "yellow_light",
+        "red_light",
         "lime_dark",
-        "lime",
-        "wood"
+        "wood",
+        "brown_dark",
+        "lime_dark",
+        "wood",
+        "white_light",
+        "lime"
     ],
     "WoolPropertiesList": [
         {
@@ -32,7 +28,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow_light"
+                "lime"
             ]
         },
         {
@@ -40,7 +36,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow_light"
+                "lime_dark"
             ]
         },
         {
@@ -56,9 +52,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime",
-                "wood",
-                "red_light"
+                "lime"
             ]
         },
         {
@@ -122,7 +116,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange_light"
+                "wood"
             ]
         },
         {
@@ -160,7 +154,7 @@
         {
             "WoolId": 5386836444059329852,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "brown_dark"
             ]
@@ -288,7 +282,7 @@
         {
             "WoolId": 5963469560898013472,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "lime_dark"
             ]
@@ -296,7 +290,7 @@
         {
             "WoolId": 2437485628801943176,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "lime_dark"
             ]
@@ -354,7 +348,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow_light"
+                "brown_dark"
             ]
         },
         {
@@ -370,15 +364,13 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime",
-                "orange_light",
                 "lime"
             ]
         },
         {
             "WoolId": 2851570617513781108,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "lime_dark"
             ]
@@ -386,7 +378,7 @@
         {
             "WoolId": 5390719476558180482,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "lime_dark"
             ]
@@ -394,7 +386,7 @@
         {
             "WoolId": 7705442035143936769,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "lime_dark"
             ]
@@ -402,7 +394,7 @@
         {
             "WoolId": 3310747264214623235,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "lime_dark"
             ]
@@ -426,7 +418,7 @@
         {
             "WoolId": 1813560526121539259,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "lime_dark"
             ]
@@ -436,7 +428,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange_light"
+                "red_light"
             ]
         },
         {

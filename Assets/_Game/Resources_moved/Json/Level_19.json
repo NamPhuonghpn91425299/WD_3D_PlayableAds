@@ -7,16 +7,16 @@
     "BoxsQueue": [
         "red_light",
         "yellow",
-        "cyan",
+        "blue_light",
+        "white_light",
         "green",
         "blue_light",
         "brown",
-        "cyan",
         "blue_light",
         "green",
+        "blue_light",
         "red_light",
-        "orange",
-        "white_light"
+        "orange"
     ],
     "WoolPropertiesList": [
         {
@@ -160,7 +160,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan"
+                "blue_light"
             ]
         },
         {
@@ -168,7 +168,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan"
+                "blue_light"
             ]
         },
         {
@@ -176,7 +176,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan"
+                "blue_light"
             ]
         },
         {
@@ -184,23 +184,21 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan"
+                "blue_light"
             ]
         },
         {
             "WoolId": 6006678088552726069,
             "WeightOrder": 1,
-            "ActiveState": true,
-            "Color": [
-                "white_light"
-            ]
+            "ActiveState": false,
+            "Color": []
         },
         {
             "WoolId": 2765452679360446590,
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan"
+                "blue_light"
             ]
         },
         {
@@ -208,7 +206,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan"
+                "blue_light"
             ]
         },
         {
@@ -216,7 +214,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red_light"
+                "red_light",
+                "white_light"
             ]
         },
         {

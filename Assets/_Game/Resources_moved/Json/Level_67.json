@@ -7,41 +7,33 @@
     "BoxsQueue": [
         "red_light",
         "pigskin",
-        "pgirl",
+        "white",
+        "pink_light",
         "red_light",
+        "cyan_light",
+        "red_light",
+        "white",
         "lime",
         "red_light",
-        "white",
         "orange",
-        "white",
         "purple",
         "red_light",
-        "red",
         "yellow",
         "black_dark",
-        "cyan_light",
-        "blue_dark",
-        "pgirl",
+        "red_light",
+        "red_light",
         "pink_light",
-        "cyan_dark",
         "black_light",
         "red_light",
-        "yellow_light",
         "black_dark",
-        "black_light",
-        "blue_dark",
-        "cyan_dark",
         "cyan_light",
+        "yellow",
+        "black_light",
         "lime",
         "orange",
-        "pgirl",
-        "pink_light",
         "purple",
-        "red",
         "red_light",
-        "white",
-        "yellow",
-        "yellow_light"
+        "white"
     ],
     "WoolPropertiesList": [
         {
@@ -50,8 +42,7 @@
             "ActiveState": true,
             "Color": [
                 "lime",
-                "yellow",
-                "red"
+                "yellow"
             ]
         },
         {
@@ -59,8 +50,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pgirl",
-                "purple",
+                "red_light",
                 "yellow"
             ]
         },
@@ -69,9 +59,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red_light",
-                "purple",
-                "yellow"
+                "red_light"
             ]
         },
         {
@@ -80,8 +68,7 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "blue_dark",
-                "red"
+                "purple"
             ]
         },
         {
@@ -90,7 +77,6 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "cyan_dark",
                 "lime"
             ]
         },
@@ -100,7 +86,6 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "orange",
                 "pink_light"
             ]
         },
@@ -110,7 +95,6 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "white",
                 "lime"
             ]
         },
@@ -120,7 +104,6 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "black_dark",
                 "cyan_light"
             ]
         },
@@ -130,8 +113,7 @@
             "ActiveState": true,
             "Color": [
                 "cyan_light",
-                "orange",
-                "black_dark"
+                "orange"
             ]
         },
         {
@@ -139,8 +121,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "blue_dark",
-                "cyan_light"
+                "cyan_light",
+                "white"
             ]
         },
         {
@@ -148,8 +130,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "orange",
-                "yellow_light"
+                "yellow",
+                "orange"
             ]
         },
         {
@@ -157,8 +139,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "purple",
-                "pgirl"
+                "red_light"
             ]
         },
         {
@@ -166,7 +147,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "cyan_dark",
                 "black_light"
             ]
         },
@@ -175,8 +155,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "black_dark",
-                "cyan_dark"
+                "black_dark"
             ]
         },
         {
@@ -193,7 +172,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "cyan_dark",
                 "cyan_light"
             ]
         },
@@ -202,7 +180,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow_light",
+                "purple",
                 "pink_light"
             ]
         },
@@ -211,8 +189,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "black_light",
-                "white"
+                "orange",
+                "black_light"
             ]
         },
         {
@@ -220,7 +198,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pgirl",
+                "red_light",
                 "orange"
             ]
         },
@@ -238,8 +216,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "white",
-                "cyan_dark"
+                "red_light",
+                "white"
             ]
         },
         {
@@ -247,8 +225,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "cyan_light",
-                "blue_dark"
+                "lime",
+                "black_dark"
             ]
         },
         {
@@ -256,8 +234,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow_light",
-                "blue_dark"
+                "red_light",
+                "white"
             ]
         },
         {
@@ -265,8 +243,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "black_dark",
-                "pink_light"
+                "pink_light",
+                "black_dark"
             ]
         },
         {
@@ -274,8 +252,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow_light",
-                "black_light"
+                "black_light",
+                "black_dark"
             ]
         },
         {
@@ -283,7 +261,6 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pgirl",
                 "red_light",
                 "orange"
             ]
@@ -302,8 +279,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "white",
-                "red"
+                "red_light",
+                "white"
             ]
         },
         {
@@ -311,8 +288,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "white",
-                "yellow_light"
+                "purple",
+                "white"
             ]
         },
         {
@@ -329,7 +306,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pgirl",
+                "red_light",
                 "white"
             ]
         },
@@ -338,8 +315,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "red",
-                "yellow"
+                "lime",
+                "red_light"
             ]
         },
         {
@@ -347,8 +324,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "cyan_dark",
-                "red_light"
+                "red_light",
+                "black_dark"
             ]
         },
         {
@@ -366,8 +343,7 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "purple",
-                "blue_dark"
+                "purple"
             ]
         },
         {
@@ -376,7 +352,6 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "red",
                 "black_light"
             ]
         },
@@ -386,7 +361,6 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "black_dark",
                 "pink_light"
             ]
         },
@@ -396,8 +370,7 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "pgirl",
-                "lime"
+                "cyan_light"
             ]
         },
         {
@@ -406,7 +379,6 @@
             "ActiveState": true,
             "Color": [
                 "pigskin",
-                "red_light",
                 "black_light"
             ]
         },
@@ -423,8 +395,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pgirl",
-                "red",
+                "red_light",
                 "cyan_light"
             ]
         },
@@ -441,9 +412,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pgirl",
-                "yellow_light",
-                "lime"
+                "red_light",
+                "yellow"
             ]
         },
         {
@@ -452,7 +422,6 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "pgirl",
                 "yellow"
             ]
         },
@@ -462,8 +431,7 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "orange",
-                "blue_dark"
+                "orange"
             ]
         },
         {

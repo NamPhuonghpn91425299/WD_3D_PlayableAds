@@ -12,13 +12,13 @@
         "blue_light",
         "pigskin",
         "brown_dark",
-        "orange",
+        "orange_light",
         "green",
         "pigskin",
-        "cyan",
-        "lime_light",
-        "orange_light",
         "yellow",
+        "blue_light",
+        "green",
+        "orange_light",
         "pigskin",
         "pgirl"
     ],
@@ -36,7 +36,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "lime_light"
+                "green"
             ]
         },
         {
@@ -45,7 +45,7 @@
             "ActiveState": true,
             "Color": [
                 "yellow",
-                "cyan"
+                "blue_light"
             ]
         },
         {
@@ -61,8 +61,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "lime_light",
-                "blue_light"
+                "blue_light",
+                "green"
             ]
         },
         {
@@ -304,7 +304,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan"
+                "blue_light"
             ]
         },
         {
@@ -312,7 +312,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan"
+                "blue_light"
             ]
         },
         {
@@ -336,7 +336,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange"
+                "orange_light"
             ]
         },
         {
@@ -344,7 +344,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange"
+                "orange_light"
             ]
         },
         {
@@ -360,7 +360,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime_light"
+                "green"
             ]
         },
         {
@@ -376,7 +376,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange"
+                "orange_light"
             ]
         }
     ]

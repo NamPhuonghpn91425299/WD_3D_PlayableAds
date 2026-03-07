@@ -6,30 +6,23 @@
     "LevelType": 1,
     "BoxsQueue": [
         "orange_light",
-        "white",
         "red",
+        "white",
         "purple",
-        "orange_light",
-        "white",
-        "yellow",
-        "red",
-        "lime_dark",
-        "red",
-        "red",
-        "orange_light",
-        "white",
-        "blue_dark",
-        "wood",
-        "yellow",
-        "wood",
-        "purple",
-        "black",
         "green",
-        "lime_dark",
+        "orange_light",
+        "white",
         "red",
-        "wood",
+        "orange_light",
+        "green",
         "yellow",
-        "orange_light"
+        "orange_light",
+        "purple",
+        "red",
+        "blue_dark",
+        "red",
+        "white",
+        "yellow"
     ],
     "WoolPropertiesList": [
         {
@@ -37,9 +30,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue_dark",
-                "green",
-                "orange_light"
+                "blue_dark"
             ]
         },
         {
@@ -47,8 +38,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime_dark",
-                "blue_dark"
+                "green"
             ]
         },
         {
@@ -56,8 +46,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime_dark",
-                "red"
+                "green"
             ]
         },
         {
@@ -65,8 +54,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime_dark",
-                "red"
+                "green"
             ]
         },
         {
@@ -82,7 +70,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red"
+                "orange_light"
             ]
         },
         {
@@ -234,8 +222,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "green",
-                "yellow"
+                "green"
             ]
         },
         {
@@ -243,8 +230,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "green",
-                "wood"
+                "orange_light"
             ]
         },
         {
@@ -428,8 +414,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime_dark",
-                "black"
+                "green"
             ]
         },
         {
@@ -437,14 +422,13 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime_dark",
-                "yellow"
+                "green"
             ]
         },
         {
             "WoolId": 6063687572002138658,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "wood"
             ]
@@ -452,7 +436,7 @@
         {
             "WoolId": 2157451797688369997,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "wood"
             ]
@@ -460,7 +444,7 @@
         {
             "WoolId": 4546645826869658719,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "wood"
             ]
@@ -468,7 +452,7 @@
         {
             "WoolId": 6756380287249675009,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "wood"
             ]
@@ -476,7 +460,7 @@
         {
             "WoolId": 8519331039665933326,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "wood"
             ]
@@ -484,7 +468,7 @@
         {
             "WoolId": 3308358192174578010,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "wood"
             ]
@@ -492,7 +476,7 @@
         {
             "WoolId": 1151808443621582475,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "wood"
             ]
@@ -500,7 +484,7 @@
         {
             "WoolId": 5033272027150358366,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "wood"
             ]
@@ -526,9 +510,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue_dark",
-                "lime_dark",
-                "orange_light"
+                "blue_dark"
             ]
         },
         {
@@ -544,8 +526,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "black",
-                "yellow"
+                "blue_dark"
             ]
         },
         {
@@ -553,8 +534,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white",
-                "black"
+                "white"
             ]
         }
     ]

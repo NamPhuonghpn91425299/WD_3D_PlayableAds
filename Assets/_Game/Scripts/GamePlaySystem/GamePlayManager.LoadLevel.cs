@@ -205,7 +205,7 @@ public partial class GamePlayManager
             return false;
         }
 
-        _levelPrefab = Instantiate(prefab, ParentObject);
+        _levelPrefab = Instantiate(prefab, ParentObject, false);
         return _levelPrefab != null;
     }
 

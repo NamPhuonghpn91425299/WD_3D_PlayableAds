@@ -6,34 +6,27 @@
     "LevelType": 3,
     "BoxsQueue": [
         "skin",
-        "pgirl",
+        "blue",
         "white_light",
+        "blue",
+        "wood",
+        "green_light",
         "skin",
         "black",
-        "yellow",
         "orange",
-        "orange",
-        "blue",
-        "green_light",
-        "yellow",
         "red_dark",
+        "yellow",
         "skin",
-        "blue",
-        "cyan",
+        "orange",
         "white_light",
         "wood",
         "green_light",
-        "yellow",
-        "black",
         "blue",
-        "cyan",
+        "yellow",
         "white_light",
-        "green_light",
-        "orange",
-        "pgirl",
+        "black",
         "red_dark",
-        "skin",
-        "wood"
+        "skin"
     ],
     "WoolPropertiesList": [
         {
@@ -42,7 +35,7 @@
             "ActiveState": true,
             "Color": [
                 "skin",
-                "pgirl",
+                "black",
                 "wood"
             ]
         },
@@ -52,7 +45,7 @@
             "ActiveState": true,
             "Color": [
                 "skin",
-                "orange",
+                "yellow",
                 "black"
             ]
         },
@@ -62,8 +55,8 @@
             "ActiveState": true,
             "Color": [
                 "skin",
-                "orange",
-                "blue"
+                "blue",
+                "black"
             ]
         },
         {
@@ -71,9 +64,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange",
-                "red_dark",
-                "black"
+                "orange"
             ]
         },
         {
@@ -103,7 +94,7 @@
             "Color": [
                 "green_light",
                 "red_dark",
-                "yellow"
+                "blue"
             ]
         },
         {
@@ -111,9 +102,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pgirl",
-                "yellow",
-                "green_light"
+                "orange",
+                "yellow"
             ]
         },
         {
@@ -122,8 +112,7 @@
             "ActiveState": true,
             "Color": [
                 "red_dark",
-                "orange",
-                "cyan"
+                "white_light"
             ]
         },
         {
@@ -132,8 +121,7 @@
             "ActiveState": true,
             "Color": [
                 "wood",
-                "cyan",
-                "yellow"
+                "blue"
             ]
         },
         {
@@ -141,8 +129,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "green_light",
-                "pgirl",
+                "skin",
                 "orange"
             ]
         },
@@ -151,9 +138,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "skin",
-                "wood",
-                "cyan"
+                "wood"
             ]
         },
         {
@@ -161,9 +146,9 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "blue",
                 "green_light",
-                "yellow",
-                "skin"
+                "yellow"
             ]
         },
         {
@@ -172,8 +157,7 @@
             "ActiveState": true,
             "Color": [
                 "wood",
-                "cyan",
-                "yellow"
+                "white_light"
             ]
         },
         {
@@ -181,8 +165,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "black",
-                "green_light"
+                "skin",
+                "black"
             ]
         },
         {
@@ -190,7 +174,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "red_dark",
                 "orange",
                 "yellow"
             ]
@@ -200,8 +183,6 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white_light",
-                "cyan",
                 "white_light"
             ]
         },
@@ -211,8 +192,7 @@
             "ActiveState": true,
             "Color": [
                 "yellow",
-                "green_light",
-                "blue"
+                "green_light"
             ]
         },
         {
@@ -221,8 +201,7 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "red_dark",
-                "blue"
+                "red_dark"
             ]
         },
         {
@@ -232,7 +211,7 @@
             "Color": [
                 "white_light",
                 "orange",
-                "blue"
+                "wood"
             ]
         },
         {
@@ -240,9 +219,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "skin",
-                "cyan",
-                "wood"
+                "skin"
             ]
         },
         {
@@ -251,8 +228,8 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "green_light",
-                "blue"
+                "blue",
+                "green_light"
             ]
         },
         {
@@ -300,8 +277,6 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white_light",
-                "pgirl",
                 "white_light"
             ]
         },
@@ -319,8 +294,7 @@
             "ActiveState": true,
             "Color": [
                 "skin",
-                "black",
-                "pgirl"
+                "green_light"
             ]
         },
         {
@@ -337,7 +311,7 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "green_light",
+                "red_dark",
                 "black"
             ]
         },
@@ -346,9 +320,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white_light",
-                "yellow",
-                "green_light"
+                "white_light"
             ]
         },
         {
@@ -357,8 +329,8 @@
             "ActiveState": true,
             "Color": [
                 "blue",
-                "pgirl",
-                "orange"
+                "green_light",
+                "red_dark"
             ]
         }
     ]

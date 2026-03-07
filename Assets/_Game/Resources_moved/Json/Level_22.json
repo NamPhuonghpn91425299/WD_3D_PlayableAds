@@ -5,30 +5,22 @@
     "LevelIconPath": "",
     "LevelType": 3,
     "BoxsQueue": [
-        "purple_dark",
-        "yellow",
-        "cyan",
-        "white",
-        "purple_dark",
-        "pink",
-        "yellow",
-        "white",
-        "purple_dark",
-        "blue_light",
         "cyan",
         "purple_dark",
-        "green",
-        "pink",
-        "purple_dark",
         "yellow",
+        "white",
         "red_light",
-        "blue_light",
         "cyan",
-        "green",
         "pink",
-        "red_light",
+        "yellow",
         "white",
-        "yellow"
+        "purple_dark",
+        "red_light",
+        "green",
+        "cyan",
+        "yellow",
+        "cyan",
+        "white"
     ],
     "WoolPropertiesList": [
         {
@@ -66,7 +58,7 @@
         {
             "WoolId": 7205442171747868119,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -74,7 +66,7 @@
         {
             "WoolId": 5761755413871458965,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -82,7 +74,7 @@
         {
             "WoolId": 8660978907532784004,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -90,7 +82,7 @@
         {
             "WoolId": 228951012071795127,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -98,7 +90,7 @@
         {
             "WoolId": 4418760032203259393,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -106,7 +98,7 @@
         {
             "WoolId": 1540983691967540837,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -114,7 +106,7 @@
         {
             "WoolId": 2632091340464552892,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -122,7 +114,7 @@
         {
             "WoolId": 8595581751316300378,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -130,7 +122,7 @@
         {
             "WoolId": 1501162741233853617,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "purple_dark"
             ]
@@ -196,8 +188,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow",
-                "purple_dark"
+                "yellow"
             ]
         },
         {
@@ -229,9 +220,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow",
-                "blue_light",
-                "white"
+                "white",
+                "yellow"
             ]
         },
         {
@@ -240,8 +230,7 @@
             "ActiveState": true,
             "Color": [
                 "white",
-                "cyan",
-                "red_light"
+                "cyan"
             ]
         },
         {
@@ -249,9 +238,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pink",
-                "green",
-                "pink"
+                "cyan",
+                "purple_dark"
             ]
         },
         {
@@ -259,9 +247,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "cyan",
                 "green",
-                "yellow"
+                "cyan"
             ]
         },
         {
@@ -270,7 +257,6 @@
             "ActiveState": true,
             "Color": [
                 "white",
-                "pink",
                 "red_light"
             ]
         },
@@ -279,9 +265,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "blue_light",
-                "pink",
-                "green"
+                "green",
+                "cyan"
             ]
         },
         {
@@ -290,7 +275,6 @@
             "ActiveState": true,
             "Color": [
                 "cyan",
-                "green",
                 "red_light"
             ]
         },
@@ -300,8 +284,7 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "pink",
-                "yellow"
+                "pink"
             ]
         },
         {
@@ -310,7 +293,6 @@
             "ActiveState": true,
             "Color": [
                 "white",
-                "blue_light",
                 "yellow"
             ]
         },
@@ -320,7 +302,6 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
-                "blue_light",
                 "cyan"
             ]
         },
@@ -329,9 +310,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "blue_light",
-                "green",
-                "cyan"
+                "cyan",
+                "green"
             ]
         },
         {
@@ -372,8 +352,7 @@
             "ActiveState": true,
             "Color": [
                 "white",
-                "blue_light",
-                "pink"
+                "cyan"
             ]
         },
         {
@@ -381,7 +360,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow",
                 "red_light",
                 "cyan"
             ]
@@ -408,8 +386,7 @@
             "ActiveState": true,
             "Color": [
                 "pink",
-                "green",
-                "pink"
+                "red_light"
             ]
         }
     ]

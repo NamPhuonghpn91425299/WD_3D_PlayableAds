@@ -128,6 +128,7 @@ Material:
     - _HaloIntensity: 1
     - _HaloPower: 2.5
     - _LightIntensity: 1
+    - _Lowp: 0
     - _MaxShadow: 0.61
     - _Metallic: 0
     - _MinShadow: -1
@@ -135,7 +136,7 @@ Material:
     - _NormalScale: 0
     - _NormalShadowPower: 2
     - _NormalShadowStrength: 0.5
-    - _NormalStrength: 2
+    - _NormalStrength: 1.65
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 3
@@ -145,7 +146,7 @@ Material:
     - _Saturation: 0.9
     - _ScaleFactor: 1
     - _ScrollAlongV: 0
-    - _ShadowExposure: 4
+    - _ShadowExposure: 0.88
     - _ShadowSpace: 0
     - _ShadowStrength: 0.1
     - _Smoothness: 0

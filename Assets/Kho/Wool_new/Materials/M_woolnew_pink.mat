@@ -105,7 +105,7 @@ Material:
     m_Floats:
     - _AOStrength: 0.3
     - _Ambient: 0.8
-    - _Brightness: 3
+    - _Brightness: 2.9
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DarkAreaSmoothness: 0.5
@@ -114,7 +114,7 @@ Material:
     - _DarkThreadThreshold: 0
     - _DebugView: 0
     - _DetailNormalMapScale: 1
-    - _DiffusePower: 0.5
+    - _DiffusePower: 0.65
     - _Display: 1
     - _DissolveCutout: 1
     - _DstBlend: 0
@@ -128,6 +128,7 @@ Material:
     - _HaloIntensity: 1
     - _HaloPower: 2.5
     - _LightIntensity: 1
+    - _Lowp: 0
     - _MaxShadow: 0.61
     - _Metallic: 0
     - _MinShadow: -1
@@ -135,7 +136,7 @@ Material:
     - _NormalScale: 0
     - _NormalShadowPower: 2
     - _NormalShadowStrength: 0.5
-    - _NormalStrength: 2
+    - _NormalStrength: 1.65
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 3
@@ -145,9 +146,9 @@ Material:
     - _Saturation: 0.9
     - _ScaleFactor: 1
     - _ScrollAlongV: 0
-    - _ShadowExposure: 2
+    - _ShadowExposure: 1
     - _ShadowSpace: 0
-    - _ShadowStrength: 0.68
+    - _ShadowStrength: 0.3
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -165,9 +166,9 @@ Material:
     m_Colors:
     - _AOColor: {r: 0.898, g: 0.8115887, b: 0.88490736, a: 1}
     - _AOcolor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.6, g: 0.26571426, b: 0.5485716, a: 1}
+    - _Color: {r: 0.57, g: 0.25333336, b: 0.5215686, a: 1}
     - _DarkAreaColor: {r: 0.5176471, g: 0.2627451, b: 0.17254902, a: 1}
-    - _DarkThreadColor: {r: 0.35, g: 0.0875, b: 0.31, a: 1}
+    - _DarkThreadColor: {r: 0.48, g: 0.11625, b: 0.42749995, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 0.90943396, g: 0.56796724, b: 0.8617021, a: 1}
     - _HaloColor: {r: 1, g: 1, b: 1, a: 1}
@@ -179,6 +180,6 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Scale: {r: -2, g: 2.6, b: 0, a: 0}
     - _ScreenTiling: {r: 5, g: 5, b: 0, a: 0}
-    - _ShadowColor: {r: 0.76699996, g: 0.41417998, b: 0.71354246, a: 1}
+    - _ShadowColor: {r: 0.29803923, g: 0.05960784, b: 0.26397762, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

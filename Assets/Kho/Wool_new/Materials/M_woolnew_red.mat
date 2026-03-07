@@ -114,7 +114,7 @@ Material:
     - _DarkThreadThreshold: 0
     - _DebugView: 0
     - _DetailNormalMapScale: 1
-    - _DiffusePower: 0.5
+    - _DiffusePower: 0.65
     - _Display: 1
     - _DissolveCutout: 1
     - _DstBlend: 0
@@ -136,19 +136,19 @@ Material:
     - _NormalScale: 0
     - _NormalShadowPower: 2
     - _NormalShadowStrength: 0.5
-    - _NormalStrength: 2
+    - _NormalStrength: 1.65
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 3
     - _RimStrength: 0.5
     - _RoughnessMult: 0
     - _RoughnessMultiplier: 1
-    - _Saturation: 1
+    - _Saturation: 0.95
     - _ScaleFactor: 1
     - _ScrollAlongV: 0
-    - _ShadowExposure: 2
+    - _ShadowExposure: 1
     - _ShadowSpace: 0
-    - _ShadowStrength: 0.6
+    - _ShadowStrength: 0.3
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -168,7 +168,7 @@ Material:
     - _AOcolor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.55, g: 0.20263155, b: 0.19022553, a: 1}
     - _DarkAreaColor: {r: 0.5176471, g: 0.2627451, b: 0.17254902, a: 1}
-    - _DarkThreadColor: {r: 0.45, g: 0.07570093, b: 0.0630841, a: 1}
+    - _DarkThreadColor: {r: 0.5, g: 0.082608685, b: 0.06956521, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 0.7490196, g: 0.34901962, b: 0.3372549, a: 1}
     - _HaloColor: {r: 1, g: 1, b: 1, a: 1}
@@ -180,6 +180,6 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Scale: {r: -2, g: 2.6, b: 0, a: 0}
     - _ScreenTiling: {r: 5, g: 5, b: 0, a: 0}
-    - _ShadowColor: {r: 0.75, g: 0.3489583, b: 0.33749998, a: 1}
+    - _ShadowColor: {r: 0.5, g: 0.11142857, b: 0.099999994, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

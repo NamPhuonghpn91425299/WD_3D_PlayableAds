@@ -1,10 +1,11 @@
 {
     "Level": 51,
-    "GoldReward": 50,
+    "GoldReward": 10,
     "MainPrefabPath": "Levels/A_HairDryer",
     "LevelIconPath": "",
     "LevelType": 3,
     "BoxsQueue": [
+        "blue_light",
         "pink_light",
         "blue_light",
         "yellow",
@@ -16,30 +17,22 @@
         "purple",
         "yellow",
         "white_light",
-        "pink_light",
-        "pink_light",
-        "blue_light",
-        "green_light",
-        "cyan_light",
-        "blue_light",
-        "white_dark",
-        "pink_light",
-        "blue_light",
         "purple",
-        "white_dark",
+        "green_light",
         "blue_light",
         "green_light",
         "cyan_light",
-        "green_light",
+        "white_dark",
+        "pink_light",
+        "cyan_light",
+        "purple",
+        "cyan_light",
+        "blue_light",
         "white_dark",
         "white_light",
         "yellow",
-        "cyan_light",
-        "blue_light",
-        "purple",
-        "white_light",
         "green_light",
-        "cyan_light",
+        "white_light",
         "purple"
     ],
     "WoolPropertiesList": [
@@ -49,7 +42,6 @@
             "ActiveState": true,
             "Color": [
                 "purple",
-                "blue_light",
                 "white_dark"
             ]
         },
@@ -69,7 +61,6 @@
             "ActiveState": true,
             "Color": [
                 "yellow",
-                "green_light",
                 "purple"
             ]
         },
@@ -79,8 +70,7 @@
             "ActiveState": true,
             "Color": [
                 "cyan_light",
-                "blue_light",
-                "pink_light"
+                "blue_light"
             ]
         },
         {
@@ -89,8 +79,7 @@
             "ActiveState": true,
             "Color": [
                 "blue_light",
-                "green_light",
-                "pink_light"
+                "green_light"
             ]
         },
         {
@@ -119,7 +108,6 @@
             "ActiveState": true,
             "Color": [
                 "blue_light",
-                "cyan_light",
                 "green_light"
             ]
         },
@@ -139,8 +127,7 @@
             "ActiveState": true,
             "Color": [
                 "purple",
-                "cyan_light",
-                "blue_light"
+                "cyan_light"
             ]
         },
         {
@@ -149,8 +136,7 @@
             "ActiveState": true,
             "Color": [
                 "pink_light",
-                "white_light",
-                "pink_light"
+                "white_light"
             ]
         },
         {
@@ -159,8 +145,7 @@
             "ActiveState": true,
             "Color": [
                 "yellow",
-                "cyan_light",
-                "pink_light"
+                "cyan_light"
             ]
         },
         {
@@ -179,7 +164,6 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "green_light",
                 "white_dark",
                 "pink_light"
             ]
@@ -190,8 +174,7 @@
             "ActiveState": true,
             "Color": [
                 "purple",
-                "green_light",
-                "cyan_light"
+                "green_light"
             ]
         },
         {
@@ -199,9 +182,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pink_light",
-                "cyan_light",
-                "green_light",
                 "purple"
             ]
         },
@@ -221,7 +201,6 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "pink_light",
                 "yellow"
             ]
         },
@@ -271,8 +250,7 @@
             "ActiveState": true,
             "Color": [
                 "purple",
-                "pink_light",
-                "blue_light"
+                "pink_light"
             ]
         },
         {
@@ -291,7 +269,6 @@
             "ActiveState": true,
             "Color": [
                 "blue_light",
-                "white_dark",
                 "cyan_light"
             ]
         },
@@ -301,8 +278,7 @@
             "ActiveState": true,
             "Color": [
                 "green_light",
-                "yellow",
-                "white_dark"
+                "yellow"
             ]
         },
         {
@@ -311,7 +287,6 @@
             "ActiveState": true,
             "Color": [
                 "pink_light",
-                "white_dark",
                 "green_light"
             ]
         },
@@ -351,8 +326,7 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "pink_light",
-                "blue_light"
+                "pink_light"
             ]
         },
         {
@@ -371,8 +345,7 @@
             "ActiveState": true,
             "Color": [
                 "white_dark",
-                "cyan_light",
-                "blue_light"
+                "cyan_light"
             ]
         },
         {
@@ -381,7 +354,6 @@
             "ActiveState": true,
             "Color": [
                 "pink_light",
-                "blue_light",
                 "cyan_light"
             ]
         },

@@ -1,5 +1,5 @@
 {
-    "Level": 104,
+    "Level": 105,
     "GoldReward": 10,
     "MainPrefabPath": "Levels/A_PenBag",
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
@@ -7,20 +7,19 @@
     "BoxsQueue": [
         "blue_dark",
         "skin",
+        "lime",
+        "red",
         "khaki",
         "blue_dark",
-        "white_light",
-        "lime",
-        "cyan_light",
         "khaki",
-        "white_light",
-        "red",
+        "skin",
         "skin",
         "blue_dark",
         "orange_dark",
+        "white_light",
         "yellow",
         "red",
-        "skin"
+        "cyan_light"
     ],
     "WoolPropertiesList": [
         {
@@ -29,8 +28,8 @@
             "ActiveState": true,
             "Color": [
                 "khaki",
-                "white_light",
-                "orange_dark"
+                "skin",
+                "blue_dark"
             ]
         },
         {
@@ -39,8 +38,7 @@
             "ActiveState": true,
             "Color": [
                 "khaki",
-                "blue_dark",
-                "skin"
+                "red"
             ]
         },
         {
@@ -49,7 +47,6 @@
             "ActiveState": true,
             "Color": [
                 "red",
-                "skin",
                 "khaki"
             ]
         },
@@ -59,8 +56,7 @@
             "ActiveState": true,
             "Color": [
                 "skin",
-                "blue_dark",
-                "white_light"
+                "lime"
             ]
         },
         {
@@ -69,7 +65,7 @@
             "ActiveState": true,
             "Color": [
                 "skin",
-                "orange_dark"
+                "blue_dark"
             ]
         },
         {
@@ -78,7 +74,7 @@
             "ActiveState": true,
             "Color": [
                 "skin",
-                "cyan_light"
+                "khaki"
             ]
         },
         {
@@ -87,7 +83,7 @@
             "ActiveState": true,
             "Color": [
                 "skin",
-                "red"
+                "yellow"
             ]
         },
         {
@@ -96,7 +92,7 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "lime"
+                "orange_dark"
             ]
         },
         {
@@ -105,7 +101,7 @@
             "ActiveState": true,
             "Color": [
                 "blue_dark",
-                "lime"
+                "yellow"
             ]
         },
         {
@@ -114,7 +110,7 @@
             "ActiveState": true,
             "Color": [
                 "blue_dark",
-                "khaki"
+                "skin"
             ]
         },
         {
@@ -123,7 +119,7 @@
             "ActiveState": true,
             "Color": [
                 "blue_dark",
-                "skin"
+                "orange_dark"
             ]
         },
         {
@@ -132,7 +128,7 @@
             "ActiveState": true,
             "Color": [
                 "blue_dark",
-                "white_light"
+                "skin"
             ]
         },
         {
@@ -141,7 +137,7 @@
             "ActiveState": true,
             "Color": [
                 "yellow",
-                "khaki"
+                "lime"
             ]
         },
         {
@@ -150,7 +146,7 @@
             "ActiveState": true,
             "Color": [
                 "blue_dark",
-                "yellow"
+                "red"
             ]
         },
         {
@@ -159,7 +155,7 @@
             "ActiveState": true,
             "Color": [
                 "cyan_light",
-                "red"
+                "white_light"
             ]
         },
         {
@@ -168,7 +164,7 @@
             "ActiveState": true,
             "Color": [
                 "red",
-                "cyan_light"
+                "skin"
             ]
         },
         {
@@ -177,7 +173,7 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "skin"
+                "cyan_light"
             ]
         },
         {
@@ -186,7 +182,7 @@
             "ActiveState": true,
             "Color": [
                 "orange_dark",
-                "red"
+                "skin"
             ]
         },
         {
@@ -195,7 +191,7 @@
             "ActiveState": true,
             "Color": [
                 "red",
-                "skin"
+                "cyan_light"
             ]
         },
         {
@@ -204,7 +200,7 @@
             "ActiveState": true,
             "Color": [
                 "lime",
-                "white_light"
+                "red"
             ]
         },
         {
@@ -213,7 +209,7 @@
             "ActiveState": true,
             "Color": [
                 "blue_dark",
-                "yellow"
+                "khaki"
             ]
         },
         {

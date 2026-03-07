@@ -191,7 +191,6 @@ public class CameraController : SingletonBase<CameraController>
         modelTransfrom = ModelPrefab.transform;
         targetRotation = SpawnPoint.rotation;
         modelOriginalEA = modelTransfrom.localEulerAngles;
-        ModelPrefab.transform.localPosition = Vector3.zero;
         CurrentLevel = levelObjectPrefab.GetComponent<LevelController>();
         SpawnPoint.localEulerAngles = Vector3.zero;
         OnChangingCenterBaseOnModel(true);

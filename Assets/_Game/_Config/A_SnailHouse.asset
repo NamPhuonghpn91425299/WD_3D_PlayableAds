@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a947691cfa9a1e4f825d5c97a253cc9, type: 3}
+  m_Name: A_SnailHouse
+  m_EditorClassIdentifier: 
+  levelStartLoop: 100
+  levelConfigDataList:
+  - LevelName: Level 167 - A_SnailHouse
+    Level: 167
+    GoldReward: 10
+    MainPrefabPath: Levels/A_SnailHouse
+    MainPrefab: {fileID: 7806821187984830753, guid: b42cf3cce2887e846b65d5f22023fe28, type: 3}
+    LevelType: 1
+    CubeTargetCount: 4
+    BoxsQueue:
+    - lime
+    - yellow
+    - pigskin
+    - lime
+    - purple_light
+    - red
+    - white
+    - brown
+    - lime
+    - brown
+    - yellow
+    - lime
+    - yellow
+    - red
+    - blue_light
+    - cyan_light
+    - purple_light
+    - white
+    - red
+    - pigskin
+    WoolPropertiesList:
+    - WoolId: 6048145627240078767
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - brown
+      - lime
+    - WoolId: 3732557277066253965
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - purple_light
+      - brown
+    - WoolId: 4135285368441899500
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - cyan_light
+    - WoolId: 9135445017863192172
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - red
+    - WoolId: 4257551335388355224
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - lime
+    - WoolId: 5141810720301611487
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - cyan_light
+    - WoolId: 5045394247107282622
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - brown
+      - lime
+    - WoolId: 28824173639807671
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - purple_light
+      - yellow
+    - WoolId: 8279522372189998655
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - purple_light
+    - WoolId: 6147025920585477126
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - yellow
+    - WoolId: 1585782334821650748
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+      - lime
+    - WoolId: 3776589906001673417
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - purple_light
+      - white
+    - WoolId: 9166834243577666941
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pigskin
+      - brown
+    - WoolId: 2332406051511278373
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+      - red
+    - WoolId: 4246213823536687516
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - cyan_light
+      - red
+    - WoolId: 5196588861155733635
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - white
+    - WoolId: 2827928207711656389
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - white
+      - red
+    - WoolId: 3357025036657286516
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - brown
+    - WoolId: 4201091788309889020
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - pigskin
+    - WoolId: 5455850823943548351
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pigskin
+      - yellow
+    - WoolId: 3767059927945683512
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red
+      - pigskin
+    - WoolId: 7525512114677112013
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pigskin
+      - blue_light
+    - WoolId: 4930161969910591505
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - purple_light
+    - WoolId: 7671229098013126670
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - lime
+    - WoolId: 8806299487648539561
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - brown
+    - WoolId: 8278097080359958401
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - purple_light
+    - WoolId: 6334432503441261071
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - pigskin
+    - WoolId: 5840146509430364372
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - white
+    - WoolId: 7477405800887857053
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - red
+    - WoolId: 6763055403365076267
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - yellow

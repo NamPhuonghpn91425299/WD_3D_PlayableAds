@@ -114,7 +114,7 @@ Material:
     - _DarkThreadThreshold: 0
     - _DebugView: 0
     - _DetailNormalMapScale: 1
-    - _DiffusePower: 0.8
+    - _DiffusePower: 1
     - _Display: 1
     - _DissolveCutout: 1
     - _DstBlend: 0
@@ -136,7 +136,7 @@ Material:
     - _NormalScale: 0
     - _NormalShadowPower: 2
     - _NormalShadowStrength: 0.5
-    - _NormalStrength: 2
+    - _NormalStrength: 1.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RimPower: 3
@@ -146,9 +146,9 @@ Material:
     - _Saturation: 0.925
     - _ScaleFactor: 1
     - _ScrollAlongV: 0
-    - _ShadowExposure: 1.2
+    - _ShadowExposure: 0.88
     - _ShadowSpace: 0
-    - _ShadowStrength: 0.5
+    - _ShadowStrength: 0.3
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -180,6 +180,6 @@ Material:
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _Scale: {r: -2, g: 2.6, b: 0, a: 0}
     - _ScreenTiling: {r: 5, g: 5, b: 0, a: 0}
-    - _ShadowColor: {r: 0.5431694, g: 0.7, b: 0.27923498, a: 1}
+    - _ShadowColor: {r: 0.21252337, g: 0.3, b: 0.06, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

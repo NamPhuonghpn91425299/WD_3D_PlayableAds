@@ -5,23 +5,21 @@
     "LevelIconPath": "",
     "LevelType": 1,
     "BoxsQueue": [
-        "wood",
         "brown_dark",
+        "blue_light",
+        "wood",
         "cyan",
-        "pink",
         "red_light",
         "yellow",
         "lime",
         "wood",
-        "blue_light",
-        "brown_dark",
-        "cyan",
+        "red_light",
         "lime",
         "wood",
-        "pink",
+        "cyan",
         "blue_light",
-        "red_light",
-        "yellow"
+        "yellow",
+        "brown_dark"
     ],
     "WoolPropertiesList": [
         {
@@ -161,7 +159,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pink",
                 "lime"
             ]
         },
@@ -179,7 +176,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pink",
                 "blue_light"
             ]
         },
@@ -197,8 +193,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow",
-                "pink"
+                "yellow"
             ]
         },
         {
@@ -233,7 +228,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pink",
                 "cyan"
             ]
         },
@@ -251,7 +245,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pink",
                 "brown_dark"
             ]
         },
@@ -260,7 +253,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pink",
                 "lime"
             ]
         },

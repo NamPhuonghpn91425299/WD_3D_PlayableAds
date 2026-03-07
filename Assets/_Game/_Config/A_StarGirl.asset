@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a947691cfa9a1e4f825d5c97a253cc9, type: 3}
+  m_Name: A_StarGirl
+  m_EditorClassIdentifier: 
+  levelStartLoop: 100
+  levelConfigDataList:
+  - LevelName: Level 82 - A_StarGirl
+    Level: 82
+    GoldReward: 50
+    MainPrefabPath: Levels/A_StarGirl
+    MainPrefab: {fileID: 3876773192966794768, guid: a0fa1c0aedf0d7c448bf4f78e0bfed4b, type: 3}
+    LevelType: 1
+    CubeTargetCount: 4
+    BoxsQueue:
+    - pigskin
+    - yellow
+    - lime
+    - pgirl
+    - lime
+    - cyan_light
+    - orange
+    - pgirl
+    - purple
+    - blue_light
+    - orange
+    - lime
+    - pgirl
+    - blue_light
+    - cyan_light
+    - pigskin
+    - purple
+    - yellow
+    WoolPropertiesList:
+    - WoolId: 3123283043362408989
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pgirl
+    - WoolId: 7627641834514608504
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - lime
+      - orange
+    - WoolId: 3547184478454546942
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - lime
+      - yellow
+    - WoolId: 6607738986114320540
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - purple
+      - pgirl
+    - WoolId: 3768453939013659394
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - cyan_light
+      - pigskin
+    - WoolId: 1049043018372438550
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - lime
+      - purple
+    - WoolId: 4754956840984178729
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - cyan_light
+      - blue_light
+    - WoolId: 8266588159627994406
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - purple
+      - yellow
+    - WoolId: 5490101194554860373
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - lime
+      - orange
+    - WoolId: 7494649888713672827
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+      - pgirl
+    - WoolId: 4567635480122300332
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - lime
+      - pgirl
+    - WoolId: 8421077808719181222
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - orange
+    - WoolId: 5429544667541962479
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+    - WoolId: 5480401700946008422
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - lime
+    - WoolId: 8550547941933656726
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - orange
+    - WoolId: 3528352787815442177
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - yellow
+      - pigskin
+    - WoolId: 3441185154330683387
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pgirl
+      - lime
+    - WoolId: 6369809774854141732
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pigskin
+      - lime
+    - WoolId: 3271414547276842374
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pigskin
+      - pgirl
+    - WoolId: 6877893532734467830
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+      - orange
+    - WoolId: 3587583869002509434
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+      - pgirl
+    - WoolId: 8788882443203884877
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - purple
+      - orange
+    - WoolId: 4782513805193704935
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+      - cyan_light
+    - WoolId: 2637596957392072740
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - purple
+      - pgirl
+    - WoolId: 3903310537588491151
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - cyan_light
+      - blue_light
+    - WoolId: 6371791089155391452
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - pigskin
+    - WoolId: 5724168175138220766
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - pigskin
+    - WoolId: 7559812135836498158
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - purple
+    - WoolId: 4701338063799897414
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - pgirl
+    - WoolId: 2401748552180548401
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - cyan_light
+    - WoolId: 8372988645925725402
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - cyan_light
