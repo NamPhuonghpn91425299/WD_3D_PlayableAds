@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 18
+  WoolID: 7647695596244789676
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 4806954895270649804}
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 57
+  WoolID: 3770851577655884621
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 8983723970059808130}
@@ -753,8 +753,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 2461504552761226754}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 1535605244394758777}
@@ -1452,7 +1451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 21
+  WoolID: 7464907719060154356
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 7859064416887463258}
@@ -2062,7 +2061,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.24208313, y: -0.13965267, z: 0.19593243}
+  _decoreCenterPos: {x: 0.24208313, y: -0.13965267, z: 0.19593245}
 --- !u!54 &7503098192007324328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2471,7 +2470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 10
+  WoolID: 898762554557016566
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 2117270167361669080}
@@ -3178,7 +3177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 60
+  WoolID: 1821184447301434823
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 5610010310775745154}
@@ -3802,7 +3801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 55
+  WoolID: 999222137179249110
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 1273689219894720253}
@@ -3811,8 +3810,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 936123010686289158}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 4692338780752910660}
@@ -4500,7 +4498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 56
+  WoolID: 1811086659497773082
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 7976585213278920965}
@@ -4509,8 +4507,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 5233389380644339504}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 8272276622020852464}
@@ -5042,7 +5039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 34
+  WoolID: 2334164016364420162
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 1534883423230204244}
@@ -5051,10 +5048,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 566416350534999978}
-  - {fileID: 6194161810292636139}
-  - {fileID: 5941665520681269673}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 2023120407099022895}
@@ -5669,7 +5663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 50
+  WoolID: 370604863474267387
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 953236268087414040}
@@ -6352,7 +6346,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.9
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: -0.6841969, y: -0.14399998, z: -0.04794173}
+  _decoreCenterPos: {x: -0.6841969, y: -0.14399998, z: -0.047941733}
 --- !u!54 &5735173000398857513
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7010,7 +7004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 9
+  WoolID: 2048212301819591009
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 7709681284931087476}
@@ -7792,7 +7786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 54
+  WoolID: 2956631535243063000
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 403178519978641762}
@@ -7801,11 +7795,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 6194161810292636139}
-  - {fileID: 6031457745074490725}
-  - {fileID: 566416350534999978}
-  - {fileID: 5941665520681269673}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 1208178762000715589}
@@ -8337,7 +8327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 42
+  WoolID: 1984968072571106549
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 7755617097038874066}
@@ -8880,7 +8870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 53
+  WoolID: 210294972674841309
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 5942890422189149997}
@@ -8889,12 +8879,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 6194161810292636139}
-  - {fileID: 3901635882363077558}
-  - {fileID: 1610537757621178102}
-  - {fileID: 566416350534999978}
-  - {fileID: 5941665520681269673}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 7530154475372919442}
@@ -9426,7 +9411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 30
+  WoolID: 1720529377994101701
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 3085050111063388347}
@@ -9967,7 +9952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 52
+  WoolID: 1166633745281520910
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 8367213650695100592}
@@ -9976,8 +9961,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 5750060209882953586}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 9072438412192978786}
@@ -10578,7 +10562,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.7088031, y: 0.062000006, z: 0.10305826}
+  _decoreCenterPos: {x: 0.7088031, y: 0.062000006, z: 0.10305827}
 --- !u!54 &8276786832896000747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10748,7 +10732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 51
+  WoolID: 1987906573360290369
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 4172415661134078185}
@@ -11455,7 +11439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 36
+  WoolID: 2229039542324851176
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 3825380845242303992}
@@ -12557,7 +12541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 15
+  WoolID: 3926607458522884055
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 2920290899261963007}
@@ -13264,7 +13248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 47
+  WoolID: 3884795018326759349
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 8947493094365167669}
@@ -14044,7 +14028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 58
+  WoolID: 1281025749531537795
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 85625325059680003}
@@ -14053,8 +14037,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 1478344149266944558}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 3989578782389867677}
@@ -14586,7 +14569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 8
+  WoolID: 1570007599727750007
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 2481255227623195025}
@@ -15138,12 +15121,12 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
+  - {fileID: 1155614856861126307}
   - {fileID: 6469136881645301893}
   - {fileID: 8497304387383567584}
   - {fileID: 7225185409905036337}
   - {fileID: 7017340101778041178}
   - {fileID: 5077801236362906539}
-  - {fileID: 1155614856861126307}
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 3089590114540555830}
@@ -15675,7 +15658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 43
+  WoolID: 8083618818524562945
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 9195202234821789213}
@@ -16301,7 +16284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 23
+  WoolID: 3976721218156814725
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 6210098562758490391}
@@ -16310,11 +16293,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 4998672469943860252}
-  - {fileID: 1424314437493184935}
-  - {fileID: 5188411641011218161}
-  - {fileID: 5598356717900324220}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 2583195734161110408}
@@ -16988,7 +16967,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.74880314, y: 0.095000036, z: 0.14405827}
+  _decoreCenterPos: {x: 0.74880314, y: 0.095000036, z: 0.14405829}
 --- !u!54 &822080654216203137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17227,7 +17206,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.44680315, y: 0.11000002, z: 0.19705825}
+  _decoreCenterPos: {x: 0.44680315, y: 0.11000002, z: 0.19705826}
 --- !u!54 &8299671491423214198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17397,7 +17376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 5
+  WoolID: 2412057750174929298
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 4134496261744541903}
@@ -18007,7 +17986,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.4
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: -0.115473576, y: -0.1266146, z: 0.24456076}
+  _decoreCenterPos: {x: -0.115473576, y: -0.1266146, z: 0.24456078}
 --- !u!54 &7496174721204266929
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18718,7 +18697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 44
+  WoolID: 2937048494503311029
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 6313069783923326316}
@@ -19676,7 +19655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 22
+  WoolID: 4998156938452490028
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 1564311112973595588}
@@ -20442,7 +20421,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.48880315, y: 0.13600002, z: 0.24105828}
+  _decoreCenterPos: {x: 0.48880315, y: 0.13600002, z: 0.24105829}
 --- !u!54 &7970268446525324815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20934,7 +20913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 2
+  WoolID: 3414759016493891410
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 4518291641758809107}
@@ -21475,7 +21454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 46
+  WoolID: 2539720046664118073
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 646646891869055068}
@@ -21484,10 +21463,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 6194161810292636139}
-  - {fileID: 5941665520681269673}
-  - {fileID: 566416350534999978}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 7203340307322771896}
@@ -21926,8 +21902,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1849605655973365980}
   m_Father: {fileID: 0}
@@ -22299,7 +22275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 38
+  WoolID: 283431388449644501
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 556608706322408896}
@@ -22851,10 +22827,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 566416350534999978}
-  - {fileID: 6194161810292636139}
-  - {fileID: 5941665520681269673}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 1741264491495446458}
@@ -23372,7 +23345,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.2684068, y: -0.01671716, z: 0.22629564}
+  _decoreCenterPos: {x: 0.2684068, y: -0.01671716, z: 0.22629565}
 --- !u!54 &3345112091863931392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23542,7 +23515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 25
+  WoolID: 5173130771289344539
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 8896789325155697220}
@@ -24083,7 +24056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 6
+  WoolID: 3487011439288489123
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 5218453648205887493}
@@ -24094,8 +24067,6 @@ MonoBehaviour:
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
   - {fileID: 6194161810292636139}
-  - {fileID: 566416350534999978}
-  - {fileID: 5941665520681269673}
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 9187261767186386702}
@@ -24710,7 +24681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 20
+  WoolID: 1668047809229638648
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 2148878141510487612}
@@ -25251,7 +25222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 4
+  WoolID: 6087751076111528915
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 599881237146054124}
@@ -25262,6 +25233,8 @@ MonoBehaviour:
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
   - {fileID: 3746924213019914170}
+  - {fileID: 5720951374487929355}
+  - {fileID: 4503607412485057408}
   - {fileID: 1660326176905140315}
   - {fileID: 4068857542860845305}
   RemovedDecoreControls: []
@@ -25795,7 +25768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 49
+  WoolID: 5132103817956984677
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 5998200334296884621}
@@ -27205,7 +27178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 16
+  WoolID: 3833172433930570074
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 9024180185309834026}
@@ -27746,7 +27719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 7
+  WoolID: 4311077763894499811
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 4211089032174032872}
@@ -27755,11 +27728,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 566416350534999978}
-  - {fileID: 3901635882363077558}
-  - {fileID: 6194161810292636139}
-  - {fileID: 5941665520681269673}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 5658579472372127858}
@@ -28291,7 +28260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 45
+  WoolID: 1903034654841973942
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 4225162682302459476}
@@ -28300,8 +28269,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 3901635882363077558}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 7423846158350607124}
@@ -29311,7 +29279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 11
+  WoolID: 5069861820522870924
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 3256850696184168072}
@@ -29320,8 +29288,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 8003938525784275524}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 2814381391591501640}
@@ -29853,7 +29820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 39
+  WoolID: 8664783877997636431
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 5588915792967312659}
@@ -30562,7 +30529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 27
+  WoolID: 6982729068347838213
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 9198393109420024263}
@@ -30572,7 +30539,11 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
+  - {fileID: 4867543310648030145}
+  - {fileID: 2132941112009146688}
+  - {fileID: 4520314815077367337}
   - {fileID: 8025649961236468981}
+  - {fileID: 8066824657339821038}
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 4681462796255528960}
@@ -31270,7 +31241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 12
+  WoolID: 3878525022963252095
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 5596652931575552348}
@@ -31279,8 +31250,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 5233389380644339504}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 1278657116723937160}
@@ -31978,7 +31948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 17
+  WoolID: 4562505497171550990
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 2912000247614318879}
@@ -32744,7 +32714,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.41480315, y: 0.14500003, z: 0.21105824}
+  _decoreCenterPos: {x: 0.41480315, y: 0.14500003, z: 0.21105826}
 --- !u!54 &3403629073144311603
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33059,8 +33029,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.0703}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3578143683735222899}
   - {fileID: 7695483118349795054}
@@ -33291,7 +33261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 29
+  WoolID: 8166663344339584565
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 8991364027384197634}
@@ -33300,8 +33270,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 1478344149266944558}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 1131205218240622424}
@@ -33999,7 +33968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 35
+  WoolID: 3810309025184233154
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 7979912155559577287}
@@ -34008,10 +33977,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 6194161810292636139}
-  - {fileID: 566416350534999978}
-  - {fileID: 5941665520681269673}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 4799764326096926324}
@@ -34543,7 +34509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 33
+  WoolID: 1217924509993516195
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 1468485563492372792}
@@ -35407,7 +35373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 48
+  WoolID: 7246815263975651309
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 1938159972014336856}
@@ -36017,7 +35983,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.303592, y: -0.092097305, z: 0.21591125}
+  _decoreCenterPos: {x: 0.303592, y: -0.092097305, z: 0.21591127}
 --- !u!54 &8927396949900085572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36187,7 +36153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 24
+  WoolID: 2241556812160854288
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 237298087874431398}
@@ -36196,11 +36162,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 4867543310648030145}
-  - {fileID: 2132941112009146688}
-  - {fileID: 4520314815077367337}
-  - {fileID: 8066824657339821038}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 5326864695721450033}
@@ -36971,7 +36933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 26
+  WoolID: 3655464436297167147
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 8376738870940144435}
@@ -36981,7 +36943,11 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
+  - {fileID: 4998672469943860252}
+  - {fileID: 1424314437493184935}
+  - {fileID: 5188411641011218161}
   - {fileID: 4279482817257381699}
+  - {fileID: 5598356717900324220}
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 6047627525031606034}
@@ -37679,7 +37645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 13
+  WoolID: 1625141187879044807
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 7578884418329018044}
@@ -37688,10 +37654,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 5941665520681269673}
-  - {fileID: 566416350534999978}
-  - {fileID: 6194161810292636139}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 5339345095887598260}
@@ -38209,7 +38172,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.20800497, y: -0.065312706, z: 0.20548467}
+  _decoreCenterPos: {x: 0.20800497, y: -0.065312706, z: 0.20548469}
 --- !u!54 &4711767637387459211
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39398,7 +39361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 41
+  WoolID: 5491283710789556317
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 347923366224041585}
@@ -40024,7 +39987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 40
+  WoolID: 8871045736718758162
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 8116498225932190727}
@@ -40733,7 +40696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 31
+  WoolID: 5580622889699607767
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 7694910382605188162}
@@ -40744,8 +40707,6 @@ MonoBehaviour:
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
   - {fileID: 5941665520681269673}
-  - {fileID: 566416350534999978}
-  - {fileID: 6194161810292636139}
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 6413157490214367265}
@@ -41277,7 +41238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 1
+  WoolID: 2976413074299315818
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 961844825062723839}
@@ -41804,7 +41765,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.48080313, y: 0.07600001, z: 0.18305825}
+  _decoreCenterPos: {x: 0.48080313, y: 0.07600001, z: 0.18305826}
 --- !u!54 &1897873309696601682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41974,7 +41935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 3
+  WoolID: 2133883263718120739
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 3777328411730954811}
@@ -41983,9 +41944,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 5720951374487929355}
-  - {fileID: 4503607412485057408}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 6941995152096728110}
@@ -42673,7 +42632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 19
+  WoolID: 3388297587987286793
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 6524083686495793090}
@@ -43214,7 +43173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 61
+  WoolID: 573965625368707454
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 2538742753194726402}
@@ -43741,7 +43700,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.8
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.25418085, y: -0.08014428, z: 0.21094577}
+  _decoreCenterPos: {x: 0.25418085, y: -0.08014428, z: 0.21094579}
 --- !u!54 &3467557586169694367
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44067,7 +44026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 59
+  WoolID: 5988777548129079408
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 8732942036683635179}
@@ -45169,7 +45128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 32
+  WoolID: 8810210366550320709
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 2156845854027681395}
@@ -45179,8 +45138,6 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
-  - {fileID: 6194161810292636139}
-  - {fileID: 5941665520681269673}
   - {fileID: 566416350534999978}
   RemovedDecoreControls: []
   _childWoolControls: []
@@ -45713,7 +45670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 28
+  WoolID: 2402007699067109600
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 3172594767949703311}
@@ -46254,7 +46211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 14
+  WoolID: 7365223489436490144
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 6490291074399716660}
@@ -47034,7 +46991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3a5389bd009954eaacac1d429649c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoolID: 37
+  WoolID: 1623457239071647471
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   debugUV: 0
   TopMeshRenderer: {fileID: 4153033101155612375}

@@ -103,7 +103,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -727,7 +727,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -1196,7 +1196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380487086274177864}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.15573914, y: -0.020324703, z: -0.6146256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1426,7 +1426,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -1454,6 +1454,8 @@ MonoBehaviour:
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
   - {fileID: 2967778192894133208}
+  - {fileID: 2517907759180016696}
+  - {fileID: 5076664700179165552}
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 2842697787147757505}
@@ -2134,7 +2136,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -2675,7 +2677,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -3143,7 +3145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721874554734254775}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.1722599, y: 0.3946754, z: 0.11037438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3299,7 +3301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240210491881932867}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.007068499, y: 0.39167538, z: 0.11337438}
   m_LocalScale: {x: 0.79510206, y: 0.79510206, z: 0.79510206}
   m_ConstrainProportionsScale: 0
@@ -3538,7 +3540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354932181151916345}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.007068499, y: 0.38567534, z: 0.11337438}
   m_LocalScale: {x: 0.79510206, y: 0.79510206, z: 0.79510206}
   m_ConstrainProportionsScale: 0
@@ -3694,7 +3696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398272701434562337}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20759048, y: 0.56810606, z: 0.15082353, w: 0.7819297}
+  m_LocalRotation: {x: 0.20759048, y: 0.5681061, z: 0.15082349, w: 0.7819296}
   m_LocalPosition: {x: -0.14554833, y: 0.2026754, z: 0.55237436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3850,7 +3852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643197594756785358}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25659576, y: 1.7763568e-15, z: 0.000000030588595, w: 0.9665188}
+  m_LocalRotation: {x: 0.25659576, y: 1.6323176e-15, z: 0.000000030588595, w: 0.9665188}
   m_LocalPosition: {x: 0.14744852, y: 0.027675323, z: 0.49637437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4006,7 +4008,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651827097053925809}
   serializedVersion: 2
-  m_LocalRotation: {x: 2.4424907e-15, y: 0.28175572, z: -0.000000012315936, w: -0.9594862}
+  m_LocalRotation: {x: -3.5527137e-15, y: -0.28175575, z: 0.000000012315937, w: 0.9594862}
   m_LocalPosition: {x: 0.1068801, y: -0.4663247, z: -0.81162566}
   m_LocalScale: {x: 0.80201, y: 0.80201, z: 0.80201}
   m_ConstrainProportionsScale: 0
@@ -4236,7 +4238,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -4786,7 +4788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752606674721179492}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.003479238, y: 0.21167544, z: 0.11037438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5016,7 +5018,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -5042,8 +5044,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 6751022253707767873}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 2993350198572081222}
@@ -5558,7 +5559,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -6266,7 +6267,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -6293,12 +6294,13 @@ MonoBehaviour:
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
+  - {fileID: 7319468467567734474}
   - {fileID: 6435638693301516224}
+  - {fileID: 8692262348886709646}
   - {fileID: 8780774133465365377}
+  - {fileID: 6182634367288098622}
   - {fileID: 1465195478148186760}
   - {fileID: 19875359683942980}
-  - {fileID: 7319468467567734474}
-  - {fileID: 6182634367288098622}
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 4164564878605621259}
@@ -6822,7 +6824,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2664394452249158773}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.011294698, y: 0.27267542, z: 0.11437438}
   m_LocalScale: {x: 0.79510206, y: 0.79510206, z: 0.79510206}
   m_ConstrainProportionsScale: 0
@@ -6978,7 +6980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2778601027632638549}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25659576, y: 1.7763568e-15, z: 0.000000030588595, w: 0.9665188}
+  m_LocalRotation: {x: 0.25659576, y: 1.6323176e-15, z: 0.000000030588595, w: 0.9665188}
   m_LocalPosition: {x: -0.00571155, y: 0.48767537, z: 0.7593744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7134,7 +7136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2904346905026746241}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15082332, y: -0.78192985, z: -0.20759055, w: -0.5681058}
+  m_LocalRotation: {x: 0.1508234, y: 0.78192973, z: 0.20759045, w: 0.56810594}
   m_LocalPosition: {x: -0.14058723, y: 0.15767545, z: 0.6323744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7373,7 +7375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3175494546975200289}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.12059192, y: -0.19032463, z: -0.6546256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7529,7 +7531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3214226713466213719}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.008124999, y: 0.2006754, z: 0.10837438}
   m_LocalScale: {x: 0.79510206, y: 0.79510206, z: 0.79510206}
   m_ConstrainProportionsScale: 0
@@ -7685,7 +7687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3219721110027626694}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24403724, y: -0.29867098, z: -0.07929266, w: 0.9192139}
+  m_LocalRotation: {x: -0.24403721, y: 0.2986712, z: 0.07929255, w: -0.91921383}
   m_LocalPosition: {x: 0.08211022, y: 0.24667542, z: 0.4753744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7841,7 +7843,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3315500528265902383}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09191047, y: -0.36341578, z: 0.16404529, w: 0.9124531}
+  m_LocalRotation: {x: -0.09191056, y: -0.36341563, z: 0.16404526, w: 0.9124532}
   m_LocalPosition: {x: -0.0791199, y: -0.1743246, z: -0.7026256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8071,7 +8073,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -8539,7 +8541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3481756377235950946}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22257975, y: 7.5495166e-15, z: 0.000000026533547, w: -0.9749145}
+  m_LocalRotation: {x: -0.22257957, y: -1.3282936e-15, z: -0.00000002653355, w: 0.97491455}
   m_LocalPosition: {x: -0.005761099, y: 0.5306754, z: -0.5046256}
   m_LocalScale: {x: 0.90808, y: 0.90808, z: 0.90808}
   m_ConstrainProportionsScale: 0
@@ -8778,7 +8780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3585377419065873815}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.07929264, y: 0.91921383, z: 0.24403714, w: -0.29867122}
+  m_LocalRotation: {x: -0.07929259, y: 0.91921383, z: 0.24403717, w: -0.29867125}
   m_LocalPosition: {x: 0.09509855, y: 0.12567538, z: 0.6873744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9017,7 +9019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3744254826063103693}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.07929248, y: -0.9192139, z: -0.24403709, w: -0.29867122}
+  m_LocalRotation: {x: 0.07929248, y: 0.9192139, z: 0.24403714, w: 0.29867113}
   m_LocalPosition: {x: -0.08188325, y: 0.12167543, z: 0.6953744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9330,7 +9332,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -9954,7 +9956,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -9980,8 +9982,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 7319468467567734474}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 8205213544654177854}
@@ -10422,7 +10423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3969436685120338824}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.19618061, y: 0.39567533, z: 0.11037438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10818,7 +10819,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -11359,7 +11360,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -11385,8 +11386,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 6182634367288098622}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 3368339143565604833}
@@ -11901,7 +11901,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -11929,10 +11929,6 @@ MonoBehaviour:
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
   DecoreControls:
   - {fileID: 7927440068723081001}
-  - {fileID: 2967778192894133208}
-  - {fileID: 4955731884872093012}
-  - {fileID: 2517907759180016696}
-  - {fileID: 5076664700179165552}
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 7358298362579559321}
@@ -12447,7 +12443,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -12473,9 +12469,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 8415628851563788090}
-  - {fileID: 1922757973394775786}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 7568631013888036178}
@@ -13331,7 +13325,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -13955,7 +13949,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -14422,7 +14416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5516261803655986047}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09191047, y: -0.36341578, z: 0.16404529, w: 0.9124531}
+  m_LocalRotation: {x: -0.09191056, y: -0.36341563, z: 0.16404526, w: 0.9124532}
   m_LocalPosition: {x: -0.122119896, y: -0.002324582, z: -0.7006256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14652,7 +14646,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -14678,8 +14672,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 8692262348886709646}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 4983492328167554374}
@@ -15120,7 +15113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5554745672232040830}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.18965043, y: 0.39667538, z: 0.11037438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15350,7 +15343,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -15376,8 +15369,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 6751022253707767873}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 1678043930084936856}
@@ -15818,7 +15810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5940337018163295741}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20759037, y: -0.56810594, z: -0.15082337, w: 0.78192985}
+  m_LocalRotation: {x: -0.20759045, y: 0.56810594, z: 0.1508234, w: -0.78192973}
   m_LocalPosition: {x: 0.14081417, y: 0.21167547, z: 0.5383744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15974,7 +15966,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6013532086879421134}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000004582518, y: -0.9665188, z: -0.2565959, w: 0.00000002710428}
+  m_LocalRotation: {x: -0.000000041804793, y: 0.9665188, z: 0.25659576, w: -0.000000042247883}
   m_LocalPosition: {x: 0.0081407, y: 0.10967547, z: 0.7163744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16287,7 +16279,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -16911,7 +16903,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -17535,7 +17527,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -18168,8 +18160,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7057734894653203623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22257975, y: 7.5495166e-15, z: 0.000000026533547, w: -0.9749145}
-  m_LocalPosition: {x: 0.1724101, y: 0.088675395, z: -0.2906256}
+  m_LocalRotation: {x: -0.22257957, y: -1.3282936e-15, z: -0.00000002653355, w: 0.97491455}
+  m_LocalPosition: {x: 0.171, y: 0.088675395, z: -0.2906256}
   m_LocalScale: {x: 0.90808, y: 0.90808, z: 0.90808}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18294,7 +18286,7 @@ MonoBehaviour:
   _executeRotation: 0
   WoolProgressStartDrop: 0.5
   ForceSourceCenter: {fileID: 0}
-  _decoreCenterPos: {x: 0.17432708, y: 0.09978488, z: -0.2959773}
+  _decoreCenterPos: {x: 0.17291698, y: 0.09978488, z: -0.2959773}
 --- !u!1 &7107917085913669752
 GameObject:
   m_ObjectHideFlags: 0
@@ -18398,7 +18390,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -18428,6 +18420,8 @@ MonoBehaviour:
   - {fileID: 6751022253707767873}
   - {fileID: 8518791537615850721}
   - {fileID: 6485307821928045070}
+  - {fileID: 4242920814906797518}
+  - {fileID: 7127305404943572417}
   - {fileID: 225241846562835104}
   - {fileID: 1378846232128594193}
   - {fileID: 1943042320989514796}
@@ -18948,7 +18942,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -18974,17 +18968,7 @@ MonoBehaviour:
   MainMaterial: {fileID: 2100000, guid: 2d6e45d7de6d6db4dbce4040db5eb4a6, type: 2}
   TranparentMaterial: {fileID: 2100000, guid: 1fcd9529fb6faa24b8317d0ac6a64e87, type: 2}
   WoolAnimationData: {fileID: 11400000, guid: fa96cd9866deefb43b0ebb89ec9fb68c, type: 2}
-  DecoreControls:
-  - {fileID: 8518791537615850721}
-  - {fileID: 6485307821928045070}
-  - {fileID: 4242920814906797518}
-  - {fileID: 7127305404943572417}
-  - {fileID: 225241846562835104}
-  - {fileID: 1378846232128594193}
-  - {fileID: 1943042320989514796}
-  - {fileID: 1975686130924440014}
-  - {fileID: 8374008597385502435}
-  - {fileID: 6819452142309284533}
+  DecoreControls: []
   RemovedDecoreControls: []
   _childWoolControls: []
   MeshFilter: {fileID: 9093620413341624570}
@@ -19513,7 +19497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7897066352998191349}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15082353, y: 0.7819297, z: 0.20759049, w: -0.56810606}
+  m_LocalRotation: {x: -0.15082349, y: 0.7819296, z: 0.20759048, w: -0.5681061}
   m_LocalPosition: {x: 0.14577526, y: 0.16567546, z: 0.6183744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19669,7 +19653,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7909400702848786815}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22257975, y: 7.5495166e-15, z: 0.000000026533547, w: -0.9749145}
+  m_LocalRotation: {x: -0.22257957, y: -1.3282936e-15, z: -0.00000002653355, w: 0.97491455}
   m_LocalPosition: {x: 0.1769001, y: 0.088675395, z: -0.2916256}
   m_LocalScale: {x: 0.90808, y: 0.90808, z: 0.90808}
   m_ConstrainProportionsScale: 0
@@ -19825,7 +19809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7937591938102601278}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24403714, y: 0.29867125, z: 0.07929257, w: 0.91921383}
+  m_LocalRotation: {x: 0.24403715, y: 0.29867128, z: 0.07929256, w: 0.91921383}
   m_LocalPosition: {x: -0.09487155, y: 0.24267535, z: 0.4833744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20064,7 +20048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8013737293468938913}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25659576, y: 1.7763568e-15, z: 0.000000030588595, w: 0.9665188}
+  m_LocalRotation: {x: 0.25659576, y: 1.6323176e-15, z: 0.000000030588595, w: 0.9665188}
   m_LocalPosition: {x: -0.007913725, y: 0.2586754, z: 0.4553744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20294,7 +20278,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -20324,11 +20308,6 @@ MonoBehaviour:
   - {fileID: 1310535907346610034}
   - {fileID: 6859893320043434833}
   - {fileID: 6934000584464474743}
-  - {fileID: 2517907759180016696}
-  - {fileID: 5076664700179165552}
-  - {fileID: 6859893320043434833}
-  - {fileID: 6934000584464474743}
-  - {fileID: 4955731884872093012}
   RemovedDecoreControls: []
   _childWoolControls:
   - {fileID: 3767059927945683512}
@@ -20770,7 +20749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8398723143261760877}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.005247986, y: 0.8696754, z: 0.10537438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21000,7 +20979,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -21467,7 +21446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8492048061433439221}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.1488801, y: -0.40032458, z: -0.7816257}
   m_LocalScale: {x: 0.3165406, y: 0.3165406, z: 0.3165406}
   m_ConstrainProportionsScale: 0
@@ -21863,7 +21842,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -22413,7 +22392,7 @@ Transform:
   m_GameObject: {fileID: 8845893040314277585}
   serializedVersion: 2
   m_LocalRotation: {x: -0.22257957, y: -1.3282936e-15, z: -0.00000002653355, w: 0.97491455}
-  m_LocalPosition: {x: 0.00015360117, y: 0.29167533, z: -0.3886256}
+  m_LocalPosition: {x: 0, y: 0.293, z: -0.389}
   m_LocalScale: {x: 0.90808, y: 0.90808, z: 0.90808}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22487,7 +22466,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -23028,7 +23007,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -23578,7 +23557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9045537532019432982}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.056080103, y: -0.40032458, z: -0.8293257}
   m_LocalScale: {x: 0.3165406, y: 0.3165406, z: 0.3165406}
   m_ConstrainProportionsScale: 0

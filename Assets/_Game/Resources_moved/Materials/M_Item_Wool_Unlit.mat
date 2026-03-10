@@ -25,10 +25,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _AOTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 93f8a86c1b1fd184b96f4085b9b97076, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -100,8 +96,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AOColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.37276608, g: 0.57949704, b: 0.6981132, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightDir: {r: -4.37, g: 1, b: -4.22, a: 0}
     - _Scale: {r: -2, g: 2.6, b: 0, a: 0}
