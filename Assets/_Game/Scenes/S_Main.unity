@@ -1196,6 +1196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1321016821291107322, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -510
+      objectReference: {fileID: 0}
     - target: {fileID: 2989442862649663784, guid: 20937f8a4fedb2a4ebb3f05ee2699518, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -3947,7 +3951,7 @@ Transform:
   m_GameObject: {fileID: 1266501309}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: -4.5}
+  m_LocalPosition: {x: 0, y: 4.4, z: -4.5}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8940,7 +8944,7 @@ Transform:
   m_GameObject: {fileID: 1374435472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.8, z: -5}
+  m_LocalPosition: {x: 0, y: 3.2, z: -5}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9004,8 +9008,8 @@ RectTransform:
   m_GameObject: {fileID: 1385159968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 500992709}
   m_Father: {fileID: 900492973}
@@ -9160,8 +9164,8 @@ MonoBehaviour:
   portraitSizeDelta: {x: 0, y: 0}
   landscapeSizeDelta: {x: 0, y: 0}
   adjustLocalScale: 1
-  portraitLocalScale: {x: 1, y: 1, z: 1}
-  landscapeLocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  portraitLocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  landscapeLocalScale: {x: 0.55, y: 0.55, z: 0.55}
 --- !u!1 &1386965082
 GameObject:
   m_ObjectHideFlags: 0
@@ -10334,7 +10338,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 31e64b34fc5b2fa4fa0f957d9d982f9b, type: 3}
   - {fileID: 21300000, guid: af14c68f2efda7e4abf64850e3b04f79, type: 3}
   handSpriteRenderer: {fileID: 1480894652}
-  positionShow: {x: 0.45, y: -1.45, z: -2.35}
+  positionShow: {x: 0.5, y: -1.3, z: -2.35}
   positionHide: {x: 0.28, y: 10, z: 0}
   offset: {x: 0.3, y: -0.3, z: -1.4}
   delayTime: 0.5
@@ -10800,7 +10804,7 @@ MonoBehaviour:
   FrameCount: 10
   colorPalleteData: {fileID: 11400000, guid: c9157f8d2076f3b46a24554df89f7708, type: 2}
   handController: {fileID: 1673621352}
-  levelConfigSO: {fileID: 11400000, guid: afab0db1d754d1249b0462e6bb07d11c, type: 2}
+  levelConfigSO: {fileID: 11400000, guid: 8d082a42cecf17b48af1d183fd3a70f6, type: 2}
   AddCubeDataSO: {fileID: 11400000, guid: abcaa88e84e135e419664611844b2e02, type: 2}
   ParentObject: {fileID: 935084528}
   CameraController: {fileID: 1797259878}
