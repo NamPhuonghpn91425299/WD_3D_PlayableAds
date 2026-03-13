@@ -1,4 +1,4 @@
-Shader "Horus/UnLit/IgnoreYarn_SamsungFix"
+Shader "Horus/UnLit/IgnoreYarn_Fixed"
 {
     Properties
     {
@@ -17,16 +17,21 @@ Shader "Horus/UnLit/IgnoreYarn_SamsungFix"
     {
         Tags { "RenderType"="Opaque" "Queue"="Geometry" }
 
-        // Loại bỏ Stencil để tránh lỗi trên Samsung Internet Browser
+        Stencil
+        {
+            Ref 128
+            Comp NotEqual
+            Pass Keep
+            Fail Keep
+        }
+
         Pass
         {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma multi_compile_instancing
             #include "UnityCG.cginc"
-            
-            // Tắt Instancing để tăng tính tương thích cho WebGL Samsung
-            // #pragma multi_compile_instancing 
 
             sampler2D _MainTex;
             sampler2D _NormalMap;
@@ -34,13 +39,14 @@ Shader "Horus/UnLit/IgnoreYarn_SamsungFix"
             float4 _MainTex_ST;
             float4 _NormalMap_ST;
             float4 _LightDir;
-            
-            // Đưa về biến thường thay vì Instance Buffer để an toàn cho GPU Mali
-            float4 _Color;
-            float4 _AOColor;
-            float _Brightness;
-            float _Ambient;
-            float _DiffusePower;
+
+            UNITY_INSTANCING_BUFFER_START(Props)
+                UNITY_DEFINE_INSTANCED_PROP(float4, _Color)
+                UNITY_DEFINE_INSTANCED_PROP(float4, _AOColor)
+                UNITY_DEFINE_INSTANCED_PROP(float, _Brightness)
+                UNITY_DEFINE_INSTANCED_PROP(float, _Ambient)
+                UNITY_DEFINE_INSTANCED_PROP(float, _DiffusePower)
+            UNITY_INSTANCING_BUFFER_END(Props)
 
             struct appdata
             {
@@ -48,53 +54,74 @@ Shader "Horus/UnLit/IgnoreYarn_SamsungFix"
                 float3 normal : NORMAL;
                 float4 tangent : TANGENT;
                 float2 uv : TEXCOORD0;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct v2f
             {
                 float4 pos : SV_POSITION;
                 float2 uv : TEXCOORD0;
-                float3 lightDirTangent : TEXCOORD1; // Tính hướng sáng tại Vertex
+                float3 worldNormal : TEXCOORD3;
+                float3 worldTangent : TEXCOORD4;
+                float3 worldBinormal : TEXCOORD5;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             v2f vert(appdata v)
             {
                 v2f o;
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_TRANSFER_INSTANCE_ID(v, o);
+                
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
-                // Tính toán TBN tại Vertex Shader (Tối ưu cho Samsung)
+                // Tính toán không gian thế giới
                 float3 worldNormal = UnityObjectToWorldNormal(v.normal);
                 float3 worldTangent = UnityObjectToWorldDir(v.tangent.xyz);
                 float3 worldBinormal = cross(worldNormal, worldTangent) * v.tangent.w;
-                float3x3 worldToTangent = float3x3(worldTangent, worldBinormal, worldNormal);
 
-                // Chuyển hướng sáng về không gian Tangent ngay tại đây
-                o.lightDirTangent = mul(worldToTangent, _LightDir.xyz);
+                o.worldNormal = worldNormal;
+                o.worldTangent = worldTangent;
+                o.worldBinormal = worldBinormal;
 
                 return o;
             }
 
             fixed4 frag(v2f i) : SV_Target
             {
-                // Sử dụng half/fixed để tối ưu cho GPU Mali (Samsung)
-                fixed4 albedo = tex2D(_MainTex, i.uv) * _Color;
+                UNITY_SETUP_INSTANCE_ID(i);
+
+                // Access Instanced Props
+                float4 color = UNITY_ACCESS_INSTANCED_PROP(Props, _Color);
+                float4 aoColor = UNITY_ACCESS_INSTANCED_PROP(Props, _AOColor);
+                float brightness = UNITY_ACCESS_INSTANCED_PROP(Props, _Brightness);
+                float ambient = UNITY_ACCESS_INSTANCED_PROP(Props, _Ambient);
+                float diffusePower = UNITY_ACCESS_INSTANCED_PROP(Props, _DiffusePower);
+
+                // Albedo & AO
+                fixed4 albedo = tex2D(_MainTex, i.uv) * color;
                 half ao = tex2D(_AOTex, i.uv).r;
-                half3 aoFinal = ao * _AOColor.rgb;
+                half3 aoFinal = lerp(half3(1,1,1), aoColor.rgb, 1.0 - ao); // Cách tính AO an toàn hơn
 
-                // Normal map xử lý đơn giản hơn
+                // Normal Reconstruction (An toàn cho Mali GPU)
                 float3 tangentNormal = UnpackNormal(tex2D(_NormalMap, i.uv));
-                
-                // Lighting (NdotL) tính trong không gian Tangent
-                half NdotL = saturate(dot(tangentNormal, normalize(i.lightDirTangent)));
+                float3 worldNormal = normalize(
+                    tangentNormal.x * i.worldTangent +
+                    tangentNormal.y * i.worldBinormal +
+                    tangentNormal.z * i.worldNormal
+                );
 
-                half3 baseBrightness = albedo.rgb * aoFinal;
-                half3 litColor = baseBrightness * (_Ambient + _DiffusePower * NdotL) * _Brightness;
+                // Lighting
+                float3 lightDir = normalize(_LightDir.xyz);
+                float NdotL = saturate(dot(worldNormal, lightDir));
+
+                half3 litColor = albedo.rgb * aoFinal * (ambient + diffusePower * NdotL) * brightness;
 
                 return fixed4(litColor, albedo.a);
             }
             ENDCG
         }
     }
-    FallBack "Mobile/Unlit"
+    FallBack "Mobile/Diffuse"
 }

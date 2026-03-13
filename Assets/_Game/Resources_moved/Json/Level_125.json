@@ -3,7 +3,7 @@
     "GoldReward": 10,
     "MainPrefabPath": "Levels/A_GiantWheels",
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
-    "LevelType": 1,
+    "LevelType": 3,
     "BoxsQueue": [
         "yellow",
         "purple",
@@ -37,8 +37,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow",
-                "brown_light"
+                "yellow"
             ]
         },
         {
@@ -332,6 +331,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "brown_light",
                 "lime_dark"
             ]
         },

@@ -5,22 +5,27 @@
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
     "LevelType": 1,
     "BoxsQueue": [
-        "orange",
-        "orange",
-        "orange",
-        "blue_light",
-        "blue_light",
-        "purple",
-        "purple",
+        "yellow",
+        "wood",
         "yellow",
         "yellow",
-        "black_dark",
-        "pgirl",
-        "white",
-        "purple",
-        "black_dark",
+        "lime",
         "yellow",
-        "blue_light"
+        "brown_dark",
+        "red",
+        "skin",
+        "wood",
+        "yellow",
+        "yellow",
+        "wood",
+        "yellow",
+        "yellow",
+        "lime",
+        "orange",
+        "orange",
+        "red",
+        "lime",
+        "brown_dark"
     ],
     "WoolPropertiesList": [
         {
@@ -28,7 +33,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "brown_dark"
+                "brown_dark",
+                "lime"
             ]
         },
         {
@@ -36,7 +42,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red"
+                "red",
+                "wood"
             ]
         },
         {
@@ -44,7 +51,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "lime"
             ]
         },
         {
@@ -52,7 +60,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "brown_dark"
             ]
         },
         {
@@ -60,7 +69,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "wood"
+                "wood",
+                "skin"
             ]
         },
         {
@@ -68,7 +78,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "wood"
+                "wood",
+                "yellow"
             ]
         },
         {
@@ -76,7 +87,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange"
+                "orange",
+                "lime"
             ]
         },
         {
@@ -84,7 +96,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "green"
+                "lime",
+                "yellow"
             ]
         },
         {
@@ -92,7 +105,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "brown_dark"
+                "brown_dark",
+                "red"
             ]
         },
         {
@@ -116,7 +130,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "brown_dark"
             ]
         },
         {
@@ -124,7 +139,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "orange"
             ]
         },
         {
@@ -132,7 +148,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "lime"
             ]
         },
         {
@@ -140,7 +157,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "red"
             ]
         },
         {
@@ -148,7 +166,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "skin"
             ]
         },
         {
@@ -156,7 +175,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "wood"
             ]
         },
         {
@@ -164,7 +184,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "orange"
             ]
         },
         {
@@ -172,7 +193,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "orange"
             ]
         },
         {
@@ -180,7 +202,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "red"
             ]
         },
         {
@@ -188,7 +211,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "orange"
             ]
         },
         {
@@ -196,7 +220,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "wood"
             ]
         },
         {
@@ -204,7 +229,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "orange"
             ]
         },
         {
@@ -212,7 +238,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "lime"
             ]
         },
         {
@@ -220,7 +247,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "brown_dark"
             ]
         },
         {
@@ -228,7 +256,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "lime"
             ]
         },
         {
@@ -236,7 +265,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "brown_dark"
             ]
         },
         {
@@ -244,7 +274,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "wood"
             ]
         },
         {
@@ -252,7 +283,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "wood"
             ]
         },
         {
@@ -284,7 +316,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "wood"
+                "wood",
+                "yellow"
             ]
         },
         {
@@ -292,7 +325,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "wood"
+                "wood",
+                "red"
             ]
         }
     ]

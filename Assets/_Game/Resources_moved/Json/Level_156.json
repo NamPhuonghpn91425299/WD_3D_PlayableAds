@@ -5,22 +5,24 @@
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
     "LevelType": 1,
     "BoxsQueue": [
-        "orange",
-        "orange",
-        "orange",
+        "blue_dark",
+        "blue_light",
+        "red",
+        "blue_light",
+        "red",
         "blue_light",
         "blue_light",
-        "purple",
-        "purple",
-        "yellow",
-        "yellow",
-        "black_dark",
-        "pgirl",
-        "white",
-        "purple",
-        "black_dark",
-        "yellow",
-        "blue_light"
+        "red",
+        "red",
+        "blue_light",
+        "white_light",
+        "red",
+        "lime",
+        "pink",
+        "pink_dark",
+        "red",
+        "skin",
+        "yellow"
     ],
     "WoolPropertiesList": [
         {
@@ -36,7 +38,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue_light"
+                "blue_light",
+                "red"
             ]
         },
         {
@@ -44,7 +47,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue_light"
+                "blue_light",
+                "pink_dark"
             ]
         },
         {
@@ -52,7 +56,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pink"
+                "pink",
+                "blue_light"
             ]
         },
         {
@@ -60,7 +65,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pink"
+                "pink",
+                "red"
             ]
         },
         {
@@ -68,15 +74,16 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue_light"
+                "blue_light",
+                "red"
             ]
         },
         {
             "WoolId": 2103622256062354610,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "blue_dark"
             ]
         },
         {
@@ -121,7 +128,7 @@
         },
         {
             "WoolId": 2118226191083236386,
-            "WeightOrder": 0,
+            "WeightOrder": 2,
             "ActiveState": true,
             "Color": [
                 "yellow"
@@ -129,17 +136,19 @@
         },
         {
             "WoolId": 54765523128229138,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "blue_light",
+                "pink_dark"
             ]
         },
         {
             "WoolId": 5741339009120098391,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "skin",
                 "yellow"
             ]
         },
@@ -257,15 +266,16 @@
         },
         {
             "WoolId": 6895306572300774710,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "red",
                 "pink_dark"
             ]
         },
         {
             "WoolId": 8135135684740131880,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
                 "red"
@@ -273,9 +283,10 @@
         },
         {
             "WoolId": 519206903728156344,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "blue_dark",
                 "pink"
             ]
         },
@@ -292,12 +303,13 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red"
+                "red",
+                "lime"
             ]
         },
         {
             "WoolId": 869316542257751135,
-            "WeightOrder": 0,
+            "WeightOrder": 2,
             "ActiveState": true,
             "Color": [
                 "yellow"
@@ -313,26 +325,29 @@
         },
         {
             "WoolId": 5085638578864600847,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "blue_light",
+                "red"
             ]
         },
         {
             "WoolId": 8583319133582075616,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "red",
+                "skin"
             ]
         },
         {
             "WoolId": 2037815314832076207,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "lime",
+                "red"
             ]
         },
         {

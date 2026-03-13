@@ -3,33 +3,33 @@
     "GoldReward": 10,
     "MainPrefabPath": "Levels/A_InspectShip",
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
-    "LevelType": 1,
+    "LevelType": 3,
     "BoxsQueue": [
         "wood",
         "red",
         "wood",
         "red",
-        "cyan_light",
+        "wood",
+        "red",
+        "cyan_dark",
         "red",
         "cyan_light",
-        "wood",
-        "cyan_dark",
         "red",
         "white_dark",
         "red",
         "yellow",
         "green",
+        "red",
         "green",
+        "red",
         "brown_dark",
+        "red",
         "brown_dark",
         "red",
-        "red",
-        "red",
+        "cyan_light",
         "brown_light",
         "green",
-        "wood",
-        "red",
-        "red"
+        "wood"
     ],
     "WoolPropertiesList": [
         {
@@ -45,8 +45,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red",
-                "brown_light"
+                "red"
             ]
         },
         {
@@ -55,6 +54,7 @@
             "ActiveState": true,
             "Color": [
                 "cyan_light",
+                "white_dark",
                 "red"
             ]
         },
@@ -64,6 +64,7 @@
             "ActiveState": true,
             "Color": [
                 "cyan_light",
+                "cyan_dark",
                 "red"
             ]
         },
@@ -73,6 +74,7 @@
             "ActiveState": true,
             "Color": [
                 "cyan_light",
+                "wood",
                 "red"
             ]
         },
@@ -81,8 +83,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "wood",
-                "cyan_light"
+                "wood"
             ]
         },
         {
@@ -91,6 +92,7 @@
             "ActiveState": true,
             "Color": [
                 "wood",
+                "cyan_light",
                 "red"
             ]
         },
@@ -100,6 +102,7 @@
             "ActiveState": true,
             "Color": [
                 "wood",
+                "brown_light",
                 "red"
             ]
         },
@@ -108,8 +111,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "wood",
-                "cyan_dark"
+                "wood"
             ]
         },
         {
@@ -444,8 +446,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "white_dark",
-                "wood"
+                "white_dark"
             ]
         },
         {
@@ -469,7 +470,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "white_dark",
                 "red"
             ]
         },

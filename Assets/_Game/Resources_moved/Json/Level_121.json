@@ -3,7 +3,7 @@
     "GoldReward": 10,
     "MainPrefabPath": "Levels/A_Clawmachine",
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
-    "LevelType": 1,
+    "LevelType": 3,
     "BoxsQueue": [
         "pigskin",
         "orange",
@@ -31,7 +31,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "cyan_light"
+                "cyan_light",
+                "orange"
             ]
         },
         {
@@ -197,6 +198,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "orange",
                 "red"
             ]
         },
@@ -229,7 +231,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "red"
+                "red",
+                "orange"
             ]
         },
         {
@@ -271,8 +274,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "brown_light",
-                "orange"
+                "brown_light"
             ]
         },
         {
@@ -280,8 +282,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "brown_light",
-                "orange"
+                "brown_light"
             ]
         },
         {
@@ -298,8 +299,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
-                "orange"
+                "pigskin"
             ]
         },
         {

@@ -12,19 +12,17 @@
         "yellow",
         "white_light",
         "orange_dark",
-        "red_light",
-        "pigskin",
         "orange_light",
         "lime",
         "red_light",
         "orange_dark",
-        "blue_dark",
         "green_dark",
-        "pigskin",
+        "white_light",
+        "yellow",
+        "blue_dark",
         "lime",
         "orange_light",
-        "white_light",
-        "yellow"
+        "red_light"
     ],
     "WoolPropertiesList": [
         {
@@ -33,7 +31,6 @@
             "ActiveState": true,
             "Color": [
                 "yellow",
-                "pigskin",
                 "red_light"
             ]
         },
@@ -326,7 +323,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pigskin",
                 "lime"
             ]
         },
@@ -335,7 +331,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pigskin",
                 "blue_dark"
             ]
         },
@@ -352,7 +347,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pigskin",
                 "red_light"
             ]
         },
@@ -370,7 +364,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pigskin",
                 "green_dark"
             ]
         },
@@ -397,7 +390,6 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "pigskin",
                 "orange_light"
             ]
         },

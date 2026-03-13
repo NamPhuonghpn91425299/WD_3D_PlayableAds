@@ -1,0 +1,221 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a947691cfa9a1e4f825d5c97a253cc9, type: 3}
+  m_Name: A_Train
+  m_EditorClassIdentifier: 
+  levelStartLoop: 100
+  levelConfigDataList:
+  - LevelName: Level 133 - A_Train
+    Level: 133
+    GoldReward: 10
+    MainPrefabPath: Levels/A_Train
+    MainPrefab: {fileID: 1895400234289187636, guid: 03b507de9d895da49893380ab41ef2c5, type: 3}
+    LevelType: 1
+    CubeTargetCount: 4
+    BoxsQueue:
+    - yellow
+    - red
+    - blue_light
+    - red
+    - blue_light
+    - yellow
+    - skin
+    - lime
+    - red
+    - yellow
+    - red
+    - blue_light
+    - lime
+    - red
+    - skin
+    - yellow
+    WoolPropertiesList:
+    - WoolId: 6783708572517807631
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - blue_light
+    - WoolId: 6315089026374311100
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+      - yellow
+    - WoolId: 477536623126847786
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - yellow
+    - WoolId: 988159536212873111
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+    - WoolId: 7808248987738110175
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - lime
+    - WoolId: 3891172041116082703
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - lime
+    - WoolId: 838309997556277388
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - lime
+    - WoolId: 5962448395998739644
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - skin
+    - WoolId: 5455403656226094286
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - yellow
+    - WoolId: 3896330481677345185
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - red
+    - WoolId: 5435684949567450709
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+      - red
+    - WoolId: 1486394095716787768
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+      - red
+    - WoolId: 9206899347290983249
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - skin
+      - red
+    - WoolId: 6469882913663101964
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - skin
+      - red
+    - WoolId: 1859398661385052892
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+      - yellow
+    - WoolId: 6767546622859059672
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - skin
+    - WoolId: 6525256093453414867
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+    - WoolId: 3049129010103727875
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+    - WoolId: 4693348665101198590
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+    - WoolId: 7093275365452427957
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+    - WoolId: 1420202103707546199
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+    - WoolId: 1033692019570967943
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - blue_light
+    - WoolId: 2164874287256342448
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+    - WoolId: 2171325309734611625
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - skin
+    - WoolId: 3355649579435935381
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+    - WoolId: 3789397602013831927
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - lime
+    - WoolId: 6144519568835581576
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - yellow
+    - WoolId: 4687538583848116156
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+    - WoolId: 4919606319986159996
+      WeightOrder: 0
+      ActiveState: 1
+      Color:
+      - red
+    - WoolId: 5416392256631305376
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - yellow
+    - WoolId: 184813663336304988
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red
+    - WoolId: 1908118900699545724
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - blue_light
+      - skin
+    - WoolId: 672616725622090175
+      WeightOrder: 1
+      ActiveState: 1
+      Color:
+      - red

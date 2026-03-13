@@ -5,22 +5,22 @@
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
     "LevelType": 1,
     "BoxsQueue": [
-        "orange",
-        "orange",
-        "orange",
-        "blue_light",
-        "blue_light",
-        "purple",
-        "purple",
+        "skin",
         "yellow",
-        "yellow",
-        "black_dark",
         "pgirl",
-        "white",
-        "purple",
-        "black_dark",
-        "yellow",
-        "blue_light"
+        "white_light",
+        "blue",
+        "skin",
+        "green",
+        "red",
+        "skin",
+        "khaki",
+        "pgirl",
+        "skin",
+        "cyan_light",
+        "pink_light",
+        "white_light",
+        "yellow"
     ],
     "WoolPropertiesList": [
         {
@@ -28,7 +28,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white_light"
+                "white_light",
+                "skin"
             ]
         },
         {
@@ -36,7 +37,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "skin"
+                "skin",
+                "pink_light"
             ]
         },
         {
@@ -44,7 +46,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "cyan_light"
             ]
         },
         {
@@ -52,7 +55,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white_light"
+                "white_light",
+                "skin"
             ]
         },
         {
@@ -68,7 +72,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "skin"
+                "skin",
+                "pgirl"
             ]
         },
         {
@@ -76,7 +81,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pgirl"
+                "pgirl",
+                "khaki"
             ]
         },
         {
@@ -84,7 +90,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pgirl"
+                "pgirl",
+                "yellow"
             ]
         },
         {
@@ -92,7 +99,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue"
+                "blue",
+                "khaki"
             ]
         },
         {
@@ -100,7 +108,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue"
+                "blue",
+                "pgirl"
             ]
         },
         {
@@ -108,7 +117,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan_light"
+                "cyan_light",
+                "yellow"
             ]
         },
         {
@@ -145,7 +155,7 @@
         },
         {
             "WoolId": 2944590592284741150,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
                 "pink_light"
@@ -153,8 +163,8 @@
         },
         {
             "WoolId": 3843970400196570861,
-            "WeightOrder": 0,
-            "ActiveState": true,
+            "WeightOrder": 1,
+            "ActiveState": false,
             "Color": [
                 "yellow"
             ]
@@ -164,7 +174,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin"
+                "skin"
             ]
         },
         {
@@ -180,6 +190,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
+                "pink_light",
                 "white_light"
             ]
         },
@@ -193,7 +204,7 @@
         },
         {
             "WoolId": 5143225646632392382,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
                 "cyan_light"
@@ -201,7 +212,7 @@
         },
         {
             "WoolId": 919654835298877304,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
                 "white_light"
@@ -209,7 +220,7 @@
         },
         {
             "WoolId": 5236062789509456971,
-            "WeightOrder": 0,
+            "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
                 "white_light"
@@ -220,7 +231,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white_light"
+                "white_light",
+                "yellow"
             ]
         },
         {
@@ -268,7 +280,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin"
+                "skin"
             ]
         },
         {
@@ -284,7 +296,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin"
+                "skin"
             ]
         },
         {

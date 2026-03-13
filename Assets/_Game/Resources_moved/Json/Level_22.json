@@ -301,6 +301,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "yellow",
                 "red_light",
                 "cyan"
             ]
@@ -311,13 +312,14 @@
             "ActiveState": true,
             "Color": [
                 "cyan",
+                "yellow",
                 "green"
             ]
         },
         {
             "WoolId": 3000872297359928315,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "yellow"
             ]
@@ -325,7 +327,7 @@
         {
             "WoolId": 6906807588577758186,
             "WeightOrder": 0,
-            "ActiveState": true,
+            "ActiveState": false,
             "Color": [
                 "yellow"
             ]

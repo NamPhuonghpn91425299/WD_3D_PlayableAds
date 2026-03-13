@@ -6,24 +6,23 @@
     "LevelType": 1,
     "BoxsQueue": [
         "red_light",
-        "green_light",
-        "white_light",
         "yellow",
         "green_light",
-        "red_light",
-        "red_light",
-        "pigskin",
-        "green_light",
         "white_light",
+        "red_light",
+        "green_light",
+        "green_light",
         "blue_light",
-        "green_light",
-        "orange",
-        "pigskin",
-        "green_light",
         "red_light",
+        "pigskin",
+        "white_light",
+        "red_light",
+        "pigskin",
         "purple",
-        "yellow",
-        "white_light"
+        "white_light",
+        "green_light",
+        "blue_light",
+        "green_light"
     ],
     "WoolPropertiesList": [
         {
@@ -68,7 +67,7 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "orange"
+                "purple"
             ]
         },
         {
@@ -77,7 +76,7 @@
             "ActiveState": true,
             "Color": [
                 "white_light",
-                "purple"
+                "blue_light"
             ]
         },
         {
@@ -94,8 +93,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "green_light",
-                "yellow"
+                "green_light"
             ]
         },
         {
@@ -103,8 +101,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
-                "yellow"
+                "pigskin"
             ]
         },
         {
@@ -113,7 +110,7 @@
             "ActiveState": true,
             "Color": [
                 "pigskin",
-                "purple"
+                "blue_light"
             ]
         },
         {
@@ -122,7 +119,7 @@
             "ActiveState": true,
             "Color": [
                 "green_light",
-                "orange"
+                "purple"
             ]
         },
         {
@@ -131,7 +128,7 @@
             "ActiveState": true,
             "Color": [
                 "green_light",
-                "orange"
+                "purple"
             ]
         },
         {
@@ -140,7 +137,7 @@
             "ActiveState": true,
             "Color": [
                 "green_light",
-                "purple"
+                "blue_light"
             ]
         },
         {
@@ -166,8 +163,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "green_light",
-                "yellow"
+                "green_light"
             ]
         },
         {

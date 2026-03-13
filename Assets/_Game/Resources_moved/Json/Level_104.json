@@ -3,7 +3,7 @@
     "GoldReward": 10,
     "MainPrefabPath": "Levels/A_Carousel",
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
-    "LevelType": 1,
+    "LevelType": 3,
     "BoxsQueue": [
         "white",
         "purple_light",
@@ -41,8 +41,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
-                "orange"
+                "pigskin"
             ]
         },
         {
@@ -50,8 +49,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
-                "red_light"
+                "pigskin"
             ]
         },
         {
@@ -59,8 +57,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
-                "orange"
+                "pigskin"
             ]
         },
         {
@@ -68,8 +65,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
-                "yellow"
+                "pigskin"
             ]
         },
         {
@@ -77,7 +73,6 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
                 "pigskin"
             ]
         },
@@ -86,8 +81,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
-                "white"
+                "pigskin"
             ]
         },
         {
@@ -95,7 +89,6 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
                 "pigskin"
             ]
         },
@@ -104,7 +97,6 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "pigskin",
                 "pigskin"
             ]
         },
@@ -240,6 +232,7 @@
             "ActiveState": true,
             "Color": [
                 "red_light",
+                "pigskin",
                 "yellow"
             ]
         },
@@ -365,8 +358,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white",
-                "purple_light"
+                "purple_light",
+                "white"
             ]
         },
         {
@@ -400,7 +393,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "red_light"
             ]
         },
         {
@@ -408,7 +402,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "orange"
             ]
         },
         {
@@ -416,7 +411,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "yellow"
             ]
         },
         {
@@ -424,7 +420,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "pigskin"
             ]
         },
         {
@@ -432,7 +429,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "pigskin"
             ]
         },
         {
@@ -440,7 +438,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "white"
             ]
         },
         {
@@ -448,7 +447,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "orange"
             ]
         },
         {

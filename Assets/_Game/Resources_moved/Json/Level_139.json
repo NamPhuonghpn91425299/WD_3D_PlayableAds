@@ -12,18 +12,18 @@
         "purple_light",
         "blue_light",
         "skin",
-        "orange",
         "yellow",
         "yellow",
         "yellow",
-        "yellow",
-        "blue_light",
-        "white_light",
-        "white_light",
-        "skin",
         "purple_light",
-        "red_light",
-        "orange"
+        "white_light",
+        "orange",
+        "orange",
+        "skin",
+        "white_light",
+        "blue_light",
+        "yellow",
+        "red_light"
     ],
     "WoolPropertiesList": [
         {
@@ -39,8 +39,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white_light",
-                "yellow"
+                "white_light"
             ]
         },
         {
@@ -48,8 +47,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow",
-                "blue_light"
+                "yellow"
             ]
         },
         {
@@ -57,7 +55,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue_light"
+                "blue_light",
+                "white_light"
             ]
         },
         {
@@ -65,8 +64,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue_light",
-                "skin"
+                "blue_light"
             ]
         },
         {
@@ -74,8 +72,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow",
-                "white_light"
+                "yellow"
             ]
         },
         {
@@ -108,8 +105,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "blue_light",
-                "skin"
+                "blue_light"
             ]
         },
         {
@@ -117,8 +113,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "white_light",
-                "red_light"
+                "white_light"
             ]
         },
         {
@@ -126,8 +121,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow",
-                "white_light"
+                "yellow"
             ]
         },
         {
@@ -135,7 +129,6 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange",
                 "orange"
             ]
         },
@@ -144,7 +137,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "yellow"
             ]
         },
         {
@@ -152,7 +146,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "red_light"
             ]
         },
         {
@@ -248,7 +243,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "white_light"
             ]
         },
         {
@@ -256,7 +252,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "purple_light"
+                "purple_light",
+                "skin"
             ]
         },
         {
@@ -386,6 +383,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "orange",
                 "yellow"
             ]
         },
@@ -394,7 +392,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "white_light"
+                "white_light",
+                "skin"
             ]
         },
         {
@@ -402,7 +401,8 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "blue_light"
             ]
         }
     ]

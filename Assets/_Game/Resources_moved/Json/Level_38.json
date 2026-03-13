@@ -13,14 +13,14 @@
         "orange_light",
         "skin",
         "yellow",
-        "blue_light",
         "cyan",
         "skin",
         "cyan_light",
         "orange_light",
         "pink",
-        "white_light",
-        "yellow"
+        "blue_light",
+        "yellow",
+        "white_light"
     ],
     "WoolPropertiesList": [
         {
@@ -38,7 +38,7 @@
             "ActiveState": true,
             "Color": [
                 "yellow",
-                "cyan"
+                "white_light"
             ]
         },
         {
@@ -74,7 +74,7 @@
             "ActiveState": true,
             "Color": [
                 "yellow",
-                "white_light"
+                "cyan"
             ]
         },
         {

@@ -186,11 +186,24 @@ Shader "Horus/Unlit/WoolMeshUnlit_Vuong_YQ_Mobile"
                 REAL ao = albedo.a;
                 REAL3 aoFinal = ao * aoColor.rgb;
                 
-                REAL3 viewDir = normalize(i.worldViewDir);
-                REAL3 tangentNormal = UnpackNormal(tex2D(_NormalMap, i.normalUV));
-                REAL3x3 TBN = REAL3x3(normalize(i.worldTangent), normalize(i.worldBinormal), normalize(i.worldNormal));
-                REAL3 normalMapWorldNormal = normalize(mul(tangentNormal, TBN));
-                REAL3 worldNormal = normalize(lerp(i.worldNormal, normalMapWorldNormal, normalStrength));
+                REAL3 worldNormal = normalize(i.worldNormal);
+                
+                // On iOS/Metal, zero-length tangents cause NaN when normalize() is called.
+                // We check if the square magnitude is strictly positive.
+                REAL tangentSq = dot(i.worldTangent, i.worldTangent);
+                REAL binormalSq = dot(i.worldBinormal, i.worldBinormal);
+                
+                #if defined(SHADER_API_METAL) || defined(SHADER_API_GLES3) || defined(SHADER_API_VULKAN)
+                if (tangentSq > 0.0001 && binormalSq > 0.0001)
+                #else
+                if (tangentSq > 0.00001 && binormalSq > 0.00001)
+                #endif
+                {
+                    REAL3 tangentNormal = UnpackNormal(tex2D(_NormalMap, i.normalUV));
+                    REAL3x3 TBN = REAL3x3(i.worldTangent * rsqrt(tangentSq), i.worldBinormal * rsqrt(binormalSq), worldNormal);
+                    REAL3 normalMapWorldNormal = normalize(mul(tangentNormal, TBN));
+                    worldNormal = normalize(lerp(worldNormal, normalMapWorldNormal, normalStrength));
+                }
                 
                 REAL3 lightDir = normalize(_LightDir.xyz);
                 REAL NdotL = saturate(dot(worldNormal, lightDir));

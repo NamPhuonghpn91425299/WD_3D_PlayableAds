@@ -1,0 +1,176 @@
+{
+    "Level": 185,
+    "GoldReward": 10,
+    "MainPrefabPath": "Levels/A_Whale",
+    "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
+    "LevelType": 1,
+    "BoxsQueue": [
+        "blue",
+        "cyan_light",
+        "white",
+        "cyan_light",
+        "skin",
+        "red",
+        "blue",
+        "black",
+        "white",
+        "red",
+        "black",
+        "cyan_light",
+        "skin",
+        "blue",
+        "lime_light"
+    ],
+    "WoolPropertiesList": [
+        {
+            "WoolId": 7539932553920478377,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "white",
+                "cyan_light",
+                "red"
+            ]
+        },
+        {
+            "WoolId": 941169700073944208,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "blue",
+                "cyan_light",
+                "skin"
+            ]
+        },
+        {
+            "WoolId": 9005098711063768120,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "cyan_light",
+                "skin",
+                "blue"
+            ]
+        },
+        {
+            "WoolId": 2184797404401458764,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "cyan_light",
+                "white",
+                "blue"
+            ]
+        },
+        {
+            "WoolId": 7362582070438288248,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "cyan_light",
+                "black",
+                "red"
+            ]
+        },
+        {
+            "WoolId": 8976854431747099613,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "black",
+                "white",
+                "blue"
+            ]
+        },
+        {
+            "WoolId": 4740654754519194018,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "blue",
+                "red",
+                "white"
+            ]
+        },
+        {
+            "WoolId": 1008697200274728791,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "blue",
+                "white",
+                "cyan_light"
+            ]
+        },
+        {
+            "WoolId": 7201992940249938705,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "cyan_light",
+                "white",
+                "black"
+            ]
+        },
+        {
+            "WoolId": 5381647944155845640,
+            "WeightOrder": 1,
+            "ActiveState": true,
+            "Color": [
+                "red",
+                "skin",
+                "black"
+            ]
+        },
+        {
+            "WoolId": 4911287345278550693,
+            "WeightOrder": 2,
+            "ActiveState": true,
+            "Color": [
+                "skin",
+                "red",
+                "blue"
+            ]
+        },
+        {
+            "WoolId": 3413707883907819702,
+            "WeightOrder": 2,
+            "ActiveState": true,
+            "Color": [
+                "lime_light",
+                "black",
+                "cyan_light"
+            ]
+        },
+        {
+            "WoolId": 3679598623934613630,
+            "WeightOrder": 2,
+            "ActiveState": true,
+            "Color": [
+                "skin",
+                "lime_light",
+                "red"
+            ]
+        },
+        {
+            "WoolId": 1315916914333592797,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "blue",
+                "cyan_light",
+                "skin"
+            ]
+        },
+        {
+            "WoolId": 8347337091499520457,
+            "WeightOrder": 0,
+            "ActiveState": true,
+            "Color": [
+                "blue",
+                "lime_light",
+                "black"
+            ]
+        }
+    ]
+}

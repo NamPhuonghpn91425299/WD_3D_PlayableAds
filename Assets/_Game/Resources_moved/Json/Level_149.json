@@ -3,7 +3,7 @@
     "GoldReward": 10,
     "MainPrefabPath": "Levels/A_MeatRolls",
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
-    "LevelType": 1,
+    "LevelType": 3,
     "BoxsQueue": [
         "green_dark",
         "red",
@@ -58,8 +58,7 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red",
-                "black"
+                "red"
             ]
         },
         {
@@ -290,7 +289,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "wood"
+                "wood",
+                "black"
             ]
         },
         {

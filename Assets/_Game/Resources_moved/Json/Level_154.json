@@ -5,22 +5,21 @@
     "LevelIconPath": "Assets/_Game/Resources_moved/Sprites/IconLevel/Icon_A_GameControl.png",
     "LevelType": 1,
     "BoxsQueue": [
-        "orange",
-        "orange",
-        "orange",
-        "blue_light",
-        "blue_light",
-        "purple",
-        "purple",
+        "lime",
         "yellow",
         "yellow",
+        "red",
+        "cyan_light",
+        "orange_dark",
+        "orange",
+        "yellow",
+        "red_light",
+        "red_light",
+        "blue_dark",
         "black_dark",
-        "pgirl",
-        "white",
-        "purple",
-        "black_dark",
-        "yellow",
-        "blue_light"
+        "blue_dark",
+        "orange_dark",
+        "skin"
     ],
     "WoolPropertiesList": [
         {
@@ -28,7 +27,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange_dark"
+                "orange_dark",
+                "cyan_light"
             ]
         },
         {
@@ -44,7 +44,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange"
+                "orange",
+                "orange_dark"
             ]
         },
         {
@@ -52,7 +53,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange"
+                "orange",
+                "yellow"
             ]
         },
         {
@@ -60,7 +62,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "orange_dark"
             ]
         },
         {
@@ -84,7 +87,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "skin"
+                "skin",
+                "yellow"
             ]
         },
         {
@@ -92,7 +96,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red"
+                "red",
+                "black_dark"
             ]
         },
         {
@@ -100,7 +105,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "black_dark"
+                "black_dark",
+                "orange_dark"
             ]
         },
         {
@@ -108,7 +114,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "orange_dark"
+                "orange_dark",
+                "skin"
             ]
         },
         {
@@ -132,7 +139,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "cyan_light"
+                "cyan_light",
+                "lime"
             ]
         },
         {
@@ -140,6 +148,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "red_light",
                 "blue_dark"
             ]
         },
@@ -172,6 +181,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "black_dark",
                 "yellow"
             ]
         },
@@ -204,7 +214,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "orange_dark"
             ]
         },
         {
@@ -212,6 +223,7 @@
             "WeightOrder": 1,
             "ActiveState": true,
             "Color": [
+                "red_light",
                 "blue_dark"
             ]
         },
@@ -228,7 +240,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "lime"
+                "lime",
+                "skin"
             ]
         },
         {
@@ -236,7 +249,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "red"
+                "red",
+                "orange"
             ]
         },
         {
@@ -244,7 +258,8 @@
             "WeightOrder": 0,
             "ActiveState": true,
             "Color": [
-                "yellow"
+                "yellow",
+                "red"
             ]
         },
         {
