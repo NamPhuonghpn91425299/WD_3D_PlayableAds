@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjects/ColorPallete", menuName = "ScriptableObjects/ColorPallete")]
 public class ColorPalleteData : ScriptableObject
 {
-    
     public Dictionary<string, Color> colorPallete = new Dictionary<string, Color>();
     public List<string> colorKeys = new List<string>();
     public List<Color> colorsValues = new List<Color>();

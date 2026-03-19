@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bea26ff8de1c1749b2ca57933890420, type: 3}
-  m_Name: ScriptableObjects_WoolAnimation
+  m_Script: {fileID: 11500000, guid: 35f45f86eadb7c14cb04cd63895fc356, type: 3}
+  m_Name: A_BigPagoda_CurveSO
   m_EditorClassIdentifier: 
-  Duration: 0.8
-  DurationHideWool: 0.2
-  OffSet: 0.1
-  ForceValue: 5.5
-  RandomDirrectionFactor: 1
-  SpeedRotation: 444
+  StuckPoints:
+  - {x: 30, y: 7}
+  - {x: 31, y: 7}
+  - {x: 32, y: 7}
+  - {x: 33, y: 7}
+  - {x: 40, y: 9}
+  - {x: 41, y: 9}
+  - {x: 42, y: 9}
+  - {x: 43, y: 9}

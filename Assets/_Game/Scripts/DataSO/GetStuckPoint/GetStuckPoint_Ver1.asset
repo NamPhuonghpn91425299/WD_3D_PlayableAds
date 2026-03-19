@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bea26ff8de1c1749b2ca57933890420, type: 3}
-  m_Name: ScriptableObjects_WoolAnimation
+  m_Script: {fileID: 11500000, guid: 20a98e96b03c6ee4b84cadb3c82f000d, type: 3}
+  m_Name: GetStuckPoint_Ver1
   m_EditorClassIdentifier: 
-  Duration: 0.8
-  DurationHideWool: 0.2
-  OffSet: 0.1
-  ForceValue: 5.5
-  RandomDirrectionFactor: 1
-  SpeedRotation: 444

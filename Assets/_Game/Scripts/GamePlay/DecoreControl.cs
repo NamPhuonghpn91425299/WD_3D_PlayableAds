@@ -12,9 +12,9 @@ public class DecoreControl : MonoBehaviour
 {
     #region PROPERTIES
 
-    public Rigidbody    Rigid;
+    public Rigidbody Rigid;
     public MeshRenderer MeshRenderer;
-    public Color        _color = Color.black;
+    public Color _color = Color.black;
 
     public TypeOfDecore DecoreType = TypeOfDecore.None;
 
@@ -37,7 +37,7 @@ public class DecoreControl : MonoBehaviour
 
     [SerializeField]
     private Vector3 _decoreCenterPos;
-    
+
     private bool _isActive;
 
     #endregion
@@ -65,7 +65,7 @@ public class DecoreControl : MonoBehaviour
     private void OnValidate()
     {
         if (MeshRenderer)
-            _decoreCenterPos = transform.parent != null 
+            _decoreCenterPos = transform.parent != null
                 ? transform.parent.InverseTransformPoint(MeshRenderer.bounds.center)
                 : MeshRenderer.bounds.center;
     }
@@ -97,7 +97,8 @@ public class DecoreControl : MonoBehaviour
         try
         {
             baseDirection = (Rigid.position - _thisTransform.parent.parent.position).normalized;
-        } catch
+        }
+        catch
         {
             Debug.Log("Check prefab decor objects: " + gameObject.name);
         }
@@ -113,16 +114,20 @@ public class DecoreControl : MonoBehaviour
         if (gameObject.activeSelf && gameObject.activeInHierarchy) StartCoroutine(DisablePhysicComponent());
     }
 
-    public void PulseOutOfParrentWool(float forcevalue, float randomDirrectionFactor)
+    #region PULSE DECOR OBJECT (OPTIMIZED FOR GLASS)
+
+    public void PulseOutOfParrentWool(float forceValue, float randomDirrectionFactor)
     {
         UseGravity(true);
-        //transform.parent.parent -> to get the ObjectSpawner -_-
+
+        // Tính toán hướng cơ bản
         Vector3 baseDirection = _thisTransform.forward.normalized;
         try
         {
             if (ForceSourceCenter != null) baseDirection = (Rigid.position - ForceSourceCenter.position).normalized;
-            else baseDirection                           = (Rigid.position - _thisTransform.parent.parent.position).normalized;
-        } catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
+            else baseDirection = (Rigid.position - _thisTransform.parent.parent.position).normalized;
+        }
+        catch { }
 
         Vector3 randomOffset = new Vector3(
                 Random.Range(-randomDirrectionFactor, randomDirrectionFactor),
@@ -130,15 +135,32 @@ public class DecoreControl : MonoBehaviour
                 Random.Range(-randomDirrectionFactor, randomDirrectionFactor)
             );
 
-        Vector3 finalDirection = (baseDirection + randomOffset).normalized;
+        // --- LOGIC TỐI ƯU CHO GLASS ---
+        float finalForce = forceValue;
+        Vector3 glassDownForce = Vector3.zero;
+
+        if (DecoreType == TypeOfDecore.Glass)
+        {
+            finalForce *= 2.5f; // Tăng lực bắn tổng thể
+            glassDownForce = Vector3.down * 1.5f; // Tạo vector kéo xuống mạnh
+        }
+
+        Vector3 finalDirection = (baseDirection + randomOffset + glassDownForce).normalized;
         _thisTransform.SetParent(null);
-        Rigid.AddForce(finalDirection * forcevalue, ForceMode.Impulse);
-        if (gameObject.activeSelf && gameObject.activeInHierarchy) StartCoroutine(DisablePhysicComponent());
+
+        // Áp dụng lực Impulse một lần duy nhất
+        Rigid.AddForce(finalDirection * finalForce, ForceMode.Impulse);
+
+        if (gameObject.activeSelf && gameObject.activeInHierarchy)
+            StartCoroutine(DisablePhysicComponent());
     }
+
+    // Bạn áp dụng logic tương tự cho các hàm Overload khác (nếu dùng)
+    #endregion
 
     public void PulseOutOfParrentWool(Vector3 forceSource, float forcevalue, float randomDirrectionFactor)
     {
-        if(!Rigid) return;
+        if (!Rigid) return;
         UseGravity(true);
         //transform.parent.parent -> to get the ObjectSpawner -_-
         Vector3 baseDirection = _thisTransform.forward.normalized;
@@ -166,7 +188,8 @@ public class DecoreControl : MonoBehaviour
             baseDirection = ForceSourceCenter != null
                 ? (_decoreCenterPos - ForceSourceCenter.position).normalized
                 : (_decoreCenterPos - _thisTransform.parent.position).normalized;
-        } catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
+        }
+        catch { Debug.Log("Check prefab decor objects: " + gameObject.name); }
 
         Vector3 randomOffset = new Vector3
             (
@@ -193,7 +216,7 @@ public class DecoreControl : MonoBehaviour
             return;
         }
         if (_decoreState == DecoreState.OnlyUseColor) return;
-        Rigid.useGravity  = isUseGravity;
+        Rigid.useGravity = isUseGravity;
         Rigid.isKinematic = !isUseGravity;
     }
     #endregion
@@ -207,11 +230,12 @@ public class DecoreControl : MonoBehaviour
         {
             if (Rigid)
             {
-                Rigid.useGravity  = false;
+                Rigid.useGravity = false;
                 Rigid.isKinematic = true;
             }
             _thisTransform?.SetParent(_parent);
-        } catch { }
+        }
+        catch { }
         yield return null;
         gameObject.SetActive(false);
     }
@@ -220,14 +244,14 @@ public class DecoreControl : MonoBehaviour
     {
         if (!_executeRotation) yield break;
         var randomPoint = Random.Range(-1f, 1f) * Vector3.one;
-        var torQue      = Vector3.Cross(randomPoint, forceVector);
-        var axis        = torQue.normalized;
-        var timer       = 0f;
+        var torQue = Vector3.Cross(randomPoint, forceVector);
+        var axis = torQue.normalized;
+        var timer = 0f;
         while (timer < 5f)
         {
             if (!transform) break;
             transform.Rotate(axis, speedRota * Time.deltaTime, Space.World);
-            timer              += Time.deltaTime;
+            timer += Time.deltaTime;
             yield return null;
         }
     }
@@ -278,7 +302,7 @@ public class DecoreControl : MonoBehaviour
         _decoreState = DecoreState.OnlyUsePhysic;
     }
 
-    
+
 #endif
 
     #endregion
@@ -313,8 +337,8 @@ public class DecoreControl : MonoBehaviour
     }
 
     #endregion
-    
-    
+
+
 }
 
 public enum TypeOfDecore

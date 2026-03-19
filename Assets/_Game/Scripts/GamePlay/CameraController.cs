@@ -506,6 +506,15 @@ public class CameraController : Singleton<CameraController>
         if (BlockHandTap) return;
 
         Ray ray = _mainCamera.ScreenPointToRay(pos);
+        // Check for direct decore hit and skip if glass type
+        if (Physics.Raycast(ray, out RaycastHit directHit, 100f, layerMask))
+        {
+            var directDecor = directHit.collider.GetComponent<DecoreControl>();
+            if (directDecor != null)
+            {
+                if (directDecor.DecoreType == TypeOfDecore.Glass) return;
+            }
+        }
 
         WoolControl foundWool = FindBestWoolNearRay(ray);
 
@@ -513,6 +522,8 @@ public class CameraController : Singleton<CameraController>
         {
             HandleFoundWool(foundWool);
         }
+
+
         ClickEffectManager.Instance.PlayClickEffect(Color.white);
     }
 
@@ -524,7 +535,7 @@ public class CameraController : Singleton<CameraController>
         // Đây là logic gốc từ HandleTap của bạn
         wool.WoolRotation();
         GamePlaySystem.Instance.RaiseMotion(EMotionType.Shy, Random.value);
-        Debug.Log("Tapped on Wool: " + wool.name);
+        //Debug.Log("Tapped on Wool: " + wool.name);
     }
 
     private void HandleMouse(bool isPointerDown)
