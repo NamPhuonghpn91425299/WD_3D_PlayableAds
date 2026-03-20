@@ -73,3 +73,20 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+# Editor preferences
+# VSCode
+.vscode/
+
+# Jetbrains Rider
+.idea/
+
+# Visual Studio 
+.vs/
+
+# Find References 2 Cache
+FR2_Cache.asset
+FR2_Cache.asset.meta
+
+# Luna Stuffs
+LunaCache/
+LunaTemp/

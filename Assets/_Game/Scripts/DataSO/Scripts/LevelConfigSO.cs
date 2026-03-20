@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjects/LevelConfig", menuName = "ScriptableObjects/LevelConfig")]
 public class LevelConfigSO : ScriptableObject
 {
-    [SerializeField] int levelStartLoop = 100;
+    //[SerializeField] int levelStartLoop = 100;
     [SerializeField] public List<LevelConfigData> levelConfigDataList;
 
     private string _levelConfigPath => "StreamingAssets/LevelConfigs.json";
@@ -51,10 +51,10 @@ public class LevelConfigSO : ScriptableObject
     {
         int levelToLoad = playerCurrentLevel;
         var levelCount = levelConfigDataList.Count;
-        if (levelToLoad > levelCount)
-        {
-            levelToLoad = (levelToLoad - levelStartLoop) % (levelConfigDataList.Count - levelStartLoop + 1) + levelStartLoop;
-        }
+        // if (levelToLoad > levelCount)
+        // {
+        //     levelToLoad = (levelToLoad - levelStartLoop) % (levelConfigDataList.Count - levelStartLoop + 1) + levelStartLoop;
+        // }
 
         return levelToLoad;
     }
@@ -122,7 +122,7 @@ public class LevelConfigData
     public int Level;
     public int GoldReward;
     public string MainPrefabPath;
-    public GameObject MainPrefab; 
+    public GameObject MainPrefab;
     public LevelType LevelType;
     public int CubeTargetCount; // Number of unlocked cube targets on start
     public List<string> BoxsQueue;

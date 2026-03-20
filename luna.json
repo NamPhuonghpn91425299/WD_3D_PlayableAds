@@ -2,7 +2,7 @@
     "version": "7.0.0",
     "projectId": "1d50191528698274c8378a20ad162070",
     "applicationID": 37245,
-    "creativeName": "Cozy_Yarn_3D_A_Train",
+    "creativeName": "Cozy_Yarn_3D_A_SunnyHouse",
     "pgServer": "EU",
     "window": {
         "‐⁏": true
@@ -8096,14 +8096,6 @@
             {
                 "name": "WoolProperties",
                 "excluded": false
-            },
-            {
-                "name": "pc.Debugger.Components.EditorCamera",
-                "excluded": true
-            },
-            {
-                "name": "pc.Debugger.Components.EditorGUI",
-                "excluded": true
             }
         ],
         "unusedMethods": [
@@ -17045,7 +17037,7 @@
                     },
                     {
                         "name": "Rotate$1",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "RotateAround",
@@ -26879,7 +26871,7 @@
                     },
                     {
                         "name": "CalculateImpactPoint",
-                        "excluded": true
+                        "excluded": false
                     },
                     {
                         "name": "ResetDecorTransformStatusAsync",
@@ -31016,10 +31008,6 @@
                     {
                         "name": "Datas#get",
                         "excluded": true
-                    },
-                    {
-                        "name": "init",
-                        "excluded": false
                     },
                     {
                         "name": "GetLevelConfigData",
