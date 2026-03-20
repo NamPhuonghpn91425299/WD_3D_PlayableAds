@@ -12,7 +12,7 @@ public class ClickEffectManager : Singleton<ClickEffectManager>
     [SerializeField] private int initialPoolSize = 2;
 
     [Header("COLOR STAT")]
-    public float BrightnessDifference = 1f;
+    public float BrightnessDifference = 1.6f;
 
     private List<ClickEffector> _effectPool = new List<ClickEffector>();
     private Transform _poolParent;

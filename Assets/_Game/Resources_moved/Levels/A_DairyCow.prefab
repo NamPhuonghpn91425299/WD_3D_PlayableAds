@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3623841911839084234}
   - component: {fileID: 8928716386254013688}
   - component: {fileID: 6269742377167793229}
-  - component: {fileID: 7625887790658416326}
   - component: {fileID: 5861599228548139311}
   - component: {fileID: 8398393375255531214}
   m_Layer: 0
@@ -87,27 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7625887790658416326
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294230099221672456}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5861599228548139311
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -657,7 +635,6 @@ GameObject:
   - component: {fileID: 958011960433180325}
   - component: {fileID: 6464895944273386537}
   - component: {fileID: 976076668082891596}
-  - component: {fileID: 5923249712748056176}
   - component: {fileID: 6320585765351407827}
   - component: {fileID: 5347415607046847185}
   m_Layer: 0
@@ -733,27 +710,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5923249712748056176
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466097380467642074}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &6320585765351407827
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1439,7 +1395,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.05849144
   m_Center: {x: -0.0000000130450655, y: 0.056160234, z: 0.16474853}
@@ -1620,7 +1576,6 @@ GameObject:
   - component: {fileID: 4839337251858220253}
   - component: {fileID: 548218152831274861}
   - component: {fileID: 7493049529095437590}
-  - component: {fileID: 3985060233255078365}
   - component: {fileID: 1396918985337245350}
   - component: {fileID: 2642322919621403995}
   m_Layer: 0
@@ -1696,27 +1651,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3985060233255078365
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700144435814999402}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1396918985337245350
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2266,7 +2200,6 @@ GameObject:
   - component: {fileID: 8630503691900116758}
   - component: {fileID: 3927248875563183163}
   - component: {fileID: 2759070948044522584}
-  - component: {fileID: 944223660764634149}
   - component: {fileID: 35952123740885690}
   - component: {fileID: 4994393588471373369}
   m_Layer: 0
@@ -2342,27 +2275,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &944223660764634149
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748445035550403290}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &35952123740885690
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2829,7 +2741,6 @@ GameObject:
   - component: {fileID: 8432473964109225549}
   - component: {fileID: 1550240353300805890}
   - component: {fileID: 173721409194299141}
-  - component: {fileID: 7000162996816449696}
   - component: {fileID: 826524769273443919}
   - component: {fileID: 5470634841389203882}
   m_Layer: 0
@@ -2905,27 +2816,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7000162996816449696
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754062321685144733}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &826524769273443919
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3392,7 +3282,6 @@ GameObject:
   - component: {fileID: 4849956368624248876}
   - component: {fileID: 2031276800268121361}
   - component: {fileID: 8037832358006629540}
-  - component: {fileID: 859830454120471110}
   - component: {fileID: 7011118808904698924}
   - component: {fileID: 8978611965890899516}
   m_Layer: 0
@@ -3468,27 +3357,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &859830454120471110
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755824622016919627}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7011118808904698924
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3955,7 +3823,6 @@ GameObject:
   - component: {fileID: 4898671423275347177}
   - component: {fileID: 4716173023566356338}
   - component: {fileID: 3966158256895440263}
-  - component: {fileID: 1190250626425169458}
   - component: {fileID: 6533061270333914465}
   - component: {fileID: 3339587382441658696}
   m_Layer: 0
@@ -4031,27 +3898,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1190250626425169458
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979938005373167796}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &6533061270333914465
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4518,7 +4364,6 @@ GameObject:
   - component: {fileID: 8211271598846488545}
   - component: {fileID: 7539561340270312372}
   - component: {fileID: 7661657336087119565}
-  - component: {fileID: 5516447602492405883}
   - component: {fileID: 5169098875763527614}
   - component: {fileID: 7219102565661836758}
   m_Layer: 0
@@ -4594,27 +4439,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5516447602492405883
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999464204422018514}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5169098875763527614
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5081,7 +4905,6 @@ GameObject:
   - component: {fileID: 3243648662141559428}
   - component: {fileID: 4168260631989034877}
   - component: {fileID: 8019050903442760032}
-  - component: {fileID: 6501447911700319722}
   - component: {fileID: 2854287238339343067}
   - component: {fileID: 8415947950674055804}
   m_Layer: 0
@@ -5157,27 +4980,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6501447911700319722
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017696414100675799}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2854287238339343067
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5727,7 +5529,6 @@ GameObject:
   - component: {fileID: 2102802771240374526}
   - component: {fileID: 826361264705258622}
   - component: {fileID: 5665288839833023906}
-  - component: {fileID: 3740535966234680626}
   - component: {fileID: 560808562187833578}
   - component: {fileID: 8920409741274099491}
   m_Layer: 0
@@ -5803,27 +5604,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3740535966234680626
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060070360292815371}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &560808562187833578
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6290,7 +6070,6 @@ GameObject:
   - component: {fileID: 3780743257054593120}
   - component: {fileID: 8128315434357254906}
   - component: {fileID: 7810204650654438419}
-  - component: {fileID: 5077735345995186566}
   - component: {fileID: 6663691030011379286}
   - component: {fileID: 6570729551937122404}
   m_Layer: 0
@@ -6366,27 +6145,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5077735345995186566
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067133879577705772}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &6663691030011379286
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6936,7 +6694,6 @@ GameObject:
   - component: {fileID: 2201047024641303249}
   - component: {fileID: 3408262659092882953}
   - component: {fileID: 7762469579218028856}
-  - component: {fileID: 437638512361148928}
   - component: {fileID: 3517836129386737642}
   - component: {fileID: 6254469965819190912}
   m_Layer: 0
@@ -7012,27 +6769,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &437638512361148928
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164552628713251261}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3517836129386737642
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7635,7 +7371,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.037776046
   m_Center: {x: 0.000000029802322, y: 0.000008879229, z: 0.000005736018}
@@ -7650,7 +7386,6 @@ GameObject:
   - component: {fileID: 8241558711373026149}
   - component: {fileID: 3122122519791432754}
   - component: {fileID: 6095378938166387285}
-  - component: {fileID: 5020725680623065074}
   - component: {fileID: 9095726211728230331}
   - component: {fileID: 5539276770467671857}
   m_Layer: 0
@@ -7726,27 +7461,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5020725680623065074
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348963230464644247}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &9095726211728230331
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8432,7 +8146,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.047519512
   m_Center: {x: -0.14984678, y: -0.08621991, z: 0.007786081}
@@ -8530,7 +8244,6 @@ GameObject:
   - component: {fileID: 5693417332147105924}
   - component: {fileID: 2982196435047255143}
   - component: {fileID: 3323097461308599519}
-  - component: {fileID: 2314303968043768663}
   - component: {fileID: 4510644297905443012}
   - component: {fileID: 9006194233298197787}
   m_Layer: 0
@@ -8606,27 +8319,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2314303968043768663
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537582854793469349}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4510644297905443012
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9261,7 +8953,6 @@ GameObject:
   - component: {fileID: 8858595383722740231}
   - component: {fileID: 6795567989469667076}
   - component: {fileID: 89185217670713065}
-  - component: {fileID: 3586304519929727435}
   - component: {fileID: 6996876219580508949}
   - component: {fileID: 6648128867127012329}
   m_Layer: 0
@@ -9337,27 +9028,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3586304519929727435
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822018796600268809}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &6996876219580508949
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9824,7 +9494,6 @@ GameObject:
   - component: {fileID: 6663657872460448150}
   - component: {fileID: 4028570890894291283}
   - component: {fileID: 306666962976833493}
-  - component: {fileID: 4630591608660153779}
   - component: {fileID: 7639314733370582161}
   - component: {fileID: 2934191146127238564}
   m_Layer: 0
@@ -9900,27 +9569,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4630591608660153779
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883817191760914527}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7639314733370582161
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10523,7 +10171,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.05849144
   m_Center: {x: -0.000000042547047, y: 0.05616029, z: 0.16474847}
@@ -10538,7 +10186,6 @@ GameObject:
   - component: {fileID: 4853339186753348114}
   - component: {fileID: 622716029960163248}
   - component: {fileID: 452703530623404959}
-  - component: {fileID: 4035230454635697499}
   - component: {fileID: 4854089538082758966}
   - component: {fileID: 4161625539502020303}
   m_Layer: 0
@@ -10614,27 +10261,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4035230454635697499
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947085004237049866}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4854089538082758966
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11101,7 +10727,6 @@ GameObject:
   - component: {fileID: 8914046111845367252}
   - component: {fileID: 5485963760477879720}
   - component: {fileID: 4213202689466189568}
-  - component: {fileID: 8915063684814307228}
   - component: {fileID: 5515952563341052612}
   - component: {fileID: 1262817431309868016}
   m_Layer: 0
@@ -11177,27 +10802,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &8915063684814307228
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995671529114830475}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5515952563341052612
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11883,7 +11487,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.05849144
   m_Center: {x: -0.000000027946227, y: 0.056160234, z: 0.16474853}
@@ -11898,7 +11502,6 @@ GameObject:
   - component: {fileID: 3274175285149497308}
   - component: {fileID: 4232098640114680166}
   - component: {fileID: 5658624045844753037}
-  - component: {fileID: 6246543279086350433}
   - component: {fileID: 5010131422521353056}
   - component: {fileID: 3674851292022478657}
   m_Layer: 0
@@ -11974,27 +11577,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6246543279086350433
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2231228887966742802}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5010131422521353056
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12465,7 +12047,6 @@ GameObject:
   - component: {fileID: 3560826396202966578}
   - component: {fileID: 1496698180959322371}
   - component: {fileID: 3550811572545388251}
-  - component: {fileID: 6609161506372547410}
   - component: {fileID: 8680560324590004830}
   - component: {fileID: 4504691842372930108}
   m_Layer: 0
@@ -12541,27 +12122,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6609161506372547410
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2263604123832956039}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &8680560324590004830
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13028,7 +12588,6 @@ GameObject:
   - component: {fileID: 5993216359438714072}
   - component: {fileID: 2842249773658989958}
   - component: {fileID: 831657550116135119}
-  - component: {fileID: 5172636279302676207}
   - component: {fileID: 4727857960096580563}
   - component: {fileID: 8389373419726501865}
   m_Layer: 0
@@ -13104,27 +12663,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5172636279302676207
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2285524140266259769}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4727857960096580563
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13591,7 +13129,6 @@ GameObject:
   - component: {fileID: 939937494117487801}
   - component: {fileID: 825842813422375651}
   - component: {fileID: 1847651292441425630}
-  - component: {fileID: 8598279939344799779}
   - component: {fileID: 7618929791633283836}
   - component: {fileID: 4043257699941141716}
   m_Layer: 0
@@ -13667,27 +13204,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &8598279939344799779
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2302879442598668709}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7618929791633283836
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14237,7 +13753,6 @@ GameObject:
   - component: {fileID: 7116667255149941668}
   - component: {fileID: 6226816835290992817}
   - component: {fileID: 6166039448461215184}
-  - component: {fileID: 6273332811730233363}
   - component: {fileID: 7599186535071648024}
   - component: {fileID: 1807541636563674507}
   m_Layer: 0
@@ -14313,27 +13828,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &6273332811730233363
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2327007116293493604}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7599186535071648024
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15019,7 +14513,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.060783643
   m_Center: {x: -0.15299058, y: -0.032421894, z: 0.046801433}
@@ -15117,7 +14611,6 @@ GameObject:
   - component: {fileID: 479705854228411132}
   - component: {fileID: 7935456030732847541}
   - component: {fileID: 1617800760894007128}
-  - component: {fileID: 3751277914397510176}
   - component: {fileID: 3202272252404114113}
   - component: {fileID: 7159224059170129304}
   m_Layer: 0
@@ -15193,27 +14686,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3751277914397510176
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2693366774462785449}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3202272252404114113
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15763,7 +15235,6 @@ GameObject:
   - component: {fileID: 2601762135255092716}
   - component: {fileID: 4820145376390166624}
   - component: {fileID: 223204707095222429}
-  - component: {fileID: 1801468024403848779}
   - component: {fileID: 544569565947849859}
   - component: {fileID: 1448558486221444666}
   m_Layer: 0
@@ -15839,27 +15310,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1801468024403848779
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3147890491625689499}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &544569565947849859
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16326,7 +15776,6 @@ GameObject:
   - component: {fileID: 5751077073623037592}
   - component: {fileID: 3307466906741097107}
   - component: {fileID: 8225695014583166882}
-  - component: {fileID: 8675355919759602382}
   - component: {fileID: 2758181907322440113}
   - component: {fileID: 1952866836206794661}
   m_Layer: 0
@@ -16402,27 +15851,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &8675355919759602382
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155033705580368899}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2758181907322440113
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16889,7 +16317,6 @@ GameObject:
   - component: {fileID: 4955516840894403916}
   - component: {fileID: 912561596341102900}
   - component: {fileID: 3565801669370279599}
-  - component: {fileID: 3606807239006254128}
   - component: {fileID: 1229120490710584737}
   - component: {fileID: 2811824556857072813}
   m_Layer: 0
@@ -16965,27 +16392,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3606807239006254128
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3225269619472473355}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1229120490710584737
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17618,7 +17024,6 @@ GameObject:
   - component: {fileID: 1318175033035758221}
   - component: {fileID: 6278555556299900033}
   - component: {fileID: 2992566622398868019}
-  - component: {fileID: 1247014639926465451}
   - component: {fileID: 2137696088979769117}
   - component: {fileID: 3928664334957767701}
   m_Layer: 0
@@ -17694,27 +17099,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1247014639926465451
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3652657866989401419}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2137696088979769117
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18623,7 +18007,6 @@ GameObject:
   - component: {fileID: 3690531287303578407}
   - component: {fileID: 7710945116034368409}
   - component: {fileID: 272835117425274269}
-  - component: {fileID: 7340717491533888778}
   - component: {fileID: 1663255665720768352}
   - component: {fileID: 3138292418293017541}
   m_Layer: 0
@@ -18699,27 +18082,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7340717491533888778
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4241161502198898747}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1663255665720768352
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19186,7 +18548,6 @@ GameObject:
   - component: {fileID: 2516449306251162479}
   - component: {fileID: 1382451700283830848}
   - component: {fileID: 8207831348046884294}
-  - component: {fileID: 3718075808472467331}
   - component: {fileID: 3614798389501022700}
   - component: {fileID: 5597400332193211995}
   m_Layer: 0
@@ -19262,27 +18623,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3718075808472467331
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4491187942478937933}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3614798389501022700
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19832,7 +19172,6 @@ GameObject:
   - component: {fileID: 2920093667984286788}
   - component: {fileID: 5447541121595634817}
   - component: {fileID: 3898827797535480250}
-  - component: {fileID: 1746424586460785371}
   - component: {fileID: 1330509844074483453}
   - component: {fileID: 2172963290613386676}
   m_Layer: 0
@@ -19908,27 +19247,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1746424586460785371
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4753163746217655487}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1330509844074483453
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20697,7 +20015,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.047519512
   m_Center: {x: -0.14984678, y: -0.08621991, z: 0.007786081}
@@ -21044,7 +20362,6 @@ GameObject:
   - component: {fileID: 1752416755256565587}
   - component: {fileID: 7169899678512894718}
   - component: {fileID: 151981626927385963}
-  - component: {fileID: 1242656001547059491}
   - component: {fileID: 6641588748744814568}
   - component: {fileID: 2781989185903845573}
   m_Layer: 0
@@ -21120,27 +20437,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1242656001547059491
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5172092324164209161}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &6641588748744814568
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21909,7 +21205,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.20725551
   m_Center: {x: 0.027290333, y: -0.021922568, z: 0.0013568638}
@@ -22060,7 +21356,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.05849144
   m_Center: {x: -0.000000042547047, y: 0.05616029, z: 0.16474847}
@@ -22407,7 +21703,6 @@ GameObject:
   - component: {fileID: 6987786855400128253}
   - component: {fileID: 4837587644597312064}
   - component: {fileID: 3028627856873961494}
-  - component: {fileID: 4327004602178501096}
   - component: {fileID: 1631914843471325822}
   - component: {fileID: 4378061437741255399}
   m_Layer: 0
@@ -22483,27 +21778,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4327004602178501096
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5992683213927325470}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1631914843471325822
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23189,7 +22463,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.17913528
   m_Center: {x: -0.009272047, y: -0.00018740814, z: 0.010835364}
@@ -23340,7 +22614,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.037776046
   m_Center: {x: 5.185739e-16, y: 0.000008909032, z: 0.0000057956227}
@@ -23604,7 +22878,6 @@ GameObject:
   - component: {fileID: 1570588167048073494}
   - component: {fileID: 6855988429548705975}
   - component: {fileID: 2647118178518305749}
-  - component: {fileID: 2353588461135589758}
   - component: {fileID: 762516804425678042}
   - component: {fileID: 3660053516014314081}
   m_Layer: 0
@@ -23680,27 +22953,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2353588461135589758
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6718097115236080542}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &762516804425678042
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24333,7 +23585,6 @@ GameObject:
   - component: {fileID: 4467499762011169372}
   - component: {fileID: 1513301419926633232}
   - component: {fileID: 7212371321047691484}
-  - component: {fileID: 4192895666891319122}
   - component: {fileID: 7111893744505481038}
   - component: {fileID: 1898856653520245374}
   m_Layer: 0
@@ -24409,27 +23660,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4192895666891319122
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7083443905817622822}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7111893744505481038
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24896,7 +24126,6 @@ GameObject:
   - component: {fileID: 1031957989356282939}
   - component: {fileID: 2237070478367043261}
   - component: {fileID: 8959949038401574241}
-  - component: {fileID: 4528050111896031407}
   - component: {fileID: 2529050305097697903}
   - component: {fileID: 6215906857440578133}
   m_Layer: 0
@@ -24972,27 +24201,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4528050111896031407
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7152771752203963909}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2529050305097697903
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25459,7 +24667,6 @@ GameObject:
   - component: {fileID: 1068242006255090855}
   - component: {fileID: 4637649478728434492}
   - component: {fileID: 4279957183065062574}
-  - component: {fileID: 1111303797520363531}
   - component: {fileID: 3489267459147003879}
   - component: {fileID: 751050966758409102}
   m_Layer: 0
@@ -25535,27 +24742,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1111303797520363531
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7262082440204104882}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3489267459147003879
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26022,7 +25208,6 @@ GameObject:
   - component: {fileID: 7580396722012819418}
   - component: {fileID: 1864955668070463465}
   - component: {fileID: 7721914324794175562}
-  - component: {fileID: 628902679696269328}
   - component: {fileID: 4165187902565418167}
   - component: {fileID: 1240527303707417044}
   m_Layer: 0
@@ -26098,27 +25283,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &628902679696269328
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7296282983729571335}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &4165187902565418167
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26751,7 +25915,6 @@ GameObject:
   - component: {fileID: 8790942527617547576}
   - component: {fileID: 8751381433761935600}
   - component: {fileID: 1275322947371653381}
-  - component: {fileID: 1617023999693895107}
   - component: {fileID: 5357246901232371896}
   - component: {fileID: 3094724978897790024}
   m_Layer: 0
@@ -26827,27 +25990,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1617023999693895107
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7445342263625075473}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5357246901232371896
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27481,7 +26623,6 @@ GameObject:
   - component: {fileID: 2470374397829800751}
   - component: {fileID: 1066826049745150632}
   - component: {fileID: 3664966528382487244}
-  - component: {fileID: 1750611900438081366}
   - component: {fileID: 797688938988600357}
   - component: {fileID: 6540847045890523626}
   m_Layer: 0
@@ -27557,27 +26698,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1750611900438081366
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7570394666799257124}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &797688938988600357
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28180,7 +27300,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.080865204
   m_Center: {x: -0.000000031199317, y: 0.015231855, z: -0.00043673455}
@@ -28195,7 +27315,6 @@ GameObject:
   - component: {fileID: 1990924506727200190}
   - component: {fileID: 2659879332926132126}
   - component: {fileID: 3620524274413259161}
-  - component: {fileID: 7131722139018616045}
   - component: {fileID: 1248551318555109589}
   - component: {fileID: 555315973484436928}
   m_Layer: 0
@@ -28271,27 +27390,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7131722139018616045
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7760308173717754737}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1248551318555109589
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28894,7 +27992,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.17913528
   m_Center: {x: -0.009272106, y: -0.00018741205, z: 0.010835306}
@@ -28909,7 +28007,6 @@ GameObject:
   - component: {fileID: 6378479250696899439}
   - component: {fileID: 3798855458349285342}
   - component: {fileID: 8990841772690323568}
-  - component: {fileID: 7420864298810243538}
   - component: {fileID: 65647754194689446}
   - component: {fileID: 6507403404810992281}
   m_Layer: 0
@@ -28985,27 +28082,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7420864298810243538
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8004132023793438238}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &65647754194689446
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29940,7 +29016,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.20725548
   m_Center: {x: 0.027290326, y: -0.021922506, z: 0.0013568624}
@@ -30091,7 +29167,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.060783643
   m_Center: {x: -0.15299058, y: -0.032421924, z: 0.046801496}
@@ -30272,7 +29348,6 @@ GameObject:
   - component: {fileID: 991911519365270209}
   - component: {fileID: 8047250967368603776}
   - component: {fileID: 8245905215791820564}
-  - component: {fileID: 4280096940426284797}
   - component: {fileID: 466920650056047930}
   - component: {fileID: 7545853497017619850}
   m_Layer: 0
@@ -30348,27 +29423,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4280096940426284797
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8472192827516256052}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &466920650056047930
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30835,7 +29889,6 @@ GameObject:
   - component: {fileID: 1203369963325386322}
   - component: {fileID: 1801814885859409906}
   - component: {fileID: 1677495607836099866}
-  - component: {fileID: 4580319489503199568}
   - component: {fileID: 3111141413802252651}
   - component: {fileID: 7248948440074896497}
   m_Layer: 0
@@ -30911,27 +29964,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4580319489503199568
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8619449018811895315}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &3111141413802252651
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31398,7 +30430,6 @@ GameObject:
   - component: {fileID: 3264628626815781094}
   - component: {fileID: 7346706802329163945}
   - component: {fileID: 6522443351776482853}
-  - component: {fileID: 2858778679940023298}
   - component: {fileID: 5718000141476203404}
   - component: {fileID: 2187236743422856935}
   m_Layer: 0
@@ -31474,27 +30505,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2858778679940023298
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8623624933250357398}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &5718000141476203404
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31965,7 +30975,6 @@ GameObject:
   - component: {fileID: 2524518863588414555}
   - component: {fileID: 5702206698925263401}
   - component: {fileID: 1226075156365356460}
-  - component: {fileID: 786839302267704855}
   - component: {fileID: 8163372360198227993}
   - component: {fileID: 5994344351920381746}
   m_Layer: 0
@@ -32041,27 +31050,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &786839302267704855
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695179782786596500}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &8163372360198227993
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32529,7 +31517,6 @@ GameObject:
   - component: {fileID: 1175042228307311562}
   - component: {fileID: 5225723174769940949}
   - component: {fileID: 3616195113543903919}
-  - component: {fileID: 7014600331843851734}
   - component: {fileID: 6475966317659435184}
   - component: {fileID: 2516926856385709898}
   m_Layer: 0
@@ -32605,27 +31592,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7014600331843851734
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8709049120465706059}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &6475966317659435184
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33228,7 +32194,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.10032207
   m_Center: {x: -0.000000030267994, y: 0.00002537854, z: -0.001749315}
@@ -33243,7 +32209,6 @@ GameObject:
   - component: {fileID: 7987613418202876369}
   - component: {fileID: 618964352397869975}
   - component: {fileID: 3644666329313828341}
-  - component: {fileID: 3024765412629306201}
   - component: {fileID: 987692482950113381}
   - component: {fileID: 8183756867094078586}
   m_Layer: 0
@@ -33319,27 +32284,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3024765412629306201
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9012785774966348299}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &987692482950113381
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33806,7 +32750,6 @@ GameObject:
   - component: {fileID: 2854354801704561594}
   - component: {fileID: 5473863333686271049}
   - component: {fileID: 224565116237656362}
-  - component: {fileID: 5714284822704531014}
   - component: {fileID: 1005636150353154275}
   - component: {fileID: 955529873229789475}
   m_Layer: 0
@@ -33882,27 +32825,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5714284822704531014
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9052381745620225754}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &1005636150353154275
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34369,7 +33291,6 @@ GameObject:
   - component: {fileID: 8020847865562888449}
   - component: {fileID: 6011524615744342581}
   - component: {fileID: 1017529526729446917}
-  - component: {fileID: 4926909339524155415}
   - component: {fileID: 7838551754654151302}
   - component: {fileID: 7126924587566085277}
   m_Layer: 0
@@ -34445,27 +33366,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4926909339524155415
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9062319804198276540}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &7838551754654151302
 MeshCollider:
   m_ObjectHideFlags: 0
